@@ -2,7 +2,15 @@
 
 论文审稿修订版（2026-10-21）：主稿、补充材料、本地复算实验及修订脚本。
 
-当前定位：结果记录审计与两个机制案例研究（TLS 应用记录长度、零售工具调用观察者）。
+当前定位：结果记录审计，加上实验前提交的迁移判断及其受控检验（E5 流式发射器、E6 随机化 cover、E7 加密 agent–tool 链路）。
+
+## 第二轮修订（`test` 分支）
+
+- 审稿意见、修改清单与实施步骤：[`docs/R2-SP2027-审稿与修改清单.md`](docs/R2-SP2027-审稿与修改清单.md)
+- 新实验：`final-paper-and-experiments-20261021-m1m8-revised/final-paper-and-experiments-20261021-001/experiments/sp2027-r2/`（README 内含复跑命令）
+- 预注册：`experiments/sp2027-r2/PREREGISTRATION.json` 在 commit `16f6254` 提交，早于全部实验代码；7 条判断中 5 条证实、2 条部分证实、0 条被推翻。
+- `main.pdf` / `supplement.pdf` 已重新编译（正文 13 页，第 8 节为新的 “Controlled Transfer Tests”）。
+- 两个 `.zip` 仍是第一轮快照，未重新打包；以目录内容为准。
 
 ## 目录
 
@@ -35,10 +43,16 @@
 python -B verify_package.py
 python -B verify_revision.py
 
-# 重算实验（Python 3.10+，需 numpy、cryptography、pydantic）
+python -B experiments/sp2027-r2/verify_r2.py
+
+# 重算实验（Python 3.10+，需 numpy、cryptography、pydantic；第二轮另需 scikit-learn、tiktoken）
 python -B experiments/reviewer-audit/recompute.py tls
 python -B experiments/reviewer-audit/recompute.py retail
 python -B experiments/reviewer-audit/recompute.py scenarios
+python -B experiments/sp2027-r2/e5_streaming.py
+python -B experiments/sp2027-r2/e6_e7_retail_cover.py
+python -B experiments/sp2027-r2/e67_eval.py
+python -B experiments/sp2027-r2/resolve_predictions.py
 ```
 
 重跑会更新输出文件，之后需要更新 SHA256 清单。
