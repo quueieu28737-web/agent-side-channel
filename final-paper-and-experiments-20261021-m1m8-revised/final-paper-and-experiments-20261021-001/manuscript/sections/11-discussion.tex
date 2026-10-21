@@ -5,12 +5,12 @@ Applying our repository schema to the literature resolves apparent contradiction
 \paragraph{The downstream re-emission boundary}
 When an upstream LLM API applies record padding or token batching, does that protection cover the user-facing connection after an application frontend? NetEcho demonstrates that a content-aware frontend that consumes decoded upstream tokens and re-serializes responses into new chunks (Trace~A token counts per group; Trace~B character lengths) restores topic and conversation distinguishability \cite{netecho2025}. SplitDecoy establishes the same boundary on a backward return path: even when forward split-model activations are obfuscated with decoys, the returned backward gradient exposes nonzero row support on every tested frame across nine seeds \cite[Sections 5.1--5.3]{politis2026splitdecoy}.
 
-\noindent\textbf{Proposition 1 (target-oblivious postprocessing bound).}
+\noindent\textbf{Remark 1 (target-oblivious postprocessing).}
 Let $S$ be the hidden target, $Z$ the complete protected upstream representation and $Y$ the downstream observation. If $S\to Z\to Y$ forms a Markov chain (any downstream framing or randomization is conditionally independent of $S$ given $Z$), then by the data processing inequality \cite[Theorem~2.8.1]{cover2006elements},
 \[
  I(S;Y)\leq I(S;Z).
 \]
-A content-aware frontend that decrypts, strips padding and re-chunks plaintext ($S\to (Z,\text{plaintext})\to Y$), or a backward pass that computes gradients from unprotected loss masks, need not satisfy $I(S;Y\mid Z)=0$. The sufficient-condition theorem then ceases to certify the bound; leakage must be checked separately. Section~\ref{sec:controlled-placement} reproduces the re-emission mechanism on TLS sockets and tests a streaming emitter.
+A content-aware frontend that decrypts, strips padding and re-chunks plaintext ($S\to (Z,\text{plaintext})\to Y$), or a backward pass that computes gradients from unprotected loss masks, need not satisfy $I(S;Y\mid Z)=0$. The data processing inequality then no longer certifies the bound, and leakage must be checked separately. Section~\ref{sec:controlled-placement} reproduces the re-emission mechanism on TLS sockets and tests a streaming emitter.
 
 \subsection{Case 2: resolve the WRA versus AHB cover asymmetry}
 \paragraph{Two axes of asymmetry: threat polarity and action risk}
@@ -19,7 +19,7 @@ A comparison that groups WRA's decoy requests \cite{jeong2026wra} and AHB's huma
 Binding their result records shows that WRA and AHB sit at opposite poles along \emph{two structural axes}:
 \begin{enumerate}
 \item \textbf{Threat polarity inversion (Type~I vs.\ Type~III):} WRA is a Type~I privacy defense protecting a user's research intent from a network/domain observer. AHB is a Type~III bot-evasion mechanism designed to make an automated mobile GUI agent mimic human touch patterns so it bypasses platform anti-automation controls.
-\item \textbf{Action-interface risk magnitude (discarded read-only queries vs.\ live GUI state mutations):} WRA's decoys are \emph{read-only search and retrieval prompts} whose returned pages are discarded locally before synthesis; they never invoke state-mutating tools on the user's account. By contrast, AHB's \texttt{Fake} operator injects \emph{unfiltered live GUI touch events} directly onto stateful mobile application screens, triggering unintended navigation and form submissions. The non-Fake \texttt{History+Long} configuration changes timing/trajectory history. These source-reported condition rates are not treated as a matched effect: condition-specific sample denominators were not independently recovered in this revision.
+\item \textbf{Action-interface risk magnitude (discarded read-only queries vs.\ live GUI state mutations):} WRA's decoys are \emph{read-only search and retrieval prompts} whose returned pages are discarded locally before synthesis; they never invoke state-mutating tools on the user's account. By contrast, AHB's \texttt{Fake} operator injects \emph{unfiltered live GUI touch events} directly onto stateful mobile application screens, triggering unintended navigation and form submissions. The non-Fake \texttt{History+Long} configuration changes timing/trajectory history. These source-reported condition rates are not treated as a matched effect: condition-specific sample denominators could not be recovered from the source.
 \end{enumerate}
 
 \paragraph{Dispatch-time authorization versus terminal-state scoring}

@@ -17,6 +17,15 @@ observations are real loopback socket captures through a byte-transparent relay.
 | `*_results.json`, `PREREGISTRATION_OUTCOMES.json` | Results used in the manuscript. |
 | `e5_streaming_captures.json`, `e6_sessions.json`, `e7_records.json` | Raw per-unit observations (record-length sequences, tool traces, state outcomes). |
 
+## Checklist-B toolkits (added after E5–E7)
+
+| Directory | Checklist item | Status |
+|---|---|---|
+| `agent/` | B3 autonomous-agent experiment (E8) | Pipeline complete; LLM backends tested against a mock server; stand-in runs only. **No LLM results.** |
+| `coding/` | B1 independent blinded coding | Sheets, codebook, declarations and an analysis with family-cluster intervals. The self-test reproduces α = 0.876 from the supplied columns. **No human coding has been done.** |
+| `release/` | B2 anonymous artifact, K8/K9 confirmations | Anonymity scan (0 hits) and a deterministic zip builder; author-confirmation form. **Not uploaded.** |
+| `search/` | B4 recall | Second arXiv frame: 37/58 core families, a queue of 617 unscreened records. **No recall estimate.** |
+
 ## Run
 
 Python 3.11, numpy, scikit-learn 1.9, cryptography, pydantic, tiktoken (o200k_base).

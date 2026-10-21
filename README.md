@@ -10,6 +10,7 @@
 - 新实验：`final-paper-and-experiments-20261021-m1m8-revised/final-paper-and-experiments-20261021-001/experiments/sp2027-r2/`（README 内含复跑命令）
 - 预注册：`experiments/sp2027-r2/PREREGISTRATION.json` 在 commit `16f6254` 提交，早于全部实验代码；7 条判断中 5 条证实、2 条部分证实、0 条被推翻。
 - `main.pdf` / `supplement.pdf` 已重新编译（正文 13 页，第 8 节为新的 “Controlled Transfer Tests”）。
+- 清单 B 类工具：`experiments/sp2027-r2/agent/`（自主 Agent 实验 E8，未含 LLM 结果）、`coding/`（盲法人工编码）、`release/`（匿名工件）、`search/`（第二检索框架）。
 - 两个 `.zip` 仍是第一轮快照，未重新打包；以目录内容为准。
 
 ## 目录

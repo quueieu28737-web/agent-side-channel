@@ -3,7 +3,7 @@ Encryption conceals message content, yet LLM serving engines and agent systems e
 
 Our systematization asks which evidence permits such reuse. It separates three obligations:
 \begin{enumerate}
-\item \textbf{Bind the receiving projection.} Target-oblivious postprocessing is a sufficient condition for preserving an upstream information bound (Proposition~1). A frontend with access to decoded content or an unprotected backward computation requires a separate argument or measurement \cite{netecho2025,politis2026splitdecoy}.
+\item \textbf{Bind the receiving projection.} Target-oblivious postprocessing is a sufficient condition for preserving an upstream information bound (Remark~1, a direct consequence of the data processing inequality). A frontend with access to decoded content or an unprotected backward computation requires a separate argument or measurement \cite{netecho2025,politis2026splitdecoy}.
 \item \textbf{Bind execution and protected state.} Read-only decoy requests and GUI actions operate on different interfaces and serve different objectives \cite{jeong2026wra,zhu2026turing}. For tools, unchanged argument values do not imply unchanged database state. The relevant contract must identify task objects, the user's account and shared state separately.
 \item \textbf{Bind adaptation, utility and cost.} An attack on defended data must specify how the attacker was fitted; an overhead must identify the same workload and deployed mechanism as the claimed protection. Missing bindings limit reuse without establishing that the original study omitted or failed the experiment.
 \end{enumerate}

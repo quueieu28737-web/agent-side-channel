@@ -1,0 +1,102 @@
+{
+ "queries": [
+  {
+   "id": "F2-01",
+   "query": "(abs:\"language model\" OR abs:LLM OR abs:\"AI agent\" OR abs:\"LLM agent\" OR abs:chatbot) AND (abs:\"side channel\" OR abs:\"side-channel\" OR abs:\"sidechannel\")",
+   "returned": 84
+  },
+  {
+   "id": "F2-02",
+   "query": "(abs:\"language model\" OR abs:LLM OR abs:\"AI agent\" OR abs:\"LLM agent\" OR abs:chatbot) AND (abs:\"prompt leakage\" OR abs:\"prompt stealing\" OR abs:\"prompt extraction\") AND (abs:timing OR abs:cache OR abs:traffic)",
+   "returned": 8
+  },
+  {
+   "id": "F2-03",
+   "query": "(abs:\"language model\" OR abs:LLM OR abs:\"AI agent\" OR abs:\"LLM agent\" OR abs:chatbot) AND (abs:keylogging OR abs:\"token length\" OR abs:\"packet length\" OR abs:\"encrypted traffic\")",
+   "returned": 159
+  },
+  {
+   "id": "F2-04",
+   "query": "(abs:\"language model\" OR abs:LLM OR abs:\"AI agent\" OR abs:\"LLM agent\" OR abs:chatbot) AND (abs:\"timing attack\" OR abs:\"timing leakage\" OR abs:\"timing side\")",
+   "returned": 36
+  },
+  {
+   "id": "F2-05",
+   "query": "(abs:\"language model\" OR abs:LLM OR abs:\"AI agent\" OR abs:\"LLM agent\" OR abs:chatbot) AND (abs:\"KV cache\" OR abs:\"KV-cache\" OR abs:\"prefix caching\" OR abs:\"prompt caching\") AND (abs:leak OR abs:privacy OR abs:attack)",
+   "returned": 64
+  },
+  {
+   "id": "F2-06",
+   "query": "(abs:agent OR abs:agentic) AND (abs:fingerprinting OR abs:\"traffic analysis\" OR abs:\"metadata leakage\")",
+   "returned": 135
+  },
+  {
+   "id": "F2-07",
+   "query": "(abs:\"language model\" OR abs:LLM OR abs:\"AI agent\" OR abs:\"LLM agent\" OR abs:chatbot) AND (abs:\"speculative decoding\" OR abs:\"mixture of experts\" OR abs:\"sparse attention\") AND (abs:leak OR abs:\"side channel\")",
+   "returned": 7
+  },
+  {
+   "id": "F2-08",
+   "query": "(abs:\"language model\" OR abs:LLM OR abs:\"AI agent\" OR abs:\"LLM agent\" OR abs:chatbot) AND (abs:\"electromagnetic\" OR abs:\"power side\" OR abs:\"GPU\" ) AND abs:\"side channel\"",
+   "returned": 11
+  },
+  {
+   "id": "F2-09",
+   "query": "(abs:\"browser agent\" OR abs:\"web agent\" OR abs:\"GUI agent\") AND (abs:fingerprint OR abs:detection OR abs:humanization OR abs:leak)",
+   "returned": 286
+  },
+  {
+   "id": "F2-10",
+   "query": "(abs:\"language model\" OR abs:LLM OR abs:\"AI agent\" OR abs:\"LLM agent\" OR abs:chatbot) AND (abs:padding OR abs:\"cover traffic\" OR abs:obfuscation) AND (abs:traffic OR abs:\"side channel\")",
+   "returned": 17
+  }
+ ],
+ "unique_returns": 749,
+ "screening_queue": 617,
+ "core": {
+  "families": 58,
+  "with_arxiv_id": 49,
+  "frame1_565": 39,
+  "frame2": 37,
+  "either": 46,
+  "neither": [
+   "jeong2026wra",
+   "promptpeek2025",
+   "prompt_echo2026",
+   "gu2026behindbars",
+   "hornetz2026tdxray",
+   "weiss2026detokenization",
+   "yona2024stealing",
+   "chaudhuri2025energon",
+   "weng2026archsnoop",
+   "george2025cycles",
+   "solomon2026lumimas",
+   "scheinert2026rca"
+  ]
+ },
+ "adjacent": {
+  "families": 24,
+  "with_arxiv_id": 22,
+  "frame1_565": 8,
+  "frame2": 6,
+  "either": 10,
+  "neither": [
+   "roh2026spillage",
+   "xu2026sicc",
+   "qiao2026topr",
+   "umar2025secemb",
+   "wu2025mobileagents",
+   "mudryi2025hidden",
+   "nazari2024llmfin",
+   "anwar2026infernet",
+   "wang2026dialogue",
+   "cui2026symdiag",
+   "lahjouji2026datacentric",
+   "shao2026zeroprint",
+   "leshin2026endpoint",
+   "zhu2026stepfinder"
+  ]
+ },
+ "interpretation": "Overlap with an author-designed second frame; not an independent recall estimate. Families found by neither frame were found by seed snowballing only.",
+ "retrieved_utc": "2026-10-21T16:24:55Z"
+}

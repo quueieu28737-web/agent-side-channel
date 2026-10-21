@@ -82,6 +82,17 @@ def main():
         subprocess.run([sys.executable, "-B", str(HERE / "make_tables.py"), tmp], check=True, capture_output=True)
         for f in ("transfer-streaming", "transfer-cover", "transfer-predictions", "supp-transfer"):
             assert (Path(tmp) / f"{f}.tex").read_bytes() == (TAB / f"{f}.tex").read_bytes(), f
+    with tempfile.TemporaryDirectory() as tmp:  # E8 supplement table
+        subprocess.run([sys.executable, "-B", str(HERE / "agent/make_e8_table.py"), tmp], check=True, capture_output=True)
+        assert (Path(tmp) / "supp-e8.tex").read_bytes() == (TAB / "supp-e8.tex").read_bytes(), "supp-e8"
+    for run in ("scripted", "noisy-scripted"):
+        D = HERE / "agent/runs" / run
+        eps = [json.loads(l) for l in (D / "trajectories.jsonl").read_text().splitlines()]
+        assert len(eps) == 345 and all(e["native_reward"] == 1.0 for e in eps)
+        sess = json.loads((D / "e6_sessions.json").read_text())
+        real = {(e["task"], e["seed"]): [c["name"] for c in e["calls"]] for e in eps}
+        for s in sess:
+            assert [c["name"] for c in s["calls"] if c["kind"] == "real"] == real[(s["task"], s["seed"])]
     before = (HERE / "PREREGISTRATION_OUTCOMES.json").read_bytes()
     subprocess.run([sys.executable, "-B", str(HERE / "resolve_predictions.py")], check=True, capture_output=True)
     assert (HERE / "PREREGISTRATION_OUTCOMES.json").read_bytes() == before
