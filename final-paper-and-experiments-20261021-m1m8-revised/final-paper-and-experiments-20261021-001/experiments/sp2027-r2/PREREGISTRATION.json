@@ -1,0 +1,61 @@
+{
+  "written_before_execution": true,
+  "date": "2026-10-21",
+  "purpose": "Audit-derived judgments for seven transfer claims, recorded and committed before E5-E7 were executed. Each judgment is produced by applying Checks 1-3 / items R1-R9 of the manuscript to the existing evidence only. The experiments then resolve each claim. This tests whether the checks flag transfers that subsequently fail; it is authored by the same team and is therefore a falsifiable internal test, not external validation.",
+  "decision_thresholds": {
+    "protected": "best held-out attacker balanced accuracy (BA) upper 95% task/topic-bootstrap bound < 0.60 and AUROC < 0.65",
+    "not_protected": "best held-out attacker BA lower 95% bound > 0.60",
+    "otherwise": "inconclusive"
+  },
+  "claims": [
+    {
+      "id": "P1",
+      "claim": "The training-fitted constant cap (buffered T1 record-length projection: 50% accuracy at 2.18x) transfers to a token-streaming emitter of the same texts.",
+      "audit_judgment": "Unresolved -> predicted Incompatible",
+      "checks": ["Check 1 (receiver projection changes from total length to an event sequence)", "R9 (cost object changes: buffered message vs. stream)"],
+      "prediction": "Per-event constant padding leaves verbosity accuracy >= 90%; a constant-shape stream that reaches ~50% costs more than 2.18x per-token-stream bytes or requires buffering."
+    },
+    {
+      "id": "P2",
+      "claim": "A low clean-trained (D0) accuracy under batched/bucketed streaming establishes protection.",
+      "audit_judgment": "Unresolved (R5 missing)",
+      "checks": ["R4/R5"],
+      "prediction": "Defended-trained D2 accuracy exceeds D0 for at least one batched or randomized streaming policy."
+    },
+    {
+      "id": "P3",
+      "claim": "Per-event padding (the deployed 'obfuscation field' style mitigation) prevents closed-world identification of a known response among the 48 saved responses.",
+      "audit_judgment": "Unresolved -> predicted Incompatible",
+      "checks": ["Check 1 (count remains in projection)", "R7 (inference target changes from a binary label to identity)"],
+      "prediction": "Identification remains far above chance (>= 25% top-1 vs. 2.1% chance) under per-event constant or random padding."
+    },
+    {
+      "id": "P4",
+      "claim": "Cover that equalizes the count of the target verb (cancel) in the dispatch view hides the cancellation label from a learned sequence observer.",
+      "audit_judgment": "Unresolved -> predicted Incompatible",
+      "checks": ["Check 3 (adaptive, policy-aware attacker required)", "R2 (receiver sees correlated non-target verbs)"],
+      "prediction": "A learned observer on non-target verbs and response lengths keeps BA lower bound > 0.60."
+    },
+    {
+      "id": "P5",
+      "claim": "Dispatch-view cover evaluated against a tool-name observer also protects against a network observer of the encrypted agent-tool link.",
+      "audit_judgment": "Unresolved (different receiver)",
+      "checks": ["Check 1"],
+      "prediction": "Without transport framing, request/response record sizes identify tool calls and the network attacker remains not_protected."
+    },
+    {
+      "id": "P6",
+      "claim": "Transport framing (bucketed records) on the agent-tool link alone protects workflow intent.",
+      "audit_judgment": "Unresolved -> predicted Incompatible",
+      "checks": ["Check 1 (message count and direction remain)", "Check 2 (execution path unchanged)"],
+      "prediction": "Network attacker BA lower bound > 0.60 under framing without cover."
+    },
+    {
+      "id": "P7",
+      "claim": "Jointly binding execution (shadow-executed shape-equalizing cover) and transport (constant framing) yields protection without database damage.",
+      "audit_judgment": "Unresolved; plausible only when both boundaries are bound",
+      "checks": ["Checks 1-3 jointly", "R7-R9 jointly"],
+      "prediction": "Best attacker BA upper bound < 0.60 with 100% database equality, at a byte and call overhead substantially larger than either component alone."
+    }
+  ]
+}
