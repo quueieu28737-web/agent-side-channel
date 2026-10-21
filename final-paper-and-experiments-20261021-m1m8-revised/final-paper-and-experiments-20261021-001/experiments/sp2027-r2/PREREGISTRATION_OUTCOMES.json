@@ -1,0 +1,189 @@
+{
+ "thresholds": {
+  "protected": "best held-out attacker balanced accuracy (BA) upper 95% task/topic-bootstrap bound < 0.60 and AUROC < 0.65",
+  "not_protected": "best held-out attacker BA lower 95% bound > 0.60",
+  "otherwise": "inconclusive"
+ },
+ "outcomes": [
+  {
+   "id": "P1",
+   "outcome": "confirmed",
+   "evidence": {
+    "tok_const_T1_D2": [
+     1.0,
+     1.0
+    ],
+    "stream_cap_ratio_vs_token_stream": [
+     2.400098087025913,
+     2.422471327107816
+    ],
+    "stream_cap_completion_token_intervals": [
+     208.375,
+     208.375
+    ],
+    "buffered_cap_ttfb_token_intervals": 105.27083333333333
+   }
+  },
+  {
+   "id": "P2",
+   "outcome": "confirmed",
+   "evidence": {
+    "batch8_T1_D0": 0.5,
+    "batch8_T1_D2": 1.0,
+    "E6_cancel_p100_D0_ba": 0.5,
+    "E6_cancel_p100_best_ba": 1.0
+   }
+  },
+  {
+   "id": "P3",
+   "outcome": "confirmed",
+   "evidence": {
+    "identification_top1": {
+     "tok_randpad": 0.6229166666666667,
+     "tok_const": 0.5833333333333334
+    },
+    "chance": 0.020833333333333332
+   }
+  },
+  {
+   "id": "P4",
+   "outcome": "confirmed",
+   "evidence": {
+    "best": "D2_logreg",
+    "ba": 0.7690912562046582,
+    "ci95": [
+     0.648281678468534,
+     0.8798732408948302
+    ],
+    "count_rule_ba": 0.5
+   }
+  },
+  {
+   "id": "P5",
+   "outcome": "confirmed",
+   "evidence": {
+    "request_size_to_tool_accuracy_raw": 0.9570446735395189,
+    "cells": [
+     {
+      "target": "cancel",
+      "cover": "cancel_const2_shadow",
+      "ba": 0.7268995799923634,
+      "ci95": [
+       0.6131575788210021,
+       0.8411464585834333
+      ],
+      "status": "not_protected"
+     },
+     {
+      "target": "cancel",
+      "cover": "decoy1_shadow",
+      "ba": 0.9192439862542956,
+      "ci95": [
+       0.8975661057692308,
+       0.9421052631578948
+      ],
+      "status": "not_protected"
+     },
+     {
+      "target": "return",
+      "cover": "cancel_const2_shadow",
+      "ba": 0.9567018072289157,
+      "ci95": [
+       0.905231533897571,
+       0.9943820224719101
+      ],
+      "status": "not_protected"
+     },
+     {
+      "target": "return",
+      "cover": "decoy1_shadow",
+      "ba": 0.8594377510040161,
+      "ci95": [
+       0.8292168209876544,
+       0.8903064932020628
+      ],
+      "status": "not_protected"
+     }
+    ]
+   }
+  },
+  {
+   "id": "P6",
+   "outcome": "partially_confirmed",
+   "evidence": [
+    {
+     "target": "cancel",
+     "framing": "bucket1024",
+     "ba": 0.6005154639175257,
+     "ci95": [
+      0.4793620855992616,
+      0.7322553684439675
+     ],
+     "status": "inconclusive"
+    },
+    {
+     "target": "cancel",
+     "framing": "const",
+     "ba": 0.5973654066437571,
+     "ci95": [
+      0.4707873400479291,
+      0.7228387681159419
+     ],
+     "status": "inconclusive"
+    },
+    {
+     "target": "return",
+     "framing": "bucket1024",
+     "ba": 0.7388930722891567,
+     "ci95": [
+      0.6498286528466808,
+      0.826530806027757
+     ],
+     "status": "not_protected"
+    },
+    {
+     "target": "return",
+     "framing": "const",
+     "ba": 0.5355798192771084,
+     "ci95": [
+      0.4347534249287298,
+      0.6342266307878572
+     ],
+     "status": "inconclusive"
+    }
+   ]
+  },
+  {
+   "id": "P7",
+   "outcome": "partially_confirmed",
+   "evidence": [
+    {
+     "target": "cancel",
+     "ba": 0.5443871706758305,
+     "ci95": [
+      0.4749922331871345,
+      0.6174469787915167
+     ],
+     "auroc": 0.5004136438844342,
+     "status": "inconclusive",
+     "db_equality": 1.0,
+     "wire_ratio": 26.3170109399606,
+     "round_trip_ratio": 7.706185567010309
+    },
+    {
+     "target": "return",
+     "ba": 0.5,
+     "ci95": [
+      0.5,
+      0.5
+     ],
+     "auroc": 0.5,
+     "status": "protected",
+     "db_equality": 1.0,
+     "wire_ratio": 26.3170109399606,
+     "round_trip_ratio": 7.706185567010309
+    }
+   ]
+  }
+ ]
+}

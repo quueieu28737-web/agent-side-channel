@@ -22,11 +22,9 @@
         "sections/27-intervention-contracts.tex",
         "sections/28-fingerprint-dependencies.tex",
         "sections/30-reproducibility-guide.tex",
-        "sections/32-controlled-placement.tex",
-        "sections/35-tau-cover-bridge.tex",
+        "sections/37-transfer-tests.tex",
         "tables/boundary-rules.tex",
         "tables/comparison-contracts.tex",
-        "tables/controlled-placement.tex",
         "tables/corpus-citations.tex",
         "tables/defense-types.tex",
         "tables/final-counts.tex",
@@ -36,10 +34,12 @@
         "tables/scenario-confusions.tex",
         "tables/six-check-audit.tex",
         "tables/synthesis-decisions.tex",
-        "tables/tau-cover-bridge.tex"
+        "tables/transfer-cover.tex",
+        "tables/transfer-predictions.tex",
+        "tables/transfer-streaming.tex"
       ],
       "pdf": "pdf/main.pdf",
-      "pdf_sha256": "0327877965bd0f43931fe8ebde35d50a2a10c626cdb5eabf1c43ce5417002001"
+      "pdf_sha256": "0b532d129ed4ff31c9e1f779e69bc3fd72bffadb242f8a5855a30c6654402e0d"
     },
     "supplement": {
       "entry": "supplement.tex",
@@ -59,8 +59,10 @@
         "sections/33-controlled-details.tex",
         "sections/34-search-update.tex",
         "sections/36-tau-cover-details.tex",
+        "sections/38-retained-controlled.tex",
         "supplement.tex",
         "tables/conclusion-source-dependencies.tex",
+        "tables/controlled-placement.tex",
         "tables/corpus-citations.tex",
         "tables/dependency-holdouts.tex",
         "tables/final-counts.tex",
@@ -75,42 +77,46 @@
         "tables/related-sok-matrix.tex",
         "tables/result-lineage-example.tex",
         "tables/selection-flow.tex",
-        "tables/six-check-audit.tex"
+        "tables/six-check-audit.tex",
+        "tables/supp-transfer.tex",
+        "tables/tau-cover-bridge.tex"
       ],
       "pdf": "pdf/supplement.pdf",
-      "pdf_sha256": "0127c13e6a03e35c3e682d864eccac6b3d63f6004320f18c22809920a33762e4"
+      "pdf_sha256": "4073064478a11ea145e0730a0bf554273d3304fccdc2e3028c36491ed671a312"
     }
   },
   "source_hashes": {
-    "main.tex": "c6e3b2cb513204d25f724513157730f11afa963b4305b6e11ea366a97beb9251",
-    "refs-final-additions.bib": "2b130ea8fda411684d6269dcc5a48b729560ab1ab708650bb57c9d2e6b13ee74",
-    "refs.bib": "0ea286688fbee354e8bba138ae7d07240f0414201cca3e5f3f2598ddf4d42731",
-    "supplement.tex": "e6a366e54931ee01be84e45a3b1ee820067522cab718ca0ffb87512ef2953f50",
+    "evidence/search-completion-20261021-001/new_refs.bib": "052ac29638585c0798e5c641b19e2d396823f878159fdd5309cfbc0e843b7a3e",
+    "evidence/search-completion-20261021-001/new_refs_adjacent.bib": "082b2fdccc4a4b7cf79d4502f8f7a47fbc732aa29ebb63c3daa12d58b280d459",
     "figures/defense-decision-procedure.tex": "e91e8e96173ab65c4651a71aef720dff3758704ac2af16c10395a346ebac8e85",
     "figures/fig1-system-model.tex": "17902db2113b6b6abb4d98af1f5f40a4efd9dd44b306527710d63f9816fd1854",
-    "sections/01-introduction.tex": "6dd7bdd453fcc91693b8a0f5eb2f5ddf6af227a65f8967dc39e447768809f172",
+    "main.tex": "7d5214b972633b7d982759a335c3ad0f83ec634d75275ccb113c6fb1b0222d17",
+    "refs-final-additions.bib": "2b130ea8fda411684d6269dcc5a48b729560ab1ab708650bb57c9d2e6b13ee74",
+    "refs.bib": "0ea286688fbee354e8bba138ae7d07240f0414201cca3e5f3f2598ddf4d42731",
+    "sections/01-introduction.tex": "ec914552043c92debdd445fab5628a8a68c65c72f02b8afd57b556fb7ee8fb8f",
     "sections/03-methodology.tex": "d69c9bc01baf7caf50019a1c9d39326e13676f0361d2e347054af179f156bc98",
     "sections/04-scope.tex": "2be2431b50568b0ce5e7544c94255dfb9e61292593539a0bb5d8e67667fcfb8f",
-    "sections/10-open-challenges.tex": "381045573cd82142fb707f543f05733a2650717270cf97d1d783fc4998534d23",
-    "sections/11-discussion.tex": "995548d4a2746361de6328c8684425ec8d88bd27654ef59752443975a075c435",
-    "sections/12-conclusion.tex": "316adf3edbb9cb1697e82585453b201e1e4a9c40b0b3a882a1d8cdf82894d6db",
+    "sections/10-open-challenges.tex": "26bc1f16ae5161be9d5e88bbce9586b1251dc60bde3d8f1c14a95b6671792eaf",
+    "sections/11-discussion.tex": "349b1c4741f9f9ce761d569b98cea955055e178d0f77352a429b1a83812c2956",
+    "sections/12-conclusion.tex": "4ec9d4a92cd4c3ef986724088ddd7976f984b5fef96eaaf547a60dacd002bc3e",
     "sections/17-public-trace-details.tex": "0531d7c59bd28dcb4680c54ec8b45d3025d5f78d1b6e9c0e6ce1a0dc31f562eb",
     "sections/19-final-ledger.tex": "28018e1371c9fb3b0a76e82c06dd731695924aee0e030ee3e4e266160ae9228a",
     "sections/21-retained-controls-summary.tex": "7b5a9a22ae4ce6973b82a390cd791f0ea2dab6e60046488f6664083c39648493",
     "sections/22-search-audit-summary.tex": "2b3d2c2199a0d69177737f0f960e65ead325206cb5475f4e6ef0ae2ad617cb60",
     "sections/23-defense-comparison.tex": "7c8e0ad3cb010d3687f1e6ffbe383b8a0135704cb9b3d308ae9f9b34af98668b",
     "sections/24-conclusion-sensitivity.tex": "56b6930205ec4d7f0e0e0a1ef8deeecd77997f2116fd3c8c21718c2bc0c24b91",
-    "sections/26-corpus-map.tex": "0916c5858d5c9fdf7ff80a4497b16d382eb0d6b40a2104a1b019ac16dc6ab73d",
+    "sections/26-corpus-map.tex": "9dab46424f9d561d6c284fe15cebfde8a03081751b2975bb7fa8b33e0a2173b9",
     "sections/27-intervention-contracts.tex": "3ca703d2ae3f695d20bc79d933f91400100edd5e68bf7d5a96a98136a73362ea",
     "sections/28-fingerprint-dependencies.tex": "5d285964be1d5f57440a225350cfc236215c7746e7e50f66ec789c16688af9b4",
     "sections/29-scope-comparison-boundary.tex": "d7c8248144b2d9719b03f94dab178ba20d2b40d77d1e7c0ffd83b83ec293704a",
-    "sections/30-reproducibility-guide.tex": "313a9901f508b3cb673fde9926efb689aab65287b161542c17c1df740d1e3bd4",
+    "sections/30-reproducibility-guide.tex": "b01bcb96689f5fceaf87b5e3f45d92f7834046d0ed96478a075a0e0a25c48bec",
     "sections/31-result-audit.tex": "bfb91548755e99a042328b9932bda6bc933d8f7926e5c113bdd4428e0bc9366b",
-    "sections/32-controlled-placement.tex": "eb112b9f3d8277f42526e46e574059bee1011cfc1560e95a108a1485a1fa84b7",
     "sections/33-controlled-details.tex": "1d7dbdf06993bc17aeda1a9817acdee00f33af0ebfb65ba45bb6287425ffd9c7",
     "sections/34-search-update.tex": "59ba0f21c83e908ef295d821e8bb45684e683facaf3de37eac87250696f9ea3a",
-    "sections/35-tau-cover-bridge.tex": "8977c9971398e886298ca92011cb185dad9c5f09614192e61a0f9c8b132d0627",
     "sections/36-tau-cover-details.tex": "00d663e6727d1898d679142d166f128a60a358c24eb1c5685033d1d56257e20b",
+    "sections/37-transfer-tests.tex": "1004e7d73044e7eed3709c0955238ae1fc409d71b611a19c42e5a5c2cb22e415",
+    "sections/38-retained-controlled.tex": "32cc36df7ba6b706108b2af39ee4245081ec0ceca0ae0cfd82971f4bb6dc99ee",
+    "supplement.tex": "257443b0394e9e89f82eb78a4da1acd38d52a86a4da9ca06007af39b6b18a61b",
     "tables/boundary-rules.tex": "48fad0ffb9aec59f2acc34e720f55b0335a8a688dd07a456f62ad74eabf2147b",
     "tables/comparison-contracts.tex": "d0788cdaf7b93cbbf7d3926f9672d6973ea4745f08b2db914b6d2cad68c11b2b",
     "tables/conclusion-source-dependencies.tex": "074e266a11ea655d231259a442b76aa3d495751c4c9eb20e9d663e50f21571ce",
@@ -134,10 +140,12 @@
     "tables/scenario-confusions.tex": "0cf56073956b4107e123698a2ea07d6978f28fed9cd595ff6932c5582581ffc0",
     "tables/selection-flow.tex": "3a7036365015443798d6f1093948e133ea0161754448188ebcfa8e8f889399d7",
     "tables/six-check-audit.tex": "6112a5019b7f568979dec7555cf06ac04bdea2d2d691b2ad43325a79fc3d7985",
-    "tables/synthesis-decisions.tex": "dd9a539dc401670fe66dc986fa7e58e78df45a1e39158c7fcad5234493ca47e3",
+    "tables/supp-transfer.tex": "25768c84325b47e710a029f66c3cf270d6fb1c663c6826ae765ff2a76604567c",
+    "tables/synthesis-decisions.tex": "fb6b2a9af32251c3aadd59b04b9698fe27ff78c60b5da67b20a55b61f857f43d",
     "tables/tau-cover-bridge.tex": "36c17a2680adef8ef712caea0b4fc2a5698bd419542ccd11f99ad8dd9cdaed67",
-    "evidence/search-completion-20261021-001/new_refs.bib": "052ac29638585c0798e5c641b19e2d396823f878159fdd5309cfbc0e843b7a3e",
-    "evidence/search-completion-20261021-001/new_refs_adjacent.bib": "082b2fdccc4a4b7cf79d4502f8f7a47fbc732aa29ebb63c3daa12d58b280d459"
+    "tables/transfer-cover.tex": "38fdf544b663e364a354398e0ae5cc7ca2b9e0cdb2a8667d05184cf1add58b03",
+    "tables/transfer-predictions.tex": "825010b15bc661e0f80938f85359c50b56be2fa49077e7ef550ce9909e5abc78",
+    "tables/transfer-streaming.tex": "746a2bbbcb2d5e31362f014856c728426033a177bc4e395886e09076e795bda8"
   },
   "retained_manifest_sha256": "6f91cd99983194855a071c49bec429497120c45720e9f5a2166abfe020b3621e",
   "tau_files_copied": 61,
@@ -177,5 +185,16 @@
     "record_count": 39,
     "record_families": 26,
     "audit_families": 20
+  },
+  "second_round": {
+    "directory": "experiments/sp2027-r2",
+    "preregistration_commit": "16f6254",
+    "experiments": [
+      "E5 streaming emitter",
+      "E6 randomized cover",
+      "E7 agent-tool TLS link"
+    ],
+    "model_calls": 0,
+    "production_services": 0
   }
 }

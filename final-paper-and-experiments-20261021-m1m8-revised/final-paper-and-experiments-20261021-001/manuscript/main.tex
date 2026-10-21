@@ -34,14 +34,14 @@
 \newcolumntype{Y}{>{\raggedright\arraybackslash}X}
 \input{tables/final-counts}
 
-\title{SoK: Evidence Boundaries of LLM and Agent Side-Channel Defenses\\A Result-Record Audit and Two Controlled Case Studies}
+\title{SoK: Evidence Boundaries of LLM and Agent Side-Channel Defenses\\A Result-Record Audit with Pre-Registered Transfer Tests}
 \author{}
 
 \begin{document}
 \maketitle
 
 \begin{abstract}
-Published side-channel defenses protect specific observations and execution environments. Reusing these results in LLM-based workflows requires identifying which guarantees survive changes in receivers, tool state and attacker adaptation. We systematize \FinalN{} study families (\FinalCore{} core and \FinalAdjacent{} adjacent), retaining 39 scoped result records and auditing 20 mitigation families. A nine-item reporting audit and three deployment checks bind each result to its target, observer, execution boundary, workload and measured cost. The audit distinguishes established incompatibility from missing or unverified evidence; only 3 of 17 applicable families bind task or component utility, and 2 of 11 bind a matched adaptation contrast. Two controlled case studies illustrate the resulting evaluation obligations. Replays of 48 saved responses over two TLS~1.2 links reproduce downstream re-emission after upstream length padding. With matched workload denominators, 512-byte buckets cost 2.30$\times$ and 1.43$\times$ for two sentence-prefix workloads; a cap fitted to training lengths reaches 50\% test accuracy at 2.18$\times$ for the verbosity target. Replaying 115 retail reference programs shows that same-item writes can change workflow state, and that preserving task objects differs from preserving an account or a shared database. Simple count or position rules recover cancellation labels despite cover calls. These are local mechanism tests, not a combined autonomous-agent evaluation. The contribution is a reusable evidence audit that identifies which comparisons are supported and which require new measurements.
+Published side-channel defenses protect specific observations and execution environments. Reusing these results in LLM-based workflows requires identifying which guarantees survive changes in receivers, tool state and attacker adaptation. We systematize \FinalN{} study families (\FinalCore{} core and \FinalAdjacent{} adjacent), retaining 39 scoped result records and auditing 20 mitigation families. A nine-item reporting audit and three deployment checks bind each result to its target, observer, execution boundary, workload and measured cost. Only 3 of 17 applicable families bind task or component utility, and 2 of 11 bind a matched adaptation contrast. To test whether the checks identify transfers that fail, we recorded seven audit judgments before running three controlled experiments. Five were confirmed and two partly confirmed; none was refuted. Streaming the same 48 saved responses as per-token TLS records shows that per-event padding leaves verbosity fully separable and identification at 58--62\% (chance 2.1\%). A buffered cap's 2.18$\times$ cost therefore does not price a stream. On 115 retail reference programs, randomized cancellation cover and decoy programs leave learned or count attacks at 77--100\% balanced accuracy, and clean-trained attackers read 50\% where refitted ones read 100\%. On an encrypted agent--tool link, request sizes identify the tool for 95.7\% of calls. Cover alone or framing alone leaves a channel open; only shape-equalizing sandboxed cover combined with constant framing approaches chance, at 26$\times$ bytes and 7.7$\times$ calls. These tests replay saved outputs and reference programs and do not evaluate an autonomous agent.
 \end{abstract}
 
 \input{sections/01-introduction}
@@ -51,7 +51,7 @@ Published side-channel defenses protect specific observations and execution envi
 \input{sections/11-discussion}
 \input{sections/27-intervention-contracts}
 \input{sections/28-fingerprint-dependencies}
-\input{sections/32-controlled-placement}
+\input{sections/37-transfer-tests}
 \input{sections/10-open-challenges}
 \input{sections/12-conclusion}
 

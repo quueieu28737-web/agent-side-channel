@@ -9,6 +9,15 @@
 - 文本差异：`provenance/manuscript.patch`；原稿备份：`provenance/pre-review-manuscript.zip`。
 - 历史证据：`evidence/retained-release007/`和`experiments/revision-m1-m8/`保持历史内容，不能用其中旧摘要覆盖本轮修正。
 
+## 第二轮修订（2026-10-21，`test` 分支）
+
+- 新增 `experiments/sp2027-r2/`：E5 流式发射器（TLS 1.2/1.3）、E6 随机化 cover 与策略感知攻击者、E7 加密 agent–tool 链路组合，以及实验前提交的 7 条审计判断（`PREREGISTRATION.json`，commit `16f6254`）。结果为 5 条证实、2 条部分证实、0 条被推翻。
+- 主稿第 8 节改写为 “Controlled Transfer Tests”（Table 10–12）；第一轮受控实验完整表格移到 Supplement S11，E5–E7 全部区间在 S12。
+- 审稿意见与修改清单：仓库根目录 `docs/R2-SP2027-审稿与修改清单.md`。
+- 校验：`python -B experiments/sp2027-r2/verify_r2.py`（仅用标准库）。
+- 复跑：需要 scikit-learn 1.9 和 tiktoken（o200k_base），命令见 `experiments/sp2027-r2/README.md`。
+- 仍未完成：独立盲法人工编码、匿名公开仓库、自主 Agent 实验，详见清单 B 类。
+
 ## 关键改动
 
 T2/T3匹配成本为2.30×/1.43×；训练集定cap为2.18×。旧0.87×/0.91×跨工作负载分母已撤回。
