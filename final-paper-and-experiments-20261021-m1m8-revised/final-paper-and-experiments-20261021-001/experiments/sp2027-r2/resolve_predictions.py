@@ -1,6 +1,7 @@
 """Resolve the seven pre-registered transfer claims from the saved E5-E7 results.
 Thresholds are the ones written in PREREGISTRATION.json before execution."""
 import json
+import sys
 from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
@@ -76,6 +77,7 @@ out.append({"id": "P7", "outcome": "confirmed" if all(s == "protected" for s in 
             "evidence": [{"target": x["target"], "ba": x["best_ba"], "ci95": x["best_ba_ci95"], "auroc": x["best_auroc"],
                           "status": status(x), "db_equality": x["db_equality"], "wire_ratio": x["wire_ratio"],
                           "round_trip_ratio": x["round_trip_ratio"]} for x in rs]})
-(HERE / "PREREGISTRATION_OUTCOMES.json").write_text(json.dumps({"thresholds": pre["decision_thresholds"], "outcomes": out}, indent=1))
+destination = Path(sys.argv[1]) if len(sys.argv) > 1 else HERE / "PREREGISTRATION_OUTCOMES.json"
+destination.write_text(json.dumps({"thresholds": pre["decision_thresholds"], "outcomes": out}, indent=1), encoding="utf-8", newline="\n")
 for o in out:
     print(o["id"], o["outcome"])

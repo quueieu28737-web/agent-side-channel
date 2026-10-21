@@ -1,4 +1,6 @@
-# sp2027-r2: controlled transfer tests (E5–E7) and pre-registered predictions
+# sp2027-r2: historical controlled transfer tests (E5–E7)
+
+R3 NOTICE: raw observations and registration remain unchanged. Current manuscript interpretations, E6/E7 suite intervals and held-out request-only identification use ../sp2027-r3/. Historical judgment counts are not a validation score. P5 lacks the source-protection premise; no E7 configuration meets both target criteria.
 
 This directory adds three controlled experiments requested in the second-round
 S&P 2027 self-review. They test claims that the paper's audit marks as
@@ -14,7 +16,7 @@ observations are real loopback socket captures through a byte-transparent relay.
 | `e6_e7_retail_cover.py` | Generates E6/E7 sessions: 115 retail reference programs × 3 seeds × 8 cover policies; cover calls are sampled from other tasks' programs and placed at random positions; shadow or live execution. Replays 4 cover policies × 3 framings over TLS 1.2 (4,140 sessions). |
 | `e67_eval.py` | Evaluates E6 (dispatch view) and E7 (network view) from the saved files with task-grouped 5-fold CV and task-cluster bootstrap. |
 | `resolve_predictions.py` | Applies the pre-registered thresholds to the results. |
-| `*_results.json`, `PREREGISTRATION_OUTCOMES.json` | Results used in the manuscript. |
+| `*_results.json`, `PREREGISTRATION_OUTCOMES.json` | Historical results; current E6/E7 summaries and judgment reassessment use R3. |
 | `e5_streaming_captures.json`, `e6_sessions.json`, `e7_records.json` | Raw per-unit observations (record-length sequences, tool traces, state outcomes). |
 
 ## Checklist-B toolkits (added after E5–E7)

@@ -1,0 +1,78 @@
+R3 validation (2026-10-21)
+Post-review correction; no model API calls or new TLS captures.
+
+verify_revision.py
+{
+  "status": "CORRECTED_OBSERVATION_AND_TABLE_CONSISTENCY_PASS",
+  "retail_rows": 6210,
+  "retail_tasks": 115,
+  "eligible_tasks": 97,
+  "test_tasks": 49,
+  "record_ledger_records": 39,
+  "record_ledger_families": 26,
+  "audit_families": 20,
+  "new_model_calls": 0
+}
+
+experiments/sp2027-r2/verify_r2.py
+{
+  "status": "SP2027_R2_TRANSFER_TESTS_PASS",
+  "e5_captures": 4416,
+  "e6_sessions": 2760,
+  "e7_tls_sessions": 4140,
+  "historical_predictions": {
+    "P1": "confirmed",
+    "P2": "confirmed",
+    "P3": "confirmed",
+    "P4": "confirmed",
+    "P5": "confirmed",
+    "P6": "partially_confirmed",
+    "P7": "partially_confirmed"
+  },
+  "new_model_calls": 0
+}
+
+experiments/sp2027-r3/verify_r3.py
+{
+  "status": "R3_PASS",
+  "saved_prediction_sets": 184,
+  "e6_cells": 16,
+  "e7_cells": 24,
+  "identity_calls_per_split": 582,
+  "bootstrap_draws": 2000,
+  "tables": 4,
+  "raw_input_hashes": 5,
+  "new_model_calls": 0
+}
+
+main.pdf: 18 pages; root/manuscript/pdf copies identical; references and overflow checks PASS.
+
+supplement.pdf: 20 pages; root/manuscript/pdf copies identical; references and overflow checks PASS.
+
+Main: 13 body pages + 1 appendix + 4 reference pages.
+Rendered review: main title, pages 9–13; supplement S12/S13 tables; no clipping or overlap observed.
+
+Bootstrap replacement matched original on a tied-score, unequal-cluster fixture to absolute tolerance 1e-12.
+R3 BA point estimates match R2; suite intervals are conditional and approximate, not security bounds.
+
+Final package verification:
+{
+  "status": "PACKAGE_BYTES_CLOSURES_SAVED_CENSUS_AND_M1_M8_REVISION_PASS",
+  "manifest_files": 2681,
+  "preserved_release_files": 2414,
+  "tau_tasks": 115,
+  "tau_eligible_tasks": 97,
+  "tau_units": 3450,
+  "prior_rows_preserved": 851,
+  "distinct_saved_task_states": 244,
+  "m1_retrospective_cases": 24,
+  "m1_kappa": 0.795,
+  "m7_dual_coding_kappas": {
+    "screening_100": 0.886,
+    "audit_144": 0.876,
+    "pairs_150": 0.916
+  },
+  "new_model_calls": 0,
+  "new_task_collection": false,
+  "uploads": 0
+}

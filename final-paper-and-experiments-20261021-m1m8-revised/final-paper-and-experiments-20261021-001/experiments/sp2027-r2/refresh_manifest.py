@@ -33,12 +33,20 @@ def main():
         "experiments": ["E5 streaming emitter", "E6 randomized cover", "E7 agent-tool TLS link"],
         "model_calls": 0, "production_services": 0,
     }
-    snap_p.write_text(json.dumps(snap, indent=2), encoding="utf-8")
+    r3 = ROOT / "experiments/sp2027-r3/run_metadata.json"
+    if r3.is_file():
+        snap["third_round"] = {
+            "directory": "experiments/sp2027-r3",
+            "analysis": json.loads(r3.read_text(encoding="utf-8")),
+            "input_hashes": json.loads((r3.parent / "input_hashes.json").read_text(encoding="utf-8")),
+            "scope": "Post-review evaluation correction; no new external or autonomous-agent measurements",
+        }
+    snap_p.write_text(json.dumps(snap, indent=2), encoding="utf-8", newline="\n")
     skip = {"SHA256SUMS.json"}
     entries = {p.relative_to(ROOT).as_posix(): digest(p) for p in sorted(ROOT.rglob("*"))
                if p.is_file() and p.relative_to(ROOT).as_posix() not in skip
                and "__pycache__" not in p.parts}
-    (ROOT / "SHA256SUMS.json").write_text(json.dumps({"algorithm": "SHA-256", "files": entries}, indent=2), encoding="utf-8")
+    (ROOT / "SHA256SUMS.json").write_text(json.dumps({"algorithm": "SHA-256", "files": entries}, indent=2), encoding="utf-8", newline="\n")
     print("snapshot and manifest refreshed:", len(entries), "files")
 
 

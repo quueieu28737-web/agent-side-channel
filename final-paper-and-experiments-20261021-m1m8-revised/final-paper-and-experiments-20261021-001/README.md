@@ -1,17 +1,23 @@
-# 审稿意见修订版（2026-10-21）
+# 审稿意见修订版（2026-10-21，第三轮）
+
+当前结论与评估以 REVISION-R3.txt 和 experiments/sp2027-r3/ 为准。
+R3 重算固定攻击器、折外 request-only 工具识别与套件最大值区间，补充训练模板溢出审计。
+没有网络配置同时满足两个目标的有限套件判据；P5 缺少源端保护前提。
+七项作者判断不构成审计区分能力验证。R2 原始注册和结果保持历史内容。
+最终校验记录：experiments/sp2027-r3/validation.txt。
 
 本包已按两份意见重写主稿、同步补充材料，并从保存输入重跑本地 TLS 和零售工具实验。
 
-- 阅读：`pdf/main.pdf`（18页：13正文＋1附录＋4参考文献）；`pdf/supplement.pdf`（14页）。
+- 阅读：`pdf/main.pdf`（18页：13正文＋1附录＋4参考文献）；`pdf/supplement.pdf`（20页）。
 - 修订说明：`REVISION-RESPONSE.txt`，逐条对应 A1–A16、B1–B21，并列出没有补做的研究。
 - 编辑：`manuscript/main.tex`、`manuscript/supplement.tex`。
-- 当前实验：`experiments/reviewer-audit/`；脚本、逐单位结果、预测、区间及混淆矩阵均保留。
+- 第一轮实验（R2/R3 另见上述说明）：`experiments/reviewer-audit/`；脚本、逐单位结果、预测、区间及混淆矩阵均保留。
 - 文本差异：`provenance/manuscript.patch`；原稿备份：`provenance/pre-review-manuscript.zip`。
 - 历史证据：`evidence/retained-release007/`和`experiments/revision-m1-m8/`保持历史内容，不能用其中旧摘要覆盖本轮修正。
 
 ## 第二轮修订（2026-10-21，`test` 分支）
 
-- 新增 `experiments/sp2027-r2/`：E5 流式发射器（TLS 1.2/1.3）、E6 随机化 cover 与策略感知攻击者、E7 加密 agent–tool 链路组合，以及实验前提交的 7 条审计判断（`PREREGISTRATION.json`，commit `16f6254`）。结果为 5 条证实、2 条部分证实、0 条被推翻。
+- 新增 `experiments/sp2027-r2/`：E5 流式发射器（TLS 1.2/1.3）、E6 随机化 cover 与策略感知攻击者、E7 加密 agent–tool 链路组合，以及实验前提交的 7 条审计判断（`PREREGISTRATION.json`，commit `16f6254`）。历史标签曾为 5 条证实、2 条部分证实；当前判读见 R3，不能作为框架准确率。
 - 主稿第 8 节改写为 “Controlled Transfer Tests”（Table 10–12）；第一轮受控实验完整表格移到 Supplement S11，E5–E7 全部区间在 S12。
 - 审稿意见与修改清单：仓库根目录 `docs/R2-SP2027-审稿与修改清单.md`。
 - 校验：`python -B experiments/sp2027-r2/verify_r2.py`（仅用标准库）。
@@ -50,5 +56,5 @@ LaTeX使用IEEEtran 1.8b conference,compsoc。进入manuscript，分别运行pdf
 
 ## 证据范围
 
-没有自主Agent联合实验、TLS1.3/QUIC/时序攻击、外部独立场景、真实MCP/API普查或新增人工编码。
+E5 包含 TLS 1.2/1.3 应用层 padding；没有真实 LLM 自主 Agent 联合实验、QUIC/时序攻击、外部独立场景、真实 MCP/API 普查或新增人工编码。训练专用防御校准的完整效果仍未测量。
 本包是本地可复查材料，不是匿名线上发布凭据，也不保证论文录用。匿名仓库及作者级来源确认仍需完成。

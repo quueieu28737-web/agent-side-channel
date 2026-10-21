@@ -48,6 +48,7 @@ def main():
         close(sum(len(c["records"]) for c in d0) / 48, r["mean_records"])
     # E6
     sess = load("e6_sessions.json")
+    e6_session_count = len(sess)
     assert len(sess) == 8 * 115 * 3
     e6 = load("e6_dispatch_results.json")
     assert len(e6) == 16
@@ -81,10 +82,10 @@ def main():
     with tempfile.TemporaryDirectory() as tmp:
         subprocess.run([sys.executable, "-B", str(HERE / "make_tables.py"), tmp], check=True, capture_output=True)
         for f in ("transfer-streaming", "transfer-cover", "transfer-predictions", "supp-transfer"):
-            assert (Path(tmp) / f"{f}.tex").read_bytes() == (TAB / f"{f}.tex").read_bytes(), f
+            assert (Path(tmp) / f"{f}.tex").read_text(encoding="utf-8") == (TAB / f"{f}.tex").read_text(encoding="utf-8"), f
     with tempfile.TemporaryDirectory() as tmp:  # E8 supplement table
         subprocess.run([sys.executable, "-B", str(HERE / "agent/make_e8_table.py"), tmp], check=True, capture_output=True)
-        assert (Path(tmp) / "supp-e8.tex").read_bytes() == (TAB / "supp-e8.tex").read_bytes(), "supp-e8"
+        assert (Path(tmp) / "supp-e8.tex").read_text(encoding="utf-8") == (TAB / "supp-e8.tex").read_text(encoding="utf-8"), "supp-e8"
     for run in ("scripted", "noisy-scripted"):
         D = HERE / "agent/runs" / run
         eps = [json.loads(l) for l in (D / "trajectories.jsonl").read_text().splitlines()]
@@ -93,12 +94,13 @@ def main():
         real = {(e["task"], e["seed"]): [c["name"] for c in e["calls"]] for e in eps}
         for s in sess:
             assert [c["name"] for c in s["calls"] if c["kind"] == "real"] == real[(s["task"], s["seed"])]
-    before = (HERE / "PREREGISTRATION_OUTCOMES.json").read_bytes()
-    subprocess.run([sys.executable, "-B", str(HERE / "resolve_predictions.py")], check=True, capture_output=True)
-    assert (HERE / "PREREGISTRATION_OUTCOMES.json").read_bytes() == before
+    with tempfile.TemporaryDirectory() as tmp:
+        result = Path(tmp) / "outcomes.json"
+        subprocess.run([sys.executable, "-B", str(HERE / "resolve_predictions.py"), str(result)], check=True, capture_output=True)
+        assert json.loads(result.read_text(encoding="utf-8")) == load("PREREGISTRATION_OUTCOMES.json")
     out = {o["id"]: o["outcome"] for o in load("PREREGISTRATION_OUTCOMES.json")["outcomes"]}
     print(json.dumps({"status": "SP2027_R2_TRANSFER_TESTS_PASS", "e5_captures": len(caps),
-                      "e6_sessions": len(sess), "e7_tls_sessions": len(recs), "predictions": out,
+                      "e6_sessions": e6_session_count, "e7_tls_sessions": len(recs), "historical_predictions": out,
                       "new_model_calls": 0}, indent=2))
 
 
