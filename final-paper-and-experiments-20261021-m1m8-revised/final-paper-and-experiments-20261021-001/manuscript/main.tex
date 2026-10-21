@@ -1,0 +1,66 @@
+% IEEE S&P 2027 submission format; requires IEEEtran.cls v1.8b.
+\documentclass[conference,compsoc]{IEEEtran}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage[dvipsnames,table]{xcolor}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,positioning,fit,calc,matrix,shapes.geometric}
+\usepackage[hyphens]{url}
+\usepackage{hyperref}
+
+\hypersetup{hidelinks,pdfauthor={}}
+\newcommand{\scope}{\textsc{Scope}}
+\newcommand{\NRR}{\textsc{nr-r}}
+\newcommand{\NRA}{\textsc{nr-a}}
+\newcommand{\NRV}{\textsc{nr-v}}
+\newcommand{\NA}{\textsc{na}}
+\newcommand{\evidenceStrong}{\cellcolor{ForestGreen!22}Strong}
+\newcommand{\evidenceLimited}{\cellcolor{Goldenrod!24}Limited}
+\newcommand{\evidenceNone}{\cellcolor{Gray!18}No verified direct evidence}
+\newcommand{\soktakeaway}[2]{%
+  \par\smallskip\noindent
+  \fcolorbox{MidnightBlue!45}{MidnightBlue!5}{%
+    \parbox{\dimexpr\columnwidth-2\fboxsep-2\fboxrule\relax}{%
+      \footnotesize\textbf{\color{MidnightBlue!85!black}#1.} #2%
+    }%
+  }\par\smallskip
+}
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+\input{tables/final-counts}
+
+\title{SoK: Evidence Boundaries of LLM and Agent Side-Channel Defenses\\A Result-Record Audit and Two Controlled Case Studies}
+\author{}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+Published side-channel defenses protect specific observations and execution environments. Reusing these results in LLM-based workflows requires identifying which guarantees survive changes in receivers, tool state and attacker adaptation. We systematize \FinalN{} study families (\FinalCore{} core and \FinalAdjacent{} adjacent), retaining 39 scoped result records and auditing 20 mitigation families. A nine-item reporting audit and three deployment checks bind each result to its target, observer, execution boundary, workload and measured cost. The audit distinguishes established incompatibility from missing or unverified evidence; only 3 of 17 applicable families bind task or component utility, and 2 of 11 bind a matched adaptation contrast. Two controlled case studies illustrate the resulting evaluation obligations. Replays of 48 saved responses over two TLS~1.2 links reproduce downstream re-emission after upstream length padding. With matched workload denominators, 512-byte buckets cost 2.30$\times$ and 1.43$\times$ for two sentence-prefix workloads; a cap fitted to training lengths reaches 50\% test accuracy at 2.18$\times$ for the verbosity target. Replaying 115 retail reference programs shows that same-item writes can change workflow state, and that preserving task objects differs from preserving an account or a shared database. Simple count or position rules recover cancellation labels despite cover calls. These are local mechanism tests, not a combined autonomous-agent evaluation. The contribution is a reusable evidence audit that identifies which comparisons are supported and which require new measurements.
+\end{abstract}
+
+\input{sections/01-introduction}
+\input{sections/03-methodology}
+\input{sections/04-scope}
+\input{sections/26-corpus-map}
+\input{sections/11-discussion}
+\input{sections/27-intervention-contracts}
+\input{sections/28-fingerprint-dependencies}
+\input{sections/32-controlled-placement}
+\input{sections/10-open-challenges}
+\input{sections/12-conclusion}
+
+\clearpage
+\appendices
+\input{sections/30-reproducibility-guide}
+\input{tables/corpus-citations}
+\clearpage
+
+\bibliographystyle{IEEEtran}
+\bibliography{refs,refs-final-additions,evidence/search-completion-20261021-001/new_refs,evidence/search-completion-20261021-001/new_refs_adjacent}
+\end{document}

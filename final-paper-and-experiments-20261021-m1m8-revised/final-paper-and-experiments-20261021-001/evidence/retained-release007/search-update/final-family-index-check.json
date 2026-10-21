@@ -1,0 +1,63 @@
+{
+  "created_at": "2026-10-21T01:57:55.593219+00:00",
+  "result": "PASS",
+  "input_sources": [
+    {
+      "path": "evidence/reviewer-five-fixes-20261020-001/current-evidence/final-inclusion-ledger.csv",
+      "sha256": "48acc06c7f49dfcb1c93ee4cb6b1dce5ca64f5b1fa3cf2a16eb174ec60f0d1e1",
+      "rows": 60
+    },
+    {
+      "path": "evidence/search-completion-20261021-001/addition.csv",
+      "sha256": "d88c71e3f8fb88947067e05d0d47a227bd44248fe052902bd7e61ef031b5ec34",
+      "rows": 15
+    },
+    {
+      "path": "evidence/search-completion-20261021-001/addition-adjacent.csv",
+      "sha256": "cd61e3ec7a2abe1ac7f9f95c9043ef8b27c6414eccd83cccb3fd757a14c3d7dc",
+      "rows": 7
+    }
+  ],
+  "output": "evidence/search-completion-20261021-001/final-family-index.csv",
+  "output_sha256": "e1180519547d856d1f1900bbb3b8843a83bd7afca924f0603df00786e22669b3",
+  "families": 82,
+  "classification_counts": {
+    "core": 58,
+    "adjacent": 24
+  },
+  "core_origin_counts": {
+    "workflow-origin": 20,
+    "inherited-runtime/application": 38
+  },
+  "diagnostic_components": [
+    "gan2026clawguard",
+    "george2025cycles",
+    "solomon2026lumimas",
+    "scheinert2026rca",
+    "revankar2026mirage"
+  ],
+  "diagnostic_count": 5,
+  "original60_fields_preserved_exactly": true,
+  "legacy_field_count": 44,
+  "total_field_count": 71,
+  "headers_casefold_unique": true,
+  "new_nr_header": "update_nr_status",
+  "legacy_NR_header": "NR_status",
+  "new_bib_key_count": 22,
+  "new_bib_unique": true,
+  "new_addition_keys_all_resolve_once": true,
+  "all82_keys_resolve_once_in_original_plus_two_new_bibs": true,
+  "bib_files": [
+    "refs.bib",
+    "refs-final-additions.bib",
+    "evidence/search-completion-20261021-001/new_refs.bib",
+    "evidence/search-completion-20261021-001/new_refs_adjacent.bib"
+  ],
+  "not_implied": [
+    "all82families have new independent full-source recoding",
+    "all58core have the historical33-record intervention audit",
+    "independent human validation",
+    "exhaustive database coverage"
+  ],
+  "old_snapshot_not_edited": true
+}

@@ -1,0 +1,273 @@
+LOCAL SELECTION / RETRIEVAL AUDIT — 2026-10-20
+Scope: additive, read-only audit for manuscript revision. No network retrieval,
+model request, experiment, new large-scale screening, or human-coder claim.
+All paths below are relative to <LOCAL_WORKSPACE> unless explicitly absolute.
+This report does not amend old records, the active manuscript, or the 60-family set.
+
+1. Corrections established from existing records
+
+1.1 B069 is NOT a fifth currently unresolved empirical candidate.
+Latest source:
+evidence/perplexity-blind332-20261018-side-001/source-closure-002/B069-source-amendment.json
+and sources/B069-first-page-abstract-transcription.txt.
+The official full abstract describes an expository LLM/GPT-4 chapter. It supports
+BACKGROUND_VERIFIED at abstract scope; later chapter pages remain unread.
+This supersedes only B069's routing hold in source-closure-001. It does not
+verify numerical cells, establish absence of later experiments, or add a study.
+The active sections/22-search-audit-summary.tex and tables/selection-flow.tex
+already correctly distinguish four empirical/source-lineage checks and one
+abstract-only chapter. Do not reintroduce the older five-pending wording.
+The historical reviewer-five-fixes/current-manuscript and compile-check copies
+are old snapshots and should remain intact.
+
+1.2 ACM final download completion is no longer an open .crdownload issue.
+evidence/acm-screening-20261009-side-003/download-finalization.json:3-7
+records 32 final-named .bib files, observed sizes and SHA256 equality. This covers
+31 included partition/unfiltered exports plus one excluded truncated diagnostic
+export. The original .crdownload snapshots were intentionally retained.
+The old query manifest's pending-download statement is historically correct,
+not the latest state. This does NOT close the separate count/identity anomalies:
+Q4b June displayed 285 versus 284 saved; Q5 partition sum 3,689 versus the
+unsplit query's 3,688. Original unsaved hit identities are unavailable.
+
+2. Reproducible native query boundary
+
+Exact strings and row-level receipt anchors are supplied in native-query-source-index.json
+and native-query-table.tex. They reproduce what actually ran, not a retroactive
+ideal search protocol. No current query was submitted by this audit.
+
+IEEE: native Command Search, default metadata, no lower-year or content-type
+filter; 2026-10-08; RIS with Citation and Abstract, exporting every page.
+Q1/Q2/Q3/Q5/Q4b: evidence/closure-2026-10-08/native/query-receipts.json.
+Q6: evidence/systematic-2026-10-08-r2/native/query-receipt.json.
+Saved 2,079 occurrences / 2,001 exact publication groups. These do not include
+the complete historical Q4 universe of 35,743 hits. Q4b is an added branch,
+not a recall-preserving replacement. The later 1,000-record Q4 prefix and
+35,912/35,792 live counts cannot reconstruct historical membership.
+
+ACM: original native Quick Search, field All, ACM Full-Text Collection rather
+than ACM Guide; 2026-10-08; no original date/type restriction. Later authorized
+native advanced-search E-Publication Date partitions on 2026-10-08/09 enabled
+All Results/BibTeX export. See query-manifest.json and the 31 partition receipts
+in evidence/acm-redownload-2026-10-08-side-002.
+Final-named files were confirmed on October 9. The October-December 2026 export
+bin is an acquisition partition, NOT an October 8 publication-eligibility rule.
+The October 8 coded-set cutoff must still be checked at study/version level.
+ACM saved 16,687 query occurrences, including seven retained malformed frames;
+13,201 conservative publication groups, not 13,201 studies.
+The Q4b/Q5 anomalies above remain unresolved even when totals coincide.
+
+Grouping: exact normalized DOI first; otherwise exact normalized title only
+without a conflicting explicit DOI. Do not merge different explicit DOIs as a
+single publication merely because titles agree. Study-family/preprint-publication
+merging is a later identity/version decision, not export deduplication.
+Final 60 families are not a denominator derived by subtracting every broad
+search count; the route frames overlap.
+
+3. New offline fixed-known-24 check
+
+check_known24_offline.py replays the independently fixed seed list against:
+- IEEE all-native-plus-q6.json: 2,001 groups / 2,079 occurrences.
+- ACM acm-screening-20261009-side-003/frame.json: 13,201 groups.
+The latter is the final saved ACM partition frame, not the older 4,258-group
+initial pending-export view.
+
+Observed: IEEE 1/24 exact seed presence; ACM 0/24. Only EarlyBird matches,
+through IEEE Q1-020, Q3-004 and Q6-P1-074; no exact-title conflicting-DOI candidate
+was found. This is exact saved-frame presence, not all-version family recall.
+All indexed_online fields remain NR_NOT_QUERIED. No online index query occurred.
+
+The script separately checks literal query-term coverage in actual stored seed
+titles, and in actual exported title+abstract fields where a match exists.
+It does not invent abstracts for missing records. Five seed titles satisfy
+at least one literal query; this is neither database indexing nor native query
+eligibility. EarlyBird's actually retrieved title+abstract does NOT satisfy the
+strict literal test for its Q1/Q3/Q6 branches. Pluralization and naming differ
+(for example, "side channels" and "Key-Value" versus the query literals);
+other indexed fields and native matching semantics are not locally established.
+Therefore a failed literal test cannot justify treating a seed as query-ineligible.
+This check closes saved-frame identity accounting, not recall or index eligibility.
+See known24-offline-check-summary.json for all 24 seed results and input hashes.
+The read-only script prints the fuller 48-row database-specific report to stdout.
+
+4. Finite nominated-candidate map, not complete selected literature
+
+Current canonical inventory:
+evidence/reviewer-five-fixes-20261020-001/current-evidence/counts.json
+60 families = 43 core (15 A / 28 B) + 17 adjacent;
+4 diagnostic components and 39 other core families.
+
+The prior bounded-selection-reconciliation.json accounts for 109 decision rows:
+57 follow-ups from the 332 disputed items; six source-reviewed proposals from
+the 1,775-route follow-up; 22 backward-citation candidates; 24 returned forward
+index works. Rows overlap and are not 109 unique papers. Its source-closure-001
+B069 row must be interpreted with the later source-closure-002 amendment.
+The four added families already integrated in the current inventory are:
+B112 scheinert2026rca (metric-only live LLM-serving fault localization, core
+diagnostic); B076 shao2026zeroprint; B114 leshin2026endpoint; B174 zhu2026stepfinder
+(the last three adjacent under the inspected semantic/mixed observable scope).
+The prior family inventory, these explicit additions, and the later B069 overlay
+give a complete disposition accounting for this nominated frame, including
+pending outcomes. They do not imply all nominated works were fully read.
+
+5. Four empirical/source-lineage checks: actual material and minimum to close
+
+5.1 Wiretapping LLMs: Network Side-Channel Attacks on Interactive LLM Services.
+Mahdi Soleimani, Grace Jia, In Gim, Seung-seob Lee, Anurag Khandelwal.
+ePrint 2025/167; no DOI established in the inspected receipt.
+Primary landing received 2025-02-04, approved 2025-02-05.
+Local receipt: evidence/systematic-2026-10-08-r2/root-sources/wiretapping-access.json.
+Backward origins: backward-primary-followups-final.json:50-70 (NetEcho,
+EarlyBird, speculative-decoding references).
+Available: primary abstract/metadata and author's same-endpoint PDF link.
+Unavailable: byte-saved primary full text; cached receipts record blocked access.
+Minimum missing material: lawful full report/version containing observer,
+packet attributes, inference target, test units/split, attack training and defense
+experiments. C1-C5 look relevant in abstract but result extraction is not closed.
+Potential consequence: omitted network inference/mitigation instance; cannot
+support absence of alternative network defenses or borrow abstract accuracy.
+
+5.2 Entropy Based Obfuscation for Defending Attention Cache in Shared LLMs.
+Saurabh Kansal, Deepak Kejriwal; DOI 10.38124/ijisrt/25sep1140;
+forward-index work W4414777769.
+Historical forward-final-decisions.json:91-102 is abstract-only/blocked.
+Later source reading: reviewer-five-fixes-20261020-001/selection-evidence.txt:175-187.
+The later note records reading publisher PDF §§V-VII / Tables6-9, header
+3 October 2025; Table7 marked adapted experimental results and Table8 marked
+adapted simulated results. This supersedes access-failure status, but the report
+was not byte-saved in that patch. This current audit cannot independently replay
+those pages from locally cached original bytes.
+Minimum missing material: stable publisher report bytes and a traceable statement
+distinguishing original runs from adapted/simulated results, with the method/run
+support for any proposed new effect. The C5/result-lineage question remains open.
+Do not call the work fraudulent, exclude by venue, or import 28.4-to-9.6 as an
+independently established new defense effect.
+Potential consequence: may add a defense or a synthesis/background comparator;
+could change apparent defense coverage, not presently a usable effect estimate.
+
+5.3 Memory-Bandwidth Side Channels for Input Recovery in Edge-Deployed LLM Inference.
+Davis Ranney, Yashaswini Makaram, Yunsi Fei;
+DOI 10.1109/DSN-S70715.2026.00072; W7204843335.
+Native IEEE Q1-001 / Q3-003 preserve an exported abstract; the cached
+citations/candidate-sources/memorybandwidth.txt and .html are the DSN accepted
+program list, not the poster paper. The list establishes title/authors/poster.
+forward-final-decisions.json:160-169 and native-screening/candidate-dispositions.json
+retain empirical C5 as pending. Prospective abstract wording is not negative
+evidence that no final experiment occurred.
+Minimum missing material: exact DOI-bound primary poster/report including
+actual observation permissions, measured target inference and results. A title,
+program listing, or secondary abstract cannot supply these fields.
+Potential consequence: resource/physical input-recovery extension; no safe claim
+of completeness for that mechanism while this primary report remains missing.
+
+5.4 Security Analysis of Browser Artificial Intelligence Panel Privilege Escalation
+Vulnerability; DOI 10.21203/rs.3.rs-10001989/v1; W7168246776.
+forward-final-decisions.json:45-55 retains TITLE_METADATA_ONLY; index record
+reports 2026-07-14 but is not a primary version/date check. Research Square access
+was blocked in the preserved receipt. No local primary body was identified.
+Minimum missing material: primary version-bound abstract/body sufficient to
+distinguish direct privileged payload access from a separate auxiliary inference
+experiment and verify C1-C5. Title/secondary descriptions cannot settle that.
+Potential consequence: may be a direct-disclosure adjacent comparator or a
+qualifying browser-channel result. No automatic core inclusion or final exclusion.
+
+5.5 Separate background access limitation, not empirical pending count:
+B069 Capabilities and Opportunities of Language Models,
+DOI 10.1145/3749421.3749426, ACM-FINAL-2324ef0e283d87bc.
+Official complete author abstract and opening introduction are cached.
+Background routing is resolved; later-page experiments and numerical extraction
+remain unchecked. No additional core candidate is invented from index terms.
+
+No one of these four is newly closed by this offline audit. Identifying their
+minimal missing material and consequence makes the residual risk explicit; it
+does not transform NR into a completed empirical verification.
+
+6. Exclusion/counterexample coverage and reviewer commitments
+
+Native query reproducibility: closed at query/receipt/source-file level for the
+executed finite exports; broad Q4 membership and ACM anomalies remain open.
+Exact query strings, fields, dates, bins, counts and source anchors are provided.
+
+Full broad screening: NOT COMPLETE. Historical Q4 35,743 and the dated
+ACM 883 full-text referrals + 2,950 unresolved routes are not discharged by
+4,753 prepared IDs or 1,775 later source dispositions. These overlapping frames
+must not be shown as one subtractive PRISMA funnel.
+
+Prepared metadata run: finite 4,753-ID pass is accounted: 4,653 valid answer IDs,
+80 format holds, 20 missing finals; 2,778 exclusions / 116 referrals / 1,859
+unresolved routes. Original hold IDs were not recast as exclusions.
+Subsequent 1,775-route accounting gives 1,313 containers, 455 scoped decisions,
+seven material holds. It is not 455 full-paper readings.
+
+Backward/forward tracing: 40 fixed seeds, 2,237 backward occurrences, 38 seeds
+resolved in the forward index, 24 distinct returned forward works. One-hop,
+index-/source-bounded; no recursive citation saturation or exhaustive preprint/
+venue census. A citation edge is not proof of comparable methods or results.
+
+Exclusion audit: the October 8 frozen 1,555-record frame has 1,300 reviewed
+(1,075 keyword-risk + 225 stratified), 1,297 retained abstract exclusions,
+two referrals and one missing abstract; later source follow-up excluded one
+referral, leaving two pending. The 255 unsampled lower-risk records remain.
+Later Perplexity-frame checks are distinct: 33/554, 16/144, and 20/2,090.
+The last covers 10/1,074 high-risk records, leaving 1,064 NOT covered by that
+check; do not silently call all 1,064 currently unread across every other frame.
+Their ID-wise union with later source decisions is not newly recomputed here.
+Five source/material referrals in that sample are not five confirmed misses.
+False-negative rate remains NOT_ESTIMATED; sample fractions cannot establish it.
+Sources: completed-prepared-audit-sample.json, completed-prepared-audit-results.json,
+exclusion-audit-report-0660.json, exclusion-audit-results-0820.json.
+
+Counterexample/selection challenges genuinely handled:
+- B112 was changed to core when source showed a metric-only inference component
+  on actual LLM-serving faults. Authorization is not an exclusion under C4.
+- ZeroPrint/endpoint/StepFinder remain explicit adjacent comparators because
+  semantic/mixed observables are not interchangeable with auxiliary-only views.
+- InferNet P0595 was rescued from the invalid authorization-based exclusion;
+  requested-1775-current.csv:54 carries its actual already-coded adjacent
+  disposition and separate model/result binding limitation. It is not still
+  a fresh unexamined C4 case merely because the older semantic-hold exists.
+- P0584 Echo advertising audit is scoped background with LLM-component NR,
+  not an exclusion because an assistant is commercially deployed.
+- Actual comparison matrix C01-C08 permits aligned, mismatched, bridge-required
+  and unresolved outcomes. C01 (same protected UI archive) is aligned; C04
+  KV-oracle versus semantic prototype and C06 capture/live split cannot be
+  pooled. These are named source conditions, not proof of community error.
+- The existing source-deletion analysis withdraws single-source extensions
+  when their sources are removed. It cannot neutralize unobserved literature.
+
+Independent coding / SCOPE external validation: NOT COMPLETE. Human coders 0;
+the existing 23 label-blinded AI decisions, 332-dispute AI readbacks and this
+same-workflow audit are not independent human or original-author validation.
+No analyst-level benefit of the framework is established by changed routing alone.
+
+Latest-family field extraction: current 60-family/source-bound master exists;
+the four pending source issues are not solved by increasing N or filling cells
+with estimates. Numerical run/version binding and missing costs remain scoped NR.
+
+7. Suggested concise manuscript integration (parent decides placement)
+
+Main method: use one paragraph stating actual native export routes, fixed
+publication cutoff, identifier/version grouping, finite source-nominated frame,
+and non-exhaustive coverage. Put exact queries/partition recipes in a full-width
+appendix table, rather than repeatedly narrating operational incidents.
+
+Keep one compact accounting table with three explicit units: occurrences,
+publication groups and coded study families. The 109 rows should be called a
+nominated decision map, not an expanded search universe or 109 full texts.
+The final coded set remains 60/43/17; this audit changes no family count.
+
+Suggested known-item sentence:
+"An exact-identity replay against the saved 2,001-record IEEE and 13,201-group
+ACM frames finds 1/24 and 0/24 fixed seeds. Online indexing and native field
+eligibility of nonhits remain unverified; literal title/abstract checks do not
+emulate stemming or the native indexed fields. We report yield, not recall."
+
+Suggested residual-source sentence:
+"Four empirical source/lineage checks remain pending. A separate ACM chapter
+is positively routed as background from its complete official abstract, with
+later pages unread. Pending outcomes are accounted, not treated as exclusions."
+
+Defensible conclusion: named/version-bound conditional synthesis from a
+non-exhaustive coded set. Not defensible: exhaustive Agent-side-channel review,
+complete recent-candidate full-text closure, measured screening sensitivity,
+independent double-human coding, external SCOPE efficacy, or submission readiness.

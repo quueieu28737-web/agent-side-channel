@@ -1,0 +1,108 @@
+{
+  "historical_oct08_snapshot": {
+    "total_families": 60,
+    "core_families": 43,
+    "core_workflow_origin_A": 15,
+    "core_inherited_origin_B": 28,
+    "adjacent_families": 17,
+    "core_diagnostics": 4
+  },
+  "oct21_supplementary_search_565_frame": {
+    "raw_occurrences": 615,
+    "semantic_scholar_occurrences": 538,
+    "semantic_scholar_unique": 522,
+    "arxiv_native_occurrences": 77,
+    "arxiv_native_unique_added": 43,
+    "cross_query_duplicates_merged": 50,
+    "unique_screened_records": 565,
+    "pre_exclusion_audit_counts": {
+      "EXCLUDE_NO_HIDDEN_AUXILIARY_TARGET": 221,
+      "EXCLUDE_TARGET_OUTSIDE_LLM_EXECUTION": 156,
+      "EXCLUDE_DIFFERENT_INFERENCE_TARGET": 19,
+      "EXISTING_CORE": 23,
+      "EXISTING_ADJACENT": 1,
+      "NEW_CORE_SOURCE_VERIFIED": 14,
+      "ADJACENT_SOURCE_REVIEWED": 28,
+      "ADJACENT_METADATA_ONLY": 28,
+      "BACKGROUND_OTHER_SECURITY_OBJECTIVE": 53,
+      "BACKGROUND_SOURCE_REVIEWED": 4,
+      "BACKGROUND_PROPOSAL_METADATA": 1,
+      "UNRESOLVED_MISSING_ABSTRACT": 16,
+      "UNRESOLVED_PRIMARY_FULLTEXT": 1,
+      "total": 565
+    },
+    "exclusion_audit_204_rerouted_4_records": [
+      {
+        "record_id": "SUP-0192",
+        "citation_key": "revankar2026mirage",
+        "title": "MIRAGE: A Polarity-Flipping Encoding Subspace in LLM Agents",
+        "from": "EXCLUDE_NO_HIDDEN_AUXILIARY_TARGET",
+        "to": "NEW_CORE_SOURCE_VERIFIED",
+        "impact_on_82_index": "+1 new core diagnostic family (bringing new core from 14 to 15; included in addition.csv and the 58 final core families)"
+      },
+      {
+        "record_id": "SUP-0552",
+        "citation_key": "inputsnatch2024",
+        "title": "InputSnatch: Stealing Input in LLM Services via Timing Side-Channel Attacks",
+        "from": "EXCLUDE_NO_HIDDEN_AUXILIARY_TARGET",
+        "to": "EXISTING_CORE",
+        "impact_on_82_index": "+0 net new families (version/title alias merged into existing snapshot family inputsnatch2024; brings EXISTING_CORE from 23 to 24)"
+      },
+      {
+        "record_id": "SUP-0191",
+        "citation_key": "NR_context_only",
+        "title": "LLM Self-Recognition: Steering and Retrieving Activation Signatures",
+        "from": "EXCLUDE_NO_HIDDEN_AUXILIARY_TARGET",
+        "to": "ADJACENT_SOURCE_REVIEWED",
+        "impact_on_82_index": "+0 indexed families (brings ADJACENT_SOURCE_REVIEWED from 28 to 30; retained in 565-record ledger as non-indexed adjacent context)"
+      },
+      {
+        "record_id": "SUP-0424",
+        "citation_key": "NR_context_only",
+        "title": "Reverse-Engineering Model Editing on Language Models",
+        "from": "EXCLUDE_NO_HIDDEN_AUXILIARY_TARGET",
+        "to": "ADJACENT_SOURCE_REVIEWED",
+        "impact_on_82_index": "+0 indexed families (brings ADJACENT_SOURCE_REVIEWED from 28 to 30; retained in 565-record ledger as non-indexed adjacent context)"
+      }
+    ],
+    "post_exclusion_audit_final_counts": {
+      "EXCLUDE_NO_HIDDEN_AUXILIARY_TARGET": 217,
+      "EXCLUDE_TARGET_OUTSIDE_LLM_EXECUTION": 156,
+      "EXCLUDE_DIFFERENT_INFERENCE_TARGET": 19,
+      "EXISTING_CORE": 24,
+      "EXISTING_ADJACENT": 1,
+      "NEW_CORE_SOURCE_VERIFIED": 15,
+      "ADJACENT_SOURCE_REVIEWED": 30,
+      "ADJACENT_METADATA_ONLY": 28,
+      "BACKGROUND_OTHER_SECURITY_OBJECTIVE": 53,
+      "BACKGROUND_SOURCE_REVIEWED": 4,
+      "BACKGROUND_PROPOSAL_METADATA": 1,
+      "UNRESOLVED_MISSING_ABSTRACT": 16,
+      "UNRESOLVED_PRIMARY_FULLTEXT": 1,
+      "total": 565
+    }
+  },
+  "final_merged_82_family_accounting": {
+    "original_core": 43,
+    "added_core_pre_audit": 14,
+    "added_core_from_exclusion_audit_MIRAGE": 1,
+    "total_added_core": 15,
+    "final_core": 58,
+    "final_core_workflow_origin_A": 20,
+    "final_core_inherited_origin_B": 38,
+    "final_core_diagnostics": 5,
+    "original_adjacent": 17,
+    "source_reviewed_adjacent_candidates_post_audit": 30,
+    "selected_adjacent_incorporated_into_index": 7,
+    "non_indexed_adjacent_contexts_retained_in_ledger": 23,
+    "final_adjacent": 24,
+    "final_total_families": 82
+  },
+  "seed_and_query_overlap_clarification": {
+    "total_citation_tracing_seeds": 40,
+    "known24_subset_origin": "The 24 fixed known papers (known24) are the 24 core attack/defense seed subset of the 40 initial citation-tracing seeds (seed_n=24 in check_known24_offline.py), NOT an independent external holdout.",
+    "known24_recovered_by_oct21_queries": 17,
+    "snapshot60_recovered_by_oct21_queries": 25,
+    "why_35_of_60_not_returned_by_6_keyword_queries": "The two native arXiv queries required the exact hyphenated literal 'side-channel', omitting papers titled with 'fingerprinting', 'prompt leakage', 'keylogging', 'timing attacks', or 'metadata', and the 4 Semantic Scholar title/abstract queries used strict multi-clause conjunctions and did not index full texts of USENIX/NDSS PDFs. Hence the corpus is explicitly a seed-and-snowball anchored purposive collection rather than a keyword-query census."
+  }
+}

@@ -1,0 +1,309 @@
+{
+  "arm_rows": 120,
+  "arms": {
+    "baseline": {
+      "cover_live_tool_calls": 0,
+      "cover_shadow_tool_calls": 0,
+      "denominator": 24,
+      "goal_success_count": 24,
+      "invalid_plan_count": 0,
+      "local_elapsed_ns_median": 59100.0,
+      "paired_success_difference_vs_baseline": 0,
+      "paired_task_bootstrap95": [
+        0.0,
+        0.0
+      ],
+      "protected_state_violation_count": 0,
+      "real_tool_calls": 24,
+      "same_final_state_as_baseline_count": 24,
+      "task_success_count": 24,
+      "task_success_rate": 1.0,
+      "task_success_wilson95": [
+        0.8620237953250198,
+        1.0
+      ]
+    },
+    "discarded": {
+      "cover_live_tool_calls": 0,
+      "cover_shadow_tool_calls": 0,
+      "denominator": 24,
+      "goal_success_count": 24,
+      "invalid_plan_count": 0,
+      "local_elapsed_ns_median": 54300.0,
+      "paired_success_difference_vs_baseline": 0,
+      "paired_task_bootstrap95": [
+        0.0,
+        0.0
+      ],
+      "protected_state_violation_count": 0,
+      "real_tool_calls": 24,
+      "same_final_state_as_baseline_count": 24,
+      "task_success_count": 24,
+      "task_success_rate": 1.0,
+      "task_success_wilson95": [
+        0.8620237953250198,
+        1.0
+      ]
+    },
+    "isolated_shadow": {
+      "cover_live_tool_calls": 0,
+      "cover_shadow_tool_calls": 24,
+      "denominator": 24,
+      "goal_success_count": 24,
+      "invalid_plan_count": 0,
+      "local_elapsed_ns_median": 73750.0,
+      "paired_success_difference_vs_baseline": 0,
+      "paired_task_bootstrap95": [
+        0.0,
+        0.0
+      ],
+      "protected_state_violation_count": 0,
+      "real_tool_calls": 24,
+      "same_final_state_as_baseline_count": 24,
+      "task_success_count": 24,
+      "task_success_rate": 1.0,
+      "task_success_wilson95": [
+        0.8620237953250198,
+        1.0
+      ]
+    },
+    "read_only": {
+      "cover_live_tool_calls": 24,
+      "cover_shadow_tool_calls": 0,
+      "denominator": 24,
+      "goal_success_count": 24,
+      "invalid_plan_count": 0,
+      "local_elapsed_ns_median": 66100.0,
+      "paired_success_difference_vs_baseline": 0,
+      "paired_task_bootstrap95": [
+        0.0,
+        0.0
+      ],
+      "protected_state_violation_count": 0,
+      "real_tool_calls": 24,
+      "same_final_state_as_baseline_count": 24,
+      "task_success_count": 24,
+      "task_success_rate": 1.0,
+      "task_success_wilson95": [
+        0.8620237953250198,
+        1.0
+      ]
+    },
+    "state_changing": {
+      "cover_live_tool_calls": 24,
+      "cover_shadow_tool_calls": 0,
+      "denominator": 24,
+      "goal_success_count": 15,
+      "invalid_plan_count": 0,
+      "local_elapsed_ns_median": 76400.0,
+      "paired_success_difference_vs_baseline": -0.625,
+      "paired_task_bootstrap95": [
+        -0.7916666666666666,
+        -0.4166666666666667
+      ],
+      "protected_state_violation_count": 6,
+      "real_tool_calls": 24,
+      "same_final_state_as_baseline_count": 0,
+      "task_success_count": 9,
+      "task_success_rate": 0.375,
+      "task_success_wilson95": [
+        0.21159367559548778,
+        0.5729003755732572
+      ]
+    }
+  },
+  "bootstrap_replicates": 10000,
+  "bootstrap_seed": 20261021,
+  "condition_results": [
+    {
+      "arm": "baseline",
+      "cover_resource_relation": "overlap",
+      "domain": "inventory",
+      "goal_success_count": 6,
+      "n": 6,
+      "protected_state_violation_count": 0,
+      "task_success_count": 6
+    },
+    {
+      "arm": "discarded",
+      "cover_resource_relation": "overlap",
+      "domain": "inventory",
+      "goal_success_count": 6,
+      "n": 6,
+      "protected_state_violation_count": 0,
+      "task_success_count": 6
+    },
+    {
+      "arm": "isolated_shadow",
+      "cover_resource_relation": "overlap",
+      "domain": "inventory",
+      "goal_success_count": 6,
+      "n": 6,
+      "protected_state_violation_count": 0,
+      "task_success_count": 6
+    },
+    {
+      "arm": "read_only",
+      "cover_resource_relation": "overlap",
+      "domain": "inventory",
+      "goal_success_count": 6,
+      "n": 6,
+      "protected_state_violation_count": 0,
+      "task_success_count": 6
+    },
+    {
+      "arm": "state_changing",
+      "cover_resource_relation": "overlap",
+      "domain": "inventory",
+      "goal_success_count": 3,
+      "n": 6,
+      "protected_state_violation_count": 0,
+      "task_success_count": 3
+    },
+    {
+      "arm": "baseline",
+      "cover_resource_relation": "disjoint",
+      "domain": "inventory",
+      "goal_success_count": 6,
+      "n": 6,
+      "protected_state_violation_count": 0,
+      "task_success_count": 6
+    },
+    {
+      "arm": "discarded",
+      "cover_resource_relation": "disjoint",
+      "domain": "inventory",
+      "goal_success_count": 6,
+      "n": 6,
+      "protected_state_violation_count": 0,
+      "task_success_count": 6
+    },
+    {
+      "arm": "isolated_shadow",
+      "cover_resource_relation": "disjoint",
+      "domain": "inventory",
+      "goal_success_count": 6,
+      "n": 6,
+      "protected_state_violation_count": 0,
+      "task_success_count": 6
+    },
+    {
+      "arm": "read_only",
+      "cover_resource_relation": "disjoint",
+      "domain": "inventory",
+      "goal_success_count": 6,
+      "n": 6,
+      "protected_state_violation_count": 0,
+      "task_success_count": 6
+    },
+    {
+      "arm": "state_changing",
+      "cover_resource_relation": "disjoint",
+      "domain": "inventory",
+      "goal_success_count": 6,
+      "n": 6,
+      "protected_state_violation_count": 3,
+      "task_success_count": 3
+    },
+    {
+      "arm": "baseline",
+      "cover_resource_relation": "overlap",
+      "domain": "calendar",
+      "goal_success_count": 6,
+      "n": 6,
+      "protected_state_violation_count": 0,
+      "task_success_count": 6
+    },
+    {
+      "arm": "discarded",
+      "cover_resource_relation": "overlap",
+      "domain": "calendar",
+      "goal_success_count": 6,
+      "n": 6,
+      "protected_state_violation_count": 0,
+      "task_success_count": 6
+    },
+    {
+      "arm": "isolated_shadow",
+      "cover_resource_relation": "overlap",
+      "domain": "calendar",
+      "goal_success_count": 6,
+      "n": 6,
+      "protected_state_violation_count": 0,
+      "task_success_count": 6
+    },
+    {
+      "arm": "read_only",
+      "cover_resource_relation": "overlap",
+      "domain": "calendar",
+      "goal_success_count": 6,
+      "n": 6,
+      "protected_state_violation_count": 0,
+      "task_success_count": 6
+    },
+    {
+      "arm": "state_changing",
+      "cover_resource_relation": "overlap",
+      "domain": "calendar",
+      "goal_success_count": 0,
+      "n": 6,
+      "protected_state_violation_count": 0,
+      "task_success_count": 0
+    },
+    {
+      "arm": "baseline",
+      "cover_resource_relation": "disjoint",
+      "domain": "calendar",
+      "goal_success_count": 6,
+      "n": 6,
+      "protected_state_violation_count": 0,
+      "task_success_count": 6
+    },
+    {
+      "arm": "discarded",
+      "cover_resource_relation": "disjoint",
+      "domain": "calendar",
+      "goal_success_count": 6,
+      "n": 6,
+      "protected_state_violation_count": 0,
+      "task_success_count": 6
+    },
+    {
+      "arm": "isolated_shadow",
+      "cover_resource_relation": "disjoint",
+      "domain": "calendar",
+      "goal_success_count": 6,
+      "n": 6,
+      "protected_state_violation_count": 0,
+      "task_success_count": 6
+    },
+    {
+      "arm": "read_only",
+      "cover_resource_relation": "disjoint",
+      "domain": "calendar",
+      "goal_success_count": 6,
+      "n": 6,
+      "protected_state_violation_count": 0,
+      "task_success_count": 6
+    },
+    {
+      "arm": "state_changing",
+      "cover_resource_relation": "disjoint",
+      "domain": "calendar",
+      "goal_success_count": 6,
+      "n": 6,
+      "protected_state_violation_count": 3,
+      "task_success_count": 3
+    }
+  ],
+  "interpretation": [
+    "Paired effects concern these 24 synthetic tasks and one saved plan each; arms are correlated, not 120 independent samples.",
+    "The read_only arm implements pure reads; it does not establish safety of a write merely because later repeats are idempotent.",
+    "Shadow execution discards the whole cloned business state; its tool calls and elapsed work remain real local costs.",
+    "No attacker or privacy metric is measured; task/state preservation is the E2 endpoint.",
+    "Wilson and bootstrap intervals describe finite synthetic-task heterogeneity, not an ecosystem prevalence estimate."
+  ],
+  "schema_version": "E2-20261021-v1",
+  "tasks": 24,
+  "unit": "synthetic_task"
+}

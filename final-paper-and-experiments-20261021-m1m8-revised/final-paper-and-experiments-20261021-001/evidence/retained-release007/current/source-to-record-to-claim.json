@@ -1,0 +1,9 @@
+{
+  "current_claims": "current/claim-bindings.json",
+  "record_join_examples": {
+    "E1": "controlled-study/data/collection/requests/E1-00-0/final-answer.raw.txt -> controlled-study/data/replay-inputs/e1.jsonl -> controlled-study/data/E1/trials/ -> controlled-study/data/E1/summary.json -> E1-REEMISSION",
+    "E2": "controlled-study/data/collection/requests/E2-I00/final-answer.raw.txt -> controlled-study/data/replay-inputs/e2-plans.json -> controlled-study/data/E2/results.json -> controlled-study/data/E2/summary.json -> E2-EXECUTION",
+    "search": "search-update/query logs -> records.csv:record_id -> addition.csv:source_version/source_locator/source_sha256 -> FINITE-SEARCH-UPDATE"
+  },
+  "historical": "history-release006/current/claim-locators.json and nested evidence-release004/traceability/"
+}

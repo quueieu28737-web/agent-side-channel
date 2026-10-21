@@ -1,0 +1,18 @@
+{
+  "schema": "selection-receipt-transform-diagnosis/v1",
+  "date": "2026-10-20",
+  "artifact": "selection-audit.txt",
+  "source_and_original_receipt_digest": "d639515452d5023918e4e2b88098257b7c911807eaee309ec7112de61ce0d84a",
+  "reported_staged_redacted_document_digest": "ff2db2acb9d702abcfa1fe95dd442ae280444263628eb22f8d80f97b8cdaa662",
+  "reason": "Actual source-byte inspection shows the source receipt was correct and all five source artifact digests match. The root initially attempted a document-digest refresh from the packager's stage diagnosis, then immediately reverted it after inspecting the real command output. The package's path-redacted copy requires transformation-aware provenance, not rewriting the correct original receipt.",
+  "source_receipt_status": "UNCHANGED_ORIGINAL_DIGEST_RESTORED",
+  "root_initial_refresh_status": "WITHDRAWN_MISDIAGNOSIS",
+  "other_receipt_artifacts_unchanged": 4,
+  "query_counts_seed_counts_candidate_or_audit_results_changed": false,
+  "original_failed_receipt_preserved": "artifact/.release004-stage-pt19o24y",
+  "original_failure_receipt": "artifact/build-attempt-001-failed.json",
+  "not_a_new_source_retrieval_or_independent_review": true,
+  "new_model_requests": 0,
+  "new_fits": 0,
+  "limits": "The correct source receipt is retained. The packager must bind original and released/redacted bytes separately; no scientific gap is closed by a transform-aware checksum fix."
+}

@@ -1,0 +1,88 @@
+{
+  "scope": "Current source -> saved record -> numeric claim navigation; historical claims remain under history-release006.",
+  "numeric_bindings": {
+    "E2_live_success": 9,
+    "E2_protected_violations": 6,
+    "E2_task_count": 24,
+    "E1_replays": 144,
+    "E1_heldout_outputs": 24,
+    "search_records": 565
+  },
+  "claims": [
+    {
+      "claim_id": "E1-REEMISSION",
+      "bounded_claim": "Upstream equalization and terminal re-emission in the constructed two-link system.",
+      "manuscript_anchors": [
+        {
+          "document": "main",
+          "path": "sections/32-controlled-placement.tex",
+          "pattern": "\\\\subsection\\{Upstream padding and a new terminal emitter\\}",
+          "matched_text": "\\subsection{Upstream padding and a new terminal emitter}",
+          "line": 4,
+          "sha256": "af4ac89fcf5444873766331522436648265ee1622132054670f1c6fabbd822cc"
+        },
+        {
+          "document": "main",
+          "path": "tables/controlled-placement.tex",
+          "pattern": "Upstream only & 50\\\\% & 100\\\\% & 721\\\\\\\\",
+          "matched_text": "Upstream only & 50\\% & 100\\% & 721\\\\",
+          "line": 14,
+          "sha256": "7b205bd7419f71854cecb4643f0ded9e7f0b660e921a4234d392bc07d36c949d"
+        }
+      ],
+      "evidence_records": [
+        "controlled-study/data/E1/summary.json",
+        "controlled-study/data/E1/protocol.json",
+        "controlled-study/verification/E1-VERIFICATION.json"
+      ]
+    },
+    {
+      "claim_id": "E2-EXECUTION",
+      "bounded_claim": "Objective task/state preservation for the four fixed cover routes.",
+      "manuscript_anchors": [
+        {
+          "document": "main",
+          "path": "sections/32-controlled-placement.tex",
+          "pattern": "\\\\subsection\\{Four cover routes and objective task state\\}",
+          "matched_text": "\\subsection{Four cover routes and objective task state}",
+          "line": 15,
+          "sha256": "af4ac89fcf5444873766331522436648265ee1622132054670f1c6fabbd822cc"
+        },
+        {
+          "document": "main",
+          "path": "tables/controlled-placement.tex",
+          "pattern": "Live write & 9/24 & 6/24 & 0/24\\\\\\\\",
+          "matched_text": "Live write & 9/24 & 6/24 & 0/24\\\\",
+          "line": 25,
+          "sha256": "7b205bd7419f71854cecb4643f0ded9e7f0b660e921a4234d392bc07d36c949d"
+        }
+      ],
+      "evidence_records": [
+        "controlled-study/inputs/e2-tasks.json",
+        "controlled-study/data/E2/results.json",
+        "controlled-study/data/E2/summary.json",
+        "controlled-study/verification/E2-VERIFICATION.json"
+      ]
+    },
+    {
+      "claim_id": "FINITE-SEARCH-UPDATE",
+      "bounded_claim": "Bounded supplementary query dispositions and source-scoped additions.",
+      "manuscript_anchors": [
+        {
+          "document": "main",
+          "path": "sections/03-methodology.tex",
+          "pattern": "\\\\section\\{Scope and Review Method\\}\\\\label\\{sec:methodology\\}",
+          "matched_text": "\\section{Scope and Review Method}\\label{sec:methodology}",
+          "line": 1,
+          "sha256": "a12706eec5becdfaf46e9e55fe7ac31b5eef9259a6c2b4707cfb0a7723ee08c9"
+        }
+      ],
+      "evidence_records": [
+        "search-update/records.csv",
+        "search-update/screening-summary.json",
+        "search-update/addition.csv",
+        "search-update/fulltext-review.csv"
+      ]
+    }
+  ]
+}

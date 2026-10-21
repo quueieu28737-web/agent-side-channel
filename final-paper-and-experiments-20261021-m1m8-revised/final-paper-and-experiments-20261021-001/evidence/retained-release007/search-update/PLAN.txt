@@ -1,0 +1,32 @@
+Supplementary mechanism search, declared 2026-10-21 before API collection.
+Purpose: extend the current purposefully acquired corpus, independently test
+known-paper recovery, and look for direct evidence/counterconditions for the
+three deployment cases. This round does not retrospectively complete IEEE Q4.
+Window: 2023-01-01 through 2026-10-21 inclusive. arXiv cs.CR or cs.CL primary
+or cross-list categories; DBLP/Semantic Scholar use their full bibliographic
+index because equivalent subject-category filters do not exist.
+
+Four query families: (1) agent/workflow side channels and fingerprinting;
+(2) encrypted/streaming LLM traffic; (3) padding and downstream re-emission;
+(4) decoy/cover execution in LLM agents. Exact provider queries are plan.json.
+DBLP searches title bibliographic words, not absent abstracts. DBLP year filter
+is applied locally to all returned metadata; 2026 records after Oct21 must be
+bound to a primary source date before inclusion.
+
+All API pages saved before interpretation. Sequential per-provider requests,
+3.2 seconds between arXiv requests, 1 second other requests, no automatic retry.
+HTTP 429/403 stops that provider; failed API routes are not API exports.
+At most 300 distinct discovery records for this finite round; if a query reports
+more remaining records when the cap is reached, that route remains incomplete.
+No ranked top-N slice may be described as a completed query. Page size100.
+Public metadata only; no manuscript, private logs, model calls or new fits.
+
+Dedup: exact arXiv unversioned ID, DOI or normalized full title. Publication
+aliases retained. Screen all acquired records; missing abstracts/uncertain
+auxiliary evidence => fulltext referral/unresolved, never title-only exclusion.
+Screen labels: EXISTING_CORE, EXISTING_ADJACENT, NEW_FULLTEXT_CANDIDATE,
+BACKGROUND_OR_EXCLUDE_WITH_REASON, UNRESOLVED_MISSING_SOURCE.
+New core classification requires C1-C5 verified against primary full text.
+Known24 manifest held separate from discovery query terms: establish index
+presence by exact ID/title lookup after discovery; query recovery is separate.
+No human agreement or independent model-judge claim is made.

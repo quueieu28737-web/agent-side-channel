@@ -1,0 +1,104 @@
+WRA evidence for the execution-boundary case — 2026-10-21
+
+Task scope
+Read-only source/interpretation review for the current manuscript revision. No new
+model requests, experiments, fit, broad search or changes to frozen evidence.
+
+Primary source and verified anchors
+Source: evidence/closure-2026-09-12/sources/jeong2026wra/paper.txt
+Primary URL: https://www.usenix.org/system/files/usenixsecurity26-jeong.pdf
+SHA256: abfad8a8d65ea27495a70543020810289bd828549d6d6a0f310257f117272328
+Citation key: jeong2026wra
+Existing canonical result ID: WRA-decoy-execution. No new canonical unit proposed.
+
+- Section 8.1, printed p. 6496, extracted lines 833–868: generates and executes
+  topical decoy prompts; privacy target is the user's true objective, attributes
+  or target entity. Real and decoy prompts are issued in parallel and only the
+  real output is returned to the user. All queries create observable traces.
+- Lines 869–875: evaluation uses visited-domain sets from original/decoy prompts;
+  original domains are randomly interleaved while their internal order is kept.
+  Therefore describe execution plus the stated domain-interleaving evaluation,
+  without inventing a measured end-to-end packet-level concurrent deployment.
+- Table 8, lines 820–833: no-defense versus ONE-decoy E_func 0.770 versus 0.610;
+  this is the paper's functional-intent reconstruction metric, not binary ASR.
+  SBERT similarity is 0.492 versus 0.390; LLM-Judge is 0.415 versus 0.190.
+  Five-decoy E_func is 0.565. Shuffling is a separate evaluated condition.
+- Table 9 and lines 854–864: a conflicting-persona decoy reduces occupational
+  median similarity 0.8975 to 0.6790; behavioral median stays 0.4550. The table
+  heading says inference accuracy, but nearby methods text says median similarity;
+  use the latter measured quantity and avoid treating all traits as improved.
+- Section 8.2/Table 11, lines 895–945: the usefulness scores belong to varying
+  visibility/alternative-source discussion, and are judged by an LLM. They are
+  NOT a utility curve measured for the decoy conditions in Tables 8–9.
+- Section 9, lines 907–925: cost/latency tradeoffs are described as only partially
+  measured and decoy overhead is acknowledged qualitatively. Same-condition
+  decoy objective terminal/policy outcomes and numerical latency/wire overhead
+  remain NR-R in the inspected defense/discussion scope. This scoped statement
+  does not say the entire paper contains no cost/latency measurements: earlier
+  attacker-model selection discusses cost and latency for another purpose.
+
+Important manuscript correction
+The current defense-type row and earlier inventory's broad 'LLM-judged report
+usefulness' wording must not imply that Table 11 utility was paired with Table 8
+decoys. Preserve old frozen rows. In new prose or an additive interpretation note,
+separate decoy inference from visibility-condition utility. This improves the
+case's empirical connection to privacy without manufacturing a joint frontier.
+
+Ready-to-use replacement for Case 2 (about 250 English words; TeX citations)
+
+\paragraph{Decision and evidence}
+WRA provides a privacy-oriented reason to execute cover: generate plausible
+alternative research activity around a user's real request. The authors issue
+real and decoy prompts in parallel, return only the real output, and evaluate
+interleaved visited-domain sets. With one decoy, the functional-intent
+reconstruction metric falls from 0.770 to 0.610; this is positive evidence for
+reducing the tested observer's prompt inference \cite{jeong2026wra}. The
+report-usefulness scores in its separate visibility experiment do not establish
+utility for that decoy condition.
+
+\paragraph{Follow cover to execution}
+We distinguish four deployment categories: transport dummies discarded before
+dispatch; requests confined to an isolated shadow environment; read-only or
+idempotent operations; and state-changing actions. These categories organize
+the comparison rather than denote four new experiments. In particular,
+idempotence concerns repetition and does not make an initial state change safe.
+AHB illustrates why this distinction matters: Trip Planning success is 0.75
+for Raw and 0.15 for combined online humanization, with unintended GUI
+transitions discussed by the authors \cite{zhu2026turing}. This is a combined
+configuration comparison, not an isolated Fake effect or a privacy estimate.
+
+\paragraph{Permitted use and next decision}
+Retain WRA's privacy result for its tested domain view and decoy construction.
+When cover is demonstrably discarded or isolated, the direct state-changing
+action mechanism is absent. When it reaches a tool or interface, establish
+goal and policy compatibility for that action, including its initial effect.
+WRA's research-task decoys motivate such execution; AHB identifies the state
+risk that must be checked. Same-condition terminal utility, latency and wire
+cost are still needed to choose an operating budget, rather than to erase the
+already measured privacy benefit.
+
+Suggested compact defense-table wording
+Concurrent decoy agents | Domain observer; private prompt/trait inference; WRA |
+Original/decoy prompts execute in parallel; interleaved-domain evaluation lowers
+one-decoy E_func from 0.770 to 0.610. Table 11 usefulness concerns a separate
+visibility condition; same-condition objective utility and numerical cost remain NR-R.
+
+SCOPE naming check
+The original authoritative handoff explicitly defines:
+  S — Secret (lines 64–71)
+  C — Channel / Observable (lines 73–81)
+  O — Observer (lines 85–90)
+  P — Pipeline Layer (lines 92–100)
+  E — Exploitation / Inference Goal (lines 114–121)
+Its contribution list (line 168) shortens this to Secret, Channel, Observer,
+Pipeline, Exploitation Goal. Thus the user's Secret/Channel/Observer/Pipeline/
+Exploitation wording matches the original; no incompatible acronym was found.
+
+Recommended single expansion in the current method section:
+'SCOPE indexes Secret/target, Channel/observable, Observer, Pipeline layer and
+Exploitation/inference goal.' Keep the slash qualifications only on first use.
+S is the hidden target being inferred; E is the inferential operation (e.g.,
+reconstruction, membership or attribution). A target need not be a privacy
+secret, so retain the existing explicit protection-relation field. E must not
+be expanded as Evidence; source/evaluation columns already provide that evidence.
+No extra taxonomy or renaming of canonical IDs is needed.

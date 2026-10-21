@@ -1,0 +1,50 @@
+T2(c): controlled executed-cover bridge on pinned tau-bench retail
+User-authorized side-conversation experiment. No active manuscript edits.
+
+Hypothesis: identical additional cover intentions have different effects when
+discarded, executed on an isolated shadow state, mapped to a pure read, or
+executed against live business state. H0: live state, native task reward and
+unrequested writes are identical to the no-cover reference in all four routes.
+
+System: sierra-research/tau-bench commit
+59a200c6d575d595120f1cb70fea53cef0632f6b, original retail data, tools and native
+reward implementation. All retail test tasks at that commit are included.
+Reference actions are fixed public gold programs, replayed without a language
+model. This controls task planning, so the experiment estimates routing effects
+conditional on a fixed program, not autonomous-agent capability or a new attack.
+Task outputs in scoring are reference outputs; dialogue ability is not measured.
+
+Arms: no cover; discard; isolated shadow; pure get_order_details; live mutation.
+One cancellation cover per episode, at BEFORE / AFTER the reference program.
+Select uniformly from eligible pending orders belonging to the authenticated
+task user, using three fixed seeds (20261021,20261022,20261023). If no eligible
+order exists, record NO_ELIGIBLE_COVER and keep the task in all denominators.
+The same order is used in all four cover classes for a task/seed/position.
+BEFORE/AFTER and seeds are repeated measurements, not independent tasks.
+
+The cover order is sampled without consulting the task instruction or oracle
+actions. The fixed task reference may legitimately involve that order; such
+overlap is measured, not removed. The cover intent is not requested or confirmed
+by the scripted user; live write attempts therefore violate the experiment's
+explicit confirmation policy. Record attempts separately from writes that
+actually change state. Native tau-bench tools do not enforce dialogue consent.
+This tests the execution boundary, not a claim about real users' hidden consent.
+
+Metrics: unmodified native reward; equality to baseline whole business state;
+changed order/user objects; final state on gold-program touched objects;
+cover-induced live writes; task tool errors; local invocation time and returned
+bytes. Audit records are distinct from business state. No inference score or
+privacy efficacy is claimed without a traffic observer and attacker experiment.
+
+Report full task census and baseline-error cases. Report conditional and
+intention-to-treat effects separately. Bootstrap whole task IDs (10,000 draws,
+seed20261021); report paired differences and 95% percentile intervals. These
+intervals describe task-composition resampling on this fixed test suite, not
+cross-framework uncertainty. Repetitions do not inflate the task sample size.
+All arms and all endpoints are reported. No outcome-based selection or tuning.
+
+Execution uses CPU and local synthetic benchmark state only, no Docker, model
+calls, credentials or external side effects. Source acquisition uses pinned
+public GitHub files. A 15-minute process deadline applies to the local run.
+Any native source failure is retained and addressed as engineering before a new
+run directory. Original runs and releases are never overwritten.

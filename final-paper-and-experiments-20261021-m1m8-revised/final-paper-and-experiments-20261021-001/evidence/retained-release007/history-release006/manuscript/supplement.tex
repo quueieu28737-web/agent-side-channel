@@ -1,0 +1,48 @@
+% Standalone supplement. Original observations and negative results are retained.
+\documentclass[conference,compsoc]{IEEEtran}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{booktabs,tabularx,array,graphicx,amsmath}
+\usepackage[dvipsnames,table]{xcolor}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,positioning,fit,calc,matrix,shapes.geometric}
+\usepackage[hyphens]{url}
+\usepackage{hyperref}
+\hypersetup{hidelinks,pdfauthor={}}
+\newcommand{\scope}{\textsc{Scope}}
+\newcommand{\NRR}{\textsc{nr-r}}
+\newcommand{\NRA}{\textsc{nr-a}}
+\newcommand{\NRV}{\textsc{nr-v}}
+\newcommand{\NA}{\textsc{na}}
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+\input{tables/final-counts}
+\renewcommand{\thesection}{S\arabic{section}}
+\renewcommand{\thesubsection}{\thesection.\arabic{subsection}}
+\renewcommand{\thetable}{S\arabic{table}}
+\title{Supplementary Evidence: When Do LLM Side-Channel Defenses Protect Agent Workflows?}
+\author{}
+\begin{document}
+\maketitle
+This supplement provides the search accounting, corpus maps, saved empirical results and source-bound audits accompanying the main paper. The package README maps these sections to machine-readable data and the fit-free verifier. Original failed and negative outcomes are preserved alongside positive results.
+\section{Search and Evidence Audit}\label{app:search}
+\input{tables/selection-flow}
+\input{sections/22-search-audit-summary}
+\input{sections/19-final-ledger}
+\input{tables/result-lineage-example}
+\input{tables/observable-origin-map}
+\input{tables/related-sok-matrix}
+\input{tables/receiver-intervention-matrix}
+\input{tables/dependency-holdouts}
+\input{sections/21-retained-controls-summary}
+\input{sections/17-public-trace-details}
+\input{sections/23-defense-comparison}
+\input{tables/intervention-status}
+\input{sections/24-conclusion-sensitivity}
+\input{tables/conclusion-source-dependencies}
+\input{sections/29-scope-comparison-boundary}
+\input{sections/31-result-audit}
+\input{tables/corpus-citations}
+\IEEEtriggeratref{59}
+\bibliographystyle{IEEEtran}
+\bibliography{refs,refs-final-additions}
+\end{document}

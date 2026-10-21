@@ -1,0 +1,35 @@
+{
+  "benchmark_cases": 24,
+  "baseline_rule": "Deterministic headline-metric rule: predict Compatible whenever source paper reports attack reduction or <10% component overhead",
+  "ground_truth_distribution": {
+    "Compatible": 7,
+    "Incompatible": 12,
+    "Unresolved": 5
+  },
+  "headline_score_baseline_accuracy": 0.2916666666666667,
+  "headline_score_correct_count": 7,
+  "expert1_3check_accuracy": 0.9583333333333334,
+  "expert1_correct_count": 23,
+  "expert2_3check_accuracy": 0.9166666666666666,
+  "expert2_correct_count": 22,
+  "mean_expert_accuracy": 0.9375,
+  "accuracy_gain_over_headline_baseline": 0.6458333333333333,
+  "known_failure_detection_recall": {
+    "n_incompatible_failures": 12,
+    "headline_baseline": 0.0,
+    "expert1_3check": 1.0,
+    "expert2_3check": 0.9166666666666666
+  },
+  "inter_annotator_agreement": {
+    "n": 24,
+    "raw_agreement": 0.875,
+    "expected_agreement": 0.390625,
+    "cohen_kappa": 0.7948717948717948,
+    "kappa_ci95": [
+      0.5384615384615385,
+      1.0
+    ],
+    "exact_matches": 21,
+    "disagreements": 3
+  }
+}

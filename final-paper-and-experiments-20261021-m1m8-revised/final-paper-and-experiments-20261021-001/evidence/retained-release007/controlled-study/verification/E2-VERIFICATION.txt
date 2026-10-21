@@ -1,0 +1,25 @@
+E2 saved-result verification: PASS
+
+24 actual Luna plan outputs bind exactly to frozen requests, protocol final messages, export inputs and120 replay rows. All frozen source hashes match. No model request or original-result modification occurred.
+
+baseline: task success 24/24; goal 24/24; protected violations 0/24; paired difference 0.000000; exact discrete bootstrap95 [0.0, 0.0]
+discarded: task success 24/24; goal 24/24; protected violations 0/24; paired difference 0.000000; exact discrete bootstrap95 [0.0, 0.0]
+isolated_shadow: task success 24/24; goal 24/24; protected violations 0/24; paired difference 0.000000; exact discrete bootstrap95 [0.0, 0.0]
+read_only: task success 24/24; goal 24/24; protected violations 0/24; paired difference 0.000000; exact discrete bootstrap95 [0.0, 0.0]
+state_changing: task success 9/24; goal 15/24; protected violations 6/24; paired difference -0.625000; exact discrete bootstrap95 [-0.7916666666666666, -0.4166666666666667]
+
+11 statistical checks:
+1. unit_and_pseudoreplication [PASS]: 24 matched task units;120 arm rows are not independent observations.
+2. pairing_and_baseline [PASS]: Each saved raw plan and initial state is reused across all5 arms; differences use the same24 task IDs.
+3. selection_and_missingness [PASS]: All24 predetermined E2 requests completed and remain included;0 discarded plans or baseline failures; no outcome-dependent task replacement.
+4. endpoint_and_design_timing [PASS]: Frozen cover placement and goal/protected-state scoring predate all model replies; goal and constraint failures are separately retained.
+5. multiple_comparisons [BOUNDARY]: Four baseline contrasts are descriptive; only state-changing contrast is nonzero; no familywise significance or model-selection claim is made.
+6. interval_interpretation [BOUNDARY]: Wilson and task bootstrap numbers are finite constructed-task summaries, not uncertainty for a random population sample.
+7. causal_mechanism_and_confounding [PASS_WITH_SCOPE]: Within task, only cover destination/type changes. Across tasks, hand-built overlap/protected/slack factors explain effects; do not infer ecosystem failure prevalence.
+8. effect_size_vs_significance [PASS]: Primary result is15/24 fewer complete tasks(-62.5pp), with9goal failures and6protected-state violations; no p-value headline.
+9. null_and_equivalence [BOUNDARY]: Exact baseline-state equality in24 trials for discard/shadow/read demonstrates this implementation's invariant; bootstrap[0,0] does not establish universal equivalence.
+10. generalization_and_dependence [BOUNDARY]: One model,24 simple tasks/two finite domains,one plan each; templates and deterministic environment are shared. Confidence intervals do not remove this construction dependence.
+11. construct_and_cost_validity [PASS_WITH_SCOPE]: Measures objective task/state preservation and tool-call work. Actor/resource permission and confirmed=true are tool-level checks; scripted cover flags do not establish human consent to each decoy. No attacker inference or privacy benefit is measured; local CPU nanoseconds are not network/API latency; pure reads do not certify idempotent writes.
+
+Saved actual Luna plans reproduce the predicted finite-state mechanism: live cover competes for target state or changes protected resources; discard,clone-isolated andpure-read arms preserve the baseline. This is a controlled plan-replay mechanism result, not an autonomous-agent evaluation or privacy-defense effectiveness result.
+Separate deterministic reconstruction by the same AI-assisted project workflow; not independent human coding or external researcher validation.

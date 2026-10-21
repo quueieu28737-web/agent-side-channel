@@ -1,0 +1,64 @@
+Frozen implementation entry points (unchanged original analysis)
+==============================================================
+artifacts/sok-supplement-20261008-r2/public-trace/frozen/snapshot/features.py:
+  delay(events, max_delay_ms=5000, seed=...)
+artifacts/sok-supplement-20261008-r2/public-trace/frozen/snapshot/analyze.py:
+  _matrices(rows, config, realization=r), analyze(...)
+Exact source bytes are bound by freeze.json. The following describes code that
+already generated saved H3 predictions; NO new H3 fitting is performed here.
+
+Projection and perturbation
+---------------------------
+1. For each admitted row i, project Wikipedia-origin JS events in source-array
+   callback order. Exclude harness trigger=http, retain SPA pushState/popstate.
+2. For realization r in [0,1,2], initialize Python random.Random with the STRING
+      "20261008:noise:{r}:{row.identifier}:single_origin_js".
+   This is the literal formatter used by _matrices and delay. The other-origin
+   stream has the suffix other_origins_js and is not this H3's predictor view.
+3. Visit projected events in existing order. For each valid finite nonnegative
+   page-local time t_ij, draw a fresh u_ij = rng.uniform(0.0,5000.0), set
+      t'_ij = t_ij + u_ij.
+   Missing or invalid times remain None and consume NO random draw. No
+   cumulative interval delay, sorting, session-wide scalar or physical wait.
+   Event types, order, page keys, missingness and empty traces remain unchanged.
+4. Recompute original coarse + bigram features. Type counts/bigrams are exactly
+   invariant; valid timestamp summaries change. The transformation is applied
+   to train/validation/test rows by the same function. Stream seeds use unique
+   row IDs, so rows in different partitions have distinct initializers; there
+   is NO additional partition-name salt. Independence is a pseudorandom-stream
+   construction, not an empirical temporal-independence assertion.
+
+Attacker training and budget
+---------------------------
+5. Clean coarse and combined selectors use 4 new candidates each: scaled
+   multinomial logistic C=[0.1,1,10], plus RF(200 trees, depth12, leaf2, sqrt),
+   random_state=20261008 and single-thread execution. Combined also retains
+   the already fitted clean coarse candidate. Validation question-mean logloss
+   selects; ties within 1e-12 retain the first declared candidate.
+6. H3 fixes the selected clean combined program's representation/architecture.
+   For each r, clone its estimator and fit ONCE on transformed TRAIN rows using
+   the original N/(Q*n_q) weights. No noisy-data retuning/validation selection.
+   Thus H3 adds exactly 3 fits, not 4 candidates per realization. The original
+   total analysis is 19 fits including its other planned comparisons. Both
+   clean and adapted programs have the same model family/hyperparameters and
+   training-row support; neither has extra admitted samples.
+7. For each r, both programs predict exactly the SAME transformed test rows.
+   Add 1e-6 to every class probability and renormalize; true-class logloss clips
+   to [1e-6,1]. Save clean/adapted probabilities for every original test row.
+8. Pair row losses, average the three r effects for each row, average rows
+   within each exact question, then average the 226 test questions equally.
+   Accuracies similarly average question-weighted realization-specific scores.
+
+Interval
+--------
+3,000 paired question resamples, seed20261008. A common draw is shared by the
+original 3 primary contrasts. Percentiles 0.833333... and 99.166666... form the
+98.333333...% conditional stability interval. Fits, selection and three noise
+realizations are fixed: no resampling of training, model, family or deployment.
+The newly added diagnostics do not alter this old interval or allocation.
+
+Interpretation
+--------------
+This control is independent additive noise on each valid PAGE-AGE timestamp.
+It is not physical inter-action delay, live traffic shaping, task-utility or
+bandwidth measurement, or an evaluation of a deployable browser defense.

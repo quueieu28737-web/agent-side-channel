@@ -1,0 +1,71 @@
+E1 statistical/interpretation review (saved observations only)
+Reviewer: AI-assisted, same project workflow; not independent human coding.
+Scope: new sections32/33, controlled-placement table, E1 receipts and E2
+summary. No new fitting, resampling, network, transport replay or model calls.
+
+1. Pseudoreplication: controlled. The48 E1texts belong to24paired topic groups;
+144replays are matched arms, not144 independent generated responses. Attack
+test denominator24outputs within12topic pairs is stated. E2 has24task units,
+not120independent arms. Maintain these denominators in all summaries.
+
+2. Train/test leakage: no detected leakage. Topic pairs remain together in
+12training and12disjoint test groups. Saved threshold623 is a midpoint of
+adjacent training sizes and separates training labels. Test predictions are
+recomputed from the saved rule only; test labels do not choose the threshold.
+
+3. Failure/survivor selection: no detected exclusion in this run. All72model
+responses complete; all48E1texts produce3matched arms and144hash-preserving
+replays, with0failures. Original retail failures remain a distinct result.
+
+4. Post-outcome endpoint choice: no detected change. Frozen protocol/source
+hashes precede collection. Primary E1feature is S2C TLS1.2type23payload-byte
+total; timing is reported as descriptive cost. Size success is not substituted
+for a stronger timing or general-privacy endpoint.
+
+5. Multiple comparisons and significance claims: six arm/site cells are
+prespecified. No multiplicity-adjusted discovery or population-significance
+claim is made. Counts and exact captured size equality are the appropriate
+descriptive findings; avoid treating6cells as6independent discoveries.
+
+6. Degenerate confidence intervals: applicable limitation, correctly retained.
+All12test topic groups have identical per-group accuracy within a given cell.
+Resampling those observed groups therefore yields[1,1]or[.5,.5]algebraically.
+This is not a population error bound. Main text should use24/24and12/24plus
+the observed size-constancy check. Saved intervals remain unchanged.
+
+7. Null result/equivalence fallacy: avoid claiming total absence of leakage
+from50%classification. The stronger supported statement is that this one
+recorded size feature is identical across all48padded responses. Timing,
+content-aware recipients and other traffic features are outside the attack.
+
+8. Causal overreach: within the constructed pipeline the same saved content
+is paired across placement arms, and actual TLScaptures establish the boundary
+change. The replay construction isolates transport placement from model
+variation. It does not estimate deployment prevalence or prove that only
+padding can remove a size signal. Requested wording change: replace the
+general “survives only across links...”rule by this stack's observed loss and
+restoration of size equalization at the final emitter.
+
+9. Denominator/estimand mismatch: one presentation change requested. TableA
+accuracy uses24held-out outputs, but byte means use all48outputs. State both
+denominators in the caption.721is34606/48rounded;16848is exact per padded
+link/response. The23.37multiplier is808704/34606, a ratio of aggregate S2C
+application-record wire bytes, not an average of per-request ratios or a
+whole-network bandwidth multiplier. TLS handshakes and TCP/IP are excluded.
+
+10. Utility/privacy substitution: currently controlled. E1 utility is exact
+content preservation144/144, not correctness of explanations. E2 goals15/24
+and complete successes9/24are distinct, with6protected-state violations.
+E2 measures objective state effects, not cover privacy benefit. Confirmation
+is a synthetic broker parameter, not measured human approval.
+
+11. Timing precision/practical generalization: local medians25.97/27.33/28.52ms
+include twoTLS handshakes and frontend/replay work. One execution per matched
+text/arm cannot establish a stable remote service slowdown or high-percentile
+latency penalty. Descriptive wording in section33 is appropriate; no inference
+about timing privacy or remote APIcost should be added.
+
+Verdict: all reported E1/E2numbers checked against saved receipts agree.
+The two requested textual changes concern the TableAbyte denominator and a
+too-general necessary-condition sentence, not result suppression or endpoint
+revision. Neither requires any new model or experiment execution.

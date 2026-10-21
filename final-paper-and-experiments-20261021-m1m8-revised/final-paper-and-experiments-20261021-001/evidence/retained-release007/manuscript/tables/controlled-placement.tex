@@ -1,0 +1,28 @@
+\begin{table}[t]
+\centering
+\caption{Controlled placement results. Panel A accuracy uses 24 held-out outputs from 12 topic pairs; byte means use all 48 outputs. Attacks are fitted separately per arm/link. Panel B replays the same 24 Luna plans. State equality is relative to each task's no-cover final state.}
+\label{tab:controlled-placement}
+\footnotesize
+\setlength{\tabcolsep}{4pt}
+\begin{tabularx}{\columnwidth}{Yrrr}
+\toprule
+\multicolumn{4}{l}{\textbf{A. Where padding ends}}\\
+Padding & Upstream & Terminal & Terminal bytes\\
+ & accuracy & accuracy & mean\\
+\midrule
+None & 100\% & 100\% & 721\\
+Upstream only & 50\% & 100\% & 721\\
+Both links & 50\% & 50\% & 16,848\\
+\midrule
+\multicolumn{4}{l}{\textbf{B. Where cover executes}}\\
+Cover route & Task & Protected & Same\\
+ & successes & violations & state\\
+\midrule
+No cover & 24/24 & 0/24 & 24/24\\
+Discarded & 24/24 & 0/24 & 24/24\\
+Isolated shadow & 24/24 & 0/24 & 24/24\\
+Pure read & 24/24 & 0/24 & 24/24\\
+Live write & 9/24 & 6/24 & 0/24\\
+\bottomrule
+\end{tabularx}
+\end{table}

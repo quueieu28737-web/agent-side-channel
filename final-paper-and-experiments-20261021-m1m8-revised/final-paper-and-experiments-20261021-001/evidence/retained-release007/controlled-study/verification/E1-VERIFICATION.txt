@@ -1,0 +1,20 @@
+E1 saved-result verification: PASS
+48 saved Luna outputs; 24 paired topics,12 train/12 held-out test.
+144/144 completed matched replays;0 failures;144 source/terminal hash receipts match.
+288 S2C and576 total ciphertext direction streams parsed independently.
+Saved size-only rules, test correct/24:
+  NONE / upstream: 24/24; sizes[133, 1493]; rule{'kind': 'threshold', 'threshold': 623.0, 'direction': 1}
+  NONE / terminal: 24/24; sizes[133, 1493]; rule{'kind': 'threshold', 'threshold': 623.0, 'direction': 1}
+  UPSTREAM_PAD / upstream: 12/24; sizes[16768, 16768]; rule{'kind': 'constant', 'label': 0}
+  UPSTREAM_PAD / terminal: 24/24; sizes[133, 1493]; rule{'kind': 'threshold', 'threshold': 623.0, 'direction': 1}
+  END_TO_END_PAD / upstream: 12/24; sizes[16768, 16768]; rule{'kind': 'constant', 'label': 0}
+  END_TO_END_PAD / terminal: 12/24; sizes[16768, 16768]; rule{'kind': 'constant', 'label': 0}
+Padded application payload16768 bytes; application wire16848 bytes per link/response. Baseline mean720.958333; ratio23.368896.
+Upstream-only padding equalized all 48 upstream size features; the new frontend re-emitted a distinguishable size downstream (24/24 held-out labels correct).
+Extending fixed padding to the final TLS link equalized that same recorded size feature; the prespecified constant tie rule scored12/24.
+Saved bootstrap intervals remain unchanged. All 12 test topic clusters share the same per-cluster score, so intervals degenerate algebraically. They are not population certainty or a general privacy bound.
+Size is the sole attacker feature. Timing is not tested for privacy; loopback elapsed time is descriptive replay cost and excludes model generation.
+Bandwidth object is S2C application TLS records including5-byte headers and24-byte GCM overhead; handshake/TCP/IP overhead is excluded from the ratio.
+Content preservation is independently checked against saved endpoint hashes and exact collected text. Ciphertext alone does not authenticate the endpoint's reported plaintext hash.
+This is a controlled buffer/de-pad/re-chunk frontend with one replay per content/arm. It establishes the constructed mechanism and its final-link size control, not field prevalence.
+No new model calls, TLS replay, bootstrap simulation, model fit, or experiment-source edits occurred in this verification.

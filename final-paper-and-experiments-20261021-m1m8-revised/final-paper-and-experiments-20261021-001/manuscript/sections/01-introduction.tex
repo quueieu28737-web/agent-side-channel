@@ -1,0 +1,31 @@
+\section{Introduction}\label{sec:introduction}
+Encryption conceals message content, yet LLM serving engines and agent systems expose packet sizes, cache timing, memory-access patterns, visited domains and tool-invocation sequences \cite{weiss2024prompt,promptpeek2025,earlybird2025,agentprint2025,uitraces2026,jeong2026wra}. A published defense result applies to a particular observer and operating point. Reusing it across a frontend, a tool dispatcher or another workload can change both the observable signal and the cost being measured. We study this interpretation problem without assuming that the original authors claimed end-to-end protection.
+
+Our systematization asks which evidence permits such reuse. It separates three obligations:
+\begin{enumerate}
+\item \textbf{Bind the receiving projection.} Target-oblivious postprocessing is a sufficient condition for preserving an upstream information bound (Proposition~1). A frontend with access to decoded content or an unprotected backward computation requires a separate argument or measurement \cite{netecho2025,politis2026splitdecoy}.
+\item \textbf{Bind execution and protected state.} Read-only decoy requests and GUI actions operate on different interfaces and serve different objectives \cite{jeong2026wra,zhu2026turing}. For tools, unchanged argument values do not imply unchanged database state. The relevant contract must identify task objects, the user's account and shared state separately.
+\item \textbf{Bind adaptation, utility and cost.} An attack on defended data must specify how the attacker was fitted; an overhead must identify the same workload and deployed mechanism as the claimed protection. Missing bindings limit reuse without establishing that the original study omitted or failed the experiment.
+\end{enumerate}
+
+\paragraph{Contribution and scope}
+The end-to-end principle, state isolation and adaptive evaluation are established ideas. Our contribution is their application to a source-bound repository of heterogeneous LLM and agent measurements. We provide:
+\begin{itemize}
+\item \textbf{A result-record repository:} \FinalN{} study families (\FinalCore{} core and \FinalAdjacent{} adjacent), with 39 scoped records and 78 utility/cost field positions from 26 families, including mitigation and contextual comparison records. The reporting audit covers 20 mitigation families. Records separate source versions, receiver views, execution modes and cost objects that a paper-level score can conflate.
+\item \textbf{A comparability audit:} nine reporting items, numbered R1--R9, and three operational checks. Among applicable families, utility is bound in 3/17 and a matched adaptation contrast in 2/11. The latter includes a capture-based result and does not establish live-protocol adaptation. A 24-scenario author-constructed exercise illustrates rule application; it is not an external validation benchmark.
+\item \textbf{Two controlled case studies:} a TLS~1.2 replay of saved responses and a separate replay of 115 retail reference programs. They test receiving boundaries, state scopes and attacker-view choices. They neither execute an autonomous LLM agent nor measure the joint protection of the two paths.
+\end{itemize}
+
+Table~\ref{tab:synthesis-decisions} links source-local findings to the new comparison judgments. For example, separating Dangol's stored-capture and live-protocol records prevents an invalid subtraction; separating Early Bird's two mechanisms prevents using a semantic-cache cost to price KV-prefix isolation. The retail study adds a concrete evaluation consequence: full account equality and a simple rule attack can reverse an apparent privacy--utility interpretation.
+
+Figure~\ref{fig:system-model} depicts the two paths as an analysis model, not a jointly tested system. Figure~\ref{fig:defense-decision} summarizes the checks.
+\begin{figure*}[t]
+\centering\input{figures/fig1-system-model}
+\caption{Observation and execution boundaries represented by a result record. The case studies test these paths separately.}
+\label{fig:system-model}
+\end{figure*}
+\begin{figure*}[t]
+\centering\input{figures/defense-decision-procedure}
+\caption{Three checks for deciding which evidence can be reused in a target deployment.}
+\label{fig:defense-decision}
+\end{figure*}

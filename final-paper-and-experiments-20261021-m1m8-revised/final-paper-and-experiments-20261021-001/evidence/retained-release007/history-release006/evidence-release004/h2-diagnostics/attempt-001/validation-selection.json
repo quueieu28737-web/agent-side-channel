@@ -1,0 +1,276 @@
+{
+  "failure_only": {
+    "candidates": [
+      {
+        "declared_order": 0,
+        "retained": false,
+        "model": {
+          "name": "failure_only/logistic_C_0.1",
+          "representation": "failure_only",
+          "architecture": {
+            "kind": "logistic",
+            "C": 0.1,
+            "max_iter": 1000,
+            "tol": 1e-06,
+            "random_state": 20261008,
+            "n_jobs": 1
+          },
+          "fit_id": 1
+        },
+        "validation_log_loss": 2.5014712093914677
+      },
+      {
+        "declared_order": 1,
+        "retained": false,
+        "model": {
+          "name": "failure_only/logistic_C_1",
+          "representation": "failure_only",
+          "architecture": {
+            "kind": "logistic",
+            "C": 1.0,
+            "max_iter": 1000,
+            "tol": 1e-06,
+            "random_state": 20261008,
+            "n_jobs": 1
+          },
+          "fit_id": 2
+        },
+        "validation_log_loss": 2.499136267703404
+      },
+      {
+        "declared_order": 2,
+        "retained": false,
+        "model": {
+          "name": "failure_only/logistic_C_10",
+          "representation": "failure_only",
+          "architecture": {
+            "kind": "logistic",
+            "C": 10.0,
+            "max_iter": 1000,
+            "tol": 1e-06,
+            "random_state": 20261008,
+            "n_jobs": 1
+          },
+          "fit_id": 3
+        },
+        "validation_log_loss": 2.4988939576874962
+      },
+      {
+        "declared_order": 3,
+        "retained": false,
+        "model": {
+          "name": "failure_only/random_forest",
+          "representation": "failure_only",
+          "architecture": {
+            "kind": "random_forest",
+            "n_estimators": 200,
+            "max_depth": 12,
+            "min_samples_leaf": 2,
+            "max_features": "sqrt",
+            "random_state": 20261008,
+            "n_jobs": 1
+          },
+          "fit_id": 4
+        },
+        "validation_log_loss": 2.499402041901705
+      }
+    ],
+    "selected_order": 2,
+    "selected_model": {
+      "name": "failure_only/logistic_C_10",
+      "representation": "failure_only",
+      "architecture": {
+        "kind": "logistic",
+        "C": 10.0,
+        "max_iter": 1000,
+        "tol": 1e-06,
+        "random_state": 20261008,
+        "n_jobs": 1
+      },
+      "fit_id": 3
+    }
+  },
+  "empty_only": {
+    "candidates": [
+      {
+        "declared_order": 0,
+        "retained": false,
+        "model": {
+          "name": "empty_only/logistic_C_0.1",
+          "representation": "empty_only",
+          "architecture": {
+            "kind": "logistic",
+            "C": 0.1,
+            "max_iter": 1000,
+            "tol": 1e-06,
+            "random_state": 20261008,
+            "n_jobs": 1
+          },
+          "fit_id": 5
+        },
+        "validation_log_loss": 2.6381504629064407
+      },
+      {
+        "declared_order": 1,
+        "retained": false,
+        "model": {
+          "name": "empty_only/logistic_C_1",
+          "representation": "empty_only",
+          "architecture": {
+            "kind": "logistic",
+            "C": 1.0,
+            "max_iter": 1000,
+            "tol": 1e-06,
+            "random_state": 20261008,
+            "n_jobs": 1
+          },
+          "fit_id": 6
+        },
+        "validation_log_loss": 2.6378979485260103
+      },
+      {
+        "declared_order": 2,
+        "retained": false,
+        "model": {
+          "name": "empty_only/logistic_C_10",
+          "representation": "empty_only",
+          "architecture": {
+            "kind": "logistic",
+            "C": 10.0,
+            "max_iter": 1000,
+            "tol": 1e-06,
+            "random_state": 20261008,
+            "n_jobs": 1
+          },
+          "fit_id": 7
+        },
+        "validation_log_loss": 2.637857950984141
+      },
+      {
+        "declared_order": 3,
+        "retained": false,
+        "model": {
+          "name": "empty_only/random_forest",
+          "representation": "empty_only",
+          "architecture": {
+            "kind": "random_forest",
+            "n_estimators": 200,
+            "max_depth": 12,
+            "min_samples_leaf": 2,
+            "max_features": "sqrt",
+            "random_state": 20261008,
+            "n_jobs": 1
+          },
+          "fit_id": 8
+        },
+        "validation_log_loss": 2.6379056089513084
+      }
+    ],
+    "selected_order": 2,
+    "selected_model": {
+      "name": "empty_only/logistic_C_10",
+      "representation": "empty_only",
+      "architecture": {
+        "kind": "logistic",
+        "C": 10.0,
+        "max_iter": 1000,
+        "tol": 1e-06,
+        "random_state": 20261008,
+        "n_jobs": 1
+      },
+      "fit_id": 7
+    }
+  },
+  "activity_only": {
+    "candidates": [
+      {
+        "declared_order": 0,
+        "retained": false,
+        "model": {
+          "name": "activity_only/logistic_C_0.1",
+          "representation": "activity_only",
+          "architecture": {
+            "kind": "logistic",
+            "C": 0.1,
+            "max_iter": 1000,
+            "tol": 1e-06,
+            "random_state": 20261008,
+            "n_jobs": 1
+          },
+          "fit_id": 9
+        },
+        "validation_log_loss": 2.2477490529163666
+      },
+      {
+        "declared_order": 1,
+        "retained": false,
+        "model": {
+          "name": "activity_only/logistic_C_1",
+          "representation": "activity_only",
+          "architecture": {
+            "kind": "logistic",
+            "C": 1.0,
+            "max_iter": 1000,
+            "tol": 1e-06,
+            "random_state": 20261008,
+            "n_jobs": 1
+          },
+          "fit_id": 10
+        },
+        "validation_log_loss": 2.200684653406471
+      },
+      {
+        "declared_order": 2,
+        "retained": false,
+        "model": {
+          "name": "activity_only/logistic_C_10",
+          "representation": "activity_only",
+          "architecture": {
+            "kind": "logistic",
+            "C": 10.0,
+            "max_iter": 1000,
+            "tol": 1e-06,
+            "random_state": 20261008,
+            "n_jobs": 1
+          },
+          "fit_id": 11
+        },
+        "validation_log_loss": 2.1722074745311692
+      },
+      {
+        "declared_order": 3,
+        "retained": false,
+        "model": {
+          "name": "activity_only/random_forest",
+          "representation": "activity_only",
+          "architecture": {
+            "kind": "random_forest",
+            "n_estimators": 200,
+            "max_depth": 12,
+            "min_samples_leaf": 2,
+            "max_features": "sqrt",
+            "random_state": 20261008,
+            "n_jobs": 1
+          },
+          "fit_id": 12
+        },
+        "validation_log_loss": 1.7699674301789678
+      }
+    ],
+    "selected_order": 3,
+    "selected_model": {
+      "name": "activity_only/random_forest",
+      "representation": "activity_only",
+      "architecture": {
+        "kind": "random_forest",
+        "n_estimators": 200,
+        "max_depth": 12,
+        "min_samples_leaf": 2,
+        "max_features": "sqrt",
+        "random_state": 20261008,
+        "n_jobs": 1
+      },
+      "fit_id": 12
+    }
+  }
+}

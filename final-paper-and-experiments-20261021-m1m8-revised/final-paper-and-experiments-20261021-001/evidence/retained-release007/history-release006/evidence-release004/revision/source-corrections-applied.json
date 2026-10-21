@@ -1,0 +1,158 @@
+[
+  {
+    "target": "literature/interventions/intervention-result-units.csv",
+    "key": {
+      "unit_id": "DANGOL-livebinding"
+    },
+    "before": {
+      "unit_id": "DANGOL-livebinding",
+      "citation_key": "dangol2026workflow",
+      "source_path": "evidence/recent-agent-review-20261018-001/sources/dangol-v3.txt",
+      "source_url": "https://arxiv.org/html/2606.07150v3",
+      "source_sha256": "fae89faede5437f3449de3c641d93fd352d7e7eaa833df4ef51f91a3b5ed8039",
+      "scope": "9.7 Table5",
+      "derived_line": "1181",
+      "literal_anchor": "live binding realizes",
+      "anchor_valid": "True",
+      "mode": "liveOHTTP/A2Abinding",
+      "intervention_condition": "Live fixed-rate/pooled-ID OHTTP/A2A binding; timing-feature ablation reported separately",
+      "inference_or_measurement_target": "workflowrecovery",
+      "D1_defended_distribution_fit": "Resultbound D1 requires specificlivefit; globalstatementnotautomaticbinding",
+      "D2_paired_same_protected_test": "NR-V exactpairedlivefitcontrast",
+      "objective_task_utility": "NR-R objectiverealagenttaskutility",
+      "performance_cost": "About 13x bytes / 11x latency in live binding",
+      "evidence_boundary": "Do not join capturetrained.17 withlivecost13x/11x asoneoperatingpoint.",
+      "adaptive_data_feasibility": "NR unless source condition states access; scientific validity does not establish operational access",
+      "adaptation_budget_fairness": "NR unless matched queries/samples/compute and tuning explicitly bound",
+      "independent_replication": "NR-R; scoped source extraction only",
+      "inference_outcome": "Live task accuracy 0.30; separate timing-feature ablation 0.167",
+      "D1_code_binding": "Not separately adjudicated in this overlay",
+      "D1_run_binding": "Resultbound D1 requires specificlivefit; globalstatementnotautomaticbinding"
+    },
+    "set": {
+      "scope": "9.7, OHTTP paragraph after Table 5",
+      "intervention_condition": "Live fixed-rate cover with fresh per-session identifiers in the OHTTP/A2A binding on a co-located loopback host; timing-feature ablation reported separately"
+    },
+    "append": {},
+    "reason": "Exact primary-source locator/mechanism correction only: recovery 0.30 and approximately 13x bytes/11x latency are in the OHTTP paragraph after Table 5; Table 5 itself is the separate HTTPS/Tor/Nym/shim comparison. The source specifies fresh per-session identifiers rather than pooled-ID, and identifies a loopback testbed co-locating client, relay, gateway and agent on one host (readable derivative lines 1171-1181). This is the same-testbed boundary, not a new experiment or a real-network generalization. The scope is a pure locator so a future blind packet does not encode expected results. Numerical outcomes, mode, field states and historical run bindings are unchanged. Apply this as a new release overlay; preserve old sealed CSVs.",
+    "source_sha256": "fae89faede5437f3449de3c641d93fd352d7e7eaa833df4ef51f91a3b5ed8039"
+  },
+  {
+    "target": "literature/field-audit/utility-cost-dispositions.csv",
+    "key": {
+      "unit_id": "DANGOL-livebinding",
+      "field": "objective_task_utility"
+    },
+    "before": {
+      "unit_id": "DANGOL-livebinding",
+      "citation_key": "dangol2026workflow",
+      "field": "objective_task_utility",
+      "original_extraction_unchanged": "NR-R objectiverealagenttaskutility",
+      "field_disposition": "UNREPORTED_OBJECTIVE_TASK_OUTCOME",
+      "source_url": "https://arxiv.org/html/2606.07150v3",
+      "source_path": "evidence/recent-agent-review-20261018-001/sources/dangol-v3.txt",
+      "source_sha256": "fae89faede5437f3449de3c641d93fd352d7e7eaa833df4ef51f91a3b5ed8039",
+      "inspected_scope": "9.7 Table5",
+      "unit_anchor_from_prior_extraction": "live binding realizes",
+      "review_depth": "INVENTORY_OF_EXISTING_SOURCE_SCOPED_EXTRACTION_NOT_NEW_INDEPENDENT_READING",
+      "claim_action": "NO_FULL_LIVE_FRONTIER_INFERRED_FROM_THIS_FIELD_ALONE",
+      "measurement_supplied_by_this_audit": "False",
+      "current_extraction": "NR-R objectiverealagenttaskutility",
+      "current_overlay_changes_measurement": "False"
+    },
+    "set": {
+      "inspected_scope": "9.7, OHTTP paragraph after Table 5"
+    },
+    "append": {},
+    "reason": "Correct only the exact inspected locator inherited from DANGOL-livebinding. The OHTTP paragraph reports recovery 0.30 and approximately 13x bytes/11x latency, not an objective terminal task outcome. Keep that assessment in this nonblind reason rather than encoding the expected answer in the inspected locator. The utility extraction and its unreported status are unchanged.",
+    "source_sha256": "fae89faede5437f3449de3c641d93fd352d7e7eaa833df4ef51f91a3b5ed8039"
+  },
+  {
+    "target": "literature/field-audit/utility-cost-dispositions.csv",
+    "key": {
+      "unit_id": "DANGOL-livebinding",
+      "field": "performance_cost"
+    },
+    "before": {
+      "unit_id": "DANGOL-livebinding",
+      "citation_key": "dangol2026workflow",
+      "field": "performance_cost",
+      "original_extraction_unchanged": "live.30;~13xbytes/~11xlatency;timingablation.167",
+      "field_disposition": "REPORTED_LIVE_BYTES_AND_LATENCY",
+      "source_url": "https://arxiv.org/html/2606.07150v3",
+      "source_path": "evidence/recent-agent-review-20261018-001/sources/dangol-v3.txt",
+      "source_sha256": "fae89faede5437f3449de3c641d93fd352d7e7eaa833df4ef51f91a3b5ed8039",
+      "inspected_scope": "9.7 Table5",
+      "unit_anchor_from_prior_extraction": "live binding realizes",
+      "review_depth": "INVENTORY_OF_EXISTING_SOURCE_SCOPED_EXTRACTION_NOT_NEW_INDEPENDENT_READING",
+      "claim_action": "NO_FULL_LIVE_FRONTIER_INFERRED_FROM_THIS_FIELD_ALONE",
+      "measurement_supplied_by_this_audit": "False",
+      "current_extraction": "About 13x bytes / 11x latency in live binding",
+      "current_overlay_changes_measurement": "False"
+    },
+    "set": {
+      "inspected_scope": "9.7, OHTTP paragraph after Table 5"
+    },
+    "append": {},
+    "reason": "Correct only the inspected locator for the live OHTTP cost point: recovery 0.30 and approximately 13x bytes/11x latency are reported in the paragraph after Table 5, not the Table 5 HTTPS/Tor/Nym/shim comparison. Keep measurements in this nonblind reason rather than the locator. The numerical cost extraction, measurement object and evidence state are unchanged.",
+    "source_sha256": "fae89faede5437f3449de3c641d93fd352d7e7eaa833df4ef51f91a3b5ed8039"
+  },
+  {
+    "target": "literature/final-inclusion-ledger.csv",
+    "key": {
+      "citation_key": "dangol2026workflow"
+    },
+    "before": {
+      "study_id": "dangol2026workflow",
+      "citation_key": "dangol2026workflow",
+      "title": "From Privacy to Workflow Integrity: Communication-Graph Metadata in Autonomous Agent Interoperability",
+      "source_tags": "[\"update3\"]",
+      "classification": "core",
+      "ring": "A",
+      "observer_permissions": "Graph/endpoint/network view by test",
+      "signal_origin": "P5+P6+P8",
+      "observation_layer": "P3+P6+P8",
+      "hidden_property": "Workflow class",
+      "exploitation_goal": "Workflow classification",
+      "evaluation_conditions": "270 real-model A2A workflows/9classes/27compositions; separate6-class HTTPS frontier and200trace/5class fixed-sequence MCP check",
+      "evidence_boundary": "Capture frontier, live transport and A2A populations differ.",
+      "NR_status": "[{\"id\":\"candidate-dangol2026:open:1\",\"citation_key\":\"candidate-dangol2026\",\"field\":\"objective task success\",\"field_disposition\":\"R\"},{\"id\":\"candidate-dangol2026:open:2\",\"citation_key\":\"candidate-dangol2026\",\"field\":\"partial-link conditional increment\",\"field_disposition\":\"R\"},{\"id\":\"candidate-dangol2026:open:3\",\"citation_key\":\"candidate-dangol2026\",\"field\":\"commit-to-paper alignment\",\"field_disposition\":\"R\"},{\"id\":\"candidate-dangol2026:open:4\",\"citation_key\":\"candidate-dangol2026\",\"field\":\"artifact replay\",\"field_disposition\":\"R\"}]",
+      "RQ1": "Workflow class; Communication graph,timing,length,direction",
+      "RQ2": "P5+P6+P8 -> P3+P6+P8; Network/relay/registry/endpoint positions; permissions vary by experiment",
+      "RQ3": "Length-only,length-stratification,microservice controls;leave-composition-out",
+      "RQ4": "HTTPS frontier defense-aware retraining; totalbytes16.2×; objective task success and complete joint latency frontier R",
+      "source_url": "https://arxiv.org/html/2606.07150v3",
+      "source_version": "2606.07150v3",
+      "source_locators": "3,9.1,9.7–9.14;Table6",
+      "decision_rule": "C1-C5",
+      "decision_reason": "Metadata-only workflow inference satisfies C1-C5; separate MCP script check from autonomous-workflow claims.",
+      "trace_source": "null",
+      "system_sample_split": "Separate real A2A,nested-CV binding,synthetic MCP and controlled-generator populations",
+      "method": "null",
+      "metric_result": "Recurring9class accuracy.67;held-outcomposition.18; separate6class defended.17 at16.2×totalbytes",
+      "baselines_generalization": "Length-only,length-stratification,microservice controls;leave-composition-out",
+      "statistics": "Different experimental denominators; full independence/interval reproduction R",
+      "defense_retraining_cost_utility": "9.7-9.9, Tables5-6: Transformed HTTPS capture plus separate live OHTTP/A2A binding. D1=YES; D2=YES. Objective real-agent task utility NR-R for live frontier; Capture16.2x bytes; separate live about13x bytes/11x latency.",
+      "artifact": "A2A-MetaTrace/main repository read,not executed",
+      "limits_todos": "Version/artifact alignment;objective utility;partial-link conditional increment",
+      "current_evidence_overlay": "null",
+      "r2_component_audit": "{\"source\":\"cell-audit/cell-audit.json\",\"checks\":[{\"id\":\"DA-OBS\",\"status\":\"VERIFIED_SOURCE\",\"locator\":\"3.2–3.4\",\"finding\":\"Passive graph/transport observations and workflow-class recovery vary by vantage and experiment.\"},{\"id\":\"DA-ADAPT\",\"status\":\"VERIFIED_SOURCE\",\"locator\":\"9.8–9.9/Table 6\",\"finding\":\"Protected-trace training uses nested model search; transformed HTTPS frontier reaches .17 at 16.2× bytes for six classes.\"},{\"id\":\"DA-LIVE\",\"status\":\"VERIFIED_SOURCE\",\"locator\":\"9.7 OHTTP paragraph\",\"finding\":\"Separate live OHTTP+cover result: .30 recovery, approximately 13× bytes and 11× latency; timing ablation .167.\"},{\"id\":\"DA-ABLATION\",\"status\":\"R\",\"locator\":\"9.7 OHTTP paragraph\",\"finding\":\"The inspected paragraph does not resolve same-sample/fold pairing or uncertainty for the live timing ablation; actual real-network masking is not tested here.\"},{\"id\":\"DA-POP\",\"status\":\"VERIFIED_SOURCE\",\"locator\":\"9.12–9.13\",\"finding\":\"Real recurring nine-class recovery .67 versus held-out composition .18 is separate from scripted MCP and six-class frontier.\"},{\"id\":\"DA-UTIL\",\"status\":\"NR-R_SCOPED\",\"locator\":\"9.7–9.9; 9.12\",\"finding\":\"Terminal-state quality of defended nine-class tasks is not reported in these inspected sections; live race success is a different metric.\"},{\"id\":\"DA-LAT-FRONTIER\",\"status\":\"NR-R_SCOPED\",\"locator\":\"9.7/Table 5 and 9.9/Table 6\",\"finding\":\"Table 6 reports adaptive leakage and byte overhead, not per-scheme latency; Table 5 latency must not be joined to unmatched schemes.\"},{\"id\":\"SYN-S2\",\"status\":\"INFERENCE_SUPPORTED\",\"locator\":\"UI-OFFLINE; DA-ADAPT/LIVE/LAT-FRONTIER\",\"finding\":\"Match intervention, surviving representation, retraining and measurement mode before transporting defense effectiveness or cost.\"}],\"compound_fields_not_automatically_closed\":true}",
+      "source_binding": "{\"path\":null,\"sha256\":null,\"derived_text\":null}",
+      "classification_review": "{\"case_id\":\"B04\",\"primary_before_unblinding\":\"CORE_A\",\"blind_second_coding\":\"CORE_A\",\"final\":\"CORE_A\",\"adjudication_record\":\"corpus/adjudication.json#B04\"}",
+      "r2_inclusion_crosscheck": "null",
+      "r2_load_bearing_followup": "{\"source\":\"cell-audit/load-bearing-followup-extra.json\",\"checks\":[{\"id\":\"DA-ABLATION\",\"status\":\"R\",\"progress\":\"DISTINCT_ESTIMANDS_AND_CORRECT_LOCATOR_RECONFIRMED\",\"sources\":[{\"url\":\"https://arxiv.org/html/2606.07150v3\",\"path\":\"evidence/systematic-2026-10-08-r2/cell-audit/primary-sources/dangol-v3.html\",\"sha256\":\"3ffc27547dd8913eba3b3ad924b2b6602614ebd358b42b564c04ac446cba8b80\"}],\"read_scope\":\"Complete9.7(S9.SS7) and9.9(S9.SS9), including Tables5–6\",\"new_verified_component\":\"Live OHTTP full-discipline0.30/~13xbytes/~11xlatency and timing-feature-ablation0.167 are in9.7, not9.9. Table6/9.9 gives the capture-based defense-aware frontier0.17/16.2x. Different transport/measurement regimes explain why the two rows cannot be pooled as one implementation result.\",\"remaining\":\"Same-example and fold pairing of the live ablation, uncertainty/replicates, and actual real-network timing masking. Claimed class-independent jitter masking is an explanation/prediction, not a measured field-network result.\",\"minimal_text\":\"Chance-level modeled/frontier recovery and residual live-loopback recovery concern different conditions; same-sample ablation uncertainty and real-network masking remain R.\"}],\"compound_status\":\"R\",\"historical_NR_status_unchanged\":true}",
+      "source_access_scope": "Source version/locator in ledger; field-level targeted checks only, not a complete independent recoding.",
+      "receiver_contract_review": "source-component-review.csv; load-bearing-review.csv; no superseding uninspected fields",
+      "reviewer_closure": "Inherited scoped extraction, not new whole-source verification; old field strings remain historical.",
+      "revision_20261020": "Inherited source scope; no whole-paper or independent-human attestation.",
+      "target_relation": "content_or_hidden_property_inference",
+      "protection_relation": "Source/receiver-specific; attribution or hiddenness alone does not establish unauthorized confidentiality violation"
+    },
+    "set": {},
+    "append": {
+      "current_evidence_overlay": "2026-10-20 source-locator overlay: DANGOL-livebinding accuracy 0.30 and approximately 13x bytes/11x latency are reported in arXiv:2606.07150v3 section 9.7, OHTTP paragraph after Table 5, not the Table 5 shim row. The mechanism uses fixed-rate cover with fresh per-session identifiers. Table 5 reports the separate HTTPS/Tor/Nym/shim comparison. This overlay changes no numeric measurement or run/utility/adaptation evidence state; prior source strings remain historical. Source SHA256 fae89faede5437f3449de3c641d93fd352d7e7eaa833df4ef51f91a3b5ed8039. Audit: claims/source-correction-audit.json."
+    },
+    "reason": "Preserve the family row and all historical values while exposing the narrowly corrected source locator and identifier mechanism in the current release.",
+    "source_sha256": "fae89faede5437f3449de3c641d93fd352d7e7eaa833df4ef51f91a3b5ed8039"
+  }
+]

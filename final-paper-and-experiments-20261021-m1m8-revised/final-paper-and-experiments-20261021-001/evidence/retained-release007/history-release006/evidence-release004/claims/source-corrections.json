@@ -1,0 +1,56 @@
+{
+  "schema": "release-source-corrections/v1",
+  "corrections": [
+    {
+      "target": "literature/interventions/intervention-result-units.csv",
+      "key": {
+        "unit_id": "DANGOL-livebinding"
+      },
+      "set": {
+        "scope": "9.7, OHTTP paragraph after Table 5",
+        "intervention_condition": "Live fixed-rate cover with fresh per-session identifiers in the OHTTP/A2A binding on a co-located loopback host; timing-feature ablation reported separately"
+      },
+      "append": {},
+      "reason": "Exact primary-source locator/mechanism correction only: recovery 0.30 and approximately 13x bytes/11x latency are in the OHTTP paragraph after Table 5; Table 5 itself is the separate HTTPS/Tor/Nym/shim comparison. The source specifies fresh per-session identifiers rather than pooled-ID, and identifies a loopback testbed co-locating client, relay, gateway and agent on one host (readable derivative lines 1171-1181). This is the same-testbed boundary, not a new experiment or a real-network generalization. The scope is a pure locator so a future blind packet does not encode expected results. Numerical outcomes, mode, field states and historical run bindings are unchanged. Apply this as a new release overlay; preserve old sealed CSVs.",
+      "source_sha256": "fae89faede5437f3449de3c641d93fd352d7e7eaa833df4ef51f91a3b5ed8039"
+    },
+    {
+      "target": "literature/field-audit/utility-cost-dispositions.csv",
+      "key": {
+        "unit_id": "DANGOL-livebinding",
+        "field": "objective_task_utility"
+      },
+      "set": {
+        "inspected_scope": "9.7, OHTTP paragraph after Table 5"
+      },
+      "append": {},
+      "reason": "Correct only the exact inspected locator inherited from DANGOL-livebinding. The OHTTP paragraph reports recovery 0.30 and approximately 13x bytes/11x latency, not an objective terminal task outcome. Keep that assessment in this nonblind reason rather than encoding the expected answer in the inspected locator. The utility extraction and its unreported status are unchanged.",
+      "source_sha256": "fae89faede5437f3449de3c641d93fd352d7e7eaa833df4ef51f91a3b5ed8039"
+    },
+    {
+      "target": "literature/field-audit/utility-cost-dispositions.csv",
+      "key": {
+        "unit_id": "DANGOL-livebinding",
+        "field": "performance_cost"
+      },
+      "set": {
+        "inspected_scope": "9.7, OHTTP paragraph after Table 5"
+      },
+      "append": {},
+      "reason": "Correct only the inspected locator for the live OHTTP cost point: recovery 0.30 and approximately 13x bytes/11x latency are reported in the paragraph after Table 5, not the Table 5 HTTPS/Tor/Nym/shim comparison. Keep measurements in this nonblind reason rather than the locator. The numerical cost extraction, measurement object and evidence state are unchanged.",
+      "source_sha256": "fae89faede5437f3449de3c641d93fd352d7e7eaa833df4ef51f91a3b5ed8039"
+    },
+    {
+      "target": "literature/final-inclusion-ledger.csv",
+      "key": {
+        "citation_key": "dangol2026workflow"
+      },
+      "set": {},
+      "append": {
+        "current_evidence_overlay": "2026-10-20 source-locator overlay: DANGOL-livebinding accuracy 0.30 and approximately 13x bytes/11x latency are reported in arXiv:2606.07150v3 section 9.7, OHTTP paragraph after Table 5, not the Table 5 shim row. The mechanism uses fixed-rate cover with fresh per-session identifiers. Table 5 reports the separate HTTPS/Tor/Nym/shim comparison. This overlay changes no numeric measurement or run/utility/adaptation evidence state; prior source strings remain historical. Source SHA256 fae89faede5437f3449de3c641d93fd352d7e7eaa833df4ef51f91a3b5ed8039. Audit: claims/source-correction-audit.json."
+      },
+      "reason": "Preserve the family row and all historical values while exposing the narrowly corrected source locator and identifier mechanism in the current release.",
+      "source_sha256": "fae89faede5437f3449de3c641d93fd352d7e7eaa833df4ef51f91a3b5ed8039"
+    }
+  ]
+}

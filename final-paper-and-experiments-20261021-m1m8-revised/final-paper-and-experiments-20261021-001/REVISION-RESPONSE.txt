@@ -1,0 +1,106 @@
+两份审稿意见对应的修订说明（2026-10-21）
+
+本次直接修改英文主稿、补充材料和表格，并从保存输入重跑本地实验。
+当前定位：结果记录审计与两个机制案例研究。不再声称完成端到端自主 Agent 联合防御验证，也不以作者自建场景对常数基线的准确率差证明框架有效性。
+
+一、会改变结论的修正
+
+1. TLS 成本分母错误成立。
+T2 的未保护均值为 272.4792B，512B 桶为 628B，匹配比率 2.3048×。
+T3 的未保护均值为 456.3333B，512B 桶为 654.1667B，匹配比率 1.4335×。
+原来的 0.87×/0.91×使用了 T1 的 720.9583B 分母，已撤回其“低于原始成本”的解释。
+当前表格列出绝对字节、工作负载匹配比率，JSON 进一步列出记录数。
+
+2. 新增较紧的常数上限对照。
+按训练集最大 framed length 1194B 向上取整到 128B 的倍数，得到 1280B 上限；以 10 个128B TLS记录发送，共1570B，成本2.1777×，T1测试准确率50%。测试中无溢出，超限行为是增加128B记录而非截断。
+这是在本数据上的可行对照，不是最优成本证明，也不是前瞻预注册验证。16,848B/23.37×仅保留为宽松上限对照。
+
+3. TLS 数据集、分块和统计层级已纠正。
+T2/T3取长回答的句子前缀；T4同时使用brief和expanded，故有24个测试输出，并非12条长回答。
+1024B桶使用256B写块，单量子的真实wire size为1140B，原文1082B错误。
+原代码中的d值是标签常量；按48条构造文本长度和pooled sample variance重算为12.264、5.723、3.418、0.033。正文撤下以d预测成本和称其为entropy的结论。
+随机padding每条输出50次，首次socket测量、其余49次使用socket核对过的TLS记录核算。先在topic内平均，再对12个topic进行10000次bootstrap。原审稿意见关于“必定用了不同CI层级”的猜测不成立，缺少说明的问题成立并已补写。
+
+4. 工具观察者的多数类问题和简单强攻击均成立。
+训练48任务：7正、41负；测试49任务：11正、38负。多数类基线77.55%，balanced accuracy为50%。
+旧线性D2在取消掩护下准确率68.03%—73.47%，低于多数类基线；BA为46.05%—52.51%。不能以相对D0反弹证明有效信息恢复。
+新增取消计数规则N_cancel>=2，在blind/other-account两策略的before/after条件均为100%测试accuracy/BA。
+新增已知首尾插入位置过滤，在允许的有序tool-name视图中也为100%。失败调用仍计数。观察者不含参数ID，因此没有虚构账户ID过滤实测。
+已保存逐条预测、accuracy/BA区间、AUROC、混淆矩阵和配对差值。撤回“有效隐私—效用前沿”叙事。
+
+5. 效用列与实现范围已纠正。
+新增策略脚本并未调用完整native reward：其同名字段计算orders/users的数据库相等性。因此当前表头明确为DB equality，说明只对应原生奖励中的数据库判据，不代表生成回答正确性或授权检查。
+完整账户指标现在检查该用户所有订单和用户记录。旧代码只查initially-pending订单。
+原gold_touched实际上是reference-changed对象集合，并非所有被访问对象，现已改称reference-changed objects。
+other-account condition的DB equality为0%，active-account/object equality为100%，分列呈现。代码选择的是另一模拟用户的订单，并非真正预置的专用decoy account，正文也已纠正。
+
+6. 新核对出的记录分母错误。
+原始33条结果记录来自22个家族，包含缓解研究和上下文比较者；新增6条来自4个家族。因此39条记录覆盖26个家族。20是报告审计的缓解家族数。
+新增combined_result_records.json明确保留33条原记录，并把已有四家族提取材料中的六个分支整理为显式记录；该整理不冒充新的人类独立编码。
+
+二、第一份意见数字清单逐条处理
+
+A1：已修正；并进一步区分39记录/26家族和20审计家族，78是utility/cost字段位置数，不表示全部字段已绑定。
+A2：已移除旧成本范围；TLS表统一从新重算输出生成。
+A3—A4：已按全范围13.5—50.0pp报告正增益；常数cap为0，单独列出。
+A5：已撤回“1024B required/消除泄漏”，保留D2=70.8%及训练集cap对照。
+A6：已删除d<=3.1与below-baseline规律。
+A7：已撤回retail反弹作为核心隐私证据；各策略各位置结果及配对区间进入JSON。
+A8：before/after已分行。重跑显示other-account after也是71.43%，旧正文68.03%误用了blind after的值，不按错误正文修表。
+A9：改为173/291 task-seed units发生cover状态变更，不再写59.45%的独立任务“被破坏”。
+A10：删除“miss58%”及未经识别的术语因果解释，报告25/60、17/24查询重叠。
+A11：注明一致性仅覆盖50对/150判断，非102对全部。
+A12：当前报告审计使用R1—R9；部署流程仍为Check1—3。历史CSV旧编码保留，并在说明中映射。
+A13：D0=clean-trained attacker，D2=defended-trained attacker；旧D1仅指拟合条件，不再把D2定义成一个比较操作。
+A14：核对保存的编码说明后确认Dangol family-level Bound来自stored-capture分支，live-refit仍NR-V。两者不是同一记录；保留2/11，并明确限定。
+A15：移除没有对应当前实验的planner-nonoverlap路线。
+A16：清理错误表号与重复Appendix，并用引用标签代替新增表的硬编码页号；区分10月8编码快照与8—9日获取记录。
+
+B1—B2：已明确前缀构造、T4双长度样本和12测试topic/24输出。
+B3：已按同文本、同计费范围重算；绝对分子、分母、记录数可复算。
+B4：T1/T4使用相同文本、不同标签，所以成本完全相同不是复制错误；原“full expanded only”描述错误。
+B5：补50次随机padding和topic内平均、topic bootstrap；原CI可复现。
+B6：已确认多数类77.55%；补BA/AUROC/区间和规则攻击。
+B7：82是task，246是task-seed units；24/246=9.76%，94/246=38.21%。12/123、47/123只是约分结果。
+B8：118/291个before item self-write被variant availability检查拒绝；after有120个status错误、77个availability错误，94个成功状态变更。完整错误字符串已保存。
+B9：33单位对应12个任务；任务31、59、81各2次，其余列出的9任务各3次，补充材料已列明。
+B10：204/291对象相等与68/97可用任务是独立计算、数值巧合，非复制。
+B11：已补观察者与三种状态scope的task-bootstrap CI；明确政策开发未留出，分类器划分不等于政策外部验证。
+B12：新增完整3×3混淆矩阵、always-Incompatible和always-Unresolved；撤回框架优越性主张。未虚构新的同信息外部对照。
+B13：明确13包含在102中，528=426+102。
+B14：注明新增4族36格未进入144格一致性统计；无新增人工编码。
+B15：并列全库与适用分母：R5为2/20与2/11；utility为3/20与3/17；cost为11/20与11/19。NR-V不等于原论文没做。
+B16：204=177 high-risk matches+27 reason-stratified samples，非所有396个排除记录。
+B17：明确38/40是seed resolution计数、24是distinct forward works；未把两者当相同分母或检索召回估计。
+B18：补每个512root有3个query，合计1536判断；695/476是query级错误数，百分比按root内三项平均。保留负面joint结果。
+B19：未从可核材料独立恢复AHB各条件n；不把四舍五入值反推整数当证据。删除History+Long的定量对比，注明不能把不同条件率解释为匹配效应。源报告Raw/Online+Fake仅保留为局部来源事实。
+B20：注明98.333%为三重比较的Bonferroni分配；0.1503nats是重拟合loss gain，0.3447nats是表征增量，分开陈述。
+B21：主文附录加入完整82族citation inventory，替换仅nocite的方式；源版本/locator在机器索引中。
+
+三、第二份意见及方法论修订
+
+已修正DPI的“only if”为充分条件；增加目标相关输入只意味着原定理不再提供保证，不自动证明泄漏。
+“same-value write”与重复调用幂等性、完整状态保持被分别定义；撤下“Idempotence Illusion”普遍新发现措辞。
+四种Type改为可交叠的叙事分组，记录分别绑定target、observer、authorization和protected interest。
+“D2—Utility—Cost Trilemma”改为联合评测缺口；CachePrune的联合绑定仅指inference/utility/cost，不偷换成D2/utility/cost。
+24场景改为作者构造的示例；不把record mismatch叫作独立观察到的真实部署失败。
+编码流程改报“提供的编码列及一致性”；未凭CSV推断真人身份、盲法或独立性，也没有新造人工审稿记录。历史cell-level CI的层级局限已交代。
+新增source-local finding→cross-study synthesis→changed evaluation obligation表，收窄贡献而保留来源差异。
+伦理段说明本轮仅本地socket、模拟数据库和已保存输出，无新模型调用、无生产账户操作、无外发稿件。
+
+四、未宣称已完成的事项
+
+没有完成真实自主Agent、TLS1.3/QUIC/SSE与工具执行的统一联合实验；没有更强时序/序列网络攻击；没有跨真实MCP/API的普查；没有独立构造的新场景及外部盲评；没有新增4族人工双编码；没有建立匿名线上材料仓库。本文采用明确降主张的修订路线，不能据此保证S&P录用。
+新增匿名公开仓库URL、历史模型使用条款/采样配置的作者确认、编码者身份与独立性说明，以及AHB条件n仍需补证。不要把本地校验通过解释为这些事项已经完成。
+
+五、交付与检查
+
+主稿与补充材料：pdf/main.pdf、pdf/supplement.pdf。
+当前源码：manuscript/。
+重算程序、原始重放结果、统计输出：experiments/reviewer-audit/。
+原稿备份：provenance/pre-review-manuscript.zip；历史证据目录保持原字节。
+记录与文本一致性、依赖闭包、SHA256、6210条零售记录、TLS匹配分母和预测聚合由verify_package.py及verify_revision.py检查。
+本地LaTeX和BibTeX编译通过；最终日志无undefined reference/citation、multiply-defined label或overfull box。
+主稿18页：13页正文、1页附录、4页参考文献；补充材料14页。已按S&P2027当前官方CFP核对13页正文要求；SoK参考文献另有不计页数说明。来源：https://sp2027.ieee-security.org/cfpapers.html（2026-10-21读取）。
+
+所有结论以当前数据和脚本的限定视图为准，不把统计重算、排版检查或本次AI修订称为独立科学验证。

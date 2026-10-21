@@ -1,0 +1,76 @@
+% IEEE S&P 2027 submission format; requires IEEEtran.cls v1.8b.
+\documentclass[conference,compsoc]{IEEEtran}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage{graphicx}
+\usepackage[dvipsnames,table]{xcolor}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,positioning,fit,calc,matrix,shapes.geometric}
+\usepackage[hyphens]{url}
+\usepackage{hyperref}
+
+\hypersetup{hidelinks,pdfauthor={}}
+\newcommand{\scope}{\textsc{Scope}}
+\newcommand{\NRR}{\textsc{nr-r}}
+\newcommand{\NRA}{\textsc{nr-a}}
+\newcommand{\NRV}{\textsc{nr-v}}
+\newcommand{\NA}{\textsc{na}}
+\newcommand{\evidenceStrong}{\cellcolor{ForestGreen!22}Strong}
+\newcommand{\evidenceLimited}{\cellcolor{Goldenrod!24}Limited}
+\newcommand{\evidenceNone}{\cellcolor{Gray!18}No verified direct evidence}
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+\input{tables/final-counts}
+
+\title{SoK: From LLM Inference Side Channels to Agent Workflow Leakage}
+\author{}
+% Coded-study cutoff: October 8, 2026. Screening provenance updated October 18.
+% October 19 source-consistency follow-up: see Appendix Receiver-Contract Support.
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+Side-channel results measured at one interface are often relevant to another deployment, but relevance alone does not establish transfer. We systematize \FinalN{} LLM/agent study families using one result record that binds the hidden target, receiver permissions, intervention, attacker procedure, workload and outcomes to a source version. Three deployment cases yield an actionable rule: locate the final target-bearing emitter, determine whether cover reaches action dispatch, and bind adaptation and cost to that same condition. This permits source-local conclusions while identifying the bridge required for a different receiver or mechanism. Upstream padding does not certify a content-aware downstream emitter; transport costs cannot establish task-preserving dummy actions; a component microcost cannot price another cache or a full service. We distinguish direct instances from extensions and background, with explicit source-deletion sensitivity. A short public-archive example shows a predictive sequence increment under archive-receiver ordering; task-independent identity and ordinary-website capture remain unresolved. A separate workflow comparison is negative for SCOPE against an information-matched structured checklist. The contribution is the source-linked deployment judgments and their conditional permissions, rather than a new attack or demonstrated review advantage. Incomplete acquisition, unresolved run bindings and absent independent researcher adjudication constrain the synthesis.
+\end{abstract}
+
+\input{sections/01-introduction}
+\input{sections/03-methodology}
+\input{sections/04-scope}
+\input{sections/26-corpus-map}
+\input{sections/11-discussion}
+\input{sections/27-intervention-contracts}
+\input{sections/28-fingerprint-dependencies}
+\input{tables/conclusion-source-dependencies}
+\input{sections/16-public-trace-study}
+\input{sections/10-open-challenges}
+\input{sections/12-conclusion}
+
+% Start appendices on a fresh page; keep the final results float with its text.
+\clearpage
+\appendices
+\section{Search and Evidence Audit}
+\label{app:search}
+\input{tables/selection-flow}
+\input{sections/22-search-audit-summary}
+\input{sections/19-final-ledger}
+\input{sections/21-retained-controls-summary}
+\input{sections/17-public-trace-details}
+\input{sections/23-defense-comparison}
+\input{sections/24-conclusion-sensitivity}
+% Additive summary of the completed workflow comparison; prior pilot source and
+% all frozen experimental records remain unchanged.
+\input{sections/29-scope-comparison-boundary}
+
+% Full family index is distributed in the supplemental source/CSV, not a second
+% two-page main-paper bibliography surrogate.
+\input{tables/corpus-citations}
+\clearpage
+% Bibliography column balance is checked after the dated supplement.
+\IEEEtriggeratref{65}
+\bibliographystyle{IEEEtran}
+\bibliography{refs,refs-final-additions}
+\end{document}

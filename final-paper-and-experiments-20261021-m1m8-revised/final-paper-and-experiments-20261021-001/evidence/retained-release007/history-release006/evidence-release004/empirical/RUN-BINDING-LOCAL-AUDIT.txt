@@ -1,0 +1,170 @@
+2026-10-20 | Scoped local audit of four defense statements and AHB lineage
+No network, model request, fitting or third-party code execution. No author
+contact or independent researcher adjudication. All existing sources are read-only.
+
+BOTTOM LINE
+Local caches establish all four papers' stated defense narratives. They do
+not establish their missing quantitative result/run bindings. The latest
+static AHB notebook/helper establishes condition-wise fitting code, not the
+historical Table1 execution or a clean-/protected-trained common-test D2.
+No NR-V is closed by pretending that source text, a file list, saved notebook
+output or a modern reproduction authenticates the old published run.
+
+1. AgentPrint
+Public title: Exposing LLM User Privacy via Traffic Fingerprint Analysis:
+             A Study of Privacy Risks in LLM Agent Interactions.
+Pinned source: https://arxiv.org/html/2510.07176v1
+Landing/version route: https://arxiv.org/abs/2510.07176
+Local paper text:
+  evidence/closure-2026-09-12/sources/agentprint2025/paper.txt
+  SHA2561830a7fb198d25eedec5474ce6eaf8043783c40e835540a241e950d283d7448a
+Readable derivative (same source, not new independent evidence):
+  evidence/reviewer-substantive-20261020-001/interventions/derived/agentprint2025.txt
+  lines368--381: dummy/batching/shaping discussion points to initial supplement
+  analysis and says a comprehensive evaluation remains open. Lines878--895
+  discuss existing provider batching/padding; that is not a bound own trial.
+The cached PDF/text includes supplementary sections, but this scoped check
+has not identified the referenced defense result's exact table/run/metric.
+Do not conclude that no separate release, hidden appendix or new version exists.
+Closing evidence: exact supplement/version, mitigation condition and placement,
+population/split, inference metric/outcome and whether attacker fitting changed;
+then bind any utility/cost to the stated result instead of filling them zero.
+Public Perplexity question (Search only):
+  In AgentPrint arXiv2510.07176v1, SectionV refers to an initial supplementary
+  analysis of dummy packets, batching and traffic shaping. Locate the exact
+  original supplement/table/figure and report its condition, sample population,
+  attack fitting/evaluation procedure and measured outcomes. Give primary-source
+  URLs/locators. If no bound result is accessible, say unverified; do not substitute
+  a cited older website-fingerprinting defense for an AgentPrint experiment.
+
+2. Weiss et al.
+Public title: What Was Your Prompt? A Remote Keylogging Attack on AI Assistants.
+Paper: https://www.usenix.org/system/files/usenixsecurity24-weiss.pdf
+Landing: https://www.usenix.org/conference/usenixsecurity24/presentation/weiss
+Vendor report: https://blog.cloudflare.com/ai-side-channel-attack-mitigated/
+Author artifact: https://github.com/royweiss1/GPT_Keylogger/tree/v1
+Local paper text:
+  evidence/closure-2026-09-12/sources/weiss2024prompt/paper.txt
+  SHA2560ade94f7a8a009e18c63cfa4d6d7950b065a518ee3227d865e13f9afc6636d91
+Readable derivative lines795--855: Section7 states vendors patched, authors
+confirmed effectiveness, and discusses random padding/grouping/full responses.
+This is an affirmative source-reported confirmation, not a quantified same-
+population defense experiment in that section.
+Additional local artifact appendix fully inspected here (139 extracted lines):
+  evidence/closure-2026-09-12/sources/weiss2024prompt/supplement-1.txt
+  A.4/lines125--134 says it reproduces paper Table2 attack generation and
+  similarity metrics; A.2 notes the tool consumes token-length sequences, not
+  generic PCAPs. Its outputs are not identified as a vendor-defense pre/post test.
+Closing evidence: named vendor/date/model/API/mitigation configuration and
+actual post-defense test population, recovered output/metrics and cost objects,
+with matching clean baseline or a clearly identified unpaired scope.
+Public Perplexity question:
+  Locate an original author/vendor quantitative post-mitigation evaluation tied
+  to Weiss et al.'s Section7 confirmation. Distinguish the USENIX Table2 attack
+  artifact from a padded/grouped/batched defense run. Does the Cloudflare report
+  give sample counts, residual inference metrics, adaptation and measured costs,
+  or implementation/disclosure only? Cite exact primary paragraphs/tables.
+
+3. Gu et al.
+Public title: Auditing Prompt Caching in Language Model APIs.
+Paper/landing: https://proceedings.mlr.press/v267/gu25b.html
+Paper PDF: https://raw.githubusercontent.com/mlresearch/v267/main/assets/gu25b/gu25b.pdf
+Author code/data: https://github.com/chenchenygu/auditing-prompt-caching
+Local paper text:
+  evidence/closure-2026-09-12/sources/gu2025promptcaching/paper.txt
+  SHA256663151635720f5895611087ba8b8e12acfe3a35e8b30c8fe8d6b234415fb1be1
+Readable derivative lines494--536: Section6 proposes per-user isolation,
+disabling caching or delaying hits; provider-change narrative occurs near
+lines114--120 and the Impact Statement around555--565. Original caching audit
+Tables3--6 are not automatically before/after runs of the reported changes.
+Closing evidence: date/version/provider endpoint and relevant cache-sharing
+scope, saved pre/post audit run IDs/results and fixed audit conditions. A
+nonsignificant post-change test needs its sample/power context, not a claim
+of no possible leakage. Per-user isolation addresses cross-user prompt access,
+not every architecture/resource signal from the same user's caching.
+Public Perplexity question:
+  Does the original Gu et al. ICML2025 artifact contain dated before/after
+  provider audits of the post-disclosure cache-policy changes, rather than
+  only the original leakage audit? Locate exact commits/results/README lines,
+  audited scope, sample counts and timing source. Keep Section6 proposals and
+  reported provider responses separate from measured mitigation effects.
+
+4. PromptEcho
+Public title: From Length to Content: Token-Length Side-Channel Attacks on
+             LLM API Merged Outputs.
+Paper: https://www.usenix.org/system/files/usenixsecurity26-li-sijia.pdf
+Landing: https://www.usenix.org/conference/usenixsecurity26/presentation/li-sijia
+Artifact DOI printed in paper: https://doi.org/10.5281/zenodo.20441510
+Previously resolved browser record: https://zenodo.org/records/20554369
+Local paper text:
+  evidence/closure-2026-09-12/sources/prompt_echo2026/paper.txt
+  SHA256206801d7a7fce1f1f116bd384b2d63740f8974c8cdac60cd81ef103327e78b69
+Readable derivative lines1148--1187: Section6 states approximately3.2x MSS
+padding/1.4x dynamic-padding overhead and discusses dynamic obfuscation.
+Open Science lines1280--1289 describe attack training/evaluation/data artifacts.
+The earlier side-field browser record inspected a ZIP file list, but archive
+download returned no path. No local archive is claimed fully inspected.
+Closing evidence: exact record/version plus method/configuration and traces
+behind both overhead ratios; define payload versus actual wire denominator,
+MSS/segmentation accounting, and any defended inference/utility results. An
+obfuscation API parameter's existence is not its benchmark effectiveness.
+Public Perplexity question:
+  Locate original artifact files/configuration/results explaining the3.2x/1.4x
+  padding overhead figures in PromptEcho Section6. Identify actual record
+  version, denominator, simulated versus executed insertion, trace population
+  and any protected-attack evaluation. Do not infer a defense benchmark solely
+  from attack scripts or the existence of include_obfuscation. Cite files/lines.
+
+5. AHB static implementation versus historical execution
+Public title: Turing Test on Screen: A Benchmark for Mobile GUI Agent Humanization.
+Paper: https://arxiv.org/html/2604.09574v1
+Author code:
+  https://github.com/Gebro13/Passing-the-Turing-Test-on-Screen-Agent-Humanization-Benchmark
+Pinned commit:8924fa3e687af6f264d3b91a2d2f48faf8adfd8c
+Local notebook:
+  evidence/receiver-contract-revision-20261019-001/public-code/ahb/files/analysis_playground.ipynb
+  SHA256f165a88b736cf26a096aeded0891598dc624700a7935e1af4401d04f530f9026
+Local helper:
+  evidence/receiver-contract-revision-20261019-001/public-code/ahb/files/analysis/processing/calculate_roc_auc_from_feature.py
+  SHA256abe6271e6f9056e41aab8a45b1c5102ca57a1e5834f730142d472376556b20a4
+Notebook zero-based cell122 separately calls the helper for RAW and six
+humanized/transformed labels per task cluster. The helper's lines755--827
+construct a stratified70/30 feature-row split and fit fresh SVM/XGBoost;
+lines1101--1127 show the call chain. This establishes implementation D1-code.
+The inspected source also scales features before splitting; do not infer a
+quantified bias or claim a session/person holdout from that feature-row code.
+Cell122 execution_count is null. Cell128 has execution_count64 and saved
+35 rows(5 clusters x7 condition labels) of SVM/XGBoost output. A saved count
+or matching-looking number cannot establish which code/data produced Table1.
+Local analysis/README.md expects raw gesture logs and Formated_Data_Renamed.xlsx;
+these requirements/documentation do not prove original-run membership. Some
+README examples are explicitly marked nonexistent/deprecated; don't execute them.
+Needed for D1-run: author/release lineage binding publication Table1 to the
+specific commit, dataset hashes, condition IDs, exact split/sample IDs and
+aggregation/output files. Needed for D2: clean-/protected-trained predictions
+on the SAME defended test rows with source-bound model/data/budget conditions.
+The .75/.15 Trip Planning task-success example is separately source-reported;
+it does not rely on authenticating the detector run or measure execution cost.
+Public Perplexity question:
+  Locate original result files/manifests that bind AHB v1 Table1 to a code commit,
+  data/split IDs and aggregation, and determine whether clean- and protected-
+  trained SVM/XGBoost are scored on one common defended test set. Distinguish
+  condition-wise refitting code and saved notebook displays from publication-
+  run provenance. Cite exact files/locators; retain NR-V when binding is absent.
+
+6. Deterministic work possible without rerunning a model/classifier
+  - Verify source/receipt hashes, versions, linked file names and exact anchors.
+  - Inspect an actually obtained archive manifest/README/JSON/CSV statically;
+    never deserialize pickle/joblib or execute downloaded third-party scripts.
+  - Reconcile saved sample IDs, splits, configuration names, denominators and
+    published aggregation from existing outputs if such outputs are supplied.
+  - Check whether two procedures' saved predictions refer to identical defended
+    test IDs; code that fits twice is not sufficient for D2.
+  - Bind a measured cost to its actual component/condition, leaving unreported
+    live quantities NR-R and unverified provenance NR-V rather than zero.
+  - A newly performed reproduction could test present behavior, but would not
+    retrospectively authenticate the original published run. None is run here.
+
+Scope limit: source paths above identify exact inspected caches, not an
+exhaustive search of every repository revision or supplementary release.
+There is no independent researcher verification or author confirmation here.

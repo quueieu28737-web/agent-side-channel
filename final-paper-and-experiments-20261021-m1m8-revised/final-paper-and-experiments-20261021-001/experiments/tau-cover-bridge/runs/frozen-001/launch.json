@@ -1,0 +1,33 @@
+{
+  "started_utc": "2026-10-21T01:33:59.395183+00:00",
+  "command": [
+    "experiments/p0_tau_bridge_20261021_side001/bridge.py",
+    "run",
+    "--out",
+    "experiments/p0_tau_bridge_20261021_side001/runs/frozen-001"
+  ],
+  "source_hashes": {
+    "PROTOCOL.txt": "09070a3119f6c2ebb31c9fae725088a23286f8bff7db0e1310d8069a7e64fddf",
+    "bridge.py": "373c2ccb6bfadfd003eddda5ac440e511f6f2c7b19b8f371f2f4e9bfebedd956",
+    "sources.json": "140339d118ef57e3d451f29505225c848dd2da02113714f6deb274363e65b6de"
+  },
+  "tasks": 115,
+  "seeds": [
+    20261021,
+    20261022,
+    20261023
+  ],
+  "positions": [
+    "before",
+    "after"
+  ],
+  "arms": [
+    "baseline",
+    "discard",
+    "shadow",
+    "read_only",
+    "live_mutation"
+  ],
+  "model_calls": 0,
+  "hard_deadline_s": 900
+}

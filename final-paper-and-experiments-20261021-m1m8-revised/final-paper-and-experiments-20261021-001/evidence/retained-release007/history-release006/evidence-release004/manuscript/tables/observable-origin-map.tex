@@ -1,0 +1,12 @@
+\begin{table*}[t]\centering\footnotesize
+\caption{Primary observable/receiver profile $\times$ signal origin in the \FinalCore{} core families. Each family occupies one profile row but may have multiple origins; cells count families, not results. Extra observer views remain in the ledger. Zeros are not field-wide gaps.}\label{tab:origin-receiver-map}
+\begin{tabularx}{\textwidth}{@{}YrrrrrrrY@{}}\toprule
+Observable / receiving permission & P1 & P2 & P4 & P5 & P6 & P7 & P8 & Representative source\\\midrule
+Flow/destination & 0 & 8 & 0 & 5 & 1 & 2 & 2 & AgentPrint; WRA; NetEcho \\
+Own-site actions/attributes & 0 & 0 & 0 & 5 & 0 & 5 & 0 & UI Traces; FP-Agent \\
+API duration/cache/oracle & 0 & 12 & 0 & 0 & 0 & 0 & 0 & Early Bird; LeakyLMs \\
+Resource/physical & 10 & 3 & 0 & 1 & 0 & 0 & 0 & TDXRay; ClawGuard; LLM RCA (diagnostics) \\
+Trajectory/procedure/log & 0 & 0 & 1 & 4 & 2 & 0 & 0 & SIGLEAK; cycle detection (diagnostic) \\
+\bottomrule\end{tabularx}
+\par\smallskip\raggedright\footnotesize P1 hardware; P2 serving; P4 application/API; P5 orchestration; P6 tools; P7 environment; P8 multi-agent. P3 is a receiving layer here, not a coded signal origin. Composite origins are multi-label descriptions, not independent channels. Privileged logs and physical diagnostic receivers are not ordinary website capabilities.
+\end{table*}

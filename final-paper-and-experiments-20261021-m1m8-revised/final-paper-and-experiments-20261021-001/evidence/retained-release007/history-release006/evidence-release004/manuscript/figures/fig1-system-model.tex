@@ -1,0 +1,18 @@
+\begin{tikzpicture}[font=\scriptsize,>=Latex]
+\tikzset{box/.style={draw,rounded corners,align=center,text width=4.65cm,minimum height=8mm,fill=blue!6},def/.style={box,fill=orange!12},test/.style={box,fill=green!8}}
+\foreach \x/\title in {0/{(a) Preserved action structure},5.55/{(b) Downstream re-emission},11.1/{(c) Changed task state}}{
+\node[font=\small,anchor=south] at (\x,0.55) {\title};}
+\node[box] (a0) at (0,0) {Origin: agent action policy};
+\node[def] (a1) at (0,-1.05) {Defense: saved timestamp delays\\action types/order unchanged};
+\node[box] (a2) at (0,-2.1) {Receiver: archive / own-site scope\\visible: actions, order, delayed times};
+\node[test] (a3) at (0,-3.15) {Test: residual-feature prediction\\live utility remains a separate test};
+\node[box] (b0) at (5.55,0) {Origin: inference token stream};
+\node[def] (b1) at (5.55,-1.05) {Defense: upstream padding/batching\\application consumes decoded stream};
+\node[box] (b2) at (5.55,-2.1) {Receiver: downstream network observer\\visible: group counts / lengths};
+\node[test] (b3) at (5.55,-3.15) {Test: paired upstream/final-hop views\\not original timestamp recovery};
+\node[box] (c0) at (11.1,0) {Origin: mobile GUI agent actions};
+\node[def] (c1) at (11.1,-1.05) {Defense: executed fake touches\\can trigger an unintended transition};
+\node[box] (c2) at (11.1,-2.1) {Receiver: app touch-event detector\\visible: events and interaction timing};
+\node[test] (c3) at (11.1,-3.15) {Test: detection and terminal goals\\retain failures / transition changes};
+\foreach \p in {a,b,c}{\draw[->] (\p0)--(\p1);\draw[->] (\p1)--(\p2);\draw[->] (\p2)--(\p3);}
+\end{tikzpicture}

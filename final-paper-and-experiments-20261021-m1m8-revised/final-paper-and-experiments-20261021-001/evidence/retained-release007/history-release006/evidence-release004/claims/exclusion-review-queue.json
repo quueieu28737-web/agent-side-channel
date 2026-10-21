@@ -1,0 +1,134 @@
+{
+  "schema": "exclusion-researcher-blind-queue-source-index/v1",
+  "date": "2026-10-20",
+  "status": "SOURCE_BOUND_QUEUE_READY;HUMAN_A_AND_B_REVIEW_PENDING",
+  "scope": "Two identified historical audit cohorts. This coordinator-only index supplies exact material projections for future blind A/B packets; it is not completed human review or a claim that all broad-search exclusions are covered.",
+  "human_review": {
+    "researcher_A": "PENDING_NOT_RECRUITED_OR_RETURNED",
+    "researcher_B": "PENDING_NOT_RECRUITED_OR_RETURNED",
+    "adjudicator": "PENDING",
+    "human_returns_received": 0,
+    "independent_human_agreement": "NR",
+    "confirmed_false_negative_rate": "NOT_ESTIMATED",
+    "source_coverage_is_not_human_coding": true
+  },
+  "blind_exporter": "evidence/reviewer-deployment-cases-20261020-001/selection/export_exclusion_blind.py",
+  "blind_export_contract": {
+    "default_output": "stdout only; no network, model, file creation, or screening",
+    "fields": ["blind_id","source_record_id","title_variants","doi","abstract_variants","material_scope","material_gap","researcher_A","researcher_B"],
+    "blank_response_fields": ["C1","C2","C3","C4","C5","route","source_locator","reason","material_needed"],
+    "forbidden_carry_fields": ["original_reasons","original_strata_preserved","stratum","high_risk","matched_terms","selection","second_pass_status","decision","criteria","proposal_route","checked_TA_route","quote","model_review_reason","reviewer_name","adjudicated_answer"],
+    "blinding_limit": "This index and historical input files contain audit provenance and must remain with the coordinator. Only the allowlisted export should be given to A/B before their independent returns. The fact that this is an exclusion review is not concealed; original per-item labels, reasons and risk strata are withheld.",
+    "abstract_status_limit": "Exported abstract presence is not confirmation of completeness or equivalence to the publisher abstract. Missing/partial material is retained, not excluded.",
+    "no_implicit_scope_expansion": "No labels are inferred from titles and no missing abstracts are generated."
+  },
+  "sources": {
+    "old_plan": {
+      "path": "evidence/unified-2026-10-08/screening/audit-plan-frozen.json",
+      "sha256": "4910f684c6c44c9e737ebcab6d0103c4871ca5bda2bbe3785ff137ec1c9af410"
+    },
+    "old_frame": {
+      "path": "evidence/unified-2026-10-08/screening/audit-frame-frozen.json",
+      "sha256": "928f6f60d54b3284c07bf8d45fd142c93e5c5aa089617ee17d06f7a17bd39140"
+    },
+    "old_mechanical_check": {
+      "path": "evidence/unified-2026-10-08/screening/final-1300-mechanical-verification.json",
+      "sha256": "f3f2a60c4fed9924bfb4a8862f4762c58da333eaa7b97c83a07f1a2a55bc6a8f"
+    },
+    "new_sample": {
+      "path": "evidence/perplexity-search-20261018-main-002/completed-prepared-audit-sample.json",
+      "sha256": "39ea2e258197df0222b47af54ca7a998c9e299fc99e3f672706df86a92ee500f"
+    },
+    "new_readback": {
+      "path": "evidence/perplexity-search-20261018-main-002/completed-prepared-audit-results.json",
+      "sha256": "737fb6aba95e7f48d56f6026df11b132b6edb6ce92e18858ab784fc1548e69d6"
+    },
+    "new_public_metadata": {
+      "path": "evidence/perplexity-search-20261018-main-002/public-frame.jsonl",
+      "sha256": "5b147ab3750b4bdc1a0b320c8a49d7bab70db44d2936ebacdd76eceb330f959f"
+    }
+  },
+  "cohorts": [
+    {
+      "id": "OLD_20261008_1555",
+      "coordinator_label": "Frozen exact-deduplicated native exclusion frame",
+      "membership": {"source":"old_frame","pointer":"/rows","key":"group_id","expected_unique_ids":1555},
+      "material_projection": {
+        "source":"old_frame",
+        "identity_field":"group_id",
+        "title_fields":["title"],
+        "doi_fields":["dois"],
+        "abstract_fields":["abstract_variants","abstract"],
+        "fallback_rule":"Use actual nonempty abstract_variants; otherwise actual abstract if present; never synthesize.",
+        "source_metadata_only":true
+      },
+      "original_audit_seed":20261008,
+      "known_AI_reviewed_unique_ids":1300,
+      "known_AI_reviewed_ID_source": "Union of /rows/*/group_id across the 14 old_readback_sources below; unique and all present in old_frame",
+      "old_AI_reviewed_highrisk_n":1075,
+      "old_AI_reviewed_stratified_n":225,
+      "not_in_old_AI_readbacks_n":255,
+      "not_in_old_AI_readbacks_selector":"old_frame.rows.group_id minus union(old_readback_sources.rows.group_id)",
+      "not_in_old_AI_readbacks_scope":"Unreviewed in that dated second-pass audit only; later project-wide source-read status not inferred.",
+      "material_gaps":[
+        {"source_record_id":"NATIVE-G0664","title":"Document identity, authentication and ownership: the future of biometric verification","material_status":"MISSING_OR_PARTIAL","old_AI_second_pass":"NOT_IN_READBACKS"},
+        {"source_record_id":"NATIVE-G1079","title":"Guest Editorial Special Issue on Integration of Generative AI and Internet of Things","material_status":"MISSING_OR_PARTIAL","old_AI_second_pass":"IN_READBACKS;material gap not repaired"},
+        {"source_record_id":"NATIVE-G1170","title":"Scalable distributed biometric systems - Advanced techniques for security and safety","material_status":"MISSING_OR_PARTIAL","old_AI_second_pass":"NOT_IN_READBACKS"}
+      ],
+      "fulltext_scope":"NOT_OBTAINED_BY_THIS_QUEUE;metadata-only inputs",
+      "human_A_B_review_status":"ALL_1555_PENDING;no AI readback is a human return"
+    },
+    {
+      "id":"NEW_20261018_HIGH_RISK_1074",
+      "coordinator_label":"Frozen high-risk ID list from the new3933-ID wave exclusion audit",
+      "parent_exclusion_frame_n":2090,
+      "parent_frame_view_sha256":"4a0264193dbd7dd61f4581bb5c8a3a416403de38461349677b6d1dadf87e9887",
+      "membership":{"source":"new_sample","pointer":"/high_risk_ids","expected_unique_ids":1074},
+      "material_projection":{
+        "source":"new_public_metadata",
+        "format":"JSONL",
+        "identity_field":"id",
+        "join":"exact ID membership in new_sample.high_risk_ids",
+        "title_fields":["title_variants"],
+        "doi_fields":["doi"],
+        "abstract_fields":["abstract_variants"],
+        "source_metadata_only":true
+      },
+      "original_audit_seed":20261010,
+      "known_AI_readback_sample_n":20,
+      "known_AI_reviewed_highrisk_n":10,
+      "known_AI_reviewed_highrisk_ids":["I9697414","I10694304","P1196","P1790","P1191","P1384","P0858","P0626","P0873","P0686"],
+      "reviewed_ID_basis":"Intersection of new_sample.sampled_ids with new_sample.high_risk_ids; each occurs in new_readback.rows",
+      "not_in_this_AI_highrisk_sample_n":1064,
+      "not_in_this_AI_highrisk_sample_selector":"new_sample.high_risk_ids minus known_AI_reviewed_highrisk_ids",
+      "not_in_this_AI_highrisk_sample_scope":"Dated-audit coverage difference only. These IDs exist in the frozen list, but this is NOT a claim of1064 globally new/unread papers. Later source-review overlap is BACKLOG_SCOPE_UNKNOWN until exact identity reconciliation.",
+      "observed_material_join":{"public_metadata_rows":4753,"public_unique_ids":4753,"matched_highrisk_rows":1074,"missing_highrisk_ids":[],"empty_title_variants":0,"empty_abstract_variants":0},
+      "fulltext_scope":"NOT_OBTAINED_BY_THIS_QUEUE;exported abstract presence does not establish full-text eligibility",
+      "human_A_B_review_status":"ALL_1074_PENDING;no AI sample is a human return",
+      "unrepresented_parent_lowrisk_scope":"Other parent2090-frame IDs are not newly reconstructed in this source index; do not claim full2090 human packet or add a fabricated1016-record list."
+    }
+  ],
+  "old_readback_sources":[
+    {"path":"evidence/unified-2026-10-08/screening/review-0000-0099.json","sha256":"39f8f01f71d41aa2cf82a88923b9ebebfc8deb3708bb2b47819b9d3c7939d264"},
+    {"path":"evidence/unified-2026-10-08/screening/review-0100-0199.json","sha256":"87830fd3ca2a04c2734070888df5f9f7c81f50a0e7fa592e435c22c55aeccceb"},
+    {"path":"evidence/unified-2026-10-08/screening/review-0200-0299.json","sha256":"4659afe3f9ed456c6197f8a936eb3622770f34f188c2d8b5e3f25c0ba806503c"},
+    {"path":"evidence/unified-2026-10-08/screening/review-0300-0399.json","sha256":"ea9d717373ba95262fcda3a7f0e372d4a34ce369b6ee778d056400c69687f741"},
+    {"path":"evidence/unified-2026-10-08/screening/review-0400-0499.json","sha256":"5e41535089258df082939742bc0944016ee429a36e2ae2e22e375fc95961989e"},
+    {"path":"evidence/unified-2026-10-08/screening/review-0500-0599.json","sha256":"417630ab8e07db0f1ebcfb4a6172805a53f71042a7ac46ef45abac9ec41db8c6"},
+    {"path":"evidence/unified-2026-10-08/screening/review-0600-0699.json","sha256":"4bb4caa20fadf38bc3aa5f47a7e460f89f152401ad27ccf7c04f0c4ed5e60641"},
+    {"path":"evidence/unified-2026-10-08/screening/review-0700-0799.json","sha256":"1457095d55c9f0e6e8cae265f264fbd49981a1ae5c306ea842e8c037cbb9d6d6"},
+    {"path":"evidence/unified-2026-10-08/screening/review-0800-0849.json","sha256":"73e3d645a26f96510ea1b7e65ec2dda1e0a9dd69fcf182aa96132a3ba3506f4c"},
+    {"path":"evidence/unified-2026-10-08/screening/review-0850-0899.json","sha256":"ce046d001eeb3dd93dc7066961c746898114e3ac87cd78ee0b45794803c955ed"},
+    {"path":"evidence/unified-2026-10-08/screening/review-0900-0999.json","sha256":"73ecd263b513718e6e73c80926f317ade1a71836eeebc5f5161a8e3d7b7fda8e"},
+    {"path":"evidence/unified-2026-10-08/screening/review-1000-1099.json","sha256":"24dfac231a47a0594b3969fa4734a61e157630570b745f17eaa04d4cd12126f2"},
+    {"path":"evidence/unified-2026-10-08/screening/review-1100-1199.json","sha256":"2888a6a6303a95791653395610b80359186c98cd41b56a718d7a4aefbb7f46bd"},
+    {"path":"evidence/unified-2026-10-08/screening/review-1200-1299.json","sha256":"89c3d07cad5d9720318f5d49c4a0ebbffb761d736261afe5d4dfa2c0ee2f020d"}
+  ],
+  "overlap_and_status_rules":[
+    "1555+1074 are cohort memberships, not a deduplicated publication count. Cross-frame identity/version reconciliation is not performed here.",
+    "Historical AI outcomes are coordinator provenance only and are not passed to A/B.",
+    "Do not replace absent source materials with model summaries or infer exclusion from missing abstracts.",
+    "The queue does not close full35743 IEEE retrieval,883 ACM referrals,2950 unresolved routes,field-level NR,or external SCOPE validation.",
+    "No human agreement,miss rate,or independent-researcher verdict exists until real blinded returns and adjudication are supplied."
+  ]
+}

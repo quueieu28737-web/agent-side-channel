@@ -1,0 +1,138 @@
+{
+  "audit_date": "2026-10-21",
+  "status": "ANALYZED; deterministic coding aggregation verified; no experiment rerun",
+  "unit_count": 33,
+  "family_count": 22,
+  "all_unordered_pairs": 528,
+  "related_pairs": 102,
+  "outside_scope_pairs": 426,
+  "related_cohorts": {
+    "behavioral-humanization": 3,
+    "traffic-envelope": 66,
+    "cache-service": 28,
+    "fixed-instruction": 1,
+    "generator-fingerprint": 3,
+    "local-memory": 1
+  },
+  "same_family_pairs": 13,
+  "same_family_descriptive": {
+    "COMPATIBLE": 7,
+    "INCOMPATIBLE": 6
+  },
+  "same_family_paired_effect": {
+    "INCOMPATIBLE": 4,
+    "NOT_APPLICABLE": 6,
+    "UNRESOLVED": 3
+  },
+  "same_family_transfer_pairs": {
+    "INCOMPATIBLE": 5,
+    "UNRESOLVED": 8
+  },
+  "same_family_transfer_directions": {
+    "INCOMPATIBLE": 10,
+    "UNRESOLVED": 16
+  },
+  "related_descriptive": {
+    "COMPATIBLE": 16,
+    "INCOMPATIBLE": 80,
+    "UNRESOLVED": 6
+  },
+  "related_paired_effect": {
+    "INCOMPATIBLE": 4,
+    "NOT_APPLICABLE": 95,
+    "UNRESOLVED": 3
+  },
+  "related_transfer_directions": {
+    "INCOMPATIBLE": 10,
+    "UNRESOLVED": 194
+  },
+  "evaluated_families": 16,
+  "check_cells": 96,
+  "check_distribution": [
+    {
+      "check": 1,
+      "label": "Hidden target and protection relation",
+      "SAT": 16,
+      "PARTIAL": 0,
+      "NR-R": 0,
+      "NR-V": 0,
+      "NA": 0,
+      "total": 16
+    },
+    {
+      "check": 2,
+      "label": "Receiver fields and linkage permissions",
+      "SAT": 13,
+      "PARTIAL": 3,
+      "NR-R": 0,
+      "NR-V": 0,
+      "NA": 0,
+      "total": 16
+    },
+    {
+      "check": 3,
+      "label": "Protection placement and action dispatch",
+      "SAT": 13,
+      "PARTIAL": 2,
+      "NR-R": 0,
+      "NR-V": 1,
+      "NA": 0,
+      "total": 16
+    },
+    {
+      "check": 4,
+      "label": "Protected fitting and matched test when adaptation is at issue",
+      "SAT": 0,
+      "PARTIAL": 4,
+      "NR-R": 0,
+      "NR-V": 5,
+      "NA": 7,
+      "total": 16
+    },
+    {
+      "check": 5,
+      "label": "Workloads and generator shifts actually tested",
+      "SAT": 14,
+      "PARTIAL": 2,
+      "NR-R": 0,
+      "NR-V": 0,
+      "NA": 0,
+      "total": 16
+    },
+    {
+      "check": 6,
+      "label": "Inference, objective/policy utility and applicable cost bound together",
+      "SAT": 0,
+      "PARTIAL": 16,
+      "NR-R": 0,
+      "NR-V": 0,
+      "NA": 0,
+      "total": 16
+    }
+  ],
+  "internal_positive_paired_contrasts": [
+    "UI-delay-offline: clean/adapted comparison on protected test (6.1/Fig5)",
+    "DANGOL-capture: in-fold protected adaptive comparison (9.8-9.9)"
+  ],
+  "utility_cost_examples": {
+    "AHB": "online detectability + objective task success, execution cost unreported",
+    "DANGOL-live": "workflow recovery + live bytes/latency, objective task utility unreported",
+    "SPEC": "padding accuracy + token payload, live/wire/utility not established"
+  },
+  "overlay_count": 4,
+  "input_hashes": {
+    "units": "22629366261ed71555d4efc2a38a0c18b8badd5049e9e4f63b1e9c1ae47cde4a",
+    "families": "4e17ea04466259fccdf0e7c9f6eed3cebd1c40eb762e1d07c8af476b79d148f1",
+    "ledger": "60e33d2535f9ffdb6f35d16c9cf0fd869115fc89d04e1c1a36e9441f28b0220a",
+    "dispositions": "587eba6028947b55c008e78a34d4a4ae6995cd1d6a6d6d9999eebb98b0bea184",
+    "utility_cost": "66bfc62d32b3da631449051f783af60ea74d7ab1828b1bd5de26440f14553c61"
+  },
+  "claims_not_supported": [
+    "author error rate",
+    "independent human coding",
+    "SCOPE superiority",
+    "general defense failure rate",
+    "meta-analytic efficacy ranking",
+    "literature-wide coverage"
+  ]
+}

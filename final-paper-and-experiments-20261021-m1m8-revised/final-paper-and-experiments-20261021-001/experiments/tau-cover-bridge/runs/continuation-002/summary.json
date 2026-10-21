@@ -1,0 +1,823 @@
+{
+  "tasks": 115,
+  "episodes": 3450,
+  "eligible_tasks": 97,
+  "reference_error_tasks": [
+    2,
+    3,
+    4,
+    12,
+    13,
+    21,
+    35,
+    36,
+    37,
+    38,
+    39,
+    46,
+    47,
+    54,
+    55,
+    64,
+    67,
+    68,
+    106
+  ],
+  "scope": "fixed gold-program execution; no autonomous model or privacy inference",
+  "metrics": [
+    {
+      "position": "before",
+      "arm": "baseline",
+      "metric": "native_reward",
+      "task_denominator": 115,
+      "mean": 1.0,
+      "ci_low": 1.0,
+      "ci_high": 1.0,
+      "interval": "whole-task percentile bootstrap, 10000 draws"
+    },
+    {
+      "position": "before",
+      "arm": "baseline",
+      "metric": "live_state_equal_baseline",
+      "task_denominator": 115,
+      "mean": 1.0,
+      "ci_low": 1.0,
+      "ci_high": 1.0,
+      "interval": "whole-task percentile bootstrap, 10000 draws"
+    },
+    {
+      "position": "before",
+      "arm": "baseline",
+      "metric": "gold_touched_state_equal",
+      "task_denominator": 104,
+      "mean": 1.0,
+      "ci_low": 1.0,
+      "ci_high": 1.0,
+      "interval": "whole-task percentile bootstrap, 10000 draws"
+    },
+    {
+      "position": "before",
+      "arm": "baseline",
+      "metric": "unconfirmed_live_write_attempt",
+      "task_denominator": 115,
+      "mean": 0.0,
+      "ci_low": 0.0,
+      "ci_high": 0.0,
+      "interval": "whole-task percentile bootstrap, 10000 draws"
+    },
+    {
+      "position": "before",
+      "arm": "baseline",
+      "metric": "unconfirmed_live_write_effect",
+      "task_denominator": 115,
+      "mean": 0.0,
+      "ci_low": 0.0,
+      "ci_high": 0.0,
+      "interval": "whole-task percentile bootstrap, 10000 draws"
+    },
+    {
+      "position": "before",
+      "arm": "baseline",
+      "metric": "real_tool_errors",
+      "task_denominator": 115,
+      "mean": 0.20869565217391303,
+      "ci_low": 0.12173913043478261,
+      "ci_high": 0.30434782608695654,
+      "interval": "whole-task percentile bootstrap, 10000 draws"
+    },
+    {
+      "position": "before",
+      "arm": "discard",
+      "metric": "native_reward",
+      "task_denominator": 115,
+      "mean": 1.0,
+      "ci_low": 1.0,
+      "ci_high": 1.0,
+      "interval": "whole-task percentile bootstrap, 10000 draws"
+    },
+    {
+      "position": "before",
+      "arm": "discard",
+      "metric": "live_state_equal_baseline",
+      "task_denominator": 115,
+      "mean": 1.0,
+      "ci_low": 1.0,
+      "ci_high": 1.0,
+      "interval": "whole-task percentile bootstrap, 10000 draws"
+    },
+    {
+      "position": "before",
+      "arm": "discard",
+      "metric": "gold_touched_state_equal",
+      "task_denominator": 104,
+      "mean": 1.0,
+      "ci_low": 1.0,
+      "ci_high": 1.0,
+      "interval": "whole-task percentile bootstrap, 10000 draws"
+    },
+    {
+      "position": "before",
+      "arm": "discard",
+      "metric": "unconfirmed_live_write_attempt",
+      "task_denominator": 115,
+      "mean": 0.0,
+      "ci_low": 0.0,
+      "ci_high": 0.0,
+      "interval": "whole-task percentile bootstrap, 10000 draws"
+    },
+    {
+      "position": "before",
+      "arm": "discard",
+      "metric": "unconfirmed_live_write_effect",
+      "task_denominator": 115,
+      "mean": 0.0,
+      "ci_low": 0.0,
+      "ci_high": 0.0,
+      "interval": "whole-task percentile bootstrap, 10000 draws"
+    },
+    {
+      "position": "before",
+      "arm": "discard",
+      "metric": "real_tool_errors",
+      "task_denominator": 115,
+      "mean": 0.20869565217391303,
+      "ci_low": 0.12173913043478261,
+      "ci_high": 0.30434782608695654,
+      "interval": "whole-task percentile bootstrap, 10000 draws"
+    },
+    {
+      "position": "before",
+      "arm": "shadow",
+      "metric": "native_reward",
+      "task_denominator": 115,
+      "mean": 1.0,
+      "ci_low": 1.0,
+      "ci_high": 1.0,
+      "interval": "whole-task percentile bootstrap, 10000 draws"
+    },
+    {
+      "position": "before",
+      "arm": "shadow",
+      "metric": "live_state_equal_baseline",
+      "task_denominator": 115,
+      "mean": 1.0,
+      "ci_low": 1.0,
+      "ci_high": 1.0,
+      "interval": "whole-task percentile bootstrap, 10000 draws"
+    },
+    {
+      "position": "before",
+      "arm": "shadow",
+      "metric": "gold_touched_state_equal",
+      "task_denominator": 104,
+      "mean": 1.0,
+      "ci_low": 1.0,
+      "ci_high": 1.0,
+      "interval": "whole-task percentile bootstrap, 10000 draws"
+    },
+    {
+      "position": "before",
+      "arm": "shadow",
+      "metric": "unconfirmed_live_write_attempt",
+      "task_denominator": 115,
+      "mean": 0.0,
+      "ci_low": 0.0,
+      "ci_high": 0.0,
+      "interval": "whole-task percentile bootstrap, 10000 draws"
+    },
+    {
+      "position": "before",
+      "arm": "shadow",
+      "metric": "unconfirmed_live_write_effect",
+      "task_denominator": 115,
+      "mean": 0.0,
+      "ci_low": 0.0,
+      "ci_high": 0.0,
+      "interval": "whole-task percentile bootstrap, 10000 draws"
+    },
+    {
+      "position": "before",
+      "arm": "shadow",
+      "metric": "real_tool_errors",
+      "task_denominator": 115,
+      "mean": 0.20869565217391303,
+      "ci_low": 0.12173913043478261,
+      "ci_high": 0.30434782608695654,
+      "interval": "whole-task percentile bootstrap, 10000 draws"
+    },
+    {
+      "position": "before",
+      "arm": "read_only",
+      "metric": "native_reward",
+      "task_denominator": 115,
+      "mean": 1.0,
+      "ci_low": 1.0,
+      "ci_high": 1.0,
+      "interval": "whole-task percentile bootstrap, 10000 draws"
+    },
+    {
+      "position": "before",
+      "arm": "read_only",
+      "metric": "live_state_equal_baseline",
+      "task_denominator": 115,
+      "mean": 1.0,
+      "ci_low": 1.0,
+      "ci_high": 1.0,
+      "interval": "whole-task percentile bootstrap, 10000 draws"
+    },
+    {
+      "position": "before",
+      "arm": "read_only",
+      "metric": "gold_touched_state_equal",
+      "task_denominator": 104,
+      "mean": 1.0,
+      "ci_low": 1.0,
+      "ci_high": 1.0,
+      "interval": "whole-task percentile bootstrap, 10000 draws"
+    },
+    {
+      "position": "before",
+      "arm": "read_only",
+      "metric": "unconfirmed_live_write_attempt",
+      "task_denominator": 115,
+      "mean": 0.0,
+      "ci_low": 0.0,
+      "ci_high": 0.0,
+      "interval": "whole-task percentile bootstrap, 10000 draws"
+    },
+    {
+      "position": "before",
+      "arm": "read_only",
+      "metric": "unconfirmed_live_write_effect",
+      "task_denominator": 115,
+      "mean": 0.0,
+      "ci_low": 0.0,
+      "ci_high": 0.0,
+      "interval": "whole-task percentile bootstrap, 10000 draws"
+    },
+    {
+      "position": "before",
+      "arm": "read_only",
+      "metric": "real_tool_errors",
+      "task_denominator": 115,
+      "mean": 0.20869565217391303,
+      "ci_low": 0.12173913043478261,
+      "ci_high": 0.30434782608695654,
+      "interval": "whole-task percentile bootstrap, 10000 draws"
+    },
+    {
+      "position": "before",
+      "arm": "live_mutation",
+      "metric": "native_reward",
+      "task_denominator": 115,
+      "mean": 0.25217391304347825,
+      "ci_low": 0.17681159420289855,
+      "ci_high": 0.33043478260869563,
+      "interval": "whole-task percentile bootstrap, 10000 draws"
+    },
+    {
+      "position": "before",
+      "arm": "live_mutation",
+      "metric": "live_state_equal_baseline",
+      "task_denominator": 115,
+      "mean": 0.25217391304347825,
+      "ci_low": 0.17681159420289855,
+      "ci_high": 0.33043478260869563,
+      "interval": "whole-task percentile bootstrap, 10000 draws"
+    },
+    {
+      "position": "before",
+      "arm": "live_mutation",
+      "metric": "gold_touched_state_equal",
+      "task_denominator": 104,
+      "mean": 0.6506410256410257,
+      "ci_low": 0.5620915032679739,
+      "ci_high": 0.7352941176470589,
+      "interval": "whole-task percentile bootstrap, 10000 draws"
+    },
+    {
+      "position": "before",
+      "arm": "live_mutation",
+      "metric": "unconfirmed_live_write_attempt",
+      "task_denominator": 115,
+      "mean": 0.8434782608695652,
+      "ci_low": 0.7739130434782608,
+      "ci_high": 0.9043478260869565,
+      "interval": "whole-task percentile bootstrap, 10000 draws"
+    },
+    {
+      "position": "before",
+      "arm": "live_mutation",
+      "metric": "unconfirmed_live_write_effect",
+      "task_denominator": 115,
+      "mean": 0.8434782608695652,
+      "ci_low": 0.7739130434782608,
+      "ci_high": 0.9043478260869565,
+      "interval": "whole-task percentile bootstrap, 10000 draws"
+    },
+    {
+      "position": "before",
+      "arm": "live_mutation",
+      "metric": "real_tool_errors",
+      "task_denominator": 115,
+      "mean": 0.6782608695652174,
+      "ci_low": 0.5391304347826087,
+      "ci_high": 0.8231884057971015,
+      "interval": "whole-task percentile bootstrap, 10000 draws"
+    },
+    {
+      "position": "after",
+      "arm": "baseline",
+      "metric": "native_reward",
+      "task_denominator": 115,
+      "mean": 1.0,
+      "ci_low": 1.0,
+      "ci_high": 1.0,
+      "interval": "whole-task percentile bootstrap, 10000 draws"
+    },
+    {
+      "position": "after",
+      "arm": "baseline",
+      "metric": "live_state_equal_baseline",
+      "task_denominator": 115,
+      "mean": 1.0,
+      "ci_low": 1.0,
+      "ci_high": 1.0,
+      "interval": "whole-task percentile bootstrap, 10000 draws"
+    },
+    {
+      "position": "after",
+      "arm": "baseline",
+      "metric": "gold_touched_state_equal",
+      "task_denominator": 104,
+      "mean": 1.0,
+      "ci_low": 1.0,
+      "ci_high": 1.0,
+      "interval": "whole-task percentile bootstrap, 10000 draws"
+    },
+    {
+      "position": "after",
+      "arm": "baseline",
+      "metric": "unconfirmed_live_write_attempt",
+      "task_denominator": 115,
+      "mean": 0.0,
+      "ci_low": 0.0,
+      "ci_high": 0.0,
+      "interval": "whole-task percentile bootstrap, 10000 draws"
+    },
+    {
+      "position": "after",
+      "arm": "baseline",
+      "metric": "unconfirmed_live_write_effect",
+      "task_denominator": 115,
+      "mean": 0.0,
+      "ci_low": 0.0,
+      "ci_high": 0.0,
+      "interval": "whole-task percentile bootstrap, 10000 draws"
+    },
+    {
+      "position": "after",
+      "arm": "baseline",
+      "metric": "real_tool_errors",
+      "task_denominator": 115,
+      "mean": 0.20869565217391303,
+      "ci_low": 0.12173913043478261,
+      "ci_high": 0.30434782608695654,
+      "interval": "whole-task percentile bootstrap, 10000 draws"
+    },
+    {
+      "position": "after",
+      "arm": "discard",
+      "metric": "native_reward",
+      "task_denominator": 115,
+      "mean": 1.0,
+      "ci_low": 1.0,
+      "ci_high": 1.0,
+      "interval": "whole-task percentile bootstrap, 10000 draws"
+    },
+    {
+      "position": "after",
+      "arm": "discard",
+      "metric": "live_state_equal_baseline",
+      "task_denominator": 115,
+      "mean": 1.0,
+      "ci_low": 1.0,
+      "ci_high": 1.0,
+      "interval": "whole-task percentile bootstrap, 10000 draws"
+    },
+    {
+      "position": "after",
+      "arm": "discard",
+      "metric": "gold_touched_state_equal",
+      "task_denominator": 104,
+      "mean": 1.0,
+      "ci_low": 1.0,
+      "ci_high": 1.0,
+      "interval": "whole-task percentile bootstrap, 10000 draws"
+    },
+    {
+      "position": "after",
+      "arm": "discard",
+      "metric": "unconfirmed_live_write_attempt",
+      "task_denominator": 115,
+      "mean": 0.0,
+      "ci_low": 0.0,
+      "ci_high": 0.0,
+      "interval": "whole-task percentile bootstrap, 10000 draws"
+    },
+    {
+      "position": "after",
+      "arm": "discard",
+      "metric": "unconfirmed_live_write_effect",
+      "task_denominator": 115,
+      "mean": 0.0,
+      "ci_low": 0.0,
+      "ci_high": 0.0,
+      "interval": "whole-task percentile bootstrap, 10000 draws"
+    },
+    {
+      "position": "after",
+      "arm": "discard",
+      "metric": "real_tool_errors",
+      "task_denominator": 115,
+      "mean": 0.20869565217391303,
+      "ci_low": 0.12173913043478261,
+      "ci_high": 0.30434782608695654,
+      "interval": "whole-task percentile bootstrap, 10000 draws"
+    },
+    {
+      "position": "after",
+      "arm": "shadow",
+      "metric": "native_reward",
+      "task_denominator": 115,
+      "mean": 1.0,
+      "ci_low": 1.0,
+      "ci_high": 1.0,
+      "interval": "whole-task percentile bootstrap, 10000 draws"
+    },
+    {
+      "position": "after",
+      "arm": "shadow",
+      "metric": "live_state_equal_baseline",
+      "task_denominator": 115,
+      "mean": 1.0,
+      "ci_low": 1.0,
+      "ci_high": 1.0,
+      "interval": "whole-task percentile bootstrap, 10000 draws"
+    },
+    {
+      "position": "after",
+      "arm": "shadow",
+      "metric": "gold_touched_state_equal",
+      "task_denominator": 104,
+      "mean": 1.0,
+      "ci_low": 1.0,
+      "ci_high": 1.0,
+      "interval": "whole-task percentile bootstrap, 10000 draws"
+    },
+    {
+      "position": "after",
+      "arm": "shadow",
+      "metric": "unconfirmed_live_write_attempt",
+      "task_denominator": 115,
+      "mean": 0.0,
+      "ci_low": 0.0,
+      "ci_high": 0.0,
+      "interval": "whole-task percentile bootstrap, 10000 draws"
+    },
+    {
+      "position": "after",
+      "arm": "shadow",
+      "metric": "unconfirmed_live_write_effect",
+      "task_denominator": 115,
+      "mean": 0.0,
+      "ci_low": 0.0,
+      "ci_high": 0.0,
+      "interval": "whole-task percentile bootstrap, 10000 draws"
+    },
+    {
+      "position": "after",
+      "arm": "shadow",
+      "metric": "real_tool_errors",
+      "task_denominator": 115,
+      "mean": 0.20869565217391303,
+      "ci_low": 0.12173913043478261,
+      "ci_high": 0.30434782608695654,
+      "interval": "whole-task percentile bootstrap, 10000 draws"
+    },
+    {
+      "position": "after",
+      "arm": "read_only",
+      "metric": "native_reward",
+      "task_denominator": 115,
+      "mean": 1.0,
+      "ci_low": 1.0,
+      "ci_high": 1.0,
+      "interval": "whole-task percentile bootstrap, 10000 draws"
+    },
+    {
+      "position": "after",
+      "arm": "read_only",
+      "metric": "live_state_equal_baseline",
+      "task_denominator": 115,
+      "mean": 1.0,
+      "ci_low": 1.0,
+      "ci_high": 1.0,
+      "interval": "whole-task percentile bootstrap, 10000 draws"
+    },
+    {
+      "position": "after",
+      "arm": "read_only",
+      "metric": "gold_touched_state_equal",
+      "task_denominator": 104,
+      "mean": 1.0,
+      "ci_low": 1.0,
+      "ci_high": 1.0,
+      "interval": "whole-task percentile bootstrap, 10000 draws"
+    },
+    {
+      "position": "after",
+      "arm": "read_only",
+      "metric": "unconfirmed_live_write_attempt",
+      "task_denominator": 115,
+      "mean": 0.0,
+      "ci_low": 0.0,
+      "ci_high": 0.0,
+      "interval": "whole-task percentile bootstrap, 10000 draws"
+    },
+    {
+      "position": "after",
+      "arm": "read_only",
+      "metric": "unconfirmed_live_write_effect",
+      "task_denominator": 115,
+      "mean": 0.0,
+      "ci_low": 0.0,
+      "ci_high": 0.0,
+      "interval": "whole-task percentile bootstrap, 10000 draws"
+    },
+    {
+      "position": "after",
+      "arm": "read_only",
+      "metric": "real_tool_errors",
+      "task_denominator": 115,
+      "mean": 0.20869565217391303,
+      "ci_low": 0.12173913043478261,
+      "ci_high": 0.30434782608695654,
+      "interval": "whole-task percentile bootstrap, 10000 draws"
+    },
+    {
+      "position": "after",
+      "arm": "live_mutation",
+      "metric": "native_reward",
+      "task_denominator": 115,
+      "mean": 0.5043478260869565,
+      "ci_low": 0.4173913043478262,
+      "ci_high": 0.591304347826087,
+      "interval": "whole-task percentile bootstrap, 10000 draws"
+    },
+    {
+      "position": "after",
+      "arm": "live_mutation",
+      "metric": "live_state_equal_baseline",
+      "task_denominator": 115,
+      "mean": 0.5043478260869565,
+      "ci_low": 0.4173913043478262,
+      "ci_high": 0.591304347826087,
+      "interval": "whole-task percentile bootstrap, 10000 draws"
+    },
+    {
+      "position": "after",
+      "arm": "live_mutation",
+      "metric": "gold_touched_state_equal",
+      "task_denominator": 104,
+      "mean": 0.9294871794871795,
+      "ci_low": 0.8823529411764706,
+      "ci_high": 0.9685608064421324,
+      "interval": "whole-task percentile bootstrap, 10000 draws"
+    },
+    {
+      "position": "after",
+      "arm": "live_mutation",
+      "metric": "unconfirmed_live_write_attempt",
+      "task_denominator": 115,
+      "mean": 0.8434782608695652,
+      "ci_low": 0.7739130434782608,
+      "ci_high": 0.9043478260869565,
+      "interval": "whole-task percentile bootstrap, 10000 draws"
+    },
+    {
+      "position": "after",
+      "arm": "live_mutation",
+      "metric": "unconfirmed_live_write_effect",
+      "task_denominator": 115,
+      "mean": 0.4956521739130435,
+      "ci_low": 0.40869565217391307,
+      "ci_high": 0.5826086956521738,
+      "interval": "whole-task percentile bootstrap, 10000 draws"
+    },
+    {
+      "position": "after",
+      "arm": "live_mutation",
+      "metric": "real_tool_errors",
+      "task_denominator": 115,
+      "mean": 0.20869565217391303,
+      "ci_low": 0.12173913043478261,
+      "ci_high": 0.30434782608695654,
+      "interval": "whole-task percentile bootstrap, 10000 draws"
+    }
+  ],
+  "paired_effects": [
+    {
+      "position": "before",
+      "arm": "discard",
+      "metric": "native_reward",
+      "paired_difference": 0.0,
+      "ci_low": 0.0,
+      "ci_high": 0.0
+    },
+    {
+      "position": "before",
+      "arm": "discard",
+      "metric": "live_state_equal_baseline",
+      "paired_difference": 0.0,
+      "ci_low": 0.0,
+      "ci_high": 0.0
+    },
+    {
+      "position": "before",
+      "arm": "discard",
+      "metric": "gold_touched_state_equal",
+      "paired_difference": 0.0,
+      "ci_low": 0.0,
+      "ci_high": 0.0
+    },
+    {
+      "position": "before",
+      "arm": "shadow",
+      "metric": "native_reward",
+      "paired_difference": 0.0,
+      "ci_low": 0.0,
+      "ci_high": 0.0
+    },
+    {
+      "position": "before",
+      "arm": "shadow",
+      "metric": "live_state_equal_baseline",
+      "paired_difference": 0.0,
+      "ci_low": 0.0,
+      "ci_high": 0.0
+    },
+    {
+      "position": "before",
+      "arm": "shadow",
+      "metric": "gold_touched_state_equal",
+      "paired_difference": 0.0,
+      "ci_low": 0.0,
+      "ci_high": 0.0
+    },
+    {
+      "position": "before",
+      "arm": "read_only",
+      "metric": "native_reward",
+      "paired_difference": 0.0,
+      "ci_low": 0.0,
+      "ci_high": 0.0
+    },
+    {
+      "position": "before",
+      "arm": "read_only",
+      "metric": "live_state_equal_baseline",
+      "paired_difference": 0.0,
+      "ci_low": 0.0,
+      "ci_high": 0.0
+    },
+    {
+      "position": "before",
+      "arm": "read_only",
+      "metric": "gold_touched_state_equal",
+      "paired_difference": 0.0,
+      "ci_low": 0.0,
+      "ci_high": 0.0
+    },
+    {
+      "position": "before",
+      "arm": "live_mutation",
+      "metric": "native_reward",
+      "paired_difference": -0.7478260869565218,
+      "ci_low": -0.8231884057971015,
+      "ci_high": -0.6695652173913044
+    },
+    {
+      "position": "before",
+      "arm": "live_mutation",
+      "metric": "live_state_equal_baseline",
+      "paired_difference": -0.7478260869565218,
+      "ci_low": -0.8231884057971015,
+      "ci_high": -0.6695652173913044
+    },
+    {
+      "position": "before",
+      "arm": "live_mutation",
+      "metric": "gold_touched_state_equal",
+      "paired_difference": -0.3493589743589744,
+      "ci_low": -0.4379084967320262,
+      "ci_high": -0.2647058823529412
+    },
+    {
+      "position": "after",
+      "arm": "discard",
+      "metric": "native_reward",
+      "paired_difference": 0.0,
+      "ci_low": 0.0,
+      "ci_high": 0.0
+    },
+    {
+      "position": "after",
+      "arm": "discard",
+      "metric": "live_state_equal_baseline",
+      "paired_difference": 0.0,
+      "ci_low": 0.0,
+      "ci_high": 0.0
+    },
+    {
+      "position": "after",
+      "arm": "discard",
+      "metric": "gold_touched_state_equal",
+      "paired_difference": 0.0,
+      "ci_low": 0.0,
+      "ci_high": 0.0
+    },
+    {
+      "position": "after",
+      "arm": "shadow",
+      "metric": "native_reward",
+      "paired_difference": 0.0,
+      "ci_low": 0.0,
+      "ci_high": 0.0
+    },
+    {
+      "position": "after",
+      "arm": "shadow",
+      "metric": "live_state_equal_baseline",
+      "paired_difference": 0.0,
+      "ci_low": 0.0,
+      "ci_high": 0.0
+    },
+    {
+      "position": "after",
+      "arm": "shadow",
+      "metric": "gold_touched_state_equal",
+      "paired_difference": 0.0,
+      "ci_low": 0.0,
+      "ci_high": 0.0
+    },
+    {
+      "position": "after",
+      "arm": "read_only",
+      "metric": "native_reward",
+      "paired_difference": 0.0,
+      "ci_low": 0.0,
+      "ci_high": 0.0
+    },
+    {
+      "position": "after",
+      "arm": "read_only",
+      "metric": "live_state_equal_baseline",
+      "paired_difference": 0.0,
+      "ci_low": 0.0,
+      "ci_high": 0.0
+    },
+    {
+      "position": "after",
+      "arm": "read_only",
+      "metric": "gold_touched_state_equal",
+      "paired_difference": 0.0,
+      "ci_low": 0.0,
+      "ci_high": 0.0
+    },
+    {
+      "position": "after",
+      "arm": "live_mutation",
+      "metric": "native_reward",
+      "paired_difference": -0.4956521739130435,
+      "ci_low": -0.5826086956521738,
+      "ci_high": -0.4086956521739131
+    },
+    {
+      "position": "after",
+      "arm": "live_mutation",
+      "metric": "live_state_equal_baseline",
+      "paired_difference": -0.4956521739130435,
+      "ci_low": -0.5826086956521738,
+      "ci_high": -0.4086956521739131
+    },
+    {
+      "position": "after",
+      "arm": "live_mutation",
+      "metric": "gold_touched_state_equal",
+      "paired_difference": -0.07051282051282051,
+      "ci_low": -0.11764705882352941,
+      "ci_high": -0.03143919355786762
+    }
+  ]
+}

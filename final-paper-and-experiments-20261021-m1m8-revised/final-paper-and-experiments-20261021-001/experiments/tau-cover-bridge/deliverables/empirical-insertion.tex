@@ -1,0 +1,49 @@
+\section{A controlled bridge for executed cover}
+\label{sec:tau-cover-bridge}
+We test the execution boundary in the second deployment decision using the
+original retail tools, data and task reward from a pinned release of
+$\tau$-bench. We replay its 115 public test reference programs, hold each
+program fixed, and insert the same additional cancellation intent through four
+routes: discard, isolated shadow state, a pure order-details read, or live
+business state. A no-cover arm supplies the paired control. Three fixed seeds
+select a pending order belonging to the task user; the two insertion positions
+are before and after the reference program. Tasks without an eligible order
+remain in the denominator. This yields 3,450 paired cells; repetitions are
+clustered within tasks.
+Reference textual outputs hold the native output predicate fixed; the reward
+therefore assesses the controlled execution, not a model's answer generation.
+
+On the complete 115-task test suite, 97 tasks have an eligible same-account pending-order cover. All 3450 task/seed/position/arm cells are retained. The live-mutation paired change in native reward is -74.78 percentage points before the reference program (95\% task-bootstrap interval [-82.32, -66.96]) and -49.57 points after it ([-58.26, -40.87]). Unconfirmed live changes coexist with a passing native reward in 12 distinct tasks in this fixed suite.
+
+Nineteen reference programs return at least one tool error; all remain in the census. In the 96 error-free reference tasks, the live-mutation native reward is 22.92\% before insertion (95\% interval [14.93, 31.60]) and 47.22\% after insertion ([37.85, 56.25]).
+
+\begin{table}[t]
+\centering\small
+\caption{Native reward and equality to the no-cover business state (percent).
+Before/after refer to the insertion position. The independent resampling unit
+is the task, not one of its repeated cells.}
+\label{tab:tau-cover-bridge}
+\begin{tabular}{lrrrr}
+\toprule
+ & \multicolumn{2}{c}{Native reward} & \multicolumn{2}{c}{State equal} \\
+Route & Before & After & Before & After \\
+\midrule
+No cover & 100.00 & 100.00 & 100.00 & 100.00 \\
+Discard & 100.00 & 100.00 & 100.00 & 100.00 \\
+Shadow & 100.00 & 100.00 & 100.00 & 100.00 \\
+Pure read & 100.00 & 100.00 & 100.00 & 100.00 \\
+Live mutation & 25.22 & 50.43 & 25.22 & 50.43 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The intervention varies routing while preserving the original program and
+native scoring. Its deployment use is concrete: validate cover against both
+business-state preservation and the action's authorization context. The cover
+intent is explicitly unconfirmed in this scripted experiment; write attempts
+and writes that actually change state are recorded separately. Reference
+programs control planning ability, so this is an execution experiment rather
+than an autonomous-agent benchmark score. It measures task-state consequences;
+an additional observer experiment would be needed to quantify privacy benefit.
+Full arm-specific outcomes, task-cluster bootstrap intervals, source hashes,
+raw tool observations and native reward verification accompany the code.

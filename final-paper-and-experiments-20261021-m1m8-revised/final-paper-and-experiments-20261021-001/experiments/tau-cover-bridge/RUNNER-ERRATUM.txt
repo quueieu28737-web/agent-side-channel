@@ -1,0 +1,11 @@
+The continuation runner's initial docstring says previously started cells are
+never executed again. The precise, verified guarantee is narrower: every cell
+already recorded in the first attempt is carried unchanged and not executed by
+the continuation. The interrupted worker may have had uncommitted in-flight
+local work; that identity/completion status is not known and is not guessed zero.
+
+There were no model, network or external-service calls in either local task
+execution phase. The completed census contains one saved result for each of
+3450 unique task/seed/position/arm keys. Any uncommitted computation is not an
+additional independent observation. The frozen runner bytes and first attempt
+are retained; this erratum corrects the wording rather than rewriting history.

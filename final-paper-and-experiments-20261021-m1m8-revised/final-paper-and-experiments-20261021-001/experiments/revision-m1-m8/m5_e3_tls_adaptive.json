@@ -1,0 +1,117 @@
+[
+  {
+    "defense_condition": "Deterministic framing offset (+512B)",
+    "policy_code": "offset_512",
+    "clean_D0_acc": 0.5,
+    "clean_D0_ci95": [
+      0.5,
+      0.5
+    ],
+    "adapted_D2_k4_pairs_acc": 1.0,
+    "adapted_D2_k12_pairs_acc": 1.0,
+    "adapted_D2_k12_ci95": [
+      1.0,
+      1.0
+    ],
+    "adapted_D2_multifeature_acc": 1.0,
+    "paired_gain_D2_minus_D0": 0.5,
+    "paired_gain_ci95": [
+      0.5,
+      0.5
+    ],
+    "mean_wire_bytes": 1348.9583333333333,
+    "wire_overhead_ratio": 1.8710628214760443
+  },
+  {
+    "defense_condition": "Stochastic chunk-tail padding +U(0, 512B)",
+    "policy_code": "stoch_u512",
+    "clean_D0_acc": 0.8641666666666666,
+    "clean_D0_ci95": [
+      0.8375,
+      0.8916666666666666
+    ],
+    "adapted_D2_k4_pairs_acc": 0.9991666666666666,
+    "adapted_D2_k12_pairs_acc": 0.9991666666666666,
+    "adapted_D2_k12_ci95": [
+      0.9975,
+      1.0
+    ],
+    "adapted_D2_multifeature_acc": 0.9991666666666666,
+    "paired_gain_D2_minus_D0": 0.135,
+    "paired_gain_ci95": [
+      0.10666666666666665,
+      0.1625
+    ],
+    "mean_wire_bytes": 1039.1620833333334,
+    "wire_overhead_ratio": 1.4413621915274808
+  },
+  {
+    "defense_condition": "Stochastic chunk-tail padding +U(0, 1024B)",
+    "policy_code": "stoch_u1024",
+    "clean_D0_acc": 0.6816666666666666,
+    "clean_D0_ci95": [
+      0.6566666666666666,
+      0.7083333333333335
+    ],
+    "adapted_D2_k4_pairs_acc": 0.9016666666666667,
+    "adapted_D2_k12_pairs_acc": 0.8925000000000001,
+    "adapted_D2_k12_ci95": [
+      0.8625000000000002,
+      0.9241666666666667
+    ],
+    "adapted_D2_multifeature_acc": 0.8991666666666666,
+    "paired_gain_D2_minus_D0": 0.21083333333333334,
+    "paired_gain_ci95": [
+      0.1725,
+      0.2483333333333333
+    ],
+    "mean_wire_bytes": 1357.7141666666666,
+    "wire_overhead_ratio": 1.8832075362653873
+  },
+  {
+    "defense_condition": "Bucketed padding (1024B quantum)",
+    "policy_code": "bucket_1024",
+    "clean_D0_acc": 0.5,
+    "clean_D0_ci95": [
+      0.5,
+      0.5
+    ],
+    "adapted_D2_k4_pairs_acc": 0.7083333333333334,
+    "adapted_D2_k12_pairs_acc": 0.7083333333333334,
+    "adapted_D2_k12_ci95": [
+      0.5833333333333334,
+      0.8333333333333334
+    ],
+    "adapted_D2_multifeature_acc": 0.7083333333333334,
+    "paired_gain_D2_minus_D0": 0.20833333333333334,
+    "paired_gain_ci95": [
+      0.08333333333333333,
+      0.3333333333333333
+    ],
+    "mean_wire_bytes": 1401.25,
+    "wire_overhead_ratio": 1.9435935964861584
+  },
+  {
+    "defense_condition": "Constant cap (16,848B wire)",
+    "policy_code": "fixed_16848",
+    "clean_D0_acc": 0.5,
+    "clean_D0_ci95": [
+      0.5,
+      0.5
+    ],
+    "adapted_D2_k4_pairs_acc": 0.5,
+    "adapted_D2_k12_pairs_acc": 0.5,
+    "adapted_D2_k12_ci95": [
+      0.5,
+      0.5
+    ],
+    "adapted_D2_multifeature_acc": 0.5,
+    "paired_gain_D2_minus_D0": 0.0,
+    "paired_gain_ci95": [
+      0.0,
+      0.0
+    ],
+    "mean_wire_bytes": 16848.0,
+    "wire_overhead_ratio": 23.368895567242674
+  }
+]

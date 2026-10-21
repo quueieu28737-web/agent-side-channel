@@ -1,0 +1,14 @@
+\begin{table}[t]\centering\footnotesize
+\caption{Six checks over 16 evaluated-mitigation families. Counts apply to the source-scoped claim; no composite quality score is computed.}\label{tab:six-check-audit}
+\begin{tabularx}{\columnwidth}{@{}Yrrrr@{}}\toprule
+Check & Bound & Partial & \NRV{} & \NA{}\\\midrule
+1. Target/protection relation &16&0&0&0\\
+2. Receiver fields/permissions &13&3&0&0\\
+3. Placement/action dispatch &13&2&1&0\\
+4. Protected fit/test/access &0&4&5&7\\
+5. Tested workloads/shifts &14&2&0&0\\
+6. Joint inference/utility/cost &0&16&0&0\\\bottomrule
+\end{tabularx}
+\par\smallskip\raggedright\footnotesize
+Bound: the required item is source-bound for the scoped claim. Partial: supported elements coexist with an unbound element. Check4 includes the observer's training-data access and matching, not just existence of a fitted model. Check6 asks for an end-to-end deployment join, not a requirement that every component study perform one. No whole-check cell is solely \NRR{}; individual unreported subfields remain \NRR{} in the 96-cell inventory.
+\end{table}

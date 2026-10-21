@@ -1,0 +1,216 @@
+{
+  "status": "PASS",
+  "operation": "read-only saved ciphertext/lineage/arithmetic verification",
+  "new_model_calls": 0,
+  "new_TLS_replays": 0,
+  "refits": 0,
+  "frozen_sources_verified": 19,
+  "manifest_files_verified": 1306,
+  "source_outputs": 48,
+  "topic_groups": 24,
+  "train_groups": 12,
+  "test_groups": 12,
+  "replays": 144,
+  "failures": 0,
+  "endpoint_hash_receipts_matching": 144,
+  "stream_counts": {
+    "s2c_streams": 288,
+    "s2c_application_records": 3027,
+    "direction_streams": 576
+  },
+  "attacks": [
+    {
+      "arm": "NONE",
+      "site": "upstream",
+      "saved_rule": {
+        "kind": "threshold",
+        "threshold": 623.0,
+        "direction": 1
+      },
+      "test_correct": 24,
+      "test_total": 24,
+      "test_topic_clusters": 12,
+      "distinct_test_size_values": 24,
+      "test_sizes_min_max": [
+        133,
+        1493
+      ],
+      "saved_cluster_ci": [
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "arm": "NONE",
+      "site": "terminal",
+      "saved_rule": {
+        "kind": "threshold",
+        "threshold": 623.0,
+        "direction": 1
+      },
+      "test_correct": 24,
+      "test_total": 24,
+      "test_topic_clusters": 12,
+      "distinct_test_size_values": 24,
+      "test_sizes_min_max": [
+        133,
+        1493
+      ],
+      "saved_cluster_ci": [
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "arm": "UPSTREAM_PAD",
+      "site": "upstream",
+      "saved_rule": {
+        "kind": "constant",
+        "label": 0
+      },
+      "test_correct": 12,
+      "test_total": 24,
+      "test_topic_clusters": 12,
+      "distinct_test_size_values": 1,
+      "test_sizes_min_max": [
+        16768,
+        16768
+      ],
+      "saved_cluster_ci": [
+        0.5,
+        0.5
+      ]
+    },
+    {
+      "arm": "UPSTREAM_PAD",
+      "site": "terminal",
+      "saved_rule": {
+        "kind": "threshold",
+        "threshold": 623.0,
+        "direction": 1
+      },
+      "test_correct": 24,
+      "test_total": 24,
+      "test_topic_clusters": 12,
+      "distinct_test_size_values": 24,
+      "test_sizes_min_max": [
+        133,
+        1493
+      ],
+      "saved_cluster_ci": [
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "arm": "END_TO_END_PAD",
+      "site": "upstream",
+      "saved_rule": {
+        "kind": "constant",
+        "label": 0
+      },
+      "test_correct": 12,
+      "test_total": 24,
+      "test_topic_clusters": 12,
+      "distinct_test_size_values": 1,
+      "test_sizes_min_max": [
+        16768,
+        16768
+      ],
+      "saved_cluster_ci": [
+        0.5,
+        0.5
+      ]
+    },
+    {
+      "arm": "END_TO_END_PAD",
+      "site": "terminal",
+      "saved_rule": {
+        "kind": "constant",
+        "label": 0
+      },
+      "test_correct": 12,
+      "test_total": 24,
+      "test_topic_clusters": 12,
+      "distinct_test_size_values": 1,
+      "test_sizes_min_max": [
+        16768,
+        16768
+      ],
+      "saved_cluster_ci": [
+        0.5,
+        0.5
+      ]
+    }
+  ],
+  "costs": [
+    {
+      "arm": "NONE",
+      "site": "upstream",
+      "application_s2c_wire_bytes_total": 34606,
+      "application_s2c_wire_bytes_mean": 720.9583333333334,
+      "n": 48,
+      "median_both_link_elapsed_ms": 25.97055
+    },
+    {
+      "arm": "NONE",
+      "site": "terminal",
+      "application_s2c_wire_bytes_total": 34606,
+      "application_s2c_wire_bytes_mean": 720.9583333333334,
+      "n": 48,
+      "median_both_link_elapsed_ms": 25.97055
+    },
+    {
+      "arm": "UPSTREAM_PAD",
+      "site": "upstream",
+      "application_s2c_wire_bytes_total": 808704,
+      "application_s2c_wire_bytes_mean": 16848.0,
+      "n": 48,
+      "median_both_link_elapsed_ms": 27.33295
+    },
+    {
+      "arm": "UPSTREAM_PAD",
+      "site": "terminal",
+      "application_s2c_wire_bytes_total": 34606,
+      "application_s2c_wire_bytes_mean": 720.9583333333334,
+      "n": 48,
+      "median_both_link_elapsed_ms": 27.33295
+    },
+    {
+      "arm": "END_TO_END_PAD",
+      "site": "upstream",
+      "application_s2c_wire_bytes_total": 808704,
+      "application_s2c_wire_bytes_mean": 16848.0,
+      "n": 48,
+      "median_both_link_elapsed_ms": 28.5169
+    },
+    {
+      "arm": "END_TO_END_PAD",
+      "site": "terminal",
+      "application_s2c_wire_bytes_total": 808704,
+      "application_s2c_wire_bytes_mean": 16848.0,
+      "n": 48,
+      "median_both_link_elapsed_ms": 28.5169
+    }
+  ],
+  "padded_feature_payload_bytes": 16768,
+  "padded_application_wire_bytes": 16848,
+  "baseline_mean_application_wire_bytes": 720.9583333333334,
+  "padded_to_baseline_ratio_of_aggregate_application_wire_bytes": 23.368895567242674,
+  "interpretation": [
+    "Upstream-only padding equalized all 48 upstream size features; the new frontend re-emitted a distinguishable size downstream (24/24 held-out labels correct).",
+    "Extending fixed padding to the final TLS link equalized that same recorded size feature; the prespecified constant tie rule scored12/24.",
+    "Saved bootstrap intervals remain unchanged. All 12 test topic clusters share the same per-cluster score, so intervals degenerate algebraically. They are not population certainty or a general privacy bound.",
+    "Size is the sole attacker feature. Timing is not tested for privacy; loopback elapsed time is descriptive replay cost and excludes model generation.",
+    "Bandwidth object is S2C application TLS records including5-byte headers and24-byte GCM overhead; handshake/TCP/IP overhead is excluded from the ratio.",
+    "Content preservation is independently checked against saved endpoint hashes and exact collected text. Ciphertext alone does not authenticate the endpoint's reported plaintext hash.",
+    "This is a controlled buffer/de-pad/re-chunk frontend with one replay per content/arm. It establishes the constructed mechanism and its final-link size control, not field prevalence."
+  ],
+  "bindings": {
+    "freeze_sha256": "4b1fb4c4c77769afa6ef8d4862b160242439e5759557779f88d0228583ad6496",
+    "protocol_sha256": "b3bb38a1d3cabf00d133d8d58b16221640baec3abe4031013cb02cdbd3dd586e",
+    "summary_sha256": "1c69318108713f16ccd5a37b73c408bac0a2ec6bf096dc518147190130f27f73",
+    "manifest_sha256": "fde3d01e7f25d0b379243ef5cde3e3328c431f4995662a69a05023ae66075a27",
+    "export_binding_sha256": "b119d618ad9d8b2d98a40b8ab363ba9967937e6207baed0e6bd317ea55150da2"
+  }
+}

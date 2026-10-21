@@ -1,0 +1,41 @@
+{
+  "schema_version": "1.0",
+  "revision": "reviewer-deployment-cases-20261020-001",
+  "date": "2026-10-20",
+  "action": "One source snapshot hash refreshed by a targeted patch; no scientific claim, data, result, source corpus or historical record changed.",
+  "reason": "The final PDF003 uses a heading-only edit in sections/28-fingerprint-dependencies.tex: Finding 3: Hold Out the Generating Dependency became Match Transfer Claims to the Generator. The 15 following lines are identical to the preserved before/ source. The F3_HOLDOUT semantic anchor holdout remains present.",
+  "binding_changes": [
+    {
+      "file": "claims/claim-registry.json",
+      "json_location": "claims[claim_id=F3_HOLDOUT].manuscript_anchors[path=sections/28-fingerprint-dependencies.tex].snapshot_sha256",
+      "source_path": "sections/28-fingerprint-dependencies.tex",
+      "old_snapshot_sha256": "4c40cc45e21d20a2248e8586b3e97e309290527cbd4ff51d72fcae6f5c3f6e9d",
+      "new_snapshot_sha256": "ae5a7c1e36ff73a4c7d797fcb495108764cea22915d79bd9bad2523dd6e8b69f",
+      "preserved_old_source": "evidence/reviewer-deployment-cases-20261020-001/before/sections/28-fingerprint-dependencies.tex",
+      "preserved_old_source_sha256": "4c40cc45e21d20a2248e8586b3e97e309290527cbd4ff51d72fcae6f5c3f6e9d"
+    }
+  ],
+  "registry_sha256_before_patch": "49f6e43060890733351caa14541220e6f6ed6a78c111d13233c0824241be804e",
+  "registry_sha256_after_patch": "f3d6801efb7170d65db3a5b0e9bd0d8696f025e5c1c904562bb854e2a200e1f5",
+  "final_source_manifest": {
+    "path": "evidence/reviewer-deployment-cases-20261020-001/final-source-hashes.json",
+    "sha256": "c1a47a4256ae6216ec12ee20e8e45a3d0a581600f3c2da4f5495aa121095b21f",
+    "entries_checked": 41,
+    "mismatches": 0
+  },
+  "final_pdf": {
+    "path": "output/pdf/ieee-sp2027-sok-20261020-deployment-cases-003/survey-sp2027.pdf",
+    "sha256": "6d0303e41617df9a9381f05c729267c7ec95127853ae703a5e47f4d11bb6b1e5"
+  },
+  "validation": {
+    "all_current_registry_manuscript_snapshot_bindings_checked": 12,
+    "remaining_snapshot_mismatches": 0,
+    "claim_count_unchanged": 8,
+    "canonical_unit_count_unchanged": 33,
+    "other_same_stale_snapshot_occurrences_in_claims": 0,
+    "scientific_content_changed": false,
+    "new_model_requests": 0,
+    "new_fits": 0,
+    "old_data_or_sources_regenerated": false
+  }
+}

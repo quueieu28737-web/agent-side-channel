@@ -1,0 +1,26 @@
+\section{Introduction}\label{sec:introduction}
+Encryption conceals content but need not conceal execution. LLM services produce token streams, cache hit/miss timing and shared-resource activity; agents add destinations, tool exchanges and website actions. A receiving website, a passive network observer and an active API client see different projections \cite{weiss2024prompt,promptpeek2025,earlybird2025,agentprint2025,uitraces2026,jeong2026wra}. The practical question is which deployment decision a favorable defense result actually supports.
+
+A designer choosing padding, cover traffic or action humanization faces a concrete difficulty: similar defense labels refer to different protected objects. NetEcho studies downstream re-emission, the Web and Research Agents (WRA) study uses concurrent decoy requests for privacy, Dangol measures transport cover, and the Agent Humanization Benchmark (AHB) measures executed mobile humanization \cite{netecho2025,jeong2026wra,dangol2026workflow,zhu2026turing}. A lower inference score, preserved task success and a small component overhead are useful findings, but they answer different deployment questions. Reading them as one defense ranking loses the conditions that make each result useful.
+
+\paragraph{Central insight: follow both the trace and the action}
+Protecting a communication trace and preserving an agent's task are separate obligations. A downstream frontend can emit a new target-bearing trace after upstream protection; a dummy that enters tool or GUI execution can alter the task itself. The distinction changes the appropriate evaluation. A new emitter calls for final-hop capture; surviving features call for an adapted predictor; executed cover calls for objective task and policy checks. These tests address different failure mechanisms and cannot substitute for one another.
+
+We turn these source findings into three worked deployment decisions (Section~\ref{sec:discussion}): choose the final interface to protect, decide whether cover may execute, and select an applicable adaptation result and cost. Each case states what can be adopted from existing evidence and what condition would permit reuse elsewhere. For example, verified discard before semantic dispatch excludes direct fake-action state changes while leaving resource and delay effects to be checked. The same tested receiving view supports its local adaptation result; a different view requires a capture bridge. This cross-paper mapping is the contribution: the original papers establish the component phenomena, and the synthesis makes their consequences usable for system design.
+
+\paragraph{Contributions and use}
+The paper contributes (1) three source-backed deployment decisions with explicit conditions for reusing a result; (2) an eight-type defense map and a quantitative audit of result comparability and reporting; and (3) source-linked records that make these judgments reconstructible. The October 8, 2026 collection contains \FinalN{} families: \FinalCore{} core (\FinalA{} agent-native and \FinalB{} runtime/application-inherited) plus \FinalAdjacent{} adjacent. This collection supplies the context and counterconditions; the individual measurements supply each case's evidence. Privileged diagnostics, attribution and human--agent distinction are distinguished from confidentiality leakage.
+
+Figure~\ref{fig:system-model} separates the trace and action paths; Figure~\ref{fig:defense-decision} gives the three-check procedure. Section~\ref{sec:discussion} works through its cases, and Section~\ref{sec:defenses} audits the evidence. The checklist in Section~\ref{sec:agenda} translates the cases into a reporting practice. Public-trace reanalysis, failed runs and the negative checklist comparison are retained in the Supplementary Evidence, where they illustrate the scope of particular judgments rather than carry the deployment claims.
+
+\begin{figure*}[t]
+\centering\input{figures/fig1-system-model}
+\caption{Two paths that a deployment judgment must follow. The top path distinguishes an upstream protected link from a new downstream emitter; the bottom distinguishes communication cover from actions admitted to execution. The diagram organizes source mechanisms, not one jointly evaluated system.}
+\label{fig:system-model}
+\end{figure*}
+
+\begin{figure*}[t]
+\centering\input{figures/defense-decision-procedure}
+\caption{Three checks for applying a reported defense result. Each identifies a positive reuse condition and the evidence needed when the deployment changes.}
+\label{fig:defense-decision}
+\end{figure*}

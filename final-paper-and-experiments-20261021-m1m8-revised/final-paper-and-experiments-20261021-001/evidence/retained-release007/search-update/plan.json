@@ -1,0 +1,31 @@
+{
+  "declared_date": "2026-10-21",
+  "date_start": "2023-01-01",
+  "date_end": "2026-10-21",
+  "arxiv": {
+    "A1": "(cat:cs.CR OR cat:cs.CL) AND submittedDate:[202301010000 TO 202610212359] AND (all:agent OR all:workflow) AND (all:\"side channel\" OR all:\"side-channel\" OR all:fingerprinting)",
+    "A2": "(cat:cs.CR OR cat:cs.CL) AND submittedDate:[202301010000 TO 202610212359] AND (all:LLM OR all:\"language model\") AND (all:traffic OR all:streaming) AND (all:leakage OR all:\"side-channel\" OR all:fingerprinting)",
+    "A3": "(cat:cs.CR OR cat:cs.CL) AND submittedDate:[202301010000 TO 202610212359] AND (all:LLM OR all:\"language model\") AND (all:padding OR all:\"re-emission\" OR all:\"re emission\") AND (all:privacy OR all:leakage OR all:\"side-channel\")",
+    "A4": "(cat:cs.CR OR cat:cs.CL) AND submittedDate:[202301010000 TO 202610212359] AND (all:agent OR all:LLM) AND (all:decoy OR all:\"cover traffic\" OR all:\"fake actions\" OR all:\"cover actions\")"
+  },
+  "dblp": {
+    "D1": "agent side channel",
+    "D2": "agent fingerprinting",
+    "D3": "LLM traffic",
+    "D4": "language models traffic",
+    "D5": "LLM padding",
+    "D6": "language models padding",
+    "D7": "agent decoy",
+    "D8": "agent cover traffic"
+  },
+  "semantic_scholar": {
+    "S1": "(agent | workflow) + (\"side channel\" | side-channel | fingerprinting)",
+    "S2": "(LLM | \"language model\") + (traffic | streaming) + (leakage | side-channel | fingerprinting)",
+    "S3": "(LLM | \"language model\") + (padding | \"re-emission\") + (privacy | leakage | side-channel)",
+    "S4": "(agent | LLM) + (decoy | \"cover traffic\" | \"fake actions\" | \"cover actions\")"
+  },
+  "max_unique_discovery": 300,
+  "page_size": 100,
+  "no_retry": true,
+  "known24_used_in_discovery": false
+}

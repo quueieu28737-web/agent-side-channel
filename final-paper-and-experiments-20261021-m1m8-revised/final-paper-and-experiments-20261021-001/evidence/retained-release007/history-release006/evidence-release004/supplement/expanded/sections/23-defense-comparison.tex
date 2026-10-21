@@ -1,0 +1,37 @@
+\section{Intervention Evidence and Applicable Costs}
+\label{app:defense-comparison}
+Table~\ref{tab:defense-comparison} is a compact family summary; each execution/component mode is a distinct unit in the 33-row supplemental result ledger. It is not a homogeneous paper-level effect table or the full \FinalCore{}-family disposition table. The 16 evaluated families, two fixed guardrail conditions, four other interventions, thirteen scoped negatives, four diagnostic N/A and four unresolved bindings are defined in Table~\ref{tab:intervention-status}. The five multifeature-trace subset is separate from Early Bird's calibrated-oracle stage.
+
+Cost objects are mechanism-specific: token payload and plaintext padding are not wire bytes; model loading and table lookup are not added inference latency. D1/D2 do not establish feasible labeled-data access or matched adaptation budgets. The supplemental 66-position utility/cost inventory retains each source, scope and disposition, not 66 measured endpoints. R denotes the target quantity unreported in that scope, not a pending lookup, zero overhead or evidence of preserved utility.
+
+\paragraph{Disposition of unbound claims}
+AgentPrint's referenced supplementary defense result is not bound to an evaluated unit. Weiss's confirmation and Gu's provider changes establish disclosure context, not matched quantitative defense effects. PromptEcho reports approximately 3.2$\times$/1.4$\times$ padding overhead without a bound measurement method and defended outcome. These four claims are withheld from verified defense-effect comparisons, not recoded as failed defenses \cite{agentprint2025,weiss2024prompt,gu2025promptcaching,prompt_echo2026}. Whisper Leak's values below remain source-reported; original-run reproduction is not claimed.
+
+\begin{table*}[tp]
+\centering\footnotesize
+\setlength{\tabcolsep}{3pt}\renewcommand{\arraystretch}{1.12}
+\caption{Intervention-family summaries with separate result modes. D1/D2 refer to result-bound evidence: Y = established, U = unverified binding (\NRV{}); implementation-only confirmation is stated separately. R = unreported in inspected scope (\NRR{}). A dash means this contrast is inapplicable, not a wholly nonlearned attack. N/A is not zero cost.}
+\label{tab:defense-comparison}
+\begin{tabularx}{\textwidth}{@{}p{0.12\textwidth}p{0.19\textwidth}p{0.06\textwidth}YY@{}}
+\toprule Study / locator & Evaluated mode & D1/D2 & Source-confirmed outcome and residual view & Utility / applicable-cost boundary \\
+\midrule
+UI Traces \cite{uitraces2026}, 6.1/Fig.5 & Offline recorded delays & Y/Y & Retraining restores much identity prediction; structure survives. & Live task utility and delay cost R; wire N/A. \\
+WRA \cite{jeong2026wra}, 8/Table8--11 & Concurrent decoy execution; interleaving/shuffle & --/-- & Prompt/trait recovery reduced; destination and URL views differ. & Judged report usefulness, not objective task success; same-run latency/wire R. \\
+NetEcho \cite{netecho2025}, IV-C--E/VII & Protected-deployment fit; local padding; simulated dummies & Y/U & Trace A can survive length suppression; downstream may reserialize. & Same-run objective quality and incremental latency/wire R. \\
+Early Bird \cite{earlybird2025}, V-A/B & $K$-specific calibration, oracle simulation; separate semantic prototype & Y/U & D1 here is calibration, not a trace-classifier fit; paired D2 unresolved. & 6 ms/4\% belongs only to semantic cache; live KV cost R; wire N/A. \\
+Whisper Leak \cite{whisperleak2025}, 6.1--3 & Real padding captures; modeled batching/injection & U/U & LightGBM AUPRC 97.5\% to 92.9\%, five trials; per-condition fit binding unresolved. & Reported 4.5pp is rounding-compatible with display subtraction 4.6 pp, not confirmed error; live quality/latency/wire R. \\
+SpliceDefense \cite{spliceleak2026}, VII-C/TableII & Serving CTBF/QCP; generated background load & --/-- & CTBF suppresses measured oracle on 15 tasks/75 steps. & QCP alone: mean 7.5 tokens, $<5$ ms ($<1$\%); combined service cost R; wire N/A. \\
+Time Will Tell \cite{timewilltell2024}, 7.2--3 & Changed instruction; separate padding analysis & --/-- & Fixed-length instruction helps one model, not Gemma2's tested case. & Task quality R; 67\%/108\% plaintext padding estimates are not wire bytes. \\
+Speculation \cite{wei2024speculation}, 6.1/Table2 & Padding/aggregation; live placement U & --/-- & REST random-padding accuracy 34.4\%; reference matching, not fitted classification. & 8.7$\times$ token payload excludes metadata; full wire and utility R. \\
+Dangol \cite{dangol2026workflow}, 9.7--9 & Transformed captures; separate live A2A/OHTTP & Y/Y capture; U/U live & Six-class task accuracy: capture 0.17; live 0.30; timing-feature ablation 0.167; distinct populations. & Capture 16.2$\times$ bytes; live about 13$\times$/11$\times$ bytes/latency; objective task utility R. \\
+SIGLEAK \cite{geng2026sigleak}, 4/C & Fixed common SkillGuard5 prompt & --/-- & Direct-extraction baseline recall/F1 zero; inferred skills remain useful. & Downstream skill success is not a clean/defended utility frontier; service cost R; wire N/A. \\
+SafeKV \cite{chu2025safekv}, 7.2--4 & Serving prototype; repeated post-trigger probes & --/-- & TTFT area under ROC curve near 0.5 after trigger; attack-window denominators U. & Asynchronous detector latency is not added TTFT; detector accuracy is not task quality; wire N/A. \\
+AHB \cite{zhu2026turing}, Table1;5.2.3;E.3 & Online touch wrapper; separate offline transforms & U/U & Interval rule 0.5011, XGBoost 0.9989. Code confirms condition-wise refits; paper-run/D2 binding U. & Trip task success 0.75 RAW versus 0.15 defended; measured duration cost R; wire N/A. \\
+KVGov \cite{addagada2026kvgov}, 5.1--3/5.7--9/7 & Simulated inference/defense; separate real TTFT validation & --/-- & Partial-flush ASR 19.5\%/9.8\% simulated; 100/0 extremes analytic; hardware gap not defended ASR. & HMAC increment 1.3/1.6$\mu$s median/p99; full-workload reuse cost R; wire N/A. \\
+Carlini--Nasr \cite{carlini2024remote}, VII/Fig.12 & Fixed-rate transfer schedule & --/-- & Latency/bandwidth trade-off curve, not a new defended-ASR result. & Per-token cost curve; objective task utility R. \\
+Gao \cite{gao2025iknow}, 7.1 & Disable zero-copy loading & --/-- & Measured mitigation-component overhead; not live attack/utility frontier. & Loading time +17\%, memory +32\%; not service TTFT. \\
+TDXRay \cite{hornetz2026tdxray}, 6.1 & Oblivious token-map lookup microbenchmark & --/-- & Lookup mitigation cost; not end-to-end defended prompt-recovery result. & Lookup slowdown 52.52--369.15$\times$, not full LLM latency. \\
+Traffic benchmark \cite{pouryousef2026traffic}, V-C1 & Prompt/temperature intervention & U/U & Fingerprint accuracy changes under modified conditions; exact adaptive fit U. & Same-run objective utility/cost R. \\
+\bottomrule
+\end{tabularx}
+\end{table*}

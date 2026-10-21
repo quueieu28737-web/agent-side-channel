@@ -1,0 +1,38 @@
+[
+  {
+    "citation_key": "agentprint2025",
+    "old_status_unchanged": "UNDETERMINED",
+    "source": "https://arxiv.org/pdf/2510.07176v1",
+    "disposition": "SUPPLEMENT_RESULT_BINDING_STILL_OPEN",
+    "evidence_gap": "Main discussion points to initial mitigation analysis in supplement; a corresponding evaluated defense unit could not be bound in the inspected copy. Do not code no mitigation.",
+    "claim_action": "Do not count a measured defense or its utility/cost without locating the cited supplementary result.",
+    "quantitative_binding_closed": false
+  },
+  {
+    "citation_key": "weiss2024prompt",
+    "old_status_unchanged": "UNDETERMINED",
+    "source": "https://www.usenix.org/system/files/usenixsecurity24-weiss.pdf",
+    "disposition": "AUTHOR_AND_VENDOR_DISCLOSURE_NOT_QUANTITATIVE_EVALUATION",
+    "evidence_gap": "Vendor defense effectiveness is asserted in disclosure narrative; no identifiable per-defense dataset/run/metric found in the scoped section. Keep source-reported confirmation distinct from evaluated privacy/cost row.",
+    "claim_action": "Deployment/confirmation narrative is source-established; do not infer zero residual attack success, latency or bandwidth.",
+    "quantitative_binding_closed": false
+  },
+  {
+    "citation_key": "prompt_echo2026",
+    "old_status_unchanged": "UNDETERMINED",
+    "source": "https://www.usenix.org/system/files/usenixsecurity26-li-sijia.pdf",
+    "disposition": "REPORTED_PADDING_OVERHEAD_WITH_UNBOUND_METHOD",
+    "evidence_gap": "Source states3.2x/1.4x padding overhead but scoped section does not specify measurement population, insertion mode or defended attack result; component estimate exists, measured result-unit binding remains unresolved.",
+    "claim_action": "Keep3.2x/1.4x as source-reported figures only; no measured defense frontier follows. Zenodo file listing inspected; full archive retrieval did not return a path.",
+    "quantitative_binding_closed": false
+  },
+  {
+    "citation_key": "gu2025promptcaching",
+    "old_status_unchanged": "UNDETERMINED",
+    "source": "https://raw.githubusercontent.com/mlresearch/v267/main/assets/gu25b/gu25b.pdf",
+    "disposition": "REPORTED_PROVIDER_CHANGE_NOT_MATCHED_BEFORE_AFTER_AUDIT",
+    "evidence_gap": "Per-user cache separation and delays proposed; provider changes reported after disclosure but no identifiable before/after defended run in inspected scope. Do not convert source-reported deployment response to a measured intervention row.",
+    "claim_action": "Retain disclosure context; no before/after privacy/utility/cost effect is estimated.",
+    "quantitative_binding_closed": false
+  }
+]

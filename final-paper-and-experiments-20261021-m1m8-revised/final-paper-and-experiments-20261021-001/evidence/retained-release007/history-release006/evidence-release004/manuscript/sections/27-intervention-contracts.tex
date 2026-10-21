@@ -1,0 +1,21 @@
+\section{Applicable Intervention Evidence and Costs}\label{sec:defenses}
+\subsection{Which results answer a deployment question?}
+All \FinalCore{} core families have a scoped intervention disposition (Table~\ref{tab:intervention-status}). Sixteen contain evaluated mitigation components; a fixed guardrail, an intervention serving another objective and an unbound defense statement are different evidence. The full inventory retains 33 result records across 22 families and 66 utility/cost field positions.
+\input{tables/intervention-status}
+
+For deployment comparisons, we select records in which the source deliberately suppresses the studied channel or detectability and measures either that inference outcome or a cost of the mechanism. Fixed common guardrails, ordinary VPN robustness, access blocking, contention noise, signal-generating privacy filters and channel-only calibration remain contextual records. The companion selector reports every inclusion and retained contextual row. The selected records still mix executed inference, offline/simulated evidence and component costs; they have no common denominator for a defense-failure rate.
+
+Table~\ref{tab:deployment-decisions} instead asks six concrete questions. It identifies what the relevant results measure, the missing evidence and the particular judgment that missing evidence prevents. A measured protocol cost remains useful even when objective task utility is unreported. A missing complete frontier does not imply that a defense failed.
+\input{tables/deployment-question-cases}
+
+\subsection{Adaptation, training access and publication runs}
+Protected-data fitting (D1) and a paired comparison on the same defended test condition (D2) are separate. In the five multifeature-trace subset, UI Traces, NetEcho and Dangol establish D1; UI Traces and Dangol establish D2. Whisper Leak/AHB exact fit bindings remain unresolved, giving source-status bounds of three--five and two--five respectively. These bounds describe this subset, not all learned attacks. Early Bird's $K$-specific hit/miss calibration is a separate D1 stage before oracle simulation \cite{earlybird2025}.
+
+Labeled protected data must also be obtainable under the observer's permissions. Paired samples, tuning and compute budgets need their own bindings; source-local refitting alone proves neither access nor fairness. For AHB, released code confirms condition-specific refits (D1-code), but the historical Table~1 run (D1-run) and a paired common-test adaptation comparison (D2-paired) remain \NRV{} \cite{zhu2026turing}. The state-change case uses the separately reported task-success result, not an adaptive-detector effect.
+
+\subsection{Costs and unresolved assertions}
+Interpret cost as the object measured. Dangol's live 0.30 and transformed-capture 0.17 cannot be subtracted as a paired deployment effect. Its 0.167 timing-feature ablation is not an executed timing masker. Early Bird's 6ms/4\% semantic prototype does not price KV-granularity protection; KVGov's HMAC microcost omits lost cache reuse. SpliceDefense's mean 7.5 padding tokens and $<5$ms/$<1$\% describe QCP alone, not combined CTBF+QCP cost \cite{dangol2026workflow,earlybird2025,addagada2026kvgov,spliceleak2026}.
+
+Likewise, Speculation's 8.7$\times$ token payload excludes total wire overhead; Gao's loading cost and TDXRay's lookup cost are not service inference latency; SafeKV's asynchronous detector latency is not added TTFT \cite{wei2024speculation,gao2025iknow,hornetz2026tdxray,chu2025safekv}. The companion package preserves the full mode-specific inventory; Appendix~\ref{app:defense-comparison} gives the remaining binding questions.
+
+Four source-reported defense assertions remain outside quantitative comparisons: AgentPrint's supplementary analysis, Weiss's vendor confirmation, Gu's provider changes and PromptEcho's 3.2$\times$/1.4$\times$ padding overhead \cite{agentprint2025,weiss2024prompt,gu2025promptcaching,prompt_echo2026}. Their text is verified, but the required result/run binding is not. Withholding these quantities leaves the three named deployment cases unchanged; it establishes no result for the missing experiments.

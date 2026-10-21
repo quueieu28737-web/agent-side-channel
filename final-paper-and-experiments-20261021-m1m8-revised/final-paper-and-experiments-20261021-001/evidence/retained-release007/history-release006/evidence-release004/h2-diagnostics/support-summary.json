@@ -1,0 +1,801 @@
+{
+  "authoritative_semantic_families": "NR; split schema has no family field",
+  "authoritative_dataset_counts": {
+    "FRAMES": 4200
+  },
+  "exact_question_common_to_all_14": {
+    "train": 0,
+    "validation": 0,
+    "test": 0
+  },
+  "question_count": 823,
+  "proxy_rule": "first ASCII word; what/which/who/when/where/how/other; grammatical NOT semantic",
+  "proxy_not_used_in_any_classifier": true,
+  "test_matrix": [
+    {
+      "identity": "claude_opus_4_6",
+      "partition": "test",
+      "question_form_proxy": "what",
+      "rows": 21,
+      "questions": 21,
+      "flagged_rows": 0
+    },
+    {
+      "identity": "claude_opus_4_6",
+      "partition": "test",
+      "question_form_proxy": "which",
+      "rows": 8,
+      "questions": 8,
+      "flagged_rows": 0
+    },
+    {
+      "identity": "claude_opus_4_6",
+      "partition": "test",
+      "question_form_proxy": "who",
+      "rows": 3,
+      "questions": 3,
+      "flagged_rows": 0
+    },
+    {
+      "identity": "claude_opus_4_6",
+      "partition": "test",
+      "question_form_proxy": "when",
+      "rows": 0,
+      "questions": 0,
+      "flagged_rows": 0
+    },
+    {
+      "identity": "claude_opus_4_6",
+      "partition": "test",
+      "question_form_proxy": "where",
+      "rows": 0,
+      "questions": 0,
+      "flagged_rows": 0
+    },
+    {
+      "identity": "claude_opus_4_6",
+      "partition": "test",
+      "question_form_proxy": "how",
+      "rows": 12,
+      "questions": 12,
+      "flagged_rows": 0
+    },
+    {
+      "identity": "claude_opus_4_6",
+      "partition": "test",
+      "question_form_proxy": "other",
+      "rows": 44,
+      "questions": 43,
+      "flagged_rows": 4
+    },
+    {
+      "identity": "gemini_3_1",
+      "partition": "test",
+      "question_form_proxy": "what",
+      "rows": 14,
+      "questions": 14,
+      "flagged_rows": 2
+    },
+    {
+      "identity": "gemini_3_1",
+      "partition": "test",
+      "question_form_proxy": "which",
+      "rows": 7,
+      "questions": 7,
+      "flagged_rows": 0
+    },
+    {
+      "identity": "gemini_3_1",
+      "partition": "test",
+      "question_form_proxy": "who",
+      "rows": 4,
+      "questions": 4,
+      "flagged_rows": 0
+    },
+    {
+      "identity": "gemini_3_1",
+      "partition": "test",
+      "question_form_proxy": "when",
+      "rows": 0,
+      "questions": 0,
+      "flagged_rows": 0
+    },
+    {
+      "identity": "gemini_3_1",
+      "partition": "test",
+      "question_form_proxy": "where",
+      "rows": 0,
+      "questions": 0,
+      "flagged_rows": 0
+    },
+    {
+      "identity": "gemini_3_1",
+      "partition": "test",
+      "question_form_proxy": "how",
+      "rows": 12,
+      "questions": 12,
+      "flagged_rows": 2
+    },
+    {
+      "identity": "gemini_3_1",
+      "partition": "test",
+      "question_form_proxy": "other",
+      "rows": 41,
+      "questions": 41,
+      "flagged_rows": 5
+    },
+    {
+      "identity": "gemini_3_flash",
+      "partition": "test",
+      "question_form_proxy": "what",
+      "rows": 17,
+      "questions": 17,
+      "flagged_rows": 8
+    },
+    {
+      "identity": "gemini_3_flash",
+      "partition": "test",
+      "question_form_proxy": "which",
+      "rows": 4,
+      "questions": 4,
+      "flagged_rows": 2
+    },
+    {
+      "identity": "gemini_3_flash",
+      "partition": "test",
+      "question_form_proxy": "who",
+      "rows": 2,
+      "questions": 2,
+      "flagged_rows": 1
+    },
+    {
+      "identity": "gemini_3_flash",
+      "partition": "test",
+      "question_form_proxy": "when",
+      "rows": 2,
+      "questions": 2,
+      "flagged_rows": 0
+    },
+    {
+      "identity": "gemini_3_flash",
+      "partition": "test",
+      "question_form_proxy": "where",
+      "rows": 0,
+      "questions": 0,
+      "flagged_rows": 0
+    },
+    {
+      "identity": "gemini_3_flash",
+      "partition": "test",
+      "question_form_proxy": "how",
+      "rows": 15,
+      "questions": 15,
+      "flagged_rows": 12
+    },
+    {
+      "identity": "gemini_3_flash",
+      "partition": "test",
+      "question_form_proxy": "other",
+      "rows": 35,
+      "questions": 35,
+      "flagged_rows": 20
+    },
+    {
+      "identity": "gemma-4-31B-it",
+      "partition": "test",
+      "question_form_proxy": "what",
+      "rows": 19,
+      "questions": 19,
+      "flagged_rows": 3
+    },
+    {
+      "identity": "gemma-4-31B-it",
+      "partition": "test",
+      "question_form_proxy": "which",
+      "rows": 5,
+      "questions": 5,
+      "flagged_rows": 1
+    },
+    {
+      "identity": "gemma-4-31B-it",
+      "partition": "test",
+      "question_form_proxy": "who",
+      "rows": 2,
+      "questions": 2,
+      "flagged_rows": 0
+    },
+    {
+      "identity": "gemma-4-31B-it",
+      "partition": "test",
+      "question_form_proxy": "when",
+      "rows": 0,
+      "questions": 0,
+      "flagged_rows": 0
+    },
+    {
+      "identity": "gemma-4-31B-it",
+      "partition": "test",
+      "question_form_proxy": "where",
+      "rows": 0,
+      "questions": 0,
+      "flagged_rows": 0
+    },
+    {
+      "identity": "gemma-4-31B-it",
+      "partition": "test",
+      "question_form_proxy": "how",
+      "rows": 16,
+      "questions": 16,
+      "flagged_rows": 3
+    },
+    {
+      "identity": "gemma-4-31B-it",
+      "partition": "test",
+      "question_form_proxy": "other",
+      "rows": 35,
+      "questions": 35,
+      "flagged_rows": 7
+    },
+    {
+      "identity": "gemma_4_26B_A4B_it",
+      "partition": "test",
+      "question_form_proxy": "what",
+      "rows": 11,
+      "questions": 11,
+      "flagged_rows": 7
+    },
+    {
+      "identity": "gemma_4_26B_A4B_it",
+      "partition": "test",
+      "question_form_proxy": "which",
+      "rows": 8,
+      "questions": 8,
+      "flagged_rows": 7
+    },
+    {
+      "identity": "gemma_4_26B_A4B_it",
+      "partition": "test",
+      "question_form_proxy": "who",
+      "rows": 4,
+      "questions": 4,
+      "flagged_rows": 2
+    },
+    {
+      "identity": "gemma_4_26B_A4B_it",
+      "partition": "test",
+      "question_form_proxy": "when",
+      "rows": 0,
+      "questions": 0,
+      "flagged_rows": 0
+    },
+    {
+      "identity": "gemma_4_26B_A4B_it",
+      "partition": "test",
+      "question_form_proxy": "where",
+      "rows": 0,
+      "questions": 0,
+      "flagged_rows": 0
+    },
+    {
+      "identity": "gemma_4_26B_A4B_it",
+      "partition": "test",
+      "question_form_proxy": "how",
+      "rows": 14,
+      "questions": 14,
+      "flagged_rows": 7
+    },
+    {
+      "identity": "gemma_4_26B_A4B_it",
+      "partition": "test",
+      "question_form_proxy": "other",
+      "rows": 33,
+      "questions": 33,
+      "flagged_rows": 24
+    },
+    {
+      "identity": "glm_4.6v",
+      "partition": "test",
+      "question_form_proxy": "what",
+      "rows": 15,
+      "questions": 15,
+      "flagged_rows": 4
+    },
+    {
+      "identity": "glm_4.6v",
+      "partition": "test",
+      "question_form_proxy": "which",
+      "rows": 5,
+      "questions": 5,
+      "flagged_rows": 2
+    },
+    {
+      "identity": "glm_4.6v",
+      "partition": "test",
+      "question_form_proxy": "who",
+      "rows": 5,
+      "questions": 5,
+      "flagged_rows": 0
+    },
+    {
+      "identity": "glm_4.6v",
+      "partition": "test",
+      "question_form_proxy": "when",
+      "rows": 0,
+      "questions": 0,
+      "flagged_rows": 0
+    },
+    {
+      "identity": "glm_4.6v",
+      "partition": "test",
+      "question_form_proxy": "where",
+      "rows": 0,
+      "questions": 0,
+      "flagged_rows": 0
+    },
+    {
+      "identity": "glm_4.6v",
+      "partition": "test",
+      "question_form_proxy": "how",
+      "rows": 18,
+      "questions": 18,
+      "flagged_rows": 5
+    },
+    {
+      "identity": "glm_4.6v",
+      "partition": "test",
+      "question_form_proxy": "other",
+      "rows": 34,
+      "questions": 34,
+      "flagged_rows": 20
+    },
+    {
+      "identity": "glm_4.6v_flash",
+      "partition": "test",
+      "question_form_proxy": "what",
+      "rows": 16,
+      "questions": 16,
+      "flagged_rows": 11
+    },
+    {
+      "identity": "glm_4.6v_flash",
+      "partition": "test",
+      "question_form_proxy": "which",
+      "rows": 9,
+      "questions": 9,
+      "flagged_rows": 6
+    },
+    {
+      "identity": "glm_4.6v_flash",
+      "partition": "test",
+      "question_form_proxy": "who",
+      "rows": 5,
+      "questions": 5,
+      "flagged_rows": 2
+    },
+    {
+      "identity": "glm_4.6v_flash",
+      "partition": "test",
+      "question_form_proxy": "when",
+      "rows": 1,
+      "questions": 1,
+      "flagged_rows": 1
+    },
+    {
+      "identity": "glm_4.6v_flash",
+      "partition": "test",
+      "question_form_proxy": "where",
+      "rows": 0,
+      "questions": 0,
+      "flagged_rows": 0
+    },
+    {
+      "identity": "glm_4.6v_flash",
+      "partition": "test",
+      "question_form_proxy": "how",
+      "rows": 18,
+      "questions": 18,
+      "flagged_rows": 8
+    },
+    {
+      "identity": "glm_4.6v_flash",
+      "partition": "test",
+      "question_form_proxy": "other",
+      "rows": 37,
+      "questions": 37,
+      "flagged_rows": 18
+    },
+    {
+      "identity": "gpt_5_4",
+      "partition": "test",
+      "question_form_proxy": "what",
+      "rows": 15,
+      "questions": 15,
+      "flagged_rows": 0
+    },
+    {
+      "identity": "gpt_5_4",
+      "partition": "test",
+      "question_form_proxy": "which",
+      "rows": 6,
+      "questions": 6,
+      "flagged_rows": 1
+    },
+    {
+      "identity": "gpt_5_4",
+      "partition": "test",
+      "question_form_proxy": "who",
+      "rows": 5,
+      "questions": 5,
+      "flagged_rows": 0
+    },
+    {
+      "identity": "gpt_5_4",
+      "partition": "test",
+      "question_form_proxy": "when",
+      "rows": 1,
+      "questions": 1,
+      "flagged_rows": 0
+    },
+    {
+      "identity": "gpt_5_4",
+      "partition": "test",
+      "question_form_proxy": "where",
+      "rows": 0,
+      "questions": 0,
+      "flagged_rows": 0
+    },
+    {
+      "identity": "gpt_5_4",
+      "partition": "test",
+      "question_form_proxy": "how",
+      "rows": 13,
+      "questions": 13,
+      "flagged_rows": 1
+    },
+    {
+      "identity": "gpt_5_4",
+      "partition": "test",
+      "question_form_proxy": "other",
+      "rows": 48,
+      "questions": 48,
+      "flagged_rows": 1
+    },
+    {
+      "identity": "qwen3_5_27b",
+      "partition": "test",
+      "question_form_proxy": "what",
+      "rows": 14,
+      "questions": 14,
+      "flagged_rows": 1
+    },
+    {
+      "identity": "qwen3_5_27b",
+      "partition": "test",
+      "question_form_proxy": "which",
+      "rows": 8,
+      "questions": 8,
+      "flagged_rows": 3
+    },
+    {
+      "identity": "qwen3_5_27b",
+      "partition": "test",
+      "question_form_proxy": "who",
+      "rows": 2,
+      "questions": 2,
+      "flagged_rows": 0
+    },
+    {
+      "identity": "qwen3_5_27b",
+      "partition": "test",
+      "question_form_proxy": "when",
+      "rows": 1,
+      "questions": 1,
+      "flagged_rows": 0
+    },
+    {
+      "identity": "qwen3_5_27b",
+      "partition": "test",
+      "question_form_proxy": "where",
+      "rows": 0,
+      "questions": 0,
+      "flagged_rows": 0
+    },
+    {
+      "identity": "qwen3_5_27b",
+      "partition": "test",
+      "question_form_proxy": "how",
+      "rows": 13,
+      "questions": 13,
+      "flagged_rows": 3
+    },
+    {
+      "identity": "qwen3_5_27b",
+      "partition": "test",
+      "question_form_proxy": "other",
+      "rows": 38,
+      "questions": 38,
+      "flagged_rows": 14
+    },
+    {
+      "identity": "qwen3_5_9b",
+      "partition": "test",
+      "question_form_proxy": "what",
+      "rows": 16,
+      "questions": 16,
+      "flagged_rows": 9
+    },
+    {
+      "identity": "qwen3_5_9b",
+      "partition": "test",
+      "question_form_proxy": "which",
+      "rows": 9,
+      "questions": 9,
+      "flagged_rows": 8
+    },
+    {
+      "identity": "qwen3_5_9b",
+      "partition": "test",
+      "question_form_proxy": "who",
+      "rows": 3,
+      "questions": 3,
+      "flagged_rows": 1
+    },
+    {
+      "identity": "qwen3_5_9b",
+      "partition": "test",
+      "question_form_proxy": "when",
+      "rows": 1,
+      "questions": 1,
+      "flagged_rows": 1
+    },
+    {
+      "identity": "qwen3_5_9b",
+      "partition": "test",
+      "question_form_proxy": "where",
+      "rows": 0,
+      "questions": 0,
+      "flagged_rows": 0
+    },
+    {
+      "identity": "qwen3_5_9b",
+      "partition": "test",
+      "question_form_proxy": "how",
+      "rows": 20,
+      "questions": 20,
+      "flagged_rows": 13
+    },
+    {
+      "identity": "qwen3_5_9b",
+      "partition": "test",
+      "question_form_proxy": "other",
+      "rows": 37,
+      "questions": 37,
+      "flagged_rows": 29
+    },
+    {
+      "identity": "qwen3vl_30b_a3b",
+      "partition": "test",
+      "question_form_proxy": "what",
+      "rows": 21,
+      "questions": 21,
+      "flagged_rows": 10
+    },
+    {
+      "identity": "qwen3vl_30b_a3b",
+      "partition": "test",
+      "question_form_proxy": "which",
+      "rows": 3,
+      "questions": 3,
+      "flagged_rows": 2
+    },
+    {
+      "identity": "qwen3vl_30b_a3b",
+      "partition": "test",
+      "question_form_proxy": "who",
+      "rows": 4,
+      "questions": 4,
+      "flagged_rows": 1
+    },
+    {
+      "identity": "qwen3vl_30b_a3b",
+      "partition": "test",
+      "question_form_proxy": "when",
+      "rows": 0,
+      "questions": 0,
+      "flagged_rows": 0
+    },
+    {
+      "identity": "qwen3vl_30b_a3b",
+      "partition": "test",
+      "question_form_proxy": "where",
+      "rows": 0,
+      "questions": 0,
+      "flagged_rows": 0
+    },
+    {
+      "identity": "qwen3vl_30b_a3b",
+      "partition": "test",
+      "question_form_proxy": "how",
+      "rows": 12,
+      "questions": 12,
+      "flagged_rows": 6
+    },
+    {
+      "identity": "qwen3vl_30b_a3b",
+      "partition": "test",
+      "question_form_proxy": "other",
+      "rows": 40,
+      "questions": 40,
+      "flagged_rows": 27
+    },
+    {
+      "identity": "qwen3vl_8b",
+      "partition": "test",
+      "question_form_proxy": "what",
+      "rows": 13,
+      "questions": 13,
+      "flagged_rows": 12
+    },
+    {
+      "identity": "qwen3vl_8b",
+      "partition": "test",
+      "question_form_proxy": "which",
+      "rows": 6,
+      "questions": 6,
+      "flagged_rows": 6
+    },
+    {
+      "identity": "qwen3vl_8b",
+      "partition": "test",
+      "question_form_proxy": "who",
+      "rows": 8,
+      "questions": 8,
+      "flagged_rows": 8
+    },
+    {
+      "identity": "qwen3vl_8b",
+      "partition": "test",
+      "question_form_proxy": "when",
+      "rows": 2,
+      "questions": 2,
+      "flagged_rows": 2
+    },
+    {
+      "identity": "qwen3vl_8b",
+      "partition": "test",
+      "question_form_proxy": "where",
+      "rows": 0,
+      "questions": 0,
+      "flagged_rows": 0
+    },
+    {
+      "identity": "qwen3vl_8b",
+      "partition": "test",
+      "question_form_proxy": "how",
+      "rows": 17,
+      "questions": 17,
+      "flagged_rows": 14
+    },
+    {
+      "identity": "qwen3vl_8b",
+      "partition": "test",
+      "question_form_proxy": "other",
+      "rows": 44,
+      "questions": 44,
+      "flagged_rows": 33
+    },
+    {
+      "identity": "seed_2_lite",
+      "partition": "test",
+      "question_form_proxy": "what",
+      "rows": 17,
+      "questions": 17,
+      "flagged_rows": 6
+    },
+    {
+      "identity": "seed_2_lite",
+      "partition": "test",
+      "question_form_proxy": "which",
+      "rows": 7,
+      "questions": 7,
+      "flagged_rows": 3
+    },
+    {
+      "identity": "seed_2_lite",
+      "partition": "test",
+      "question_form_proxy": "who",
+      "rows": 5,
+      "questions": 5,
+      "flagged_rows": 2
+    },
+    {
+      "identity": "seed_2_lite",
+      "partition": "test",
+      "question_form_proxy": "when",
+      "rows": 2,
+      "questions": 2,
+      "flagged_rows": 1
+    },
+    {
+      "identity": "seed_2_lite",
+      "partition": "test",
+      "question_form_proxy": "where",
+      "rows": 0,
+      "questions": 0,
+      "flagged_rows": 0
+    },
+    {
+      "identity": "seed_2_lite",
+      "partition": "test",
+      "question_form_proxy": "how",
+      "rows": 11,
+      "questions": 11,
+      "flagged_rows": 3
+    },
+    {
+      "identity": "seed_2_lite",
+      "partition": "test",
+      "question_form_proxy": "other",
+      "rows": 40,
+      "questions": 40,
+      "flagged_rows": 19
+    },
+    {
+      "identity": "uitars_7b",
+      "partition": "test",
+      "question_form_proxy": "what",
+      "rows": 19,
+      "questions": 19,
+      "flagged_rows": 19
+    },
+    {
+      "identity": "uitars_7b",
+      "partition": "test",
+      "question_form_proxy": "which",
+      "rows": 5,
+      "questions": 5,
+      "flagged_rows": 5
+    },
+    {
+      "identity": "uitars_7b",
+      "partition": "test",
+      "question_form_proxy": "who",
+      "rows": 7,
+      "questions": 7,
+      "flagged_rows": 6
+    },
+    {
+      "identity": "uitars_7b",
+      "partition": "test",
+      "question_form_proxy": "when",
+      "rows": 1,
+      "questions": 1,
+      "flagged_rows": 0
+    },
+    {
+      "identity": "uitars_7b",
+      "partition": "test",
+      "question_form_proxy": "where",
+      "rows": 0,
+      "questions": 0,
+      "flagged_rows": 0
+    },
+    {
+      "identity": "uitars_7b",
+      "partition": "test",
+      "question_form_proxy": "how",
+      "rows": 15,
+      "questions": 15,
+      "flagged_rows": 14
+    },
+    {
+      "identity": "uitars_7b",
+      "partition": "test",
+      "question_form_proxy": "other",
+      "rows": 35,
+      "questions": 35,
+      "flagged_rows": 31
+    }
+  ],
+  "no_task_family_balanced_causal_estimate": true
+}

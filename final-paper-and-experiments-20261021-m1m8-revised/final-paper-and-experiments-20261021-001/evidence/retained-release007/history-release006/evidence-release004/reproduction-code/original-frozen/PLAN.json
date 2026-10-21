@@ -1,0 +1,66 @@
+{
+  "schema": "uitraces-reanalysis-plan-v1",
+  "source_commit": "4f3df1851e0e64dbf835344372b02d1b9593cfab",
+  "archive": "evidence/field-audit-2026-09-20/uitraces-4f3df18/traces-lfs.tar.xz",
+  "split_record": "evidence/field-audit-2026-09-20/uitraces-4f3df18/src__split_records__frames_sampled_split_record.json",
+  "archive_sha256": "79aeee6a2a7c9b32cfa0eb2a2c95663258338b33eeac1eb0117001dde5712f79",
+  "split_sha256": "a3069bd63dafaf3d47cf2316d4cea0fa2ca54c594ea2b5a86e15a77a336d9bf8",
+  "ingest_limits": {
+    "max_members": 200000,
+    "max_declared_bytes": 68719476736,
+    "max_json_bytes": 16777216,
+    "max_seconds": 600
+  },
+  "analysis": {
+    "expected_rows": 4200,
+    "expected_classes": 14,
+    "seed": 20261008,
+    "split_salt": "20261008",
+    "origin": "https://en.wikipedia.org",
+    "minimum_questions": {
+      "train": 20,
+      "validation": 10,
+      "test": 10
+    },
+    "epsilon": 1e-06,
+    "logistic_C": [
+      0.1,
+      1.0,
+      10.0
+    ],
+    "logistic_max_iter": 1000,
+    "logistic_tol": 1e-06,
+    "rf_trees": 200,
+    "rf_max_depth": 12,
+    "rf_min_samples_leaf": 2,
+    "rf_max_features": "sqrt",
+    "noise_max_ms": 5000,
+    "noise_realizations": [
+      0,
+      1,
+      2
+    ],
+    "bootstrap_draws": 3000,
+    "interval_percent": 98.33333333333333,
+    "selection_tie_tolerance": 1e-12,
+    "include_action_only": true,
+    "include_type_shuffle": true,
+    "max_fit_count": 19
+  },
+  "execution": {
+    "ingest_python": "host-environment/user/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/python.exe",
+    "analysis_python": "host-environment/Program Files/Python39/python.exe",
+    "analysis_environment": {
+      "python": "3.9.13",
+      "numpy": "2.0.2",
+      "scipy": "1.13.1",
+      "sklearn": "1.6.1"
+    },
+    "ingest_timeout_s": 600,
+    "analysis_timeout_s": 1800,
+    "supervisor_timeout_s": 2460,
+    "max_stage_log_bytes": 67108864,
+    "single_concurrency": true,
+    "automatic_retries": 0
+  }
+}

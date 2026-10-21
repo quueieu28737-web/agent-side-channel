@@ -1,0 +1,37 @@
+[
+  {
+    "unit_id": "DANGOL-capture",
+    "field": "inference_or_measurement_target",
+    "historical_value": "five-wayworkflowrecovery",
+    "current_value": "six-class workflow recovery",
+    "basis": "v3 Sections9.8-9.9/Table6; stale five-way label corrected"
+  },
+  {
+    "unit_id": "DANGOL-capture",
+    "field": "performance_cost",
+    "historical_value": "adaptive.17;16.2xcapturebytes",
+    "current_value": "16.2x capture bytes",
+    "basis": "Move attack accuracy out of cost field, no value changed"
+  },
+  {
+    "unit_id": "DANGOL-livebinding",
+    "field": "performance_cost",
+    "historical_value": "live.30;~13xbytes/~11xlatency;timingablation.167",
+    "current_value": "About 13x bytes / 11x latency in live binding",
+    "basis": "Source Table5; feature ablation is not deployed timing masking"
+  },
+  {
+    "unit_id": "DANGOL-livebinding",
+    "field": "intervention_condition",
+    "historical_value": "fixedrate+pooledIDs;live timingablation",
+    "current_value": "Live fixed-rate/pooled-ID OHTTP/A2A binding; timing-feature ablation reported separately",
+    "basis": "v3 Section9.7: do not conflate omitted classifier feature with executed timing defense"
+  },
+  {
+    "unit_id": "KVGOV-partialflush-sim",
+    "field": "performance_cost",
+    "historical_value": "SimASR19.5/9.8%;notliveASR",
+    "current_value": "Executed applicable cost not established in this simulation unit",
+    "basis": "Sections5.1-5.3: ASR is an inference outcome, not performance cost"
+  }
+]

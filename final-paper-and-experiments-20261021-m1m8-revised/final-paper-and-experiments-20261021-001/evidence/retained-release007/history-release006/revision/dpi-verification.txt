@@ -1,0 +1,17 @@
+2026-10-21: Data-processing inequality, reference verification.
+Perplexity Search (not Computer) query returned the textbook citation:
+https://www.perplexity.ai/search/29cf58a3-39a4-4af4-b20d-da3dab931898
+Only public textbook/theorem query was sent, no manuscript upload.
+Verified against publisher metadata:
+https://onlinelibrary.wiley.com/doi/book/10.1002/047174882X
+Thomas M. Cover and Joy A. Thomas, second edition, copyright 2006,
+ISBN9780471241959, DOI10.1002/047174882X.
+Verified primary textbook chapter (mirror of the book text):
+https://samfinlayson.com/files/notes/Cover_and_Thomas_ch2_entropy.pdf
+Section2.8, Theorem2.8.1, equations2.119--2.121.
+For S -> Z -> Y, the zero conditional term is I(S;Y|Z), not I(S;Z|Y).
+Perplexity's generated proof incorrectly swapped the conditional terms; that
+proof and its equality condition were not adopted. Manuscript proof follows the
+primary chain-rule argument and only transfers an applicable information bound,
+not an empirical classifier accuracy. This is an existing theorem applied to the
+receiver condition, not a novel theorem claim.

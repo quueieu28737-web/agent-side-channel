@@ -1,0 +1,32 @@
+{
+  "schema": "selection-revision-local-validation/v1",
+  "date": "2026-10-20",
+  "scope": "Same-workflow offline mechanical checks; not an independent scholarly review",
+  "tests": {
+    "ieee_query_strings_match_original_receipts": "7/7",
+    "acm_query_strings_match_original_receipts": "6/6;Q4 not a formal ACM query",
+    "acm_saved_counts_match_original_partition_audit": "6/6",
+    "acm_partition_id_sets_match_original_partition_audit": "6/6 query sets,31 included receipts",
+    "known24_readonly_replay_exit_code": 0,
+    "known24_seed_count": 24,
+    "ieee_exact_present_seeds": 1,
+    "acm_exact_present_seeds": 0,
+    "saved_summary_presence_mismatches_against_replay": 0,
+    "indexed_online_NR_rows": 48,
+    "new_network_model_experiment_calls": 0,
+    "active_manuscript_edits_by_this_task": 0
+  },
+  "artifact_sha256": {
+    "check_known24_offline.py": "493b5ca145fcfc31adf27558ad07d05a8f51dd7b4ab38c0aece3b89ff5ecde4d",
+    "known24-offline-check-summary.json": "c6ab4c899a04ec4b349da145152ac79a0c322b37d409293f3912d7ce472b8b4b",
+    "native-query-source-index.json": "2a1f41f0aca9ca8441cf870fefdb8eec4fb816c6ab3d46ff72514464c00bf4cd",
+    "native-query-table.tex": "2a9825c26161d04544146ee2fef2d54e6626a6de9e82e80de98eaf9dbae6cb86",
+    "selection-audit.txt": "d639515452d5023918e4e2b88098257b7c911807eaee309ec7112de61ce0d84a"
+  },
+  "limitations": [
+    "Exact saved-frame identity and literal-field checks are not live indexing or native query-engine eligibility.",
+    "Four empirical/source-lineage candidates remain unresolved; one separate chapter background route is resolved at abstract scope only.",
+    "Broad Q4 acquisition/screening,ACM global routes and high-risk exclusion coverage remain incomplete.",
+    "Suggested TeX fragment is not independently compiled; parent owns integration and manuscript compilation."
+  ]
+}

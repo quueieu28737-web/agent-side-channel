@@ -1,0 +1,50 @@
+\section{Scope and Systematization Method}\label{sec:methodology}\label{sec:background}
+\subsection{Research questions, eligibility and threat polarity}
+We organize the systematization around four questions: which hidden targets, threat polarities and auxiliary observables appear across LLM and agent systems (RQ1); how signal generation origin relates to receiver observation permissions (RQ2); which holdouts establish portability across tasks, configurations and hardware (RQ3); and when a component intervention protects an end-to-end workflow at a bounded utility and cost (RQ4).
+
+Core inclusion requires five conjunctive criteria: (C1) LLM or agent execution, (C2) a hidden target property, (C3) an execution-dependent auxiliary observable rather than ordinary output semantics alone, (C4) specified observer permissions, and (C5) an empirical inference evaluation. Mixed-feature papers qualify only if they isolate an auxiliary-only C3 component; thus coding fingerprints, WildAuth, ZeroPrint, endpoint-content fingerprints and StepFinder remain adjacent boundary comparators \cite{ghaleb2026codingfingerprint,wang2026dialogue,shao2026zeroprint,leshin2026endpoint,zhu2026stepfinder}. Table~\ref{tab:boundary-rules} states the observable eligibility rules.
+\input{tables/boundary-rules}
+
+We use four narrative groupings of objectives and observer roles, not mutually exclusive classes. An unauthorized identity inference can be both attribution and a confidentiality concern. Each record separately specifies the inference target, observer, authorization relation and protected interest:
+\begin{enumerate}
+\item \textbf{Type~I (Confidentiality and privacy protection):} An unauthorized observer attempts to infer private user prompts, personal traits, visited domains or proprietary model states; the defense protects user or tenant confidentiality (e.g., NetEcho, WRA, Early Bird, KVGov, CachePrune, OTRO \cite{netecho2025,jeong2026wra,earlybird2025,addagada2026kvgov,wu2026cacheprune,lee2026otro}).
+\item \textbf{Type~II (Provenance and identity attribution):} An observer infers which model, agent harness or user identity generated a trace from timing, packet or DOM event structure (e.g., UI Traces, FP-Agent, AgentPrint, Lidar \cite{uitraces2026,wang2026fpagent,agentprint2025,wang2026lidar}).
+\item \textbf{Type~III (Human--agent / bot-detection evasion):} The receiving platform operates a defensive classifier to detect automated bots, while the agent applies ``action humanization'' (e.g., AHB \cite{zhu2026turing}) to evade detection---inverting the defender/attacker polarity relative to Type~I privacy protection.
+\item \textbf{Type~IV (Authorized operator diagnostics):} Privileged loop detection, serving root-cause localization or internal residual-stream monitoring (ClawGuard, cycle detection, LumiMAS, LLM RCA, MIRAGE \cite{gan2026clawguard,george2025cycles,solomon2026lumimas,scheinert2026rca,revankar2026mirage}), which use C1--C5 auxiliary signals for legitimate system telemetry rather than privacy exploitation.
+\end{enumerate}
+
+\subsection{Seed-anchored purposive corpus and exact reconciliation}
+Because LLM and agent side-channel papers are scattered across security conferences, systems venues and preprints under heterogeneous terminology (``remote keylogging,'' ``prompt-cache leakage,'' ``workflow fingerprinting,'' ``agent humanization''), our corpus is constructed through \emph{purposive seed selection, venue-targeted proceedings screening (IEEE S\&P, USENIX Security, NDSS, ACM CCS, PMLR) and one-hop backward/forward citation snowballing} from 40 fixed seeds (2,237 backward reference occurrences and 24 distinct forward works screened; 38/40 forward seeds resolved; seed resolution and the number of distinct returned works are different counts), complemented by native database exports and bulk keyword searches (Appendix~\ref{app:search} and Supplement S1/S10).
+
+To document why standalone Boolean keyword queries cannot replace seed-and-snowball discovery, we audited both our historical October 8--9 native IEEE/ACM exports and a completed October 21 supplementary search frame comprising four Semantic Scholar title/abstract bulk queries and two native arXiv searches (615 occurrences deduplicated to 565 unique records; Table~\ref{tab:corpus-reconciliation}). Those six supplementary keyword queries returned 17/24 of a fixed 24-paper core subset of our 40 seeds (\texttt{seed\_n=24}) and 25/60 of the October 8 snapshot. Because the 24 known papers are a core subset of the 40 initial seeds rather than an external holdout, 17/24 and 25/60 measure \emph{lexical overlap between narrow Boolean queries and our seed-anchored corpus}, not calibrated database recall: the two native arXiv queries required the exact hyphenated string \texttt{"side-channel"} (missing studies titled with ``prompt leakage,'' ``keylogging,'' ``timing attacks'' or ``fingerprinting''), and Semantic Scholar title/abstract matching did not search full texts of USENIX/NDSS PDFs.
+
+\begin{table}[t]\centering\footnotesize
+\caption{Item-by-item reconciliation of the 565-record October 21 search frame (before and after the 204-record exclusion audit) and the transition from the 60-family snapshot to all \FinalN{} coded families.}\label{tab:corpus-reconciliation}
+\setlength{\tabcolsep}{3.5pt}
+\begin{tabularx}{\columnwidth}{@{}Yrrr@{}}\toprule
+Route / family category & Pre-audit & Audit $\Delta$ & Final (Indexed)\\\midrule
+Excluded: no hidden C2/C3 target & 221 & $-4$ & 217 (0)\\
+Excluded: outside LLM / diff.\ target & 175 & $0$ & 175 (0)\\
+Existing snapshot core / adjacent & 23 / 1 & $+1 / 0$ & 24 / 1 (in 60)\\
+New source-verified core families & 14 & $+1$ & 15 (\textbf{+15})\\
+Adjacent source-reviewed contexts & 28 & $+2$ & 30 (\textbf{+7})\\
+Adjacent metadata-only contexts & 28 & $0$ & 28 (0)\\
+Background / proposal metadata & 58 & $0$ & 58 (0)\\
+Missing abstract / unavailable text & 17 & $0$ & 17 (0)\\\midrule
+\textbf{565-frame total / Net added families} & \textbf{565} & \textbf{0 net} & \textbf{565 (+22)}\\
+\textbf{Coded collection}: Core / Adjacent (\textbf{Total}) & \multicolumn{3}{r}{Snapshot: 43 / 17 (\textbf{60}) $\to$ Full: \FinalCore{} / \FinalAdjacent{} (\textbf{\FinalN{}})}\\\bottomrule
+\end{tabularx}
+\par\smallskip\raggedright\footnotesize
+The exclusion audit selected 177 high-risk pattern matches plus 27 reason-stratified records (seed 20261021), rather than all 396 initially excluded records. This enriched 204-record subset rerouted 4 records out of the 221 initial C2/C3 exclusions: (1) \texttt{SUP-0192} (MIRAGE \cite{revankar2026mirage}) moved to new core ($14+1=15$, all 15 added to the family index); (2) \texttt{SUP-0552} (InputSnatch arXiv alias) merged into existing family \texttt{inputsnatch2024} ($23+1=24$, $+0$ new families); and (3--4) \texttt{SUP-0191} and \texttt{SUP-0424} moved to source-reviewed adjacent contexts ($28+2=30$, of which 7 boundary-defining studies enter the adjacent index and 23 remain in the 565-record ledger). Thus $60 + 15\text{ (core)} + 7\text{ (adjacent)} = \FinalN{}$.
+\end{table}
+
+Table~\ref{tab:corpus-reconciliation} reconciles every record across the $60\to\FinalN{}$ transition. All \FinalCore{} core families (\FinalA{} workflow-origin, \FinalB{} inherited-runtime/application; 53 non-diagnostic and 5 Type~IV diagnostic) and \FinalAdjacent{} adjacent families are integrated into the unified corpus maps and intervention dispositions (Supplement S2/S5). Across the \FinalCore{} core families, 20 evaluate mitigations (16 snapshot families plus four additions). The result ledger is broader: 33 baseline records from 22 families, including six contextual comparators, plus six records from the four added mitigation families. Thus the 39-record ledger spans 26 families and 78 utility/cost field positions; the reporting-audit denominator is 20.
+
+\subsection{Supplied coding records and agreement}
+The supplied package records a primary AI-assisted coding workflow and a second coding column described by its provenance as a domain-expert review. We retain the recorded agreement summaries and supply their source columns. The files alone do not verify coder identity, blinding or independence from the primary decisions; we therefore report annotation agreement rather than newly verified independent human validation. The recorded scope is:
+The saved screening sample has 93/100 three-class agreement ($\kappa=0.886$); the nine-item baseline audit has 134/144 cell agreement across 16 families ($\kappa=0.876$); and the 50-pair sample has 141/150 judgment agreement ($\kappa=0.916$). The latter covers all 13 same-family pairs plus 37 other within-cohort pairs. Full intervals and source locators remain in Supplement S8 and the annotation files.
+
+
+The historical confidence intervals resample individual screening records, audit cells and pairwise judgments respectively. Cells within families and three judgments within a pair are dependent, so these intervals are conditional descriptive summaries, not cluster-robust generalization intervals. The 36 cells for four added families are outside the 144-cell agreement calculation. Agreement also does not establish coding correctness, and $\kappa$ depends on category prevalence.
+
+\soktakeaway{SoK Takeaway 1 (Search and evidence scope)}{The supplementary queries returned 25/60 snapshot families and 17/24 known seed papers. These overlaps motivate complementary discovery methods; they neither estimate field-wide recall nor identify why each missing paper was absent. Objective, observer and authorization must be specified separately when comparing interventions.}

@@ -1,0 +1,39 @@
+{
+  "schema": "additive-h2-failure-diagnostics-v1",
+  "seed": 20261008,
+  "split": "sha256(20261008:question_sha256) modulo100; <50 train, <75 validation, else test",
+  "features": {
+    "failure_only": [
+      "error_present",
+      "result_absent"
+    ],
+    "empty_only": [
+      "projected_single_origin_empty"
+    ],
+    "activity_only": [
+      "log1p_event_count",
+      "log1p_missing_local_time_count",
+      "log1p_valid_local_time_count",
+      "log1p_local_time_sum",
+      "log1p_local_time_mean",
+      "log1p_local_time_std",
+      "log1p_local_time_median",
+      "log1p_local_time_p90"
+    ]
+  },
+  "models": "same 4 original candidates per representation; logistic C=.1,1,10; RF200 depth12 leaf2 sqrt; seed20261008 n_jobs1",
+  "fit_count": 12,
+  "selection": "question-weighted validation logloss only; original declared-order tie rule",
+  "weights": "N/(Q*n_q), computed on training only; same original train/validation/test",
+  "all_test_predictions_after_all_fits": true,
+  "saved_reference_programs": [
+    "training_prior",
+    "single_coarse",
+    "single_combined"
+  ],
+  "strata": "diagnostic error-present OR result-absent; not authenticated task success",
+  "uncertainty": "descriptive point scores only; no new confirmatory interval or selection across diagnostics",
+  "task_support": "authoritative FRAMES dataset label and exact-question support; grammatical first-token proxy, NOT semantic family",
+  "no_collection_no_llm_no_api_no_luna": true,
+  "not_blind": "original and 20261018 results were known before this additive protocol"
+}

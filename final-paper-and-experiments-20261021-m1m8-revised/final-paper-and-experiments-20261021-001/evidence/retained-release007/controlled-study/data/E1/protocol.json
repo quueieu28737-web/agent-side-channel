@@ -1,0 +1,24 @@
+{
+  "version": "E1-v1",
+  "seed": 20261021,
+  "input_sha256": "1f6cddf49335f864a8e5450dd54f4534b7de23b999a500dc0668fc0f9d9f1a08",
+  "source_sha256": "f372a926e2b78dde6a1587a3a473af5b88f9b434721a97dcb788999ceaa41112",
+  "record_n": 48,
+  "expected_replays": 144,
+  "arms": [
+    "NONE",
+    "UPSTREAM_PAD",
+    "END_TO_END_PAD"
+  ],
+  "padding_frames": 16,
+  "padding_frame_bytes": 1024,
+  "unpadded_frame_bytes": 128,
+  "feature": "S2C TLS1.2 type23 record payload-byte total",
+  "split": "12 topic pairs train, 12 disjoint topic pairs test",
+  "bootstrap_clusters": "held-out topic pairs",
+  "bootstrap_replicates": 5000,
+  "timing": "descriptive tee-read timing only, no timing privacy claim",
+  "network_boundary": "127.0.0.1 only, ephemeral ports, two actual TLS links",
+  "python": "3.12.14",
+  "openssl": "OpenSSL 3.5.8 25 Aug 2026"
+}

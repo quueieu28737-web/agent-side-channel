@@ -1,0 +1,111 @@
+{
+  "id": "glm_4.6v/glm_4.6v_007ce09d",
+  "question_sha256": "fd5b55428e1c1faa349e767e63987b41b3d91f8857de6863beee08366a669cbe",
+  "complete_ingested_record_projection": [
+    {
+      "source_index": 0,
+      "source_type": "navigate",
+      "trigger": "http",
+      "url_sha256": "d71ec714e950bddf3b6202a0261ab3f47951471f62b776a3840dd539decfe164",
+      "page_local_t": null,
+      "included": false,
+      "projected": null
+    },
+    {
+      "source_index": 1,
+      "source_type": "beforeunload",
+      "trigger": null,
+      "url_sha256": "d71ec714e950bddf3b6202a0261ab3f47951471f62b776a3840dd539decfe164",
+      "page_local_t": 5682,
+      "included": true,
+      "projected": {
+        "type": "beforeunload",
+        "t": 5682.0,
+        "page_key": "d71ec714e950bddf3b6202a0261ab3f47951471f62b776a3840dd539decfe164"
+      }
+    },
+    {
+      "source_index": 2,
+      "source_type": "navigate",
+      "trigger": "http",
+      "url_sha256": "6ecaabc5591d4bf62d4f8dfb72d16683f3440e6f4669564f36e883dc88c89b12",
+      "page_local_t": null,
+      "included": false,
+      "projected": null
+    },
+    {
+      "source_index": 3,
+      "source_type": "scroll",
+      "trigger": null,
+      "url_sha256": "6ecaabc5591d4bf62d4f8dfb72d16683f3440e6f4669564f36e883dc88c89b12",
+      "page_local_t": 6630,
+      "included": true,
+      "projected": {
+        "type": "scroll",
+        "t": 6630.0,
+        "page_key": "6ecaabc5591d4bf62d4f8dfb72d16683f3440e6f4669564f36e883dc88c89b12"
+      }
+    },
+    {
+      "source_index": 4,
+      "source_type": "beforeunload",
+      "trigger": null,
+      "url_sha256": "6ecaabc5591d4bf62d4f8dfb72d16683f3440e6f4669564f36e883dc88c89b12",
+      "page_local_t": 12430,
+      "included": true,
+      "projected": {
+        "type": "beforeunload",
+        "t": 12430.0,
+        "page_key": "6ecaabc5591d4bf62d4f8dfb72d16683f3440e6f4669564f36e883dc88c89b12"
+      }
+    },
+    {
+      "source_index": 5,
+      "source_type": "navigate",
+      "trigger": "http",
+      "url_sha256": "33092b7623415eb5ab8a8a2a4afade2184a8208b7c4fd0e6b3297b2e9dd4619e",
+      "page_local_t": null,
+      "included": false,
+      "projected": null
+    }
+  ],
+  "archive_view": [
+    {
+      "type": "beforeunload",
+      "t": 5682.0,
+      "page_key": "d71ec714e950bddf3b6202a0261ab3f47951471f62b776a3840dd539decfe164"
+    },
+    {
+      "type": "scroll",
+      "t": 6630.0,
+      "page_key": "6ecaabc5591d4bf62d4f8dfb72d16683f3440e6f4669564f36e883dc88c89b12"
+    },
+    {
+      "type": "beforeunload",
+      "t": 12430.0,
+      "page_key": "6ecaabc5591d4bf62d4f8dfb72d16683f3440e6f4669564f36e883dc88c89b12"
+    }
+  ],
+  "first_document_proxy": [
+    {
+      "type": "beforeunload",
+      "t": 5682.0,
+      "page_key": "d71ec714e950bddf3b6202a0261ab3f47951471f62b776a3840dd539decfe164"
+    }
+  ],
+  "boundary_rule": "first_document() unchanged diagnostic-h2-controls h2_controls.py",
+  "sorting": "none; retain source callback-array order; timestamps can reset",
+  "truncation": "archive view none; document proxy stops per original first_document rules",
+  "not_raw_archive_full_record": true,
+  "raw_archive_bytes_remain_in_pinned_tar": true,
+  "excluded_predictors": [
+    "URL/page_key",
+    "question",
+    "answer",
+    "error text/flag",
+    "result presence",
+    "t_episode",
+    "DOM text",
+    "frame/document IDs unavailable"
+  ]
+}

@@ -1,0 +1,170 @@
+{
+  "audit_date": "2026-10-21",
+  "provenance": "Retrospective AI-assisted scoped source audit; same workflow assistants, not independent human coding",
+  "cohorts": {
+    "traffic-envelope": ["WRA-decoy-execution", "NET-upstream-local", "NET-dummy-padding-simulation", "WHISPER-randompadding-capture", "WHISPER-batching-replay", "WHISPER-injection-replay", "TIME-length-instruction", "TIME-padding-estimate", "SPEC-padding-REST", "DANGOL-capture", "DANGOL-livebinding", "CARLINI-fixed-rate"],
+    "cache-service": ["EARLY-K-calibration-oracle", "EARLY-semantic-deidentification", "SPLICE-CTBF-signal", "SPLICE-QCP-cost", "SAFE-post-trigger", "KVGOV-partialflush-sim", "KVGOV-hardware-gap", "KVGOV-HMAC-cost"],
+    "behavioral-humanization": ["UI-delay-offline", "AHB-online-executed", "AHB-offline"],
+    "local-memory": ["GAO-zero-copy-off", "TDXRAY-oblivious-map"],
+    "generator-fingerprint": ["TRAFFIC-prompt-reformulation", "TRAFFIC-temperature", "RHYTHM-VPN"],
+    "fixed-instruction": ["SIG-common-guardrail", "AGENTTELL-fixed-instruction"],
+    "access-control": ["FP-CLOUDFLARE"],
+    "contention-noise": ["BAR-co-running-noise"],
+    "filter-created-view": ["DEB-filter-origin"]
+  },
+  "endpoints": {
+    "UI-delay-offline": ["model-identity", "archive/site event features", "identity prediction after archived timestamp transformation", "inference"],
+    "WRA-decoy-execution": ["prompt-reconstruction", "destination sequence with source-specific URL/domain visibility", "private functional-intent and trait reconstruction", "inference"],
+    "NET-upstream-local": ["topic", "packet length/timing-derived Trace A/B", "multiclass topic recovery across named scenarios", "inference"],
+    "NET-dummy-padding-simulation": ["topic", "packet length/timing-derived Trace A/B", "multiclass topic recovery on transformed traces", "inference"],
+    "EARLY-K-calibration-oracle": ["prompt-token", "chosen API hit/miss timing probes", "token recovery and query cost after empirical K-specific timing calibration", "inference"],
+    "EARLY-semantic-deidentification": ["semantic-cache-processing", "server-side semantic-cache pre/postprocessor benchmark", "PII de-identification processing latency", "cost-only"],
+    "WHISPER-randompadding-capture": ["topic", "encrypted packet size/timing", "binary target-topic AUPRC on newly padded/unpadded captures", "inference"],
+    "WHISPER-batching-replay": ["topic", "encrypted packet size/timing", "binary target-topic AUPRC on grouped archived packets", "inference"],
+    "WHISPER-injection-replay": ["topic", "encrypted packet size/timing", "binary target-topic AUPRC on synthetic packet injection", "inference"],
+    "SPLICE-CTBF-signal": ["retrieval-timing-gap", "chosen retrieval/chunk timing probe", "median distinguishing timing gap under CTBF", "signal"],
+    "SPLICE-QCP-cost": ["prefix-padding-cost", "serving component benchmark", "QCP padding tokens and TTFT cost", "cost-only"],
+    "TIME-length-instruction": ["prompt-reconstruction", "perfect token-count observer in defense test", "length-based private classification-label ASR", "inference"],
+    "TIME-padding-estimate": ["plaintext-padding-cost", "analytical output-length cost calculation", "plaintext token padding estimate", "cost-only"],
+    "SPEC-padding-REST": ["prompt-reconstruction", "encrypted speculative-step sizes/timing", "query-fingerprint classification after padding and token payload cost", "inference"],
+    "DANGOL-capture": ["workflow", "transformed captured HTTPS timing/size/linkage", "six-class workflow recovery on protected captures", "inference"],
+    "DANGOL-livebinding": ["workflow", "live loopback OHTTP/A2A timing/size/linkage", "six-class workflow recovery in live OHTTP stack", "inference"],
+    "SIG-common-guardrail": ["skill-identity", "permitted query outputs and behavioral signature", "skill inference under common guardrail", "inference"],
+    "SAFE-post-trigger": ["cache-membership", "API TTFT probes in post-trigger window", "membership ROC-AUC following revocation", "inference"],
+    "AHB-online-executed": ["agent-detectability", "mobile touch/trajectory/interval features", "human-versus-agent detectability with real action execution", "inference"],
+    "AHB-offline": ["agent-detectability", "postprocessed mobile touch/trajectory/interval features", "human-versus-agent detectability on archived events", "inference"],
+    "KVGOV-partialflush-sim": ["cache-membership", "simulated chosen cache probes", "simulated membership/prompt ASR; analytic extreme controls", "inference"],
+    "KVGOV-hardware-gap": ["raw-cache-timing-gap", "internal server counters and separate Apple streaming timing", "cold/cached timing validation, not protected recovery", "signal"],
+    "KVGOV-HMAC-cost": ["key-derivation-cost", "CPU cache-key derivation microbenchmark", "HMAC component overhead, excluding lost reuse", "cost-only"],
+    "TRAFFIC-prompt-reformulation": ["model-identity", "selected encrypted traffic links", "serving-model accuracy under prompt reformulation", "inference"],
+    "TRAFFIC-temperature": ["model-identity", "selected encrypted traffic links", "serving-model accuracy under temperature variation", "inference"],
+    "CARLINI-fixed-rate": ["fixed-rate-cost", "recorded response timing/rate cost analysis", "bandwidth/added per-token latency curve", "cost-only"],
+    "GAO-zero-copy-off": ["shared-memory-cost", "local model-loading component benchmark", "loading delay and memory overhead of disabling zero-copy", "cost-only"],
+    "TDXRAY-oblivious-map": ["tokenizer-cost", "isolated CPU token-to-ID lookup benchmark", "lookup cost and representable vocabulary", "cost-only"],
+    "AGENTTELL-fixed-instruction": ["private-instruction", "browser-visible action sequence", "matching actions under fixed instruction loaded/cold conditions", "inference"],
+    "FP-CLOUDFLARE": ["access-control", "live website agent gate", "agent blocking and task completion", "context"],
+    "BAR-co-running-noise": ["covert-channel-capacity", "MIG contention", "covert throughput under co-running noise", "context"],
+    "RHYTHM-VPN": ["model-identity", "VPN-transformed packet timing/size", "serving-model weighted F1 under topology/location change", "inference"],
+    "DEB-filter-origin": ["filter-membership", "filter-induced output/selection side effects", "membership inference from a filter-created view", "context"]
+  },
+  "positive_descriptive_alignments": [
+    ["NET-upstream-local", "NET-dummy-padding-simulation", "WHISPER-randompadding-capture", "WHISPER-batching-replay", "WHISPER-injection-replay"],
+    ["DANGOL-capture", "DANGOL-livebinding"],
+    ["AHB-online-executed", "AHB-offline"],
+    ["TRAFFIC-prompt-reformulation", "TRAFFIC-temperature", "RHYTHM-VPN"],
+    ["SAFE-post-trigger", "KVGOV-partialflush-sim"]
+  ],
+  "same_family_pairs": [
+    {"a":"NET-upstream-local","b":"NET-dummy-padding-simulation","D":"COMPATIBLE","P":"UNRESOLVED","T_ab":"UNRESOLVED","T_ba":"UNRESOLVED","D_reason":"Same topic-recovery question and Trace A/B definitions; keep scenario, offline mode, and metric separate.","P_reason":"The source does not bind the two result units to a matched protected-test population and fitted classifier for a paired subtraction.","T_reason":"No unchanged live/offline operating-point bridge is established by the two tables."},
+    {"a":"EARLY-K-calibration-oracle","b":"EARLY-semantic-deidentification","D":"INCOMPATIBLE","P":"NOT_APPLICABLE","T_ab":"INCOMPATIBLE","T_ba":"INCOMPATIBLE","D_reason":"K-specific prefix-cache token recovery and semantic-cache de-identification processing cost measure different primitives and outcomes.","P_reason":"There is no common outcome to subtract.","T_reason":"The proposed unchanged reuse substitutes a semantic-cache processor cost for prefix-cache granularity, or a prefix-recovery bound for a semantic matcher. The primitive and cost object are positively different."},
+    {"a":"WHISPER-randompadding-capture","b":"WHISPER-batching-replay","D":"COMPATIBLE","P":"INCOMPATIBLE","T_ab":"UNRESOLVED","T_ba":"UNRESOLVED","D_reason":"Both report target-topic AUPRC from packet metadata, with collection and provider conditions retained.","P_reason":"Section 6.1 newly collects padded/unpadded gpt-4o-mini traces; Section 6.2 replays the prior provider trace collection. These are not the same defended-test population.","T_reason":"Provider- and mechanism-specific protected-fit/test bridges are not verified."},
+    {"a":"WHISPER-randompadding-capture","b":"WHISPER-injection-replay","D":"COMPATIBLE","P":"INCOMPATIBLE","T_ab":"UNRESOLVED","T_ba":"UNRESOLVED","D_reason":"Both measure topic AUPRC under explicitly different packet manipulations.","P_reason":"New random-padding captures and injected historical traces are distinct collection populations, not a paired protected-test contrast.","T_reason":"No bridge validates an unchanged protected operating point between new capture padding and injection replay."},
+    {"a":"WHISPER-batching-replay","b":"WHISPER-injection-replay","D":"COMPATIBLE","P":"UNRESOLVED","T_ab":"UNRESOLVED","T_ba":"UNRESOLVED","D_reason":"Both are packet-replay topic-AUPRC evaluations, without identifying their values as paired.","P_reason":"Shared source traces do not establish identical held-out rows, fitted attackers, or trial pairing for the two mitigation tables.","T_reason":"A mechanism-change bridge between grouped and injected traffic is not established."},
+    {"a":"SPLICE-CTBF-signal","b":"SPLICE-QCP-cost","D":"INCOMPATIBLE","P":"NOT_APPLICABLE","T_ab":"INCOMPATIBLE","T_ba":"INCOMPATIBLE","D_reason":"CTBF distinguishing-gap measurements and QCP padding/TTFT measurements are different component/outcome objects.","P_reason":"Timing-gap suppression cannot be subtracted from padding tokens or serving latency.","T_reason":"Neither a QCP-only cost nor a CTBF-only signal measurement is an unchanged combined-defense result. This is an object-scope conflict, not evidence that the unmeasured total cost is necessarily high."},
+    {"a":"TIME-length-instruction","b":"TIME-padding-estimate","D":"INCOMPATIBLE","P":"NOT_APPLICABLE","T_ab":"INCOMPATIBLE","T_ba":"INCOMPATIBLE","D_reason":"An empirically changed generation instruction's ASR and an analytical plaintext padding estimate measure different interventions and endpoints.","P_reason":"No common outcome/test condition exists for subtraction.","T_reason":"An instruction-conditioned inference outcome cannot stand in for a separately calculated token-padding cost, or vice versa; neither is a measured joint endpoint."},
+    {"a":"DANGOL-capture","b":"DANGOL-livebinding","D":"COMPATIBLE","P":"INCOMPATIBLE","T_ab":"INCOMPATIBLE","T_ba":"INCOMPATIBLE","D_reason":"Both concern six-class workflow recovery, with transformed-capture and live-loopback conditions explicitly separated.","P_reason":"The transformed capture frontier and live co-located OHTTP/A2A stack are distinct test populations/execution conditions.","T_reason":"The source reports different operating points: transformed capture ~0.17 /16.2x bytes versus live ~0.30 /13x bytes/11x latency. Copying either numerical point unchanged to the other conflicts with the observed conditions and values."},
+    {"a":"AHB-online-executed","b":"AHB-offline","D":"COMPATIBLE","P":"INCOMPATIBLE","T_ab":"INCOMPATIBLE","T_ba":"INCOMPATIBLE","D_reason":"Both evaluate human-agent detectability; offline feature editing and executed actions remain separate.","P_reason":"Archived event transformations and newly executed workflow traces are not the same protected-test population or intervention.","T_reason":"Offline editing does not dispatch actions, while the online wrapper does and can change state. A task-neutrality/harm conclusion cannot be copied across that positive execution mismatch."},
+    {"a":"KVGOV-partialflush-sim","b":"KVGOV-hardware-gap","D":"INCOMPATIBLE","P":"NOT_APPLICABLE","T_ab":"UNRESOLVED","T_ba":"UNRESOLVED","D_reason":"Simulated protected ASR and raw cold/cached hardware timing contrast are different outcomes; hardware channel existence is not protected attack recovery.","P_reason":"No common measured outcome/test population to subtract.","T_reason":"A hardware-bound protected attack and matched external-observer bridge remain unverified; missing validation is not a demonstrated failure."},
+    {"a":"KVGOV-partialflush-sim","b":"KVGOV-HMAC-cost","D":"INCOMPATIBLE","P":"NOT_APPLICABLE","T_ab":"UNRESOLVED","T_ba":"UNRESOLVED","D_reason":"Simulated ASR and CPU key-derivation microcost are separate objects, not a joint deployment frontier.","P_reason":"ASR and microseconds are different outcomes.","T_reason":"The simulated inference effect and component microcost have no same-deployment joint binding; lost reuse is explicitly left to future work."},
+    {"a":"KVGOV-hardware-gap","b":"KVGOV-HMAC-cost","D":"INCOMPATIBLE","P":"NOT_APPLICABLE","T_ab":"UNRESOLVED","T_ba":"UNRESOLVED","D_reason":"Unprotected hardware cold/cached timing and CPU HMAC microcost are not measurements of one protected serving-cost object.","P_reason":"Distinct measurement conditions and outcomes do not form a paired intervention contrast.","T_reason":"Different hardware/measurement paths and missing reuse-cost binding prevent an unchanged deployment estimate; no bridge has been demonstrated."},
+    {"a":"TRAFFIC-prompt-reformulation","b":"TRAFFIC-temperature","D":"COMPATIBLE","P":"UNRESOLVED","T_ab":"UNRESOLVED","T_ba":"UNRESOLVED","D_reason":"Both report ten-model identity accuracy in the same four-fold figure, with intervention settings retained.","P_reason":"Nominally common folds do not identify identical defended observations and protected-fit pairing between rewrite and temperature conditions.","T_reason":"No intervention-independent protected operating-point bridge follows from reporting both conditions."}
+  ],
+  "families": {
+    "uitraces2026": {
+      "status":["SAT","PARTIAL","SAT","PARTIAL","SAT","PARTIAL"],
+      "scope":["Sections 3-4;6.1;Appendix A.5","Sections 3-4;A.5;B.2; pinned collector/extractor binding in final ledger","6.1 Figures4-5;A.5","6.1 Figures4-5;6.2","Table1;B.1-B.2;Table13","6.1;A.5"],
+      "reason":["Model attribution is explicit; it is not private-goal recovery.","Returned event fields are identified; a linked multi-document archive is not automatically a single ordinary website's authenticated view.","The evaluated defense edits archived timestamps; no online waiting/action dispatch is measured.","The clean-versus-adapted protected-test contrast is explicit. Operational protected-data access and matched attacker collection/fit budgets remain narrower than the abstract observer assumption.","Four named task datasets and 14-model harness are stated; these are the actual tested generators, not an unseen-site guarantee.","Prediction is measured under timestamp perturbation; objective live task utility and executed delay distribution are not supplied by the archived-trace experiment."],
+      "utility":"NR-R_live_objective","cost":"NA_live_for_offline_edit","join":"offline_prediction_only"
+    },
+    "jeong2026wra": {
+      "status":["SAT","PARTIAL","SAT","NA","PARTIAL","PARTIAL"],
+      "scope":["3.1;8.1 Tables8-9","3.1;Appendix C.2;8.1","8.1 Tables8-9","8.1 Tables8-9","Table1;6.1;8.1;Appendix C","8.1-8.3 Tables8-11;9"],
+      "reason":["Private functional intent and user traits are stated.","Destination/order observations are identified, but browser/Playwright collection and URL/domain visibility are source-specific; packet-only visibility cannot be inferred for every dataset.","Real and decoy requests execute concurrently; only the real answer is returned. The evaluated mixed destination sequence preserves within-request order.","Generative prompt/trait recovery with trace prompting is not a paired learned-classifier adaptation claim.","Decoy counts and trait/benchmark conditions are stated, but persona publication/artifact population reconciliation is unresolved; no workload migration is inferred.","Tables8-9 measure decoy privacy effects. Table11 utility is a different visibility/alternative-source experiment. Same-decoy objective task/policy utility and measured serving cost are not reported in inspected Sections8-9."],
+      "utility":"NR-R_same_decoy_objective;separate_judged_proxy","cost":"NR-R_same_decoy_cost","join":"privacy_vs_separate_visibility_utility"
+    },
+    "netecho2025": {
+      "status":["SAT","SAT","SAT","PARTIAL","SAT","PARTIAL"],
+      "scope":["III;IV-D","III;IV-C;Figure5","IV-C-E Figure5 TablesIII-IV;VII TableIX","IV-D TablesIII-IV;VII TableIX","IV-D TablesIII-IV;VII TableIX","IV-D;VII"],
+      "reason":["Topic/conversation inference is identified for each reported task.","Trace A/B packet-derived fields and reference-query access are explicit.","The API/frontend boundary is explicit; local padding scenarios and offline dummy simulation are distinguished.","Per-scenario classifier training is explicit. The offline-defense fit and clean/adapted same-protected-test binding are not established.","Named deployments and medical/legal topic tasks are specified; local Qwen/vLLM conditions are not all vendor production defenses.","Topic recovery is measured; classifier training time is not deployed defense cost, and objective application utility plus end-to-end defense cost are not jointly measured."],
+      "utility":"NR-R_objective","cost":"NR-R_defense_cost;training_cost_different_object","join":"prediction_not_joint_serving_frontier"
+    },
+    "earlybird2025": {
+      "status":["SAT","SAT","SAT","PARTIAL","SAT","PARTIAL"],
+      "scope":["II-C;IV-A-B;V","II-C;IV-A-B","V-A-B Figures11-12;TableVI","IV-A;V-A TableVI","IV-A-B;V-A-B","V-A TableVI;V-B"],
+      "reason":["Prefix-token recovery and semantic-cache attribute inference are distinct targets.","Chosen API timing probes and hit/miss calibration are identified, without local GPU privileges.","K-prefix sharing and semantic-cache pre/postprocessing are explicitly different intervention locations.","K-specific empirical hit/miss calibration is used in the subsequent stochastic oracle. A matched protected-test contrast and common adaptive budget are not bound.","K=1-4 and named prompt/calibration settings are stated; semantic processing cost uses 1000 sampled Presidio sentences.","The semantic processor's approximately6ms/4% overhead is not prefix-cache granularity cost. Oracle query counts are not service latency, and objective agent utility is not established."],
+      "utility":"NR-R_objective","cost":"SAT_semantic_component_only;NR-R_KV_service_cost","join":"different_primitives_not_one_frontier"
+    },
+    "whisperleak2025": {
+      "status":["SAT","SAT","SAT","NR-V","SAT","PARTIAL"],
+      "scope":["3.1;4;6","3.1;features;6","6.1-6.3","Classifier/split discussion;6.1-6.3","4.1-4.2;6.1-6.3","6.1-6.3 Tables3-5"],
+      "reason":["Binary target-topic inference is the protected outcome.","Passive encrypted packet size/timing fields are identified; no decrypted payload is treated as passive visibility.","New randomized-padding captures and offline batching/injection transformations are distinguished.","Classifiers and ordinary splitting are described; historical protected-training and matched protected-test binding for mitigation results is not verified.","Provider/model-specific mitigation results and new gpt-4o-mini captures are identified; they are not assumed provider-invariant.","AUPRC is measured. Injection volume estimates are replay quantities, not measured live wire/latency/utility, and padding utility/cost is not jointly reported."],
+      "utility":"NR-R_live_objective","cost":"SAT_replay_volume_only;NR-R_live_cost","join":"capture_and_replay_not_joint_live_frontier"
+    },
+    "spliceleak2026": {
+      "status":["SAT","SAT","SAT","NA","SAT","PARTIAL"],
+      "scope":["IV-B;V","IV-B","IV-D;VII-C TableII","IV-B;VII-C","VII-C TableII","VII-C TableII"],
+      "reason":["Retrieval/chunk timing leakage of hidden content is identified.","Active API/candidate timing probes and shared retrieval conditions are specified.","CTBF boundary fusion and QCP prefix padding are distinct serving components.","The recorded timing/oracle contrast is not a learned protected-distribution adaptation comparison.","The defense evaluation's15 ScenarioC tasks and75 steps are identified; other attack hardware/scenarios are not relabeled defense-transfer tests.","CTBF signal-gap suppression and QCP-only padding/TTFT costs are separate measurements. Their values are not a measured combined-defense cost/utility point."],
+      "utility":"NR-R_objective","cost":"SAT_QCP_component_only","join":"CTBF_effect_not_QCP_total_cost"
+    },
+    "timewilltell2024": {
+      "status":["SAT","SAT","PARTIAL","NR-V","SAT","PARTIAL"],
+      "scope":["III;VII-B","VII-B;VI contrasted","VII-B-C","V-B-C;VII-B","VII-B","VII-B-C"],
+      "reason":["Private output/classification label inferred from response length is explicit.","The mitigation ASR uses a perfect token-count observer; real network attack results are not used to authenticate this defense condition.","A60-word generation instruction is an actual model intervention; the separate plaintext-padding estimate has no verified live placement.","The attack fits input-length-conditioned thresholds on known-input data. Whether that fitting is repeated after the defense and compared on the same protected test is unverified; count-rule is not equivalent to no fitting.","The three specified tasks and Gemma2/GPT4o conditions are identified, not a general model-shift claim.","Instruction ASR and analytical padding/generation costs are separate interventions. Plaintext padding is not wire bandwidth, and objective task correctness under the instruction is not jointly bound."],
+      "utility":"NR-R_objective","cost":"SAT_analytical_plaintext_only","join":"different_interventions_not_joint_frontier"
+    },
+    "gao2025iknow": {
+      "status":["SAT","SAT","SAT","NA","PARTIAL","PARTIAL"],
+      "scope":["3.1","3.1-3.2","7.1","7.1","7.1","7.1"],
+      "reason":["Local input/output text confidentiality is the protection relation.","Same-host unprivileged mmap/shared-page cache probing is identified; it is not a remote traffic observer.","Disabling zero-copy removes the measured sharing mechanism; page-deduplication is a separately stated residual condition.","Removing shared-page availability is not a learned-classifier adaptation claim.","The cost example names llama.cpp and multiple instances but does not fully bind model/load/hardware conditions; attack-side diversity is not mitigation-transfer evidence.","Reported17% loading delay and approximately32% memory cost are component outcomes, not inference latency or a defended-ASR/task-utility frontier."],
+      "utility":"NA_component_scope;NR-R_deployment_objective","cost":"SAT_loading_memory_component","join":"cost_only_not_defended_ASR"
+    },
+    "wei2024speculation": {
+      "status":["SAT","SAT","PARTIAL","NR-V","SAT","PARTIAL"],
+      "scope":["3;4","3;4.7","6.1 Figures6-7 Table2","4.2;4.4;6.1","6.1","6.1 Table2"],
+      "reason":["Private query fingerprint recovery is explicit; datastore leakage is a distinct branch.","Packet-size/timing and speculative-iteration linkage are specified; separate real-network tests do not establish the padding run's mode.","Payload padding and aggregation are defined, but whether these reported defense outcomes were executed online or transformed from traces remains unverified.","The source trains a Random Forest attack. Protected-distribution retraining and a paired same-protected-test comparison are not verified; the frozen reference-matching/NA label is not inherited.","Named LADE/REST/BiLD, query and decoding settings are specified; separate attack OOD results are not defended OOD evaluation.","REST accuracy34.4% and8.7x token payload are tied to the padding condition. Metadata-inclusive wire cost, executed latency distribution, and objective end-to-end utility are not jointly measured."],
+      "utility":"NA_component_payload_semantics;NR-R_objective_test","cost":"SAT_token_payload_only;NR-V_live_mode","join":"payload_tradeoff_not_wire_frontier"
+    },
+    "dangol2026workflow": {
+      "status":["SAT","SAT","SAT","PARTIAL","SAT","PARTIAL"],
+      "scope":["Threat model;9.7-9.9","9.7-9.9","9.7-9.9","9.8-9.9 Table6;9.7","9.7-9.9","9.7 OHTTP paragraph;9.9 Table6"],
+      "reason":["Six-class collaborative workflow recovery is stated.","Timing/size/linkage fields and the loopback deployment are explicitly identified.","Transformed capture defenses are separated from the executed OHTTP/A2A stack.","Adaptive protected-data training and paired comparisons are explicit for capture conditions; the liveOHTTP classifier fit/test binding is not established by those rows.","The live client/relay/gateway/agent are co-located; capture/workflow conditions are stated, without WAN transfer certification.","LiveOHTTP reports recovery0.30,13x bytes and11x latency under its own condition; capture0.17/16.2x is not that same run. Objective task/policy utility is not jointly measured."],
+      "utility":"NR-R_objective","cost":"SAT_live_OHTTP_bytes_latency;separate_capture_bytes","join":"live_effect_cost_but_no_objective_utility"
+    },
+    "pouryousef2026traffic": {
+      "status":["SAT","SAT","SAT","NR-V","SAT","PARTIAL"],
+      "scope":["III-IV;V-C","III-IV","V-C1 Figure9a","V-C1 Figure9a","V-C1 Figure9a","V-C1;VI-A-B"],
+      "reason":["The recorded mitigation target is serving-model identity, not private task inference from a different experiment.","The encrypted traffic observation and selected agent/link visibility are specified.","Prompt reformulation and decoding-temperature changes occur before response generation.","Ordinary classifier fitting and prompt-grouped folds are stated; protected-training and matched defended-test pairing for the two mitigation conditions are unverified.","Four prompt-grouped folds, ten-model chance baseline and named temperature values are explicit; topology tests elsewhere are not transferred to the defense rows.","Model-fingerprinting accuracy is measured. Semantics-preserving reformulation is asserted, not an objective task-utility test, and same-condition execution cost is not reported."],
+      "utility":"NR-R_objective;semantic_preservation_asserted","cost":"NR-R_same_condition","join":"prediction_not_task_cost_frontier"
+    },
+    "carlini2024remote": {
+      "status":["SAT","SAT","NR-V","NA","SAT","PARTIAL"],
+      "scope":["III-VII","III-VI;VII","VII Figures11-12","VII","VII Figures11-12","VII Figures11-12"],
+      "reason":["Language/topic and restricted chosen-prompt secret predicates are distinguished.","Remote response timing and per-case chosen-query privileges are identified.","Constant-rate real/empty-message behavior is specified, but source text does not bind the plotted cost calculation to an executed final-hop deployment.","The fixed-rate cost analysis is not a protected-distribution retraining superiority claim.","GPT-4o language timing distributions and tested output intervals are identified; these are not arbitrary workload/topology shifts.","The10ms and80ms bandwidth/per-token-delay curves concern their rate model. Per-token delay is not request latency and no bound objective task/deployment utility frontier is established."],
+      "utility":"NR-R_objective","cost":"SAT_rate_cost_curve;NR-V_live_binding","join":"rate_analysis_not_live_joint_frontier"
+    },
+    "hornetz2026tdxray": {
+      "status":["SAT","SAT","SAT","NA","SAT","PARTIAL"],
+      "scope":["3;5","3 Threat model;5","6.1","6.1","6.1 Figure8 Table3","6.1 Figure8 Table3"],
+      "reason":["Guest prompt/token confidentiality is the protected relation.","A malicious hypervisor observes page behavior without guest plaintext permission; this is not a passive remote observer.","The measured oblivious-map replacement acts at token-to-ID lookup, not the entire LLM serving path.","Data-oblivious lookup is not a learned-classifier adaptation comparison.","Llama3.2 vocabulary,WikiText103,100k sampled tokens,100 repeats,i9-12900K and8-128-byte key configurations define the microbenchmark scope.","Lookup costs52.52-369.15x and vocabulary coverage are component measurements. Vocabulary truncation is not an objective task score and lookup time is not end-to-end inference time."],
+      "utility":"SAT_component_vocabulary_coverage;NA_agent_task_scope","cost":"SAT_lookup_microcost","join":"component_function_cost_not_service_frontier"
+    },
+    "chu2025safekv": {
+      "status":["SAT","SAT","SAT","NA","SAT","PARTIAL"],
+      "scope":["3;7.1","3","4-5;7.2.3 Figure12","7.2.3 Figure12","7.1;7.2-7.4","7.2.3;7.3-7.4"],
+      "reason":["Cross-tenant sensitive prefix/cache inference is stated.","API-only TTFT/per-token timing probes do not require plaintext or KV access.","Private-by-default admission,promotion,revocation and the measured post-trigger windowW=5s are explicit; exact sample/run pairing remains separate.","Repeated adaptive statistical probes are not a learned protected-classifier advantage claim.","Named backbones,54PII types,languages and prompt/multi-turn workloads are stated; no untested-stack guarantee is inferred.","Post-trigger leakage and serving performance are measured in separate sections. Detector accuracy is not objective task utility; detector-service latency is not addedTTFT. Section7.4 servingTTFT/throughput measurements exist but are not bound to a joint Fig12 leakage-cost run."],
+      "utility":"NR-R_objective;detector_accuracy_not_task_utility","cost":"SAT_serving_TTFT_throughput_separate_condition","join":"separate_security_and_performance_conditions"
+    },
+    "zhu2026turing": {
+      "status":["SAT","SAT","SAT","NR-V","SAT","PARTIAL"],
+      "scope":["4.1;Table1","3;4.2.2","4.3;5.1.2;E.1-E.3","Table1;E.1-E.3;artifact/run distinction","3.1;Table1","Table1;5.2.3;E.3"],
+      "reason":["Human-agent detectability is distinguished from private-goal leakage and objective task success.","Touch trajectories,intervals,taps and24-feature definitions are specified.","Online wrappers execute actions; offline variants postprocess logged events. The state-change boundary is explicit.","Released code can refit by condition, but exact publicationTable1 trained-artifact and matched-test bindings remain unverified.","The reported five domains and21-app collection are identified, not an unseen-app claim.","OnlineTable1 binds detectability and task accuracy; the compositeOnline+Fake condition lowers Trip-planning accuracy0.75 to0.15. It does not isolate fake-action causality, and measured same-condition action/delay cost is not reported."],
+      "utility":"SAT_online_objective;NA_offline_execution","cost":"NR-R_same_condition_delay_actions;NA_wire","join":"online_effect_utility_but_no_measured_execution_cost"
+    },
+    "addagada2026kvgov": {
+      "status":["SAT","PARTIAL","SAT","NA","SAT","PARTIAL"],
+      "scope":["2.2-2.3;4;5.1-5.3","5.1;5.7-5.8","4;5.1-5.3;5.7-5.9","5.1-5.3","5.1;5.7-5.9","5.1-5.3;5.7-5.9 Tables8-9"],
+      "reason":["Victim prompt/cache membership is distinct from the raw hardware timing-gap measurement.","The threat model names tenant timing probes; A100 timing is read from internal server counters and Apple streaming timing is separate. The external-observer hardware attack bridge is not established.","Namespace isolation is a cache-key operation; simulations,hardware timing validation andHMAC microbenchmark are explicitly separate.","Deterministic analytical judges andHMAC namespace separation are not a learned adaptive-classifier comparison.","Seed2026,N1000 simulations,A100/vLLM andM4/llama.cpp timing,and10000 CPU microtrials are identified separately.","Simulated ASR,unprotected hardware gap andHMAC key-derivation overhead cannot form one measured protected frontier. Lost cross-principal reuse is explicitly left to future workloads; no objective task utility is bound."],
+      "utility":"NR-R_objective","cost":"SAT_HMAC_microcost;NR-R_reuse_loss","join":"three_measurement_objects_not_joint_frontier"
+    }
+  }
+}

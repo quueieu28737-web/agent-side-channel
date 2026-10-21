@@ -1,0 +1,13 @@
+field,source_site_JS_own_document,archive_receiver,collector_only_or_absent,used_by_original_H2_H3,used_by_new_diagnostic,scope
+event_type,yes,yes,no,yes,no,own-document callbacks; navigate only pushState or popstate
+page_local_t,yes,yes,no,yes,activity_only,Date.now minus page script start; not session duration
+within_document_callback_order,yes,yes,no,yes,no,no timestamp sorting
+cross_document_callback_array_order,not_authenticated,yes,collector bridge,yes,no,archive receiver assumption; ordinary-site capture not established
+url_and_origin,own page only,yes,no,origin gate only,no,URL text and opaque page key never predictors
+DOM text and link text,own document,source archive includes them,no,no,no,discarded at conservative ingestion
+HTTP_navigation_trigger,no,yes,collector,not a predictor,no,first-document proxy boundary only
+t_episode,no,raw archive,collector,no,no,never used or imputed
+error_present_and_result_absent,no,metadata,collector,no,failure_only analyst diagnostic,not available to ordinary website observer
+question_and_answer,no,metadata,collector,no,no,question hash used only split weighting and support
+identity_label,no,metadata,collector,supervised label,supervised label,not input feature or authenticated backend identity
+frame_and_document_ID,not recorded,absent,absent,no,no,cannot authenticate document membership

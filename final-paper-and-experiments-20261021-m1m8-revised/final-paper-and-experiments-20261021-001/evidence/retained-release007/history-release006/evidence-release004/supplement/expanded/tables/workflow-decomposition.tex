@@ -1,0 +1,16 @@
+\begin{table}[htbp]
+\centering\footnotesize
+\caption{Post-outcome decomposition of the unchanged joint endpoint. Entries count primary-query judgments, not independent experimental units. $D$ is decision correctness; $C$ requires both exact global counts.}
+\label{tab:workflow-decomposition}
+\begin{tabular}{@{}lrrrrr@{}}
+\toprule
+Arm & $D^+C^+$ & $D^+C^-$ & $D^-C^+$ & $D^-C^-$ & Missing\\
+\midrule
+R & 624 & 537 & 2 & 373 & 0\\
+T & 693 & 476 & 5 & 359 & 3\\
+V & 494 & 695 & 2 & 345 & 0\\
+\bottomrule
+\end{tabular}
+\par\smallskip\raggedright\footnotesize
+Every observed query passes the common schema and evidence-ID gates; hence $D^+C^+$ equals the original joint success count. Three T queries belong to the one unscored root. The denominator remains 512 roots per arm, each scored by its three-query mean.
+\end{table}

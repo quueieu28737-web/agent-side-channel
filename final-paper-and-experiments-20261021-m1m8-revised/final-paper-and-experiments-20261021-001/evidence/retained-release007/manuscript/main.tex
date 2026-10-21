@@ -1,0 +1,65 @@
+% IEEE S&P 2027 submission format; requires IEEEtran.cls v1.8b.
+\documentclass[conference,compsoc]{IEEEtran}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage[dvipsnames,table]{xcolor}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,positioning,fit,calc,matrix,shapes.geometric}
+\usepackage[hyphens]{url}
+\usepackage{hyperref}
+
+\hypersetup{hidelinks,pdfauthor={}}
+\newcommand{\scope}{\textsc{Scope}}
+\newcommand{\NRR}{\textsc{nr-r}}
+\newcommand{\NRA}{\textsc{nr-a}}
+\newcommand{\NRV}{\textsc{nr-v}}
+\newcommand{\NA}{\textsc{na}}
+\newcommand{\evidenceStrong}{\cellcolor{ForestGreen!22}Strong}
+\newcommand{\evidenceLimited}{\cellcolor{Goldenrod!24}Limited}
+\newcommand{\evidenceNone}{\cellcolor{Gray!18}No verified direct evidence}
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+\input{tables/final-counts}
+
+\title{SoK: When Do LLM Side-Channel Defenses Protect Agent Workflows?}
+\author{}
+% Original 60-family snapshot: October 8; bounded retrieval update: October 21.
+% New controlled placement study has a separate frozen protocol and raw receipts.
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+When does protecting an LLM service protect an agent workflow? We systematize defense evidence by binding each result to its receiver, execution boundary and evaluated mechanism. Three checks follow: locate the final target-bearing emitter, validate cover at execution, and match adaptation and cost to the protected condition. Source-backed cases and a 33-result comparison audit identify when measurements can be reused. Two controlled experiments test the first two checks using new Luna outputs and plans. Upstream padding reduces size-based inference to chance at its own link, while a new terminal emitter remains distinguishable; final-link padding removes this size feature. Discarded, isolated and read-only cover preserve all 24 task states, whereas live writes leave nine complete successes. The evidence map combines the original collection with a bounded retrieval update. The contribution is actionable conditions for reusing defense results, supported by explicit comparisons, positive reuse cases and inspectable controlled interventions.
+\end{abstract}
+
+\input{sections/01-introduction}
+\input{sections/03-methodology}
+\input{sections/04-scope}
+\input{sections/26-corpus-map}
+\input{sections/11-discussion}
+\input{sections/27-intervention-contracts}
+\input{sections/28-fingerprint-dependencies}
+\input{sections/32-controlled-placement}
+\input{sections/10-open-challenges}
+\input{sections/12-conclusion}
+
+% Start appendices on a fresh page; keep the final results float with its text.
+\clearpage
+\appendices
+\input{sections/30-reproducibility-guide}
+
+% Full family index is distributed in the supplemental source/CSV, not a second
+% two-page main-paper bibliography surrogate.
+\input{tables/corpus-citations}
+\clearpage
+% Balance the last reference page without changing type size or spacing.
+\IEEEtriggeratref{87}
+\bibliographystyle{IEEEtran}
+\bibliography{refs,refs-final-additions,evidence/search-completion-20261021-001/new_refs,evidence/search-completion-20261021-001/new_refs_adjacent}
+\end{document}

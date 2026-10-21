@@ -1,0 +1,268 @@
+{
+  "source": "User-supplied reviewer-style comments in the current conversation",
+  "author_action_authority": "User explicitly requested implementing all listed comments",
+  "review_target": "IEEE S&P 2027 SoK",
+  "status": "MANUSCRIPT_REVISED_WITH_OPEN_EVIDENCE_REQUIREMENTS",
+  "items": [
+    {
+      "id": "R01",
+      "review_request": "三个完整部署案例，各回答决策、来源、绑定后变化、已知/待测和许可条件",
+      "status": "IMPLEMENTED",
+      "manuscript_location": "sections/11-discussion.tex;tables/synthesis-decisions.tex",
+      "evidence_location": "synthesis/source-evidence.csv",
+      "remaining_or_boundary": "来源局部结果与条件迁移分开；未把条件写成新实测。"
+    },
+    {
+      "id": "R02",
+      "review_request": "区分原论文已指出的现象与联合综合所增加的判断",
+      "status": "IMPLEMENTED",
+      "manuscript_location": "sections/11-discussion.tex;sections/26-corpus-map.tex",
+      "evidence_location": "synthesis/final-source-review.txt",
+      "remaining_or_boundary": "不声称发现作者错误、普遍误解或新组成定理。"
+    },
+    {
+      "id": "R03",
+      "review_request": "给出有条件成立的正面结论",
+      "status": "IMPLEMENTED",
+      "manuscript_location": "sections/11-discussion.tex",
+      "evidence_location": "claims/case-fact-map.csv",
+      "remaining_or_boundary": "同评估人群/条件内的结果许可；新的receiver/dispatch/matching仍需桥接。"
+    },
+    {
+      "id": "R04",
+      "review_request": "核心分支明确直接、扩展、背景以及单源依赖",
+      "status": "IMPLEMENTED",
+      "manuscript_location": "tables/synthesis-decisions.tex;tables/conclusion-source-dependencies.tex",
+      "evidence_location": "synthesis/source-evidence.csv",
+      "remaining_or_boundary": "NetEcho单源re-emission；AHB单源mobile状态实例；60不作复制次数。"
+    },
+    {
+      "id": "R05",
+      "review_request": "最终检索范围能够完成且有明确候选处置",
+      "status": "PARTIAL",
+      "manuscript_location": "sections/03-methodology.tex;sections/22-search-audit-summary.tex",
+      "evidence_location": "selection/selection-audit.txt",
+      "remaining_or_boundary": "4753 prepared IDs及109重叠nominated决策行有处置；历史Q4和ACM广队列未全部全文闭环。"
+    },
+    {
+      "id": "R06",
+      "review_request": "每库实际查询式、字段、时间及导出规则出现在提交材料内",
+      "status": "IMPLEMENTED",
+      "manuscript_location": "tables/native-search-queries.tex",
+      "evidence_location": "selection/native-query-source-index.json",
+      "remaining_or_boundary": "7 IEEE和6 ACM原式；31 partition receipts；不是改良后假称已执行的新查询。"
+    },
+    {
+      "id": "R07",
+      "review_request": "明确导出/去重规则和实际异常",
+      "status": "IMPLEMENTED",
+      "manuscript_location": "sections/22-search-audit-summary.tex;tables/native-search-queries.tex",
+      "evidence_location": "selection/validation-receipt.json",
+      "remaining_or_boundary": "最终命名ACM文件已hash匹配；Q4b285/284及Q53689/3688未消失。"
+    },
+    {
+      "id": "R08",
+      "review_request": "针对中心结论开展反例导向检索/核查",
+      "status": "PARTIAL",
+      "manuscript_location": "sections/11-discussion.tex;sections/22-search-audit-summary.tex",
+      "evidence_location": "synthesis/source-evidence.csv;selection/selection-audit.txt",
+      "remaining_or_boundary": "已重读有限缓存中的正面/反向约束；本轮Edge URL识别失败，未追加在线反例检索。"
+    },
+    {
+      "id": "R09",
+      "review_request": "已知关键论文先查索引和字段资格再评查询覆盖",
+      "status": "PARTIAL",
+      "manuscript_location": "sections/22-search-audit-summary.tex",
+      "evidence_location": "selection/known24-offline-check-summary.json",
+      "remaining_or_boundary": "48数据库级导出身份检查完成；在线indexed及原生field eligibility仍NR，严格字面缺词不作未索引推断。"
+    },
+    {
+      "id": "R10",
+      "review_request": "历史搜索/操作批次从论文主线迁出",
+      "status": "IMPLEMENTED",
+      "manuscript_location": "main.tex;sections/03-methodology.tex;sections/22-search-audit-summary.tex",
+      "evidence_location": "before/;manuscript.patch",
+      "remaining_or_boundary": "保留最终方法和必要覆盖数字，未删除原始研究记录。"
+    },
+    {
+      "id": "R11",
+      "review_request": "所有承重来源、16 mitigation family、4未决绑定独立研究者复核",
+      "status": "EXTERNAL_REQUIRED",
+      "manuscript_location": "sections/03-methodology.tex;sections/19-final-ledger.tex",
+      "evidence_location": "independent-review forms in companion package",
+      "remaining_or_boundary": "真实研究者回表0；AI审查不能生成研究者身份或一致率。"
+    },
+    {
+      "id": "R12",
+      "review_request": "所有core/adjacent边界项和高风险排除项独立复判",
+      "status": "EXTERNAL_REQUIRED",
+      "manuscript_location": "sections/19-final-ledger.tex;sections/22-search-audit-summary.tex",
+      "evidence_location": "claims/exclusion-review-queue.json",
+      "remaining_or_boundary": "真实母集与盲化metadata/源索引提供，人工判断仍待回表；不把1064当全项目全新未读。"
+    },
+    {
+      "id": "R13",
+      "review_request": "可靠性清楚区分主编码/AI复核/人工独立裁决",
+      "status": "IMPLEMENTED",
+      "manuscript_location": "sections/03-methodology.tex;sections/10-open-challenges.tex",
+      "evidence_location": "claims/claim-registry.json",
+      "remaining_or_boundary": "既有17/21及332项AI审查原状态保留，不作独立研究者验证。"
+    },
+    {
+      "id": "R14",
+      "review_request": "冻结匿名证据包有清楚入口且可复核",
+      "status": "LOCAL_DELIVERED_SUBMISSION_ACCESS_PENDING",
+      "manuscript_location": "sections/19-final-ledger.tex",
+      "evidence_location": "artifact/package-receipt.json",
+      "remaining_or_boundary": "本地/对话可交付ZIP；实际投稿补充文件上传或公共匿名托管尚未执行。"
+    },
+    {
+      "id": "R15",
+      "review_request": "family→result→source version/locator→fields→claim可追溯",
+      "status": "IMPLEMENTED",
+      "manuscript_location": "tables/result-lineage-example.tex;sections/19-final-ledger.tex",
+      "evidence_location": "claims/claim-registry.json;claims/field-claim-map.csv;claims/case-fact-map.csv",
+      "remaining_or_boundary": "完整60/33/66；case facts可为额外subcondition，不能虚构canonical unit。"
+    },
+    {
+      "id": "R16",
+      "review_request": "正文提供一个完整填好的例子和最小充分信息",
+      "status": "IMPLEMENTED",
+      "manuscript_location": "tables/result-record-schema.tex;tables/result-lineage-example.tex",
+      "evidence_location": "claims/source-corrections.json",
+      "remaining_or_boundary": "Dangol live OHTTP段实际值与缺项同列；全文source hash放材料包。"
+    },
+    {
+      "id": "R17",
+      "review_request": "H2压缩为窄而清楚的worked example",
+      "status": "IMPLEMENTED",
+      "manuscript_location": "sections/16-public-trace-study.tex;tables/public-trace-results.tex",
+      "evidence_location": "supplement/expanded-public-trace-protocol.tex in companion package",
+      "remaining_or_boundary": "保留0.3447/51.29→66.26；不升级任务独立身份或普通网站捕获。"
+    },
+    {
+      "id": "R18",
+      "review_request": "任务匹配、第一文档proxy、失败/活动、H3及H1边界完整保留",
+      "status": "IMPLEMENTED",
+      "manuscript_location": "sections/17-public-trace-details.tex;tables/h2-controls.tex;tables/h2-failure-diagnostics.tex",
+      "evidence_location": "saved evidence and full protocol in companion package",
+      "remaining_or_boundary": "matched30/10/3区间跨零；所有14共同任务空；H3离线；H1零说明性。"
+    },
+    {
+      "id": "R19",
+      "review_request": "可选新实验直接检验placement而不是继续给归档加控制",
+      "status": "SOURCE_CASE_ROUTE_ADOPTED",
+      "manuscript_location": "sections/11-discussion.tex;sections/10-open-challenges.tex",
+      "evidence_location": "synthesis/README.txt",
+      "remaining_or_boundary": "按审稿允许的正反案例综合路线补强；未启动新实验、未换模型或重跑Luna。"
+    },
+    {
+      "id": "R20",
+      "review_request": "SCOPE负结果保留原始联合终点、HOLD、条件区间和分析",
+      "status": "IMPLEMENTED",
+      "manuscript_location": "sections/29-scope-comparison-boundary.tex",
+      "evidence_location": "supplement/expanded-workflow-protocol.tex and workflow/ in companion package",
+      "remaining_or_boundary": "V−T负、decision-only不能救原终点；完整token/运行历史迁材料。"
+    },
+    {
+      "id": "R21",
+      "review_request": "有限构造任务不能外推人类审阅效果",
+      "status": "IMPLEMENTED",
+      "manuscript_location": "sections/04-scope.tex;sections/29-scope-comparison-boundary.tex",
+      "evidence_location": "workflow/saved in companion package",
+      "remaining_or_boundary": "固定8模板/512roots/11nodes/4configs；未证人类效率或SCOPE普遍劣势。"
+    },
+    {
+      "id": "R22",
+      "review_request": "正文重点改为真正相关部署问题，避免0/33印象",
+      "status": "IMPLEMENTED",
+      "manuscript_location": "sections/27-intervention-contracts.tex;tables/deployment-question-cases.tex",
+      "evidence_location": "empirical/derived-001/deployment-subset-audit.json",
+      "remaining_or_boundary": "33=26适用问题记录+7背景；26仍异质且retrospective，不构造0/26失败率。"
+    },
+    {
+      "id": "R23",
+      "review_request": "逐部署问写已测/缺测/阻止哪个判断",
+      "status": "IMPLEMENTED",
+      "manuscript_location": "tables/deployment-question-cases.tex",
+      "evidence_location": "empirical/derived-001/mitigation-question-subset.csv",
+      "remaining_or_boundary": "WRA、NetEcho、Dangol、AHB、cache机制、Splice六问。"
+    },
+    {
+      "id": "R24",
+      "review_request": "统一SCOPE/Evidence Plane/元组为一个result record",
+      "status": "IMPLEMENTED",
+      "manuscript_location": "sections/04-scope.tex;tables/result-record-schema.tex",
+      "evidence_location": "claims/claim-registry.json",
+      "remaining_or_boundary": "SCOPE仅索引，Evidence Plane是同一记录的来源/评价列；不添质量等级。"
+    },
+    {
+      "id": "R25",
+      "review_request": "明确字段不符与字段缺失导致的不同结论",
+      "status": "IMPLEMENTED",
+      "manuscript_location": "sections/04-scope.tex;tables/comparison-contracts.tex",
+      "evidence_location": "claims/claim-registry.json",
+      "remaining_or_boundary": "known mismatch→incompatible，必要binding缺失→unresolved；只限制该项推断。"
+    },
+    {
+      "id": "R26",
+      "review_request": "压缩Appendix B/C/D与完整大mode表",
+      "status": "IMPLEMENTED",
+      "manuscript_location": "sections/19-final-ledger.tex;sections/21-retained-controls-summary.tex;sections/17-public-trace-details.tex;sections/23-defense-comparison.tex",
+      "evidence_location": "supplement/ expanded source files in companion package",
+      "remaining_or_boundary": "保留完整原协议/结果于材料；19physical=11body+5appendix+3refs。"
+    },
+    {
+      "id": "R27",
+      "review_request": "保护关系显式区分privacy/attribution/human-agent/diagnostics",
+      "status": "IMPLEMENTED",
+      "manuscript_location": "sections/03-methodology.tex;tables/result-record-schema.tex;tables/receiver-intervention-matrix.tex",
+      "evidence_location": "literature/final-inclusion-ledger.csv in companion package",
+      "remaining_or_boundary": "四诊断不增加confidentiality支持，隐藏属性不自动成为受保护secret。"
+    },
+    {
+      "id": "R28",
+      "review_request": "摘要引言结论先讲新知识用途，减少过程及重复限制",
+      "status": "IMPLEMENTED",
+      "manuscript_location": "main.tex;sections/01-introduction.tex;sections/12-conclusion.tex",
+      "evidence_location": "manuscript.patch",
+      "remaining_or_boundary": "三部署决策/有条件许可居前；核心不靠分类名称或审计批次数量。"
+    },
+    {
+      "id": "R29",
+      "review_request": "数字、源定位和材料副本一致",
+      "status": "IMPLEMENTED",
+      "manuscript_location": "tables/final-counts.tex;tables/result-lineage-example.tex",
+      "evidence_location": "pdf-validation.json;claims/source-corrections.json",
+      "remaining_or_boundary": "60/43/17、33/66和原效果保留；新增Dangol afterTable5/freshIDs精确纠正。"
+    },
+    {
+      "id": "R30",
+      "review_request": "承重NR核查，不能把未报、未核实、未复现混同",
+      "status": "PARTIAL",
+      "manuscript_location": "sections/23-defense-comparison.tex;sections/24-conclusion-sensitivity.tex",
+      "evidence_location": "claims/assertion-queue.json;empirical/RUN-BINDING-LOCAL-AUDIT.txt",
+      "remaining_or_boundary": "四断言文字可证但定量run不闭；AHB code已证/run与paired D2仍NRV。"
+    },
+    {
+      "id": "R31",
+      "review_request": "四候选全文/谱系闭环并防止遗漏改结论",
+      "status": "PARTIAL",
+      "manuscript_location": "sections/22-search-audit-summary.tex;sections/10-open-challenges.tex",
+      "evidence_location": "selection/selection-audit.txt",
+      "remaining_or_boundary": "Wiretapping/memory poster/browser panel缺主源；Entropy缺稳定PDF字节和原创run谱系；B069是已归背景另有访问限制。"
+    },
+    {
+      "id": "R32",
+      "review_request": "匿名与材料的真实可访问性、权利及作者声明",
+      "status": "AUTHOR_ACTION_REQUIRED",
+      "manuscript_location": "sections/19-final-ledger.tex;sections/10-open-challenges.tex",
+      "evidence_location": "README in companion package",
+      "remaining_or_boundary": "不伪造public URL、上传回执、权利清单或机构批准；交付ZIP供作为补充材料上传。"
+    }
+  ],
+  "human_independent_reviews_completed": 0,
+  "new_experimental_model_calls": 0,
+  "new_fits": 0,
+  "Luna_rerun": false
+}

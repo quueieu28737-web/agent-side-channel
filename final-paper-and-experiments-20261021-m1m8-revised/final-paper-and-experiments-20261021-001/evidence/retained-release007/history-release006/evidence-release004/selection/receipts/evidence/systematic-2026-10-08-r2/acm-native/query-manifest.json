@@ -1,0 +1,35 @@
+{
+  "schema": "native-acm-retrieval-receipt/v1",
+  "date": "2026-10-08",
+  "source": "Connected Edge; signed-in ACM Digital Library Basic Edition; native Quick Search and Export Citations / All Results / BibTeX",
+  "search_field": "All",
+  "filters": "No year or type filter applied; year boxes are defaults, not applied restrictions.",
+  "coverage": "ACM Full-Text Collection, not ACM Guide. Advanced search, filters and Guide expansion were labeled Premium; no upgrade or workaround.",
+  "status": "QUERY_EXECUTION_VERIFIED_PENDING_BYTES_AUDITED_SCREENING_PENDING",
+  "download_status": "All six local byte files remain .crdownload and were copied unchanged into raw-pending/. Browser download completion remains unconfirmed. Parseable byte snapshots are not fully accepted downloads or proof of full displayed-hit coverage; mechanical audit does not require claiming browser finalization.",
+  "queries": [
+    {"id":"Q1","query":"(\"large language model\" OR LLM) AND (\"side channel\" OR \"side-channel\" OR \"timing attack\")","displayed_hits":479,"collection_records":852545,"native_export_entries_observed":479,"download_file":"acm_3765613.3811673.bib.crdownload","sha256":"8e73368989206b8bbc727b0426b393e73daf5efca975b2515044f55209aad964","bytes":589629,"complete_download_confirmed":false},
+    {"id":"Q2","query":"(agent OR agentic) AND (\"traffic analysis\" OR fingerprinting OR \"metadata leakage\" OR \"side channel\" OR \"side-channel\")","displayed_hits":6181,"collection_records":852545,"native_export_entries_observed":1000,"download_file":"acm_3767110.3767139.bib.crdownload","sha256":"30f1fce69bb43137bc61f24aca9f2213dc91ae8fa375fd61cc2b5b6bdf88dd8e","bytes":1926967,"complete_download_confirmed":false,"export_not_covering_displayed_hits":true},
+    {"id":"Q3","query":"(\"KV cache\" OR \"prompt caching\" OR \"speculative decoding\") AND (privacy OR leakage OR attack)","displayed_hits":511,"collection_records":852545,"native_export_entries_observed":511,"download_file":"acm_3789240.3829120.bib.crdownload","sha256":"f74655106e2a85a79fce4b4f02b89857d884ffd4e9d5bcb4c6fc36e0882f8ce0","bytes":883660,"complete_download_confirmed":false},
+    {"id":"Q4b","query":"((\"browser agent\" OR \"research agent\" OR \"tool calling\" OR \"model context protocol\" OR \"multi-agent\") AND (timing OR fingerprinting OR leakage) AND (\"large language model\" OR LLM))","displayed_hits":4026,"collection_records":852545,"native_export_entries_observed":1000,"download_file":"acm_3850159.bib.crdownload","sha256":"f6c88dd3029b4f79f81c9e93ec054888c703e045044f20f297ec4b06dc861265","bytes":2125545,"complete_download_confirmed":false,"export_not_covering_displayed_hits":true},
+    {"id":"Q5","query":"(\"language model\" OR LLM) AND (\"traffic shaping\" OR \"cache isolation\" OR padding OR \"side-channel defense\")","displayed_hits":3688,"collection_records":852548,"native_export_entries_observed":1000,"download_file":"acm_3719027.3765157.bib.crdownload","sha256":"87d301a619fd2b8f33146154ed246752d78b13ddfb38553b2763bb8b21b7df8a","bytes":2028623,"complete_download_confirmed":false,"export_not_covering_displayed_hits":true},
+    {"id":"Q6","query":"(\"language model\" OR chatbot OR \"AI assistant\" OR \"generative AI\") AND (\"side channel\" OR \"side-channel\" OR \"traffic analysis\" OR fingerprinting OR \"timing leakage\")","displayed_hits":1801,"collection_records":852548,"native_export_entries_observed":1000,"download_file":"acm_3719027.3744881.bib.crdownload","sha256":"15dda507efb2ffa09981f78a4ed89d70d93e5766a274866e14b25db4d738d4be","bytes":1489136,"complete_download_confirmed":false,"export_request":"All Results requested; notification exists, ready href not yet populated at last check","later_observation":"Local pending byte file now inspected and copied unchanged; first-entry key3719027.3744881,1000entry markers. Browser finalization still unverified.","export_not_covering_displayed_hits":true}
+  ],
+  "invalid_attempt": {"query":"side channel(\"large language model\" OR LLM) AND (\"side channel\" OR \"side-channel\" OR \"timing attack\")","displayed_hits":475,"formal_counts_included":false,"reason":"Text replacement appended to old value; invalid concatenation. Subsequent fields explicitly select-all/backspace then read back."},
+  "screening_status": "Not fully screened. Q1 yielded a bounded three-candidate follow-up in ../acm-followup; it is not complete 479-record screening.",
+  "unit_warning": "Native entries include article/proceedings/book records. Query hits and repeated export occurrences are not distinct included study families.",
+  "mechanical_audit": {
+    "report": "mechanical-audit.json",
+    "scope": "Byte snapshots and publication identities only; no new semantic screening or accepted browser-download finalization.",
+    "framed_export_occurrences": 4990,
+    "strictly_valid_entries": 4989,
+    "malformed_native_entries_identity_only": 1,
+    "conservative_unique_records": 4258,
+    "duplicate_occurrences": 732,
+    "displayed_minus_saved_query_occurrences": 11696,
+    "all_rows_screening_pending_in_mechanical_index": true,
+    "browser_finalization": "NR"
+  },
+  "human_coders": 0,
+  "no_model_or_attack_experiments": true
+}

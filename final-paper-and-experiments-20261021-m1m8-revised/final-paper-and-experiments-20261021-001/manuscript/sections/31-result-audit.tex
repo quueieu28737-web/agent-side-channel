@@ -1,0 +1,23 @@
+\section{Result-Pair Comparability, Nine-Item Split Audit and Dual-Coding}\label{app:result-audit}
+This audit applies the paper's comparison rules to the 33 result records across 22 families (and the nine-item split reporting checklist to the 16 baseline and 4 newly added evaluated-mitigation families). The supplied second-coder columns are retained for agreement analysis; coder independence and blinding are not verified by these files (\path{experiments/revision-m1-m8/}).
+
+\subsection{Within-family and within-cohort pairwise comparability}
+While the machine-readable inventory retains all $\binom{33}{2}=528$ unordered pairs for completeness, 426 pairs cross unrelated mechanism cohorts and are outside scope by definition. Table~\ref{tab:pair-descriptive} summarizes two nested informative subsets (the 13 are included in the 102): the \textbf{13 within-family pairs} and the \textbf{102 within-cohort related pairs} (traffic-envelope: 66; cache-service: 28; behavioral humanization: 3; generator fingerprint: 3; local-memory: 1; fixed guardrail: 1).
+
+\begin{table}[t]\centering\footnotesize
+\caption{Descriptive comparability within the 13 same-family pairs and 102 related-cohort pairs. Supplied two-column coding over 50 pairs (150 judgments) reached 94.0\% agreement ($\kappa=0.916$).}\label{tab:pair-descriptive}
+\begin{tabularx}{\columnwidth}{@{}Yrrr@{}}\toprule
+Subset & Compatible & Incompatible & Unresolved\\\midrule
+Same family ($n=13$) &7 (53.8\%)&6 (46.2\%)&0\\
+Related cohort ($n=102$) &16 (15.7\%)&80 (78.4\%)&6 (5.9\%)\\\bottomrule
+\end{tabularx}\end{table}
+
+Within the 13 same-family pairs, seven compare aligned outcomes and six substitute different primitives or cost objects. Of the seven aligned-outcome pairs, four have positively different collection or execution populations (such as Dangol's stored-capture feature ablation at 0.17 accuracy versus live loopback OHTTP at 0.30 accuracy) and three lack a verified paired-test binding; none licenses direct cross-record subtraction. Across the 50 dual-coded pairs (all 13 same-family pairs plus 37 stratified related-cohort pairs = 150 judgments across descriptive, paired-effect and transfer rules), recorded two-column agreement is \textbf{94.0\% (141/150)} with \textbf{Cohen's $\kappa=0.916$} (95\% bootstrap CI $[0.856,0.963]$; \path{m7_dual_coding_pairs.csv}).
+
+\subsection{Nine-item split reporting audit and supplied coding records}
+Table~\ref{tab:six-check-audit} uses R4 for defended fitting, R5 for a matched adaptation contrast, R7 for inference, R8 for utility and R9 for cost across both the 16 original evaluated-mitigation families (144 cells) and the 20 total evaluated-mitigation families (including \texttt{wu2026cacheprune}, \texttt{lee2026otro}, \texttt{chen2026sparleak} and \texttt{hadad2026shape}; 180 cells).
+\input{tables/six-check-audit}
+
+Across the 144 baseline cells, supplied two-column coding (\path{m7_dual_coding_checks.csv}) reached \textbf{93.1\% raw agreement (134/144)} and \textbf{Cohen's $\kappa=0.876$} (95\% bootstrap CI $[0.798,0.943]$). All 10 pre-adjudication differences occurred across adjacent \emph{Partial} versus \emph{Bound}/\NRR{}/\NRV{} boundaries (e.g., whether AHB's verified refit code without Table~1 run provenance is \emph{Partial} or \NRV{} on R4, and whether WRA's separate Table~11 visibility utility is \emph{Partial} or \NRR{} on R8). Full cell-by-cell rationales and source locators are preserved in \path{m6_split_checks.csv} and \path{m7_dual_coding_checks.csv}.
+
+The current \path{combined_result_records.json} makes the six expansion records explicit alongside the 33 preserved baseline records: 39 records from 26 distinct families, while the reporting audit covers 20 mitigation families. The six additions are recordizations of the supplied source-bound extraction, not a new independent coding pass.

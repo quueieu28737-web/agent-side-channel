@@ -1,0 +1,363 @@
+{
+  "status": "COMPLETE",
+  "completed_utc": "2026-10-18T14:19:45.316209+00:00",
+  "planned_fits": 36,
+  "completed_fits": 36,
+  "primary": {
+    "C1_common_question_increment": {
+      "mean": 0.2633795737135016,
+      "lower": -0.2583676845822579,
+      "upper": 0.7240829856808101,
+      "questions": 10,
+      "interval_percent": 98.33333333333333,
+      "draws": 3000,
+      "seed": 20261018,
+      "kind": "conditional_question_resampling_stability",
+      "family": "three_primary_control_contrasts"
+    },
+    "C2_first_document_proxy_increment": {
+      "mean": 0.15039826637193682,
+      "lower": 0.11934566935224651,
+      "upper": 0.18250719537638205,
+      "questions": 226,
+      "interval_percent": 98.33333333333333,
+      "draws": 3000,
+      "seed": 20261018,
+      "kind": "conditional_question_resampling_stability",
+      "family": "three_primary_control_contrasts"
+    },
+    "C3_clean_minus_mean_shuffled_increment": {
+      "mean": 0.34466917224412946,
+      "lower": 0.2960540922722675,
+      "upper": 0.39528007771157064,
+      "questions": 226,
+      "interval_percent": 98.33333333333333,
+      "draws": 3000,
+      "seed": 20261018,
+      "kind": "conditional_question_resampling_stability",
+      "family": "three_primary_control_contrasts"
+    }
+  },
+  "conditions": {
+    "common": {
+      "test_rows": 30,
+      "test_questions": 10,
+      "classes": 3,
+      "coarse_loss": 0.6047984276193081,
+      "combined_loss": 0.3414188539058066,
+      "coarse_accuracy": 0.7,
+      "combined_accuracy": 0.9666666666666666,
+      "increment": {
+        "mean": 0.2633795737135016,
+        "lower": -0.2583676845822579,
+        "upper": 0.7240829856808101,
+        "questions": 10,
+        "interval_percent": 98.33333333333333,
+        "draws": 3000,
+        "seed": 20261018,
+        "kind": "conditional_question_resampling_stability",
+        "family": "three_primary_control_contrasts"
+      },
+      "coarse_selected": {
+        "name": "coarse/random_forest",
+        "representation": "coarse",
+        "architecture": {
+          "kind": "random_forest",
+          "n_estimators": 200,
+          "max_depth": 12,
+          "min_samples_leaf": 2,
+          "max_features": "sqrt",
+          "random_state": 20261008,
+          "n_jobs": 1
+        },
+        "fit_id": 4
+      },
+      "combined_selected": {
+        "name": "combined/logistic_C_1",
+        "representation": "combined",
+        "architecture": {
+          "kind": "logistic",
+          "C": 1.0,
+          "max_iter": 1000,
+          "tol": 1e-06,
+          "random_state": 20261008,
+          "n_jobs": 1
+        },
+        "fit_id": 6
+      },
+      "failure_flag_test_rows": 5
+    },
+    "document_proxy": {
+      "test_rows": 1135,
+      "test_questions": 226,
+      "classes": 14,
+      "coarse_loss": 1.003438868835186,
+      "combined_loss": 0.8530406024632492,
+      "coarse_accuracy": 0.677795336423655,
+      "combined_accuracy": 0.7069830734653744,
+      "increment": {
+        "mean": 0.15039826637193682,
+        "lower": 0.11934566935224651,
+        "upper": 0.18250719537638205,
+        "questions": 226,
+        "interval_percent": 98.33333333333333,
+        "draws": 3000,
+        "seed": 20261018,
+        "kind": "conditional_question_resampling_stability",
+        "family": "three_primary_control_contrasts"
+      },
+      "coarse_selected": {
+        "name": "coarse/random_forest",
+        "representation": "coarse",
+        "architecture": {
+          "kind": "random_forest",
+          "n_estimators": 200,
+          "max_depth": 12,
+          "min_samples_leaf": 2,
+          "max_features": "sqrt",
+          "random_state": 20261008,
+          "n_jobs": 1
+        },
+        "fit_id": 12
+      },
+      "combined_selected": {
+        "name": "combined/random_forest",
+        "representation": "combined",
+        "architecture": {
+          "kind": "random_forest",
+          "n_estimators": 200,
+          "max_depth": 12,
+          "min_samples_leaf": 2,
+          "max_features": "sqrt",
+          "random_state": 20261008,
+          "n_jobs": 1
+        },
+        "fit_id": 16
+      },
+      "failure_flag_test_rows": 509
+    },
+    "clean": {
+      "test_rows": 1135,
+      "test_questions": 226,
+      "classes": 14,
+      "coarse_loss": 1.440578686243092,
+      "combined_loss": 1.0959095139989625,
+      "coarse_accuracy": 0.5128915578030623,
+      "combined_accuracy": 0.6626352015732546,
+      "increment": {
+        "mean": 0.34466917224412946,
+        "lower": 0.2960540922722675,
+        "upper": 0.39528007771157064,
+        "questions": 226,
+        "interval_percent": 98.33333333333333,
+        "draws": 3000,
+        "seed": 20261018,
+        "kind": "conditional_question_resampling_stability",
+        "family": "three_primary_control_contrasts"
+      },
+      "coarse_selected": {
+        "name": "coarse/random_forest",
+        "representation": "coarse",
+        "architecture": {
+          "kind": "random_forest",
+          "n_estimators": 200,
+          "max_depth": 12,
+          "min_samples_leaf": 2,
+          "max_features": "sqrt",
+          "random_state": 20261008,
+          "n_jobs": 1
+        },
+        "fit_id": 20
+      },
+      "combined_selected": {
+        "name": "combined/random_forest",
+        "representation": "combined",
+        "architecture": {
+          "kind": "random_forest",
+          "n_estimators": 200,
+          "max_depth": 12,
+          "min_samples_leaf": 2,
+          "max_features": "sqrt",
+          "random_state": 20261008,
+          "n_jobs": 1
+        },
+        "fit_id": 24
+      },
+      "failure_flag_test_rows": 509
+    },
+    "shuffle_0": {
+      "test_rows": 1135,
+      "test_questions": 226,
+      "classes": 14,
+      "coarse_loss": 1.440578686243092,
+      "combined_loss": 1.440578686243092,
+      "coarse_accuracy": 0.5128915578030623,
+      "combined_accuracy": 0.5128915578030623,
+      "increment": {
+        "mean": 0.0,
+        "lower": 0.0,
+        "upper": 0.0,
+        "questions": 226,
+        "interval_percent": 98.33333333333333,
+        "draws": 3000,
+        "seed": 20261018,
+        "kind": "conditional_question_resampling_stability",
+        "family": "three_primary_control_contrasts"
+      },
+      "coarse_selected": {
+        "name": "coarse/random_forest",
+        "representation": "coarse",
+        "architecture": {
+          "kind": "random_forest",
+          "n_estimators": 200,
+          "max_depth": 12,
+          "min_samples_leaf": 2,
+          "max_features": "sqrt",
+          "random_state": 20261008,
+          "n_jobs": 1
+        },
+        "fit_id": 20
+      },
+      "combined_selected": {
+        "name": "coarse/random_forest",
+        "representation": "coarse",
+        "architecture": {
+          "kind": "random_forest",
+          "n_estimators": 200,
+          "max_depth": 12,
+          "min_samples_leaf": 2,
+          "max_features": "sqrt",
+          "random_state": 20261008,
+          "n_jobs": 1
+        },
+        "fit_id": 20
+      },
+      "failure_flag_test_rows": 509
+    },
+    "shuffle_1": {
+      "test_rows": 1135,
+      "test_questions": 226,
+      "classes": 14,
+      "coarse_loss": 1.440578686243092,
+      "combined_loss": 1.440578686243092,
+      "coarse_accuracy": 0.5128915578030623,
+      "combined_accuracy": 0.5128915578030623,
+      "increment": {
+        "mean": 0.0,
+        "lower": 0.0,
+        "upper": 0.0,
+        "questions": 226,
+        "interval_percent": 98.33333333333333,
+        "draws": 3000,
+        "seed": 20261018,
+        "kind": "conditional_question_resampling_stability",
+        "family": "three_primary_control_contrasts"
+      },
+      "coarse_selected": {
+        "name": "coarse/random_forest",
+        "representation": "coarse",
+        "architecture": {
+          "kind": "random_forest",
+          "n_estimators": 200,
+          "max_depth": 12,
+          "min_samples_leaf": 2,
+          "max_features": "sqrt",
+          "random_state": 20261008,
+          "n_jobs": 1
+        },
+        "fit_id": 20
+      },
+      "combined_selected": {
+        "name": "coarse/random_forest",
+        "representation": "coarse",
+        "architecture": {
+          "kind": "random_forest",
+          "n_estimators": 200,
+          "max_depth": 12,
+          "min_samples_leaf": 2,
+          "max_features": "sqrt",
+          "random_state": 20261008,
+          "n_jobs": 1
+        },
+        "fit_id": 20
+      },
+      "failure_flag_test_rows": 509
+    },
+    "shuffle_2": {
+      "test_rows": 1135,
+      "test_questions": 226,
+      "classes": 14,
+      "coarse_loss": 1.440578686243092,
+      "combined_loss": 1.440578686243092,
+      "coarse_accuracy": 0.5128915578030623,
+      "combined_accuracy": 0.5128915578030623,
+      "increment": {
+        "mean": 0.0,
+        "lower": 0.0,
+        "upper": 0.0,
+        "questions": 226,
+        "interval_percent": 98.33333333333333,
+        "draws": 3000,
+        "seed": 20261018,
+        "kind": "conditional_question_resampling_stability",
+        "family": "three_primary_control_contrasts"
+      },
+      "coarse_selected": {
+        "name": "coarse/random_forest",
+        "representation": "coarse",
+        "architecture": {
+          "kind": "random_forest",
+          "n_estimators": 200,
+          "max_depth": 12,
+          "min_samples_leaf": 2,
+          "max_features": "sqrt",
+          "random_state": 20261008,
+          "n_jobs": 1
+        },
+        "fit_id": 20
+      },
+      "combined_selected": {
+        "name": "coarse/random_forest",
+        "representation": "coarse",
+        "architecture": {
+          "kind": "random_forest",
+          "n_estimators": 200,
+          "max_depth": 12,
+          "min_samples_leaf": 2,
+          "max_features": "sqrt",
+          "random_state": 20261008,
+          "n_jobs": 1
+        },
+        "fit_id": 20
+      },
+      "failure_flag_test_rows": 509
+    }
+  },
+  "mean_shuffled_increment_descriptive": {
+    "mean": 0.0,
+    "lower": 0.0,
+    "upper": 0.0,
+    "questions": 226,
+    "interval_percent": 98.33333333333333,
+    "draws": 3000,
+    "seed": 20261018,
+    "kind": "conditional_question_resampling_stability",
+    "family": "three_primary_control_contrasts"
+  },
+  "original_clean_regression": {
+    "expected": 0.34466917224412946,
+    "observed": 0.34466917224412946,
+    "passed": true
+  },
+  "limits": [
+    "post_review_original_outcomes_known",
+    "three_identity_common_support_only_10_test_questions",
+    "no_authenticated_document_or_frame_membership",
+    "receiver_order_not_ordinary_website_capture",
+    "shuffle_not_live_defense",
+    "fixed_fits_and_random_streams_conditional_intervals",
+    "declared_identity_not_authenticated_backend",
+    "failure_flags_not_task_correctness"
+  ],
+  "model_calls": 0
+}

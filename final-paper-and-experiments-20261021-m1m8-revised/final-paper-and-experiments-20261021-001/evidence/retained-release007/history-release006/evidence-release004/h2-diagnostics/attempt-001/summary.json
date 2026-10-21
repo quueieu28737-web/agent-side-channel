@@ -1,0 +1,244 @@
+{
+  "results": {
+    "all": {
+      "rows": 1135,
+      "questions": 226,
+      "identities": {
+        "claude_opus_4_6": 88,
+        "gemini_3_1": 78,
+        "gemini_3_flash": 75,
+        "gemma-4-31B-it": 77,
+        "gemma_4_26B_A4B_it": 70,
+        "glm_4.6v": 77,
+        "glm_4.6v_flash": 86,
+        "gpt_5_4": 88,
+        "qwen3_5_27b": 76,
+        "qwen3_5_9b": 86,
+        "qwen3vl_30b_a3b": 80,
+        "qwen3vl_8b": 90,
+        "seed_2_lite": 82,
+        "uitars_7b": 82
+      },
+      "programs": {
+        "failure_only": {
+          "loss": 2.474643455162417,
+          "accuracy": 0.14248489956454555
+        },
+        "empty_only": {
+          "loss": 2.6383223858840332,
+          "accuracy": 0.06785011939879196
+        },
+        "activity_only": {
+          "loss": 1.817318721502115,
+          "accuracy": 0.37683839022334603
+        },
+        "training_prior": {
+          "loss": 2.6426675641639616,
+          "accuracy": 0.06592042421688439
+        },
+        "single_coarse": {
+          "loss": 1.440578686243092,
+          "accuracy": 0.5128915578030623
+        },
+        "single_combined": {
+          "loss": 1.0959095139989625,
+          "accuracy": 0.6626352015732546
+        }
+      },
+      "coarse_minus_combined": 0.34466917224412946,
+      "conditioning": "equal question weight WITHIN subgroup; changed support, not causal failure effect"
+    },
+    "flagged": {
+      "rows": 509,
+      "questions": 203,
+      "identities": {
+        "claude_opus_4_6": 4,
+        "gemini_3_1": 9,
+        "gemini_3_flash": 43,
+        "gemma-4-31B-it": 14,
+        "gemma_4_26B_A4B_it": 47,
+        "glm_4.6v": 31,
+        "glm_4.6v_flash": 46,
+        "gpt_5_4": 3,
+        "qwen3_5_27b": 21,
+        "qwen3_5_9b": 61,
+        "qwen3vl_30b_a3b": 46,
+        "qwen3vl_8b": 75,
+        "seed_2_lite": 34,
+        "uitars_7b": 75
+      },
+      "programs": {
+        "failure_only": {
+          "loss": 2.4047630570664564,
+          "accuracy": 0.1657283603096411
+        },
+        "empty_only": {
+          "loss": 2.630811997645419,
+          "accuracy": 0.05866760497302369
+        },
+        "activity_only": {
+          "loss": 1.6818709172332602,
+          "accuracy": 0.44380717804363123
+        },
+        "training_prior": {
+          "loss": 2.639005317650735,
+          "accuracy": 0.05415200562983815
+        },
+        "single_coarse": {
+          "loss": 1.2405722273171311,
+          "accuracy": 0.5955430448041286
+        },
+        "single_combined": {
+          "loss": 0.9453003524170721,
+          "accuracy": 0.7041754632887638
+        }
+      },
+      "coarse_minus_combined": 0.29527187490005896,
+      "conditioning": "equal question weight WITHIN subgroup; changed support, not causal failure effect"
+    },
+    "unflagged": {
+      "rows": 626,
+      "questions": 216,
+      "identities": {
+        "claude_opus_4_6": 84,
+        "gemini_3_1": 69,
+        "gemini_3_flash": 32,
+        "gemma-4-31B-it": 63,
+        "gemma_4_26B_A4B_it": 23,
+        "glm_4.6v": 46,
+        "glm_4.6v_flash": 40,
+        "gpt_5_4": 85,
+        "qwen3_5_27b": 55,
+        "qwen3_5_9b": 25,
+        "qwen3vl_30b_a3b": 34,
+        "qwen3vl_8b": 15,
+        "seed_2_lite": 48,
+        "uitars_7b": 7
+      },
+      "programs": {
+        "failure_only": {
+          "loss": 2.4842256744525963,
+          "accuracy": 0.15019841269841266
+        },
+        "empty_only": {
+          "loss": 2.6481384082756105,
+          "accuracy": 0.07445987654320987
+        },
+        "activity_only": {
+          "loss": 1.9149173876188268,
+          "accuracy": 0.3454695767195768
+        },
+        "training_prior": {
+          "loss": 2.650477387291003,
+          "accuracy": 0.07445987654320987
+        },
+        "single_coarse": {
+          "loss": 1.6068093184345813,
+          "accuracy": 0.44883156966490295
+        },
+        "single_combined": {
+          "loss": 1.2315437405138279,
+          "accuracy": 0.6222773368606702
+        }
+      },
+      "coarse_minus_combined": 0.37526557792075366,
+      "conditioning": "equal question weight WITHIN subgroup; changed support, not causal failure effect"
+    }
+  },
+  "selected": {
+    "failure_only": {
+      "name": "failure_only/logistic_C_10",
+      "representation": "failure_only",
+      "architecture": {
+        "kind": "logistic",
+        "C": 10.0,
+        "max_iter": 1000,
+        "tol": 1e-06,
+        "random_state": 20261008,
+        "n_jobs": 1
+      },
+      "fit_id": 3
+    },
+    "empty_only": {
+      "name": "empty_only/logistic_C_10",
+      "representation": "empty_only",
+      "architecture": {
+        "kind": "logistic",
+        "C": 10.0,
+        "max_iter": 1000,
+        "tol": 1e-06,
+        "random_state": 20261008,
+        "n_jobs": 1
+      },
+      "fit_id": 7
+    },
+    "activity_only": {
+      "name": "activity_only/random_forest",
+      "representation": "activity_only",
+      "architecture": {
+        "kind": "random_forest",
+        "n_estimators": 200,
+        "max_depth": 12,
+        "min_samples_leaf": 2,
+        "max_features": "sqrt",
+        "random_state": 20261008,
+        "n_jobs": 1
+      },
+      "fit_id": 12
+    }
+  },
+  "feature_names": {
+    "failure_only": [
+      "error_present",
+      "result_absent"
+    ],
+    "empty_only": [
+      "projected_single_origin_empty"
+    ],
+    "activity_only": [
+      "log1p_event_count",
+      "log1p_missing_local_time_count",
+      "log1p_valid_local_time_count",
+      "log1p_local_time_sum",
+      "log1p_local_time_mean",
+      "log1p_local_time_std",
+      "log1p_local_time_median",
+      "log1p_local_time_p90"
+    ]
+  },
+  "class_order": [
+    "claude_opus_4_6",
+    "gemini_3_1",
+    "gemini_3_flash",
+    "gemma-4-31B-it",
+    "gemma_4_26B_A4B_it",
+    "glm_4.6v",
+    "glm_4.6v_flash",
+    "gpt_5_4",
+    "qwen3_5_27b",
+    "qwen3_5_9b",
+    "qwen3vl_30b_a3b",
+    "qwen3vl_8b",
+    "seed_2_lite",
+    "uitars_7b"
+  ],
+  "fits": 12,
+  "source_rows": 4200,
+  "partitions": {
+    "train": {
+      "rows": 2043,
+      "questions": 395
+    },
+    "validation": {
+      "rows": 1022,
+      "questions": 202
+    },
+    "test": {
+      "rows": 1135,
+      "questions": 226
+    }
+  },
+  "failures_retained": 1806,
+  "source_flags_not_success": true,
+  "new_intervals": false
+}

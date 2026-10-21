@@ -1,0 +1,53 @@
+\section{Completed Finite Retrieval Update}\label{app:search-update}
+This update fixes a feasible retrieval endpoint and completes its dispositions rather than treating the historical broad-hit counts as a screened population. Four Semantic Scholar bulk queries and two native arXiv searches were completed on October 21, 2026. Their 615 occurrences deduplicate to 565 records. The merged family index accepts 15 new core and seven selected adjacent families, giving \FinalN{} families: \FinalCore{} core (\FinalA{} workflow-origin, \FinalB{} inherited) and \FinalAdjacent{} adjacent. Thirteen new core versions predate the original October 8 endpoint; Physical Edge (October 9) and PAGE404 (October 14) explicitly extend it. The original 60-family index and 33-result/66-field inventory remain separate snapshots.
+
+\subsection{Executable queries and accounting}
+For Semantic Scholar, the actual bulk-search expressions below use \texttt{+} for conjunction, \texttt{|} for alternatives and quotation marks for phrases. The publication window is 2023--2026; returned metadata and abstracts, query parameters, pagination/completion receipts and exact source locators are saved in the query log. These searches use the service's title/abstract retrieval behavior, not publisher full-text search.
+\begin{quote}\small\raggedright
+S1R (116): (agent | workflow) + (LLM | ``language model'') + (``side channel'' | ``side-channel'' | fingerprinting).
+
+S2 (120): (LLM | ``language model'') + (traffic | streaming) + (leakage | side-channel | fingerprinting).
+
+S3 (15): (LLM | ``language model'') + (padding | ``re-emission'') + (privacy | leakage | side-channel).
+
+S4 (287): (agent | LLM) + (decoy | ``cover traffic'' | ``fake actions'' | ``cover actions'').
+\end{quote}
+Native arXiv advanced search used all fields, Computer Science including cross-lists, original-submission dates January 1, 2023--October 21, 2026, abstracts shown, and a 200-result page limit. The two conjunctions were \texttt{"side-channel" AND "large language"} (50) and \texttt{"side-channel" AND agent} (27). Each returned set fit on its saved page. The Semantic Scholar queries yield 538 occurrences/522 unique IDs; arXiv adds 43 further unique records, producing 565 overall. Exact native URLs and full result metadata are retained.
+
+\begin{table}[!ht]\centering\footnotesize
+\caption{Disposition flow for the completed 565-record frame. Source-scoped examination is not synonymous with new core inclusion.}\label{tab:finite-flow}
+\begin{tabularx}{\columnwidth}{@{}Yr@{}}\toprule
+Stage or final route & Count\\\midrule
+Complete-query occurrences & 615\\
+Cross-query duplicates merged & 50\\
+Unique records with an explicit route & 565\\\midrule
+Excluded: no hidden auxiliary target & 217\\
+Excluded: outside LLM execution & 156\\
+Excluded: different inference target & 19\\
+Existing core / adjacent families recovered & 24 / 1\\
+New source-bound core families & 15\\
+Adjacent source-reviewed / metadata-only contexts & 30 / 28\\
+Other security-objective background & 53\\
+Source-reviewed background / proposal metadata & 4 / 1\\
+Missing abstract / unavailable primary full text & 16 / 1\\\bottomrule
+\end{tabularx}\end{table}
+
+Forty-nine candidate rows received source-scoped examination: 15 new core, 30 adjacent contexts and four background sources. Seven of the 30 adjacent contexts are selected for the merged index; the other contexts remain reasoned routes, not additional admitted families. Sixteen missing abstracts and the inaccessible AgentCard primary full text remain unresolved material requests. Perplexity Search supplied additional leads and counterchecks, but its eight saved dispositions are kept outside the 565-record query denominator; primary-source claims are verified against their own records.
+
+The broader Semantic Scholar S1 acquired 999 of 2,104 reported hits before refinement; it is not a complete screened frame. Its complete refinement S1R is a subsequent, documented scope decision. S4R returned HTTP429, arXiv API attempts failed, and DBLP access returned errors/verification rather than a usable export. A third native arXiv query timed out without a verified set; a fourth was not submitted. None is recorded as a zero-result search. These access outcomes and the historical IEEE/ACM acquisition gaps remain in the log.
+
+\subsection{Boundary checks and extraction}
+The fixed 24-known-paper set has 17 query recoveries (nine Semantic Scholar, fourteen arXiv, with overlap); the original 60-family set has 25 (fourteen and nineteen respectively). These checks show the additional route's concrete contribution. They do not establish calibrated database recall: index eligibility for each non-return has not been authenticated.
+
+The exclusion check uses seed 20261021: all 177 exclusions matching the recorded high-risk title/abstract pattern, plus 27 other reason-stratified samples, capped at ten per reason. Four of 204 rows were rerouted. MIRAGE becomes one new diagnostic core; InputSnatch resolves to an already included title/version alias; two become adjacent contexts. The final disposition table incorporates these corrections. Because the check is enriched and uses the same AI-assisted workflow, four of 204 is an observed correction count, not a population miss-rate or independent-human agreement estimate.
+
+Every new core row records observer, signal, target/protection relation, evaluation conditions, intervention, utility, cost, RQ contribution, version, locator, hash and NR status. Lidar's shared action roles and checked outcomes exclude raw command strings, paths and answers; feature importance is not treated as an isolated attack. SplitDecoy qualifies specifically through zero/nonzero returned-gradient support. Direct visual-token and gradient-value reconstruction remain adjacent under the auxiliary-only criterion. MIRAGE's privileged diagnostic is not recast as a low-permission privacy attack.
+
+\subsection{What changes in the synthesis?}
+For RQ1--2, the update adds tool-policy audits, structural campaign linkage, routing histories, tokenizer counts and distinct physical/sparsity/page-migration observers. These are different targets and permissions, not repeated demonstrations of each case. For RQ3, SplitDecoy supplies another outgoing path whose protection must be checked, while Kotevska et al.'s six-element claim register is close prior framework work; a tuple or generic composition warning is therefore not claimed as our novelty.
+
+For RQ4, the positive defense evidence becomes stronger and more specific. CachePrune evaluates sensitive-token protection, QA/summarization quality and serving performance under selective sharing. Contextual reconstruction and detector false negatives retain their own endpoints. OTRO's optional epoch padding reduces additional access-count information from 3.94 to 0.04 bits conditional on byte length in a 20K-prompt model. Its TTFT text reports 4.59\% mean overhead for Llama-3.1, whereas the abstract rounds this to at most 4.5\%; the main TTFT figures explicitly omit padding. The padding cost is a separate calculation (up to about 2.8ms per epoch), not a measured end-to-end padded TTFT frontier. These details permit useful local claims without erasing residual byte-length information.
+
+Jiao's packet-only and fused interrupt/packet endpoints have different permissions; SparLeak's separately measured attacker-monitoring slowdown is not the cost of its sparse-token defense. Shape and Substance's padding estimate is not a deployed paired intervention. These extraction differences change which cost can enter a deployment comparison. Consequently, the original 33-result inventory cannot support a collection-wide absence claim. Its comparisons remain reproducible for that subset; the added families supply new counterconditions and positive cases. The new controlled experiments separately test receiving and execution placement, without replacing old failed or negative observations.
+
+The machine-readable merged index preserves every field of the original 60 rows and appends the 22 additions. The query log, per-record reasons and short evidence fragments, source hashes, correction ledger and sensitivity notes accompany it. Full third-party sources are identified by version/URL, not redistributed in the anonymous package.

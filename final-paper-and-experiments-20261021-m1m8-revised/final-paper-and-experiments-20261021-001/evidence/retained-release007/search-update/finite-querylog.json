@@ -1,0 +1,19 @@
+[
+  {
+    "query_id": "S1R",
+    "query": "(agent | workflow) + (LLM | \"language model\") + (\"side channel\" | \"side-channel\" | fingerprinting)",
+    "receipt": "raw/S1R-000.receipt.json",
+    "http_status": 200,
+    "total": 116,
+    "returned": 116,
+    "has_next": false,
+    "status": "QUERY_COMPLETE"
+  },
+  {
+    "query_id": "S4R",
+    "query": "(agent | LLM) + (decoy | \"cover traffic\" | \"fake actions\" | \"cover actions\") + (\"language model\" | browser | workflow | LLM)",
+    "receipt": "raw/S4R-000.receipt.json",
+    "http_status": 429,
+    "status": "API_FAILED"
+  }
+]

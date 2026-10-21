@@ -1,0 +1,76 @@
+本轮审稿意见逐项修订与验收说明（2026-10-20）
+
+状态：主稿实质修订已实施，仍有未具备原始证据或研究者回表的事项。
+本说明针对用户提供的审稿式意见，不是IEEE S&P的真实审稿决定或录用证明。
+完整32项逐条对照见review-commitments.json/csv；未完成项没有被标成完成。
+
+一、中心知识产物已重构
+第5节现在是三个完整部署判断案例：
+  C1选择最终保护接口：NetEcho与UI接收视图；同评估条件可保留原结果，
+     新的内容感知发射器需要final-hop证据。
+  C2选择cover是否执行：Dangol通信成本与AHB动作/任务结局；丢弃、隔离
+     shadow或目标/策略中性条件能排除直接fake-touch机制，但不消除资源/时延。
+     AHB .7143非Fake点同时保留XGB .9905，避免把配置描述包装成有效防御。
+  C3选择适配结果与适用价格：保留UI同defended-view D2与原组件价格；
+     跨matching primitive、工作负载或合并机制需要桥接。
+每例均写清原作者已确立的事实、联合分析新增的决策、正面许可和未测条件。
+主表直接标DIRECT/EXTENSION/BACKGROUND、保护关系及单源依赖。
+
+二、方法与呈现已重构
+一条result record统一来源、target/protection relation、receiver、intervention、
+attacker、workload和outcomes。SCOPE仅作索引，Evidence Plane是同记录中的证据列。
+已知条件冲突与必要字段缺失分别给incompatible和unresolved，且只限制相应判断。
+新增完整Dangol family→result→版本段落→字段→主张例子。
+正文移除0/33作为论据，改为六项具体部署问题和逐项测量/缺口/后果。
+26条适用问题记录与7条上下文记录的选择规则和全部33/66库存可复核；
+选择是结果已知后的语义整理，不是预注册试验，也不产生新的失败率。
+
+三、检索可复现性已补，覆盖未虚报完成
+附录A现直接印出7条IEEE、6条ACM实际原式、字段、日期、RIS/BibTeX及分区规则。
+查询与31分区收据已核，ACM正式文件完成哈希核对；Q4b285/284与Q53689/3688保留。
+known24针对真实IEEE2001/ACM13201冻结frame的新只读检查分别1/24与0/24；
+在线索引资格及native field semantics仍NR，不能用字面缺词判断not indexed。
+4753 prepared IDs和109个重叠nominated决策行有处置记录，pending不充当排除。
+历史Q4全量获取、ACM883/2950全文队列和新的高风险排除全集仍未完成。
+四来源/谱系问题仍需实质材料；B069为已按官方摘要归背景、后页不可读的另项限制。
+本轮Edge可列窗口但URL无法可靠识别，工具停止网页输入；没有追加Perplexity搜索，
+没有声称补跑原生数据库或突破访问验证。
+
+四、实证与负结果保留，篇幅已重新分配
+公开归档压为worked example，保留H2正增量、matched-task跨零、文档proxy、
+shuffle及failure/activity限制；H3为离线同记录适配，H1零为说明性。
+没有新增分类器、模型后端、Agent采集或Luna重跑。
+SCOPE原联合终点、负差值、条件区间、oneHOLD与原始分析均保留；
+正文仅交代结论，完整协议/分解/历史token账本移入伴随材料。
+大mode表移入材料，附录E保留四项未决绑定及成本释义。
+当前PDF为19页：11正文+5附录+3参考；无超宽盒、未定义引用/引文，
+US Letter、IEEEtran标准字号页边。所有页已渲染检查。
+
+五、来源核查产生的实际纠正
+Dangol的0.30、约13倍bytes/11倍latency来自v3 §9.7 Table5之后OHTTP段，
+不是Table5的shim行；机制是fresh per-session identifiers，不是pooled-ID。
+其live条件是client/relay/gateway/agent同一host的loopback testbed，主稿已明确，
+不能只凭该点断言跨真实网络的部署效果。
+新发布副本使用显式source-corrections覆盖，原封存CSV、失败记录不改。
+AHB Table1新子条件另作case-fact，不冒充旧组合条件或新增独立复制实验。
+四防御断言仍只有文本层证据；Weiss artifact appendix复现攻击Table2，
+不能作为vendor-defense before/after数据；AHB D1-code与历史D1-run/D2分开。
+
+六、伴随材料与尚需作者/外部完成的P0工作
+新的匿名包提供当前完整索引、结果、字段、case links、locators/hash、
+保存概率和无拟合verify脚本；新人工A/B/裁决表明确为空。
+它可以作为随稿补充文件提交；本文未创建public host或声称已经上传给审稿人。
+材料不含第三方完整论文/raw trace、私有日志、对话或凭据。
+
+仍不能据此写成“已经全部具备原证据、人工复核完毕或必能录用”：
+  1. 独立研究者回表：承重来源、16 mitigation families、4绑定、边界项及
+     高风险排除仍无人类独立回表。AI复查不能代签研究者或算人工一致率。
+  2. 原始材料：四候选全文/结果谱系、四防御量化run与AHB历史fit binding。
+     缺失run不能由脚本、更多AI一致或NR处置制造。
+  3. 检索覆盖：广Q4、ACM广source queue、高风险全集及在线索引/字段资格。
+     当前完成的是有边界的记录和源检查；反例遗漏风险仍真实存在。
+  4. 投稿访问与声明：作者需把本次ZIP实际附在投稿系统或部署匿名托管，
+     并完成自身权利、匿名与机构披露判断。未伪造链接、上传或批准回执。
+
+审稿意见允许“高质量正反案例综合”替代可选的新placement实验，本轮采用该路线。
+科学与新颖性判断仍应由有材料访问的同行完成；本次修订不把措辞变化当成P0证据闭环。

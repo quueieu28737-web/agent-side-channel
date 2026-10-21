@@ -1,0 +1,687 @@
+{
+  "schema": "acm-side-consolidated-export-audit/v1",
+  "date": "2026-10-09",
+  "scope": "Side export reconciliation only; no parent manuscript/corpus/experiment changes.",
+  "queries": [
+    {
+      "query_id": "Q1",
+      "query": "(\"large language model\" OR LLM) AND (\"side channel\" OR \"side-channel\" OR \"timing attack\")",
+      "original_unsplit_hits": 479,
+      "receipt_ids": [
+        "Q1-unfiltered"
+      ],
+      "sum_partition_displayed_hits": 479,
+      "saved_partition_occurrences": 479,
+      "strict_frames": 479,
+      "distinct_native_identifiers": 479,
+      "overall_count_matches_original_unsplit": true,
+      "partition_count_mismatches": [],
+      "original_saved_sample_identifiers": 479,
+      "original_saved_sample_identifiers_missing": [],
+      "missing_identifier_check_boundary": "Original saved sample only, not unsaved hit identities."
+    },
+    {
+      "query_id": "Q2",
+      "query": "(agent OR agentic) AND (\"traffic analysis\" OR fingerprinting OR \"metadata leakage\" OR \"side channel\" OR \"side-channel\")",
+      "original_unsplit_hits": 6181,
+      "receipt_ids": [
+        "Q2-year1962-2005",
+        "Q2-year2006-2010",
+        "Q2-year2011-2015",
+        "Q2-year2016-2018",
+        "Q2-year2019-2020",
+        "Q2-year2021-2022",
+        "Q2-year2023",
+        "Q2-year2024",
+        "Q2-year2025",
+        "Q2-year2026"
+      ],
+      "sum_partition_displayed_hits": 6181,
+      "saved_partition_occurrences": 6181,
+      "strict_frames": 6178,
+      "distinct_native_identifiers": 6181,
+      "overall_count_matches_original_unsplit": true,
+      "partition_count_mismatches": [],
+      "original_saved_sample_identifiers": 1000,
+      "original_saved_sample_identifiers_missing": [],
+      "missing_identifier_check_boundary": "Original saved sample only, not unsaved hit identities."
+    },
+    {
+      "query_id": "Q3",
+      "query": "(\"KV cache\" OR \"prompt caching\" OR \"speculative decoding\") AND (privacy OR leakage OR attack)",
+      "original_unsplit_hits": 511,
+      "receipt_ids": [
+        "Q3-unfiltered"
+      ],
+      "sum_partition_displayed_hits": 511,
+      "saved_partition_occurrences": 511,
+      "strict_frames": 511,
+      "distinct_native_identifiers": 511,
+      "overall_count_matches_original_unsplit": true,
+      "partition_count_mismatches": [],
+      "original_saved_sample_identifiers": 511,
+      "original_saved_sample_identifiers_missing": [],
+      "missing_identifier_check_boundary": "Original saved sample only, not unsaved hit identities."
+    },
+    {
+      "query_id": "Q4b",
+      "query": "((\"browser agent\" OR \"research agent\" OR \"tool calling\" OR \"model context protocol\" OR \"multi-agent\") AND (timing OR fingerprinting OR leakage) AND (\"large language model\" OR LLM))",
+      "original_unsplit_hits": 4026,
+      "receipt_ids": [
+        "Q4b-year1995-2022",
+        "Q4b-year2023",
+        "Q4b-year2024",
+        "Q4b-year2025-Jan-Jun",
+        "Q4b-year2025-Jul-Dec",
+        "Q4b-year2026-Apr-May",
+        "Q4b-year2026-Jan-Mar",
+        "Q4b-year2026-Jul-Sep",
+        "Q4b-year2026-June",
+        "Q4b-year2026-Oct-Dec"
+      ],
+      "sum_partition_displayed_hits": 4027,
+      "saved_partition_occurrences": 4026,
+      "strict_frames": 4024,
+      "distinct_native_identifiers": 4026,
+      "overall_count_matches_original_unsplit": true,
+      "partition_count_mismatches": [
+        {
+          "receipt_id": "Q4b-year2026-June",
+          "displayed": 285,
+          "saved": 284
+        }
+      ],
+      "original_saved_sample_identifiers": 1000,
+      "original_saved_sample_identifiers_missing": [],
+      "missing_identifier_check_boundary": "Original saved sample only, not unsaved hit identities."
+    },
+    {
+      "query_id": "Q5",
+      "query": "(\"language model\" OR LLM) AND (\"traffic shaping\" OR \"cache isolation\" OR padding OR \"side-channel defense\")",
+      "original_unsplit_hits": 3688,
+      "receipt_ids": [
+        "Q5-year1972-2021",
+        "Q5-year2022-2023",
+        "Q5-year2024",
+        "Q5-year2025",
+        "Q5-year2026-Jan-Jun",
+        "Q5-year2026-Jul-Dec"
+      ],
+      "sum_partition_displayed_hits": 3689,
+      "saved_partition_occurrences": 3689,
+      "strict_frames": 3688,
+      "distinct_native_identifiers": 3689,
+      "overall_count_matches_original_unsplit": false,
+      "partition_count_mismatches": [],
+      "original_saved_sample_identifiers": 1000,
+      "original_saved_sample_identifiers_missing": [],
+      "missing_identifier_check_boundary": "Original saved sample only, not unsaved hit identities."
+    },
+    {
+      "query_id": "Q6",
+      "query": "(\"language model\" OR chatbot OR \"AI assistant\" OR \"generative AI\") AND (\"side channel\" OR \"side-channel\" OR \"traffic analysis\" OR fingerprinting OR \"timing leakage\")",
+      "original_unsplit_hits": 1801,
+      "receipt_ids": [
+        "Q6-year1973-2024",
+        "Q6-year2025",
+        "Q6-year2026"
+      ],
+      "sum_partition_displayed_hits": 1801,
+      "saved_partition_occurrences": 1801,
+      "strict_frames": 1800,
+      "distinct_native_identifiers": 1801,
+      "overall_count_matches_original_unsplit": true,
+      "partition_count_mismatches": [],
+      "original_saved_sample_identifiers": 1000,
+      "original_saved_sample_identifiers_missing": [],
+      "missing_identifier_check_boundary": "Original saved sample only, not unsaved hit identities."
+    }
+  ],
+  "counts": {
+    "included_raw_export_receipts": 31,
+    "saved_query_occurrences": 16687,
+    "strict_frames": 16680,
+    "malformed_frames_retained": 7,
+    "conservative_publication_groups": 13201,
+    "repeated_occurrences": 3486,
+    "semantic_screening_decisions_by_this_audit": 0
+  },
+  "excluded_diagnostic": "Q5-unfiltered-attempt-001 (truncated 1000/3688; raw preserved, not summed)",
+  "anomalies": [
+    {
+      "receipt_id": "Q2-year2011-2015",
+      "source_ordinal": 635,
+      "line_start": 11292,
+      "line_end": 11310,
+      "error": "missing field separator at char1428,line10",
+      "citation_key": "10.1145/2660267.2660274",
+      "unparsed_title_line": "title = {Wiretapping via Mimicry: Short Voice Imitation Man-in-the-Middle Attacks on Crypto Phones},"
+    },
+    {
+      "receipt_id": "Q2-year2025",
+      "source_ordinal": 286,
+      "line_start": 4781,
+      "line_end": 4799,
+      "error": "invalid field assignment at char1814,line14",
+      "citation_key": "10.1145/3719027.3765198",
+      "unparsed_title_line": "title = {Don't Look Up: There Are Sensitive Internal Links in the Clear on GEO Satellites},"
+    },
+    {
+      "receipt_id": "Q2-year2025",
+      "source_ordinal": 478,
+      "line_start": 7509,
+      "line_end": 7527,
+      "error": "invalid field assignment at char1729,line14",
+      "citation_key": "10.1145/3696410.3714761",
+      "unparsed_title_line": "title = {Unveiling Network Performance in the Wild: An Ad-Driven Analysis of Mobile Download Speeds},"
+    },
+    {
+      "receipt_id": "Q4b-year2025-Jul-Dec",
+      "source_ordinal": 111,
+      "line_start": 1982,
+      "line_end": 2000,
+      "error": "unexpected non-BibTeX content at char224,line3",
+      "citation_key": "10.1145/3704413.3765314",
+      "unparsed_title_line": "title = {Demo: Human-in-the-Loop Agentic Reconfiguration of Edge 5G Networks via Dual-MCP and LLM Reasoning}},"
+    },
+    {
+      "receipt_id": "Q4b-year2026-June",
+      "source_ordinal": 124,
+      "line_start": 2206,
+      "line_end": 2229,
+      "error": "unexpected non-BibTeX content at char1425,line15",
+      "citation_key": "10.1145/3805622.3812604",
+      "unparsed_title_line": "title = {The 2026 Grand Challenge on Multimedia Verification: Overview and Key Directions},"
+    },
+    {
+      "receipt_id": "Q5-year2025",
+      "source_ordinal": 770,
+      "line_start": 12028,
+      "line_end": 12046,
+      "error": "missing field separator at char1834,line19",
+      "citation_key": "10.1145/3746252.3760816",
+      "unparsed_title_line": "title = {Land Deformation Prediction via Multi-modal Adaptive Association Learning},"
+    },
+    {
+      "receipt_id": "Q6-year1973-2024",
+      "source_ordinal": 756,
+      "line_start": 10282,
+      "line_end": 10300,
+      "error": "missing field separator at char1428,line10",
+      "citation_key": "10.1145/2660267.2660274",
+      "unparsed_title_line": "title = {Wiretapping via Mimicry: Short Voice Imitation Man-in-the-Middle Attacks on Crypto Phones},"
+    }
+  ],
+  "same_title_different_doi": [
+    {
+      "normalized_title": "a fistful of bitcoins: characterizing payments among men with no names",
+      "different_explicit_dois": [
+        "10.1145/2504730.2504747",
+        "10.1145/2896384"
+      ]
+    },
+    {
+      "normalized_title": "abstracting dependencies between software configuration items",
+      "different_explicit_dois": [
+        "10.1145/239098.239129",
+        "10.1145/332740.332743"
+      ]
+    },
+    {
+      "normalized_title": "afis data compression: an example of how domain specific compression algorithms can produce very high compression ratios",
+      "different_explicit_dois": [
+        "10.1145/1317471.1317480",
+        "10.1145/1331098.1331103"
+      ]
+    },
+    {
+      "normalized_title": "amandroid: a precise and general inter-component data flow analysis framework for security vetting of android apps",
+      "different_explicit_dois": [
+        "10.1145/2660267.2660357",
+        "10.1145/3183575"
+      ]
+    },
+    {
+      "normalized_title": "an agile pathway towards carbon-aware clouds",
+      "different_explicit_dois": [
+        "10.1145/3604930.3605722",
+        "10.1145/3698365.3698368"
+      ]
+    },
+    {
+      "normalized_title": "analysis of a \"/0\" stealth scan from a botnet",
+      "different_explicit_dois": [
+        "10.1109/tnet.2013.2297678",
+        "10.1145/2398776.2398778"
+      ]
+    },
+    {
+      "normalized_title": "authors’ biographies/index",
+      "different_explicit_dois": [
+        "10.1145/3563659.3563678",
+        "10.1145/3731975.3731996",
+        "10.1145/3749740.3749760"
+      ]
+    },
+    {
+      "normalized_title": "authors’ biography/index",
+      "different_explicit_dois": [
+        "10.1145/3603178.3603191",
+        "10.1145/3674127.3702962",
+        "10.1145/3749421.3749443"
+      ]
+    },
+    {
+      "normalized_title": "author’s biography/index",
+      "different_explicit_dois": [
+        "10.1145/3731302.3731332",
+        "10.1145/3822380.3822396"
+      ]
+    },
+    {
+      "normalized_title": "benchmarking and characterization of large language model inference on apple silicon",
+      "different_explicit_dois": [
+        "10.1145/3771563",
+        "10.1145/3801489.3806865"
+      ]
+    },
+    {
+      "normalized_title": "brave new world: privacy risks for mobile users",
+      "different_explicit_dois": [
+        "10.1145/2646584.2646585",
+        "10.1145/2721896.2721907"
+      ]
+    },
+    {
+      "normalized_title": "bubing: massive crawling for the masses",
+      "different_explicit_dois": [
+        "10.1145/2567948.2577304",
+        "10.1145/3160017"
+      ]
+    },
+    {
+      "normalized_title": "caching trust rather than content",
+      "different_explicit_dois": [
+        "10.1145/506106.506110",
+        "10.1145/566726.566775"
+      ]
+    },
+    {
+      "normalized_title": "characterizing performance–energy trade-offs of large language models in multi-request workflows",
+      "different_explicit_dois": [
+        "10.1145/3788089",
+        "10.1145/3801489.3806907",
+        "10.1145/3820171.3806907"
+      ]
+    },
+    {
+      "normalized_title": "computer security: a survey",
+      "different_explicit_dois": [
+        "10.1145/1017536.1017537",
+        "10.1145/1499799.1499809"
+      ]
+    },
+    {
+      "normalized_title": "conference reports",
+      "different_explicit_dois": [
+        "10.1145/3609468.3609470",
+        "10.1145/3655032.3655034"
+      ]
+    },
+    {
+      "normalized_title": "data bases",
+      "different_explicit_dois": [
+        "10.1145/1147282.1147284",
+        "10.1145/1147347.1147284"
+      ]
+    },
+    {
+      "normalized_title": "data collection with self-enforcing privacy",
+      "different_explicit_dois": [
+        "10.1145/1180405.1180416",
+        "10.1145/1455518.1477940"
+      ]
+    },
+    {
+      "normalized_title": "ev-loc: integrating electronic and visual signals for accurate localization",
+      "different_explicit_dois": [
+        "10.1109/tnet.2013.2274283",
+        "10.1145/2248371.2248378"
+      ]
+    },
+    {
+      "normalized_title": "how dendral was conceived and born",
+      "different_explicit_dois": [
+        "10.1145/41526.41528",
+        "10.1145/89482.89484"
+      ]
+    },
+    {
+      "normalized_title": "illustrative risks to the public in the use of computer systems and related technology",
+      "different_explicit_dois": [
+        "10.1145/134292.134293",
+        "10.1145/181610.181612",
+        "10.1145/381790.381797"
+      ]
+    },
+    {
+      "normalized_title": "janus: a dual-mask attention transformer for log-based anomaly detection in cellular networks",
+      "different_explicit_dois": [
+        "10.1145/3788096",
+        "10.1145/3801489.3806900",
+        "10.1145/3820171.3806900"
+      ]
+    },
+    {
+      "normalized_title": "management guidelines for pc security",
+      "different_explicit_dois": [
+        "10.1145/130069.130139",
+        "10.1145/134307.134308",
+        "10.1145/181823.181826"
+      ]
+    },
+    {
+      "normalized_title": "measuring and fingerprinting click-spam in ad networks",
+      "different_explicit_dois": [
+        "10.1145/2342356.2342394",
+        "10.1145/2377677.2377715"
+      ]
+    },
+    {
+      "normalized_title": "memtrade: marketplace for disaggregated memory clouds",
+      "different_explicit_dois": [
+        "10.1145/3578338.3593553",
+        "10.1145/3589985"
+      ]
+    },
+    {
+      "normalized_title": "meshagent: enabling reliable network management with large language models",
+      "different_explicit_dois": [
+        "10.1145/3771567",
+        "10.1145/3801489.3806880"
+      ]
+    },
+    {
+      "normalized_title": "news 2.0: taking a second look at the news so you don’t have to.",
+      "different_explicit_dois": [
+        "10.1145/1016998.1017009",
+        "10.1145/1117389.1117393"
+      ]
+    },
+    {
+      "normalized_title": "news track",
+      "different_explicit_dois": [
+        "10.1145/1325555.1325557",
+        "10.1145/278476.278478",
+        "10.1145/77481.316044"
+      ]
+    },
+    {
+      "normalized_title": "on the road to personalized code intelligence: portraiting and assisting developers based on their in-ide behaviors",
+      "different_explicit_dois": [
+        "10.1145/3797147",
+        "10.1145/3803437.3807398"
+      ]
+    },
+    {
+      "normalized_title": "performance variation across benchmark suites",
+      "different_explicit_dois": [
+        "10.1145/122235.122238",
+        "10.1145/122576.122579"
+      ]
+    },
+    {
+      "normalized_title": "preface",
+      "different_explicit_dois": [
+        "10.1145/3064650.3064651",
+        "10.1145/3122865.3122866",
+        "10.1145/3233795.3233796",
+        "10.1145/3822380.3822381"
+      ]
+    },
+    {
+      "normalized_title": "real-time parallel hashing on the gpu",
+      "different_explicit_dois": [
+        "10.1145/1618452.1618500",
+        "10.1145/1661412.1618500"
+      ]
+    },
+    {
+      "normalized_title": "reuse library interoperability and the world wide web",
+      "different_explicit_dois": [
+        "10.1145/253228.253836",
+        "10.1145/258366.258419"
+      ]
+    },
+    {
+      "normalized_title": "risks to the public",
+      "different_explicit_dois": [
+        "10.1145/1061874.1061882",
+        "10.1145/1082983.1082992",
+        "10.1145/1102107.1102118",
+        "10.1145/1241572.1241579",
+        "10.1145/1317471.1317484",
+        "10.1145/1360602.1360607",
+        "10.1145/1457516.1457520",
+        "10.1145/1507195.1517460",
+        "10.1145/1543405.1543410",
+        "10.1145/1598732.159753",
+        "10.1145/1874391.1874396",
+        "10.1145/1921532.1921537",
+        "10.1145/1943371.1943376",
+        "10.1145/2020976.2021011",
+        "10.1145/2237796.2237800",
+        "10.1145/2532780.2532781",
+        "10.1145/2632434.2632454",
+        "10.1145/2674632.2674635",
+        "10.1145/2693208.2693214",
+        "10.1145/2735399.2735400",
+        "10.1145/2830719.2830723",
+        "10.1145/2853073.2853076",
+        "10.1145/2934240.2934243",
+        "10.1145/2994205.2994208",
+        "10.1145/3041765.3041771",
+        "10.1145/3127360.3127363",
+        "10.1145/3149485.3149490",
+        "10.1145/3282517.3282523",
+        "10.1145/3310013.3310021",
+        "10.1145/3325642.3325643",
+        "10.1145/3356773.3372312",
+        "10.1145/3375572.3375574",
+        "10.1145/3437479.3437482",
+        "10.1145/3485952.3485954",
+        "10.1145/3539814.3539816",
+        "10.1145/3561846.3561850",
+        "10.1145/3635439.3635440",
+        "10.1145/3650142.3650143",
+        "10.1145/37537.37538"
+      ]
+    },
+    {
+      "normalized_title": "risks to the public in computers and related systems",
+      "different_explicit_dois": [
+        "10.1145/1022494.1022498",
+        "10.1145/251759.251795",
+        "10.1145/251880.251918",
+        "10.1145/263244.263252",
+        "10.1145/308769.308773",
+        "10.1145/340855.340856",
+        "10.1145/505863.505866",
+        "10.1145/505894.505900",
+        "10.1145/511152.511154",
+        "10.1145/638574.638578",
+        "10.1145/638750.638754",
+        "10.1145/773126.773130",
+        "10.1145/979743.979748"
+      ]
+    },
+    {
+      "normalized_title": "some computer science issues in ubiquitous computing",
+      "different_explicit_dois": [
+        "10.1145/159544.159617",
+        "10.1145/329124.329127"
+      ]
+    },
+    {
+      "normalized_title": "surfing the net for software engineering notes",
+      "different_explicit_dois": [
+        "10.1145/1874391.1874395",
+        "10.1145/2088883.2088887",
+        "10.1145/2108144.2108163"
+      ]
+    },
+    {
+      "normalized_title": "symbolic path cost analysis for side-channel detection",
+      "different_explicit_dois": [
+        "10.1145/3183440.3195039",
+        "10.1145/3213846.3213867"
+      ]
+    },
+    {
+      "normalized_title": "technical report column",
+      "different_explicit_dois": [
+        "10.1145/3388392.3388397",
+        "10.1145/3586165.3586171",
+        "10.1145/3639528.3639531",
+        "10.1145/3674159.3674162",
+        "10.1145/3710795.3710798",
+        "10.1145/3744715.3744718",
+        "10.1145/3767145.3767148",
+        "10.1145/3802807.3802809",
+        "10.1145/3819804.3819806",
+        "10.1145/3848065.3848067"
+      ]
+    },
+    {
+      "normalized_title": "transient internet of things: redesigning the lifetime of electronics for a more sustainable networked environment",
+      "different_explicit_dois": [
+        "10.1145/3604930.3605723",
+        "10.1145/3727200.3727205"
+      ]
+    },
+    {
+      "normalized_title": "understanding rfid counting protocols",
+      "different_explicit_dois": [
+        "10.1109/tnet.2014.2361149",
+        "10.1145/2500423.2500431"
+      ]
+    },
+    {
+      "normalized_title": "unified heterogeneous networking design",
+      "different_explicit_dois": [
+        "10.1145/2554666.2554670",
+        "10.1145/2589649.2554670"
+      ]
+    }
+  ],
+  "dedup_policy": "Original audited parser.group_records: exact DOI; title-only when unambiguous; Unicode NFKC/casefold/whitespace; no fuzzy aliases or study-family merges; malformed frames retain exact identity only.",
+  "browser_finalization": "NR for all .crdownload sources; no suffix rename or browser-security bypass.",
+  "count_reconciliation": "A matching overall count is not proof that a mismatching date bin has complete identities. Date-bin and Q5 discrepancies remain verification TODOs.",
+  "original_raw_preservation": [
+    {
+      "query_id": "Q1",
+      "sha256": "8e73368989206b8bbc727b0426b393e73daf5efca975b2515044f55209aad964",
+      "unchanged": true
+    },
+    {
+      "query_id": "Q2",
+      "sha256": "30f1fce69bb43137bc61f24aca9f2213dc91ae8fa375fd61cc2b5b6bdf88dd8e",
+      "unchanged": true
+    },
+    {
+      "query_id": "Q3",
+      "sha256": "f74655106e2a85a79fce4b4f02b89857d884ffd4e9d5bcb4c6fc36e0882f8ce0",
+      "unchanged": true
+    },
+    {
+      "query_id": "Q4b",
+      "sha256": "f6c88dd3029b4f79f81c9e93ec054888c703e045044f20f297ec4b06dc861265",
+      "unchanged": true
+    },
+    {
+      "query_id": "Q5",
+      "sha256": "87d301a619fd2b8f33146154ed246752d78b13ddfb38553b2763bb8b21b7df8a",
+      "unchanged": true
+    },
+    {
+      "query_id": "Q6",
+      "sha256": "15dda507efb2ffa09981f78a4ed89d70d93e5766a274866e14b25db4d738d4be",
+      "unchanged": true
+    }
+  ],
+  "input_sha256": {
+    "evidence/systematic-2026-10-08-r2/acm-native/query-manifest.json": "a296e35dcdbe24b993e2718af3d0d8c3b6cc842800fa1789725c0453b09c1693",
+    "evidence/systematic-2026-10-08-r2/acm-native/audit_pending_exports.py": "603998bb19ec76b3daf80ed5afa458b02fa0439dd5590a85be1688b0eaafa7c2",
+    "evidence/acm-redownload-2026-10-08-side-002/Q1-unfiltered.json": "026f26d2cc493f78153a48bde4f50ecfe11785bb4c1425be5dc71422e5db68d3",
+    "evidence/acm-redownload-2026-10-08-side-002/raw/Q1-unfiltered.bib.crdownload": "dbc2e1eb49fd768e344f3400bd7447d78c4f71757a3c6ba6ded1dbf897a86aa4",
+    "evidence/acm-redownload-2026-10-08-side-002/Q2-year1962-2005.json": "ef0d76c1575aaa40dff295aafb446b0b55f6206cc22e0ef212891a2729381758",
+    "evidence/acm-redownload-2026-10-08-side-002/raw/Q2-year1962-2005.bib.crdownload": "bb6c2408c63f4921b39cfa3a3b9623a1fe6bce29c6179dd95d7eac2172f3ac33",
+    "evidence/acm-redownload-2026-10-08-side-002/Q2-year2006-2010.json": "4b257819889e7be531bd2624e55393728bf973f11979a783433b096edd33a876",
+    "evidence/acm-redownload-2026-10-08-side-002/raw/Q2-year2006-2010.bib.crdownload": "5e859be1ea2f21c96728bea6f384eabe5f9bcccced7cf80e6b7a1f2cc1f4c217",
+    "evidence/acm-redownload-2026-10-08-side-002/Q2-year2011-2015.json": "7edf00fa05bd3e3e616548a7b2941210b3bb4d5ca38480a022ec148249e8c387",
+    "evidence/acm-redownload-2026-10-08-side-002/raw/Q2-year2011-2015.bib.crdownload": "41009081302fd48e4e63fe8dd0f8655ba69942c72e43ed1d759df4d24853f866",
+    "evidence/acm-redownload-2026-10-08-side-002/Q2-year2016-2018.json": "4dd274015fac04c0d908d0d19470dee9f56e1c0ec235d13d7db120b70865aaba",
+    "evidence/acm-redownload-2026-10-08-side-002/raw/Q2-year2016-2018.bib.crdownload": "856ba44d62546b422abf3cdddc662a7cc0f08499a15279c10dbd96e6bee72009",
+    "evidence/acm-redownload-2026-10-08-side-002/Q2-year2019-2020.json": "77a1e7d0295d267db959dedd77f2be2068e033de0807ab58f6ad51d4e0b98270",
+    "evidence/acm-redownload-2026-10-08-side-002/raw/Q2-year2019-2020.bib.crdownload": "601a193f29e62590c06c0237b944e7bb38f27f8ee56ffb9ec1113279be7eff72",
+    "evidence/acm-redownload-2026-10-08-side-002/Q2-year2021-2022.json": "804cbb6f3a072e79a30bb66b1b3acda0f91835558aead61a2e308bb08b8a5a00",
+    "evidence/acm-redownload-2026-10-08-side-002/raw/Q2-year2021-2022.bib.crdownload": "79609fd66775cfff07f24d2f8cc664f4244bd901b3582e17eff69fcc6c329282",
+    "evidence/acm-redownload-2026-10-08-side-002/Q2-year2023.json": "f1bfa3568cbee2e15991bca2a38e126c66150685ee2746ab1c3ed01e8fa12147",
+    "evidence/acm-redownload-2026-10-08-side-002/raw/Q2-year2023.bib.crdownload": "55cb271f47d73e8895fc133cec6cf42b7cdf28bd58cd75d7501f8b6f6c80802c",
+    "evidence/acm-redownload-2026-10-08-side-002/Q2-year2024.json": "9a6ca6666a09d6745e97cbbc9acac86729609ce38f1561c123b223ba7581185d",
+    "evidence/acm-redownload-2026-10-08-side-002/raw/Q2-year2024.bib.crdownload": "624b0856e9bff58dec6c9d88893225638fb90cb3ca4a599ca2c11816f874adb3",
+    "evidence/acm-redownload-2026-10-08-side-002/Q2-year2025.json": "ff69430c2f40e004c63aa19ed3882278518503bc31205c660003164d3bd59525",
+    "evidence/acm-redownload-2026-10-08-side-002/raw/Q2-year2025.bib.crdownload": "b1b1ac2506da8f2f80132a8071a46b0f26d15a64e077f1ca997a44264c97cdb8",
+    "evidence/acm-redownload-2026-10-08-side-002/Q2-year2026.json": "7df93d8e488b8ea7668eddb0b3656ff947eaa6be88ff667baac08bd817ec506b",
+    "evidence/acm-redownload-2026-10-08-side-002/raw/Q2-year2026.bib.crdownload": "421b85947b29ee66c824af39ae25776be689608d9ccdc3c629e06b3682d3cc54",
+    "evidence/acm-redownload-2026-10-08-side-002/Q3-unfiltered.json": "08402454d83dbd4c49b5713f2fce3d1bee39f51841c680116ca9c65d435756c1",
+    "evidence/acm-redownload-2026-10-08-side-002/raw/Q3-unfiltered.bib.crdownload": "30cfe5d4511b4ae742a80674e0632f99f1edba3e91b560b5d158c0ba13fa2a32",
+    "evidence/acm-redownload-2026-10-08-side-002/Q4b-year1995-2022.json": "527610abe8d4b1f61f232db61255c163397f61cc31145e1c758e66fc0ea6dd95",
+    "evidence/acm-redownload-2026-10-08-side-002/raw/Q4b-year1995-2022.bib.crdownload": "61f6e2dadf8bd3594c8bca25bdd57e28a2c4dd01f78f32eb556daaa2889e991a",
+    "evidence/acm-redownload-2026-10-08-side-002/Q4b-year2023.json": "685b4824bbc7ed1fdba238ae58b82ea5227dfe18633dd3a99de4b19e105961c9",
+    "evidence/acm-redownload-2026-10-08-side-002/raw/Q4b-year2023.bib.crdownload": "c299554019aace21b8f0545394f45f3719b2c7adc4c69fd77da8dc8f8eaf3122",
+    "evidence/acm-redownload-2026-10-08-side-002/Q4b-year2024.json": "cb6d22f75c01e1cd05923890196eae2fc6589491cb15772a1766505cee4b08e4",
+    "evidence/acm-redownload-2026-10-08-side-002/raw/Q4b-year2024.bib.crdownload": "aeae706ba86c4a1c3cb35ad28670e469b2bd7b3ea6cd4b04245ce784750a8c3e",
+    "evidence/acm-redownload-2026-10-08-side-002/Q4b-year2025-Jan-Jun.json": "4cb6dd5d2cf1dba06baac4d84b6b3c5323678b35e9b1535a479ba5d74ffe031d",
+    "evidence/acm-redownload-2026-10-08-side-002/raw/Q4b-year2025-Jan-Jun.bib.crdownload": "e88c539bf3a59f68263e287ec7c09e625748aafc1f3d0ea6bf36b687e482a387",
+    "evidence/acm-redownload-2026-10-08-side-002/Q4b-year2025-Jul-Dec.json": "08b66024944f40d5c8d532b87c7af08d748fcd09772861d866d8f9f89db482b3",
+    "evidence/acm-redownload-2026-10-08-side-002/raw/Q4b-year2025-Jul-Dec.bib.crdownload": "ca3f96d6b456587a18a0191962c6b58ab75d2d6eccae670e511bb84cd28965a2",
+    "evidence/acm-redownload-2026-10-08-side-002/Q4b-year2026-Apr-May.json": "2aa3be40c33f043b66a66805d2252fcebb187407e8029e329b60959555303436",
+    "evidence/acm-redownload-2026-10-08-side-002/raw/Q4b-year2026-Apr-May.bib.crdownload": "d861dfb9ddfabcb8c8343011bcb36a2cd88aa38babb195f61d8d09011bb9ac6a",
+    "evidence/acm-redownload-2026-10-08-side-002/Q4b-year2026-Jan-Mar.json": "a2c1d1f5caab60df02af2df042ab5fa93477f5361255ee6f98832a9d7f6e31bc",
+    "evidence/acm-redownload-2026-10-08-side-002/raw/Q4b-year2026-Jan-Mar.bib.crdownload": "e991a741c332185dc57d6563978d16411327c8287d0804f9b9119b870f587fab",
+    "evidence/acm-redownload-2026-10-08-side-002/Q4b-year2026-Jul-Sep.json": "3df6bddeb4ca174ce7aa00611850f9cdb12aa315b9fa42930c0c4bb4b22cf8ee",
+    "evidence/acm-redownload-2026-10-08-side-002/raw/Q4b-year2026-Jul-Sep.bib.crdownload": "59101c6a91bb171f5fbac3c5aedb12b69dc14080c84caab7787f106fd102da09",
+    "evidence/acm-redownload-2026-10-08-side-002/Q4b-year2026-June.json": "7c1bc38009906a1fbdd08b2fe80f03a4159d0a4a3d8cfdbe1c0dcd73b7667e60",
+    "evidence/acm-redownload-2026-10-08-side-002/raw/Q4b-year2026-June.bib.crdownload": "72e061b9154c56ca88c03853c88ef5b580411089881de59cb3eedfb80a404970",
+    "evidence/acm-redownload-2026-10-08-side-002/Q4b-year2026-Oct-Dec.json": "413f08db511925a78bd808d225c7e6a74adb92deb52a1fcff0af0dc35df20d9a",
+    "evidence/acm-redownload-2026-10-08-side-002/raw/Q4b-year2026-Oct-Dec.bib.crdownload": "06e22495fbc8038c96dfb74320d34beb9e02e1c7f3faa82949f510ea5efe88ac",
+    "evidence/acm-redownload-2026-10-08-side-002/Q5-unfiltered-attempt-001.json": "2ca81b8f7f65d039f164f3f76e3c53cba746230fc976b5703c1e694bf9044fca",
+    "evidence/acm-redownload-2026-10-08-side-002/raw/Q5-unfiltered-attempt-001.bib.crdownload": "910a0d2efca82ea8cc0065f458f69745c7776ab78af29398f08840bc2541bd54",
+    "evidence/acm-redownload-2026-10-08-side-002/Q5-year1972-2021.json": "df388e3cc10f8e5450f190e6b4cc655b83b9cc7c1fdde565ee6d9286cfac0ea4",
+    "evidence/acm-redownload-2026-10-08-side-002/raw/Q5-year1972-2021.bib.crdownload": "db024c30f840063c6ed8b31f367362fe8e9b302c6dd5b7010c6eb7885692f5cb",
+    "evidence/acm-redownload-2026-10-08-side-002/Q5-year2022-2023.json": "3d24c7bed652fb80d37d7a347c3ae3ef3c3a98c3b1b9e1cb676cf056bc7363f5",
+    "evidence/acm-redownload-2026-10-08-side-002/raw/Q5-year2022-2023.bib.crdownload": "79543b17fbcc3087d68293399ba7ac0c5ff281a3d9bac00d79f22898106d1a09",
+    "evidence/acm-redownload-2026-10-08-side-002/Q5-year2024.json": "8b272a0b360d8277fbc0219dd8fb86c897740807d2b15c6341f8e50814cf20c9",
+    "evidence/acm-redownload-2026-10-08-side-002/raw/Q5-year2024.bib.crdownload": "844617a52fe953f7f8d0b64a3b3e47b09387afa67b7d61880f8f7d2d6edade9b",
+    "evidence/acm-redownload-2026-10-08-side-002/Q5-year2025.json": "26cbc5ea8d38c3457bd7a3e3665463cb8eead9c126713ff6295efb3e5767423a",
+    "evidence/acm-redownload-2026-10-08-side-002/raw/Q5-year2025.bib.crdownload": "75db34e5d00071aab9223bfcaa6fe050684337cd0aa27d4d1461b4a17d63838e",
+    "evidence/acm-redownload-2026-10-08-side-002/Q5-year2026-Jan-Jun.json": "6044fe10e522d0b3047eff67f844075f19706fe30598abcd0e69fa18d49bf770",
+    "evidence/acm-redownload-2026-10-08-side-002/raw/Q5-year2026-Jan-Jun.bib.crdownload": "d3c4661c931e48c3d392703c798e8a625fb0ed9fa39bc9028ceea64f366e0240",
+    "evidence/acm-redownload-2026-10-08-side-002/Q5-year2026-Jul-Dec.json": "aeaa0423e2b366d9447e783412cfb7271f97000b2c031be4e6674d0ddc037982",
+    "evidence/acm-redownload-2026-10-08-side-002/raw/Q5-year2026-Jul-Dec.bib.crdownload": "a56d8d81f222536fadb6d8423695a233442ec2c2787b018b7b491de7f962c9ea",
+    "evidence/acm-redownload-2026-10-08-side-002/Q6-year1973-2024.json": "2fa2132c7a94b6a30a00d81412a36a87c746ae749efcb4e67f996f3476595736",
+    "evidence/acm-redownload-2026-10-08-side-002/raw/Q6-year1973-2024.bib.crdownload": "b195e0f801965fcb3f95da14c83b7bd1454f1e8bc4ab6b201aba3fdf3cbce039",
+    "evidence/acm-redownload-2026-10-08-side-002/Q6-year2025.json": "4819368080fcb6c80ce8d8e3614aee3ac2e7fd612324b88826c3d7e97048994c",
+    "evidence/acm-redownload-2026-10-08-side-002/raw/Q6-year2025.bib.crdownload": "8dea6dbeee55b22194705cc5193d9ad87f75363cabbab4f9eba37cf6428d2bfb",
+    "evidence/acm-redownload-2026-10-08-side-002/Q6-year2026.json": "242602031eb07973585f77c1828724d1043a094aaeacc9a4c7b8f0a0141fdabf",
+    "evidence/acm-redownload-2026-10-08-side-002/raw/Q6-year2026.bib.crdownload": "c21767eb4c4a495a0765e4869eb9b5b30ed1ae07d39aed25f922e8c62c140557"
+  },
+  "not_claimed": [
+    "Complete semantic screening",
+    "Final PRISMA inclusion counts",
+    "Independent human coding",
+    "Browser-finalized downloads",
+    "New included study families"
+  ]
+}

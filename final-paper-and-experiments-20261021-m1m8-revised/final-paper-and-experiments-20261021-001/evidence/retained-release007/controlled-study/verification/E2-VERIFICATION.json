@@ -1,0 +1,378 @@
+{
+  "status": "PASS_SAVED_E2_LINEAGE_AND_OUTCOME_VERIFICATION",
+  "utc": "2026-10-21T01:38:16.891378+00:00",
+  "new_model_calls": 0,
+  "frozen_source_count": 19,
+  "frozen_sources_match": true,
+  "task_count": 24,
+  "arm_rows": 120,
+  "raw_answer_bindings_verified": 24,
+  "e2_observed_tokens": 77256,
+  "global_collection_observed_tokens": 195927,
+  "fields_independently_reconstructed": [
+    "after_cover_state",
+    "authorization_respected",
+    "budget_nonnegative",
+    "business_state_unchanged_by_cover",
+    "confirmation_respected",
+    "cover_live_tool_calls",
+    "cover_shadow_tool_calls",
+    "final_state",
+    "goal_success",
+    "initial_state",
+    "plan_valid",
+    "protected_state_preserved",
+    "real_tool_calls",
+    "real_tool_errors",
+    "shadow_final_state",
+    "task_success"
+  ],
+  "arm_results": {
+    "baseline": {
+      "n": 24,
+      "task_success": 24,
+      "goal_success": 24,
+      "protected_state_violations": 0,
+      "success_difference": 0.0,
+      "exact_discrete_bootstrap95": [
+        0.0,
+        0.0
+      ],
+      "wilson95": [
+        0.8620237953250198,
+        1.0
+      ]
+    },
+    "discarded": {
+      "n": 24,
+      "task_success": 24,
+      "goal_success": 24,
+      "protected_state_violations": 0,
+      "success_difference": 0.0,
+      "exact_discrete_bootstrap95": [
+        0.0,
+        0.0
+      ],
+      "wilson95": [
+        0.8620237953250198,
+        1.0
+      ]
+    },
+    "isolated_shadow": {
+      "n": 24,
+      "task_success": 24,
+      "goal_success": 24,
+      "protected_state_violations": 0,
+      "success_difference": 0.0,
+      "exact_discrete_bootstrap95": [
+        0.0,
+        0.0
+      ],
+      "wilson95": [
+        0.8620237953250198,
+        1.0
+      ]
+    },
+    "read_only": {
+      "n": 24,
+      "task_success": 24,
+      "goal_success": 24,
+      "protected_state_violations": 0,
+      "success_difference": 0.0,
+      "exact_discrete_bootstrap95": [
+        0.0,
+        0.0
+      ],
+      "wilson95": [
+        0.8620237953250198,
+        1.0
+      ]
+    },
+    "state_changing": {
+      "n": 24,
+      "task_success": 9,
+      "goal_success": 15,
+      "protected_state_violations": 6,
+      "success_difference": -0.625,
+      "exact_discrete_bootstrap95": [
+        -0.7916666666666666,
+        -0.4166666666666667
+      ],
+      "wilson95": [
+        0.21159367559548778,
+        0.5729003755732572
+      ]
+    }
+  },
+  "statistical_checks": [
+    {
+      "id": 1,
+      "check": "unit_and_pseudoreplication",
+      "status": "PASS",
+      "finding": "24 matched task units;120 arm rows are not independent observations."
+    },
+    {
+      "id": 2,
+      "check": "pairing_and_baseline",
+      "status": "PASS",
+      "finding": "Each saved raw plan and initial state is reused across all5 arms; differences use the same24 task IDs."
+    },
+    {
+      "id": 3,
+      "check": "selection_and_missingness",
+      "status": "PASS",
+      "finding": "All24 predetermined E2 requests completed and remain included;0 discarded plans or baseline failures; no outcome-dependent task replacement."
+    },
+    {
+      "id": 4,
+      "check": "endpoint_and_design_timing",
+      "status": "PASS",
+      "finding": "Frozen cover placement and goal/protected-state scoring predate all model replies; goal and constraint failures are separately retained."
+    },
+    {
+      "id": 5,
+      "check": "multiple_comparisons",
+      "status": "BOUNDARY",
+      "finding": "Four baseline contrasts are descriptive; only state-changing contrast is nonzero; no familywise significance or model-selection claim is made."
+    },
+    {
+      "id": 6,
+      "check": "interval_interpretation",
+      "status": "BOUNDARY",
+      "finding": "Wilson and task bootstrap numbers are finite constructed-task summaries, not uncertainty for a random population sample."
+    },
+    {
+      "id": 7,
+      "check": "causal_mechanism_and_confounding",
+      "status": "PASS_WITH_SCOPE",
+      "finding": "Within task, only cover destination/type changes. Across tasks, hand-built overlap/protected/slack factors explain effects; do not infer ecosystem failure prevalence."
+    },
+    {
+      "id": 8,
+      "check": "effect_size_vs_significance",
+      "status": "PASS",
+      "finding": "Primary result is15/24 fewer complete tasks(-62.5pp), with9goal failures and6protected-state violations; no p-value headline."
+    },
+    {
+      "id": 9,
+      "check": "null_and_equivalence",
+      "status": "BOUNDARY",
+      "finding": "Exact baseline-state equality in24 trials for discard/shadow/read demonstrates this implementation's invariant; bootstrap[0,0] does not establish universal equivalence."
+    },
+    {
+      "id": 10,
+      "check": "generalization_and_dependence",
+      "status": "BOUNDARY",
+      "finding": "One model,24 simple tasks/two finite domains,one plan each; templates and deterministic environment are shared. Confidence intervals do not remove this construction dependence."
+    },
+    {
+      "id": 11,
+      "check": "construct_and_cost_validity",
+      "status": "PASS_WITH_SCOPE",
+      "finding": "Measures objective task/state preservation and tool-call work. Actor/resource permission and confirmed=true are tool-level checks; scripted cover flags do not establish human consent to each decoy. No attacker inference or privacy benefit is measured; local CPU nanoseconds are not network/API latency; pure reads do not certify idempotent writes."
+    }
+  ],
+  "receipts": [
+    {
+      "task_id": "E2-I00",
+      "raw_sha256": "f7c75bdcbb8e4d7724ab5676a6439cccb97812f5b853c2e8736b41f070a7a48b",
+      "response_sha256": "64513c6ad4e2900bd5c21a7a305d1a6682ce62bea3fd615b765e95ea8107cc90",
+      "thread_id": "01a15c15-5660-7550-abf1-892db6b5b466",
+      "turn_id": "01a15c15-56e4-78d1-b467-332cce2326b5",
+      "tokens": 3249
+    },
+    {
+      "task_id": "E2-I01",
+      "raw_sha256": "fac0ac20f71c943ceea7c53a00961a79b18109ecbe6063662f7069cc2975a2d3",
+      "response_sha256": "cf45f5ab20d8c6dcad888986977fa6c2969365f037e5d282dd1f92d788da3536",
+      "thread_id": "01a15c14-3fe6-7ac2-bc18-19cc64146e1f",
+      "turn_id": "01a15c14-4078-72c1-9384-6ba7cb22d392",
+      "tokens": 3255
+    },
+    {
+      "task_id": "E2-I02",
+      "raw_sha256": "19f10ae945d76b325eba0bec536fc35299b177f9e55a04f6d5dbd9a634d9bcd1",
+      "response_sha256": "381ed5640d81ba9e94f73e1bd791d4578da4e6ddd2a4b75008525497e3a83f53",
+      "thread_id": "01a15c10-e9fe-7f43-807e-3b0259d333bd",
+      "turn_id": "01a15c10-ea6b-76e0-a9e2-2edcf506f8e8",
+      "tokens": 3249
+    },
+    {
+      "task_id": "E2-I03",
+      "raw_sha256": "9b84880fc845ff3e69aa54d94c6a5e94008167ccbfc55fbf6c7f26d29b21fc14",
+      "response_sha256": "d1d185f4feffc159961e420c1ca8ad81dca2e81c7d5f795776745c28c63b7fc6",
+      "thread_id": "01a15c11-a622-7da2-8693-13b717d086a9",
+      "turn_id": "01a15c11-a682-74c3-9050-f484aa006e47",
+      "tokens": 3249
+    },
+    {
+      "task_id": "E2-I04",
+      "raw_sha256": "69be70e83fc2dc7f2d3d4a8c81078e6fac6bf382cbd0cea464cf7b421d50e763",
+      "response_sha256": "c7a16187f50db858cf2b0f1d2b36350bad0463b365c6e7245bf6ffcdf2cc8186",
+      "thread_id": "01a15c14-7064-7e73-a005-1f7d3b326e9b",
+      "turn_id": "01a15c14-70e7-7b30-9343-089261a95536",
+      "tokens": 3249
+    },
+    {
+      "task_id": "E2-I05",
+      "raw_sha256": "8fa28952353e9b24bb9b22fb18817d5432a55cb0ed6cd2b8e6141361ab6234e1",
+      "response_sha256": "7a3ab8c00db5fe6574f916cc5a44ee249618577549d0ad776be9704d951b34e9",
+      "thread_id": "01a15c15-f0f3-7990-b24d-9b0d2c639974",
+      "turn_id": "01a15c15-f167-7930-9160-8c965f9d8698",
+      "tokens": 3255
+    },
+    {
+      "task_id": "E2-I06",
+      "raw_sha256": "ace7259b481e5c5a4fb66f6ad51044be628fc448f26445d48b29b3858105e58f",
+      "response_sha256": "b01c38fcb716e1d099fba642cca8257308cc87410fc949b6c47e86ad0bcbde4c",
+      "thread_id": "01a15c13-b06f-7073-9576-584abebed181",
+      "turn_id": "01a15c13-b0f7-79b1-b731-ffaf9a667f41",
+      "tokens": 3249
+    },
+    {
+      "task_id": "E2-I07",
+      "raw_sha256": "b56085f82cc57380d19cfc894a6100de525d413f6333cdd2353d4d41773459a7",
+      "response_sha256": "8dc3e87a63f1eec72ca585fd3be73570e9051cec5a582c9fc69ab4dcc8a46f32",
+      "thread_id": "01a15c14-28fa-75b2-8241-0a57b3089ad3",
+      "turn_id": "01a15c14-2975-7602-82f9-f145f0b84173",
+      "tokens": 3249
+    },
+    {
+      "task_id": "E2-I08",
+      "raw_sha256": "8ab60ee7f1c374fd911c0de9d82d0d9b9e204c84d68c974e3539e3aecef191a5",
+      "response_sha256": "a93d5d9b17bfb509f23db2ab6c0ba2557e10e727d10f83ddf382d1f749a3f4d9",
+      "thread_id": "01a15c11-3354-7bb2-8386-60acca47c111",
+      "turn_id": "01a15c11-33db-72d1-a485-b2884dd58d77",
+      "tokens": 3249
+    },
+    {
+      "task_id": "E2-I09",
+      "raw_sha256": "427c376747494964eb2ba5676d170288cd2afb28b155e18972f9a5ba5b0845ef",
+      "response_sha256": "94a3c0c19a97329ad433ffe69e0a8d75378c5268e0f4a19230dd2dd71693fc84",
+      "thread_id": "01a15c12-8f85-7b41-9da0-093beff9c6c7",
+      "turn_id": "01a15c12-9017-7fc0-924f-758e9d91c114",
+      "tokens": 3255
+    },
+    {
+      "task_id": "E2-I10",
+      "raw_sha256": "6bc1fafe5cfb493660f6059c8158e108d2b0b4ab12576faf6f22644f3660e22f",
+      "response_sha256": "091353479d7ec99135ca596bd19541da9404ccf52ad02f16bfafa81fce06679a",
+      "thread_id": "01a15c10-94c6-7f21-851f-5c73530bcf54",
+      "turn_id": "01a15c10-9566-7611-9ce6-e72496908a34",
+      "tokens": 3249
+    },
+    {
+      "task_id": "E2-I11",
+      "raw_sha256": "a9785bf3f42a9d8777023c40966397436f8e4a484b10d1c0a93e6e10a3982c59",
+      "response_sha256": "363a88bff377de86b9a55d56dbdb543eed5a8c4adaee1db3d48fede08d3ccb1a",
+      "thread_id": "01a15c12-403a-7103-8c21-b3df8292fb25",
+      "turn_id": "01a15c12-40b6-7251-87a2-f548137e6757",
+      "tokens": 3249
+    },
+    {
+      "task_id": "E2-C00",
+      "raw_sha256": "87fa29e56890039f79f5bebde5d96e64fd89d36e9ee4851f78cfa1ea76753d21",
+      "response_sha256": "7b8025e2ebbf593f42e2ba405ba063207ce07f3d95c7d57008dfd7f77dcd8983",
+      "thread_id": "01a15c15-6c17-7f71-bc30-a69792872b4f",
+      "turn_id": "01a15c15-6ca3-75a1-8927-4c5861a976fd",
+      "tokens": 3186
+    },
+    {
+      "task_id": "E2-C01",
+      "raw_sha256": "6347740a9f4ecd5edbe7d002c99e2b43adf1e98f008c220469ec4a53f79c1f96",
+      "response_sha256": "0bae82d13baa30469b4cb4e8074cd2ef38da3bd7fcc058ae9589c2f9c99fed50",
+      "thread_id": "01a15c16-57da-76a0-8040-bf68c525b596",
+      "turn_id": "01a15c16-5876-7af3-9181-a32b8de895e9",
+      "tokens": 3192
+    },
+    {
+      "task_id": "E2-C02",
+      "raw_sha256": "a2e987f671e276381ea2bfb6fcc26d5bf58ece611eb069dbf3c09d0888e5643a",
+      "response_sha256": "93f8ab9990c1149fdabdc5423c49b093551df7dd205821a814fbb512e6238bcf",
+      "thread_id": "01a15c13-e400-7723-9a97-8c51eb8f582b",
+      "turn_id": "01a15c13-e47d-7181-8b50-eada07f63147",
+      "tokens": 3186
+    },
+    {
+      "task_id": "E2-C03",
+      "raw_sha256": "be2025883736e9901bdaf51214e5cf8649a383ec818382652538cf8e5908e7fb",
+      "response_sha256": "762e949332bf6d641b4910af5a6f122f1f389833cf45d14e6a97511a82d2cef5",
+      "thread_id": "01a15c12-ea17-7b63-ad40-fd91f38f0b30",
+      "turn_id": "01a15c12-ea9d-70d0-b4d9-637e56ffe4ad",
+      "tokens": 3186
+    },
+    {
+      "task_id": "E2-C04",
+      "raw_sha256": "7c7b2a9ebdbd7fc854f9b9d4a9f6bdea0d1dd58f9154219c024e9cdf4cb7c3a3",
+      "response_sha256": "5fddcbd13e08dd8552d70ce5a295d9ff841d018acebe824d15d001e09b27c37f",
+      "thread_id": "01a15c14-a11d-74b2-a254-66d5d4185a1d",
+      "turn_id": "01a15c14-a1a3-7cb3-b221-af58058ba423",
+      "tokens": 3186
+    },
+    {
+      "task_id": "E2-C05",
+      "raw_sha256": "a3624b2e057fd53251c2e26dcc4548c89c73b7431e87026f0ea02cc40233694e",
+      "response_sha256": "e328e6da7cc938698a411cb71ab684620fa05d8c63ee1e8268b9af37c0c09556",
+      "thread_id": "01a15c13-fb5f-7af3-94d8-7e8faab91d70",
+      "turn_id": "01a15c13-fbf5-7152-8b8d-0298184ef629",
+      "tokens": 3192
+    },
+    {
+      "task_id": "E2-C06",
+      "raw_sha256": "b710fc244c014714d39f0b07bfa5cb5d689f8c3b3ab65a251e5ca007ead185d4",
+      "response_sha256": "ae529135b714495b22550d868c1a4aa705fe435fa2b2c5bbbdea05c22e6e8f39",
+      "thread_id": "01a15c13-7c27-7f30-b08f-c83e9ee0b158",
+      "turn_id": "01a15c13-7cab-7413-bca4-6a5b03102d80",
+      "tokens": 3186
+    },
+    {
+      "task_id": "E2-C07",
+      "raw_sha256": "f8040a5771a38806ecf4d5bfda6586991b5fc9e9b2c3ab49c055538a47fc6440",
+      "response_sha256": "c9e18f7ed681dc1bded0eff38e90dfd5a5b3c0a6aeeadbe6b9ab83750bf78860",
+      "thread_id": "01a15c16-d625-75d0-b4c2-e306726b611d",
+      "turn_id": "01a15c16-d6a8-7bd3-900f-3c6a869e7632",
+      "tokens": 3186
+    },
+    {
+      "task_id": "E2-C08",
+      "raw_sha256": "1979661725c3ae9bd74e7892b8364cf6b569e933331608c3e175bd2d2d31c80f",
+      "response_sha256": "61620fb6114a0dd0c489d502b50c14c18d9ba732a381996237ce8b2bd64f107e",
+      "thread_id": "01a15c15-a33f-7231-848e-ba00ddd7fd95",
+      "turn_id": "01a15c15-a3d4-7bd0-92d0-eb6c63726b8d",
+      "tokens": 3186
+    },
+    {
+      "task_id": "E2-C09",
+      "raw_sha256": "c074ccfba93c7665569f28858cc01cb7a0e8419f34a659be10789dd210eec78c",
+      "response_sha256": "77a1f9bc6b972679c5f61e1e0d84c6fe6a5964ecd1c1fa8a160cf2c86243dde5",
+      "thread_id": "01a15c14-13d7-7e92-b91f-30f90acbaa12",
+      "turn_id": "01a15c14-145a-7771-b813-abfbe00cc320",
+      "tokens": 3192
+    },
+    {
+      "task_id": "E2-C10",
+      "raw_sha256": "0cfa24ba0a08637ec96a156bc8e5ddb45d10d0d79d442a98cc8d896ad17678d1",
+      "response_sha256": "8b665df1177336c3df1ba73123d56fe4a023e2eb0e95037552f1e213dd261c80",
+      "thread_id": "01a15c12-136e-78e0-851d-363b203c0ac8",
+      "turn_id": "01a15c12-13e7-7e33-a29e-2036311cc7ae",
+      "tokens": 3186
+    },
+    {
+      "task_id": "E2-C11",
+      "raw_sha256": "329af30985a4bb1f7e65c0a82710e591bd200b46b1b98cddce71dff3656cbb19",
+      "response_sha256": "57c924e1c3790d13bc85a740e22df5962d6d858c7b68af7999d7784059de29a3",
+      "thread_id": "01a15c14-890c-7842-bbfd-8f87cd7039e3",
+      "turn_id": "01a15c14-898d-7c53-9694-a5c30f68f122",
+      "tokens": 3186
+    }
+  ],
+  "input_file_sha256": {
+    "freeze": "4b1fb4c4c77769afa6ef8d4862b160242439e5759557779f88d0228583ad6496",
+    "tasks": "8125e8277fcff8e1e30a777cbb81234655716adddd0f8145de2596131e9f5f48",
+    "plans": "16baf9fabcc67520923d94fe07b8dd6150176492f342a602fb0d8745164165dc",
+    "results": "eda014c8df2537defee8fdd701fa3b2950666bce80e9a395d80be6717e862838",
+    "summary": "9d1ca9fbc84a6de3d0eb820ec88a3bde58139197e6d1ca9e8339c4463387851d"
+  },
+  "interpretation": "Saved actual Luna plans reproduce the predicted finite-state mechanism: live cover competes for target state or changes protected resources; discard,clone-isolated andpure-read arms preserve the baseline. This is a controlled plan-replay mechanism result, not an autonomous-agent evaluation or privacy-defense effectiveness result.",
+  "review_identity": "Separate deterministic reconstruction by the same AI-assisted project workflow; not independent human coding or external researcher validation."
+}

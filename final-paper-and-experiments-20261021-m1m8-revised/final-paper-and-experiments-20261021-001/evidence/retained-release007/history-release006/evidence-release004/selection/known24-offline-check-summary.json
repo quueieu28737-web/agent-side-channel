@@ -1,0 +1,71 @@
+{
+  "schema": "known24-offline-export-field-audit-summary/v1",
+  "date": "2026-10-20",
+  "execution": "Bundled Python, -B check_known24_offline.py; read-only JSON inputs, stdout only, successful exit",
+  "script": "evidence/reviewer-deployment-cases-20261020-001/selection/check_known24_offline.py",
+  "seed_n": 24,
+  "ieee_export_frame_unique_records": 2001,
+  "acm_export_frame_publication_groups": 13201,
+  "exact_export_presence_counts": {"IEEE":1,"ACM":0},
+  "indexed_online_all_rows": "NR_NOT_QUERIED",
+  "native_field_eligibility_all_rows": "NR_NOT_EMULATED",
+  "same_title_conflicting_explicit_doi_matches": [],
+  "input_hashes": {
+    "evidence/unified-2026-10-08/screening/known-item-query-audit.json": "22258748cd9c7a4610ed1c1878e5afe77354d5d74d852361aa8a7b598a072722",
+    "evidence/systematic-2026-10-08-r2/native-screening/all-native-plus-q6.json": "dd367be0a11889f2edb0e09e8fc514ec1cdd22ea9a7b3d597a04ff3cb66cd3b7",
+    "evidence/acm-screening-20261009-side-003/frame.json": "42e9872c172e43208138b7fd7c06e00c4795cec94eb42bc9f4437c29b8d27c66",
+    "evidence/closure-2026-10-08/native/query-receipts.json": "f6e5a17e2f11bad3c351619038f46afd71a8df906d3787cac9e877d3569147a1",
+    "evidence/systematic-2026-10-08-r2/native/query-receipt.json": "152bb9c4b85e68ccdff67084855b1e014ba4c0fcfd6976e33540bc82c49d0bbc"
+  },
+  "column_contract": {
+    "ieee_present": "Exact DOI or normalized exact title without conflicting explicit DOI in saved IEEE frame",
+    "acm_present": "Same rule in final saved13201-group ACM frame; not earlier partial4258 frame",
+    "literal_seed_title_queries": "Strict word-boundary and exact phrase coverage in fixed seed title only. Empty does not mean native query ineligible.",
+    "lexical_field_eligibility": "For missing exports NR_FOR_DATABASE_FIELDS; for the sole found seed, actual exported title+abstract strict-literal check below. This is not native engine emulation."
+  },
+  "rows": [
+    {"seed":"agentprint2025","ieee_present":false,"acm_present":false,"literal_seed_title_queries":[]},
+    {"seed":"uitraces2026","ieee_present":false,"acm_present":false,"literal_seed_title_queries":[]},
+    {"seed":"jeong2026wra","ieee_present":false,"acm_present":false,"literal_seed_title_queries":[]},
+    {"seed":"wang2026fpagent","ieee_present":false,"acm_present":false,"literal_seed_title_queries":["Q2"]},
+    {"seed":"weiss2024prompt","ieee_present":false,"acm_present":false,"literal_seed_title_queries":[]},
+    {"seed":"promptpeek2025","ieee_present":false,"acm_present":false,"literal_seed_title_queries":[]},
+    {"seed":"netecho2025","ieee_present":false,"acm_present":false,"literal_seed_title_queries":[]},
+    {"seed":"earlybird2025","ieee_present":true,"acm_present":false,"literal_seed_title_queries":[]},
+    {"seed":"inputsnatch2024","ieee_present":false,"acm_present":false,"literal_seed_title_queries":["Q1"]},
+    {"seed":"whisperleak2025","ieee_present":false,"acm_present":false,"literal_seed_title_queries":[]},
+    {"seed":"spillbeans2025","ieee_present":false,"acm_present":false,"literal_seed_title_queries":[]},
+    {"seed":"spliceleak2026","ieee_present":false,"acm_present":false,"literal_seed_title_queries":["Q2"]},
+    {"seed":"timewilltell2024","ieee_present":false,"acm_present":false,"literal_seed_title_queries":[]},
+    {"seed":"prompt_echo2026","ieee_present":false,"acm_present":false,"literal_seed_title_queries":["Q1"]},
+    {"seed":"gao2025iknow","ieee_present":false,"acm_present":false,"literal_seed_title_queries":[]},
+    {"seed":"wei2024speculation","ieee_present":false,"acm_present":false,"literal_seed_title_queries":[]},
+    {"seed":"gu2026behindbars","ieee_present":false,"acm_present":false,"literal_seed_title_queries":[]},
+    {"seed":"gu2025promptcaching","ieee_present":false,"acm_present":false,"literal_seed_title_queries":[]},
+    {"seed":"kang2026whoseagent","ieee_present":false,"acm_present":false,"literal_seed_title_queries":["Q2"]},
+    {"seed":"dangol2026workflow","ieee_present":false,"acm_present":false,"literal_seed_title_queries":[]},
+    {"seed":"abubakar2026contention","ieee_present":false,"acm_present":false,"literal_seed_title_queries":[]},
+    {"seed":"shahriar2026agenttell","ieee_present":false,"acm_present":false,"literal_seed_title_queries":[]},
+    {"seed":"pouryousef2026traffic","ieee_present":false,"acm_present":false,"literal_seed_title_queries":[]},
+    {"seed":"carlini2024remote","ieee_present":false,"acm_present":false,"literal_seed_title_queries":[]}
+  ],
+  "actual_field_check": {
+    "seed":"earlybird2025",
+    "doi":"10.1109/tifs.2025.3622954",
+    "field_scope":["exported title","exported abstract"],
+    "field_text_sha256":"c96100c0bf7e86d1061f44ed25ebc19453ddede7a9a5b4dc161b59b9d639f62c",
+    "records":[
+      {"id":"IEEE-Q1-020","pointer":"evidence/closure-2026-10-08/native/ieee-Q1-screening.json#/records/19","literal_groups_satisfied":false,"matched_terms":[["LLM"],[]]},
+      {"id":"IEEE-Q3-004","pointer":"evidence/closure-2026-10-08/native/ieee-Q3-screening.json#/records/3","literal_groups_satisfied":false,"matched_terms":[[],["privacy","leakage","attack"]]},
+      {"id":"IEEE-Q6-P1-074","pointer":"evidence/systematic-2026-10-08-r2/native-screening/all-native-plus-q6.json#record_id=IEEE-Q6-P1-074","literal_groups_satisfied":false,"matched_terms":[[],[]]}
+    ],
+    "interpretation":"Actual retrieval despite literal mismatch is not a contradiction: strict local literals do not emulate native stemming or all indexed metadata. Do not use literal failure as exclusion or query-ineligibility evidence."
+  },
+  "limitations":[
+    "Absent export is not absent online index.",
+    "No abstracts inferred for absent records; their database-field eligibility stays NR.",
+    "No fuzzy version-family matching; family coverage may differ from strict exact-identity presence.",
+    "No recall, false-negative rate or independent-human verification is estimated.",
+    "No new query, model, experiment or screening decision occurred."
+  ]
+}

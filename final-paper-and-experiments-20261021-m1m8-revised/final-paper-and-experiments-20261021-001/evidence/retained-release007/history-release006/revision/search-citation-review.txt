@@ -1,0 +1,243 @@
+SEARCH / CITATION / SUPPLEMENT REVISION REVIEW
+Date: 2026-10-21
+Reviewer: Codex subagent search_scope_review; AI-assisted read-only source audit.
+Scope: existing saved evidence and active manuscript. No new search, browser,
+model, experiment, source classification, main.tex, section or bibliography edit.
+This report is an implementation aid, not independent human validation.
+
+1. METHOD POSITIONING: APPROVED WITH PRECISE BOUNDARIES
+
+The defensible final presentation is purposive, mechanism-oriented synthesis,
+supplemented by fixed one-hop backward/forward citation tracing. Do not describe
+it as an exhaustive systematic review or prospectively preregistered search.
+The current revised sections/03-methodology.tex already uses the defensible
+description and distinguishes acquisition frames from the 60 coded families.
+
+Three actual routes exist, not just IEEE/ACM:
+(a) native IEEE Xplore/ACM Digital Library exports;
+(b) targeted preprint/proceedings discovery and exact-title/DOI primary lookup;
+(c) fixed 40-seed, nonrecursive citation tracing.
+Targeted records genuinely include arXiv, USENIX, NDSS and PMLR. This establishes
+targeted acquisition, not exhaustive searches of every venue or its proceedings.
+
+Source paths:
+- evidence/search-update-2026-09-12.md
+  Saved agent traffic/fingerprinting and MCP timing queries; arXiv, USENIX/NDSS
+  filters and PMLR primary-source checks.
+- evidence/closure-2026-10-08/novelty/search-log.json
+  Bounded six-batch recent-work/novelty query log.
+- evidence/closure-2026-10-08/nr/supplementary-query-log.json
+  Exact-title supplementary queries.
+- evidence/reviewer-deployment-cases-20261020-001/selection/native-query-source-index.json
+  Native query receipts and exported partition paths.
+- tables/native-search-queries.tex
+  Executable native query presentation; retain in main compact appendix or
+  separately supplied supplement, with an accurate in-paper pointer.
+- evidence/systematic-2026-10-08-r2/citations/README-FINAL.txt
+- evidence/systematic-2026-10-08-r2/citations/flow-and-verification-final.json
+- evidence/systematic-2026-10-08-r2/citations/seed-inventory40-final.json
+- evidence/systematic-2026-10-08-r2/citations/backward2237-screen-index.json
+- evidence/systematic-2026-10-08-r2/citations/forward-final-decisions.json
+
+Citation denominator contract:
+- 2,237 = reference occurrences screened at title/reference level, not full
+  readings and not unique paper count.
+- 40 forward seed lookups attempted; 38 resolved to 42 index records.
+- 25 returned citation edges map to 24 distinct returned citing-work records.
+- Later discoveries were not recursively added. No saturation claim follows.
+- NetEcho and PromptEcho unresolved seed matches remain visible.
+
+Known-paper check:
+- evidence/unified-2026-10-08/screening/known-item-query-audit.json is the fixed
+  24-paper manifest: baseline18 + updates3 + AgentTell/traffic/Carlini-Nasr.
+- evidence/reviewer-deployment-cases-20261020-001/selection/known24-offline-check-summary.json
+  verifies 1/24 IEEE and 0/24 ACM saved-export presence; online indexing and
+  native-field eligibility remain NR for the missing records. This is not recall.
+
+The active manuscript does not claim a completed systematic literature review.
+Keep 'systematize', 'systematization' and the title of Cai's systematic WF paper:
+these are knowledge-treatment terms, not claims about search completeness.
+Do not rewrite sealed files merely because a historical folder is named systematic.
+Move historical acquisition counts/logs out of the main argument, but retain one
+plain sentence that the purposive corpus is not an exhaustive field census.
+
+2. REFERENCE [12] / ZEROPRINT: MINIMAL ATTRIBUTION REPAIR
+
+In the previous build, output/pdf/ieee-sp2027-sok-20261020-docx-review-001/
+survey-sp2027.aux maps [12] to scheinert2026rca, [13] to shao2026zeroprint,
+[14] to leshin2026endpoint and [15] to zhu2026stepfinder.
+The former section03 citation group attached all four to the ZeroPrint sentence.
+This created an attribution ambiguity, not evidence that RCA supports ZeroPrint.
+
+Correct form (already applied by parent in current section03):
+Metric-only fault localization qualifies as a diagnostic component despite
+operator authorization \cite{scheinert2026rca}.
+ZeroPrint's response differences, endpoint-content fingerprints and StepFinder's
+mixed view remain adjacent
+\cite{shao2026zeroprint,leshin2026endpoint,zhu2026stepfinder}.
+
+Saved primary sources:
+- evidence/perplexity-adjudication-20261015-side-001/sources/rca-arxiv2603.02057v1-rendered.txt
+- evidence/perplexity-adjudication-20261015-side-001/sources/zeroprint-arxiv2510.06605v2-rendered.txt
+- evidence/perplexity-adjudication-20261015-side-001/sources/endpoint-arxiv2603.19022v1-rendered.txt
+- evidence/perplexity-adjudication-20261015-side-001/continuation-002/sources/stepfinder-arxiv.txt
+RCA v1 is 2 March 2026; ZeroPrint v2 is 21 January 2026; endpoint v1 is
+19 March 2026. These are source version dates, not our access dates.
+Do not infer an access timestamp merely from '20261015' in the directory name.
+Numeric reference numbers must be regenerated, never manually preserved.
+
+3. VERSION / ACCESS-DATE NORMALIZATION USING EXISTING RECEIPTS
+
+Successful receipts below support 'archived access: 18 October 2026' and exact
+version binding. They do not establish complete human reading; acquisition
+receipts retain ACQUIRED_NOT_YET_READ and later source reviews carry read scope.
+Base: evidence/recent-agent-review-20261018-001/sources/<slug>.receipt.json
+
+slug                  consulted arXiv version
+agenttell-v1          2609.32915v1
+ahb-v1                2604.09574v1
+coding-v1             2601.17406v1
+dangol-v3             2606.07150v3
+earlybird-v5          2409.20002v5
+fpagent-v1            2605.01247v1
+netecho-v1            2510.25472v1
+persona-decisions-v1  2504.00727v1
+safekv-v2             2508.08438v2
+sigleak-v1            2607.25560v1
+speculation-v4        2411.01076v4
+splice-v1             2606.21842v1
+symdiag-v1            2608.08786v1
+time-v1               2412.15431v1
+traffic-v1            2609.31877v1
+uitraces-v1           2605.14786v1
+whisper-v1            2511.03675v1
+
+wildauth.receipt.json is SOURCE_UNAVAILABLE_NO_RETRY, not a successful Oct18
+access. Do not include it in this successful-access list.
+
+evidence/reviewer-closure-20261019-002/source-receipts.json supports successful
+19 October 2026 captures for LeakyLMs 2607.20723v1, KVGov 2608.09225v1,
+data-centric agent security 2606.26627v1, and the official NeurIPS2025 AgentDAM
+proceedings page. Preserve AgentDAM's published citation.
+
+evidence/reviewer-substantive-20261020-001/new-prior-work-review.json records
+20 October 2026 inspection of Banerjee 2411.13459v1 and Forough 2605.03213v2.
+sources/browser-primary-receipt.txt is a partial browser extraction, not a raw
+whole-source HTML hash; the HTTP capture failed and its failed receipt remains.
+Forough's saved browser excerpt is especially limited. Use the recorded version
+and dated inspection scope, but do not claim a fully archived primary body.
+
+Recommended normalization: exact arXiv version in bibliography/source locator;
+actual archived access or inspection date in evidence ledger. Do not invent a
+uniform 21 October access date. Keep journal bibliographic identity separate
+from evaluated source version (e.g. Early Bird TIFS publication plus consulted
+arXiv v5). Do not silently assume publisher/preprint numerical equivalence.
+No added generic 'single-version, non-peer-reviewed preprint' limitation is
+needed or recommended; version-bound attribution handles the relevant issue.
+
+4. NEAREST-WORK INCREMENT: RESULT-TO-DECISION, NOT FIRST COMPOSITION WARNING
+
+Accurate short statement:
+Banerjee et al. organize how software/hardware mechanisms compose and change
+threat assumptions; Forough et al. examine which confidential-computing
+guarantees extend from inference to agent memory, actions and coordination.
+We use those insights to answer a narrower operational question: whether a
+particular measured result supports a specified receiver, execution and cost
+claim. The added output is the result-to-decision mapping demonstrated by the
+three cases, with explicit conditions for reuse.
+
+Current revised sections/26-corpus-map.tex and tables/related-sok-matrix.tex
+are aligned with this statement. Do not claim that either prior work lacked
+deployment awareness or that cross-layer composition itself is newly discovered.
+Evidence: the new-prior-work-review.json and browser-primary-receipt.txt above.
+
+Direct-evidence roles must remain explicit:
+- NetEcho is the direct downstream re-emission instance in this collection.
+- AHB is the measured mobile-action state-change instance; its endpoint is
+  human/agent detection, not private-goal inference.
+- Dangol supplies the transport/decoy comparison, not an AHB replication.
+- UI Traces/SIGLEAK supply two different preserved-feature examples.
+The 60-family total does not supply 60 independent tests of these mechanisms.
+Keep one concise source-dependence line, not repeated apologetic paragraphs.
+
+5. MOVING SECTION8 / APPENDIXG / AUDIT MATERIAL: DEPENDENCY CHECKLIST
+
+Main source now excludes section16 and old appendices and points to a new
+sections/30-reproducibility-guide.tex. At this audit's intermediate read the
+new guide was not yet present; root is editing concurrently. This is a final
+build check, not a claim of a completed-build error.
+
+Still referenced from active main sections:
+- sections/03-methodology.tex -> app:search
+- sections/04-scope.tex -> app:notation
+- sections/11-discussion.tex -> app:claim-sensitivity
+- sections/27-intervention-contracts.tex -> app:defense-comparison
+Define these in the compact guide if their promised content is actually there,
+or replace the references with stable named Supplement S1/S6/etc. references.
+Do not leave cross-document LaTeX refs unresolved or retain a label whose prose
+promises a table that is no longer in that document.
+
+Keep together in the standalone supplement:
+- sections16/17 plus public-trace results, H2 controls, field-permission and
+  failure-stratification tables and their labels;
+- sections29 plus original joint endpoint, interval, negative result and HOLD
+  treatment (former AppendixG);
+- old selection-flow/native-query tables and section22 search details;
+- section19 family index / RQ sensitivity;
+- section21 retained pilots and failures;
+- section23 defense inventory / unbound-assertion table;
+- section24 source-deletion/claim sensitivity.
+
+Supplement dependencies back to main:
+- section19 refers to tab:result-lineage.
+- section24 refers to tab:source-dependencies.
+Restate the necessary mapping locally or use explicit document names; no silent
+cross-PDF ref. Keep the supplement independently buildable and inspectable.
+
+Keep tables/corpus-citations.tex in main if the full60 citation inventory is
+intended there. Moving its nocite block only to the supplement changes main
+bibliography membership and numeric numbering, not merely page placement.
+
+Main-paper minimum retained disclosures:
+(a) Purposeful source collection, three acquisition routes, source endpoint,
+    and one non-exhaustive-coverage sentence.
+(b) AI-assisted coding is not independent human double coding.
+(c) The negative SCOPE comparison: 32.16% vs45.12--45.31% on the original joint
+    endpoint; no reviewer-performance benefit claimed. Current section04 keeps
+    this correctly and also retains the40.63% flat-checklist comparator.
+(d) If H2 is mentioned at all, keep its archive-receiver boundary. Suitable
+    one-line version: 'A supplementary archive-receiver example finds a
+    0.3447-nat predictive increment from sequence features; matched-task
+    uncertainty and unverified website capture limit deployment interpretation.'
+    It is not required as an abstract/headline contribution. Full H1/H2/H3 and
+    failed Agent/pilot outcomes remain unchanged in the supplement.
+(e) Keep the direct-source roles in item4 and the four unbound-defense-quantity
+    exclusions in a compact main line or guide; avoid implying a complete
+    cross-defense ranking after moving the inventories.
+
+Final recommendation: integrate these bounded attribution/structure changes;
+do not reopen broad acquisition, add models/experiments, or manufacture new
+reviewer prerequisites. The manuscript's positive product is the three usable,
+source-linked deployment decisions, not an exhaustive search certificate.
+
+6. SUBSEQUENT AUTHORIZED BIBLIOGRAPHY NORMALIZATION
+
+After the read-only report above, root explicitly authorized minimal note/URL
+edits in refs.bib and refs-final-additions.bib. Applied on 21 October 2026:
+- refs.bib: uitraces2026, netecho2025, earlybird2025, whisperleak2025,
+  timewilltell2024, spliceleak2026, addagada2026kvgov, wang2026fpagent,
+  wei2024speculation, dangol2026workflow, shahriar2026agenttell,
+  pouryousef2026traffic.
+- refs-final-additions.bib: newsham2025personadecisions, zhu2026turing,
+  geng2026sigleak, chu2025safekv, ghaleb2026codingfingerprint, cui2026symdiag,
+  majidi2026leakylms, banerjee2024compound, forough2026secrets,
+  lahjouji2026datacentric.
+These 22 entries use the version/date bindings in item3. The 17 successful
+Oct18 captures and three successful Oct19 captures say archived access;
+Banerjee and Forough say inspected 20 October 2026, not full archived access.
+Published identities and DOIs for Early Bird and SymDiag are preserved.
+The parent's cover2006elements entry was untouched.
+No dates were added to WildAuth (failed receipt), RCA/ZeroPrint/endpoint/
+StepFinder (version dates do not prove access dates), or other entries outside
+the inspected receipt set. This is a bounded normalization, not a claim that
+all remaining entries lack evidence elsewhere in the project.

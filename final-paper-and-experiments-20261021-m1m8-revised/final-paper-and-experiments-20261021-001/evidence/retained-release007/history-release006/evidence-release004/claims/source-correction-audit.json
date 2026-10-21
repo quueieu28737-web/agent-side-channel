@@ -1,0 +1,116 @@
+{
+  "schema": "source-locator-correction-audit/v1",
+  "date": "2026-10-20",
+  "actor": "internal same-AI-family source audit; not independent researcher validation",
+  "authorization_scope": "Only active Dangol source locators and fresh per-session identifier terminology, plus a new release-source overlay; old sealed CSVs unchanged",
+  "source": {
+    "citation_key": "dangol2026workflow",
+    "version": "arXiv:2606.07150v3",
+    "url": "https://arxiv.org/html/2606.07150v3",
+    "original_path": "evidence/recent-agent-review-20261018-001/sources/dangol-v3.txt",
+    "original_sha256": "fae89faede5437f3449de3c641d93fd352d7e7eaa833df4ef51f91a3b5ed8039",
+    "readable_derivative_path": "evidence/reviewer-substantive-20261020-001/interventions/derived/dangol2026workflow.txt",
+    "readable_derivative_sha256": "63b176993cbe9aece315049d7bc11503f7e6ee9fc081cf5f3fdee8025bb5c426",
+    "line_number_scope": "Line numbers below refer to the unchanged readable derivative, not original HTML/source line numbering. Primary original bytes and derivative bytes are separately pinned."
+  },
+  "primary_text_windows": [
+    {
+      "start_line": 1093,
+      "end_line": 1128,
+      "locator": "Section 9.7 opening and Table 5",
+      "verified_content": "The fixed workflow population uses real a2a-sdk round-trip measurements. Table 5 itself lists HTTPS/Tor/Nym/metadata-min shim. The shim plus fresh identifiers is 0.32 and 1.62s, approximately 6x latency; it is not the separate 0.30 OHTTP cover point."
+    },
+    {
+      "start_line": 1157,
+      "end_line": 1181,
+      "locator": "Section 9.7, OHTTP paragraph after Table 5",
+      "verified_content": "The text discusses bare OHTTP, OHTTP plus shim, and then constant-stage cover with fresh per-session identifiers. The last condition reports recovery 0.30 at approximately 13x bytes and 11x latency. Removing timing features yields 0.167, a feature ablation rather than an implemented live timing masker.",
+      "short_literal_anchors": [
+        "bare OHTTP",
+        "fresh per-session",
+        "drives live recovery to"
+      ]
+    },
+    {
+      "start_line": 1171,
+      "end_line": 1173,
+      "locator": "Identifier and cover mechanism in the OHTTP paragraph",
+      "verified_content": "Cover pads every workflow to a constant stage count with fresh per-session identifiers. The inspected paper text does not supply a pooled-ID label for this condition."
+    },
+    {
+      "start_line": 1182,
+      "end_line": 1236,
+      "locator": "Sections 9.8--9.9/Table 6",
+      "verified_content": "Separate defense-aware transformed-capture frontier; 0.17 accuracy at 16.2x capture bytes. This correction does not merge it with the OHTTP population or compute a cross-mode treatment difference."
+    }
+  ],
+  "active_hash_scope": "before/after hashes below pin this narrow edit's immediate snapshots, not a final manuscript freeze. The parent is concurrently revising layout and appendices. At final read, sections/23-defense-comparison.tex had changed again to SHA256 d12a89d12eb34d3311c8eb6a2ca131cab73e3a4e559fb83646e52ddcda0b9991; this subtask did not overwrite that subsequent parent edit. The parent's final source manifest supersedes these immediate active-file hashes.",
+  "active_changes": [
+    {
+      "path": "tables/result-lineage-example.tex",
+      "before_sha256": "e93cc3c852daa7fbaedccc743cb697b7848ae44fe548ef527bd14133a85dcdbc",
+      "after_sha256": "f366599989d5b371294c8c2e828c8cab0b4d48a6ec2740e644d1bce89b06ea09",
+      "change": "Section 9.7 OHTTP paragraph after Table 5; pooled-ID replaced by fresh per-session identifiers"
+    },
+    {
+      "path": "tables/synthesis-decisions.tex",
+      "before_sha256": "f1812a8eb2006a59d0c521d36af249197beef8a21e769b1cc547c1f40605b1d1",
+      "after_sha256": "6980879bfbb159a2ccb3572207f1e721d4d3329326d5adb0098c16326fa9cb53",
+      "change": "Locate the OHTTP transport cost after Table 5"
+    },
+    {
+      "path": "tables/conclusion-source-dependencies.tex",
+      "before_sha256": "be09355e9eda47cc4a3ca424d2347d97765be20205d98e5297d0d4d2e3b2d438",
+      "after_sha256": "24bd59c36c0ae8b94c1a9ec6835b0faa1945f29f8da5eac24acc42c4df989984",
+      "change": "Separate OHTTP paragraph locator from capture Table 6"
+    },
+    {
+      "path": "tables/deployment-question-cases.tex",
+      "before_sha256": "7feccce40a30d2d86e401b7bac865fbc8c69ac65f35cbbd2b6f296c5d608fa55",
+      "after_sha256": "95ce61b2059d16d7d9362da95c85b64c88886c94d8181f7a0acd6e14ba4380e3",
+      "change": "Bind each numerical operating point to its own capture or OHTTP locator"
+    },
+    {
+      "path": "tables/receiver-intervention-matrix.tex",
+      "before_sha256": "530eb2a09f236f5b18ef312dd75b054eed0b8aa186c22c1fe98b4bd98a7181ef",
+      "after_sha256": "03e851e956fccd97c73768886474c0b44242645c3f788f1d8dd4d20bfb649138",
+      "change": "Locate the live OHTTP condition after Table 5"
+    },
+    {
+      "path": "sections/23-defense-comparison.tex",
+      "before_sha256": "61e440fcf4141333643fd73a40e1737bfb96e59a513a22ae3f9a9ba5847bdb54",
+      "after_sha256": "4f4d72787ae3f144e5ab4a349ed1a45b0f4bce942d43c947c53fe4cc4e7ff7ed",
+      "change": "Separate OHTTP paragraph locator from capture Table 6; all measured values unchanged"
+    }
+  ],
+  "no_change": [
+    "sections/11-discussion.tex",
+    "sections/27-intervention-contracts.tex",
+    "all old sealed source/field/family CSVs",
+    "reported metrics, costs, confidence intervals, family/result counts and unknown states",
+    "all original model/fit/run outputs"
+  ],
+  "package_rule": "Only the explicit new source-corrections overlay changes release cells. The packager must record transformation receipts and propagate corrected canonical scope/mechanism to derived copies rather than changing any original source hash.",
+  "model_requests": 0,
+  "fits": 0,
+  "new_experiments": 0,
+  "compilation": "Parent will rebuild and verify the changed layout; this subtask does not deliver the earlier PDF001.",
+  "refresh_records": [
+    {
+      "date": "2026-10-20",
+      "authorization": "Parent explicitly authorized a blind-packet-safe locator-only refresh; no manuscript or PDF changes",
+      "overlay_path": "claims/source-corrections.json",
+      "before_overlay_sha256": "514e195bce222815f414c5657d1fa5e4f818411687059a4c695292ab5d9949c0",
+      "after_overlay_sha256": "374e65c3048f2ee6af99bc8f5acc019bdbbbb27942c03d6213c05537dc996354",
+      "changed_fields": [
+        "DANGOL-livebinding.scope",
+        "DANGOL-livebinding.objective_task_utility.inspected_scope",
+        "DANGOL-livebinding.performance_cost.inspected_scope",
+        "DANGOL-livebinding.intervention_condition (same-testbed boundary)"
+      ],
+      "current_locator": "9.7, OHTTP paragraph after Table 5",
+      "reason": "Remove expected numerical answers and utility judgment from locator columns that may be projected into future blind forms. Preserve the source interpretation, 0.30 recovery, approximately 13x bytes/11x latency, and the distinction from Table 5 in nonblind reason fields and the preceding original source audit. As separately authorized by the parent in the same refresh, add the co-located loopback-host condition from unchanged readable derivative lines 1171-1181 (specifically 1174-1175 identify client, relay, gateway and agent on one host). This narrows the same-testbed interpretation and is not a new experiment or a real-network extrapolation. The fresh per-session identifier mechanism, every measured value, all 33 result units, status fields, old sealed source bytes and active manuscript/PDF are unchanged.",
+      "research_execution": "None; static JSON refresh only"
+    }
+  ]
+}

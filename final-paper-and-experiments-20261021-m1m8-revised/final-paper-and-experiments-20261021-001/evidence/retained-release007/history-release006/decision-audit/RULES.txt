@@ -1,0 +1,99 @@
+Result-comparison audit, 2026-10-21
+
+Purpose and authority
+This is a retrospective, AI-assisted source-coding audit of 33 already-selected
+result records, not a new experiment, an independent human validation, a
+preregistered study, a literature prevalence estimate, or an author-error rate.
+No original measurement or frozen input is modified. Compatibility concerns the
+specified inference, not the quality of a paper. The same two records can support
+one inference and fail to support another.
+
+Units and relevance (fixed before aggregation)
+The complete inventory contains all 528 unordered pairs of distinct records.
+Mechanism-question cohorts, assigned from the source mechanism before the
+comparison verdict, define the related subset: traffic-envelope mitigation,
+cache-service mitigation, behavioral humanization, local-memory mitigation,
+generator fingerprint variation, and fixed guardrail/instruction variation.
+Access control, contention noise and filter-created auxiliary observations are
+retained as singleton contextual cohorts. These are purposive relevance bins,
+not claims that their endpoints coincide. They are mutually exclusive solely to
+avoid counting a pair twice. Same-family pairs are separately reported.
+
+Inference D: descriptive comparison
+Question: may the two records be used as source-qualified observations about the
+same hidden-property / receiver-facing outcome, explicitly retaining each
+metric, mode and test population, WITHOUT numerical ranking or subtraction?
+Compatible: a coded positive endpoint-and-permission alignment supports that
+restricted comparison. Topic classification at different granularities can be
+described together, but neither its accuracies nor AUPRC are equated.
+Incompatible: the requested SAME-OBJECT comparison substitutes a component cost
+for an inference outcome, a different protected property, or a demonstrably
+different signal/permission object. It remains permissible to discuss these as
+different components; this verdict forbids only pretending they measure the same
+thing. Unresolved: the needed endpoint/permission relation is not established.
+Exact text equality or inequality is never the rule. The semantic mapping and
+positive conflict rules are explicit in semantic-coding.csv and the script.
+
+Inference P: paired effect
+Question: may one subtract the two records' outcome estimates as a paired
+intervention effect on the same defended test population? Applicability requires
+an aligned measured endpoint and a plausible same-study test population; unrelated
+studies are not fabricated into prospective paired experiments. Compatible
+requires affirmative matched-test / fitting evidence. Known distinct collection
+or execution populations are incompatible. Missing matching/fit bindings are
+unresolved. D-compatible does not imply P-applicable or P-compatible. Internal
+clean/adapted contrasts already within one record are counted separately and
+must not disappear because this inventory compares distinct records only.
+
+Inference T: deployment transfer
+Question: may an effect/cost obtained under the source record's conditions be
+reused unchanged at the destination record's condition? Direction is explicit.
+For related pairs, a positively documented wrong endpoint/component/primitive
+blocks that proposed transfer. An absent empirical bridge alone is unresolved,
+never incompatible. Compatible requires a source-backed positive bridge covering
+the claimed endpoint and range, not source similarity or membership in one paper.
+The pair table reports each direction separately. There is no pooled transfer
+success rate over all 528 pairs. Source-local licenses are not cross-record
+transfer and are not counted as such.
+
+Six-check family audit
+Denominator: exactly the 16 families whose frozen status is VERIFIED_EVALUATION.
+Every family has six cells linked to source scope and result IDs. SAT means the
+item is supported for the source's scoped claim. PARTIAL means supported elements
+and an explicit unbound element coexist. NR-R means the inspected source scope
+does not report the needed element; NR-V means a source/run/version binding is
+unverified. NA means the requested kind of inference is not made/applicable.
+No blank-to-NR conversion and no total family quality score are permitted.
+C1 hidden target and protection relation.
+C2 receiver-visible fields and linkage permissions (collector fields distinguished).
+C3 protection placement and whether cover executes (offline explicitly identified).
+C4 protected-data access, fitting, matched defended test when an adaptive-protection
+inference is at issue. For fitted classifiers or calibrated thresholds, a later
+deployment claim about adaptation needs this binding even if the original paper
+did not claim adaptation resistance. NR-V does not accuse that original paper of
+failing to test a claim it never made. The two fitted attacks newly recognized in
+this audit (Speculation and TimeWillTell) are therefore kept in the applicable
+binding inventory rather than declared inherently incapable of fitting.
+C5 workloads/generator shifts actually tested, not all conceivable future shifts.
+C6 inference, objective/policy utility and applicable cost under the SAME condition.
+Component-only evaluations can satisfy their narrow scope while leaving C6 partial
+for a deployment inference. This is not an assertion that every original study
+owed a complete agent deployment experiment. Subfields separately retain utility
+kind and cost object; proxy usefulness never becomes objective task success.
+
+Verification
+The script validates 33 unique unit IDs, 22 families, 528 unordered pairs,
+symmetry/direction bookkeeping, all 16 expected evaluated families, 96 checklist
+cells, source-file existence and frozen source SHA256, row locators, unique
+coverage, nonblank reasons, and immutable input hashes before/after derivation.
+Counts are descriptive deterministic tallies. No confidence interval, p-value,
+causal effect, diagnostic sensitivity, or SCOPE-vs-checklist superiority is
+estimated by this audit. All available/source-limited distinctions remain visible.
+
+Coding disclosure
+The family audit uses one AI-assisted workflow with parallel source-reading
+assistants. They are not independent human coders, and their agreement is not
+reported as validation. Check numbers1-6 are not the manuscript's C1-C5 eligibility
+conditions. At the whole-cell level NR-R can be zero while specific utility/cost
+subfields are NR-R, because a PARTIAL cell retains both present and absent items.
+An unmeasured component-to-deployment bridge is not proof of poor component design.

@@ -1,0 +1,54 @@
+[
+  {
+    "query_id": "S1",
+    "provider": "semantic_scholar",
+    "query": "(agent | workflow) + (\"side channel\" | side-channel | fingerprinting)",
+    "page": 0,
+    "start": 0,
+    "receipt": "raw/S1-000.receipt.json",
+    "http_status": 200,
+    "total_reported": 2104,
+    "returned": 999,
+    "status": "INCOMPLETE_RESOURCE_CAP",
+    "has_next": true
+  },
+  {
+    "query_id": "S2",
+    "provider": "semantic_scholar",
+    "query": "(LLM | \"language model\") + (traffic | streaming) + (leakage | side-channel | fingerprinting)",
+    "page": 0,
+    "start": 0,
+    "receipt": "raw/S2-000.receipt.json",
+    "http_status": 200,
+    "total_reported": 120,
+    "returned": 120,
+    "status": "QUERY_COMPLETE",
+    "has_next": false
+  },
+  {
+    "query_id": "S3",
+    "provider": "semantic_scholar",
+    "query": "(LLM | \"language model\") + (padding | \"re-emission\") + (privacy | leakage | side-channel)",
+    "page": 0,
+    "start": 0,
+    "receipt": "raw/S3-000.receipt.json",
+    "http_status": 200,
+    "total_reported": 15,
+    "returned": 15,
+    "status": "QUERY_COMPLETE",
+    "has_next": false
+  },
+  {
+    "query_id": "S4",
+    "provider": "semantic_scholar",
+    "query": "(agent | LLM) + (decoy | \"cover traffic\" | \"fake actions\" | \"cover actions\")",
+    "page": 0,
+    "start": 0,
+    "receipt": "raw/S4-000.receipt.json",
+    "http_status": 200,
+    "total_reported": 287,
+    "returned": 287,
+    "status": "QUERY_COMPLETE",
+    "has_next": false
+  }
+]

@@ -1,0 +1,227 @@
+[
+  {
+    "query_id": "A1",
+    "provider": "arxiv",
+    "query": "(cat:cs.CR OR cat:cs.CL) AND submittedDate:[202301010000 TO 202610212359] AND (all:agent OR all:workflow) AND (all:\"side channel\" OR all:\"side-channel\" OR all:fingerprinting)",
+    "page": 0,
+    "start": 0,
+    "receipt": "raw/A1-000.receipt.json",
+    "http_status": null,
+    "status": "API_FAILED"
+  },
+  {
+    "query_id": "A2",
+    "provider": "arxiv",
+    "query": "(cat:cs.CR OR cat:cs.CL) AND submittedDate:[202301010000 TO 202610212359] AND (all:LLM OR all:\"language model\") AND (all:traffic OR all:streaming) AND (all:leakage OR all:\"side-channel\" OR all:fingerprinting)",
+    "page": 0,
+    "start": 0,
+    "receipt": "raw/A2-000.receipt.json",
+    "http_status": null,
+    "status": "API_FAILED"
+  },
+  {
+    "query_id": "A3",
+    "provider": "arxiv",
+    "query": "(cat:cs.CR OR cat:cs.CL) AND submittedDate:[202301010000 TO 202610212359] AND (all:LLM OR all:\"language model\") AND (all:padding OR all:\"re-emission\" OR all:\"re emission\") AND (all:privacy OR all:leakage OR all:\"side-channel\")",
+    "page": 0,
+    "start": 0,
+    "receipt": "raw/A3-000.receipt.json",
+    "http_status": null,
+    "status": "API_FAILED"
+  },
+  {
+    "query_id": "A4",
+    "provider": "arxiv",
+    "query": "(cat:cs.CR OR cat:cs.CL) AND submittedDate:[202301010000 TO 202610212359] AND (all:agent OR all:LLM) AND (all:decoy OR all:\"cover traffic\" OR all:\"fake actions\" OR all:\"cover actions\")",
+    "page": 0,
+    "start": 0,
+    "receipt": "raw/A4-000.receipt.json",
+    "http_status": 429,
+    "status": "API_FAILED"
+  },
+  {
+    "query_id": "D1",
+    "provider": "dblp",
+    "query": "agent side channel",
+    "page": 0,
+    "start": 0,
+    "receipt": "raw/D1-000.receipt.json",
+    "http_status": null,
+    "status": "API_FAILED"
+  },
+  {
+    "query_id": "D2",
+    "provider": "dblp",
+    "query": "agent fingerprinting",
+    "page": 0,
+    "start": 0,
+    "receipt": "raw/D2-000.receipt.json",
+    "http_status": null,
+    "status": "API_FAILED"
+  },
+  {
+    "query_id": "D3",
+    "provider": "dblp",
+    "query": "LLM traffic",
+    "page": 0,
+    "start": 0,
+    "receipt": "raw/D3-000.receipt.json",
+    "http_status": null,
+    "status": "API_FAILED"
+  },
+  {
+    "query_id": "D4",
+    "provider": "dblp",
+    "query": "language models traffic",
+    "page": 0,
+    "start": 0,
+    "receipt": "raw/D4-000.receipt.json",
+    "http_status": null,
+    "status": "API_FAILED"
+  },
+  {
+    "query_id": "D5",
+    "provider": "dblp",
+    "query": "LLM padding",
+    "page": 0,
+    "start": 0,
+    "receipt": "raw/D5-000.receipt.json",
+    "http_status": null,
+    "status": "API_FAILED"
+  },
+  {
+    "query_id": "D6",
+    "provider": "dblp",
+    "query": "language models padding",
+    "page": 0,
+    "start": 0,
+    "receipt": "raw/D6-000.receipt.json",
+    "http_status": null,
+    "status": "API_FAILED"
+  },
+  {
+    "query_id": "D7",
+    "provider": "dblp",
+    "query": "agent decoy",
+    "page": 0,
+    "start": 0,
+    "receipt": "raw/D7-000.receipt.json",
+    "http_status": null,
+    "status": "API_FAILED"
+  },
+  {
+    "query_id": "D8",
+    "provider": "dblp",
+    "query": "agent cover traffic",
+    "page": 0,
+    "start": 0,
+    "receipt": "raw/D8-000.receipt.json",
+    "http_status": null,
+    "status": "API_FAILED"
+  },
+  {
+    "query_id": "S1",
+    "provider": "semantic_scholar",
+    "query": "(agent | workflow) + (\"side channel\" | side-channel | fingerprinting)",
+    "page": 0,
+    "start": 0,
+    "receipt": "raw/S1-000.receipt.json",
+    "http_status": 200,
+    "total_reported": 2104,
+    "returned": 999,
+    "status": "INCOMPLETE_RESOURCE_CAP",
+    "has_next": true
+  },
+  {
+    "query_id": "S2",
+    "provider": "semantic_scholar",
+    "query": "(LLM | \"language model\") + (traffic | streaming) + (leakage | side-channel | fingerprinting)",
+    "page": 0,
+    "start": 0,
+    "receipt": "raw/S2-000.receipt.json",
+    "http_status": 200,
+    "total_reported": 120,
+    "returned": 120,
+    "status": "QUERY_COMPLETE",
+    "has_next": false
+  },
+  {
+    "query_id": "S3",
+    "provider": "semantic_scholar",
+    "query": "(LLM | \"language model\") + (padding | \"re-emission\") + (privacy | leakage | side-channel)",
+    "page": 0,
+    "start": 0,
+    "receipt": "raw/S3-000.receipt.json",
+    "http_status": 200,
+    "total_reported": 15,
+    "returned": 15,
+    "status": "QUERY_COMPLETE",
+    "has_next": false
+  },
+  {
+    "query_id": "S4",
+    "provider": "semantic_scholar",
+    "query": "(agent | LLM) + (decoy | \"cover traffic\" | \"fake actions\" | \"cover actions\")",
+    "page": 0,
+    "start": 0,
+    "receipt": "raw/S4-000.receipt.json",
+    "http_status": 200,
+    "total_reported": 287,
+    "returned": 287,
+    "status": "QUERY_COMPLETE",
+    "has_next": false
+  },
+  {
+    "query_id": "S1R",
+    "query": "(agent | workflow) + (LLM | \"language model\") + (\"side channel\" | \"side-channel\" | fingerprinting)",
+    "receipt": "raw/S1R-000.receipt.json",
+    "http_status": 200,
+    "total": 116,
+    "returned": 116,
+    "has_next": false,
+    "status": "QUERY_COMPLETE"
+  },
+  {
+    "query_id": "S4R",
+    "query": "(agent | LLM) + (decoy | \"cover traffic\" | \"fake actions\" | \"cover actions\") + (\"language model\" | browser | workflow | LLM)",
+    "receipt": "raw/S4R-000.receipt.json",
+    "http_status": 429,
+    "status": "API_FAILED"
+  },
+  {
+    "query_id": "ARXIV-A1",
+    "provider": "arxiv_native_Edge_UI",
+    "query_url": "https://arxiv.org/search/advanced?advanced=&terms-0-operator=AND&terms-0-term=%22side-channel%22&terms-0-field=all&terms-1-operator=AND&terms-1-term=%22large+language%22&terms-1-field=all&classification-computer_science=y&classification-physics_archives=all&classification-include_cross_list=include&date-year=&date-filter_by=date_range&date-from_date=2023-01-01&date-to_date=2026-10-21&date-date_type=submitted_date_first&abstracts=show&size=200&order=-announced_date_first",
+    "returned": 50,
+    "raw_file": "evidence\\controlled-revision-20261021-001\\arxiv-A1-native.json",
+    "raw_sha256": "d83c40edf4a6ea6b04880b9af36a99d64553ba65f683190bd96d60419150b1d0",
+    "status": "QUERY_COMPLETE_NATIVE_RESULTSET",
+    "date_bounds": "2023-01-01..2026-10-21 original submission",
+    "field_scope": "all fields;Computer Science including cross-lists; not limited cs.CR/cs.CL"
+  },
+  {
+    "query_id": "ARXIV-A2",
+    "provider": "arxiv_native_Edge_UI",
+    "query_url": "https://arxiv.org/search/advanced?advanced=&terms-0-operator=AND&terms-0-term=%22side-channel%22&terms-0-field=all&terms-1-operator=AND&terms-1-term=agent&terms-1-field=all&classification-computer_science=y&classification-physics_archives=all&classification-include_cross_list=include&date-year=&date-filter_by=date_range&date-from_date=2023-01-01&date-to_date=2026-10-21&date-date_type=submitted_date_first&abstracts=show&size=200&order=-announced_date_first",
+    "returned": 27,
+    "raw_file": "evidence\\controlled-revision-20261021-001\\arxiv-A2-native.json",
+    "raw_sha256": "2010d685feb7dba4fbe46102cb2532e565f8b0016836724de776bada888212d1",
+    "status": "QUERY_COMPLETE_NATIVE_RESULTSET",
+    "date_bounds": "2023-01-01..2026-10-21 original submission",
+    "field_scope": "all fields;Computer Science including cross-lists; not limited cs.CR/cs.CL"
+  },
+  {
+    "query_id": "ARXIV-A3",
+    "provider": "arxiv_native_Edge_UI",
+    "query": "traffic AND LLM",
+    "status": "ACCESS_FAILED_CDP_TIMEOUT_NO_VERIFIED_RESULT",
+    "not_counted_in_completed_frame": true
+  },
+  {
+    "query_id": "ARXIV-A4",
+    "provider": "arxiv_native_Edge_UI",
+    "query": "decoy AND privacy",
+    "status": "NOT_SUBMITTED",
+    "not_counted_in_completed_frame": true
+  }
+]

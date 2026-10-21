@@ -1,0 +1,143 @@
+{
+  "schema_version": "1.0",
+  "revision": "reviewer-deployment-cases-20261020-001",
+  "unbound_defense_assertions": 4,
+  "AHB_static_and_run_bindings_separate": true,
+  "no_source_or_code_proof_promoted_to_execution_proof": true,
+  "independent_external_validation": "NR",
+  "items": [
+    {
+      "assertion_id": "agentprint2025:quantitative-defense-binding",
+      "citation_key": "agentprint2025",
+      "status": "NR-V",
+      "verified_component": "SUPPLEMENT_RESULT_BINDING_STILL_OPEN",
+      "unresolved_required_evidence": "Main discussion points to initial mitigation analysis in supplement; a corresponding evaluated defense unit could not be bound in the inspected copy. Do not code no mitigation.",
+      "claim_action": "Do not count a measured defense or its utility/cost without locating the cited supplementary result.",
+      "positive_support_claim_ids": [],
+      "limits_claim_ids": [
+        "F2_STAGE_COST"
+      ],
+      "C1_C2_C3_depend_on_this_assertion": false,
+      "source_version": "2510.07176v1",
+      "public_source_url": "https://arxiv.org/pdf/2510.07176v1",
+      "audit_record": "evidence/side-field-closure-20261020-001/derived/remaining-bindings.json",
+      "quantitative_binding_closed": false,
+      "next_action_without_rerun": "Locate and authenticate the existing named supplemental/provider/artifact result, its condition, metric and publication binding; source text alone cannot substitute.",
+      "no_mitigation_inference_permitted": false
+    },
+    {
+      "assertion_id": "weiss2024prompt:quantitative-defense-binding",
+      "citation_key": "weiss2024prompt",
+      "status": "NR-V",
+      "verified_component": "AUTHOR_AND_VENDOR_DISCLOSURE_NOT_QUANTITATIVE_EVALUATION",
+      "unresolved_required_evidence": "Vendor defense effectiveness is asserted in disclosure narrative; no identifiable per-defense dataset/run/metric found in the scoped section. Keep source-reported confirmation distinct from evaluated privacy/cost row.",
+      "claim_action": "Deployment/confirmation narrative is source-established; do not infer zero residual attack success, latency or bandwidth.",
+      "positive_support_claim_ids": [],
+      "limits_claim_ids": [
+        "F2_STAGE_COST"
+      ],
+      "C1_C2_C3_depend_on_this_assertion": false,
+      "source_version": "Proceedings PDF; see acquisition URL/hash",
+      "public_source_url": "https://www.usenix.org/system/files/usenixsecurity24-weiss.pdf",
+      "audit_record": "evidence/side-field-closure-20261020-001/derived/remaining-bindings.json",
+      "quantitative_binding_closed": false,
+      "next_action_without_rerun": "Locate and authenticate the existing named supplemental/provider/artifact result, its condition, metric and publication binding; source text alone cannot substitute.",
+      "no_mitigation_inference_permitted": false
+    },
+    {
+      "assertion_id": "prompt_echo2026:quantitative-defense-binding",
+      "citation_key": "prompt_echo2026",
+      "status": "NR-V",
+      "verified_component": "REPORTED_PADDING_OVERHEAD_WITH_UNBOUND_METHOD",
+      "unresolved_required_evidence": "Source states3.2x/1.4x padding overhead but scoped section does not specify measurement population, insertion mode or defended attack result; component estimate exists, measured result-unit binding remains unresolved.",
+      "claim_action": "Keep3.2x/1.4x as source-reported figures only; no measured defense frontier follows. Zenodo file listing inspected; full archive retrieval did not return a path.",
+      "positive_support_claim_ids": [],
+      "limits_claim_ids": [
+        "F2_STAGE_COST"
+      ],
+      "C1_C2_C3_depend_on_this_assertion": false,
+      "source_version": "Proceedings PDF; see acquisition URL/hash",
+      "public_source_url": "https://www.usenix.org/system/files/usenixsecurity26-li-sijia.pdf",
+      "audit_record": "evidence/side-field-closure-20261020-001/derived/remaining-bindings.json",
+      "quantitative_binding_closed": false,
+      "next_action_without_rerun": "Locate and authenticate the existing named supplemental/provider/artifact result, its condition, metric and publication binding; source text alone cannot substitute.",
+      "no_mitigation_inference_permitted": false
+    },
+    {
+      "assertion_id": "gu2025promptcaching:quantitative-defense-binding",
+      "citation_key": "gu2025promptcaching",
+      "status": "NR-V",
+      "verified_component": "REPORTED_PROVIDER_CHANGE_NOT_MATCHED_BEFORE_AFTER_AUDIT",
+      "unresolved_required_evidence": "Per-user cache separation and delays proposed; provider changes reported after disclosure but no identifiable before/after defended run in inspected scope. Do not convert source-reported deployment response to a measured intervention row.",
+      "claim_action": "Retain disclosure context; no before/after privacy/utility/cost effect is estimated.",
+      "positive_support_claim_ids": [],
+      "limits_claim_ids": [
+        "F2_STAGE_COST"
+      ],
+      "C1_C2_C3_depend_on_this_assertion": false,
+      "source_version": "Proceedings PDF; see acquisition URL/hash",
+      "public_source_url": "https://raw.githubusercontent.com/mlresearch/v267/main/assets/gu25b/gu25b.pdf",
+      "audit_record": "evidence/side-field-closure-20261020-001/derived/remaining-bindings.json",
+      "quantitative_binding_closed": false,
+      "next_action_without_rerun": "Locate and authenticate the existing named supplemental/provider/artifact result, its condition, metric and publication binding; source text alone cannot substitute.",
+      "no_mitigation_inference_permitted": false
+    },
+    {
+      "assertion_id": "AHB:D1-code",
+      "citation_key": "zhu2026turing",
+      "status": "VERIFIED_STATIC_CODE_ONLY",
+      "verified_component": "VERIFIED_CONDITION_SPECIFIC_FIT",
+      "audit_record": "evidence/side-field-closure-20261020-001/derived/ahb-static-binding.json",
+      "commit": "8924fa3e687af6f264d3b91a2d2f48faf8adfd8c",
+      "source_locators": {
+        "condition_callsite": "analysis_playground.ipynb zero-based cell122",
+        "fit_helper": "calculate_roc_auc_from_feature.py lines755-827",
+        "call_chain": "calculate_roc_auc_from_feature.py lines1101-1127",
+        "saved_condition_results": "analysis_playground.ipynb cell128 text/plain output"
+      },
+      "positive_support_claim_ids": [
+        "C3"
+      ],
+      "unresolved_required_evidence": "No code-to-publication-run authentication follows; saved notebook output is not a complete Table1 run manifest.",
+      "quantitative_binding_closed": false,
+      "code_executed_this_revision": false
+    },
+    {
+      "assertion_id": "AHB:D1-run",
+      "citation_key": "zhu2026turing",
+      "status": "NR-V",
+      "verified_component": "Condition-specific fitting exists in pinned code; not an authenticated Table1 run.",
+      "audit_record": "evidence/side-field-closure-20261020-001/derived/ahb-static-binding.json",
+      "unresolved_required_evidence": "NR_V; static source and saved notebook outputs are not authenticated Table1 run provenance",
+      "limits_claim_ids": [
+        "C3"
+      ],
+      "C2_task_success_comparison_depends_on_this_detector_binding": false,
+      "quantitative_binding_closed": false,
+      "next_action_without_rerun": "Bind saved existing feature-row IDs, condition/configuration, trained artifacts, held-out rows and outputs to the exact published Table1 rows."
+    },
+    {
+      "assertion_id": "AHB:D2-paired",
+      "citation_key": "zhu2026turing",
+      "status": "NR-V",
+      "verified_component": "NOT_ESTABLISHED_IN_INSPECTED_CALL_CHAIN",
+      "audit_record": "evidence/side-field-closure-20261020-001/derived/ahb-static-binding.json",
+      "limits_claim_ids": [
+        "C3"
+      ],
+      "unresolved_required_evidence": "An existing paired comparison of baseline-trained and defended-trained detectors on the identical defended test records, with row membership and fit/tuning budgets.",
+      "quantitative_binding_closed": false,
+      "next_action_without_rerun": "Locate authenticated saved paired predictions/test-membership records; do not infer pairing from condition-wise code refits."
+    }
+  ],
+  "input_provenance": [
+    {
+      "path": "evidence/side-field-closure-20261020-001/derived/remaining-bindings.json",
+      "sha256": "e7fb452bb771bd083eac0e22dd0170e96322eaaa5d381eb883a81eeccf9cfb40"
+    },
+    {
+      "path": "evidence/side-field-closure-20261020-001/derived/ahb-static-binding.json",
+      "sha256": "a72e3f9a80728f0389ab7183772ee3b9eda7906747a0299d1be9c686bfdef0b0"
+    }
+  ]
+}

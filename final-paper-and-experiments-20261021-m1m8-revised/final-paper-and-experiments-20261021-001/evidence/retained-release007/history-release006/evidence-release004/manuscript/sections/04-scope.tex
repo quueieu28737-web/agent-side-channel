@@ -1,0 +1,20 @@
+\section{Result Records and Comparison Rules}\label{sec:scope}
+The unit of comparison is one evaluated condition, rather than a paper or a headline score. A result record binds a source version and locator to its target, receiver, intervention, attacker procedure, workload and outcomes (Table~\ref{tab:result-record}). A family can contribute several records when it reports different execution modes, protected views or cost components. This is why a valid result can answer one deployment question while leaving another unresolved.
+\input{tables/result-record-schema}
+
+\paragraph{One record, two indexing aids}
+\scope{} indexes the record's Secret/target, Channel, Observer, Pipeline and Exploitation goal. The Evidence Plane is the record's source and evaluation columns, not a second taxonomy or an evidence score. Pipeline indices distinguish hardware (P1), serving (P2), transport (P3), application/API (P4), orchestration (P5), tools/MCP (P6), environment (P7) and multi-agent communication (P8). A generating layer and a receiving layer can differ. Permission, activity, calibration access and protection relation are separate fields: an authorized fault-localization component is not thereby a confidentiality attack, and an attribution label is not automatically a protected secret.
+
+\paragraph{Three comparison outcomes}
+A \emph{compatible} comparison has evidence for the fields needed by the requested inference. An \emph{incompatible} comparison has a positively established mismatch, such as token payload versus wire bytes or stored timestamps versus executed actions. An \emph{unresolved} comparison lacks a necessary binding or transfer test. Only the affected inference is withheld: an unreported task endpoint does not invalidate a measured bandwidth cost. Table~\ref{tab:comparison-contracts} applies these outcomes to descriptive comparison, paired effects and deployment transfer.
+\input{tables/comparison-contracts}
+
+\paragraph{Missingness and adaptation}
+\NRR{} records a quantity unreported within the inspected source scope; \NRA{} records unavailable material; \NRV{} records an unverified field, version or run binding; \NA{} records inapplicability. A missing field gives an unresolved judgment, not an observed mismatch. Fitting on protected data (D1) and comparing clean- versus protected-trained procedures on the same defended test population (D2) are separate entries in the attacker column. Neither alone establishes that the observer can obtain the labeled data or afford the fitting budget.
+
+\paragraph{A complete traceable example}
+The chain below connects a family, a result, the inspected source and the deployment judgment. The same identifiers join the supplied family index, result ledger and claim links; full source hashes and reading scopes remain in the companion evidence package.
+\input{tables/result-lineage-example}
+
+\paragraph{Scope of the method claim}
+A complete structured checklist can express these same checks. The separate model-assisted comparison favors that checklist on its original joint endpoint (Appendix~\ref{app:scope-workflow-boundary}). We use \scope{} to organize the resulting knowledge; improved review accuracy, efficiency and human usability are unestablished.

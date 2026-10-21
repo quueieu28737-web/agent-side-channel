@@ -1,0 +1,33 @@
+﻿id,review_request,status,manuscript_location,evidence_location,remaining_or_boundary
+R01,三个完整部署案例，各回答决策、来源、绑定后变化、已知/待测和许可条件,IMPLEMENTED,sections/11-discussion.tex;tables/synthesis-decisions.tex,synthesis/source-evidence.csv,来源局部结果与条件迁移分开；未把条件写成新实测。
+R02,区分原论文已指出的现象与联合综合所增加的判断,IMPLEMENTED,sections/11-discussion.tex;sections/26-corpus-map.tex,synthesis/final-source-review.txt,不声称发现作者错误、普遍误解或新组成定理。
+R03,给出有条件成立的正面结论,IMPLEMENTED,sections/11-discussion.tex,claims/case-fact-map.csv,同评估人群/条件内的结果许可；新的receiver/dispatch/matching仍需桥接。
+R04,核心分支明确直接、扩展、背景以及单源依赖,IMPLEMENTED,tables/synthesis-decisions.tex;tables/conclusion-source-dependencies.tex,synthesis/source-evidence.csv,NetEcho单源re-emission；AHB单源mobile状态实例；60不作复制次数。
+R05,最终检索范围能够完成且有明确候选处置,PARTIAL,sections/03-methodology.tex;sections/22-search-audit-summary.tex,selection/selection-audit.txt,4753 prepared IDs及109重叠nominated决策行有处置；历史Q4和ACM广队列未全部全文闭环。
+R06,每库实际查询式、字段、时间及导出规则出现在提交材料内,IMPLEMENTED,tables/native-search-queries.tex,selection/native-query-source-index.json,7 IEEE和6 ACM原式；31 partition receipts；不是改良后假称已执行的新查询。
+R07,明确导出/去重规则和实际异常,IMPLEMENTED,sections/22-search-audit-summary.tex;tables/native-search-queries.tex,selection/validation-receipt.json,最终命名ACM文件已hash匹配；Q4b285/284及Q53689/3688未消失。
+R08,针对中心结论开展反例导向检索/核查,PARTIAL,sections/11-discussion.tex;sections/22-search-audit-summary.tex,synthesis/source-evidence.csv;selection/selection-audit.txt,已重读有限缓存中的正面/反向约束；本轮Edge URL识别失败，未追加在线反例检索。
+R09,已知关键论文先查索引和字段资格再评查询覆盖,PARTIAL,sections/22-search-audit-summary.tex,selection/known24-offline-check-summary.json,48数据库级导出身份检查完成；在线indexed及原生field eligibility仍NR，严格字面缺词不作未索引推断。
+R10,历史搜索/操作批次从论文主线迁出,IMPLEMENTED,main.tex;sections/03-methodology.tex;sections/22-search-audit-summary.tex,before/;manuscript.patch,保留最终方法和必要覆盖数字，未删除原始研究记录。
+R11,所有承重来源、16 mitigation family、4未决绑定独立研究者复核,EXTERNAL_REQUIRED,sections/03-methodology.tex;sections/19-final-ledger.tex,independent-review forms in companion package,真实研究者回表0；AI审查不能生成研究者身份或一致率。
+R12,所有core/adjacent边界项和高风险排除项独立复判,EXTERNAL_REQUIRED,sections/19-final-ledger.tex;sections/22-search-audit-summary.tex,claims/exclusion-review-queue.json,真实母集与盲化metadata/源索引提供，人工判断仍待回表；不把1064当全项目全新未读。
+R13,可靠性清楚区分主编码/AI复核/人工独立裁决,IMPLEMENTED,sections/03-methodology.tex;sections/10-open-challenges.tex,claims/claim-registry.json,既有17/21及332项AI审查原状态保留，不作独立研究者验证。
+R14,冻结匿名证据包有清楚入口且可复核,LOCAL_DELIVERED_SUBMISSION_ACCESS_PENDING,sections/19-final-ledger.tex,artifact/package-receipt.json,本地/对话可交付ZIP；实际投稿补充文件上传或公共匿名托管尚未执行。
+R15,family→result→source version/locator→fields→claim可追溯,IMPLEMENTED,tables/result-lineage-example.tex;sections/19-final-ledger.tex,claims/claim-registry.json;claims/field-claim-map.csv;claims/case-fact-map.csv,完整60/33/66；case facts可为额外subcondition，不能虚构canonical unit。
+R16,正文提供一个完整填好的例子和最小充分信息,IMPLEMENTED,tables/result-record-schema.tex;tables/result-lineage-example.tex,claims/source-corrections.json,Dangol live OHTTP段实际值与缺项同列；全文source hash放材料包。
+R17,H2压缩为窄而清楚的worked example,IMPLEMENTED,sections/16-public-trace-study.tex;tables/public-trace-results.tex,supplement/expanded-public-trace-protocol.tex in companion package,保留0.3447/51.29→66.26；不升级任务独立身份或普通网站捕获。
+R18,任务匹配、第一文档proxy、失败/活动、H3及H1边界完整保留,IMPLEMENTED,sections/17-public-trace-details.tex;tables/h2-controls.tex;tables/h2-failure-diagnostics.tex,saved evidence and full protocol in companion package,matched30/10/3区间跨零；所有14共同任务空；H3离线；H1零说明性。
+R19,可选新实验直接检验placement而不是继续给归档加控制,SOURCE_CASE_ROUTE_ADOPTED,sections/11-discussion.tex;sections/10-open-challenges.tex,synthesis/README.txt,按审稿允许的正反案例综合路线补强；未启动新实验、未换模型或重跑Luna。
+R20,SCOPE负结果保留原始联合终点、HOLD、条件区间和分析,IMPLEMENTED,sections/29-scope-comparison-boundary.tex,supplement/expanded-workflow-protocol.tex and workflow/ in companion package,V−T负、decision-only不能救原终点；完整token/运行历史迁材料。
+R21,有限构造任务不能外推人类审阅效果,IMPLEMENTED,sections/04-scope.tex;sections/29-scope-comparison-boundary.tex,workflow/saved in companion package,固定8模板/512roots/11nodes/4configs；未证人类效率或SCOPE普遍劣势。
+R22,正文重点改为真正相关部署问题，避免0/33印象,IMPLEMENTED,sections/27-intervention-contracts.tex;tables/deployment-question-cases.tex,empirical/derived-001/deployment-subset-audit.json,33=26适用问题记录+7背景；26仍异质且retrospective，不构造0/26失败率。
+R23,逐部署问写已测/缺测/阻止哪个判断,IMPLEMENTED,tables/deployment-question-cases.tex,empirical/derived-001/mitigation-question-subset.csv,WRA、NetEcho、Dangol、AHB、cache机制、Splice六问。
+R24,统一SCOPE/Evidence Plane/元组为一个result record,IMPLEMENTED,sections/04-scope.tex;tables/result-record-schema.tex,claims/claim-registry.json,SCOPE仅索引，Evidence Plane是同一记录的来源/评价列；不添质量等级。
+R25,明确字段不符与字段缺失导致的不同结论,IMPLEMENTED,sections/04-scope.tex;tables/comparison-contracts.tex,claims/claim-registry.json,known mismatch→incompatible，必要binding缺失→unresolved；只限制该项推断。
+R26,压缩Appendix B/C/D与完整大mode表,IMPLEMENTED,sections/19-final-ledger.tex;sections/21-retained-controls-summary.tex;sections/17-public-trace-details.tex;sections/23-defense-comparison.tex,supplement/ expanded source files in companion package,保留完整原协议/结果于材料；19physical=11body+5appendix+3refs。
+R27,保护关系显式区分privacy/attribution/human-agent/diagnostics,IMPLEMENTED,sections/03-methodology.tex;tables/result-record-schema.tex;tables/receiver-intervention-matrix.tex,literature/final-inclusion-ledger.csv in companion package,四诊断不增加confidentiality支持，隐藏属性不自动成为受保护secret。
+R28,摘要引言结论先讲新知识用途，减少过程及重复限制,IMPLEMENTED,main.tex;sections/01-introduction.tex;sections/12-conclusion.tex,manuscript.patch,三部署决策/有条件许可居前；核心不靠分类名称或审计批次数量。
+R29,数字、源定位和材料副本一致,IMPLEMENTED,tables/final-counts.tex;tables/result-lineage-example.tex,pdf-validation.json;claims/source-corrections.json,60/43/17、33/66和原效果保留；新增Dangol afterTable5/freshIDs精确纠正。
+R30,承重NR核查，不能把未报、未核实、未复现混同,PARTIAL,sections/23-defense-comparison.tex;sections/24-conclusion-sensitivity.tex,claims/assertion-queue.json;empirical/RUN-BINDING-LOCAL-AUDIT.txt,四断言文字可证但定量run不闭；AHB code已证/run与paired D2仍NRV。
+R31,四候选全文/谱系闭环并防止遗漏改结论,PARTIAL,sections/22-search-audit-summary.tex;sections/10-open-challenges.tex,selection/selection-audit.txt,Wiretapping/memory poster/browser panel缺主源；Entropy缺稳定PDF字节和原创run谱系；B069是已归背景另有访问限制。
+R32,匿名与材料的真实可访问性、权利及作者声明,AUTHOR_ACTION_REQUIRED,sections/19-final-ledger.tex;sections/10-open-challenges.tex,README in companion package,不伪造public URL、上传回执、权利清单或机构批准；交付ZIP供作为补充材料上传。

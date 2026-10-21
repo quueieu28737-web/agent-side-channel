@@ -1,0 +1,42 @@
+[
+  {
+    "query_id": "A1",
+    "provider": "arxiv",
+    "query": "(cat:cs.CR OR cat:cs.CL) AND submittedDate:[202301010000 TO 202610212359] AND (all:agent OR all:workflow) AND (all:\"side channel\" OR all:\"side-channel\" OR all:fingerprinting)",
+    "page": 0,
+    "start": 0,
+    "receipt": "raw/A1-000.receipt.json",
+    "http_status": null,
+    "status": "API_FAILED"
+  },
+  {
+    "query_id": "A2",
+    "provider": "arxiv",
+    "query": "(cat:cs.CR OR cat:cs.CL) AND submittedDate:[202301010000 TO 202610212359] AND (all:LLM OR all:\"language model\") AND (all:traffic OR all:streaming) AND (all:leakage OR all:\"side-channel\" OR all:fingerprinting)",
+    "page": 0,
+    "start": 0,
+    "receipt": "raw/A2-000.receipt.json",
+    "http_status": null,
+    "status": "API_FAILED"
+  },
+  {
+    "query_id": "A3",
+    "provider": "arxiv",
+    "query": "(cat:cs.CR OR cat:cs.CL) AND submittedDate:[202301010000 TO 202610212359] AND (all:LLM OR all:\"language model\") AND (all:padding OR all:\"re-emission\" OR all:\"re emission\") AND (all:privacy OR all:leakage OR all:\"side-channel\")",
+    "page": 0,
+    "start": 0,
+    "receipt": "raw/A3-000.receipt.json",
+    "http_status": null,
+    "status": "API_FAILED"
+  },
+  {
+    "query_id": "A4",
+    "provider": "arxiv",
+    "query": "(cat:cs.CR OR cat:cs.CL) AND submittedDate:[202301010000 TO 202610212359] AND (all:agent OR all:LLM) AND (all:decoy OR all:\"cover traffic\" OR all:\"fake actions\" OR all:\"cover actions\")",
+    "page": 0,
+    "start": 0,
+    "receipt": "raw/A4-000.receipt.json",
+    "http_status": 429,
+    "status": "API_FAILED"
+  }
+]

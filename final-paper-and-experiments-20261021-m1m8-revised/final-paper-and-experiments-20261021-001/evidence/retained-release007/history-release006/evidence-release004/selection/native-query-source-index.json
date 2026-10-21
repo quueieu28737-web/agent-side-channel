@@ -1,0 +1,92 @@
+{
+  "schema": "native-query-replay-source-index/v1",
+  "date": "2026-10-20",
+  "new_queries_executed": 0,
+  "sources": {
+    "ieee_q1_to_q5_q4b": "evidence/closure-2026-10-08/native/query-receipts.json",
+    "ieee_q6": "evidence/systematic-2026-10-08-r2/native/query-receipt.json",
+    "acm_initial": "evidence/systematic-2026-10-08-r2/acm-native/query-manifest.json",
+    "acm_partition_audit": "evidence/acm-redownload-2026-10-08-side-002/consolidated-export-audit-completed-bins-001.json",
+    "acm_final_named_files": "evidence/acm-screening-20261009-side-003/download-finalization.json",
+    "acm_frame": "evidence/acm-screening-20261009-side-003/frame.json"
+  },
+  "query_rows": [
+    {
+      "id": "Q1",
+      "query": "(\"large language model\" OR LLM) AND (\"side channel\" OR \"side-channel\" OR \"timing attack\")",
+      "ieee_saved": 63, "ieee_displayed": 63, "ieee_query_source_line": 14,
+      "acm_saved": 479, "acm_original_displayed": 479, "acm_query_source_line": 11,
+      "acm_receipt_ids": ["Q1-unfiltered"]
+    },
+    {
+      "id": "Q2",
+      "query": "(agent OR agentic) AND (\"traffic analysis\" OR fingerprinting OR \"metadata leakage\" OR \"side channel\" OR \"side-channel\")",
+      "ieee_saved": 671, "ieee_displayed": 671, "ieee_query_source_line": 34,
+      "acm_saved": 6181, "acm_original_displayed": 6181, "acm_query_source_line": 12,
+      "acm_receipt_ids": ["Q2-year1962-2005","Q2-year2006-2010","Q2-year2011-2015","Q2-year2016-2018","Q2-year2019-2020","Q2-year2021-2022","Q2-year2023","Q2-year2024","Q2-year2025","Q2-year2026"]
+    },
+    {
+      "id": "Q3",
+      "query": "(\"KV cache\" OR \"prompt caching\" OR \"speculative decoding\") AND (privacy OR leakage OR attack)",
+      "ieee_saved": 37, "ieee_displayed": 37, "ieee_query_source_line": 102,
+      "acm_saved": 511, "acm_original_displayed": 511, "acm_query_source_line": 13,
+      "acm_receipt_ids": ["Q3-unfiltered"]
+    },
+    {
+      "id": "Q4",
+      "query": "(\"browser agent\" OR \"research agent\" OR \"tool calling\" OR \"model context protocol\" OR \"multi-agent\") AND (timing OR fingerprinting OR leakage)",
+      "ieee_saved": 0, "ieee_displayed": 35743, "ieee_query_source_line": 122,
+      "ieee_status": "NOT_EXPORTED_IN_OCTOBER8_ACQUISITION; later prefix does not reconstruct historical membership",
+      "acm_status": "NOT_A_FORMAL_EXECUTED_QUERY_IN_THE_INSPECTED_MANIFEST"
+    },
+    {
+      "id": "Q4b",
+      "query": "((\"browser agent\" OR \"research agent\" OR \"tool calling\" OR \"model context protocol\" OR \"multi-agent\") AND (timing OR fingerprinting OR leakage) AND (\"large language model\" OR LLM))",
+      "ieee_saved": 847, "ieee_displayed": 847, "ieee_query_source_line": 155,
+      "acm_saved": 4026, "acm_original_displayed": 4026, "acm_query_source_line": 14,
+      "acm_partition_displayed_sum": 4027,
+      "acm_exception": "June2026 displayed285/saved284; missing identity not resolved by total agreement",
+      "acm_receipt_ids": ["Q4b-year1995-2022","Q4b-year2023","Q4b-year2024","Q4b-year2025-Jan-Jun","Q4b-year2025-Jul-Dec","Q4b-year2026-Jan-Mar","Q4b-year2026-Apr-May","Q4b-year2026-June","Q4b-year2026-Jul-Sep","Q4b-year2026-Oct-Dec"]
+    },
+    {
+      "id": "Q5",
+      "query": "(\"language model\" OR LLM) AND (\"traffic shaping\" OR \"cache isolation\" OR padding OR \"side-channel defense\")",
+      "ieee_saved": 95, "ieee_displayed": 95, "ieee_query_source_line": 135,
+      "acm_saved": 3689, "acm_original_displayed": 3688, "acm_query_source_line": 15,
+      "acm_exception": "Whole-query versus partition discrepancy unresolved",
+      "acm_receipt_ids": ["Q5-year1972-2021","Q5-year2022-2023","Q5-year2024","Q5-year2025","Q5-year2026-Jan-Jun","Q5-year2026-Jul-Dec"]
+    },
+    {
+      "id": "Q6",
+      "query": "(\"language model\" OR chatbot OR \"AI assistant\" OR \"generative AI\") AND (\"side channel\" OR \"side-channel\" OR \"traffic analysis\" OR fingerprinting OR \"timing leakage\")",
+      "ieee_saved": 366, "ieee_displayed": 366, "ieee_query_source_line": 6,
+      "acm_saved": 1801, "acm_original_displayed": 1801, "acm_query_source_line": 16,
+      "acm_receipt_ids": ["Q6-year1973-2024","Q6-year2025","Q6-year2026"]
+    }
+  ],
+  "replay_instructions": {
+    "IEEE": {
+      "url": "https://ieeexplore.ieee.org/search/searchresult.jsp",
+      "interface": "Command Search",
+      "fields": "default metadata; not retroactively relabeled title/abstract-only",
+      "date": "2026-10-08",
+      "filters": "No lower-year or document-type filter",
+      "export": "Each complete result page; Export > Citations > RIS > Citation and Abstract",
+      "pages": {"Q1":"63","Q2":"75x8+71","Q3":"37","Q4":"none","Q4b":"100x8+47","Q5":"95","Q6":"100x3+66"}
+    },
+    "ACM": {
+      "url": "https://dl.acm.org/action/doSearch",
+      "initial_interface": "native Quick Search / All field",
+      "partition_interface": "native advanced search / AllField and E-Publication Date",
+      "collection": "ACM Full-Text Collection; not Guide",
+      "dates": "Original queries2026-10-08; partition receipts2026-10-08/09; final-named files confirmed2026-10-09",
+      "initial_filters": "No original year or document-type filter",
+      "partition_recipe": "For each receipt_id above, read evidence/acm-redownload-2026-10-08-side-002/<receipt_id>.json; use its exact query, partition and observed_url. Preserve collection and use All Results/BibTeX.",
+      "export": "Native Export Citations / All Results / BibTeX; original source files retained",
+      "finalization": "32 final-named byte/hash matched receipts;31 included,1 excluded truncated Q5 diagnostic",
+      "publication_cutoff": "2026-10-08 checked separately at family/version level; 2026Oct-Dec is an acquisition bin"
+    }
+  },
+  "deduplication": "Exact normalized DOI first; normalized exact title only without conflicting known DOI. Study-family version merging separately justified. Seven malformed ACM export occurrences retained.",
+  "supported_scope": "Replay of executed finite exports and source-nominated accounting; not complete native database membership, empirical eligibility, full-text screening, field recall or independent coding."
+}

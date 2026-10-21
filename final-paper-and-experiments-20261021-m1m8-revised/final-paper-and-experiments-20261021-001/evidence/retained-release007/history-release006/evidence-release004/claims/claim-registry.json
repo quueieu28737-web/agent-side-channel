@@ -1,0 +1,1036 @@
+{
+  "schema_version": "1.0",
+  "revision": "reviewer-deployment-cases-20261020-001",
+  "purpose": "Current manuscript claim lineage, not a new source-verification or efficacy score.",
+  "claim_id_policy": "C1-C3 are bounded source-conditioned synthesis cases; F2_STAGE_COST/F3_HOLDOUT are evaluation distinctions; H2/H3 are saved archive results; WF preserves the original negative endpoint.",
+  "counts": {
+    "claims": 8,
+    "canonical_units": 33,
+    "canonical_unit_families": 22,
+    "utility_cost_positions": 66,
+    "case_facts": 15,
+    "field_roles": {
+      "CLAIM_LIMIT": 13,
+      "DIRECT_SUPPORT": 14,
+      "BACKGROUND_ONLY": 39
+    },
+    "unbound_defense_assertions": 4,
+    "new_model_requests": 0,
+    "new_fits": 0
+  },
+  "evidence_status_policy": {
+    "DIRECT_SUPPORT": "The field directly supports the stated narrow object/condition distinction, not an unmeasured broad effect.",
+    "CLAIM_LIMIT": "The field bounds a particular extension; NR is not positive evidence of defense failure.",
+    "BACKGROUND_ONLY": "Retained in the 66-position inventory without a dependency on a current named claim."
+  },
+  "case_fact_policy": "Source result aliases can be subconditions/context; a nonempty related_unit_id is not an assertion of identical experimental configuration.",
+  "historical_policy": "Old field strings, old claim labels and old source locators are explicitly historical. No old manuscript line numbers are reused as current anchors.",
+  "source_correction_policy": "Dangol live locator/condition use the primary OHTTP paragraph after Table5 and fresh per-session IDs; historical pooled-ID text is retained only as historical input. source-corrections.json is maintained separately.",
+  "limits": [
+    "Not independent human double coding or external researcher validation.",
+    "66 mapped positions are not 66 new verifications.",
+    "33 heterogeneous units are not a common denominator for field-wide defense failure/absence.",
+    "Removing the four unbound assertions does not alter C1-C3; it does not establish their missing experimental results.",
+    "No model, training, network request, fit, rerun, or raw-data change is performed by this builder."
+  ],
+  "claims": [
+    {
+      "claim_id": "C1",
+      "title": "Final receiving emitter",
+      "bounded_claim": "A protection result at an upstream emitter does not by itself certify a downstream content-aware emitter's observation view.",
+      "support_and_numerical_anchor": "NetEcho's deployment/capture distinctions support checking the actual final stream; the UI archive contrast is not a live placement experiment.",
+      "unsupported_extensions": "No exact timestamp reconstruction, matched causal NetEcho effect, all-seven-live claim or field-wide theorem; a validated view-preserving/no-extra-target-state bridge can permit transfer.",
+      "manuscript_anchors": [
+        {
+          "path": "sections/11-discussion.tex",
+          "semantic_anchor": "Final receiver",
+          "matched_tokens": [
+            "final receiver"
+          ],
+          "snapshot_sha256": "33a4f89c7c15e7988de6182f4fd982e08cc4ebc5e267a10c7fc4d95673e66176"
+        },
+        {
+          "path": "tables/deployment-question-cases.tex",
+          "semantic_anchor": "Does upstream padding protect the final receiver?",
+          "matched_tokens": [
+            "Does upstream padding protect the final receiver?"
+          ],
+          "snapshot_sha256": "c0e8b1b0e61fd05060d05f581c49d1cc3dd8a66bb32dedf8c18519116fa680d6"
+        }
+      ],
+      "canonical_unit_ids": [
+        "NET-upstream-local",
+        "NET-dummy-padding-simulation"
+      ],
+      "case_fact_ids": [
+        "NET-final-emitter",
+        "NET-captured-topic-inference",
+        "NET-padding-simulation"
+      ],
+      "family_ids": [
+        "netecho2025",
+        "uitraces2026"
+      ],
+      "field_position_ids": [
+        "NET-dummy-padding-simulation:objective_task_utility"
+      ],
+      "unbound_four_assertions_are_positive_support": false,
+      "independent_human_or_external_researcher_validation": "NR"
+    },
+    {
+      "claim_id": "C2",
+      "title": "Executed cover and task state",
+      "bounded_claim": "Transport shaping, transformed captures and executed mobile actions cannot inherit each other's task-safety or cost conclusions without a condition-matched bridge.",
+      "support_and_numerical_anchor": "Dangol live/capture operating points are separated; the live protocol testbed co-locates client, relay, gateway and agent on one loopback host. AHB task-success subconditions show why executable state-changing cover requires its own task outcome.",
+      "unsupported_extensions": "History+Long success 0.7143 is a retained contrary subcondition, not noninferiority or successful evasion. RAW0.75 vs combined0.15 is not an isolated causal Fake effect. AHB detector publication-run/D2 bindings remain NR-V.",
+      "manuscript_anchors": [
+        {
+          "path": "sections/11-discussion.tex",
+          "semantic_anchor": "choose whether cover may execute",
+          "matched_tokens": [
+            "choose whether cover may execute"
+          ],
+          "snapshot_sha256": "33a4f89c7c15e7988de6182f4fd982e08cc4ebc5e267a10c7fc4d95673e66176"
+        },
+        {
+          "path": "tables/deployment-question-cases.tex",
+          "semantic_anchor": "Can extra actions be executed safely?",
+          "matched_tokens": [
+            "Can extra actions be executed safely?"
+          ],
+          "snapshot_sha256": "c0e8b1b0e61fd05060d05f581c49d1cc3dd8a66bb32dedf8c18519116fa680d6"
+        }
+      ],
+      "canonical_unit_ids": [
+        "DANGOL-livebinding",
+        "DANGOL-capture",
+        "AHB-online-executed",
+        "AHB-offline"
+      ],
+      "case_fact_ids": [
+        "AHB-trip-raw",
+        "AHB-trip-history-long",
+        "AHB-trip-combined-fake",
+        "DANGOL-live-cover",
+        "DANGOL-capture-frontier"
+      ],
+      "family_ids": [
+        "dangol2026workflow",
+        "zhu2026turing"
+      ],
+      "field_position_ids": [
+        "DANGOL-capture:objective_task_utility",
+        "DANGOL-capture:performance_cost",
+        "DANGOL-livebinding:objective_task_utility",
+        "DANGOL-livebinding:performance_cost",
+        "AHB-online-executed:objective_task_utility",
+        "AHB-online-executed:performance_cost",
+        "AHB-offline:objective_task_utility",
+        "AHB-offline:performance_cost"
+      ],
+      "unbound_four_assertions_are_positive_support": false,
+      "independent_human_or_external_researcher_validation": "NR"
+    },
+    {
+      "claim_id": "C3",
+      "title": "Adaptation condition and mechanism identity",
+      "bounded_claim": "Protected-data fitting, paired common-test adaptation, fixed common guardrails and costs of different cache/padding mechanisms answer different deployment questions.",
+      "support_and_numerical_anchor": "UI Traces and SIG common-guardrail contrasts bind different estimands; Early Bird, KVGov and SpliceDefense bind calibration, simulation and component costs separately.",
+      "unsupported_extensions": "These distinctions are systematized prior findings, not newly discovered attacks. Scientific refitting does not establish the observer's operational labeled-data access or a fair adaptation budget; source code does not authenticate a publication run.",
+      "manuscript_anchors": [
+        {
+          "path": "sections/11-discussion.tex",
+          "semantic_anchor": "Adaptation and component",
+          "matched_tokens": [
+            "adaptation",
+            "component"
+          ],
+          "snapshot_sha256": "33a4f89c7c15e7988de6182f4fd982e08cc4ebc5e267a10c7fc4d95673e66176"
+        },
+        {
+          "path": "sections/27-intervention-contracts.tex",
+          "semantic_anchor": "Adaptation, training access and publication runs",
+          "matched_tokens": [
+            "Adaptation, training access and publication runs"
+          ],
+          "snapshot_sha256": "28caee8f35d4830739c453701c8c2db61112f097a974885991ce0a17e0cf52d0"
+        }
+      ],
+      "canonical_unit_ids": [
+        "UI-delay-offline",
+        "SIG-common-guardrail",
+        "EARLY-K-calibration-oracle",
+        "EARLY-semantic-deidentification",
+        "KVGOV-HMAC-cost",
+        "SPLICE-CTBF-signal",
+        "SPLICE-QCP-cost"
+      ],
+      "case_fact_ids": [
+        "UI-delay-D2",
+        "SIG-common-guardrail",
+        "EARLY-K-calibration",
+        "EARLY-semantic-cost",
+        "KVGOV-salt-mechanism",
+        "KVGOV-HMAC-microcost",
+        "SPLICE-QCP-CTBF-components"
+      ],
+      "family_ids": [
+        "uitraces2026",
+        "geng2026sigleak",
+        "earlybird2025",
+        "addagada2026kvgov",
+        "spliceleak2026"
+      ],
+      "field_position_ids": [
+        "UI-delay-offline:objective_task_utility",
+        "UI-delay-offline:performance_cost",
+        "EARLY-K-calibration-oracle:performance_cost",
+        "EARLY-semantic-deidentification:performance_cost",
+        "SPLICE-CTBF-signal:performance_cost",
+        "SPLICE-QCP-cost:performance_cost",
+        "SIG-common-guardrail:objective_task_utility",
+        "KVGOV-partialflush-sim:performance_cost",
+        "KVGOV-HMAC-cost:objective_task_utility",
+        "KVGOV-HMAC-cost:performance_cost"
+      ],
+      "unbound_four_assertions_are_positive_support": false,
+      "independent_human_or_external_researcher_validation": "NR"
+    },
+    {
+      "claim_id": "F2_STAGE_COST",
+      "title": "Measured object, utility and cost stage",
+      "bounded_claim": "A measured component cost or quality proxy is useful for its own decision but is not an unmeasured joint end-to-end privacy/utility/cost frontier.",
+      "support_and_numerical_anchor": "The six deployment questions preserve executed, offline/simulated and component measurements rather than treating heterogeneous result records as a defense-failure denominator.",
+      "unsupported_extensions": "Missing complete frontiers do not establish defense failure or field-wide absence. Four unbound assertions are withheld from quantitative comparisons; the headline is not 0/33 or 0/26.",
+      "manuscript_anchors": [
+        {
+          "path": "sections/27-intervention-contracts.tex",
+          "semantic_anchor": "Costs and unresolved assertions",
+          "matched_tokens": [
+            "Costs and unresolved assertions"
+          ],
+          "snapshot_sha256": "28caee8f35d4830739c453701c8c2db61112f097a974885991ce0a17e0cf52d0"
+        },
+        {
+          "path": "tables/deployment-question-cases.tex",
+          "semantic_anchor": "Which cache mechanism does a cost price?",
+          "matched_tokens": [
+            "Which cache mechanism does a cost price?"
+          ],
+          "snapshot_sha256": "c0e8b1b0e61fd05060d05f581c49d1cc3dd8a66bb32dedf8c18519116fa680d6"
+        }
+      ],
+      "canonical_unit_ids": [
+        "WRA-decoy-execution",
+        "NET-dummy-padding-simulation",
+        "EARLY-semantic-deidentification",
+        "SPLICE-CTBF-signal",
+        "SPLICE-QCP-cost",
+        "SPEC-padding-REST",
+        "DANGOL-capture",
+        "DANGOL-livebinding",
+        "SAFE-post-trigger",
+        "AHB-online-executed",
+        "KVGOV-partialflush-sim",
+        "KVGOV-HMAC-cost",
+        "GAO-zero-copy-off",
+        "TDXRAY-oblivious-map"
+      ],
+      "case_fact_ids": [],
+      "family_ids": [
+        "jeong2026wra",
+        "netecho2025",
+        "earlybird2025",
+        "spliceleak2026",
+        "wei2024speculation",
+        "dangol2026workflow",
+        "chu2025safekv",
+        "zhu2026turing",
+        "addagada2026kvgov",
+        "gao2025iknow",
+        "hornetz2026tdxray"
+      ],
+      "field_position_ids": [
+        "WRA-decoy-execution:objective_task_utility",
+        "WRA-decoy-execution:performance_cost",
+        "NET-dummy-padding-simulation:performance_cost",
+        "EARLY-semantic-deidentification:performance_cost",
+        "SPLICE-CTBF-signal:performance_cost",
+        "SPLICE-QCP-cost:performance_cost",
+        "SPEC-padding-REST:performance_cost",
+        "DANGOL-capture:performance_cost",
+        "DANGOL-livebinding:performance_cost",
+        "SAFE-post-trigger:objective_task_utility",
+        "SAFE-post-trigger:performance_cost",
+        "AHB-online-executed:performance_cost",
+        "KVGOV-partialflush-sim:performance_cost",
+        "KVGOV-HMAC-cost:objective_task_utility",
+        "KVGOV-HMAC-cost:performance_cost",
+        "GAO-zero-copy-off:performance_cost",
+        "TDXRAY-oblivious-map:performance_cost"
+      ],
+      "unbound_four_assertions_are_positive_support": false,
+      "independent_human_or_external_researcher_validation": "NR"
+    },
+    {
+      "claim_id": "F3_HOLDOUT",
+      "title": "Generator holdout",
+      "bounded_claim": "An unseen task split is not by itself a holdout of the browser, topology, hardware calibration or other generator of the measured signal.",
+      "support_and_numerical_anchor": "UI/FP-Agent/browser attributes, topology transfer and LeakyLMs' calibrated hardware conditions motivate naming the generator and holdout separately.",
+      "unsupported_extensions": "No universal failure of task holdout, new cross-generator experiment, task-independent attribution or field-wide ranking is claimed.",
+      "manuscript_anchors": [
+        {
+          "path": "sections/28-fingerprint-dependencies.tex",
+          "semantic_anchor": "holdout",
+          "matched_tokens": [
+            "holdout"
+          ],
+          "snapshot_sha256": "ae5a7c1e36ff73a4c7d797fcb495108764cea22915d79bd9bad2523dd6e8b69f"
+        }
+      ],
+      "canonical_unit_ids": [],
+      "case_fact_ids": [],
+      "family_ids": [
+        "uitraces2026",
+        "wang2026fpagent",
+        "pouryousef2026traffic",
+        "majidi2026leakylms"
+      ],
+      "field_position_ids": [],
+      "unbound_four_assertions_are_positive_support": false,
+      "independent_human_or_external_researcher_validation": "NR"
+    },
+    {
+      "claim_id": "H2",
+      "title": "Fixed archive representation increment",
+      "bounded_claim": "On the fixed UI archive receiver, adding bigrams to counts/page age improves predictive loss by 0.3447 nats and accuracy from51.29% to66.26%.",
+      "support_and_numerical_anchor": "1,135 test records/226 questions; loss interval[0.2974,0.3944]. The matched three-identity ten-question interval crosses zero; all-14 common-question support is empty.",
+      "unsupported_extensions": "Archive cross-document order is assumed, not authenticated for an ordinary website. No mutual information, task-independent identity, new live attack or direct protection-placement test follows. The 12 existing fits were not rerun in this revision.",
+      "manuscript_anchors": [
+        {
+          "path": "sections/16-public-trace-study.tex",
+          "semantic_anchor": "Adding bigrams to counts/page-age",
+          "matched_tokens": [
+            "Adding bigrams to counts/page-age"
+          ],
+          "snapshot_sha256": "735c5a211f349146356f41a8bc572ab069087722312be2e9512658ebce528e1b"
+        }
+      ],
+      "canonical_unit_ids": [],
+      "case_fact_ids": [],
+      "family_ids": [
+        "uitraces2026"
+      ],
+      "field_position_ids": [],
+      "unbound_four_assertions_are_positive_support": false,
+      "independent_human_or_external_researcher_validation": "NR"
+    },
+    {
+      "claim_id": "H3",
+      "title": "Bounded offline adaptation reanalysis",
+      "bounded_claim": "For saved page-local U(0,5000ms) timestamp perturbations preserving types/order, refitting improves paired loss by0.1503 nats on the same perturbed test records.",
+      "support_and_numerical_anchor": "Three saved realizations; interval[0.1205,0.1815]; descriptive effects are negative for five declared identities. It reanalyzes an already reported adaptation phenomenon.",
+      "unsupported_extensions": "No executed delay, objective task utility or live cost is measured. No retuning, new fits or model requests occurred in this revision.",
+      "manuscript_anchors": [
+        {
+          "path": "sections/16-public-trace-study.tex",
+          "semantic_anchor": "independent U(0,5,000 ms)",
+          "matched_tokens": [
+            "independent U(0,5,000 ms)"
+          ],
+          "snapshot_sha256": "735c5a211f349146356f41a8bc572ab069087722312be2e9512658ebce528e1b"
+        }
+      ],
+      "canonical_unit_ids": [],
+      "case_fact_ids": [],
+      "family_ids": [
+        "uitraces2026"
+      ],
+      "field_position_ids": [],
+      "unbound_four_assertions_are_positive_support": false,
+      "independent_human_or_external_researcher_validation": "NR"
+    },
+    {
+      "claim_id": "WF",
+      "title": "Retained workflow joint-endpoint negative result",
+      "bounded_claim": "In the finite model-assisted checklist comparison, tested SCOPE traversal does not improve the original joint endpoint over the complete structured checklist.",
+      "support_and_numerical_anchor": "512 constructed primary roots: R40.63%,T45.12--45.31%,V32.16%; VminusT-13.15 to-12.96pp; conditional finite-assignment envelope[-25.16,-0.95]pp. One unscored T root/HOLD and unknown usage remain.",
+      "unsupported_extensions": "Not independent natural-paper reviews or researcher participants; no human-productivity conclusion or universal framework inferiority. Decision-only post-hoc gains do not replace the original endpoint.",
+      "manuscript_anchors": [
+        {
+          "path": "sections/29-scope-comparison-boundary.tex",
+          "semantic_anchor": "original joint endpoint",
+          "matched_tokens": [
+            "original joint endpoint"
+          ],
+          "snapshot_sha256": "ad0745494c0b40c64a54824df0b5f20c626005160a30581ccb5bb282cdcf0e44"
+        }
+      ],
+      "canonical_unit_ids": [],
+      "case_fact_ids": [],
+      "family_ids": [],
+      "field_position_ids": [],
+      "unbound_four_assertions_are_positive_support": false,
+      "independent_human_or_external_researcher_validation": "NR"
+    }
+  ],
+  "canonical_unit_index": [
+    {
+      "canonical_unit_id": "UI-delay-offline",
+      "family_id": "uitraces2026",
+      "source_version": "2605.14786v1",
+      "source_url": "https://arxiv.org/html/2605.14786v1",
+      "source_path": "evidence/recent-agent-review-20261018-001/sources/uitraces-v1.txt",
+      "source_sha256": "1bec3da8b688d48843835ec0044c2e74080efd2b5f952b2dc399fe2e821f2615",
+      "source_hash_verified": true,
+      "current_source_locator": "6.1 Fig5;A.5",
+      "historical_source_locator": "6.1 Fig5;A.5",
+      "mode": "offline timestamp transformation",
+      "current_condition": "action delay added to archived trace",
+      "historical_condition": "action delay added to archived trace",
+      "target": "identity classifier",
+      "claim_ids": [
+        "C3"
+      ],
+      "field_position_count": 2
+    },
+    {
+      "canonical_unit_id": "WRA-decoy-execution",
+      "family_id": "jeong2026wra",
+      "source_version": "Proceedings PDF; see acquisition URL/hash",
+      "source_url": "https://www.usenix.org/system/files/usenixsecurity26-jeong.pdf",
+      "source_path": "evidence/closure-2026-09-12/sources/jeong2026wra/paper.txt",
+      "source_sha256": "abfad8a8d65ea27495a70543020810289bd828549d6d6a0f310257f117272328",
+      "source_hash_verified": true,
+      "current_source_locator": "8.1-8.3 Tables8-11",
+      "historical_source_locator": "8.1-8.3 Tables8-11",
+      "mode": "concurrent real/decoy-agent execution; interleaving analysis",
+      "current_condition": "decoy traffic/destination cover",
+      "historical_condition": "decoy traffic/destination cover",
+      "target": "private prompt/trait inference",
+      "claim_ids": [
+        "F2_STAGE_COST"
+      ],
+      "field_position_count": 2
+    },
+    {
+      "canonical_unit_id": "NET-upstream-local",
+      "family_id": "netecho2025",
+      "source_version": "2510.25472v1",
+      "source_url": "https://arxiv.org/html/2510.25472v1",
+      "source_path": "evidence/recent-agent-review-20261018-001/sources/netecho-v1.txt",
+      "source_sha256": "026618d848f6c39f3dae4e8d1a6a3a8eb60f55608ec6719e3b9cc10a6ba7cf07",
+      "source_hash_verified": true,
+      "current_source_locator": "IV-C-E TableIII-IV",
+      "historical_source_locator": "IV-C-E TableIII-IV",
+      "mode": "existing deploy protected traces plus separately local vLLM",
+      "current_condition": "upstream batching/padding; downstream stream",
+      "historical_condition": "upstream batching/padding; downstream stream",
+      "target": "topic classifiers under specific deployment/scenario",
+      "claim_ids": [
+        "C1"
+      ],
+      "field_position_count": 2
+    },
+    {
+      "canonical_unit_id": "NET-dummy-padding-simulation",
+      "family_id": "netecho2025",
+      "source_version": "2510.25472v1",
+      "source_url": "https://arxiv.org/html/2510.25472v1",
+      "source_path": "evidence/recent-agent-review-20261018-001/sources/netecho-v1.txt",
+      "source_sha256": "026618d848f6c39f3dae4e8d1a6a3a8eb60f55608ec6719e3b9cc10a6ba7cf07",
+      "source_hash_verified": true,
+      "current_source_locator": "VII TableIX",
+      "historical_source_locator": "VII TableIX",
+      "mode": "offline synthetic packet insertion/padding",
+      "current_condition": "up to20%dummycopies; packetlengthpadding",
+      "historical_condition": "up to20%dummycopies; packetlengthpadding",
+      "target": "topic recovery TraceA/TraceB",
+      "claim_ids": [
+        "C1",
+        "F2_STAGE_COST"
+      ],
+      "field_position_count": 2
+    },
+    {
+      "canonical_unit_id": "EARLY-K-calibration-oracle",
+      "family_id": "earlybird2025",
+      "source_version": "2409.20002v5",
+      "source_url": "https://arxiv.org/html/2409.20002v5",
+      "source_path": "evidence/recent-agent-review-20261018-001/sources/earlybird-v5.txt",
+      "source_sha256": "c0fac7dfe87d075a09e2328cfe0987b6a0c460995436ad6c95b5a12f9e2c1e9a",
+      "source_hash_verified": true,
+      "current_source_locator": "V-A TableVI;IV-A",
+      "historical_source_locator": "V-A TableVI;IV-A",
+      "mode": "empirical K-specific timing calibration followed by stochastic oracle simulation",
+      "current_condition": "minimum prefix-sharingK=1,2,3,4; nextKtokenpredictor",
+      "historical_condition": "minimum prefix-sharingK=1,2,3,4; nextKtokenpredictor",
+      "target": "token recovery and search/query cost",
+      "claim_ids": [
+        "C3"
+      ],
+      "field_position_count": 2
+    },
+    {
+      "canonical_unit_id": "EARLY-semantic-deidentification",
+      "family_id": "earlybird2025",
+      "source_version": "2409.20002v5",
+      "source_url": "https://arxiv.org/html/2409.20002v5",
+      "source_path": "evidence/recent-agent-review-20261018-001/sources/earlybird-v5.txt",
+      "source_sha256": "c0fac7dfe87d075a09e2328cfe0987b6a0c460995436ad6c95b5a12f9e2c1e9a",
+      "source_hash_verified": true,
+      "current_source_locator": "V-B",
+      "historical_source_locator": "V-B",
+      "mode": "GPTCache prototype",
+      "current_condition": "PII de-identification before semantic matching",
+      "historical_condition": "PII de-identification before semantic matching",
+      "target": "semantic cache privacy/cost component",
+      "claim_ids": [
+        "C3",
+        "F2_STAGE_COST"
+      ],
+      "field_position_count": 2
+    },
+    {
+      "canonical_unit_id": "WHISPER-randompadding-capture",
+      "family_id": "whisperleak2025",
+      "source_version": "2511.03675v1",
+      "source_url": "https://arxiv.org/html/2511.03675v1",
+      "source_path": "evidence/recent-agent-review-20261018-001/sources/whisper-v1.txt",
+      "source_sha256": "244fb3c90495c6a996536adba529fec451bcd08c3328f1f3c68ff302d0c03b60",
+      "source_hash_verified": true,
+      "current_source_locator": "6.1 Tables3-4",
+      "historical_source_locator": "6.1 Tables3-4",
+      "mode": "new padded/unpadded captures",
+      "current_condition": "provider obfuscation on/off gpt4omini",
+      "historical_condition": "provider obfuscation on/off gpt4omini",
+      "target": "LightGBM medianAUPRC5trials",
+      "claim_ids": [],
+      "field_position_count": 2
+    },
+    {
+      "canonical_unit_id": "WHISPER-batching-replay",
+      "family_id": "whisperleak2025",
+      "source_version": "2511.03675v1",
+      "source_url": "https://arxiv.org/html/2511.03675v1",
+      "source_path": "evidence/recent-agent-review-20261018-001/sources/whisper-v1.txt",
+      "source_sha256": "244fb3c90495c6a996536adba529fec451bcd08c3328f1f3c68ff302d0c03b60",
+      "source_hash_verified": true,
+      "current_source_locator": "6.2 Fig7",
+      "historical_source_locator": "6.2 Fig7",
+      "mode": "offline packet grouping",
+      "current_condition": "sum time/length in batchesN>=2",
+      "historical_condition": "sum time/length in batchesN>=2",
+      "target": "AUPRC across selected providerLLMs",
+      "claim_ids": [],
+      "field_position_count": 2
+    },
+    {
+      "canonical_unit_id": "WHISPER-injection-replay",
+      "family_id": "whisperleak2025",
+      "source_version": "2511.03675v1",
+      "source_url": "https://arxiv.org/html/2511.03675v1",
+      "source_path": "evidence/recent-agent-review-20261018-001/sources/whisper-v1.txt",
+      "source_sha256": "244fb3c90495c6a996536adba529fec451bcd08c3328f1f3c68ff302d0c03b60",
+      "source_hash_verified": true,
+      "current_source_locator": "6.3 Table5",
+      "historical_source_locator": "6.3 Table5",
+      "mode": "offline stochastic packet generation",
+      "current_condition": "Gaussianinterval/size noise;merge<=.005s",
+      "historical_condition": "Gaussianinterval/size noise;merge<=.005s",
+      "target": "AUPRC; sourceestimatedtrafficvolume",
+      "claim_ids": [],
+      "field_position_count": 2
+    },
+    {
+      "canonical_unit_id": "SPLICE-CTBF-signal",
+      "family_id": "spliceleak2026",
+      "source_version": "2606.21842v1",
+      "source_url": "https://arxiv.org/html/2606.21842v1",
+      "source_path": "evidence/recent-agent-review-20261018-001/sources/splice-v1.txt",
+      "source_sha256": "1edb01f58acc2f311bbd67451ac3d1611456319c7fc564ae78a78bc81259adaa",
+      "source_hash_verified": true,
+      "current_source_locator": "VII-C TableII",
+      "historical_source_locator": "VII-C TableII",
+      "mode": "servingprototype +generatedbackgroundload",
+      "current_condition": "CTBF background cachefrontiertraffic",
+      "historical_condition": "CTBF background cachefrontiertraffic",
+      "target": "attack timing signal across15tasks75steps",
+      "claim_ids": [
+        "C3",
+        "F2_STAGE_COST"
+      ],
+      "field_position_count": 2
+    },
+    {
+      "canonical_unit_id": "SPLICE-QCP-cost",
+      "family_id": "spliceleak2026",
+      "source_version": "2606.21842v1",
+      "source_url": "https://arxiv.org/html/2606.21842v1",
+      "source_path": "evidence/recent-agent-review-20261018-001/sources/splice-v1.txt",
+      "source_sha256": "1edb01f58acc2f311bbd67451ac3d1611456319c7fc564ae78a78bc81259adaa",
+      "source_hash_verified": true,
+      "current_source_locator": "VII-C TableII",
+      "historical_source_locator": "VII-C TableII",
+      "mode": "servingcomponentbenchmark",
+      "current_condition": "QCP chunkpadding",
+      "historical_condition": "QCP chunkpadding",
+      "target": "TTFT/paddingcost",
+      "claim_ids": [
+        "C3",
+        "F2_STAGE_COST"
+      ],
+      "field_position_count": 2
+    },
+    {
+      "canonical_unit_id": "TIME-length-instruction",
+      "family_id": "timewilltell2024",
+      "source_version": "2412.15431v1",
+      "source_url": "https://arxiv.org/html/2412.15431v1",
+      "source_path": "evidence/recent-agent-review-20261018-001/sources/time-v1.txt",
+      "source_sha256": "3621db92c0b104bf555a863a7b79f2cf35bf39d65b0232eadb581e16a0a2d1d7",
+      "source_hash_verified": true,
+      "current_source_locator": "7.2",
+      "historical_source_locator": "7.2",
+      "mode": "changed-model instruction",
+      "current_condition": "requested fixed output length",
+      "historical_condition": "requested fixed output length",
+      "target": "ASR token-count rule",
+      "claim_ids": [],
+      "field_position_count": 2
+    },
+    {
+      "canonical_unit_id": "TIME-padding-estimate",
+      "family_id": "timewilltell2024",
+      "source_version": "2412.15431v1",
+      "source_url": "https://arxiv.org/html/2412.15431v1",
+      "source_path": "evidence/recent-agent-review-20261018-001/sources/time-v1.txt",
+      "source_sha256": "3621db92c0b104bf555a863a7b79f2cf35bf39d65b0232eadb581e16a0a2d1d7",
+      "source_hash_verified": true,
+      "current_source_locator": "7.3",
+      "historical_source_locator": "7.3",
+      "mode": "analytical padding estimate",
+      "current_condition": "padding output lengths",
+      "historical_condition": "padding output lengths",
+      "target": "paddingcost",
+      "claim_ids": [],
+      "field_position_count": 2
+    },
+    {
+      "canonical_unit_id": "SPEC-padding-REST",
+      "family_id": "wei2024speculation",
+      "source_version": "2411.01076v4",
+      "source_url": "https://arxiv.org/html/2411.01076v4",
+      "source_path": "evidence/recent-agent-review-20261018-001/sources/speculation-v4.txt",
+      "source_sha256": "1cb150902452d115bd7753c5e64e828e52f21e382172b8936c75e35599946f62",
+      "source_hash_verified": true,
+      "current_source_locator": "6.1 Fig6-7 Table2",
+      "historical_source_locator": "6.1 Fig6-7 Table2",
+      "mode": "padding/aggregation evaluation; liveplacementNR-V",
+      "current_condition": "RESTrandompadding",
+      "historical_condition": "RESTrandompadding",
+      "target": "referencefingerprintingaccuracy",
+      "claim_ids": [
+        "F2_STAGE_COST"
+      ],
+      "field_position_count": 2
+    },
+    {
+      "canonical_unit_id": "DANGOL-capture",
+      "family_id": "dangol2026workflow",
+      "source_version": "2606.07150v3",
+      "source_url": "https://arxiv.org/html/2606.07150v3",
+      "source_path": "evidence/recent-agent-review-20261018-001/sources/dangol-v3.txt",
+      "source_sha256": "fae89faede5437f3449de3c641d93fd352d7e7eaa833df4ef51f91a3b5ed8039",
+      "source_hash_verified": true,
+      "current_source_locator": "9.8-9.9 Table6",
+      "historical_source_locator": "9.8-9.9 Table6",
+      "mode": "transformed recorded HTTPS capture",
+      "current_condition": "fixed-rate cells/dummies/timing identifiers",
+      "historical_condition": "fixed-rate cells/dummies/timing identifiers",
+      "target": "six-class workflow recovery",
+      "claim_ids": [
+        "C2",
+        "F2_STAGE_COST"
+      ],
+      "field_position_count": 2
+    },
+    {
+      "canonical_unit_id": "DANGOL-livebinding",
+      "family_id": "dangol2026workflow",
+      "source_version": "2606.07150v3",
+      "source_url": "https://arxiv.org/html/2606.07150v3",
+      "source_path": "evidence/recent-agent-review-20261018-001/sources/dangol-v3.txt",
+      "source_sha256": "fae89faede5437f3449de3c641d93fd352d7e7eaa833df4ef51f91a3b5ed8039",
+      "source_hash_verified": true,
+      "current_source_locator": "Section 9.7, OHTTP paragraph after Table 5",
+      "historical_source_locator": "9.7 Table5",
+      "mode": "liveOHTTP/A2Abinding",
+      "current_condition": "Live fixed-rate OHTTP/A2A binding with fresh per-session IDs; client, relay, gateway and agent co-located on one loopback host; timing-feature ablation reported separately",
+      "historical_condition": "Live fixed-rate/pooled-ID OHTTP/A2A binding; timing-feature ablation reported separately",
+      "target": "workflowrecovery",
+      "claim_ids": [
+        "C2",
+        "F2_STAGE_COST"
+      ],
+      "field_position_count": 2
+    },
+    {
+      "canonical_unit_id": "SIG-common-guardrail",
+      "family_id": "geng2026sigleak",
+      "source_version": "2607.25560v1",
+      "source_url": "https://arxiv.org/html/2607.25560v1",
+      "source_path": "evidence/recent-agent-review-20261018-001/sources/sigleak-v1.txt",
+      "source_sha256": "d7b961962aa390eb1d5c32008c3cf5f2851875107f2b1310b7339680d6a81f46",
+      "source_hash_verified": true,
+      "current_source_locator": "4.1-4.2;AppendixC",
+      "historical_source_locator": "4.1-4.2;AppendixC",
+      "mode": "controlled-agentcommoninstruction",
+      "current_condition": "alltargets carrySkillGuard5",
+      "historical_condition": "alltargets carrySkillGuard5",
+      "target": "skillinference comparedwithBBSdirectextraction",
+      "claim_ids": [
+        "C3"
+      ],
+      "field_position_count": 2
+    },
+    {
+      "canonical_unit_id": "SAFE-post-trigger",
+      "family_id": "chu2025safekv",
+      "source_version": "2508.08438v2",
+      "source_url": "https://arxiv.org/html/2508.08438v2",
+      "source_path": "evidence/recent-agent-review-20261018-001/sources/safekv-v2.txt",
+      "source_sha256": "994107460849f8a3dea58cfd70439c875f1519654a7786ff56c6bd3977d1f17b",
+      "source_hash_verified": true,
+      "current_source_locator": "7.2.4 Fig12;7.3-7.4",
+      "historical_source_locator": "7.2.4 Fig12;7.3-7.4",
+      "mode": "servingimplementation and repeatedpost-triggerprobe",
+      "current_condition": "selectiveKVsharingafterdetectortrigger",
+      "historical_condition": "selectiveKVsharingafterdetectortrigger",
+      "target": "TTFTROC-AUCnear.5",
+      "claim_ids": [
+        "F2_STAGE_COST"
+      ],
+      "field_position_count": 2
+    },
+    {
+      "canonical_unit_id": "AHB-online-executed",
+      "family_id": "zhu2026turing",
+      "source_version": "arXiv:2604.09574v1",
+      "source_url": "https://arxiv.org/html/2604.09574v1",
+      "source_path": "evidence/recent-agent-review-20261018-001/sources/ahb-v1.txt",
+      "source_sha256": "d3e49a3cde803c3f65de6b7036025cfcb039d3fa723cc4ada15e57b5e2bf05f7",
+      "source_hash_verified": true,
+      "current_source_locator": "5.1.2 Table1;E.1-E.3",
+      "historical_source_locator": "5.1.2 Table1;E.1-E.3",
+      "mode": "live mobile wrapper",
+      "current_condition": "history+fake+long actions",
+      "historical_condition": "history+fake+long actions",
+      "target": "intervalvsSVM/XGBoostdetectability;taskaccuracy",
+      "claim_ids": [
+        "C2",
+        "F2_STAGE_COST"
+      ],
+      "field_position_count": 2
+    },
+    {
+      "canonical_unit_id": "AHB-offline",
+      "family_id": "zhu2026turing",
+      "source_version": "arXiv:2604.09574v1",
+      "source_url": "https://arxiv.org/html/2604.09574v1",
+      "source_path": "evidence/recent-agent-review-20261018-001/sources/ahb-v1.txt",
+      "source_sha256": "d3e49a3cde803c3f65de6b7036025cfcb039d3fa723cc4ada15e57b5e2bf05f7",
+      "source_hash_verified": true,
+      "current_source_locator": "Table1 offline rows;E.1-E.3",
+      "historical_source_locator": "Table1 offline rows;E.1-E.3",
+      "mode": "archivedtouchtrajectorypostprocessing",
+      "current_condition": "motion/interval/duration edits",
+      "historical_condition": "motion/interval/duration edits",
+      "target": "detectability",
+      "claim_ids": [
+        "C2"
+      ],
+      "field_position_count": 2
+    },
+    {
+      "canonical_unit_id": "KVGOV-partialflush-sim",
+      "family_id": "addagada2026kvgov",
+      "source_version": "v1 2026-08-10; inspected2026-10-19",
+      "source_url": "https://arxiv.org/html/2608.09225v1",
+      "source_path": "evidence/reviewer-closure-20261019-002/sources/kvgov-v1.txt",
+      "source_sha256": "b5034ad085385abeac0bdcc06154666f1de04e3aec2ad95d4dcad57b8d09ba73",
+      "source_hash_verified": true,
+      "current_source_locator": "5.1-5.3",
+      "historical_source_locator": "5.1-5.3",
+      "mode": "deterministicsimulationN1000seed2026",
+      "current_condition": "partial flush and domainkeying",
+      "historical_condition": "partial flush and domainkeying",
+      "target": "simulatedinferenceASR",
+      "claim_ids": [
+        "F2_STAGE_COST"
+      ],
+      "field_position_count": 2
+    },
+    {
+      "canonical_unit_id": "KVGOV-hardware-gap",
+      "family_id": "addagada2026kvgov",
+      "source_version": "v1 2026-08-10; inspected2026-10-19",
+      "source_url": "https://arxiv.org/html/2608.09225v1",
+      "source_path": "evidence/reviewer-closure-20261019-002/sources/kvgov-v1.txt",
+      "source_sha256": "b5034ad085385abeac0bdcc06154666f1de04e3aec2ad95d4dcad57b8d09ba73",
+      "source_hash_verified": true,
+      "current_source_locator": "5.7-5.8",
+      "historical_source_locator": "5.7-5.8",
+      "mode": "separatehardwaretimingcalibration",
+      "current_condition": "cached/coldconditions;notpairedliveprotectedattack",
+      "historical_condition": "cached/coldconditions;notpairedliveprotectedattack",
+      "target": "TTFTtiminggap",
+      "claim_ids": [],
+      "field_position_count": 2
+    },
+    {
+      "canonical_unit_id": "KVGOV-HMAC-cost",
+      "family_id": "addagada2026kvgov",
+      "source_version": "v1 2026-08-10; inspected2026-10-19",
+      "source_url": "https://arxiv.org/html/2608.09225v1",
+      "source_path": "evidence/reviewer-closure-20261019-002/sources/kvgov-v1.txt",
+      "source_sha256": "b5034ad085385abeac0bdcc06154666f1de04e3aec2ad95d4dcad57b8d09ba73",
+      "source_hash_verified": true,
+      "current_source_locator": "5.9",
+      "historical_source_locator": "5.9",
+      "mode": "componentmicrobenchmark",
+      "current_condition": "keyedHMACcachekey",
+      "historical_condition": "keyedHMACcachekey",
+      "target": "incrementalcost",
+      "claim_ids": [
+        "C3",
+        "F2_STAGE_COST"
+      ],
+      "field_position_count": 2
+    },
+    {
+      "canonical_unit_id": "TRAFFIC-prompt-reformulation",
+      "family_id": "pouryousef2026traffic",
+      "source_version": "2609.31877v1",
+      "source_url": "https://arxiv.org/html/2609.31877v1",
+      "source_path": "evidence/recent-agent-review-20261018-001/sources/traffic-v1.txt",
+      "source_sha256": "4fee56d3903bed561373a372fd3ca1571475b966653505173ba4f8f433c2be1e",
+      "source_hash_verified": true,
+      "current_source_locator": "V-C1 Fig9a",
+      "historical_source_locator": "V-C1 Fig9a",
+      "mode": "sourcecollection;promptchange",
+      "current_condition": "LLMmap-stylepromptrewrite/wrapping",
+      "historical_condition": "LLMmap-stylepromptrewrite/wrapping",
+      "target": "modelclassification93.2%→69.5%",
+      "claim_ids": [],
+      "field_position_count": 2
+    },
+    {
+      "canonical_unit_id": "TRAFFIC-temperature",
+      "family_id": "pouryousef2026traffic",
+      "source_version": "2609.31877v1",
+      "source_url": "https://arxiv.org/html/2609.31877v1",
+      "source_path": "evidence/recent-agent-review-20261018-001/sources/traffic-v1.txt",
+      "source_sha256": "4fee56d3903bed561373a372fd3ca1571475b966653505173ba4f8f433c2be1e",
+      "source_hash_verified": true,
+      "current_source_locator": "V-C1 Fig9a",
+      "historical_source_locator": "V-C1 Fig9a",
+      "mode": "sourcecollection;decodingchange",
+      "current_condition": "temperature.3/.5/1.5",
+      "historical_condition": "temperature.3/.5/1.5",
+      "target": "classification75.0/88.8/80.0%vs93.2%",
+      "claim_ids": [],
+      "field_position_count": 2
+    },
+    {
+      "canonical_unit_id": "CARLINI-fixed-rate",
+      "family_id": "carlini2024remote",
+      "source_version": "2410.17175v1",
+      "source_url": "https://arxiv.org/html/2410.17175v1",
+      "source_path": "evidence/systematic-2026-10-08-r2/citations/three-bibliographies/carlini2024remote.html",
+      "source_sha256": "d122ae5bf81e771188db3c919b44ca05de76d2903848b4b1c0f1df80bc67bd0c",
+      "source_hash_verified": true,
+      "current_source_locator": "VII Fig11-12",
+      "historical_source_locator": "VII Fig11-12",
+      "mode": "rate/recordedtimingcostevaluation;liveplacementNR",
+      "current_condition": "constantouttokenevery10msor80ms;emptywhenunready",
+      "historical_condition": "constantouttokenevery10msor80ms;emptywhenunready",
+      "target": "per-tokenlatencyandbandwidthcurve",
+      "claim_ids": [],
+      "field_position_count": 2
+    },
+    {
+      "canonical_unit_id": "GAO-zero-copy-off",
+      "family_id": "gao2025iknow",
+      "source_version": "Proceedings PDF; see acquisition URL/hash",
+      "source_url": "https://www.usenix.org/system/files/usenixsecurity25-gao-zibo.pdf",
+      "source_path": "evidence/closure-2026-09-12/sources/gao2025iknow/paper.txt",
+      "source_sha256": "0a5b4d413e4bb0eccb65708e8a2898960e6f386a19e02415d14bfb874f5bc6de",
+      "source_hash_verified": true,
+      "current_source_locator": "7.1",
+      "historical_source_locator": "7.1",
+      "mode": "llama.cppcomponentcostbenchmark",
+      "current_condition": "disablezero-copymodelloading",
+      "historical_condition": "disablezero-copymodelloading",
+      "target": "loadinglatency/memory",
+      "claim_ids": [
+        "F2_STAGE_COST"
+      ],
+      "field_position_count": 2
+    },
+    {
+      "canonical_unit_id": "TDXRAY-oblivious-map",
+      "family_id": "hornetz2026tdxray",
+      "source_version": "Author-hosted sp26 PDF retrieved 2026-10-08; publisher-record/author-PDF bibliographic match, byte-equivalence to the IEEE PDF not checked.",
+      "source_url": "https://tdxray.cpusec.org/assets/tdxray_sp26.pdf",
+      "source_path": "evidence/closure-2026-10-08/native/fulltext-priority/tdxray_sp26.txt",
+      "source_sha256": "f89fc8609399b929c0d0903cd7a8db6768dba7f17fb3c7e09af6d723f4b5e78d",
+      "source_hash_verified": true,
+      "current_source_locator": "6.1 Fig8 Table3",
+      "historical_source_locator": "6.1 Fig8 Table3",
+      "mode": "isolatedCPUlookupmicrobenchmark100repeats",
+      "current_condition": "obliviousmap8–128bytekeys",
+      "historical_condition": "obliviousmap8–128bytekeys",
+      "target": "lookupcost/truncatedtokenfrequencies",
+      "claim_ids": [
+        "F2_STAGE_COST"
+      ],
+      "field_position_count": 2
+    },
+    {
+      "canonical_unit_id": "AGENTTELL-fixed-instruction",
+      "family_id": "shahriar2026agenttell",
+      "source_version": "2609.32915v1",
+      "source_url": "https://arxiv.org/html/2609.32915v1",
+      "source_path": "evidence/recent-agent-review-20261018-001/sources/agenttell-v1.txt",
+      "source_sha256": "ef3197da18b39ec7f6df37595cb9ffd3602d72c0a05f38b116fb0bfaa64e2fd1",
+      "source_hash_verified": true,
+      "current_source_locator": "4.3.1;5 Finding1",
+      "historical_source_locator": "4.3.1;5 Finding1",
+      "mode": "live browser-use syntheticlocal tasks",
+      "current_condition": "commonstandingprivacyinstructionloaded/cold",
+      "historical_condition": "commonstandingprivacyinstructionloaded/cold",
+      "target": "loadedmatchingaction61.1%of7630",
+      "claim_ids": [],
+      "field_position_count": 2
+    },
+    {
+      "canonical_unit_id": "FP-CLOUDFLARE",
+      "family_id": "wang2026fpagent",
+      "source_version": "2605.01247v1",
+      "source_url": "https://arxiv.org/html/2605.01247v1",
+      "source_path": "evidence/recent-agent-review-20261018-001/sources/fpagent-v1.txt",
+      "source_sha256": "99b76421163447be15b2506eedfbab99f84c990526bd036de29b7b76bc51d7ef",
+      "source_hash_verified": true,
+      "current_source_locator": "6.4 Table5",
+      "historical_source_locator": "6.4 Table5",
+      "mode": "live websiteaccesscontrol",
+      "current_condition": "CloudflareAIcrawlcontrol+BlockAIBots",
+      "historical_condition": "CloudflareAIcrawlcontrol+BlockAIBots",
+      "target": "agentblocking/taskcompletion",
+      "claim_ids": [],
+      "field_position_count": 2
+    },
+    {
+      "canonical_unit_id": "BAR-co-running-noise",
+      "family_id": "gu2026behindbars",
+      "source_version": "Proceedings PDF; see acquisition URL/hash",
+      "source_url": "https://www.usenix.org/system/files/usenixsecurity26-gu-cheng.pdf",
+      "source_path": "evidence/closure-2026-09-12/sources/gu2026behindbars/paper.txt",
+      "source_sha256": "56a70ba6ad2c4f99066e4d297ad60e0056f52a7477c54ae59a5d75c1dba89add",
+      "source_hash_verified": true,
+      "current_source_locator": "7.2-7.3 Table8",
+      "historical_source_locator": "7.2-7.3 Table8",
+      "mode": "MIGcovertchannelnoisetest",
+      "current_condition": "1/2co-runningworkloadskernellaunch1/2/3KHz",
+      "historical_condition": "1/2co-runningworkloadskernellaunch1/2/3KHz",
+      "target": "Membar+Loadchannelcapacity",
+      "claim_ids": [],
+      "field_position_count": 2
+    },
+    {
+      "canonical_unit_id": "RHYTHM-VPN",
+      "family_id": "alhazbi2025rhythm",
+      "source_version": "2502.20589v1",
+      "source_url": "https://arxiv.org/html/2502.20589v1",
+      "source_path": "evidence/systematic-2026-10-08-r2/citations/candidate-sources/alhazbi2025rhythm.txt",
+      "source_sha256": "e17104a20c244f33bfd60ea57f015c04eb0430a2f6bf584d710161a8bbfb2023",
+      "source_hash_verified": true,
+      "current_source_locator": "VI-B;VII",
+      "historical_source_locator": "VI-B;VII",
+      "mode": "liveVPNconnectiontestagainstbaseline-trainedmodel",
+      "current_condition": "VPNGermanyvsQatartraining/Swedennetworktest",
+      "historical_condition": "VPNGermanyvsQatartraining/Swedennetworktest",
+      "target": "modelidentityweightedF1",
+      "claim_ids": [],
+      "field_position_count": 2
+    },
+    {
+      "canonical_unit_id": "DEB-filter-origin",
+      "family_id": "debenedetti2024privacy",
+      "source_version": "2309.05610v2,18Jul2024",
+      "source_url": "https://arxiv.org/html/2309.05610v2",
+      "source_path": "evidence/systematic-2026-10-08-r2/citations/candidate-sources/debenedetti2024privacy.txt",
+      "source_sha256": "1512a6a3026cb02209a8bad67abc756829e4d6ddd4daa9306a7f72990076718d",
+      "source_hash_verified": true,
+      "current_source_locator": "Threatmodel;4.2",
+      "historical_source_locator": "Threatmodel;4.2",
+      "mode": "attackedMLsystemwithprivacyfilter",
+      "current_condition": "memorizationfilter/deduplicationaspartofpipeline",
+      "historical_condition": "memorizationfilter/deduplicationaspartofpipeline",
+      "target": "membership/secretinference",
+      "claim_ids": [],
+      "field_position_count": 2
+    }
+  ],
+  "input_provenance": [
+    {
+      "path": "evidence/reviewer-five-fixes-20261020-001/current-evidence/interventions/intervention-result-units.csv",
+      "sha256": "268321180f42e686f10f32f59839b235592a167503c8ce21e9f2a735cabb5dec"
+    },
+    {
+      "path": "evidence/reviewer-five-fixes-20261020-001/current-evidence/field-audit/load-bearing-fields.csv",
+      "sha256": "bee097ff9e93042a2807c7403e6e1c046d3e3c5677c30a2addd529485d19656f"
+    },
+    {
+      "path": "evidence/reviewer-five-fixes-20261020-001/current-evidence/final-inclusion-ledger.csv",
+      "sha256": "48acc06c7f49dfcb1c93ee4cb6b1dce5ca64f5b1fa3cf2a16eb174ec60f0d1e1"
+    },
+    {
+      "path": "evidence/reviewer-deployment-cases-20261020-001/synthesis/source-evidence.csv",
+      "sha256": "15242e228edb54a6c92ceeced7e08d32f0cb02a60c09e6c96a56d290c0f74077"
+    },
+    {
+      "path": "evidence/side-field-closure-20261020-001/derived/remaining-bindings.json",
+      "sha256": "e7fb452bb771bd083eac0e22dd0170e96322eaaa5d381eb883a81eeccf9cfb40"
+    },
+    {
+      "path": "evidence/side-field-closure-20261020-001/derived/ahb-static-binding.json",
+      "sha256": "a72e3f9a80728f0389ab7183772ee3b9eda7906747a0299d1be9c686bfdef0b0"
+    }
+  ],
+  "verified_primary_source_hashes": {
+    "evidence/recent-agent-review-20261018-001/sources/uitraces-v1.txt": "1bec3da8b688d48843835ec0044c2e74080efd2b5f952b2dc399fe2e821f2615",
+    "evidence/closure-2026-09-12/sources/jeong2026wra/paper.txt": "abfad8a8d65ea27495a70543020810289bd828549d6d6a0f310257f117272328",
+    "evidence/recent-agent-review-20261018-001/sources/netecho-v1.txt": "026618d848f6c39f3dae4e8d1a6a3a8eb60f55608ec6719e3b9cc10a6ba7cf07",
+    "evidence/recent-agent-review-20261018-001/sources/earlybird-v5.txt": "c0fac7dfe87d075a09e2328cfe0987b6a0c460995436ad6c95b5a12f9e2c1e9a",
+    "evidence/recent-agent-review-20261018-001/sources/whisper-v1.txt": "244fb3c90495c6a996536adba529fec451bcd08c3328f1f3c68ff302d0c03b60",
+    "evidence/recent-agent-review-20261018-001/sources/splice-v1.txt": "1edb01f58acc2f311bbd67451ac3d1611456319c7fc564ae78a78bc81259adaa",
+    "evidence/recent-agent-review-20261018-001/sources/time-v1.txt": "3621db92c0b104bf555a863a7b79f2cf35bf39d65b0232eadb581e16a0a2d1d7",
+    "evidence/recent-agent-review-20261018-001/sources/speculation-v4.txt": "1cb150902452d115bd7753c5e64e828e52f21e382172b8936c75e35599946f62",
+    "evidence/recent-agent-review-20261018-001/sources/dangol-v3.txt": "fae89faede5437f3449de3c641d93fd352d7e7eaa833df4ef51f91a3b5ed8039",
+    "evidence/recent-agent-review-20261018-001/sources/sigleak-v1.txt": "d7b961962aa390eb1d5c32008c3cf5f2851875107f2b1310b7339680d6a81f46",
+    "evidence/recent-agent-review-20261018-001/sources/safekv-v2.txt": "994107460849f8a3dea58cfd70439c875f1519654a7786ff56c6bd3977d1f17b",
+    "evidence/recent-agent-review-20261018-001/sources/ahb-v1.txt": "d3e49a3cde803c3f65de6b7036025cfcb039d3fa723cc4ada15e57b5e2bf05f7",
+    "evidence/reviewer-closure-20261019-002/sources/kvgov-v1.txt": "b5034ad085385abeac0bdcc06154666f1de04e3aec2ad95d4dcad57b8d09ba73",
+    "evidence/recent-agent-review-20261018-001/sources/traffic-v1.txt": "4fee56d3903bed561373a372fd3ca1571475b966653505173ba4f8f433c2be1e",
+    "evidence/systematic-2026-10-08-r2/citations/three-bibliographies/carlini2024remote.html": "d122ae5bf81e771188db3c919b44ca05de76d2903848b4b1c0f1df80bc67bd0c",
+    "evidence/closure-2026-09-12/sources/gao2025iknow/paper.txt": "0a5b4d413e4bb0eccb65708e8a2898960e6f386a19e02415d14bfb874f5bc6de",
+    "evidence/closure-2026-10-08/native/fulltext-priority/tdxray_sp26.txt": "f89fc8609399b929c0d0903cd7a8db6768dba7f17fb3c7e09af6d723f4b5e78d",
+    "evidence/recent-agent-review-20261018-001/sources/agenttell-v1.txt": "ef3197da18b39ec7f6df37595cb9ffd3602d72c0a05f38b116fb0bfaa64e2fd1",
+    "evidence/recent-agent-review-20261018-001/sources/fpagent-v1.txt": "99b76421163447be15b2506eedfbab99f84c990526bd036de29b7b76bc51d7ef",
+    "evidence/closure-2026-09-12/sources/gu2026behindbars/paper.txt": "56a70ba6ad2c4f99066e4d297ad60e0056f52a7477c54ae59a5d75c1dba89add",
+    "evidence/systematic-2026-10-08-r2/citations/candidate-sources/alhazbi2025rhythm.txt": "e17104a20c244f33bfd60ea57f015c04eb0430a2f6bf584d710161a8bbfb2023",
+    "evidence/systematic-2026-10-08-r2/citations/candidate-sources/debenedetti2024privacy.txt": "1512a6a3026cb02209a8bad67abc756829e4d6ddd4daa9306a7f72990076718d"
+  }
+}

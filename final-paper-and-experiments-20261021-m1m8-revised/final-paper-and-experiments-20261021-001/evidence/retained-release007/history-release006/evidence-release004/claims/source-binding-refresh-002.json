@@ -1,0 +1,76 @@
+{
+  "schema_version": "1.0",
+  "revision": "reviewer-deployment-cases-20261020-001",
+  "date": "2026-10-20",
+  "action": "Targeted manuscript-snapshot and source-condition qualification refresh; no scientific claim, numerical result, source bytes, corpus membership, model or fit changed.",
+  "reason": "A final primary-source reading binds Dangol's live OHTTP cost and accuracy result to a loopback testbed co-locating client, relay, gateway and agent on one host. The active case paragraph, deployment-question table and filled result-record table now state this testbed. The 0.167 timing-feature ablation remains distinct from an executed timing masker.",
+  "snapshot_changes": [
+    {
+      "source_path": "sections/11-discussion.tex",
+      "old_snapshot_sha256": "ef0f75631bf038778f6d9aa21f64bc2096af8393a74e689c9a8bca2bcfaec75d",
+      "new_snapshot_sha256": "33a4f89c7c15e7988de6182f4fd982e08cc4ebc5e267a10c7fc4d95673e66176",
+      "registered_claim_anchors_refreshed": ["C1", "C2", "C3"]
+    },
+    {
+      "source_path": "tables/deployment-question-cases.tex",
+      "old_snapshot_sha256": "95ce61b2059d16d7d9362da95c85b64c88886c94d8181f7a0acd6e14ba4380e3",
+      "new_snapshot_sha256": "c0e8b1b0e61fd05060d05f581c49d1cc3dd8a66bb32dedf8c18519116fa680d6",
+      "registered_claim_anchors_refreshed": ["C1", "C2", "F2_STAGE_COST"]
+    }
+  ],
+  "condition_qualifications": [
+    {
+      "file": "claims/claim-registry.json",
+      "locations": ["claims[claim_id=C2].support_and_numerical_anchor", "canonical_unit_index[canonical_unit_id=DANGOL-livebinding].current_condition"],
+      "addition": "Client, relay, gateway and agent co-located on one loopback host.",
+      "bounded_claim_changed": false
+    },
+    {
+      "file": "claims/case-fact-map.csv",
+      "row": "DANGOL-live-cover",
+      "field": "condition_boundary",
+      "addition": "The live accuracy 0.30 and about 13x bytes/11x latency belong to the co-located one-host loopback testbed; the timing-feature ablation is not an executed timing masker.",
+      "canonical_unit_id_unchanged": "DANGOL-livebinding",
+      "source_locator_unchanged": "Section 9.7, OHTTP paragraph after Table 5"
+    }
+  ],
+  "primary_source_binding": {
+    "path": "evidence/recent-agent-review-20261018-001/sources/dangol-v3.txt",
+    "source_sha256_unchanged": "fae89faede5437f3449de3c641d93fd352d7e7eaa833df4ef51f91a3b5ed8039",
+    "version": "arXiv:2606.07150v3",
+    "locator": "Section 9.7, OHTTP paragraph after Table 5; saved text lines 1173-1176",
+    "read_scope": "Existing saved primary-source paragraph, no new network retrieval or execution."
+  },
+  "output_hashes": {
+    "claims/claim-registry.json": {
+      "before": "f3d6801efb7170d65db3a5b0e9bd0d8696f025e5c1c904562bb854e2a200e1f5",
+      "after": "c3592c9f50d0546a5af0822d1622d11b9c6f50001bf6b89da41120fd223636b8"
+    },
+    "claims/case-fact-map.csv": {
+      "before": "461943408405ce00d01251c380e4b9a18ef032f3354e55d5f09e96c69f6e0cf8",
+      "after": "ad0ebdab5ce42ab57c6ae4646869ecd79634b21b6cd74911d2deebf71f47764c"
+    }
+  },
+  "final_source_manifest": {
+    "path": "evidence/reviewer-deployment-cases-20261020-001/final-source-hashes.json",
+    "sha256": "dc697304e18438fe9d70283b99bb835e73f7520fe510fd749da342db8d2590d8",
+    "entries_checked": 41,
+    "mismatches": 0
+  },
+  "final_pdf": {
+    "path": "output/pdf/ieee-sp2027-sok-20261020-deployment-cases-004/survey-sp2027.pdf",
+    "sha256": "6c68e4ae31c5d15733e5bd7fcb65f19ba9de3241e7ec73f99b1e6c98a6881f83"
+  },
+  "validation": {
+    "registered_snapshot_bindings_checked": 12,
+    "registered_snapshot_bindings_refreshed": 6,
+    "remaining_snapshot_mismatches": 0,
+    "claims_unchanged": 8,
+    "canonical_units_unchanged": 33,
+    "case_fact_rows_and_unique_aliases_unchanged": 15,
+    "field_positions_unchanged": 66,
+    "historical_files_or_sources_modified": false,
+    "new_model_requests": 0,
+    "new_fits": 0
+  }
+}
