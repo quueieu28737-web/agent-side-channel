@@ -94,7 +94,11 @@ def cluster_boot(units, scores, preds, n=2000):
 
 def folds(units):
     y = np.array([u["y"] for u in units]); g = np.array([u["task"] for u in units])
-    cv = StratifiedGroupKFold(n_splits=5, shuffle=True, random_state=SEED)
+    pos, neg = len(set(g[y == 1])), len(set(g[y == 0]))
+    k = min(5, pos, neg)  # 5 folds for the full 115-task runs; fewer only for small pilots
+    if k < 2:
+        raise SystemExit(f"need >=2 positive and negative tasks for CV, got {pos}/{neg}")
+    cv = StratifiedGroupKFold(n_splits=k, shuffle=True, random_state=SEED)
     return list(cv.split(np.zeros(len(y)), y, g)), y
 
 
@@ -134,10 +138,10 @@ def summarize(res):
             "best_auroc": max(v["auroc"] for v in res.values())}
 
 
-def main():
-    meta = json.loads((HERE / "e7_meta.json").read_text())
+def main(D=HERE):
+    meta = json.loads((D / "e7_meta.json").read_text())
     verbs = meta["verbs"]
-    S = {(r["cover"], r["task"], r["seed"]): r for r in json.loads((HERE / "e6_sessions.json").read_text())}
+    S = {(r["cover"], r["task"], r["seed"]): r for r in json.loads((D / "e6_sessions.json").read_text())}
     covers = list(dict.fromkeys(k[0] for k in S))
     tasks = sorted({k[1] for k in S}); seeds = sorted({k[2] for k in S})
     e6 = []
@@ -163,10 +167,12 @@ def main():
                        "positive_tasks": int(sum(u["y"] for u in units) // len(seeds)), "tasks": len(tasks), "units": len(units)})
             print("E6", tgt, f"{cover:22s}", "best=%s %.3f [%.2f,%.2f]" % (e6[-1]["best_attacker"], e6[-1]["best_ba"], *e6[-1]["best_ba_ci95"]),
                   "db=%.2f ovh=%.2f" % (e6[-1]["db_equality"], e6[-1]["call_overhead"]), flush=True)
-    (HERE / "e6_dispatch_results.json").write_text(json.dumps(e6, indent=1))
+    (D / "e6_dispatch_results.json").write_text(json.dumps(e6, indent=1))
 
     R = {(r["cover"], r["framing"], r["task"], r["seed"]): [tuple(x) for x in r["records"]]
-         for r in json.loads((HERE / "e7_records.json").read_text())}
+         for r in json.loads((D / "e7_records.json").read_text())}
+    if not R:  # dispatch-only run
+        return
     ncovers = list(dict.fromkeys(k[0] for k in R)); framings = list(dict.fromkeys(k[1] for k in R))
     base_wire = np.mean([sum(n + 5 for _, n in R[("none", "raw", t, s)]) for t in tasks for s in seeds])
     base_rt = np.mean([len(S[("none", t, s)]["calls"]) for t in tasks for s in seeds])
@@ -218,8 +224,9 @@ def main():
                            "round_trip_ratio": float(np.mean([len(s["calls"]) for s in sess]) / base_rt)})
                 print("E7", tgt, f"{cover:22s}", f"{framing:10s}", "best=%s %.3f [%.2f,%.2f]" % (e7[-1]["best_attacker"], e7[-1]["best_ba"], *e7[-1]["best_ba_ci95"]),
                       "dec=%.2f wire=%.2f rt=%.2f" % (acc, e7[-1]["wire_ratio"], e7[-1]["round_trip_ratio"]), flush=True)
-    (HERE / "e7_network_results.json").write_text(json.dumps({"meta": meta, "tool_identification": ident, "results": e7}, indent=1))
+    (D / "e7_network_results.json").write_text(json.dumps({"meta": meta, "tool_identification": ident, "results": e7}, indent=1))
 
 
 if __name__ == "__main__":
-    main()
+    import sys
+    main(Path(sys.argv[1]).resolve() if len(sys.argv) > 1 else HERE)
