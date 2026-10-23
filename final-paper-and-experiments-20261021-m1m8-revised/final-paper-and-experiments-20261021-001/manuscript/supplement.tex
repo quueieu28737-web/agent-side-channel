@@ -61,6 +61,14 @@ This supplement provides the search accounting, corpus maps, saved empirical res
 \par\noindent The preceding E8 rows and availability statement describe the historical stand-in study. S14 reports the subsequent real-model collection and training-only calibration.\par
 \clearpage
 \input{tables/r4-supp}
+
+\clearpage
+\section{Cross-Fitting, Operating Points and Leakage Localization (E10--E12)}\label{sec:r5-supp}
+E10 re-runs the frozen E9 defense and attack pipeline under customer-grouped stratified 5-fold cross-fitting over all 690 completed episodes (115 tasks, 53 customers; 14 cancellation-positive and 18 return-positive customers). In each fold, the count template, donor pools, size caps and all attackers are fit only on the other folds. Out-of-fold predictions are pooled, and intervals use 2,000 customer-cluster bootstrap draws with the suite maximum recomputed per draw. The six configurations were declared in \path{r5lib.py} before evaluation. E11 selects among them using inner customer folds of the 69 frozen training tasks only (rule in \path{e11_select.py}), then evaluates the choice once on the 46 frozen test tasks. E12 ablates undefended traces to locate the signal.
+
+Records are computed with an analytic TLS~1.2 AES-GCM model (fragment plus 24 bytes, 16,384-byte fragments). The model is validated against all 2,760 socket captures of the completed cohort and 120 fresh loopback captures of new cross-fitted sessions. \path{verify_r5.py} also checks byte-identical reproduction of the E9 calibration, all sessions, and all 32 result cells of both the 663-run snapshot and the completed cohort. The same analysis on the 660-episode snapshot grid is retained in \path{snapshot-660/}; there the bucket point gives 50.6\%/51.6\% with upper bounds of 59.2\%/58.3\%. Cross-fitted templates use more training customers than E9 and are therefore larger, which raises call overhead (5.0$\times$ versus 3.8$\times$). A quantile template is a natural next operating point.
+
+\input{tables/r5-supp}
 \clearpage
 \twocolumn
 \input{tables/corpus-citations}

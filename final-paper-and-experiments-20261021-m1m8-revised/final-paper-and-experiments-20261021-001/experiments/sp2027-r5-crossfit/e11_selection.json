@@ -1,0 +1,149 @@
+{
+ "rule": "E11b: training-only operating-point selection on the frozen R4 split.\n\nSelection rule (fixed in this file before the held-out stage is run):\n  1. For every configuration in r5lib.FRONTIER, run customer-grouped 5-fold\n     cross-fitting *inside the 69 R4 training tasks only* (calibration and\n     attackers refit per inner fold) and record the network-view core-suite\n     maximum BA for both targets and both prompts, plus the byte ratio.\n  2. Eligible: every one of those four inner BAs is <= 0.60.\n  3. Choose the eligible configuration with the smallest inner byte ratio\n     (ties: smaller call ratio). If none is eligible, keep the R4 configuration.\n  4. Write e11_selection.json, then calibrate the chosen configuration on all\n     414 training episodes and evaluate it once on the frozen test tasks.\nThe held-out test episodes are never read before step 4. The rule was first run on the\n663-run snapshot (41 test tasks; snapshot-660/) and then, unchanged, on the completed\n690-run cohort (46 test tasks). Training data, hence the inner selection, are identical.\n",
+ "inner": [
+  {
+   "config": "r4",
+   "inner_network_core_ba": {
+    "cancel/baseline": 0.5489766081871346,
+    "return/baseline": 0.5347222222222222,
+    "cancel/rules": 0.5840643274853801,
+    "return/rules": 0.5257936507936508
+   },
+   "inner_bytes_ratio": 15.177770955754829,
+   "inner_calls_ratio": 3.974395187548841,
+   "eligible": true
+  },
+  {
+   "config": "r4_bucket",
+   "inner_network_core_ba": {
+    "cancel/baseline": 0.5328947368421052,
+    "return/baseline": 0.5813492063492063,
+    "cancel/rules": 0.5533625730994152,
+    "return/rules": 0.5684523809523809
+   },
+   "inner_bytes_ratio": 9.772468243551605,
+   "inner_calls_ratio": 3.974395187548841,
+   "eligible": true
+  },
+  {
+   "config": "r4_cap80",
+   "inner_network_core_ba": {
+    "cancel/baseline": 0.5679824561403508,
+    "return/baseline": 0.5679563492063493,
+    "cancel/rules": 0.5307017543859649,
+    "return/rules": 0.5481150793650793
+   },
+   "inner_bytes_ratio": 11.66420010424537,
+   "inner_calls_ratio": 3.974395187548841,
+   "eligible": true
+  },
+  {
+   "config": "writes",
+   "inner_network_core_ba": {
+    "cancel/baseline": 0.6710526315789473,
+    "return/baseline": 0.5,
+    "cancel/rules": 0.7785087719298246,
+    "return/rules": 0.5724206349206349
+   },
+   "inner_bytes_ratio": 9.359594021674404,
+   "inner_calls_ratio": 2.4607848723625945,
+   "eligible": false
+  },
+  {
+   "config": "writes_cap80",
+   "inner_network_core_ba": {
+    "cancel/baseline": 0.7112573099415205,
+    "return/baseline": 0.6488095238095237,
+    "cancel/rules": 0.6747076023391814,
+    "return/rules": 0.7162698412698413
+   },
+   "inner_bytes_ratio": 7.093748978609483,
+   "inner_calls_ratio": 2.4607848723625945,
+   "eligible": false
+  },
+  {
+   "config": "writes_bucket",
+   "inner_network_core_ba": {
+    "cancel/baseline": 0.567251461988304,
+    "return/baseline": 0.6741071428571428,
+    "cancel/rules": 0.5372807017543859,
+    "return/rules": 0.6478174603174603
+   },
+   "inner_bytes_ratio": 5.929690471661504,
+   "inner_calls_ratio": 2.4607848723625945,
+   "eligible": false
+  }
+ ],
+ "chosen": "r4_bucket",
+ "training_tasks": [
+  0,
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12,
+  13,
+  14,
+  15,
+  16,
+  17,
+  23,
+  24,
+  25,
+  26,
+  27,
+  28,
+  29,
+  30,
+  31,
+  32,
+  33,
+  34,
+  35,
+  39,
+  45,
+  46,
+  47,
+  48,
+  50,
+  51,
+  52,
+  53,
+  54,
+  55,
+  56,
+  57,
+  58,
+  65,
+  69,
+  70,
+  71,
+  72,
+  74,
+  75,
+  76,
+  77,
+  79,
+  80,
+  81,
+  90,
+  93,
+  94,
+  95,
+  96,
+  99,
+  100,
+  109,
+  110,
+  111,
+  112,
+  113
+ ]
+}

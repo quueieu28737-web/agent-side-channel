@@ -1,0 +1,17 @@
+\begin{table}[t]\centering\scriptsize\setlength{\tabcolsep}{2.5pt}
+\caption{E10--E12: network-view maximum BA (\%) over the fixed suite with customer-cluster 95\% intervals. Cross-fitting raises positive customers to 14 (cancel) and 18 (return). Baseline prompt unless stated; bytes/calls relative to raw transport. Writes: state-changing calls.}\label{tab:r5}
+\begin{tabular}{@{}lrrr@{}}\toprule
+Configuration & Cancel BA & Return BA & B$\times$/C$\times$\\\midrule
+\multicolumn{4}{@{}l}{\emph{E10: cross-fitted, 690 episodes, 53 customers}}\\
+Undefended & 91.7 [82.1, 100.0] & 85.5 [76.6, 93.4] & 1.0/1.0\\
+E9 point (constant) & 60.5 [51.5, 70.5] & 52.1 [50.0, 60.3] & 19.8/5.0\\
+1024-B buckets & 52.2 [50.0, 60.5] & 52.7 [50.0, 60.2] & 12.4/5.0\\
+Writes-only cover & 53.5 [50.0, 65.8] & 56.1 [50.0, 67.4] & 11.3/2.9\\
+Rules + buckets & 53.4 [50.0, 60.6] & 50.7 [50.0, 57.3] & 12.4/5.0\\
+\midrule\multicolumn{4}{@{}l}{\emph{E11: chosen on training folds; frozen 46-task test}}\\
+E9 point & 50.0 [50.0, 60.6] & 50.0 [50.0, 65.5] & 15.4/3.8\\
+Selected: 1024-B buckets & 53.2 [50.0, 69.5] & 58.4 [52.9, 69.1] & 9.8/3.8\\
+\midrule\multicolumn{4}{@{}l}{\emph{E12: undefended observer ablation, cross-fitted}}\\
+Writes removed & 55.2 [50.0, 68.7] & 59.9 [50.5, 71.7] & --\\
+Writes only & 91.7 [82.1, 100.0] & 84.9 [78.2, 93.7] & --\\
+\bottomrule\end{tabular}\end{table}
