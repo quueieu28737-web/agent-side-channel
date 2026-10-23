@@ -9,5 +9,5 @@ Shape only & 60.8 [55.4, 71.3] & 51.9 [50.5, 57.8] & 79.7 & 4.16 & 3.83\\
 Joint program & 50.0 [50.0, 60.6] & 50.0 [50.0, 65.5] & 79.7 & 15.39 & 3.83\\
 Rules + joint & 50.0 [50.0, 65.1] & 60.6 [50.0, 73.3] & 76.1 & 15.72 & 3.88\\
 \bottomrule\end{tabular}
-\par\smallskip\raggedright Joint = online shadow cover plus constant framing. Padding and shape ablations use baseline trajectories. Ratios use raw transport within the same prompt. Program conditions reuse each trajectory, preserving reward by construction. Network measurements are TLS~1.2 loopback replay of actual model-generated calls; 414 training runs preceded defense freezing and test collection. Full methods and ablations: Supplement S14.
+\par\smallskip\raggedright \textbf{Paired joint-minus-raw BA differences (percentage points):} baseline cancellation -47.2 [-50.0, -33.3], return -44.0 [-48.9, -27.8]. These post hoc contrasts use the same customer draws and reselect the attack-suite maximum in each condition. Joint = online shadow cover plus constant framing; padding/shape ablations use baseline trajectories. Ratios use raw transport within each prompt. Shadow isolation preserves the logical planner transcript; the four program conditions replay actual LLM trajectories over local TLS~1.2. Full methods, intervals and prompt contrasts: Supplement S14.
 \end{table*}

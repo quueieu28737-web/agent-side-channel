@@ -23,6 +23,7 @@
   }\par\smallskip
 }
 \newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+\newcommand{\auditpartial}{\tikz[baseline=-.5ex]{\fill (0,0) -- (0,.5ex) arc (90:270:.5ex) -- cycle;\draw[line width=.3pt] (0,0) circle (.5ex);}}
 \input{tables/final-counts}
 \renewcommand{\thesection}{S\arabic{section}}
 \renewcommand{\thesubsection}{\thesection.\arabic{subsection}}
@@ -35,6 +36,7 @@ This supplement provides the search accounting, corpus maps, saved empirical res
 \section{Search and Evidence Audit}\label{app:search}
 \input{tables/selection-flow}
 \input{sections/22-search-audit-summary}
+\input{tables/search-reconciliation}
 \input{sections/19-final-ledger}
 \input{tables/result-lineage-example}
 \input{tables/observable-origin-map}

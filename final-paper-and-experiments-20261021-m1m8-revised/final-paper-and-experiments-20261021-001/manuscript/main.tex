@@ -32,6 +32,7 @@
   }\par\smallskip
 }
 \newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+\newcommand{\auditpartial}{\tikz[baseline=-.5ex]{\fill (0,0) -- (0,.5ex) arc (90:270:.5ex) -- cycle;\draw[line width=.3pt] (0,0) circle (.5ex);}}
 \input{tables/final-counts}
 
 \title{SoK: Evaluating LLM and Agent Side-Channel Defenses\\From Evidence Audits to Real-Agent Measurements}
@@ -55,12 +56,10 @@ Encryption hides message content while leaving the structure of agent workflows 
 \input{sections/10-open-challenges}
 \input{sections/12-conclusion}
 
-\clearpage
-\appendices
-\input{sections/30-reproducibility-guide}
-\input{tables/corpus-citations}
-\clearpage
 
 \bibliographystyle{IEEEtran}
 \bibliography{refs,refs-final-additions,evidence/search-completion-20261021-001/new_refs,evidence/search-completion-20261021-001/new_refs_adjacent}
+\clearpage
+\appendices
+\input{sections/30-reproducibility-guide}
 \end{document}

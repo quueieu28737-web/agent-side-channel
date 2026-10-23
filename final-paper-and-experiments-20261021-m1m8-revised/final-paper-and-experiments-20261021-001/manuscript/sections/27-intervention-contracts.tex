@@ -1,6 +1,6 @@
 \section{Comparability Audit Across All 58 Core Families}\label{sec:defenses}
 \subsection{Unified 58-core disposition and 39-record ledger}
-Across all \FinalCore{} core families in our unified collection (43 from the October 8 snapshot plus 15 from the October 21 expansion), every family has a verified intervention disposition (Supplement S5 (Table~S11)): \textbf{20 families evaluate mitigation components} (16 snapshot + 4 additions: \texttt{wu2026cacheprune}, \texttt{lee2026otro}, \texttt{chen2026sparleak}, \texttt{hadad2026shape}), two use fixed guardrails, five evaluate interventions for other objectives or split-decoy boundaries (4 snapshot + \texttt{politis2026splitdecoy}), 22 report no mitigation evaluation within the inspected scope (13 snapshot + 9 additions), five are Type~IV authorized diagnostic components (4 snapshot + \texttt{revankar2026mirage}), and four contain unbound quantitative defense assertions. The 20 evaluated-mitigation families and contextual comparators contribute \textbf{39 source-bound result records} (33 in the baseline snapshot plus 6 from the four October~21 mitigation additions) and \textbf{78 utility/cost field positions}. Table~\ref{tab:defense-types} organizes the eight intervention families by threat polarity (Types~I--III), receiving view and deployment boundary.
+Across the \FinalCore{} core families, 20 evaluate mitigation components, two use fixed guardrails, five evaluate interventions for other objectives or split-decoy boundaries, 22 report no mitigation evaluation within the inspected scope, five supply authorized diagnostics, and four contain unbound quantitative defense assertions. The mitigation families and contextual comparators contribute 39 scoped result records from 26 families, with 78 utility/cost field positions. Table~\ref{tab:defense-types} organizes intervention mechanisms; Table~\ref{tab:family-audit} exposes the evidence bindings of every mitigation family.
 \input{tables/defense-types}
 
 \subsection{Within-family and within-cohort record comparisons}
@@ -12,8 +12,8 @@ While the machine-readable audit retains all $\binom{33}{2}=528$ baseline pairs 
 \end{itemize}
 
 \subsection{Nine-item split reporting audit across 20 mitigation families}
-Table~\ref{tab:six-check-audit} reports nine audit items R1--R9, separate from deployment Checks~1--3. They are requirements for the particular reuse claims considered here, not universal obligations that every component paper must satisfy. R4 records protected-condition fitting; R5 records a matched clean-versus-adapted contrast on defended tests. R7--R9 record inference, utility and cost. A family-level Bound entry means at least one scoped result meets the item, not that every result in that family does.
-\input{tables/six-check-audit}
+Table~\ref{tab:family-audit} reports all 180 family/item bindings. R1--R9 specify the evidence needed for scoped reuse claims, separately from deployment Checks~1--3. R4 records protected-condition fitting; R5 records a matched clean-versus-adapted contrast on defended tests. R7--R9 record inference, utility and cost. A family-level Bound entry means at least one scoped result meets the item, not that every result in that family does.
+\input{tables/family-audit-matrix}
 
 For Dangol, R5 is Bound for in-fold stored-capture experiments; the live-refit paired comparison in Table~\ref{tab:result-lineage} remains \NRV{}. These are different records, so we retain the family count of two and explicitly restrict its meaning.
 

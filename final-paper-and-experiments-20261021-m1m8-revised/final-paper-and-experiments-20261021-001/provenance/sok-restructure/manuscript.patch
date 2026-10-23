@@ -1,0 +1,437 @@
+diff --git a/final-paper-and-experiments-20261021-m1m8-revised/final-paper-and-experiments-20261021-001/manuscript/main.tex b/final-paper-and-experiments-20261021-m1m8-revised/final-paper-and-experiments-20261021-001/manuscript/main.tex
+index b7216b2..ee05233 100644
+--- a/final-paper-and-experiments-20261021-m1m8-revised/final-paper-and-experiments-20261021-001/manuscript/main.tex
++++ b/final-paper-and-experiments-20261021-m1m8-revised/final-paper-and-experiments-20261021-001/manuscript/main.tex
+@@ -32,6 +32,7 @@
+   }\par\smallskip
+ }
+ \newcolumntype{Y}{>{\raggedright\arraybackslash}X}
++\newcommand{\auditpartial}{\tikz[baseline=-.5ex]{\fill (0,0) -- (0,.5ex) arc (90:270:.5ex) -- cycle;\draw[line width=.3pt] (0,0) circle (.5ex);}}
+ \input{tables/final-counts}
+ 
+ \title{SoK: Evaluating LLM and Agent Side-Channel Defenses\\From Evidence Audits to Real-Agent Measurements}
+@@ -55,12 +56,10 @@ Encryption hides message content while leaving the structure of agent workflows
+ \input{sections/10-open-challenges}
+ \input{sections/12-conclusion}
+ 
+-\clearpage
+-\appendices
+-\input{sections/30-reproducibility-guide}
+-\input{tables/corpus-citations}
+-\clearpage
+ 
+ \bibliographystyle{IEEEtran}
+ \bibliography{refs,refs-final-additions,evidence/search-completion-20261021-001/new_refs,evidence/search-completion-20261021-001/new_refs_adjacent}
++\clearpage
++\appendices
++\input{sections/30-reproducibility-guide}
+ \end{document}
+diff --git a/final-paper-and-experiments-20261021-m1m8-revised/final-paper-and-experiments-20261021-001/manuscript/sections/03-methodology.tex b/final-paper-and-experiments-20261021-m1m8-revised/final-paper-and-experiments-20261021-001/manuscript/sections/03-methodology.tex
+index 53fb040..a87a969 100644
+--- a/final-paper-and-experiments-20261021-m1m8-revised/final-paper-and-experiments-20261021-001/manuscript/sections/03-methodology.tex
++++ b/final-paper-and-experiments-20261021-m1m8-revised/final-paper-and-experiments-20261021-001/manuscript/sections/03-methodology.tex
+@@ -1,50 +1,22 @@
+-\section{Scope and Systematization Method}\label{sec:methodology}\label{sec:background}
+-\subsection{Research questions, eligibility and threat polarity}
+-We organize the systematization around four questions: which hidden targets, threat polarities and auxiliary observables appear across LLM and agent systems (RQ1); how signal generation origin relates to receiver observation permissions (RQ2); which holdouts establish portability across tasks, configurations and hardware (RQ3); and when a component intervention protects an end-to-end workflow at a bounded utility and cost (RQ4).
+-
+-Core inclusion requires five conjunctive criteria: (C1) LLM or agent execution, (C2) a hidden target property, (C3) an execution-dependent auxiliary observable rather than ordinary output semantics alone, (C4) specified observer permissions, and (C5) an empirical inference evaluation. Mixed-feature papers qualify only if they isolate an auxiliary-only C3 component; thus coding fingerprints, WildAuth, ZeroPrint, endpoint-content fingerprints and StepFinder remain adjacent boundary comparators \cite{ghaleb2026codingfingerprint,wang2026dialogue,shao2026zeroprint,leshin2026endpoint,zhu2026stepfinder}. Table~\ref{tab:boundary-rules} states the observable eligibility rules.
+-\input{tables/boundary-rules}
+-
+-We use four narrative groupings of objectives and observer roles, not mutually exclusive classes. An unauthorized identity inference can be both attribution and a confidentiality concern. Each record separately specifies the inference target, observer, authorization relation and protected interest:
+-\begin{enumerate}
+-\item \textbf{Type~I (Confidentiality and privacy protection):} An unauthorized observer attempts to infer private user prompts, personal traits, visited domains or proprietary model states; the defense protects user or tenant confidentiality (e.g., NetEcho, WRA, Early Bird, KVGov, CachePrune, OTRO \cite{netecho2025,jeong2026wra,earlybird2025,addagada2026kvgov,wu2026cacheprune,lee2026otro}).
+-\item \textbf{Type~II (Provenance and identity attribution):} An observer infers which model, agent harness or user identity generated a trace from timing, packet or DOM event structure (e.g., UI Traces, FP-Agent, AgentPrint, Lidar \cite{uitraces2026,wang2026fpagent,agentprint2025,wang2026lidar}).
+-\item \textbf{Type~III (Human--agent / bot-detection evasion):} The receiving platform operates a defensive classifier to detect automated bots, while the agent applies ``action humanization'' (e.g., AHB \cite{zhu2026turing}) to evade detection---inverting the defender/attacker polarity relative to Type~I privacy protection.
+-\item \textbf{Type~IV (Authorized operator diagnostics):} Privileged loop detection, serving root-cause localization or internal residual-stream monitoring (ClawGuard, cycle detection, LumiMAS, LLM RCA, MIRAGE \cite{gan2026clawguard,george2025cycles,solomon2026lumimas,scheinert2026rca,revankar2026mirage}), which use C1--C5 auxiliary signals for legitimate system telemetry rather than privacy exploitation.
+-\end{enumerate}
+-
+-\subsection{Seed-anchored purposive corpus and exact reconciliation}
+-Because LLM and agent side-channel papers are scattered across security conferences, systems venues and preprints under heterogeneous terminology (``remote keylogging,'' ``prompt-cache leakage,'' ``workflow fingerprinting,'' ``agent humanization''), our corpus is constructed through \emph{purposive seed selection, venue-targeted proceedings screening (IEEE S\&P, USENIX Security, NDSS, ACM CCS, PMLR) and one-hop backward/forward citation snowballing} from 40 fixed seeds (2,237 backward reference occurrences and 24 distinct forward works screened; 38/40 forward seeds resolved; seed resolution and the number of distinct returned works are different counts), complemented by native database exports and bulk keyword searches (Appendix~\ref{app:search} and Supplement S1/S10).
+-
+-To document why standalone Boolean keyword queries cannot replace seed-and-snowball discovery, we audited both our historical October 8--9 native IEEE/ACM exports and a completed October 21 supplementary search frame comprising four Semantic Scholar title/abstract bulk queries and two native arXiv searches (615 occurrences deduplicated to 565 unique records; Table~\ref{tab:corpus-reconciliation}). Those six supplementary keyword queries returned 17/24 of a fixed 24-paper core subset of our 40 seeds (\texttt{seed\_n=24}) and 25/60 of the October 8 snapshot. Because the 24 known papers are a core subset of the 40 initial seeds rather than an external holdout, 17/24 and 25/60 measure \emph{lexical overlap between narrow Boolean queries and our seed-anchored corpus}, not calibrated database recall: the two native arXiv queries required the exact hyphenated string \texttt{"side-channel"} (missing studies titled with ``prompt leakage,'' ``keylogging,'' ``timing attacks'' or ``fingerprinting''), and Semantic Scholar title/abstract matching did not search full texts of USENIX/NDSS PDFs.
+-
+-\begin{table}[t]\centering\footnotesize
+-\caption{Item-by-item reconciliation of the 565-record October 21 search frame (before and after the 204-record exclusion audit) and the transition from the 60-family snapshot to all \FinalN{} coded families.}\label{tab:corpus-reconciliation}
+-\setlength{\tabcolsep}{3.5pt}
+-\begin{tabularx}{\columnwidth}{@{}Yrrr@{}}\toprule
+-Route / family category & Pre-audit & Audit $\Delta$ & Final (Indexed)\\\midrule
+-Excluded: no hidden C2/C3 target & 221 & $-4$ & 217 (0)\\
+-Excluded: outside LLM / diff.\ target & 175 & $0$ & 175 (0)\\
+-Existing snapshot core / adjacent & 23 / 1 & $+1 / 0$ & 24 / 1 (in 60)\\
+-New source-verified core families & 14 & $+1$ & 15 (\textbf{+15})\\
+-Adjacent source-reviewed contexts & 28 & $+2$ & 30 (\textbf{+7})\\
+-Adjacent metadata-only contexts & 28 & $0$ & 28 (0)\\
+-Background / proposal metadata & 58 & $0$ & 58 (0)\\
+-Missing abstract / unavailable text & 17 & $0$ & 17 (0)\\\midrule
+-\textbf{565-frame total / Net added families} & \textbf{565} & \textbf{0 net} & \textbf{565 (+22)}\\
+-\textbf{Coded collection}: Core / Adjacent (\textbf{Total}) & \multicolumn{3}{r}{Snapshot: 43 / 17 (\textbf{60}) $\to$ Full: \FinalCore{} / \FinalAdjacent{} (\textbf{\FinalN{}})}\\\bottomrule
+-\end{tabularx}
+-\par\smallskip\raggedright\footnotesize
+-The exclusion audit selected 177 high-risk pattern matches plus 27 reason-stratified records (seed 20261021), rather than all 396 initially excluded records. This enriched 204-record subset rerouted 4 records out of the 221 initial C2/C3 exclusions: (1) \texttt{SUP-0192} (MIRAGE \cite{revankar2026mirage}) moved to new core ($14+1=15$, all 15 added to the family index); (2) \texttt{SUP-0552} (InputSnatch arXiv alias) merged into existing family \texttt{inputsnatch2024} ($23+1=24$, $+0$ new families); and (3--4) \texttt{SUP-0191} and \texttt{SUP-0424} moved to source-reviewed adjacent contexts ($28+2=30$, of which 7 boundary-defining studies enter the adjacent index and 23 remain in the 565-record ledger). Thus $60 + 15\text{ (core)} + 7\text{ (adjacent)} = \FinalN{}$.
+-\end{table}
+-
+-Table~\ref{tab:corpus-reconciliation} reconciles every record across the $60\to\FinalN{}$ transition. All \FinalCore{} core families (\FinalA{} workflow-origin, \FinalB{} inherited-runtime/application; 53 non-diagnostic and 5 Type~IV diagnostic) and \FinalAdjacent{} adjacent families are integrated into the unified corpus maps and intervention dispositions (Supplement S2/S5). Across the \FinalCore{} core families, 20 evaluate mitigations (16 snapshot families plus four additions). The result ledger is broader: 33 baseline records from 22 families, including six contextual comparators, plus six records from the four added mitigation families. Thus the 39-record ledger spans 26 families and 78 utility/cost field positions; the reporting-audit denominator is 20.
+-
+-\subsection{Supplied coding records and agreement}
+-The supplied package records a primary AI-assisted coding workflow and a second coding column described by its provenance as a domain-expert review. We retain the recorded agreement summaries and supply their source columns. The files alone do not verify coder identity, blinding or independence from the primary decisions; we therefore report annotation agreement rather than newly verified independent human validation. The recorded scope is:
+-The saved screening sample has 93/100 three-class agreement ($\kappa=0.886$); the nine-item baseline audit has 134/144 cell agreement across 16 families ($\kappa=0.876$); and the 50-pair sample has 141/150 judgment agreement ($\kappa=0.916$). The latter covers all 13 same-family pairs plus 37 other within-cohort pairs. Full intervals and source locators remain in Supplement S8 and the annotation files.
+-
+-
+-The historical confidence intervals resample individual screening records, audit cells and pairwise judgments respectively. Cells within families and three judgments within a pair are dependent, so these intervals are conditional descriptive summaries, not cluster-robust generalization intervals. The 36 cells for four added families are outside the 144-cell agreement calculation. Agreement also does not establish coding correctness, and $\kappa$ depends on category prevalence.
+-
+-\soktakeaway{SoK Takeaway 1 (Search and evidence scope)}{The supplementary queries returned 25/60 snapshot families and 17/24 known seed papers. These overlaps motivate complementary discovery methods; they neither estimate field-wide recall nor identify why each missing paper was absent. Objective, observer and authorization must be specified separately when comparing interventions.}
++\section{Scope and Systematization Method}\label{sec:methodology}\label{sec:background}
++\subsection{Research questions, eligibility and threat polarity}
++We organize the systematization around four questions: which hidden targets, threat polarities and auxiliary observables appear across LLM and agent systems (RQ1); how signal generation origin relates to receiver observation permissions (RQ2); which holdouts establish portability across tasks, configurations and hardware (RQ3); and when a component intervention protects an end-to-end workflow at a bounded utility and cost (RQ4).
++
++Core inclusion requires five conjunctive criteria: (C1) LLM or agent execution, (C2) a hidden target property, (C3) an execution-dependent auxiliary observable rather than ordinary output semantics alone, (C4) specified observer permissions, and (C5) an empirical inference evaluation. Mixed-feature papers qualify only if they isolate an auxiliary-only C3 component; thus coding fingerprints, WildAuth, ZeroPrint, endpoint-content fingerprints and StepFinder remain adjacent boundary comparators \cite{ghaleb2026codingfingerprint,wang2026dialogue,shao2026zeroprint,leshin2026endpoint,zhu2026stepfinder}. Table~\ref{tab:boundary-rules} states the observable eligibility rules.
++\input{tables/boundary-rules}
++
++We use four narrative groupings of objectives and observer roles, not mutually exclusive classes. An unauthorized identity inference can be both attribution and a confidentiality concern. Each record separately specifies the inference target, observer, authorization relation and protected interest:
++\begin{enumerate}
++\item \textbf{Type~I (Confidentiality and privacy protection):} An unauthorized observer attempts to infer private user prompts, personal traits, visited domains or proprietary model states; the defense protects user or tenant confidentiality (e.g., NetEcho, WRA, Early Bird, KVGov, CachePrune, OTRO \cite{netecho2025,jeong2026wra,earlybird2025,addagada2026kvgov,wu2026cacheprune,lee2026otro}).
++\item \textbf{Type~II (Provenance and identity attribution):} An observer infers which model, agent harness or user identity generated a trace from timing, packet or DOM event structure (e.g., UI Traces, FP-Agent, AgentPrint, Lidar \cite{uitraces2026,wang2026fpagent,agentprint2025,wang2026lidar}).
++\item \textbf{Type~III (Human--agent / bot-detection evasion):} The receiving platform operates a defensive classifier to detect automated bots, while the agent applies ``action humanization'' (e.g., AHB \cite{zhu2026turing}) to evade detection---inverting the defender/attacker polarity relative to Type~I privacy protection.
++\item \textbf{Type~IV (Authorized operator diagnostics):} Privileged loop detection, serving root-cause localization or internal residual-stream monitoring (ClawGuard, cycle detection, LumiMAS, LLM RCA, MIRAGE \cite{gan2026clawguard,george2025cycles,solomon2026lumimas,scheinert2026rca,revankar2026mirage}), which use C1--C5 auxiliary signals for legitimate system telemetry rather than privacy exploitation.
++\end{enumerate}
++
++\subsection{Corpus construction and reconciliation}
++We construct a purposive corpus through 40 seeds, venue-targeted proceedings screening and one-hop citation snowballing, supplemented by native database and bulk keyword searches. The completed supplementary search returned 615 occurrences and 565 unique records; an enriched audit of 204 exclusions rerouted four records, yielding 15 new core and seven adjacent families. The resulting collection contains \FinalCore{} core and \FinalAdjacent{} adjacent families; Table~\ref{tab:core-family-map} maps every core family to its signal and observer layers and threat roles. The query set overlaps 17/24 selected seed papers and 25/60 earlier indexed families, motivating complementary discovery routes; full queries, exclusion accounting and version reconciliation are in Supplement S1/S10.
++
++\subsection{Coding procedure and consistency}
++The archived coding record pairs an initial AI-assisted extraction with a review column labelled as a domain-expert audit. Recorded agreement is 93/100 screening decisions ($\kappa=0.886$), 134/144 audit cells across 16 families ($\kappa=0.876$), and 141/150 judgments in 50 record pairs ($\kappa=0.916$). The four additional mitigation families contribute 36 further cells outside that agreement sample. Supplement S8 preserves the coding columns, disagreement summaries and descriptive intervals; Section~\ref{sec:agenda} states the validation scope.
++
++\soktakeaway{SoK Takeaway 1 (Map evidence to the receiving deployment)}{A family-level label does not identify which signal, observer permission or protected objective a result supports. The complete core map separates signal origin from receiving access; the result ledger then binds each comparison to a source version and operating point.}
+diff --git a/final-paper-and-experiments-20261021-m1m8-revised/final-paper-and-experiments-20261021-001/manuscript/sections/04-scope.tex b/final-paper-and-experiments-20261021-m1m8-revised/final-paper-and-experiments-20261021-001/manuscript/sections/04-scope.tex
+index 8fcbfba..e8cc6b3 100644
+--- a/final-paper-and-experiments-20261021-m1m8-revised/final-paper-and-experiments-20261021-001/manuscript/sections/04-scope.tex
++++ b/final-paper-and-experiments-20261021-m1m8-revised/final-paper-and-experiments-20261021-001/manuscript/sections/04-scope.tex
+@@ -8,11 +8,5 @@ The mnemonic \scope{} (Secret/target, Channel, Observer, Pipeline, Exploitation
+ \input{tables/result-lineage-example}
+ 
+ 
+-\paragraph{Illustration rather than external validation}
+-We retain a 24-scenario exercise constructed by the authors from the same corpus used to develop the checks: seven Compatible, twelve Incompatible and five Unresolved cases. The Incompatible category includes proposed transfers with established record mismatches; these are not twelve independently observed deployment failures. The supplied annotation file agrees with the author labels on 23/24 and 22/24 cases for its two coder columns. Agreement between these columns is 21/24 ($\kappa=0.795$). These descriptive results do not establish framework accuracy on unseen deployments, independent ground truth or superiority over other reading procedures.
+-
+-A rule that predicts Compatible for every case scores 7/24, a class-count consequence. Always predicting Incompatible instead gives 12/24, 100\% recall for that category and 0\% recognition of compatible cases. Table~\ref{tab:m1-validity} reports all outcomes rather than a headline accuracy advantage. A fair comparison would supply the same source information to competing procedures and use independently constructed held-out scenarios; that experiment has not been performed.
+-
+-\input{tables/scenario-confusions}
+-
+-The synthetic indexing comparison (Supplement S7) likewise does not establish effectiveness of the three checks. Its 512 roots each contain three query judgments; thus 695 and 476 decision-correct/count-incorrect judgments are out of 1,536 queries per arm. The joint endpoint favors the structured checklist over raw \scope{} traversal. We use \scope{} only as a schema for locating evidence.
++\paragraph{Rule-application consistency check}
++We exercise the comparison rules on 24 author-constructed cases spanning seven Compatible, twelve Incompatible and five Unresolved judgments. The two recorded coding columns match the case labels on 23/24 and 22/24 cases and agree on 21/24 ($\kappa=0.795$). This check documents how the rules resolve aligned results, explicit boundary conflicts and missing bindings; case-level outcomes and confusion matrices are in Supplement S7. The indexing exercise in S7 separately tests retrieval through the evidence schema.
+diff --git a/final-paper-and-experiments-20261021-m1m8-revised/final-paper-and-experiments-20261021-001/manuscript/sections/10-open-challenges.tex b/final-paper-and-experiments-20261021-m1m8-revised/final-paper-and-experiments-20261021-001/manuscript/sections/10-open-challenges.tex
+index 0a49202..425ce5e 100644
+--- a/final-paper-and-experiments-20261021-m1m8-revised/final-paper-and-experiments-20261021-001/manuscript/sections/10-open-challenges.tex
++++ b/final-paper-and-experiments-20261021-m1m8-revised/final-paper-and-experiments-20261021-001/manuscript/sections/10-open-challenges.tex
+@@ -10,6 +10,6 @@ Tool executions and traffic captures use cloned public benchmark databases and l
+ The artifact preserves sources, raw observations, structured model decisions, frozen calibration and executable checks. AI-assisted implementation and manuscript revision do not constitute independent validation. The paper distinguishes saved-output replays, real model-generated trajectories and local TLS measurement.
+ 
+ \subsection{Threats to validity}
+-The purposive corpus and query overlaps do not estimate field-wide recall. Supplied coding columns support agreement calculations, but coder independence and adjudication are not established from those columns. The 24 author-constructed scenarios illustrate audit rules; external decision accuracy, incremental value over a simple checklist, and independent screening of the 617-record second search remain open.
++The purposive corpus and query overlaps do not estimate field-wide recall. Coding agreement and the 24-case rule-application check characterize the archived annotation workflow. Independent recoding, held-out comparisons with simpler review procedures, and independent screening of the 617-record second search remain follow-up validation targets.
+ 
+ E5 uses 48 saved outputs and a proxy tokenizer; E6/E7 use reference programs with known-population calibration. E9 completes all 690 planned runs with training-only calibration and a customer-disjoint test, removing the interim completion filter. Its scope is one public retail environment and one mutable model alias, also used for user simulation. Earlier development had access to all 115 tasks. The 46 test tasks include five positive cancellation customers and seven positive return customers; intervals condition on fitted attackers. Program conditions reuse trajectories, so equal reward is structural. External replication, broader model/environment transfer, provider-traffic measurement and interactive latency/feedback effects are the next evaluation targets.
+diff --git a/final-paper-and-experiments-20261021-m1m8-revised/final-paper-and-experiments-20261021-001/manuscript/sections/26-corpus-map.tex b/final-paper-and-experiments-20261021-m1m8-revised/final-paper-and-experiments-20261021-001/manuscript/sections/26-corpus-map.tex
+index 43fe34f..b89b0f3 100644
+--- a/final-paper-and-experiments-20261021-m1m8-revised/final-paper-and-experiments-20261021-001/manuscript/sections/26-corpus-map.tex
++++ b/final-paper-and-experiments-20261021-m1m8-revised/final-paper-and-experiments-20261021-001/manuscript/sections/26-corpus-map.tex
+@@ -1,12 +1,13 @@
+ \section{Corpus Map Across 82 Study Families}\label{sec:corpus-map}
+ \subsection{Origins, receiving projections and threat polarities}
+-Across all \FinalCore{} core families in our unified repository, 38 study inherited runtime, serving or hardware channels (Origin~B) and 20 study agent-workflow channels arising from orchestration, tool dispatch, browser navigation and multi-agent protocols (Origin~A; Supplement S2 (Table~S3)). Signal generation origin is distinct from both receiver location and threat polarity.
++Across all \FinalCore{} core families in our unified repository, 38 study inherited runtime, serving or hardware channels (Origin~B) and 20 study agent-workflow channels arising from orchestration, tool dispatch, browser navigation and multi-agent protocols (Origin~A; Table~\ref{tab:core-family-map}). Signal generation origin is distinct from both receiver location and threat polarity. The full map makes these distinctions visible for each core family.
++\input{tables/core-family-map}
+ 
+ \paragraph{Type~I: Confidentiality and privacy channels}
+ Inherited serving and transport attacks infer confidential prompts or topics from packet lengths, inter-packet timing, KV-cache sharing and hardware contention. Weiss reconstructs token sequences from encrypted packet lengths, whereas NetEcho recovers conversation semantics after application-layer re-chunking \cite{weiss2024prompt,netecho2025}. Whisper Leak classifies prompt topics from streaming traffic; Time Will Tell uses total completion duration \cite{whisperleak2025,timewilltell2024}. Chosen-request cache attacks probe shared KV prefixes or semantic caches via timing oracles, while CPU-cache, GPU memory-barrier, attention-sparsity and page-migration attacks exploit co-resident hardware channels \cite{promptpeek2025,earlybird2025,inputsnatch2024,spliceleak2026,spillbeans2025,gu2026behindbars,chen2026sparleak,jo2026sparseety,nazaraliyev2026page404,alhalawani2026physicaledge,hadad2026shape}. In split learning/inference, SplitDecoy shows that even when forward activations are masked with decoys, the zero/nonzero row support of returned backward gradients exposes real token positions \cite{politis2026splitdecoy}. At the workflow layer, WRA infers private user functional intent and personal traits from visited domain sequences \cite{jeong2026wra}, AgentTell uses probe websites to extract behavioural secrets \cite{shahriar2026agenttell}, and routing-metadata attacks infer sensitive prompt topics from model/expert routing choices \cite{chen2026routingmetadata}.
+ 
+ \paragraph{Type~II: Provenance, model and identity attribution}
+-Type~II groups studies by an attribution target: \emph{which model, agent harness or user} produced a trace; such attribution can also raise Type~I confidentiality concerns. UI Traces attributes browser-agent identity across 14 models from own-site DOM/JS event sequences \cite{uitraces2026}; FP-Agent combines behavioural traces with static browser attributes \cite{wang2026fpagent}; AgentPrint, Whose Agent Are You?, LLM-WFIN and the cloud traffic benchmark classify workflows or model families from network flows \cite{agentprint2025,kang2026whoseagent,jiao2025llmwfin,pouryousef2026traffic}. AgentProv audits tool-use provenance, Lidar fingerprints agent harnesses from action roles and timing, and Cross-Campaign Attribution links asynchronous attack agents \cite{wang2026agentprov,wang2026lidar,park2026crosscampaign}.
++Type~II groups studies by an attribution target: \emph{which model, agent harness or user} produced a trace; such attribution can also raise Type~I confidentiality concerns. UI Traces attributes browser-agent identity across 14 models from own-site DOM/JS event sequences \cite{uitraces2026}; FP-Agent combines behavioural traces with static browser attributes \cite{wang2026fpagent}; AgentPrint and the cloud traffic benchmark classify workflows or model families from network flows, while Whose Agent Are You? uses browser-visible fingerprints \cite{agentprint2025,kang2026whoseagent,pouryousef2026traffic}. LLM-WFIN combines interrupt and packet traces to infer the visited LLM website and interaction-content type \cite{jiao2025llmwfin}. AgentProv audits tool-use provenance, Lidar fingerprints agent harnesses from action roles and timing, and Cross-Campaign Attribution links asynchronous attack agents \cite{wang2026agentprov,wang2026lidar,park2026crosscampaign}.
+ 
+ \paragraph{Type~III (Bot-detection evasion) and Type~IV (Authorized diagnostics)}
+ Type~III studies evaluate human--agent distinction \cite{fayolle2026webagents,zhu2026turing}. Here the threat polarity is inverted relative to Type~I privacy: in AHB \cite{zhu2026turing}, the platform detector is a defensive anti-automation control, while ``action humanization'' is an evasion mechanism applied by the agent. Finally, five core families are Type~IV authorized operator diagnostics: ClawGuard, cycle detection, LumiMAS, LLM-serving root-cause analysis (120 controlled fault injections) and MIRAGE (internal residual-stream hooks) \cite{gan2026clawguard,george2025cycles,solomon2026lumimas,scheinert2026rca,revankar2026mirage}.
+diff --git a/final-paper-and-experiments-20261021-m1m8-revised/final-paper-and-experiments-20261021-001/manuscript/sections/27-intervention-contracts.tex b/final-paper-and-experiments-20261021-m1m8-revised/final-paper-and-experiments-20261021-001/manuscript/sections/27-intervention-contracts.tex
+index b1a097b..55aa4a0 100644
+--- a/final-paper-and-experiments-20261021-m1m8-revised/final-paper-and-experiments-20261021-001/manuscript/sections/27-intervention-contracts.tex
++++ b/final-paper-and-experiments-20261021-m1m8-revised/final-paper-and-experiments-20261021-001/manuscript/sections/27-intervention-contracts.tex
+@@ -1,20 +1,20 @@
+-\section{Comparability Audit Across All 58 Core Families}\label{sec:defenses}
+-\subsection{Unified 58-core disposition and 39-record ledger}
+-Across all \FinalCore{} core families in our unified collection (43 from the October 8 snapshot plus 15 from the October 21 expansion), every family has a verified intervention disposition (Supplement S5 (Table~S11)): \textbf{20 families evaluate mitigation components} (16 snapshot + 4 additions: \texttt{wu2026cacheprune}, \texttt{lee2026otro}, \texttt{chen2026sparleak}, \texttt{hadad2026shape}), two use fixed guardrails, five evaluate interventions for other objectives or split-decoy boundaries (4 snapshot + \texttt{politis2026splitdecoy}), 22 report no mitigation evaluation within the inspected scope (13 snapshot + 9 additions), five are Type~IV authorized diagnostic components (4 snapshot + \texttt{revankar2026mirage}), and four contain unbound quantitative defense assertions. The 20 evaluated-mitigation families and contextual comparators contribute \textbf{39 source-bound result records} (33 in the baseline snapshot plus 6 from the four October~21 mitigation additions) and \textbf{78 utility/cost field positions}. Table~\ref{tab:defense-types} organizes the eight intervention families by threat polarity (Types~I--III), receiving view and deployment boundary.
+-\input{tables/defense-types}
+-
+-\subsection{Within-family and within-cohort record comparisons}
+-While the machine-readable audit retains all $\binom{33}{2}=528$ baseline pairs for completeness, 426 pairs cross unrelated mechanism cohorts and are outside scope by construction. The 13 within-family pairs are included in the 102 within-cohort pairs: $528=426+102$, with no additional subtraction of 13. Focusing on the \textbf{13 within-family pairs} (multiple records inside the same paper) and \textbf{102 within-cohort related pairs} (66 traffic-envelope, 28 cache-service, 3 behavioral-humanization, 3 generator-fingerprint, 1 local-memory, 1 fixed-instruction; Supplement S8) reveals why paper-level comparisons fail:
+-\begin{itemize}
+-\item Even within the \textbf{13 same-family pairs} ( plus 2 same-family pairs in the additions: \texttt{CACHEPRUNE-selective} vs.\ \texttt{CACHEPRUNE-context} and \texttt{OTRO-unpadded} vs.\ \texttt{OTRO-epochpad}), nearly half (6/13 baseline; 7/15 full) measure different primitives, targets or cost objects (e.g., Early Bird's $K$-prefix oracle simulation vs.\ its GPTCache semantic prototype; SpliceDefense's CTBF signal suppression vs.\ QCP-only prefill cost; OTRO's unpadded TTFT vs.\ derived epoch-padding cost).
+-\item Among the seven aligned-outcome same-family pairs, four evaluate different collection or execution populations (e.g., Dangol's stored-capture feature ablation at 0.17 accuracy vs.\ live loopback OHTTP at 0.30 accuracy) and three lack a verified matched-test binding, so none licenses cross-record subtraction as a single paired deployment effect.
+-\item Across the \textbf{102 related-cohort pairs}, only 16 (15.7\%) support a source-qualified descriptive comparison, whereas 80 (78.4\%) exhibit positively established receiver, target or cost-object mismatches and 6 (5.9\%) remain unresolved (the supplied 50-pair subsample, not all 102 pairs, has 94.0\% agreement across its 150 judgments, $\kappa=0.916$).
+-\end{itemize}
+-
+-\subsection{Nine-item split reporting audit across 20 mitigation families}
+-Table~\ref{tab:six-check-audit} reports nine audit items R1--R9, separate from deployment Checks~1--3. They are requirements for the particular reuse claims considered here, not universal obligations that every component paper must satisfy. R4 records protected-condition fitting; R5 records a matched clean-versus-adapted contrast on defended tests. R7--R9 record inference, utility and cost. A family-level Bound entry means at least one scoped result meets the item, not that every result in that family does.
+-\input{tables/six-check-audit}
+-
+-For Dangol, R5 is Bound for in-fold stored-capture experiments; the live-refit paired comparison in Table~\ref{tab:result-lineage} remains \NRV{}. These are different records, so we retain the family count of two and explicitly restrict its meaning.
+-
+-\soktakeaway{SoK Takeaway 2 (Joint evaluation gap)}{Across 20 mitigation families, 17 bind inference outcomes, 11 bind cost, 3 bind utility and 2 bind a matched adaptation contrast. Excluding structurally inapplicable entries, the latter three rates are 11/19, 3/17 and 2/11. \NRV{} means unverified binding, not an absent experiment. CachePrune binds inference, utility and cost at one operating point; this is not a claim that it also binds adaptive evaluation.}
++\section{Comparability Audit Across All 58 Core Families}\label{sec:defenses}
++\subsection{Unified 58-core disposition and 39-record ledger}
++Across the \FinalCore{} core families, 20 evaluate mitigation components, two use fixed guardrails, five evaluate interventions for other objectives or split-decoy boundaries, 22 report no mitigation evaluation within the inspected scope, five supply authorized diagnostics, and four contain unbound quantitative defense assertions. The mitigation families and contextual comparators contribute 39 scoped result records from 26 families, with 78 utility/cost field positions. Table~\ref{tab:defense-types} organizes intervention mechanisms; Table~\ref{tab:family-audit} exposes the evidence bindings of every mitigation family.
++\input{tables/defense-types}
++
++\subsection{Within-family and within-cohort record comparisons}
++While the machine-readable audit retains all $\binom{33}{2}=528$ baseline pairs for completeness, 426 pairs cross unrelated mechanism cohorts and are outside scope by construction. The 13 within-family pairs are included in the 102 within-cohort pairs: $528=426+102$, with no additional subtraction of 13. Focusing on the \textbf{13 within-family pairs} (multiple records inside the same paper) and \textbf{102 within-cohort related pairs} (66 traffic-envelope, 28 cache-service, 3 behavioral-humanization, 3 generator-fingerprint, 1 local-memory, 1 fixed-instruction; Supplement S8) reveals why paper-level comparisons fail:
++\begin{itemize}
++\item Even within the \textbf{13 same-family pairs} ( plus 2 same-family pairs in the additions: \texttt{CACHEPRUNE-selective} vs.\ \texttt{CACHEPRUNE-context} and \texttt{OTRO-unpadded} vs.\ \texttt{OTRO-epochpad}), nearly half (6/13 baseline; 7/15 full) measure different primitives, targets or cost objects (e.g., Early Bird's $K$-prefix oracle simulation vs.\ its GPTCache semantic prototype; SpliceDefense's CTBF signal suppression vs.\ QCP-only prefill cost; OTRO's unpadded TTFT vs.\ derived epoch-padding cost).
++\item Among the seven aligned-outcome same-family pairs, four evaluate different collection or execution populations (e.g., Dangol's stored-capture feature ablation at 0.17 accuracy vs.\ live loopback OHTTP at 0.30 accuracy) and three lack a verified matched-test binding, so none licenses cross-record subtraction as a single paired deployment effect.
++\item Across the \textbf{102 related-cohort pairs}, only 16 (15.7\%) support a source-qualified descriptive comparison, whereas 80 (78.4\%) exhibit positively established receiver, target or cost-object mismatches and 6 (5.9\%) remain unresolved (the supplied 50-pair subsample, not all 102 pairs, has 94.0\% agreement across its 150 judgments, $\kappa=0.916$).
++\end{itemize}
++
++\subsection{Nine-item split reporting audit across 20 mitigation families}
++Table~\ref{tab:family-audit} reports all 180 family/item bindings. R1--R9 specify the evidence needed for scoped reuse claims, separately from deployment Checks~1--3. R4 records protected-condition fitting; R5 records a matched clean-versus-adapted contrast on defended tests. R7--R9 record inference, utility and cost. A family-level Bound entry means at least one scoped result meets the item, not that every result in that family does.
++\input{tables/family-audit-matrix}
++
++For Dangol, R5 is Bound for in-fold stored-capture experiments; the live-refit paired comparison in Table~\ref{tab:result-lineage} remains \NRV{}. These are different records, so we retain the family count of two and explicitly restrict its meaning.
++
++\soktakeaway{SoK Takeaway 2 (Joint evaluation gap)}{Across 20 mitigation families, 17 bind inference outcomes, 11 bind cost, 3 bind utility and 2 bind a matched adaptation contrast. Excluding structurally inapplicable entries, the latter three rates are 11/19, 3/17 and 2/11. \NRV{} means unverified binding, not an absent experiment. CachePrune binds inference, utility and cost at one operating point; this is not a claim that it also binds adaptive evaluation.}
+diff --git a/final-paper-and-experiments-20261021-m1m8-revised/final-paper-and-experiments-20261021-001/manuscript/sections/29-scope-comparison-boundary.tex b/final-paper-and-experiments-20261021-m1m8-revised/final-paper-and-experiments-20261021-001/manuscript/sections/29-scope-comparison-boundary.tex
+index 36eb877..245bc85 100644
+--- a/final-paper-and-experiments-20261021-m1m8-revised/final-paper-and-experiments-20261021-001/manuscript/sections/29-scope-comparison-boundary.tex
++++ b/final-paper-and-experiments-20261021-m1m8-revised/final-paper-and-experiments-20261021-001/manuscript/sections/29-scope-comparison-boundary.tex
+@@ -1,6 +1,7 @@
+-\section{Retained Indexing Experiment and Scenario Illustration}\label{app:scope-workflow-boundary}
+-The retained model-assisted experiment compares flat checklist R, structured checklist T and raw \scope{} traversal V. There are 512 roots per arm and three query judgments per root (1,536 judgments). The endpoint is the mean of each root's three binary joint outcomes, requiring a correct deployment decision and exact configuration counts. R has 624 joint successes (40.63\%); V has 494 (32.16\%). T has 693 observed successes and three missing queries belonging to one root, giving the retained 45.12--45.31\% missing-outcome range. V is worse on this joint endpoint; this is retained negative evidence.
+-
+-Decision-correct but count-incorrect judgments number 537 (R), 476 (T) and 695 (V), out of 1,536 query opportunities. Observed queries have no schema/evidence-ID failures. Binary-decision successes are 1,161 (R), 1,169 (T, plus three missing) and 1,189 (V). The 1.11--1.30 percentage-point V--T binary difference is a secondary post-outcome decomposition, not proof of a better workflow. Counts are query judgments, not independent roots; percentages average three judgments per root. We do not infer causality from the error decomposition.
+-
+-The separate 24-scenario exercise uses author-constructed source-reuse cases and author labels. Seven are Compatible, twelve Incompatible and five Unresolved. Its two supplied coder columns match 23/24 and 22/24 labels and agree on 21/24. The original headline rule is always Compatible (7/24); always Incompatible gives 12/24 and always Unresolved 5/24. No accuracy advantage over an informative, equal-information comparator is claimed. All three-category confusion matrices are in \path{experiments/reviewer-audit/scenario_confusions.json}. Independent construction, blinding and out-of-corpus validation remain unperformed.
++\section{Retained Indexing Experiment and Scenario Illustration}\label{app:scope-workflow-boundary}
++The retained model-assisted experiment compares flat checklist R, structured checklist T and raw \scope{} traversal V. There are 512 roots per arm and three query judgments per root (1,536 judgments). The endpoint is the mean of each root's three binary joint outcomes, requiring a correct deployment decision and exact configuration counts. R has 624 joint successes (40.63\%); V has 494 (32.16\%). T has 693 observed successes and three missing queries belonging to one root, giving the retained 45.12--45.31\% missing-outcome range. V is worse on this joint endpoint; this is retained negative evidence.
++
++Decision-correct but count-incorrect judgments number 537 (R), 476 (T) and 695 (V), out of 1,536 query opportunities. Observed queries have no schema/evidence-ID failures. Binary-decision successes are 1,161 (R), 1,169 (T, plus three missing) and 1,189 (V). The 1.11--1.30 percentage-point V--T binary difference is a secondary post-outcome decomposition, not proof of a better workflow. Counts are query judgments, not independent roots; percentages average three judgments per root. We do not infer causality from the error decomposition.
++
++The separate 24-scenario exercise uses author-constructed source-reuse cases and author labels. Seven are Compatible, twelve Incompatible and five Unresolved. Its two supplied coder columns match 23/24 and 22/24 labels and agree on 21/24. The original headline rule is always Compatible (7/24); always Incompatible gives 12/24 and always Unresolved 5/24. No accuracy advantage over an informative, equal-information comparator is claimed. All three-category confusion matrices are in \path{experiments/reviewer-audit/scenario_confusions.json}. Independent construction, blinding and out-of-corpus validation remain unperformed.
++\input{tables/scenario-confusions}
+diff --git a/final-paper-and-experiments-20261021-m1m8-revised/final-paper-and-experiments-20261021-001/manuscript/sections/30-reproducibility-guide.tex b/final-paper-and-experiments-20261021-m1m8-revised/final-paper-and-experiments-20261021-001/manuscript/sections/30-reproducibility-guide.tex
+index b30d0c2..87ce1c0 100644
+--- a/final-paper-and-experiments-20261021-m1m8-revised/final-paper-and-experiments-20261021-001/manuscript/sections/30-reproducibility-guide.tex
++++ b/final-paper-and-experiments-20261021-m1m8-revised/final-paper-and-experiments-20261021-001/manuscript/sections/30-reproducibility-guide.tex
+@@ -1,20 +1,17 @@
+-\section{Reproducibility and Notation}\label{app:search}\label{app:notation}
+-The accompanying \emph{Supplementary Evidence} and package directory provide the following modules: S1 historical search records; S2 corpus/prior-work maps; S3 retained pilots; S4 public-trace reanalysis; S5 intervention inventory; S6 original conclusion sensitivity; S7 workflow comparison diagnostics and the 24-case retrospective validity benchmark; S8 the pairwise and nine-item split audit (with supplied coding records); S9 controlled mechanism demonstrations and extensions (E1 length-sensitivity gradient, E2 synthetic plans, E3 $D_0$-vs-$D_2$ adaptive attacker, and T2c 115-task / 97-eligible-task retail baseline and realistic cover policies); S10 the completed 565-record search update and exact $60\to 82$ reconciliation; the current replay/analysis artifacts in \path{experiments/reviewer-audit/}; and the second-round transfer tests, predictions and raw captures in \path{experiments/sp2027-r2/} (S11 retains the first-round controlled tables; S12 reports E5--E7 in full; S13 documents the agent pipeline). Earlier summaries in \path{experiments/revision-m1-m8/} are kept for provenance; current E6/E7 intervals, held-out identification and judgment reassessment use the post-review \path{experiments/sp2027-r3/} outputs. S12 reports the corrected E6/E7 summaries; R2 registration and historical outputs remain unchanged. S14 reports the complete 690-run E9 evaluation: 414 training and 276 test runs, training-only calibration, TLS captures and executable validation. \path{experiments/sp2027-r4-full-20261023/} reconstructs the full cohort from the immutable 663-run snapshot in \path{experiments/sp2027-r4-snapshot-20261023/} plus 27 additional runs. The earlier manuscript and snapshot remain in the archived release; the current paper uses the completed cohort throughout.
++\section{Reproducibility and Planner-Visible Equivalence}\label{app:search}\label{app:notation}\label{app:equivalence}
++\paragraph{Artifact organization}
++The archived reproducibility package has four logical modules: the source ledger and family audit; transport experiments; stateful tool-dispatch experiments; and the complete real-agent study. A machine-readable module index resolves these names to the immutable source files, predictions and verification entry points. The README supplies environment versions, checksums and commands. The current paper uses the complete 690-run cohort; earlier releases retain their original membership and results for provenance.
+ 
+-\paragraph{Executable acquisition record}
+-Table~\ref{tab:native-executable-queries} records the actual historical IEEE/ACM native queries (October 8--9, 2026). S10 prints the four Semantic Scholar bulk queries (\texttt{S1R}, \texttt{S2}, \texttt{S3}, \texttt{S4}) and two native arXiv queries (\texttt{ARXIV-A1}, \texttt{ARXIV-A2}) completed on October 21, 2026 (615 occurrences, 565 unique records), together with the pre-audit and post-audit reconciliation table (Table~\ref{tab:corpus-reconciliation}).
+-\input{tables/native-search-queries-compact}
++The source module contains all 82 family records, the 39-result ledger, all 180 audit cells, search reconciliation and coding columns. The real-agent module contains the 414/276 training/test split, frozen calibration, model decisions, sandbox scores, 2,760 TLS sessions and saved attack predictions. Offline reconstruction reproduces the fitted-attack results and intervals without additional model calls. The paired program contrasts reported in the current paper are a post hoc analysis of those saved predictions, using the same 2,000 customer-cluster draws and recomputing the suite maximum for each condition in each draw.
+ 
+-\begin{table}[!ht]\centering\footnotesize
+-\caption{Reading key for the supplied records. Prose uses full meanings; codes support joins.}\label{tab:notation}
+-\begin{tabularx}{\columnwidth}{@{}p{.24\columnwidth}Y@{}}\toprule
+-Notation & Meaning\\\midrule
+-SCOPE & Secret/target, Channel, Observer, Pipeline, Exploitation goal.\\
+-Types I--IV & Confidentiality, Provenance attribution, Bot-detection evasion, Authorized diagnostics.\\
+-Origin A/B & Workflow-origin (A) / runtime-and-application-inherited (B) signal origins.\\
+-C1--C5 & Five core eligibility conditions in Section~\ref{sec:methodology}.\\
+-P1--P8 & Hardware, serving, transport, application, orchestration, tools, environment, multi-agent communication.\\
+-D0 / D2 & Attacker fitted on clean / defended training data; compared on the same defended test set.\\
+-\NRR{} / \NRA{} & Unreported in inspected scope / unavailable material.\\
+-\NRV{} / \NA{} & Unverified binding / structurally inapplicable.\\\bottomrule
+-\end{tabularx}\end{table}
++\paragraph{Equivalence invariant and assumptions}
++Let $s_t$ be live tool state and $H_t$ the planner-visible sequence of messages, actions and tool responses. A real action $a_t$ produces $(s_{t+1},o_t)=T(s_t,a_t)$. The defended dispatcher forwards $a_t$ unchanged and executes cover transitions only on a separate state $s_t^{\rm sh}$, suppressing their responses. With the same initial live state, deterministic simulator tools and the same realized real actions, cover cannot change $s_{t+1}$ or $o_t$. Induction on real-action steps gives
++\[
++ s_t^{D}=s_t,\qquad \pi_{\rm plan}(D(H_t))=H_t.
++\]
++Framing preserves application payloads and end-of-episode flushing adds only hidden shadow transitions. This is equality of the logical planner transcript. It assumes no timeouts, shared-state side effects or timing-dependent tool behavior; equality of independent model samples is not required. An interactive implementation would additionally need to establish that wall-clock delay and shared resource effects do not change task execution.
++
++The frozen dispatcher copies each real-call record verbatim into the defended stream. Executable checks match the real-call projection and original scoring fields across all 690 trajectories and four program conditions. Shadow execution and wire-byte accounting are separately reconstructed by the original full-cohort verifier. Reward equality therefore expresses the isolation invariant; call and byte ratios quantify the transport intervention on that fixed workload.
++
++\paragraph{Reading the main tables}
++The corpus map reports signal-generation and receiving layers separately. The per-family audit distinguishes bound, partial, unreported, unverified and inapplicable evidence. These statuses preserve source scope: an unverified binding identifies a comparison obligation rather than declaring an experiment absent. In the real-agent table, point BA, paired BA reduction and the absolute finite-suite criterion answer different statistical questions; all intervals condition on the saved fitted attackers.
+diff --git a/final-paper-and-experiments-20261021-m1m8-revised/final-paper-and-experiments-20261021-001/manuscript/sections/34-search-update.tex b/final-paper-and-experiments-20261021-m1m8-revised/final-paper-and-experiments-20261021-001/manuscript/sections/34-search-update.tex
+index 1d2eb6b..4fc180a 100644
+--- a/final-paper-and-experiments-20261021-m1m8-revised/final-paper-and-experiments-20261021-001/manuscript/sections/34-search-update.tex
++++ b/final-paper-and-experiments-20261021-m1m8-revised/final-paper-and-experiments-20261021-001/manuscript/sections/34-search-update.tex
+@@ -1,38 +1,38 @@
+-\section{Completed Finite Retrieval Update and Exact Reconciliation}\label{app:search-update}
+-Four Semantic Scholar bulk queries (\texttt{S1R}, \texttt{S2}, \texttt{S3}, \texttt{S4}) and two native arXiv searches (\texttt{ARXIV-A1}, \texttt{ARXIV-A2}) were completed on October 21, 2026, returning 615 occurrences deduplicated to 565 unique records. Combined with the original 60-family October 8 snapshot, the final merged index contains \FinalN{} families: \FinalCore{} core (\FinalA{} workflow-origin, \FinalB{} inherited; 53 non-diagnostic and 5 Type~IV diagnostic) and \FinalAdjacent{} adjacent.
+-
+-\subsection{Executable queries and pre/post-audit disposition accounting}
+-The Semantic Scholar bulk queries (2023--2026) and native arXiv CS searches (January 1, 2023--October 21, 2026) are:
+-\begin{quote}\small\raggedright
+-S1R (116): (agent | workflow) + (LLM | ``language model'') + (``side channel'' | ``side-channel'' | fingerprinting).\\
+-S2 (120): (LLM | ``language model'') + (traffic | streaming) + (leakage | side-channel | fingerprinting).\\
+-S3 (15): (LLM | ``language model'') + (padding | ``re-emission'') + (privacy | leakage | side-channel).\\
+-S4 (287): (agent | LLM) + (decoy | ``cover traffic'' | ``fake actions'' | ``cover actions'').\\
+-ARXIV-A1 (50): \texttt{"side-channel" AND "large language"}; ARXIV-A2 (27): \texttt{"side-channel" AND agent}.
+-\end{quote}
+-
+-Table~\ref{tab:finite-flow} provides the complete item-by-item reconciliation before and after the 204-record exclusion audit (177 high-risk pattern matches plus 27 reason-stratified samples, seed \texttt{20261021}). Before the exclusion audit, screening identified 221 C2/C3 exclusions (\texttt{EXCLUDE\_NO\_HIDDEN\_AUXILIARY\_TARGET}), 14 new core families, 23 existing core families, and 28 source-reviewed adjacent contexts. The exclusion audit rerouted exactly four records out of the 221 C2/C3 exclusions ($221-4=217$):
+-\begin{enumerate}
+-\item \texttt{SUP-0192} (MIRAGE \cite{revankar2026mirage}): rerouted to \texttt{NEW\_CORE\_SOURCE\_VERIFIED} ($14+1=15$ final new core families, all 15 incorporated into the \FinalN{}-family index via \path{addition.csv}).
+-\item \texttt{SUP-0552} (InputSnatch arXiv version \cite{inputsnatch2024}): rerouted to \texttt{EXISTING\_CORE} ($23+1=24$ existing core recoveries; merged as an alias of the already-indexed snapshot family \texttt{inputsnatch2024}, adding $+0$ net new families).
+-\item \texttt{SUP-0191} (LLM Self-Recognition) and \texttt{SUP-0424} (Reverse-Engineering Model Editing): rerouted to \texttt{ADJACENT\_SOURCE\_REVIEWED} ($28+2=30$ final source-reviewed adjacent contexts). Of these 30 source-reviewed adjacent contexts, 7 boundary-defining studies (\path{addition-adjacent.csv}) are incorporated into the \FinalN{}-family index ($17+7=24$ adjacent), while the other 23 (including \texttt{SUP-0191} and \texttt{SUP-0424}) remain in the 565-record disposition ledger as non-indexed context.
+-\end{enumerate}
+-Thus the family transition is strictly additive and self-consistent: $60\text{ (snapshot)} + 15\text{ (14 pre-audit + 1 audited new core)} + 7\text{ (selected adjacent)} = 82\text{ families}$ ($43+15=58$ core; $17+7=24$ adjacent).
+-
+-\begin{table}[!ht]\centering\footnotesize
+-\caption{Post-audit disposition flow for the completed 565-record supplementary frame (see Main Paper Table~2 for pre-audit vs.\ post-audit $\Delta$).}\label{tab:finite-flow}
+-\begin{tabularx}{\columnwidth}{@{}Yr@{}}\toprule
+-Stage or final post-audit route & Count\\\midrule
+-Complete-query occurrences / duplicates merged & 615 / 50\\
+-Unique records with an explicit route & 565\\\midrule
+-Excluded: no hidden auxiliary target ($221-4$ rerouted) & 217\\
+-Excluded: outside LLM execution / different target & 156 / 19\\
+-Existing core ($23+1$ alias) / adjacent recovered & 24 / 1\\
+-New source-bound core families ($14+1$ MIRAGE; all indexed) & 15\\
+-Adjacent source-reviewed ($28+2$; 7 indexed) / metadata-only & 30 / 28\\
+-Other security background / reviewed background / proposal & 53 / 4 / 1\\
+-Missing abstract / unavailable primary full text & 16 / 1\\\bottomrule
+-\end{tabularx}\end{table}
+-
+-\subsection{Seed overlap clarification and dual-coding reliability}
+-As noted in Main Paper Section~2, the 24 fixed known papers (\texttt{known24}) are a 24-paper core subset of our 40 initial citation-tracing seeds (\texttt{seed\_n=24} in \path{check_known24_offline.py}), not an external holdout. Their 17/24 query recovery (and 25/60 snapshot recovery) measures lexical overlap between the six Boolean keyword queries and our seed-and-snowball corpus. Supplied second-coder annotations of a 100-record stratified subsample of the 565-record frame (\path{m7_dual_coding_screening.csv}) achieved 93.0\% three-class agreement ($\kappa=0.886$, 95\% CI $[0.801,0.963]$) and 95.0\% binary Core-inclusion agreement ($\kappa=0.880$, CI $[0.764,0.975]$).
++\section{Completed Finite Retrieval Update and Exact Reconciliation}\label{app:search-update}
++Four Semantic Scholar bulk queries (\texttt{S1R}, \texttt{S2}, \texttt{S3}, \texttt{S4}) and two native arXiv searches (\texttt{ARXIV-A1}, \texttt{ARXIV-A2}) were completed on October 21, 2026, returning 615 occurrences deduplicated to 565 unique records. Combined with the original 60-family October 8 snapshot, the final merged index contains \FinalN{} families: \FinalCore{} core (\FinalA{} workflow-origin, \FinalB{} inherited; 53 non-diagnostic and 5 Type~IV diagnostic) and \FinalAdjacent{} adjacent.
++
++\subsection{Executable queries and pre/post-audit disposition accounting}
++The Semantic Scholar bulk queries (2023--2026) and native arXiv CS searches (January 1, 2023--October 21, 2026) are:
++\begin{quote}\small\raggedright
++S1R (116): (agent | workflow) + (LLM | ``language model'') + (``side channel'' | ``side-channel'' | fingerprinting).\\
++S2 (120): (LLM | ``language model'') + (traffic | streaming) + (leakage | side-channel | fingerprinting).\\
++S3 (15): (LLM | ``language model'') + (padding | ``re-emission'') + (privacy | leakage | side-channel).\\
++S4 (287): (agent | LLM) + (decoy | ``cover traffic'' | ``fake actions'' | ``cover actions'').\\
++ARXIV-A1 (50): \texttt{"side-channel" AND "large language"}; ARXIV-A2 (27): \texttt{"side-channel" AND agent}.
++\end{quote}
++
++Table~\ref{tab:finite-flow} provides the complete item-by-item reconciliation before and after the 204-record exclusion audit (177 high-risk pattern matches plus 27 reason-stratified samples, seed \texttt{20261021}). Before the exclusion audit, screening identified 221 C2/C3 exclusions (\texttt{EXCLUDE\_NO\_HIDDEN\_AUXILIARY\_TARGET}), 14 new core families, 23 existing core families, and 28 source-reviewed adjacent contexts. The exclusion audit rerouted exactly four records out of the 221 C2/C3 exclusions ($221-4=217$):
++\begin{enumerate}
++\item \texttt{SUP-0192} (MIRAGE \cite{revankar2026mirage}): rerouted to \texttt{NEW\_CORE\_SOURCE\_VERIFIED} ($14+1=15$ final new core families, all 15 incorporated into the \FinalN{}-family index via \path{addition.csv}).
++\item \texttt{SUP-0552} (InputSnatch arXiv version \cite{inputsnatch2024}): rerouted to \texttt{EXISTING\_CORE} ($23+1=24$ existing core recoveries; merged as an alias of the already-indexed snapshot family \texttt{inputsnatch2024}, adding $+0$ net new families).
++\item \texttt{SUP-0191} (LLM Self-Recognition) and \texttt{SUP-0424} (Reverse-Engineering Model Editing): rerouted to \texttt{ADJACENT\_SOURCE\_REVIEWED} ($28+2=30$ final source-reviewed adjacent contexts). Of these 30 source-reviewed adjacent contexts, 7 boundary-defining studies (\path{addition-adjacent.csv}) are incorporated into the \FinalN{}-family index ($17+7=24$ adjacent), while the other 23 (including \texttt{SUP-0191} and \texttt{SUP-0424}) remain in the 565-record disposition ledger as non-indexed context.
++\end{enumerate}
++Thus the family transition is strictly additive and self-consistent: $60\text{ (snapshot)} + 15\text{ (14 pre-audit + 1 audited new core)} + 7\text{ (selected adjacent)} = 82\text{ families}$ ($43+15=58$ core; $17+7=24$ adjacent).
++
++\begin{table}[!ht]\centering\footnotesize
++\caption{Post-audit disposition flow for the completed 565-record supplementary frame (see Table~\ref{tab:corpus-reconciliation} for pre-audit vs.\ post-audit $\Delta$).}\label{tab:finite-flow}
++\begin{tabularx}{\columnwidth}{@{}Yr@{}}\toprule
++Stage or final post-audit route & Count\\\midrule
++Complete-query occurrences / duplicates merged & 615 / 50\\
++Unique records with an explicit route & 565\\\midrule
++Excluded: no hidden auxiliary target ($221-4$ rerouted) & 217\\
++Excluded: outside LLM execution / different target & 156 / 19\\
++Existing core ($23+1$ alias) / adjacent recovered & 24 / 1\\
++New source-bound core families ($14+1$ MIRAGE; all indexed) & 15\\
++Adjacent source-reviewed ($28+2$; 7 indexed) / metadata-only & 30 / 28\\
++Other security background / reviewed background / proposal & 53 / 4 / 1\\
++Missing abstract / unavailable primary full text & 16 / 1\\\bottomrule
++\end{tabularx}\end{table}
++
++\subsection{Seed overlap clarification and dual-coding reliability}
++As noted in Main Paper Section~2, the 24 fixed known papers (\texttt{known24}) are a 24-paper core subset of our 40 initial citation-tracing seeds (\texttt{seed\_n=24} in \path{check_known24_offline.py}), not an external holdout. Their 17/24 query recovery (and 25/60 snapshot recovery) measures lexical overlap between the six Boolean keyword queries and our seed-and-snowball corpus. Supplied second-coder annotations of a 100-record stratified subsample of the 565-record frame (\path{m7_dual_coding_screening.csv}) achieved 93.0\% three-class agreement ($\kappa=0.886$, 95\% CI $[0.801,0.963]$) and 95.0\% binary Core-inclusion agreement ($\kappa=0.880$, CI $[0.764,0.975]$).
+diff --git a/final-paper-and-experiments-20261021-m1m8-revised/final-paper-and-experiments-20261021-001/manuscript/sections/37-transfer-tests.tex b/final-paper-and-experiments-20261021-m1m8-revised/final-paper-and-experiments-20261021-001/manuscript/sections/37-transfer-tests.tex
+index 290b295..211c97d 100644
+--- a/final-paper-and-experiments-20261021-m1m8-revised/final-paper-and-experiments-20261021-001/manuscript/sections/37-transfer-tests.tex
++++ b/final-paper-and-experiments-20261021-m1m8-revised/final-paper-and-experiments-20261021-001/manuscript/sections/37-transfer-tests.tex
+@@ -1,7 +1,7 @@
+ \section{Controlled Transfer Tests}\label{sec:controlled-placement}\label{sec:tau-cover-bridge}
+ The experiments operationalize the audit's three bindings: observation, execution and matched evaluation. E5--E7 isolate mechanisms using saved outputs and reference programs; E9 evaluates real LLM-generated trajectories with training-only calibration. Seven author-written judgments were recorded before E5--E7; their reassessment is retained in Supplement S12. These cases test mechanisms, not the audit's external decision accuracy.
+ 
+-For E6/E7/E9, a cell meets the \emph{evaluated-suite criterion} when maximum BA has an upper 95\% bound below 0.60 and maximum AUROC is below 0.65. A lower BA bound above 0.60 indicates above-threshold leakage; other cells are inconclusive. We recompute the suite maximum within each of 2,000 common bootstrap draws: tasks for E6/E7 and customers for E9, retaining their tasks and repeats together. Intervals condition on fitted predictions and do not cover unknown attackers.
++For E6/E7/E9, a cell meets the \emph{evaluated-suite criterion} when maximum BA has an upper 95\% bound below 0.60 and maximum AUROC is below 0.65. This absolute-threshold assessment is separate from the measured reduction relative to raw transport: a lower BA bound above 0.60 indicates above-threshold leakage, while an interval crossing 0.60 leaves the absolute threshold inconclusive. We recompute the suite maximum within each of 2,000 common bootstrap draws: tasks for E6/E7 and customers for E9, retaining their tasks and repeats together. Intervals condition on fitted predictions and do not cover unknown attackers.
+ 
+ A byte-transparent relay captures post-handshake TLS application records on loopback connections. TLS~1.3 session tickets are disabled. E5--E8 use saved text or stand-in planners; E9 invokes a real model and executes its structured actions in the local public retail simulator. No production account or tool is modified.
+ 
+@@ -42,7 +42,10 @@ E8's stand-in planners diagnose sensitivity to unknown future calls and template
+ \subsection{E9: real agents and training-only defense calibration}\label{sec:real-agent}
+ E9 tests defense reuse on autonomous model-generated trajectories under a strict calibration boundary. GPT-6.1 Sol (low reasoning effort) plans and responds from the retail policy, public tool schemas and actual sandbox observations. A separate context of the same model simulates the user. The rules arm adds one customer-details read before order access and a read before each order write. All 115 tasks have two prompt arms and three repeats, completing the frozen 690-run protocol. All 414 training runs on 69 tasks precede freezing of a shared count template, donor pools and framing caps; the 276 test runs cover 46 tasks from 24 disjoint customers.
+ 
+-The online dispatcher inserts training-derived cover on shadow state using only past calls and flushes unmet counts at episode end. Real calls pass through unchanged. Four program conditions per prompt isolate raw transport, padding, shape cover and their combination. Training-fitted attackers evaluate dispatch and network observations across 2,760 TLS replay sessions. Every test task, failure and handoff remains in the analysis. Supplement S14 supplies the full ablations and customer-cluster intervals.
++\paragraph{Planner-visible equivalence}
++Let $H$ be the planner's message/tool-observation history, excluding wall-clock timing, and $\pi_{\rm plan}$ its projection from the defended execution $D$. Real calls and their responses pass through unchanged; cover executes on isolated shadow state and its responses are hidden. Therefore $\pi_{\rm plan}(D(H))=H$: by induction, each real call sees the same live state and returns the same observation (Appendix~\ref{app:equivalence}). E9 collects real LLM trajectories once per prompt/repetition and evaluates a causal dispatcher by replaying each trajectory through four program conditions. This paired design isolates the program-layer effect without additional LLM sampling variation. Online here means prefix-only scheduling; interactive latency and feedback are outside the replay measurement.
++
++The dispatcher inserts training-derived cover using only past calls and flushes unmet counts at episode end. Four program conditions per prompt isolate raw transport, padding, shape cover and their combination. Training-fitted attackers evaluate dispatch and network observations across 2,760 TLS replay sessions. Every test task, failure and handoff remains in the analysis. Supplement S14 supplies the full ablations and customer-cluster intervals.
+ 
+ \input{tables/r4-primary}
+ 
+@@ -52,7 +55,7 @@ Table~\ref{tab:r4-primary} shows baseline network BA of 97.2\% for cancellation
+ \paragraph{Joint shaping removes most measured inference advantage}
+ On baseline trajectories, online shadow cover with constant framing reduces network BA by 47.2 points for cancellation and 44.0 points for return, reaching 50.0\% for both at 15.4$\times$ bytes and 3.8$\times$ calls. The ablations identify the value of combining the mechanisms: padding alone leaves cancellation/return BA at 66.1\%/55.5\%, and shape cover alone at 60.8\%/51.9\%. These are operating points under the same training-only calibration and held-out workload.
+ 
+-The joint result quantifies substantial leakage reduction and its resource cost. Its 95\% upper bounds are 60.6\%/65.5\%, so it does not meet the predeclared finite-suite criterion for both targets. Rules plus joint shaping yields 50.0\%/60.6\%; the return difference from program-only has an interval spanning zero (S14). Program conditions reuse each realized trajectory, preserving its reward by construction; network measurements use local TLS~1.2 replay. Section~\ref{sec:agenda} discusses interactive utility and broader transfer.
++The joint point estimates match the 50\% majority baseline, removing the measured BA advantage of this attack suite. Post hoc paired customer-bootstrap contrasts quantify the reduction: $-47.2$ points [$-50.0,-33.3$] for cancellation and $-44.0$ [$-48.9,-27.8$] for return (Table~\ref{tab:r4-primary}). The separate absolute-threshold assessment remains inconclusive: joint BA upper bounds are 60.6\%/65.5\%. Only five cancellation-positive and seven return-positive customers contribute to these estimates; resampling their heterogeneous predictions and reselecting the suite maximum can exceed 50\% even when the original maximum equals 50\%. Thus the measured reduction is supported while the tighter absolute bound needs more evidence. Rules plus joint shaping yields 50.0\%/60.6\%; its return contrast with program-only spans zero (S14).
+ 
+ \subsection{What the cases establish}
+ The experiments connect concrete failure modes to the audit's comparison obligations. E5 isolates emitter-dependent cost and count leakage. E6/E7 show that adaptive fitting and encrypted size decoding expose residual tool-intent signals. E9 extends the evidence to real agents and training-only defense calibration: prompt compliance can coexist with high leakage, while online shaping substantially reduces the measured signal at a quantified cost. Together, the cases turn the audit into an executable evaluation sequence: bind the emitted trace, isolate cover effects, fit attackers on defended data, and price protection on the held-out workload.
+diff --git a/final-paper-and-experiments-20261021-m1m8-revised/final-paper-and-experiments-20261021-001/manuscript/supplement.tex b/final-paper-and-experiments-20261021-m1m8-revised/final-paper-and-experiments-20261021-001/manuscript/supplement.tex
+index 74f5f8b..4bae9ff 100644
+--- a/final-paper-and-experiments-20261021-m1m8-revised/final-paper-and-experiments-20261021-001/manuscript/supplement.tex
++++ b/final-paper-and-experiments-20261021-m1m8-revised/final-paper-and-experiments-20261021-001/manuscript/supplement.tex
+@@ -23,6 +23,7 @@
+   }\par\smallskip
+ }
+ \newcolumntype{Y}{>{\raggedright\arraybackslash}X}
++\newcommand{\auditpartial}{\tikz[baseline=-.5ex]{\fill (0,0) -- (0,.5ex) arc (90:270:.5ex) -- cycle;\draw[line width=.3pt] (0,0) circle (.5ex);}}
+ \input{tables/final-counts}
+ \renewcommand{\thesection}{S\arabic{section}}
+ \renewcommand{\thesubsection}{\thesection.\arabic{subsection}}
+@@ -35,6 +36,7 @@ This supplement provides the search accounting, corpus maps, saved empirical res
+ \section{Search and Evidence Audit}\label{app:search}
+ \input{tables/selection-flow}
+ \input{sections/22-search-audit-summary}
++\input{tables/search-reconciliation}
+ \input{sections/19-final-ledger}
+ \input{tables/result-lineage-example}
+ \input{tables/observable-origin-map}
+diff --git a/final-paper-and-experiments-20261021-m1m8-revised/final-paper-and-experiments-20261021-001/manuscript/tables/r4-primary.tex b/final-paper-and-experiments-20261021-m1m8-revised/final-paper-and-experiments-20261021-001/manuscript/tables/r4-primary.tex
+index b83d95e..efb6160 100644
+--- a/final-paper-and-experiments-20261021-m1m8-revised/final-paper-and-experiments-20261021-001/manuscript/tables/r4-primary.tex
++++ b/final-paper-and-experiments-20261021-m1m8-revised/final-paper-and-experiments-20261021-001/manuscript/tables/r4-primary.tex
+@@ -9,5 +9,5 @@ Shape only & 60.8 [55.4, 71.3] & 51.9 [50.5, 57.8] & 79.7 & 4.16 & 3.83\\
+ Joint program & 50.0 [50.0, 60.6] & 50.0 [50.0, 65.5] & 79.7 & 15.39 & 3.83\\
+ Rules + joint & 50.0 [50.0, 65.1] & 60.6 [50.0, 73.3] & 76.1 & 15.72 & 3.88\\
+ \bottomrule\end{tabular}
+-\par\smallskip\raggedright Joint = online shadow cover plus constant framing. Padding and shape ablations use baseline trajectories. Ratios use raw transport within the same prompt. Program conditions reuse each trajectory, preserving reward by construction. Network measurements are TLS~1.2 loopback replay of actual model-generated calls; 414 training runs preceded defense freezing and test collection. Full methods and ablations: Supplement S14.
++\par\smallskip\raggedright \textbf{Paired joint-minus-raw BA differences (percentage points):} baseline cancellation -47.2 [-50.0, -33.3], return -44.0 [-48.9, -27.8]. These post hoc contrasts use the same customer draws and reselect the attack-suite maximum in each condition. Joint = online shadow cover plus constant framing; padding/shape ablations use baseline trajectories. Ratios use raw transport within each prompt. Shadow isolation preserves the logical planner transcript; the four program conditions replay actual LLM trajectories over local TLS~1.2. Full methods, intervals and prompt contrasts: Supplement S14.
+ \end{table*}
+diff --git a/final-paper-and-experiments-20261021-m1m8-revised/final-paper-and-experiments-20261021-001/manuscript/tables/r4-supp.tex b/final-paper-and-experiments-20261021-m1m8-revised/final-paper-and-experiments-20261021-001/manuscript/tables/r4-supp.tex
+index 29d8414..c3e21da 100644
+--- a/final-paper-and-experiments-20261021-m1m8-revised/final-paper-and-experiments-20261021-001/manuscript/tables/r4-supp.tex
++++ b/final-paper-and-experiments-20261021-m1m8-revised/final-paper-and-experiments-20261021-001/manuscript/tables/r4-supp.tex
+@@ -9,7 +9,7 @@ The baseline prompt is the retail policy. The rules prompt adds one customer-det
+ 
+ Only training trajectories from both prompts determine shared per-tool count maxima, donor pools and size caps. Donor calls exclude the active customer. Request caps are the largest training request plus four bytes rounded to a 256-byte multiple; response caps use the training 95th percentile plus four bytes rounded to a 1024-byte multiple, including training donor responses. Frozen caps are 1,024 and 3,072 bytes. The online dispatcher uses only past real-call counts, inserts a shadow call with probability 0.6 when a deficit exists and flushes remaining deficits at episode end. Overflow calls pass through; oversize messages expand to a 1024-byte bucket. Test data never recalibrate these parameters.
+ 
+-Shadow calls execute on a cloned initial database, with observations hidden from the planner. Real calls remain unchanged. Each trajectory is reused across program conditions, preserving reward by construction. The experiment measures call and byte costs; online delay and feedback-induced behavior require an interactive evaluation. A byte-transparent relay captures TLS~1.2 loopback replay of actual model-generated requests and sandbox responses.
++Shadow calls execute on isolated cloned state; their observations are suppressed and real calls/responses pass through unchanged. For deterministic tools with no timing-dependent side effects, projecting away cover gives the same planner-visible history under all program conditions. The replay therefore isolates transport intervention on the same realized actions, with reward preserved by the isolation invariant. All 690 real-call projections agree across the 2,760 saved sessions. Online means scheduling from past calls; interactive wall-clock delay and shared-resource feedback remain outside this replay measurement. A byte-transparent relay captures actual serialized requests and sandbox responses over local TLS~1.2.
+ 
+ \subsection{Attackers and uncertainty}
+ The frozen suite includes a training-majority baseline, clean-trained gradient boosting, defense-trained logistic regression and gradient boosting, a dispatch count rule, and network size-decoding learners and rules. All fitted parameters, thresholds and decoder tables use training data only. Targets are cancellation and return intent from the reference task; native task reward is scored separately using final database equality and required response strings. Points weight tasks equally. Intervals use 2,000 common customer-cluster bootstrap draws, retaining each customer's tasks and repetitions together and recomputing the suite maximum in each draw. Intervals condition on fitted attackers. Prompt contrasts pair task/repetition identifiers, without assuming identical conversations or shared model randomness.
+@@ -82,8 +82,18 @@ Joint network, cancel BA & 0.0 [-1.7, 7.4]\\
+ Joint network, return BA & 10.6 [-13.3, 22.8]\\
+ \bottomrule\end{tabular}\end{table}
+ 
++\begin{table}[ht]\centering\small
++\caption{Post hoc paired program contrasts. The fixed attack suite is re-maximized under each condition within each common customer-bootstrap draw. Original predictions and the predeclared absolute criterion are unchanged.}
++\begin{tabular}{@{}llr@{}}\toprule
++Prompt & Target & Joint minus raw BA [95\% CI], pp\\\midrule
++baseline & cancel & -47.2 [-50.0, -33.3]\\
++baseline & return & -44.0 [-48.9, -27.8]\\
++rules & cancel & -47.2 [-50.0, -26.0]\\
++rules & return & -33.0 [-44.3, -18.9]\\
++\bottomrule\end{tabular}\end{table}
++
+ \subsection{Interpretation and reproducibility}
+-The completed cohort shows strong raw-trace intent inference and a large reduction under joint transport intervention. Rules improve measured workflow compliance while leaving network BA above 93\%. Baseline joint shaping reaches 50\% BA for both targets, reducing the raw scores by 47.2 and 44.0 points. The finite-suite criterion requires the BA interval upper bound below 60\% and point AUROC below 0.65. Baseline shape-only return meets it for that target; no condition meets it for both targets. Baseline joint upper bounds are 60.6\%/65.5\%. Rules-plus-joint return BA is 60.6\%; its paired contrast includes zero, as does the reward contrast.
++The completed cohort shows strong raw-trace intent inference and a large reduction under joint transport intervention. Rules improve measured workflow compliance while leaving network BA above 93\%. Baseline joint shaping reaches 50\% BA for both targets, reducing the raw scores by 47.2 and 44.0 points. The finite-suite criterion requires the BA interval upper bound below 60\% and point AUROC below 0.65. Baseline shape-only return meets it for that target; no condition meets it for both targets. Baseline joint upper bounds are 60.6\%/65.5\%, leaving the absolute-threshold conclusion inconclusive. The full-sample suite maximum equals the 50\% majority baseline; several fitted attacks make heterogeneous predictions whose customer-resampled BA can exceed 50\%. With only five cancellation-positive and seven return-positive customers, reselecting the maximum within each draw yields wider intervals. This mechanism does not imply a universal 10-point resolution floor or prove absence of residual population signal. The paired reduction intervals above exclude zero. Rules-plus-joint return BA is 60.6\%; its rules-minus-baseline contrast includes zero, as does the reward contrast.
+ 
+ The evidence covers one public retail environment and one mutable model alias, which also supplies user simulation. All 115 tasks were available during prior project development. The formal customer holdout therefore provides internal evaluation; external independent replication, broader model/environment transfer, provider-traffic measurement and interactive feedback effects remain follow-up questions.
+ 

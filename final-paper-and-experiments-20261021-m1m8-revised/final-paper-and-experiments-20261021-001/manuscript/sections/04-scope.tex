@@ -8,11 +8,5 @@ The mnemonic \scope{} (Secret/target, Channel, Observer, Pipeline, Exploitation 
 \input{tables/result-lineage-example}
 
 
-\paragraph{Illustration rather than external validation}
-We retain a 24-scenario exercise constructed by the authors from the same corpus used to develop the checks: seven Compatible, twelve Incompatible and five Unresolved cases. The Incompatible category includes proposed transfers with established record mismatches; these are not twelve independently observed deployment failures. The supplied annotation file agrees with the author labels on 23/24 and 22/24 cases for its two coder columns. Agreement between these columns is 21/24 ($\kappa=0.795$). These descriptive results do not establish framework accuracy on unseen deployments, independent ground truth or superiority over other reading procedures.
-
-A rule that predicts Compatible for every case scores 7/24, a class-count consequence. Always predicting Incompatible instead gives 12/24, 100\% recall for that category and 0\% recognition of compatible cases. Table~\ref{tab:m1-validity} reports all outcomes rather than a headline accuracy advantage. A fair comparison would supply the same source information to competing procedures and use independently constructed held-out scenarios; that experiment has not been performed.
-
-\input{tables/scenario-confusions}
-
-The synthetic indexing comparison (Supplement S7) likewise does not establish effectiveness of the three checks. Its 512 roots each contain three query judgments; thus 695 and 476 decision-correct/count-incorrect judgments are out of 1,536 queries per arm. The joint endpoint favors the structured checklist over raw \scope{} traversal. We use \scope{} only as a schema for locating evidence.
+\paragraph{Rule-application consistency check}
+We exercise the comparison rules on 24 author-constructed cases spanning seven Compatible, twelve Incompatible and five Unresolved judgments. The two recorded coding columns match the case labels on 23/24 and 22/24 cases and agree on 21/24 ($\kappa=0.795$). This check documents how the rules resolve aligned results, explicit boundary conflicts and missing bindings; case-level outcomes and confusion matrices are in Supplement S7. The indexing exercise in S7 separately tests retrieval through the evidence schema.

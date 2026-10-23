@@ -1,6 +1,8 @@
-# 完整 690 次真实 Agent 实验主稿修订版
+# 完整 690 次真实 Agent 实验与 SoK 主文结构修订版
 
-当前论文：`pdf/main.pdf`、`pdf/supplement.pdf`；源文件在 `manuscript/`。正文 13 页，全部 E9 数字采用完整 414 训练＋276 测试运行，S14 同步更新。修订说明和来源检查在 `provenance/main-690/`。
+当前论文：`pdf/main.pdf`、`pdf/supplement.pdf`；源文件在 `manuscript/`。正文截至第 13 页，References 从第 13 页开始，附录在第 17 页，全文 17 页；补充材料 24 页。E9 使用完整 414 训练＋276 测试。当前修订来源与检查在 `provenance/sok-restructure/`；`provenance/main-690/` 保留上一轮文稿版本的记录。
+
+主文 Table 5 显示全部 58 个核心研究族的生成层、观察层及威胁类型；Table 8 显示 20 个防御族的全部 180 个 R1–R9 审计单元。符号区分绑定、部分、未报告、未核实和不适用。检索对账表与 24 场景混淆矩阵已移到补充材料。`artifact-index.json` 将 Appendix A 中的四个逻辑模块映射到实际归档文件；保留物理目录及旧数据以保障可追溯性。
 
 ## 核心结果与贡献
 
@@ -10,8 +12,9 @@
 - 仅训练集校准的在线 shadow cover + 恒定分帧降低 **47.2 / 44.0 个百分点**至 **50.0% / 50.0%**；成本 **15.39× 字节、3.83× 调用**。
 - 规则 prompt 将测得合规率提高到 **97.1%**，但网络 BA 仍为 **97.2% / 93.5%**。
 - 主表加入 padding-only 与 shape-only 消融；S14 给出全部区间、资源成本和配对 prompt 差异。
+- 新增事后配对程序差值：联合减原始的 BA 为 −47.2 [−50.0, −33.3] 和 −44.0 [−48.9, −27.8] 个百分点。使用原 2,000 次共同客户簇抽样，每次重新取两种条件的攻击套件最大值。原绝对阈值及原始结果不变。
 
-网络测量使用真实模型轨迹的本地 TLS 回放。程序条件复用轨迹，奖励相等是结构性质。完整区间尚未支持两个意图同时达到预设有限攻击套件标准。独立外部复现、多模型/多环境迁移和交互延迟/反馈效应为后续评估方向。
+网络测量使用真实模型轨迹的本地 TLS 回放。真实工具调用透传，shadow 状态与响应隔离，保持逻辑规划器观测历史，因而可以在同一轨迹上比较纯程序层防御。该等价性假定确定性工具及无时间相关副作用；不涵盖在线交互延迟和共享资源反馈。50% 点估计与配对降幅支持实测信号抑制；有限客户簇上的绝对上界判定仍未达到两目标共同标准。主文和 S14 分别报告这两个统计问题。
 
 ## 数据与历史版本
 
@@ -31,12 +34,12 @@
 ```text
 python -B verify_package.py
 python -B verify_revision.py
-python -B provenance/main-690/verify_manuscript.py
+python -B provenance/sok-restructure/verify_manuscript.py
 python -B experiments/sp2027-r4-full-20261023/verify_release.py
 python -B experiments/sp2027-r4-full-20261023/verify_extension.py
 python -B experiments/sp2027-r4-full-20261023/reproduce.py --reanalyze
 ```
 
-前四项为文件、来源和文稿一致性检查；文稿检查另需 pypdf。后两项核对决策和评分、重建完整队列并运行冻结分析。实验复算环境为 Python 3.12、numpy 2.5.4、scikit-learn 1.9.0，详见实验 README。全部命令均不发起模型请求。
+前四项为文件、来源和文稿一致性检查；文稿检查另需 pypdf。后两项核对决策和评分、重建完整队列并运行冻结分析。新增配对差值由 `python -B provenance/sok-restructure/analyze_paired.py` 复算；两份表格生成器接受 `--check` 做只读比对。实验复算环境为 Python 3.12、numpy 2.5.4、scikit-learn 1.9.0，详见实验 README。全部命令均不发起模型请求。旧 `provenance/main-690/verify_manuscript.py` 对应提交 `f0fb3d2` 的历史布局，不用于当前稿件。
 
 在 `manuscript/` 中，对 main、supplement 分别运行 pdflatex、bibtex、pdflatex 两次。IEEEtran 1.8b conference,compsoc；最新 PDF 与编译日志随包交付。

@@ -1,0 +1,37 @@
+\begin{table*}[t]\centering\footnotesize
+\caption{Complete map of the 58 core study families. Each family appears once; multiple layer/type labels describe different components or objectives within the family.}\label{tab:core-family-map}
+\setlength{\tabcolsep}{3pt}
+\begin{tabularx}{\textwidth}{@{}Ycc@{\hspace{1.5em}}Ycc@{}}\toprule
+Core family & $G\!\to\!O$ & Type & Core family & $G\!\to\!O$ & Type\\\midrule
+ArchSnoop~\cite{weng2026archsnoop} & $1\!\to\!1$ & II & PromptPeek~\cite{promptpeek2025} & $2\!\to\!4$ & I\\
+Behind Bars~\cite{gu2026behindbars} & $1\!\to\!1$ & I & Remote keylogging~\cite{weiss2024prompt} & $2\!\to\!3$ & I\\
+Edge EM leakage~\cite{alhalawani2026physicaledge} & $1\!\to\!1$ & I & Remote timing~\cite{carlini2024remote} & $2\!\to\!3$ & I\\
+Energon~\cite{chaudhuri2025energon} & $1\!\to\!1$ & II & Routing metadata~\cite{chen2026routingmetadata} & $2\!\to\!4$ & I\\
+I Know What You Said~\cite{gao2025iknow} & $1\!\to\!1$ & I & SafeKV~\cite{chu2025safekv} & $2\!\to\!4$ & I\\
+MoEcho~\cite{ding2025moecho} & $1\!\to\!1$ & I & Speculative decoding~\cite{wei2024speculation} & $2\!\to\!3$ & I\\
+PAGE404~\cite{nazaraliyev2026page404} & $1\!\to\!1$ & I & SpliceLeak~\cite{spliceleak2026} & $2\!\to\!4$ & I\\
+Spill the Beans~\cite{spillbeans2025} & $1\!\to\!1$ & I & SplitDecoy~\cite{politis2026splitdecoy} & $2\!\to\!2$ & I\\
+Detokenization Leaks~\cite{weiss2026detokenization} & $1,2\!\to\!1$ & I & Time Will Tell~\cite{timewilltell2024} & $2\!\to\!4$ & I\\
+LLM-serving RCA~\cite{scheinert2026rca} & $1,2\!\to\!2$ & IV & Whisper Leak~\cite{whisperleak2025} & $2\!\to\!3$ & I\\
+LLM-WFIN~\cite{jiao2025llmwfin} & $1,2\!\to\!1,3$ & I & MIRAGE~\cite{revankar2026mirage} & $2,5\!\to\!2$ & IV\\
+OTRO~\cite{lee2026otro} & $1,2\!\to\!1$ & I & Cloud traffic benchmark~\cite{pouryousef2026traffic} & $2,5,8\!\to\!3$ & I,II\\
+Shape and Substance~\cite{hadad2026shape} & $1,2\!\to\!1$ & I & Web-agent unmasking~\cite{fayolle2026webagents} & $3,7\!\to\!3,7$ & II,III\\
+SparLeak~\cite{chen2026sparleak} & $1,2\!\to\!1$ & I & LumiMAS~\cite{solomon2026lumimas} & $4,5\!\to\!4,6$ & IV\\
+SparSEEty~\cite{jo2026sparseety} & $1,2\!\to\!1$ & I & AgentPrint~\cite{agentprint2025} & $5\!\to\!3$ & I,II\\
+TDXRay~\cite{hornetz2026tdxray} & $1,2\!\to\!1$ & I & Cycle detection~\cite{george2025cycles} & $5\!\to\!4,6$ & IV\\
+ClawGuard~\cite{gan2026clawguard} & $1,5\!\to\!1$ & IV & AgentProv~\cite{wang2026agentprov} & $5,6\!\to\!6$ & II\\
+Cache contention~\cite{abubakar2026contention} & $2\!\to\!4$ & I & Lidar~\cite{wang2026lidar} & $5,6\!\to\!6$ & II\\
+CachePrune~\cite{wu2026cacheprune} & $2\!\to\!4$ & I & ProcGrep~\cite{oderinwale2026procgrep} & $5,6\!\to\!4,6$ & II\\
+Early Bird~\cite{earlybird2025} & $2\!\to\!4$ & I & SIGLEAK~\cite{geng2026sigleak} & $5,6\!\to\!4,6$ & I\\
+InputSnatch~\cite{inputsnatch2024} & $2\!\to\!4$ & I & Campaign attribution~\cite{park2026crosscampaign} & $5,6,8\!\to\!6,8$ & II\\
+KVGov~\cite{addagada2026kvgov} & $2\!\to\!2,4$ & I & Dangol workflow~\cite{dangol2026workflow} & $5,6,8\!\to\!3,6,8$ & I\\
+Leaky Language Models~\cite{majidi2026leakylms} & $2\!\to\!4$ & I & AgentTell~\cite{shahriar2026agenttell} & $5,7\!\to\!7$ & I\\
+LLMs Have Rhythm~\cite{alhazbi2025rhythm} & $2\!\to\!3$ & II & AHB~\cite{zhu2026turing} & $5,7\!\to\!7$ & III\\
+ML privacy channels~\cite{debenedetti2024privacy} & $2\!\to\!4$ & I & FP-Agent~\cite{wang2026fpagent} & $5,7\!\to\!7$ & II\\
+MoE prompt stealing~\cite{yona2024stealing} & $2\!\to\!4$ & I & PersonaFingerprint~\cite{song2026personafingerprint} & $5,7\!\to\!3$ & I\\
+NetEcho~\cite{netecho2025} & $2\!\to\!3$ & I & UI Traces~\cite{uitraces2026} & $5,7\!\to\!7$ & II\\
+Prompt Echo~\cite{prompt_echo2026} & $2\!\to\!3$ & I & Whose Agent?~\cite{kang2026whoseagent} & $5,7\!\to\!7$ & II\\
+Prompt-cache audit~\cite{gu2025promptcaching} & $2\!\to\!4$ & I & WRA~\cite{jeong2026wra} & $5,7\!\to\!3$ & I\\
+\bottomrule\end{tabularx}
+\par\smallskip\raggedright $G$ denotes signal-generation layers and $O$ the receiving observation layers. Layer indices: 1 hardware; 2 serving/runtime; 3 transport; 4 application/API; 5 orchestration; 6 tools; 7 browser/environment; 8 multi-agent communication. Types: I confidentiality/privacy; II attribution; III human--agent distinction/evasion; IV authorized diagnostics. These are objectives and observer roles, not mutually exclusive security guarantees. Privileged operator receivers and physical receivers are marked by the layer they inspect. Source versions, locators and the normalization of prose-only layer descriptions are in the artifact.
+\end{table*}

@@ -1,0 +1,332 @@
+{
+  "status": "PAIRED_PROGRAM_CONTRAST_AND_PROJECTION_CHECK_PASS",
+  "analysis_status": "Post hoc contrast requested during manuscript revision; original protocol and saved results unchanged.",
+  "seed": 20261021,
+  "bootstrap_draws": 2000,
+  "unit": "customer cluster; same draws for raw/joint; all tasks and repetitions retained; suite maximum recomputed per condition per draw",
+  "interval_scope": "Conditional on fitted attackers and recorded trajectories. Percentile intervals; no p-value or power claim.",
+  "contrasts": [
+    {
+      "prompt": "baseline",
+      "target": "cancel",
+      "contrast": "joint minus raw network suite-maximum BA",
+      "difference": -0.4722222222222222,
+      "ci95": [
+        -0.5,
+        -0.33333333333333326
+      ],
+      "valid_bootstrap_draws": 1994
+    },
+    {
+      "prompt": "baseline",
+      "target": "return",
+      "contrast": "joint minus raw network suite-maximum BA",
+      "difference": -0.44025974025974024,
+      "ci95": [
+        -0.48888888888888893,
+        -0.2777777777777777
+      ],
+      "valid_bootstrap_draws": 2000
+    },
+    {
+      "prompt": "rules",
+      "target": "cancel",
+      "contrast": "joint minus raw network suite-maximum BA",
+      "difference": -0.4722222222222222,
+      "ci95": [
+        -0.5,
+        -0.2604299645390074
+      ],
+      "valid_bootstrap_draws": 1994
+    },
+    {
+      "prompt": "rules",
+      "target": "return",
+      "contrast": "joint minus raw network suite-maximum BA",
+      "difference": -0.32987012987012987,
+      "ci95": [
+        -0.4430345176873927,
+        -0.18854427736006715
+      ],
+      "valid_bootstrap_draws": 2000
+    }
+  ],
+  "joint_attacker_diagnostics": [
+    {
+      "prompt": "baseline",
+      "target": "cancel",
+      "attacker": "majority",
+      "point_ba": 0.5,
+      "nonconstant_predictions": false,
+      "resampled_ba_range": [
+        0.5,
+        0.5
+      ]
+    },
+    {
+      "prompt": "baseline",
+      "target": "cancel",
+      "attacker": "D0_gboost",
+      "point_ba": 0.5,
+      "nonconstant_predictions": false,
+      "resampled_ba_range": [
+        0.5,
+        0.5
+      ]
+    },
+    {
+      "prompt": "baseline",
+      "target": "cancel",
+      "attacker": "D2_logreg",
+      "point_ba": 0.40555555555555556,
+      "nonconstant_predictions": true,
+      "resampled_ba_range": [
+        0.18571428571428572,
+        0.7946428571428572
+      ]
+    },
+    {
+      "prompt": "baseline",
+      "target": "cancel",
+      "attacker": "D2_gboost",
+      "point_ba": 0.40694444444444444,
+      "nonconstant_predictions": true,
+      "resampled_ba_range": [
+        0.19298245614035087,
+        0.8333333333333333
+      ]
+    },
+    {
+      "prompt": "baseline",
+      "target": "cancel",
+      "attacker": "network_decode_gboost",
+      "point_ba": 0.4027777777777778,
+      "nonconstant_predictions": true,
+      "resampled_ba_range": [
+        0.19298245614035087,
+        0.8296296296296296
+      ]
+    },
+    {
+      "prompt": "baseline",
+      "target": "cancel",
+      "attacker": "network_decode_count_rule",
+      "point_ba": 0.5,
+      "nonconstant_predictions": false,
+      "resampled_ba_range": [
+        0.5,
+        0.5
+      ]
+    },
+    {
+      "prompt": "rules",
+      "target": "cancel",
+      "attacker": "majority",
+      "point_ba": 0.5,
+      "nonconstant_predictions": false,
+      "resampled_ba_range": [
+        0.5,
+        0.5
+      ]
+    },
+    {
+      "prompt": "rules",
+      "target": "cancel",
+      "attacker": "D0_gboost",
+      "point_ba": 0.5,
+      "nonconstant_predictions": false,
+      "resampled_ba_range": [
+        0.5,
+        0.5
+      ]
+    },
+    {
+      "prompt": "rules",
+      "target": "cancel",
+      "attacker": "D2_logreg",
+      "point_ba": 0.43194444444444446,
+      "nonconstant_predictions": true,
+      "resampled_ba_range": [
+        0.2523809523809524,
+        0.8407407407407408
+      ]
+    },
+    {
+      "prompt": "rules",
+      "target": "cancel",
+      "attacker": "D2_gboost",
+      "point_ba": 0.44027777777777777,
+      "nonconstant_predictions": true,
+      "resampled_ba_range": [
+        0.26666666666666666,
+        0.8629629629629629
+      ]
+    },
+    {
+      "prompt": "rules",
+      "target": "cancel",
+      "attacker": "network_decode_gboost",
+      "point_ba": 0.44027777777777777,
+      "nonconstant_predictions": true,
+      "resampled_ba_range": [
+        0.26666666666666666,
+        0.8629629629629629
+      ]
+    },
+    {
+      "prompt": "rules",
+      "target": "cancel",
+      "attacker": "network_decode_count_rule",
+      "point_ba": 0.5,
+      "nonconstant_predictions": false,
+      "resampled_ba_range": [
+        0.5,
+        0.5
+      ]
+    },
+    {
+      "prompt": "baseline",
+      "target": "return",
+      "attacker": "majority",
+      "point_ba": 0.5,
+      "nonconstant_predictions": false,
+      "resampled_ba_range": [
+        0.5,
+        0.5
+      ]
+    },
+    {
+      "prompt": "baseline",
+      "target": "return",
+      "attacker": "D0_gboost",
+      "point_ba": 0.5,
+      "nonconstant_predictions": false,
+      "resampled_ba_range": [
+        0.5,
+        0.5
+      ]
+    },
+    {
+      "prompt": "baseline",
+      "target": "return",
+      "attacker": "D2_logreg",
+      "point_ba": 0.4588744588744589,
+      "nonconstant_predictions": true,
+      "resampled_ba_range": [
+        0.08139534883720931,
+        0.6049382716049383
+      ]
+    },
+    {
+      "prompt": "baseline",
+      "target": "return",
+      "attacker": "D2_gboost",
+      "point_ba": 0.4666666666666667,
+      "nonconstant_predictions": true,
+      "resampled_ba_range": [
+        0.22963800904977374,
+        0.873015873015873
+      ]
+    },
+    {
+      "prompt": "baseline",
+      "target": "return",
+      "attacker": "network_decode_gboost",
+      "point_ba": 0.4666666666666667,
+      "nonconstant_predictions": true,
+      "resampled_ba_range": [
+        0.22963800904977374,
+        0.873015873015873
+      ]
+    },
+    {
+      "prompt": "baseline",
+      "target": "return",
+      "attacker": "network_decode_count_rule",
+      "point_ba": 0.5,
+      "nonconstant_predictions": false,
+      "resampled_ba_range": [
+        0.5,
+        0.5
+      ]
+    },
+    {
+      "prompt": "rules",
+      "target": "return",
+      "attacker": "majority",
+      "point_ba": 0.5,
+      "nonconstant_predictions": false,
+      "resampled_ba_range": [
+        0.5,
+        0.5
+      ]
+    },
+    {
+      "prompt": "rules",
+      "target": "return",
+      "attacker": "D0_gboost",
+      "point_ba": 0.5,
+      "nonconstant_predictions": false,
+      "resampled_ba_range": [
+        0.5,
+        0.5
+      ]
+    },
+    {
+      "prompt": "rules",
+      "target": "return",
+      "attacker": "D2_logreg",
+      "point_ba": 0.48354978354978356,
+      "nonconstant_predictions": true,
+      "resampled_ba_range": [
+        0.26356589147286824,
+        0.6447368421052632
+      ]
+    },
+    {
+      "prompt": "rules",
+      "target": "return",
+      "attacker": "D2_gboost",
+      "point_ba": 0.6056277056277056,
+      "nonconstant_predictions": true,
+      "resampled_ba_range": [
+        0.375,
+        0.7889957264957266
+      ]
+    },
+    {
+      "prompt": "rules",
+      "target": "return",
+      "attacker": "network_decode_gboost",
+      "point_ba": 0.5653679653679654,
+      "nonconstant_predictions": true,
+      "resampled_ba_range": [
+        0.29457364341085274,
+        0.78
+      ]
+    },
+    {
+      "prompt": "rules",
+      "target": "return",
+      "attacker": "network_decode_count_rule",
+      "point_ba": 0.5,
+      "nonconstant_predictions": false,
+      "resampled_ba_range": [
+        0.5,
+        0.5
+      ]
+    }
+  ],
+  "projection_check": {
+    "episodes": 690,
+    "sessions": 2760,
+    "checked": "Real-call name, kind, request/response byte lengths, error flag, source episode hash and native scoring fields are identical across program conditions. Exact serialized transcript preservation additionally follows from the frozen dispatcher append(dict(c,kind=real)) implementation and prior full verifier."
+  },
+  "inputs": {
+    "predictions.json": "9dd33a30c7530f7a56c64cc8d76ea90f47d0d1cf1c0c783babd1d09c51063547",
+    "results.json": "722a44e2a29cb9cbab9f23b631589a23495a843783a4339256552f6600609e86",
+    "sessions.json": "9271c6c7a1472cea03e60aed1518894d520610eff75b1b0f7389b2b87ab4bc1a"
+  },
+  "frozen_statistics_sha256": "f5c5c0663eddfec3e81f70f83fa022e605f7e46b3e348e0d1cbc1a08c449ae9a",
+  "frozen_dispatcher_sha256": "bb34cb1000e921dc50bf10d76ddc0c7a0c40a4c27ca4e9f2f6ebee7b11e9afcb"
+}
