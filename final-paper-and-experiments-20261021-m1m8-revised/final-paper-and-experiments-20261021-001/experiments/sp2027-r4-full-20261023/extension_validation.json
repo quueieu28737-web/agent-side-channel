@@ -1,0 +1,34 @@
+{
+  "status": "FULL_COHORT_EXTENSION_VERIFIED",
+  "episodes": 690,
+  "base_episodes_unchanged": 663,
+  "new_episodes": 27,
+  "model_decisions": 11586,
+  "tls_sessions": 2760,
+  "test_reward_counts": {
+    "baseline": 110,
+    "rules": 105
+  },
+  "test_status_counts": {
+    "baseline": {
+      "transfer": 24,
+      "user_stop": 114
+    },
+    "rules": {
+      "transfer": 23,
+      "user_stop": 115
+    }
+  },
+  "frozen_before_test": true,
+  "checks": [
+    "base bytes and new input hashes",
+    "exact 690-cell grid",
+    "original runtime and pretest analysis hashes",
+    "model requests and outputs",
+    "all actions and assistant/user messages aligned",
+    "all native states and required outputs rescored",
+    "usage and serialized lengths",
+    "capture/session/episode linkage"
+  ],
+  "scope": "Executable verification by the authors; not external independent replication."
+}

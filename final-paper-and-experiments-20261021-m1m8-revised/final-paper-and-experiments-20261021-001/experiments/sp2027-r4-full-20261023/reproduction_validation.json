@@ -1,0 +1,36 @@
+{
+  "status": "FROZEN_FULL_VERIFIER_REPRODUCED",
+  "validation": {
+    "status": "VERIFIED",
+    "episodes": 690,
+    "training_tasks": 69,
+    "test_tasks": 46,
+    "test_customers": 24,
+    "tls_sessions": 2760,
+    "prediction_sets": 176,
+    "model_calls": 11586,
+    "model_usage": {
+      "input_tokens": 122780297,
+      "cached_input_tokens": 51443328,
+      "output_tokens": 638753,
+      "reasoning_output_tokens": 6902
+    },
+    "protocol_sha256": "54787c563c74cba9c18f7c18b2b26651c335a23a4ab79855cf6c9812009cd5ad",
+    "calibration_sha256": "d7a4ff38be31191f7043080ce7fc1ff64df811e03ad255dc2da21e4d2d815db8",
+    "checks": [
+      "group disjointness",
+      "episode grid and versions",
+      "training-only calibration refit",
+      "sandbox state replay",
+      "online cover reconstruction",
+      "TLS record counts/byte totals",
+      "independent sklearn point metrics",
+      "customer-cluster suite intervals",
+      "paired contrasts",
+      "model request provenance"
+    ]
+  },
+  "attacker_refit": "exact results and predictions JSON equality",
+  "source": "reproduce.py --reanalyze",
+  "source_sha256": "a4cf6c19f491aa1982c4df92b584d12db69c2dc464c50278aa6bbe7e6d2b36a1"
+}

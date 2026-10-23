@@ -1,5 +1,18 @@
 # 真实 Agent 快照修订版（2026-10-23，R4）
 
+## 完整队列补充已完成
+
+690 运行（414 训练＋276 测试）的独立补充位于 `experiments/sp2027-r4-full-20261023/`；阅读 `pdf/full-cohort-supplement.pdf`。原主稿、原补充材料和 663 快照保持原样，以下快照说明保留其历史样本范围。新增全队列网络 BA 为基线 97.2%/94.0%、联合程序防御 50.0%/50.0%；字节/调用成本 15.39×/3.83×。规则 prompt 合规率 97.1%，但原始网络 BA 仍为 97.2%/93.5%。
+
+新增 27 个运行与此前单列的 3 个运行共同把主测试样本从 246 扩展为 276。全部模型、prompt、划分、校准和预先冻结的分析代码保持一致。复算：
+
+    python -B experiments/sp2027-r4-full-20261023/verify_extension.py
+    python -B experiments/sp2027-r4-full-20261023/reproduce.py --reanalyze
+
+新增数据以增量方式引用旧模型档案；完整队列不依赖本地工作目录。完整校验、决策对齐和重算结果随新目录交付，详情见其 README。`provenance/full-cohort-delivery.json` 记录本次交付范围。
+
+## 历史快照说明
+
 最新阅读文件：pdf/main.pdf、pdf/supplement.pdf；来源在 manuscript/。修订说明见 REVISION-R4.md。
 
 R4 新增 GPT-6.1 Sol / low 真实 Agent 轨迹、仅训练集校准的完整防御组件评估和规则 prompt 对照。当前固定快照保留 663 个完成运行；主分析使用 414 训练运行及 41 个完整配对测试任务的 246 运行。剩余计划运行作为后续补充，不混入本轮数字。
