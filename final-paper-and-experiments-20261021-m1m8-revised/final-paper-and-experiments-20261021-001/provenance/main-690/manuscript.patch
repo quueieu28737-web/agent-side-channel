@@ -1,0 +1,346 @@
+diff --git a/final-paper-and-experiments-20261021-m1m8-revised/final-paper-and-experiments-20261021-001/manuscript/main.tex b/final-paper-and-experiments-20261021-m1m8-revised/final-paper-and-experiments-20261021-001/manuscript/main.tex
+index ae8eb7b..b7216b2 100644
+--- a/final-paper-and-experiments-20261021-m1m8-revised/final-paper-and-experiments-20261021-001/manuscript/main.tex
++++ b/final-paper-and-experiments-20261021-m1m8-revised/final-paper-and-experiments-20261021-001/manuscript/main.tex
+@@ -34,14 +34,14 @@
+ \newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+ \input{tables/final-counts}
+ 
+-\title{SoK: Evidence Boundaries of LLM and Agent Side-Channel Defenses\\From Result-Record Audits to Real-Agent Evaluation}
++\title{SoK: Evaluating LLM and Agent Side-Channel Defenses\\From Evidence Audits to Real-Agent Measurements}
+ \author{}
+ 
+ \begin{document}
+ \maketitle
+ 
+ \begin{abstract}
+-Side-channel defenses protect particular observations and execution environments. Deploying them in LLM and agent workflows requires connecting their measured protection to the receiving interface, tool state and adaptive attacker. We systematize \FinalN{} study families (\FinalCore{} core and \FinalAdjacent{} adjacent), retaining 39 scoped result records and auditing 20 mitigation families. Our nine-item audit and three deployment checks turn heterogeneous results into explicit comparison obligations; only 3 of 17 applicable families bind task or component utility, and 2 of 11 bind a matched adaptation contrast. Controlled tests expose consequential mismatches: per-event padding leaves streaming verbosity fully separable, clean-trained attackers score 50\% where refitted attackers score 100\%, and request sizes identify retail tools with 89.9--91.4\% held-out accuracy. We extend these tests to real GPT-6.1 Sol agents with defense parameters frozen solely from 414 training runs. An interim evaluation covers 246 test runs on 41 customer-disjoint held-out tasks. Online shadow cover with constant framing reduces maximum network balanced accuracy from 96.7\%/93.4\% to 50.0\%/50.0\% for cancellation/return, at 15.3$\times$ bytes and 3.8$\times$ calls in TLS replay. Workflow rules yield 96.7\% measured compliance but leave intent inference above 92\%. The intervals do not certify chance-level protection, and replay preserves task reward by construction. Together, the source-bound audit and executable experiments identify which observation, state and evaluation bindings determine a defense's measured protection and deployment cost.
++Encryption hides message content while leaving the structure of agent workflows observable. Determining whether a side-channel defense protects a deployed workflow requires connecting the evidence across observation, execution and evaluation boundaries. We systematize \FinalN{} study families (\FinalCore{} core and \FinalAdjacent{} adjacent), with 39 scoped result records and an audit of 20 mitigation families. Our nine-item audit and three deployment checks identify concrete gaps: only 3 of 17 applicable families bind task or component utility, and 2 of 11 bind a matched adaptation contrast. Controlled experiments show why these bindings matter: per-event padding leaves streaming verbosity fully separable, refitting raises attack accuracy from 50\% to 100\%, and encrypted request sizes identify retail tools with 89.9--91.4\% held-out accuracy. We then evaluate 690 real GPT-6.1 Sol agent runs, calibrating the defense solely on 414 training runs before collecting 276 customer-disjoint test runs. In local TLS replay, online shadow cover with constant framing reduces cancellation/return network balanced accuracy from 97.2\%/94.0\% to 50.0\%/50.0\%, at 15.4$\times$ bytes and 3.8$\times$ calls. Workflow rules attain 97.1\% measured compliance while intent inference remains above 93\%. These results establish a practical separation between compliant behavior and metadata protection. The resulting evidence framework connects source-level audit findings to reproducible measurements of leakage, state preservation and deployment cost.
+ \end{abstract}
+ 
+ \input{sections/01-introduction}
+diff --git a/final-paper-and-experiments-20261021-m1m8-revised/final-paper-and-experiments-20261021-001/manuscript/sections/01-introduction.tex b/final-paper-and-experiments-20261021-m1m8-revised/final-paper-and-experiments-20261021-001/manuscript/sections/01-introduction.tex
+index e5f0263..76561cb 100644
+--- a/final-paper-and-experiments-20261021-m1m8-revised/final-paper-and-experiments-20261021-001/manuscript/sections/01-introduction.tex
++++ b/final-paper-and-experiments-20261021-m1m8-revised/final-paper-and-experiments-20261021-001/manuscript/sections/01-introduction.tex
+@@ -1,11 +1,11 @@
+ \section{Introduction}\label{sec:introduction}
+-Encryption conceals message content, yet LLM serving engines and agent systems expose packet sizes, cache timing, memory-access patterns, visited domains and tool-invocation sequences \cite{weiss2024prompt,promptpeek2025,earlybird2025,agentprint2025,uitraces2026,jeong2026wra}. A published defense result applies to a particular observer and operating point. Reusing it across a frontend, a tool dispatcher or another workload can change both the observable signal and the cost being measured. We study this interpretation problem without assuming that the original authors claimed end-to-end protection.
++Encryption conceals message content, yet LLM serving engines and agent systems expose packet sizes, cache timing, memory-access patterns, visited domains and tool-invocation sequences \cite{weiss2024prompt,promptpeek2025,earlybird2025,agentprint2025,uitraces2026,jeong2026wra}. A published defense result applies to a particular observer and operating point. Reusing it across a frontend, a tool dispatcher or another workload can change both the observable signal and the cost being measured. We turn this deployment problem into explicit, testable requirements for reusing defense evidence.
+ 
+-Our systematization asks which evidence permits such reuse. It separates three obligations:
++Our systematization connects published results to the receiving deployment through three operational checks:
+ \begin{enumerate}
+ \item \textbf{Bind the receiving projection.} Target-oblivious postprocessing is a sufficient condition for preserving an upstream information bound (Remark~1, a direct consequence of the data processing inequality). A frontend with access to decoded content or an unprotected backward computation requires a separate argument or measurement \cite{netecho2025,politis2026splitdecoy}.
+ \item \textbf{Bind execution and protected state.} Read-only decoy requests and GUI actions operate on different interfaces and serve different objectives \cite{jeong2026wra,zhu2026turing}. For tools, unchanged argument values do not imply unchanged database state. The relevant contract must identify task objects, the user's account and shared state separately.
+-\item \textbf{Bind adaptation, utility and cost.} An attack on defended data must specify how the attacker was fitted; an overhead must identify the same workload and deployed mechanism as the claimed protection. Missing bindings limit reuse without establishing that the original study omitted or failed the experiment.
++\item \textbf{Bind adaptation, utility and cost.} An attack on defended data must specify how the attacker was fitted; an overhead must identify the same workload and deployed mechanism as the claimed protection. Binding these quantities makes protection and cost comparable across deployments.
+ \end{enumerate}
+ 
+ \paragraph{Contributions}
+@@ -13,9 +13,9 @@ We connect a source-bound systematization to executable tests of defense reuse a
+ \begin{itemize}
+ \item \textbf{A result-record repository:} \FinalN{} study families (\FinalCore{} core and \FinalAdjacent{} adjacent), with 39 scoped records and 78 utility/cost field positions from 26 families. The records distinguish source versions, receiver views, execution modes and cost objects that paper-level comparisons can conflate.
+ \item \textbf{An actionable comparability audit:} nine reporting items and three operational checks applied to 20 mitigation families. Utility is bound in 3/17 applicable families and a matched adaptation contrast in 2/11. The audit maps each unresolved reuse claim to the specific observation, state or evaluation evidence needed to resolve it.
+-\item \textbf{A bridge from controlled mechanisms to real agents:} streaming TLS emitters, randomized cover on 115 retail reference programs, and a real-agent experiment with training-only defense calibration and a rules-prompt control. The current complete-task snapshot contains 414 training and 246 test runs. It quantifies how prompt compliance, execution isolation and transport shaping contribute different effects: rules leave intent inference above 92\%, while joint online cover/framing reduces both network point estimates to 50\% at a measured byte/call cost.
++\item \textbf{An executable bridge to real-agent defense evaluation:} controlled streaming and tool-state experiments culminate in 690 real-agent runs, with 414 training runs for defense calibration and 276 customer-disjoint test runs. Joint online cover and framing reduce cancellation/return network BA by 47.2/44.0 percentage points. A rules-prompt control reaches 97.1\% measured compliance while retaining over 93\% intent inference, separating behavioral compliance from metadata protection.
+ \end{itemize}
+-The framework builds on established composition, state-isolation and adaptive-evaluation principles. Its empirical contribution is their traceable application and cross-boundary measurement, rather than a new information-theoretic guarantee. Independent validation of the audit's decision accuracy remains an open question.
++The contribution is the connection between evidence and execution: result-level records expose ambiguous comparisons, operational checks specify the missing bindings, and controlled and real-agent measurements demonstrate their consequences. Composition, state isolation and adaptive evaluation provide the foundations for this reproducible assessment.
+ 
+ Table~\ref{tab:synthesis-decisions} links source-local findings to the new comparison judgments. For example, separating Dangol's stored-capture and live-protocol records prevents an invalid subtraction; separating Early Bird's two mechanisms prevents using a semantic-cache cost to price KV-prefix isolation. The transfer tests add consequences that a paper-level reading misses: a buffered padding cost does not price a stream, and leakage already present at a dispatcher persists through size-based decoding on the encrypted tool link.
+ 
+diff --git a/final-paper-and-experiments-20261021-m1m8-revised/final-paper-and-experiments-20261021-001/manuscript/sections/10-open-challenges.tex b/final-paper-and-experiments-20261021-m1m8-revised/final-paper-and-experiments-20261021-001/manuscript/sections/10-open-challenges.tex
+index 0b9bdcb..0a49202 100644
+--- a/final-paper-and-experiments-20261021-m1m8-revised/final-paper-and-experiments-20261021-001/manuscript/sections/10-open-challenges.tex
++++ b/final-paper-and-experiments-20261021-m1m8-revised/final-paper-and-experiments-20261021-001/manuscript/sections/10-open-challenges.tex
+@@ -12,4 +12,4 @@ The artifact preserves sources, raw observations, structured model decisions, fr
+ \subsection{Threats to validity}
+ The purposive corpus and query overlaps do not estimate field-wide recall. Supplied coding columns support agreement calculations, but coder independence and adjudication are not established from those columns. The 24 author-constructed scenarios illustrate audit rules; external decision accuracy, incremental value over a simple checklist, and independent screening of the 617-record second search remain open.
+ 
+-E5 conditions on 48 saved outputs from one model and uses a proxy tokenizer; QUIC and deployment timing are untested. E6/E7 use reference programs and known-population defense calibration. E9 adds real agents and training-only calibration, but uses one public benchmark, one mutable model alias and the same model for user simulation. Earlier development had access to all 115 tasks. The interim test sample has 41 tasks and only five positive cancellation customers and seven positive return customers; late-task completion may change the estimates. Intervals condition on fitted attackers. Program conditions reuse trajectories, so equal reward is structural and online delay/feedback costs remain unmeasured. These limits bound extrapolation without changing the observed leakage and shaping effects.
++E5 uses 48 saved outputs and a proxy tokenizer; E6/E7 use reference programs with known-population calibration. E9 completes all 690 planned runs with training-only calibration and a customer-disjoint test, removing the interim completion filter. Its scope is one public retail environment and one mutable model alias, also used for user simulation. Earlier development had access to all 115 tasks. The 46 test tasks include five positive cancellation customers and seven positive return customers; intervals condition on fitted attackers. Program conditions reuse trajectories, so equal reward is structural. External replication, broader model/environment transfer, provider-traffic measurement and interactive latency/feedback effects are the next evaluation targets.
+diff --git a/final-paper-and-experiments-20261021-m1m8-revised/final-paper-and-experiments-20261021-001/manuscript/sections/12-conclusion.tex b/final-paper-and-experiments-20261021-m1m8-revised/final-paper-and-experiments-20261021-001/manuscript/sections/12-conclusion.tex
+index 8b8aa43..2190ad7 100644
+--- a/final-paper-and-experiments-20261021-m1m8-revised/final-paper-and-experiments-20261021-001/manuscript/sections/12-conclusion.tex
++++ b/final-paper-and-experiments-20261021-m1m8-revised/final-paper-and-experiments-20261021-001/manuscript/sections/12-conclusion.tex
+@@ -1,4 +1,4 @@
+ \section{Conclusion}\label{sec:conclusion}
+-This SoK turns \FinalN{} study families and 39 scoped result records into a traceable audit of observation, execution and evaluation bindings. Controlled experiments show how changes in emitters, tool state and attacker fitting alter both measured leakage and the cost attached to a defense result.
++This SoK connects \FinalN{} study families and 39 scoped result records to an executable evaluation of LLM and agent side-channel defenses. The audit identifies which observation, execution and evaluation bindings govern a result's reuse; controlled experiments demonstrate the leakage and cost consequences of changing those bindings.
+ 
+-The real-agent evaluation closes two concrete evidence gaps: autonomous model-generated trajectories and training-only defense calibration. On the current complete-task snapshot, workflow rules leave network intent inference above 92\%, whereas online shadow cover with constant framing reduces both baseline point estimates to 50\% at 15.3$\times$ bytes and 3.8$\times$ calls. The practical contribution is a reproducible way to distinguish behavioral compliance, state preservation and metadata protection, and to identify the measurements needed before reusing a defense in a different deployment.
++The complete 690-run real-agent study provides a concrete deployment lesson. Workflow rules achieve 97.1\% measured compliance while intent inference exceeds 93\%. Training-calibrated online cover with constant framing reduces baseline network BA by 47.2/44.0 points to 50\% for cancellation and return, at 15.4$\times$ bytes and 3.8$\times$ calls in TLS replay. Result-level provenance, adaptive attack evaluation and explicit state/transport measurements together make these effects reproducible and guide the design of agent defenses whose protection and cost can be evaluated on the same workload.
+diff --git a/final-paper-and-experiments-20261021-m1m8-revised/final-paper-and-experiments-20261021-001/manuscript/sections/30-reproducibility-guide.tex b/final-paper-and-experiments-20261021-m1m8-revised/final-paper-and-experiments-20261021-001/manuscript/sections/30-reproducibility-guide.tex
+index 4bf8b51..b30d0c2 100644
+--- a/final-paper-and-experiments-20261021-m1m8-revised/final-paper-and-experiments-20261021-001/manuscript/sections/30-reproducibility-guide.tex
++++ b/final-paper-and-experiments-20261021-m1m8-revised/final-paper-and-experiments-20261021-001/manuscript/sections/30-reproducibility-guide.tex
+@@ -1,5 +1,5 @@
+ \section{Reproducibility and Notation}\label{app:search}\label{app:notation}
+-The accompanying \emph{Supplementary Evidence} and package directory provide the following modules: S1 historical search records; S2 corpus/prior-work maps; S3 retained pilots; S4 public-trace reanalysis; S5 intervention inventory; S6 original conclusion sensitivity; S7 workflow comparison diagnostics and the 24-case retrospective validity benchmark; S8 the pairwise and nine-item split audit (with supplied coding records); S9 controlled mechanism demonstrations and extensions (E1 length-sensitivity gradient, E2 synthetic plans, E3 $D_0$-vs-$D_2$ adaptive attacker, and T2c 115-task / 97-eligible-task retail baseline and realistic cover policies); S10 the completed 565-record search update and exact $60\to 82$ reconciliation; the current replay/analysis artifacts in \path{experiments/reviewer-audit/}; and the second-round transfer tests, predictions and raw captures in \path{experiments/sp2027-r2/} (S11 retains the first-round controlled tables; S12 reports E5--E7 in full; S13 documents the agent pipeline). Earlier summaries in \path{experiments/revision-m1-m8/} are kept for provenance; current E6/E7 intervals, held-out identification and judgment reassessment use the post-review \path{experiments/sp2027-r3/} outputs. S12 reports the corrected E6/E7 summaries; R2 registration and historical outputs remain unchanged. S14 adds E9: the 663-run real-agent completion snapshot, 660-run primary analysis, training-only calibration, TLS captures and executable validation in \path{experiments/sp2027-r4-snapshot-20261023/}. Later runs belong to a separate supplement.
++The accompanying \emph{Supplementary Evidence} and package directory provide the following modules: S1 historical search records; S2 corpus/prior-work maps; S3 retained pilots; S4 public-trace reanalysis; S5 intervention inventory; S6 original conclusion sensitivity; S7 workflow comparison diagnostics and the 24-case retrospective validity benchmark; S8 the pairwise and nine-item split audit (with supplied coding records); S9 controlled mechanism demonstrations and extensions (E1 length-sensitivity gradient, E2 synthetic plans, E3 $D_0$-vs-$D_2$ adaptive attacker, and T2c 115-task / 97-eligible-task retail baseline and realistic cover policies); S10 the completed 565-record search update and exact $60\to 82$ reconciliation; the current replay/analysis artifacts in \path{experiments/reviewer-audit/}; and the second-round transfer tests, predictions and raw captures in \path{experiments/sp2027-r2/} (S11 retains the first-round controlled tables; S12 reports E5--E7 in full; S13 documents the agent pipeline). Earlier summaries in \path{experiments/revision-m1-m8/} are kept for provenance; current E6/E7 intervals, held-out identification and judgment reassessment use the post-review \path{experiments/sp2027-r3/} outputs. S12 reports the corrected E6/E7 summaries; R2 registration and historical outputs remain unchanged. S14 reports the complete 690-run E9 evaluation: 414 training and 276 test runs, training-only calibration, TLS captures and executable validation. \path{experiments/sp2027-r4-full-20261023/} reconstructs the full cohort from the immutable 663-run snapshot in \path{experiments/sp2027-r4-snapshot-20261023/} plus 27 additional runs. The earlier manuscript and snapshot remain in the archived release; the current paper uses the completed cohort throughout.
+ 
+ \paragraph{Executable acquisition record}
+ Table~\ref{tab:native-executable-queries} records the actual historical IEEE/ACM native queries (October 8--9, 2026). S10 prints the four Semantic Scholar bulk queries (\texttt{S1R}, \texttt{S2}, \texttt{S3}, \texttt{S4}) and two native arXiv queries (\texttt{ARXIV-A1}, \texttt{ARXIV-A2}) completed on October 21, 2026 (615 occurrences, 565 unique records), together with the pre-audit and post-audit reconciliation table (Table~\ref{tab:corpus-reconciliation}).
+diff --git a/final-paper-and-experiments-20261021-m1m8-revised/final-paper-and-experiments-20261021-001/manuscript/sections/37-transfer-tests.tex b/final-paper-and-experiments-20261021-m1m8-revised/final-paper-and-experiments-20261021-001/manuscript/sections/37-transfer-tests.tex
+index c4c587b..290b295 100644
+--- a/final-paper-and-experiments-20261021-m1m8-revised/final-paper-and-experiments-20261021-001/manuscript/sections/37-transfer-tests.tex
++++ b/final-paper-and-experiments-20261021-m1m8-revised/final-paper-and-experiments-20261021-001/manuscript/sections/37-transfer-tests.tex
+@@ -40,19 +40,23 @@ A training-fold audit finds five reference tasks that exceed a fitted tool-count
+ E8's stand-in planners diagnose sensitivity to unknown future calls and template overflow (Supplement S13). E9 now evaluates this online interface with real model decisions.
+ 
+ \subsection{E9: real agents and training-only defense calibration}\label{sec:real-agent}
+-GPT-6.1 Sol (low reasoning effort) plans and responds from the retail policy, public tool schemas and actual sandbox observations. A separate context of the same model simulates the user. The rules arm adds one customer-details read before order access and a read before each order write. Each arm has three repeats per task. All 414 training runs on 69 tasks complete before we freeze a shared count template, donor pools and framing caps. Test customers are disjoint from training customers.
++E9 tests defense reuse on autonomous model-generated trajectories under a strict calibration boundary. GPT-6.1 Sol (low reasoning effort) plans and responds from the retail policy, public tool schemas and actual sandbox observations. A separate context of the same model simulates the user. The rules arm adds one customer-details read before order access and a read before each order write. All 115 tasks have two prompt arms and three repeats, completing the frozen 690-run protocol. All 414 training runs on 69 tasks precede freezing of a shared count template, donor pools and framing caps; the 276 test runs cover 46 tasks from 24 disjoint customers.
+ 
+-The publication snapshot contains 663 completed runs from the planned 690. The primary comparison uses all 41 test tasks with both arms and all repeats complete: 246 runs across 22 customers; three other completed test runs are retained separately. Inclusion depends on completion at a fixed cutoff, not reward or leakage. The online defense inserts training-derived cover on shadow state using only past calls, then flushes unmet counts. Real calls pass through unchanged. We evaluate four program conditions per prompt, with training-fitted attackers, over 2,640 TLS replay sessions. Supplement S14 specifies the protocol, completion accounting and ablations.
++The online dispatcher inserts training-derived cover on shadow state using only past calls and flushes unmet counts at episode end. Real calls pass through unchanged. Four program conditions per prompt isolate raw transport, padding, shape cover and their combination. Training-fitted attackers evaluate dispatch and network observations across 2,760 TLS replay sessions. Every test task, failure and handoff remains in the analysis. Supplement S14 supplies the full ablations and customer-cluster intervals.
+ 
+ \input{tables/r4-primary}
+ 
+-Table~\ref{tab:r4-primary} shows strong intent leakage from actual agent behavior: baseline network BA is 96.7\% for cancellation and 93.4\% for return. Rules yield 96.7\% measured workflow compliance (baseline 87.0\%), yet leakage remains 96.7\%/92.8\%. Task reward is 82.1\%/78.0\%; the paired rules-minus-baseline difference is $-4.1$ points (95\% interval $[-10.9,1.7]$). Workflow compliance alone therefore does not deliver metadata privacy in this workload.
++\paragraph{Compliant workflows still reveal intent}
++Table~\ref{tab:r4-primary} shows baseline network BA of 97.2\% for cancellation and 94.0\% for return. Rules raise measured workflow compliance from 86.2\% to 97.1\%, yet network BA remains 97.2\%/93.5\%. Task reward is 110/138 (79.7\%) for baseline and 105/138 (76.1\%) for rules; the paired difference is $-3.6$ points (95\% interval $[-9.5,1.4]$). Thus workflow rules successfully alter measured compliance while leaving a strong intent signal in the encrypted trace.
+ 
+-With baseline trajectories, training-calibrated online cover plus constant framing reduces both network point estimates to 50.0\%, at 15.3$\times$ bytes and 3.8$\times$ calls. This is a substantial measured reduction under a deployment-relevant calibration constraint. Program replay preserves each trajectory and its reward by construction; it does not measure feedback or latency effects on the agent. Adding rules yields return BA 64.1\%; its paired increase over program-only is 14.1 points with interval $[-4.4,25.7]$, so the interaction remains uncertain. No E9 condition meets the finite-suite criterion for both targets. The result establishes the benefit and measured cost of program-level shaping while showing why prompt behavior, transport and utility require separate evaluation.
++\paragraph{Joint shaping removes most measured inference advantage}
++On baseline trajectories, online shadow cover with constant framing reduces network BA by 47.2 points for cancellation and 44.0 points for return, reaching 50.0\% for both at 15.4$\times$ bytes and 3.8$\times$ calls. The ablations identify the value of combining the mechanisms: padding alone leaves cancellation/return BA at 66.1\%/55.5\%, and shape cover alone at 60.8\%/51.9\%. These are operating points under the same training-only calibration and held-out workload.
++
++The joint result quantifies substantial leakage reduction and its resource cost. Its 95\% upper bounds are 60.6\%/65.5\%, so it does not meet the predeclared finite-suite criterion for both targets. Rules plus joint shaping yields 50.0\%/60.6\%; the return difference from program-only has an interval spanning zero (S14). Program conditions reuse each realized trajectory, preserving its reward by construction; network measurements use local TLS~1.2 replay. Section~\ref{sec:agenda} discusses interactive utility and broader transfer.
+ 
+ \subsection{What the cases establish}
+-The experiments connect concrete failure modes to the audit's comparison obligations. E5 isolates emitter-dependent cost and count leakage. E6/E7 show that adaptive fitting and encrypted size decoding expose residual tool-intent signals. E9 extends the evidence to real agents and training-only defense calibration: prompt compliance can coexist with high leakage, while online shaping substantially reduces the measured signal at a quantified cost. The cases support these mechanism-level conclusions; they do not estimate the audit's accuracy against independent positive and negative cases.
++The experiments connect concrete failure modes to the audit's comparison obligations. E5 isolates emitter-dependent cost and count leakage. E6/E7 show that adaptive fitting and encrypted size decoding expose residual tool-intent signals. E9 extends the evidence to real agents and training-only defense calibration: prompt compliance can coexist with high leakage, while online shaping substantially reduces the measured signal at a quantified cost. Together, the cases turn the audit into an executable evaluation sequence: bind the emitted trace, isolate cover effects, fit attackers on defended data, and price protection on the held-out workload.
+ 
+ \soktakeaway{SoK Takeaway 3 (Bind the projection the emitter produces)}{Padding applies to the record sequence it equalizes. Buffered caps, per-event padding and batching have distinct leakage and cost objects. Evaluate the attacker on defended data and price the same emitter that supplies the protection claim.}
+ 
+-\soktakeaway{SoK Takeaway 4 (Evaluate workflow, state and transport together)}{Real-agent workflow rules leave intent inference above 92\%. Training-calibrated online cover with constant framing lowers both baseline network point estimates to 50\%, at 15.3$\times$ bytes and 3.8$\times$ calls. State isolation, task reward and residual inference require distinct measurements.}
++\soktakeaway{SoK Takeaway 4 (Evaluate workflow, state and transport together)}{Across 690 real-agent runs, rules yield 97.1\% measured compliance while intent inference remains above 93\%. Training-calibrated joint shaping lowers baseline network BA by 47.2/44.0 points, reaching 50\% for both targets. Evaluate behavioral compliance, state preservation and metadata protection as distinct outcomes.}
+diff --git a/final-paper-and-experiments-20261021-m1m8-revised/final-paper-and-experiments-20261021-001/manuscript/supplement.tex b/final-paper-and-experiments-20261021-m1m8-revised/final-paper-and-experiments-20261021-001/manuscript/supplement.tex
+index dced125..74f5f8b 100644
+--- a/final-paper-and-experiments-20261021-m1m8-revised/final-paper-and-experiments-20261021-001/manuscript/supplement.tex
++++ b/final-paper-and-experiments-20261021-m1m8-revised/final-paper-and-experiments-20261021-001/manuscript/supplement.tex
+@@ -27,7 +27,7 @@
+ \renewcommand{\thesection}{S\arabic{section}}
+ \renewcommand{\thesubsection}{\thesection.\arabic{subsection}}
+ \renewcommand{\thetable}{S\arabic{table}}
+-\title{Supplementary Evidence: Evidence Boundaries of LLM and Agent Side-Channel Defenses}
++\title{Supplementary Evidence: Evaluating LLM and Agent Side-Channel Defenses}
+ \author{}
+ \begin{document}
+ \maketitle
+diff --git a/final-paper-and-experiments-20261021-m1m8-revised/final-paper-and-experiments-20261021-001/manuscript/tables/r4-primary.tex b/final-paper-and-experiments-20261021-m1m8-revised/final-paper-and-experiments-20261021-001/manuscript/tables/r4-primary.tex
+index 92581d8..b83d95e 100644
+--- a/final-paper-and-experiments-20261021-m1m8-revised/final-paper-and-experiments-20261021-001/manuscript/tables/r4-primary.tex
++++ b/final-paper-and-experiments-20261021-m1m8-revised/final-paper-and-experiments-20261021-001/manuscript/tables/r4-primary.tex
+@@ -1,11 +1,13 @@
+-\begin{table*}[t]\centering\footnotesize
+-\caption{E9: real-agent evaluation with training-only defense calibration. Primary snapshot: 41 held-out tasks, 22 customers, two prompts, three repeats (246 episodes). Network values are maximum balanced accuracy (\%) over the fixed attack suite with customer-cluster 95\% intervals. Program = online shadow cover plus constant framing.}\label{tab:r4-primary}
+-\begin{tabularx}{\textwidth}{@{}Yrrrrr@{}}\toprule
+-Condition & Cancellation BA [CI] & Return BA [CI] & Task reward (\%) & Bytes$\times$ & Calls$\times$\\\midrule
+-Baseline & 96.7 [88.9, 100.0] & 93.4 [83.7, 100.0] & 82.1 & 1.00 & 1.00\\
+-Rules prompt & 96.7 [88.9, 100.0] & 92.8 [83.0, 99.0] & 78.0 & 1.00 & 1.00\\
+-Program defense & 50.0 [50.0, 64.5] & 50.0 [50.0, 63.1] & 82.1 & 15.33 & 3.83\\
+-Rules + program & 50.0 [50.0, 66.5] & 64.1 [54.8, 76.1] & 78.0 & 15.70 & 3.90\\
+-\bottomrule\end{tabularx}
+-\par\smallskip\raggedright Ratios use raw transport within the same prompt. Program conditions replay the same trajectory, so reward is unchanged by construction. The measurement is TLS~1.2 loopback replay of real model-generated tool calls. The 663-run completion snapshot includes 414 training runs and three further test runs outside the complete-task primary analysis; the planned cohort is 690. Full methods and ablations: Supplement S14.
++\begin{table*}[t]\centering\small
++\caption{E9: complete real-agent evaluation with training-only defense calibration. Testing covers 46 tasks from 24 held-out customers, two prompts and three repeats (276 episodes). Network BA is the maximum over the fixed attack suite, with customer-cluster 95\% intervals.}\label{tab:r4-primary}
++\begin{tabular}{@{}lrrrrr@{}}\toprule
++Condition & Cancel BA [95\% CI] & Return BA [95\% CI] & Reward (\%) & Bytes$\times$ & Calls$\times$\\\midrule
++Baseline & 97.2 [90.0, 100.0] & 94.0 [85.8, 100.0] & 79.7 & 1.00 & 1.00\\
++Rules prompt & 97.2 [90.0, 100.0] & 93.5 [85.0, 99.5] & 76.1 & 1.00 & 1.00\\
++Padding only & 66.1 [50.0, 83.9] & 55.5 [50.0, 73.0] & 79.7 & 4.02 & 1.00\\
++Shape only & 60.8 [55.4, 71.3] & 51.9 [50.5, 57.8] & 79.7 & 4.16 & 3.83\\
++Joint program & 50.0 [50.0, 60.6] & 50.0 [50.0, 65.5] & 79.7 & 15.39 & 3.83\\
++Rules + joint & 50.0 [50.0, 65.1] & 60.6 [50.0, 73.3] & 76.1 & 15.72 & 3.88\\
++\bottomrule\end{tabular}
++\par\smallskip\raggedright Joint = online shadow cover plus constant framing. Padding and shape ablations use baseline trajectories. Ratios use raw transport within the same prompt. Program conditions reuse each trajectory, preserving reward by construction. Network measurements are TLS~1.2 loopback replay of actual model-generated calls; 414 training runs preceded defense freezing and test collection. Full methods and ablations: Supplement S14.
+ \end{table*}
+diff --git a/final-paper-and-experiments-20261021-m1m8-revised/final-paper-and-experiments-20261021-001/manuscript/tables/r4-supp.tex b/final-paper-and-experiments-20261021-m1m8-revised/final-paper-and-experiments-20261021-001/manuscript/tables/r4-supp.tex
+index 64c2e7f..29d8414 100644
+--- a/final-paper-and-experiments-20261021-m1m8-revised/final-paper-and-experiments-20261021-001/manuscript/tables/r4-supp.tex
++++ b/final-paper-and-experiments-20261021-m1m8-revised/final-paper-and-experiments-20261021-001/manuscript/tables/r4-supp.tex
+@@ -1,127 +1,92 @@
+-\section{Real-Agent Evaluation with Training-Only Calibration (E9)}\label{sec:r4}
+-
++\section{Complete Real-Agent Evaluation with Training-Only Calibration (E9)}\label{sec:r4}
+ \subsection{Cohort and execution}
++All 690 episodes in the frozen protocol are complete: 115 tasks, two prompt arms and three repetition identifiers. The fixed split assigns 69 tasks from 29 customers to training (414 episodes) and 46 tasks from 24 disjoint customers to testing (276 episodes). Every test task has all six prompt/repetition cells, and all failures and handoffs remain in the analysis. Training finished before defense calibration was frozen and test inference began. This section updates the earlier 663-episode publication snapshot to the full cohort; the immutable snapshot and the previous manuscript remain available in the archived release. No model configuration, prompt, split or defense parameter changed for this completion.
+ 
+-We froze a 115-task protocol with two prompt arms and three repetition identifiers (690 planned episodes). The fixed split assigns 69 tasks from 29 customers to training and 46 tasks from 24 disjoint customers to testing. All 414 training episodes completed before defense calibration was frozen and test inference began. At the publication cutoff, 2026-10-23 10:01:03 UTC, 663 episodes were complete: 414 training and 249 test episodes. Primary comparisons include every test task with all six prompt/repetition cells complete: 41 tasks from 22 customers, 246 episodes. Task 105 contributes three additional completed episodes, retained in the release and reported below. The remaining 27 runs were incomplete. This operational completion cutoff was adopted before the present attack analysis; it did not filter on reward, status or leakage. It is an interim sample, and completion order can affect its task composition.
+-
+-GPT-6.1 Sol with low reasoning effort supplies the planner and a separate user simulator through Codex app-server. The planner receives the retail policy, public tool schemas, interaction history and actual sandbox observations, and emits one structured action at each step. Reference actions and reward targets are used only for scoring. Each model decision has a fresh ephemeral context without host tools or a host environment. The harness executes decisions in the pinned public retail simulator. Repetition identifiers are cache namespaces, not provider random seeds. The alias is mutable; temperature and an immutable weight snapshot are unavailable. This is a structured-action LLM agent evaluation, not a native function-calling API benchmark.
++GPT-6.1 Sol with low reasoning effort supplies the planner and a separate user simulator through Codex app-server. The planner receives the retail policy, public tool schemas, interaction history and actual sandbox observations, and emits one structured action at each step. Reference actions and reward targets are used only for scoring. Each decision has a fresh ephemeral context without host tools or a host environment. The harness executes decisions in the pinned public retail simulator, with a 30-step limit. Repetition identifiers are cache namespaces; provider random seeds, temperature and an immutable weight snapshot are unavailable.
+ 
+ \subsection{Prompts and defense calibration}
++The baseline prompt is the retail policy. The rules prompt adds one customer-details read after identification and before order access, an order read before each order write, and avoidance of unnecessary repeated reads. It preserves authorization and task requirements and prohibits unrelated operations for hiding intent. Both arms are evaluated under raw transport, padding only, online shape cover only, and joint shape cover with constant framing.
+ 
+-The baseline prompt is the retail policy. The rules prompt adds one customer-details read after identification and before order access, an order read before each order write, and avoidance of unnecessary repeated reads. It preserves authorization and task requirements and prohibits unrelated operations for hiding intent. We compare both prompt arms under raw transport, padding only, online shape cover only, and joint shape cover with constant framing.
++Only training trajectories from both prompts determine shared per-tool count maxima, donor pools and size caps. Donor calls exclude the active customer. Request caps are the largest training request plus four bytes rounded to a 256-byte multiple; response caps use the training 95th percentile plus four bytes rounded to a 1024-byte multiple, including training donor responses. Frozen caps are 1,024 and 3,072 bytes. The online dispatcher uses only past real-call counts, inserts a shadow call with probability 0.6 when a deficit exists and flushes remaining deficits at episode end. Overflow calls pass through; oversize messages expand to a 1024-byte bucket. Test data never recalibrate these parameters.
+ 
+-Only training trajectories from both prompts determine the shared per-tool count maxima, donor pools and size caps. Donor calls exclude the active customer. Request caps are the largest training request plus four bytes rounded to a 256-byte multiple; response caps use the training 95th percentile plus four bytes rounded to a 1024-byte multiple, including training donor responses. The frozen caps are 1,024 and 3,072 bytes. The online dispatcher can use only past real-call counts; it inserts a shadow call with probability 0.6 when a deficit exists and flushes remaining deficits at episode end. Overflow calls pass through; oversize messages expand to a 1024-byte bucket. Underfill and overflow are reported. Test data never recalibrate these parameters.
+-
+-Shadow calls execute on a cloned initial database, with observations hidden from the planner. Real calls remain unchanged. Each realized trajectory is reused across the four program conditions, so reward equality across those conditions is structural. The experiment measures call and byte costs, not online delay or feedback-induced utility changes. A byte-transparent relay captures TLS~1.2 loopback replay of actual model-generated requests and sandbox responses; provider traffic and its timing are outside this measurement.
++Shadow calls execute on a cloned initial database, with observations hidden from the planner. Real calls remain unchanged. Each trajectory is reused across program conditions, preserving reward by construction. The experiment measures call and byte costs; online delay and feedback-induced behavior require an interactive evaluation. A byte-transparent relay captures TLS~1.2 loopback replay of actual model-generated requests and sandbox responses.
+ 
+ \subsection{Attackers and uncertainty}
++The frozen suite includes a training-majority baseline, clean-trained gradient boosting, defense-trained logistic regression and gradient boosting, a dispatch count rule, and network size-decoding learners and rules. All fitted parameters, thresholds and decoder tables use training data only. Targets are cancellation and return intent from the reference task; native task reward is scored separately using final database equality and required response strings. Points weight tasks equally. Intervals use 2,000 common customer-cluster bootstrap draws, retaining each customer's tasks and repetitions together and recomputing the suite maximum in each draw. Intervals condition on fitted attackers. Prompt contrasts pair task/repetition identifiers, without assuming identical conversations or shared model randomness.
+ 
+-The fixed suite contains a training-majority baseline, clean-trained gradient boosting, defense-trained logistic regression and gradient boosting, a dispatch count rule, and network size-decoding learners and rules. All fitted parameters, thresholds and decoder tables use training data only. Targets are cancellation and return intent from the reference task, while planner task reward is scored separately from final database equality and required response strings. Failed tasks and handoffs remain in the cohort. Points weight tasks equally; each primary task has three repeats per prompt. Intervals use 2,000 common customer-cluster bootstrap draws, retaining all of each customer's tasks and repetitions together and recomputing the suite maximum in each draw. They condition on fitted attackers; training, feature-search and unknown-attacker uncertainty are outside their scope. Prompt contrasts pair tasks and repeat identifiers, not identical conversations or model randomness.
+ 
+ \begin{table}[ht]\centering\small
+-
+-\caption{E9 dispatch view: maximum BA (\%) with 95\% interval and maximum AUROC across the fixed suite.}
+-
++\caption{E9 dispatch view: maximum BA (\%) with 95\% interval and maximum AUROC across the fixed suite, on 138 test episodes per prompt. BA and AUROC are separate suite maxima.}
+ \begin{tabular}{@{}llrrrr@{}}\toprule
+-
+ Prompt & Condition & Cancel BA [CI] & AUC & Return BA [CI] & AUC\\\midrule
+-
+-baseline & raw & 96.7 [88.9, 100.0] & 0.998 & 96.7 [86.7, 100.0] & 0.968\\
+-
+-baseline & padding only & 96.7 [88.9, 100.0] & 0.998 & 96.7 [86.7, 100.0] & 0.968\\
+-
+-baseline & shape only & 56.7 [50.0, 66.7] & 0.567 & 57.3 [50.0, 68.4] & 0.627\\
+-
+-baseline & shape const & 56.7 [50.0, 66.7] & 0.567 & 57.3 [50.0, 68.4] & 0.627\\
+-
+-rules & raw & 96.7 [88.9, 100.0] & 0.967 & 96.7 [86.7, 100.0] & 0.967\\
+-
+-rules & padding only & 96.7 [88.9, 100.0] & 0.967 & 96.7 [86.7, 100.0] & 0.967\\
+-
+-rules & shape only & 55.8 [50.0, 71.6] & 0.630 & 65.3 [53.3, 77.8] & 0.717\\
+-
+-rules & shape const & 55.8 [50.0, 71.6] & 0.630 & 65.3 [53.3, 77.8] & 0.717\\
+-
++baseline & Raw & 97.2 [90.0, 100.0] & 0.997 & 97.0 [88.9, 100.0] & 0.972\\
++baseline & Padding only & 97.2 [90.0, 100.0] & 0.997 & 97.0 [88.9, 100.0] & 0.972\\
++baseline & Shape only & 55.6 [50.0, 63.0] & 0.556 & 57.7 [50.0, 67.4] & 0.620\\
++baseline & Joint & 55.6 [50.0, 63.0] & 0.556 & 57.7 [50.0, 67.4] & 0.620\\
++rules & Raw & 97.2 [90.0, 100.0] & 0.972 & 97.0 [88.9, 100.0] & 0.970\\
++rules & Padding only & 97.2 [90.0, 100.0] & 0.972 & 97.0 [88.9, 100.0] & 0.970\\
++rules & Shape only & 56.5 [50.0, 68.3] & 0.655 & 64.7 [54.3, 77.4] & 0.693\\
++rules & Joint & 56.5 [50.0, 68.3] & 0.655 & 64.7 [54.3, 77.4] & 0.693\\
+ \bottomrule\end{tabular}\end{table}
+ 
+ \begin{table}[ht]\centering\small
+-
+-\caption{E9 network view: maximum BA (\%) with 95\% interval and maximum AUROC across the fixed suite.}
+-
++\caption{E9 network view: maximum BA (\%) with 95\% interval and maximum AUROC across the fixed suite, on 138 test episodes per prompt. BA and AUROC are separate suite maxima.}
+ \begin{tabular}{@{}llrrrr@{}}\toprule
+-
+ Prompt & Condition & Cancel BA [CI] & AUC & Return BA [CI] & AUC\\\midrule
+-
+-baseline & raw & 96.7 [88.9, 100.0] & 0.990 & 93.4 [83.7, 100.0] & 0.944\\
+-
+-baseline & padding only & 62.5 [50.0, 82.6] & 0.597 & 53.3 [50.0, 71.8] & 0.533\\
+-
+-baseline & shape only & 59.4 [54.7, 71.6] & 0.630 & 51.6 [50.0, 58.1] & 0.603\\
+-
+-baseline & shape const & 50.0 [50.0, 64.5] & 0.500 & 50.0 [50.0, 63.1] & 0.500\\
+-
+-rules & raw & 96.7 [88.9, 100.0] & 0.973 & 92.8 [83.0, 99.0] & 0.928\\
+-
+-rules & padding only & 64.4 [50.0, 83.8] & 0.560 & 53.3 [50.0, 73.9] & 0.500\\
+-
+-rules & shape only & 53.4 [50.0, 68.9] & 0.610 & 55.1 [50.6, 66.3] & 0.517\\
+-
+-rules & shape const & 50.0 [50.0, 66.5] & 0.500 & 64.1 [54.8, 76.1] & 0.694\\
+-
++baseline & Raw & 97.2 [90.0, 100.0] & 0.993 & 94.0 [85.8, 100.0] & 0.948\\
++baseline & Padding only & 66.1 [50.0, 83.9] & 0.634 & 55.5 [50.0, 73.0] & 0.567\\
++baseline & Shape only & 60.8 [55.4, 71.3] & 0.657 & 51.9 [50.5, 57.8] & 0.579\\
++baseline & Joint & 50.0 [50.0, 60.6] & 0.500 & 50.0 [50.0, 65.5] & 0.500\\
++rules & Raw & 97.2 [90.0, 100.0] & 0.978 & 93.5 [85.0, 99.5] & 0.937\\
++rules & Padding only & 67.6 [50.0, 85.0] & 0.636 & 57.9 [50.0, 78.9] & 0.548\\
++rules & Shape only & 52.8 [50.0, 65.5] & 0.588 & 53.2 [50.4, 63.9] & 0.544\\
++rules & Joint & 50.0 [50.0, 65.1] & 0.500 & 60.6 [50.0, 73.3] & 0.641\\
+ \bottomrule\end{tabular}\end{table}
+ 
+-\clearpage
+-
+-\subsection{Utility, overhead and completion accounting}
++\subsection{Utility, overhead and prompt contrasts}
+ 
+ \begin{table}[ht]\centering\small
+-
+-\caption{Held-out utility and overhead. Reward and overflow rates are percentages. Ratios use the same prompt's raw transport.}
+-
++\caption{Held-out utility and overhead. Reward and session overflow rates are percentages; ratios use raw transport within the same prompt.}
+ \begin{tabular}{@{}llrrrrrr@{}}\toprule
+-
+ Prompt & Condition & Reward [CI] & Calls$\times$ & Bytes$\times$ & Count overflow & Cap overflow & Underfill\\\midrule
+-
+-baseline & raw & 82.1 [70.4, 92.6] & 1.00 & 1.00 & 0.0 & 0.0 & 0.0\\
+-
+-baseline & padding only & 82.1 [70.4, 92.6] & 1.00 & 3.99 & 0.0 & 7.3 & 0.0\\
+-
+-baseline & shape only & 82.1 [70.4, 92.6] & 3.83 & 4.15 & 38.2 & 0.0 & 0.0\\
+-
+-baseline & shape const & 82.1 [70.4, 92.6] & 3.83 & 15.33 & 38.2 & 42.3 & 0.0\\
+-
+-rules & raw & 78.0 [64.2, 91.7] & 1.00 & 1.00 & 0.0 & 0.0 & 0.0\\
+-
+-rules & padding only & 78.0 [64.2, 91.7] & 1.00 & 4.02 & 0.0 & 7.3 & 0.0\\
+-
+-rules & shape only & 78.0 [64.2, 91.7] & 3.90 & 4.27 & 45.5 & 0.0 & 0.0\\
+-
+-rules & shape const & 78.0 [64.2, 91.7] & 3.90 & 15.70 & 45.5 & 38.2 & 0.0\\
+-
++baseline & Raw & 79.7 [69.0, 89.7] & 1.00 & 1.00 & 0.0 & 0.0 & 0.0\\
++baseline & Padding only & 79.7 [69.0, 89.7] & 1.00 & 4.02 & 0.0 & 6.5 & 0.0\\
++baseline & Shape only & 79.7 [69.0, 89.7] & 3.83 & 4.16 & 38.4 & 0.0 & 0.0\\
++baseline & Joint & 79.7 [69.0, 89.7] & 3.83 & 15.39 & 38.4 & 39.9 & 0.0\\
++rules & Raw & 76.1 [63.3, 88.7] & 1.00 & 1.00 & 0.0 & 0.0 & 0.0\\
++rules & Padding only & 76.1 [63.3, 88.7] & 1.00 & 4.04 & 0.0 & 6.5 & 0.0\\
++rules & Shape only & 76.1 [63.3, 88.7] & 3.88 & 4.27 & 44.2 & 0.0 & 0.0\\
++rules & Joint & 76.1 [63.3, 88.7] & 3.88 & 15.72 & 44.2 & 38.4 & 0.0\\
+ \bottomrule\end{tabular}\end{table}
+ 
+-Cancellation has 5 positive tasks from 5 customers; return has 10 positive tasks from 7 customers. Single-class draws discarded from 2,000 bootstrap replicates: 8 for cancellation and 2 for return. The paired rules-minus-baseline reward difference is -4.1 [-10.9, 1.7] percentage points.
++Cancellation has 6 positive tasks from 5 customers; return has 11 positive tasks from 7 customers. Single-class draws excluded from 2,000 replicates: 6 for cancellation and 0 for return.
+ 
+-\begin{table}[ht]\centering\small
+-
+-\caption{Mechanical workflow compliance (\% with customer-cluster interval). These two checks do not audit all authorization or natural-language requirements.}
++Baseline native reward is 110/138 (79.7\%); rules reward is 105/138 (76.1\%). All 24 baseline and 23 rules handoffs remain in the denominator. Joint-program cover-call error rates are 5.3\% and 5.0\%, respectively; all shape conditions have zero underfill. Overflow rates expose the resource demands of retaining real calls under the frozen training template.
+ 
++\begin{table}[ht]\centering\small
++\caption{Measured workflow compliance (\% with customer-cluster interval). These checks cover the two specified rules.}
+ \begin{tabular}{@{}lrrr@{}}\toprule
+-
+ Prompt & One successful customer read first & Order read before write & Both\\\midrule
+-
+-baseline & 87.0 [74.5, 97.5] & 100.0 [100.0, 100.0] & 87.0 [74.5, 97.5]\\
+-
+-rules & 96.7 [90.2, 100.0] & 100.0 [100.0, 100.0] & 96.7 [90.2, 100.0]\\
+-
++baseline & 86.2 [74.5, 97.3] & 100.0 [100.0, 100.0] & 86.2 [74.5, 97.3]\\
++rules & 97.1 [91.7, 100.0] & 100.0 [100.0, 100.0] & 97.1 [91.7, 100.0]\\
+ \bottomrule\end{tabular}\end{table}
+ 
+-All completed test episodes, including task 105: baseline 101/125 native successes; rules 96/124 native successes. These unbalanced completion totals are descriptive and do not replace the complete-task prompt comparison. The release preserves each additional episode, its status and model records.
++\begin{table}[ht]\centering\small
++\caption{Paired prompt contrasts using common customer-bootstrap draws.}
++\begin{tabular}{@{}lr@{}}\toprule
++Rules minus baseline & Difference [95\% CI], pp\\\midrule
++Task reward & -3.6 [-9.5, 1.4]\\
++Raw network, cancel BA & 0.0 [-8.3, 8.3]\\
++Raw network, return BA & -0.5 [-2.6, 0.0]\\
++Joint network, cancel BA & 0.0 [-1.7, 7.4]\\
++Joint network, return BA & 10.6 [-13.3, 22.8]\\
++\bottomrule\end{tabular}\end{table}
+ 
+ \subsection{Interpretation and reproducibility}
++The completed cohort shows strong raw-trace intent inference and a large reduction under joint transport intervention. Rules improve measured workflow compliance while leaving network BA above 93\%. Baseline joint shaping reaches 50\% BA for both targets, reducing the raw scores by 47.2 and 44.0 points. The finite-suite criterion requires the BA interval upper bound below 60\% and point AUROC below 0.65. Baseline shape-only return meets it for that target; no condition meets it for both targets. Baseline joint upper bounds are 60.6\%/65.5\%. Rules-plus-joint return BA is 60.6\%; its paired contrast includes zero, as does the reward contrast.
+ 
+-E9 supplies real model-generated trajectories and a fully training-calibrated defense evaluation, extending the reference-program tests. Its scope is one public benchmark and one provider model alias, with the same model family supplying the user simulator. All 115 tasks had been available during earlier paper development; the customer holdout is an internal evaluation, not an external benchmark. The incomplete late-task cohort and small positive-customer counts limit extrapolation. An independent human replication remains future work.
++The evidence covers one public retail environment and one mutable model alias, which also supplies user simulation. All 115 tasks were available during prior project development. The formal customer holdout therefore provides internal evaluation; external independent replication, broader model/environment transfer, provider-traffic measurement and interactive feedback effects remain follow-up questions.
+ 
+-The primary analysis contains 11002 model decisions and 2,640 TLS sessions. Records for all 663 completed episodes are retained. The release verifies inference fingerprints, original runtime and pretest analysis hashes, training-only recalibration, sandbox state and required-output scoring, cover reconstruction, TLS accounting, saved predictions, sklearn point metrics and clustered intervals. This is executable verification, not independent external replication.
++The full cohort contains 11,586 model decisions, 2,760 TLS sessions and 176 attack-prediction sets. The frozen verifier passed after training-only recalibration, sandbox state replay, cover reconstruction, TLS accounting, metric/interval recomputation and request-provenance checks. Additional checks bind all agent actions and dialogue to actual model outputs and re-score required response strings. Offline attacker refitting reproduces the saved results and predictions exactly.
+ 
+-\path{experiments/sp2027-r4-snapshot-20261023/} contains the cutoff amendment, complete episode membership, original pretest sources, derived analysis, calibration, compressed model records, predictions and validation receipt. Earlier Luna pilots and interrupted attempts are separately archived and excluded. Operational logs and recovery details are retained in the artifact README rather than used as scientific outcomes.
++\path{experiments/sp2027-r4-full-20261023/} supplies full results, predictions and captures, plus the 27 new episodes and model records needed to extend the immutable 663-run snapshot. The three separately reported snapshot test episodes join the 27 new ones to expand the primary test from 246 to 276. \texttt{reproduce.py --reanalyze} reconstructs the full cohort from the base archives and delta, reruns analysis and executes the original frozen verifier without invoking a model. \texttt{verify\_extension.py} checks decision alignment and provenance. The earlier snapshot, historical R2/R3 studies and pilot archives retain their original denominators and bytes.

@@ -1,50 +1,59 @@
 # agent-side-channel
 
-当前版本：2026-10-23 真实 Agent 实验快照修订。主稿将结果记录审计、受控边界实验和真实 Agent 评估串联，突出有数据支撑的贡献。
+当前版本：**2026-10-23，完整 690 次真实 Agent 实验主稿修订版**。
 
-## 已完成：690 运行的独立补充
+## 最新论文
 
-完整队列现已完成：414 训练＋276 测试，115 任务、两个 prompt、各三次。阅读 [完整队列补充 PDF](full-cohort-supplement.pdf)；说明见 [完整队列交付说明](docs/R4-完整队列补充说明.md)。主稿和原补充材料保留 663 快照的历史范围。
+- [主稿](main.pdf)：正文 13 页，另附 1 页附录和 4 页参考文献。
+- [补充材料](supplement.pdf)：S14 已统一为完整队列的方法、消融、区间、成本及 prompt 对照。
+- [本次修订说明](docs/R4-690主稿修订说明.md)：更新范围、核心贡献和来源。
 
-- 完整测试基线网络 BA：取消 **97.2%**、退货 **94.0%**；训练集校准的联合程序防御：**50.0% / 50.0%**，成本 **15.39× 字节、3.83× 调用**。
-- 规则 prompt 合规率 **97.1%**，原始网络 BA 仍为 **97.2% / 93.5%**；任务奖励基线 **110/138**、规则组 **105/138**。
-- 完整校验覆盖 690 运行、2,760 次 TLS 回放和 176 组攻击预测；增量核验将全部 11,586 个模型决策与轨迹对应，攻击重算与保存结果完全一致。
-- 新目录 `experiments/sp2027-r4-full-20261023/` 复用旧快照，仅新增最后 27 个运行的模型记录。`r4-full-cohort-extension-20261023.zip` 是依赖旧发布包的增量包，其校验信息在同名 `.json` 文件中。
+论文题目改为 **SoK: Evaluating LLM and Agent Side-Channel Defenses — From Evidence Audits to Real-Agent Measurements**。主线是将结果记录审计、可执行部署检查与真实 Agent 测量连接起来，明确哪些观察、状态和评估条件决定防御效果。
 
-完整结果保持相同结论方向；区间仍未支持两个目标同时达到预设有限攻击套件标准。真实 LLM 轨迹、本地 TLS 回放与外部独立验证的范围在补充中明确区分。
+## 完整结果
 
-## 当前论文与结果
+全部 **690/690** 运行：115 个任务 × 2 个 prompt × 3 次重复。统一 GPT-6.1 Sol / low；414 次训练完成后冻结防御，再采集 276 次客户不重叠的测试。
 
-- 阅读：main.pdf、supplement.pdf；E9 方法和完整消融在补充材料 S14。
-- 快照：663 个完成运行；训练 414 次，测试 249 次。主分析采用两个 prompt 组各 3 次均完整的 41 个测试任务，共 246 次；另 3 次保留单独报告。
-- 基线网络攻击 BA：取消 96.7%、退货 93.4%；仅训练集校准的在线 shadow cover + 恒定分帧：50.0% / 50.0%，字节 15.3 倍、调用 3.8 倍。
-- 规则 prompt 工作流合规率为 96.7%，但意图识别仍高于 92%；任务完成率基线 82.1%、规则组 78.0%。
-- 统一 GPT-6.1 Sol / low；训练和测试客户不重叠；训练完成后先冻结防御，再采集测试。
-- 网络测量是实际模型轨迹的本地 TLS 回放；程序条件复用轨迹，因此奖励相等是结构性质。区间尚不证明已消除泄漏。
+| 测试条件 | 取消意图 BA | 退货意图 BA | 字节成本 | 调用成本 |
+|---|---:|---:|---:|---:|
+| 基线 | 97.2% | 94.0% | 1.00× | 1.00× |
+| 规则 prompt | 97.2% | 93.5% | 1.00× | 1.00× |
+| 仅 padding | 66.1% | 55.5% | 4.02× | 1.00× |
+| 仅 shape cover | 60.8% | 51.9% | 4.16× | 3.83× |
+| 联合程序防御 | 50.0% | 50.0% | 15.39× | 3.83× |
+| 规则 + 联合防御 | 50.0% | 60.6% | 15.72× | 3.88× |
 
-完整包目录：final-paper-and-experiments-20261021-m1m8-revised/final-paper-and-experiments-20261021-001/。
-新增实验：experiments/sp2027-r4-snapshot-20261023/，含原始轨迹、模型记录、冻结参数、全部预测及校验程序。
-修订说明：docs/R4-真实Agent快照修订说明.md；包内 REVISION-R4.md。
+联合程序防御降低基线 BA **47.2 / 44.0 个百分点**。规则 prompt 将测得工作流合规率从 **86.2% 提高至 97.1%**，但意图识别仍高于 93%。基线与规则组任务奖励分别为 **110/138** 和 **105/138**。
 
-完整交付包：paper-review-revised-20261023.zip.001 等分卷，清单在 paper-review-revised-20261023.parts.json。下载全部分卷后运行 `python reassemble_r4_release.py`，按 SHA256 验证并合成为完整 ZIP。旧 paper-review-revised-20261021.zip 保留为 R3 历史包。
+网络结果来自真实模型轨迹的本地 TLS 回放。程序条件复用轨迹，奖励相等是结构性质。主稿与 S14 报告全部置信区间；联合防御点估计为 50%，但两个目标尚未同时满足预设有限攻击套件标准。
 
-## 复现
+## 源码、数据与校验
 
-在完整包目录运行：
+包目录：`final-paper-and-experiments-20261021-m1m8-revised/final-paper-and-experiments-20261021-001/`。
 
-    python -B verify_package.py
-    python -B verify_revision.py
-    python -B experiments/sp2027-r2/verify_r2.py
-    python -B experiments/sp2027-r3/verify_r3.py
-    python -B experiments/sp2027-r4-snapshot-20261023/verify_snapshot.py
+- `manuscript/`：最新主稿与补充材料的 LaTeX 源码。
+- `experiments/sp2027-r4-full-20261023/`：完整队列结果、预测、TLS 捕获及新增 27 次运行。
+- `experiments/sp2027-r4-snapshot-20261023/`：不可变 663 次运行快照和基础模型档案。
+- `provenance/main-690/`：本轮文稿修订来源、表格生成器和校验收据。
 
-R4 使用 Python 3.12、numpy 2.5.4、scikit-learn 1.9.0，详细复算顺序见其 README。校验与离线复算不发起模型请求。
-LaTeX 使用 IEEEtran 1.8b conference,compsoc；在 manuscript/ 中分别运行 pdflatex、bibtex、pdflatex 两次。
+在包目录运行：
 
-## 快照与后续补充
+```text
+python -B verify_package.py
+python -B verify_revision.py
+python -B provenance/main-690/verify_manuscript.py
+python -B experiments/sp2027-r4-full-20261023/verify_release.py
+```
 
-主稿的 663 快照与新完成的 690 全队列分别报告。后者作为独立补充，原主稿、S14 和快照不被覆盖。原工作目录 experiments/sp2027-r4/ 不进入版本化发布包；全队列发布通过旧快照和新增记录重建，无需这个本地目录。
+完整实验已通过 690 次运行、11,586 个模型决策、2,760 次 TLS 回放和 176 组攻击预测校验；离线重算与保存结果完全一致。详细复算命令见完整队列目录 README。校验和离线复算不调用模型。
 
-R2 注册、R3 重分析和历史输入包保留。独立外部验证、多模型/多环境泛化、在线延迟与反馈效用，以及审计相对简单清单的增量价值，仍是后续工作。
+LaTeX 使用 IEEEtran 1.8b conference,compsoc；在 `manuscript/` 分别对 `main`、`supplement` 运行 pdflatex、bibtex、pdflatex 两次。
 
-第一轮根目录脚本是历史工具，不能用于覆盖当前论文。当前包的编译日志、来源闭包和 SHA256 清单随交付更新。
+## 版本与交付包
+
+- 当前 GitHub main 的 `main.pdf`、`supplement.pdf` 已纳入完整队列。
+- `paper-690-manuscript-update-20261023.zip` 为本轮主稿更新包，适用于包含完整队列提交 `c8e90bb` 的仓库；校验信息见同名 JSON。
+- [完整队列独立补充](full-cohort-supplement.pdf) 和 `r4-full-cohort-extension-20261023.zip` 保留上一轮状态；前者中的“保留原主稿”描述对应当时版本。
+- `paper-review-revised-20261023.zip.001` 等分卷是 **663 次运行的历史论文包**，不代表当前主稿。`reassemble_r4_release.py` 可恢复它；`paper-review-revised-20261021.zip` 保留更早 R3 版本。
+
+R2/R3、663 快照、完整队列数据与旧发布包均保持原样。根目录早期修订脚本是历史工具，不能用于覆盖当前稿件。
