@@ -1,0 +1,87 @@
+diff --git a/final-paper-and-experiments-20261021-m1m8-revised/final-paper-and-experiments-20261021-001/manuscript/main.tex b/final-paper-and-experiments-20261021-m1m8-revised/final-paper-and-experiments-20261021-001/manuscript/main.tex
+index 7ba6f42..64034cc 100644
+--- a/final-paper-and-experiments-20261021-m1m8-revised/final-paper-and-experiments-20261021-001/manuscript/main.tex
++++ b/final-paper-and-experiments-20261021-m1m8-revised/final-paper-and-experiments-20261021-001/manuscript/main.tex
+@@ -58,7 +58,7 @@ Encryption conceals message content while exposing the structure of agent workfl
+ 
+ 
+ \bibliographystyle{IEEEtran}
+-\bibliography{refs,refs-final-additions,evidence/search-completion-20261021-001/new_refs,evidence/search-completion-20261021-001/new_refs_adjacent}
++\bibliography{refs,refs-final-additions,refs-deployment,evidence/search-completion-20261021-001/new_refs,evidence/search-completion-20261021-001/new_refs_adjacent}
+ \clearpage
+ \appendices
+ \input{sections/30-reproducibility-guide}
+diff --git a/final-paper-and-experiments-20261021-m1m8-revised/final-paper-and-experiments-20261021-001/manuscript/sections/10-open-challenges.tex b/final-paper-and-experiments-20261021-m1m8-revised/final-paper-and-experiments-20261021-001/manuscript/sections/10-open-challenges.tex
+index c98738a..8ddad1a 100644
+--- a/final-paper-and-experiments-20261021-m1m8-revised/final-paper-and-experiments-20261021-001/manuscript/sections/10-open-challenges.tex
++++ b/final-paper-and-experiments-20261021-m1m8-revised/final-paper-and-experiments-20261021-001/manuscript/sections/10-open-challenges.tex
+@@ -1,11 +1,11 @@
+ \section{Implications, Ethics and Limits}\label{sec:agenda}
+-\subsection{Reporting obligations and open problems}
+-The nine audit items specify what makes defense results comparable: R1 target and protected interest; R2 receiver fields and linkage; R3 intervention placement and execution; R4 defended-condition fitting; R5 matched adaptation; R6 workload and generator shifts; and R7--R9 inference, utility and cost. A component study can satisfy its own scope without implementing a complete autonomous agent; reuse across components requires the missing bindings.
++\subsection{Deployment paths and reporting obligations}\label{sec:deployment}
++Shadow state specifies an execution contract with three implementation paths. \textbf{(1) Authorized reads and verified no-ops} can use the live backend with responses discarded; idempotence alone does not preserve state, and read cover cannot hide an exposed write type. \textbf{(2) Provider-supported isolation} can use Kubernetes server dry-run, isolated Stripe sandboxes or transactional rollback \cite{kubernetesdryrun,stripesandboxes,postgresrollback}. These have distinct semantics: dry-run validates without persistence, sandboxes maintain separate state, and rollback covers transactional effects; sequence changes can survive rollback \cite{postgressequences}. \textbf{(3) A trusted MCP/tool gateway} can decrypt an authenticated cover marker and route shadow writes to an isolated local simulator. Real and cover traffic share an ingress envelope; routing, timing and response sizes must not reveal the branch. This is a deployment design, not a measured production integration.
+ 
+-Our measurements motivate three priorities. Streaming defenses should report the record sequence they equalize together with byte, completion-time and first-byte costs. Tool contracts should specify protected state and the effects of successful and rejected calls. Agent defenses should shape the full call profile, starting from state-changing calls, fit parameters on training workloads, test adaptive attackers on every exposed link, and report the leakage--cost frontier rather than one operating point.  Workload-level cache-reuse costs and cross-generator fingerprint portability remain separate problems \cite{addagada2026kvgov,wu2026cacheprune}.
++The gateway protects its client-facing link and potentially a relay that cannot access markers or routing. A relay that learns the branch, the gateway itself and a provider observing committed writes require different protection. S17 maps these boundaries and implementation requirements. Across paths, report protected state, exposed observations, training calibration, adaptive attackers and the joint leakage--cost frontier; include latency, backend quotas and every exposed downstream link.
+ 
+ \subsection{Ethics and artifact scope}\label{sec:ethics}
+-Tool executions and traffic captures use cloned public benchmark databases and local loopback sockets. E9 sends public benchmark instructions and simulated interactions to the model service; it modifies no production tool or real account. Shadow cover assumes a cooperating provider that does not commit its effects. Other-account cancellation is a simulator control, not a deployable decoy without controlled resources and an isolation argument. The corpus also covers bot-detection evasion; its authorization and objective differ from confidentiality protection \cite{zhu2026turing,jeong2026wra}.
++Tool executions and traffic captures use cloned public benchmark databases and local loopback sockets. E9 sends public benchmark instructions and simulated interactions to the model service; it modifies no production tool or real account. Shadow cover requires a trusted isolation boundary. Other-account cancellation is a simulator control. Live deployment requires authorized cover resources and bounded side effects. Bot-detection evasion has a different objective and authorization boundary \cite{zhu2026turing,jeong2026wra}.
+ 
+ The artifact preserves sources, raw observations, structured model decisions, frozen calibration and executable checks. AI-assisted implementation and manuscript revision do not constitute independent validation. The paper distinguishes saved-output replays, real model-generated trajectories and local TLS measurement.
+ 
+diff --git a/final-paper-and-experiments-20261021-m1m8-revised/final-paper-and-experiments-20261021-001/manuscript/sections/37-transfer-tests.tex b/final-paper-and-experiments-20261021-m1m8-revised/final-paper-and-experiments-20261021-001/manuscript/sections/37-transfer-tests.tex
+index eee5942..987ec2a 100644
+--- a/final-paper-and-experiments-20261021-m1m8-revised/final-paper-and-experiments-20261021-001/manuscript/sections/37-transfer-tests.tex
++++ b/final-paper-and-experiments-20261021-m1m8-revised/final-paper-and-experiments-20261021-001/manuscript/sections/37-transfer-tests.tex
+@@ -18,7 +18,7 @@ Table~\ref{tab:transfer-streaming} resolves P1--P3. Per-event padding preserves
+ 
+ \subsection{Execution: state scope and randomized cover}
+ \paragraph{State scope}
+-In the 115 public retail programs, same-item modification changes status and appends a refund even when item and price are unchanged (173/291 pre-insertion units). State preservation $f(s,a)=s$ therefore differs from idempotence $f(f(s,a),a)=f(s,a)$. Cancelling another user's order preserves the active account but changes the shared database in every unit. A known-position cover call is removed with 100\% accuracy (Supplement S11).
++In the 115 public retail programs, same-item modification changes status and appends a refund even when item and price are unchanged (173/291 pre-insertion units). State preservation $f(s,a)=s$ therefore differs from idempotence $f(f(s,a),a)=f(s,a)$. Cancelling another user's order changes the shared database. Shadow cover separates an observable call from its live effects: authorized reads, noncommitting API operations or a trusted gateway's isolated executor can supply this boundary (\S9.1). A known-position cover call remains removable with 100\% accuracy (S11).
+ 
+ \paragraph{E6: randomized cover against policy-aware attackers}
+ E6's dispatch observer sees ordered tool names and response lengths. Cover is sampled from other users' programs, randomly interleaved and executed on shadow state, with live execution as a control. Policies add cancellation, pad its count, interleave decoy programs or equalize every tool's count. Templates, donors and caps use all 115 reference programs: this is known-population defense calibration. Attackers use clean/defended gradient boosting and logistic regression on counts, bigrams and lengths, plus a count rule. Task-grouped 5-fold evaluation uses three seeds and cancellation/return targets (18/32 positive tasks).
+@@ -32,11 +32,14 @@ E7 composes dispatch and transport on an encrypted agent--tool link (Figure~\ref
+ 
+ Request-only tool identification reaches 89.9\%/91.4\% under cancellation/return folds (582 calls; majority 29.4\%). Count and decoy cover leave 72.7--95.7\% network BA, extending their dispatch leakage (P5). Framing alone leaves bucketed return BA at 73.9\%. Shape cover gives 51.2\%/60.5\% with raw framing and 54.4\%/50.0\% with constant framing. No configuration meets the absolute criterion for both targets. Joint constant framing costs 26.3$\times$ bytes and 7.7$\times$ calls with 100\% database equality: one operating point, not a minimum cost (P7). E8's stand-in planners (S13) motivate the causal, training-only dispatcher evaluated next with real model decisions.
+ 
++\paragraph{Transport link versus dispatch boundary}
++Per-call framing leaves call counts and turn structure exposed. A full traffic-flow-confidentiality tunnel can instead conceal these from a passive link observer using fixed-size, constant-rate traffic \cite{rfc9347}; protecting session duration additionally requires a workload-independent traffic horizon. Its dummy packets need not execute tools. E7/E9 test per-call framing, not such a tunnel. At a dispatch boundary that exposes calls after decapsulation, transport padding is removed and call-level cover becomes relevant. Protection then depends on hiding cover markers and downstream routing from that observer (S17).
++
+ \subsection{E9: real agents and training-only defense calibration}\label{sec:real-agent}
+ E9 tests defense reuse on autonomous model-generated trajectories under a strict calibration boundary. GPT-6.1 Sol (low reasoning effort) plans and responds from the retail policy, public tool schemas and actual sandbox observations. A separate context of the same model simulates the user. The rules arm adds one customer-details read before order access and a read before each order write. All 115 tasks have two prompt arms and three repeats, completing the frozen 690-run protocol. All 414 training runs on 69 tasks precede freezing of a shared count template, donor pools and framing caps; the 276 test runs cover 46 tasks from 24 disjoint customers.
+ 
+ \paragraph{Planner-visible equivalence}
+-Let $H$ be the planner's message/tool-observation history, excluding wall-clock timing, and $\pi_{\rm plan}$ its projection from the defended execution $D$. Real calls and their responses pass through unchanged; cover executes on isolated shadow state and its responses are hidden. Therefore $\pi_{\rm plan}(D(H))=H$: by induction, each real call sees the same live state and returns the same observation (Appendix~\ref{app:equivalence}). E9 collects real LLM trajectories once per prompt/repetition and evaluates a causal dispatcher by replaying each trajectory through four program conditions. This paired design isolates the program-layer effect without additional LLM sampling variation. Online here means prefix-only scheduling; interactive latency and feedback are outside the replay measurement.
++Let $H$ be the planner's message/tool-observation history, excluding wall-clock timing. Real calls and responses pass unchanged; cover uses isolated state and hidden responses. Thus the planner projection satisfies $\pi_{\rm plan}(D(H))=H$ (Appendix~\ref{app:equivalence}). E9 replays each realized trajectory through four program conditions, isolating the program-layer effect from LLM sampling variation. Online denotes prefix-only scheduling; interactive latency and feedback require separate measurement. The trusted cover executor knows which calls are shadow calls; E9 protects the measured dispatch/network projections, not this executor or a provider's commit log.
+ 
+ The dispatcher inserts training-derived cover using only past calls and flushes unmet counts at episode end. Four program conditions per prompt isolate raw transport, padding, shape cover and their combination. Training-fitted attackers evaluate dispatch and network observations across 2,760 TLS replay sessions. Every test task, failure and handoff remains in the analysis. Supplement S14 supplies the full ablations and customer-cluster intervals.
+ 
+@@ -46,7 +49,7 @@ The dispatcher inserts training-derived cover using only past calls and flushes
+ Table~\ref{tab:r4-primary} shows baseline network BA of 97.2\% for cancellation and 94.0\% for return. Rules raise mechanical adherence to the two read-order rules from 86.2\% to 97.1\%, yet network BA remains 97.2\%/93.5\%. Task reward is 110/138 (79.7\%) for baseline and 105/138 (76.1\%) for rules; the paired difference is $-3.6$ points (95\% interval $[-9.5,1.4]$). Thus workflow rules successfully alter mechanical rule adherence while leaving a strong intent signal in the encrypted trace.
+ 
+ \paragraph{Joint shaping removes most measured inference advantage}
+-On baseline trajectories, online shadow cover with constant framing reduces network BA by 47.2 points for cancellation and 44.0 points for return, reaching 50.0\% for both at 15.4$\times$ bytes and 3.8$\times$ calls. The ablations identify the value of combining the mechanisms: padding alone leaves cancellation/return BA at 66.1\%/55.5\%, and shape cover alone at 60.8\%/51.9\%.
++On baseline trajectories, shadow cover with constant framing reduces network BA by 47.2/44.0 points to 50.0\%/50.0\% at 15.4$\times$ bytes and 3.8$\times$ calls. Per-call padding alone leaves 66.1\%/55.5\%, and shape cover alone 60.8\%/51.9\%. These ablations motivate jointly shaping length and call structure at the measured boundary; they do not establish superiority over a complete tunnel.
+ 
+ The joint point estimates match the 50\% majority baseline, removing the measured BA advantage of this attack suite. Post hoc paired customer-bootstrap contrasts quantify the reduction: $-47.2$ points [$-50.0,-33.3$] for cancellation and $-44.0$ [$-48.9,-27.8$] for return (Table~\ref{tab:r4-primary}). The separate absolute-threshold assessment remains inconclusive: joint BA upper bounds are 60.6\%/65.5\%. Only five cancellation-positive and seven return-positive customers contribute to these estimates; resampling their heterogeneous predictions and reselecting the suite maximum can exceed 50\% even when the original maximum equals 50\%. Thus the measured reduction is supported while the tighter absolute bound needs more evidence. Rules plus joint shaping yields 50.0\%/60.6\%; its return contrast with program-only spans zero (S14).
+ 
+diff --git a/final-paper-and-experiments-20261021-m1m8-revised/final-paper-and-experiments-20261021-001/manuscript/supplement.tex b/final-paper-and-experiments-20261021-m1m8-revised/final-paper-and-experiments-20261021-001/manuscript/supplement.tex
+index 1fcd3c9..d67b362 100644
+--- a/final-paper-and-experiments-20261021-m1m8-revised/final-paper-and-experiments-20261021-001/manuscript/supplement.tex
++++ b/final-paper-and-experiments-20261021-m1m8-revised/final-paper-and-experiments-20261021-001/manuscript/supplement.tex
+@@ -75,8 +75,10 @@ Records are computed with an analytic TLS~1.2 AES-GCM model (fragment plus 24 by
+ \input{tables/conditional-null}
+ \clearpage
+ \twocolumn
++\input{sections/39-shadow-deployment}
++\clearpage
+ \input{tables/corpus-citations}
+ 
+ \bibliographystyle{IEEEtran}
+-\bibliography{refs,refs-final-additions,evidence/search-completion-20261021-001/new_refs,evidence/search-completion-20261021-001/new_refs_adjacent}
++\bibliography{refs,refs-final-additions,refs-deployment,evidence/search-completion-20261021-001/new_refs,evidence/search-completion-20261021-001/new_refs_adjacent}
+ \end{document}

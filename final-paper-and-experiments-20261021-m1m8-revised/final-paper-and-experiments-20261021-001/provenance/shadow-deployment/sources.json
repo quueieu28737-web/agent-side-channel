@@ -1,0 +1,48 @@
+{
+  "checked_date": "2026-10-24",
+  "source_type": "Primary standards and official API documentation",
+  "corpus_scope": "Five deployment references added outside the unchanged 82-study-family census.",
+  "sources": [
+    {
+      "key": "rfc9347",
+      "url": "https://www.rfc-editor.org/rfc/rfc9347",
+      "locator": "Abstract; Sections 1, 2.1 and 2.2.3",
+      "supports": "Fixed-size, constant-rate encapsulation with aggregation/fragmentation and all-pad payloads.",
+      "inference": "Session horizon and observer placement must also be specified; E7/E9 are not a full-tunnel comparison."
+    },
+    {
+      "key": "kubernetesdryrun",
+      "url": "https://kubernetes.io/docs/reference/using-api/api-concepts/#dry-run",
+      "locator": "Dry-run; Make a dry-run request; Dry-run authorization",
+      "supports": "Server admission/validation without persistence; side-effect handling; same authorization as real request.",
+      "boundary": "The dryRun flag identifies the mode to an observer able to inspect it; no indistinguishability claim is supplied by the API."
+    },
+    {
+      "key": "stripesandboxes",
+      "url": "https://docs.stripe.com/sandboxes",
+      "locator": "Introduction and Use cases",
+      "supports": "An isolated test environment; payments do not move real money.",
+      "boundary": "Separate test state, not a noncommit live-payment flag. Production timing matching is not established."
+    },
+    {
+      "key": "postgresrollback",
+      "url": "https://www.postgresql.org/docs/18/sql-rollback.html",
+      "locator": "Description",
+      "supports": "Discards transactional updates.",
+      "boundary": "No claim of reversing arbitrary external effects."
+    },
+    {
+      "key": "postgressequences",
+      "url": "https://www.postgresql.org/docs/18/functions-sequence.html",
+      "locator": "Caution",
+      "supports": "nextval allocation and setval state changes are not undone by transaction abort.",
+      "boundary": "Rollback alone does not establish the protected-state invariant."
+    }
+  ],
+  "experimental_basis": {
+    "E7": "experiments/sp2027-r3/e7_network_results.json",
+    "E9": "experiments/sp2027-r4-full-20261023/results.json",
+    "E12": "experiments/sp2027-r5-crossfit/e12_localization_results.json"
+  },
+  "new_empirical_results": false
+}

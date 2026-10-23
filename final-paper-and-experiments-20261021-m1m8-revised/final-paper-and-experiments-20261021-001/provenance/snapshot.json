@@ -10,6 +10,7 @@
         "figures/defense-decision-procedure.tex",
         "figures/fig1-system-model.tex",
         "main.tex",
+        "refs-deployment.bib",
         "refs-final-additions.bib",
         "refs.bib",
         "sections/01-introduction.tex",
@@ -38,13 +39,14 @@
         "tables/transfer-streaming.tex"
       ],
       "pdf": "pdf/main.pdf",
-      "pdf_sha256": "a45a77a552e42ae8d76393d610fa02b5624646822fb3bdc50ff1c62ed3c13a3e"
+      "pdf_sha256": "bd6bf2daaef7ce596a098dad123603b7d72051d3fa5da0ad9708a063004601be"
     },
     "supplement": {
       "entry": "supplement.tex",
       "closure": [
         "evidence/search-completion-20261021-001/new_refs.bib",
         "evidence/search-completion-20261021-001/new_refs_adjacent.bib",
+        "refs-deployment.bib",
         "refs-final-additions.bib",
         "refs.bib",
         "sections/17-public-trace-details.tex",
@@ -59,6 +61,7 @@
         "sections/34-search-update.tex",
         "sections/36-tau-cover-details.tex",
         "sections/38-retained-controlled.tex",
+        "sections/39-shadow-deployment.tex",
         "supplement.tex",
         "tables/conclusion-source-dependencies.tex",
         "tables/conditional-null.tex",
@@ -88,7 +91,7 @@
         "tables/tau-cover-bridge.tex"
       ],
       "pdf": "pdf/supplement.pdf",
-      "pdf_sha256": "e10cb377ec16eec7232f6d4fbc020c59a8e374f5a1ff4defc951bf8bf64daaf6"
+      "pdf_sha256": "51be4dfaf03780877d6edb919abbf2eb26aea9af83b14f14228d5bdf6a736079"
     }
   },
   "source_hashes": {
@@ -96,20 +99,21 @@
     "evidence/search-completion-20261021-001/new_refs_adjacent.bib": "082b2fdccc4a4b7cf79d4502f8f7a47fbc732aa29ebb63c3daa12d58b280d459",
     "figures/defense-decision-procedure.tex": "e91e8e96173ab65c4651a71aef720dff3758704ac2af16c10395a346ebac8e85",
     "figures/fig1-system-model.tex": "17902db2113b6b6abb4d98af1f5f40a4efd9dd44b306527710d63f9816fd1854",
-    "main.tex": "0f502d8ee37d5e1a0ee571ce0af741289249db04cda92e407a7894c7ad779d67",
+    "main.tex": "2af14eb9bd648b5a691c336e4190500343955a7e0bfbc203b71f38ed9828591e",
+    "refs-deployment.bib": "b7793c4e870fcd6767fc42de3a6907a7360f7e38a81a9ecb891df03126f63d1a",
     "refs-final-additions.bib": "2b130ea8fda411684d6269dcc5a48b729560ab1ab708650bb57c9d2e6b13ee74",
     "refs.bib": "0ea286688fbee354e8bba138ae7d07240f0414201cca3e5f3f2598ddf4d42731",
     "sections/01-introduction.tex": "a0de15f772c0032a9be970e994fd20d2b6aebab2d2eb195a842180c95fecfd9e",
     "sections/03-methodology.tex": "981f63501ada29b1f83d066ff49e2d24d9a73ff764290e99cc87c1fcfae717e5",
     "sections/04-scope.tex": "d40490c56eaa3542c9a23274b9e0f86f8430a94225a8830f474af7bcbc498ae3",
-    "sections/10-open-challenges.tex": "197f2fa36d19e6fd993a794f622ee4195ed55d91a002298f4ab8431747e15f63",
+    "sections/10-open-challenges.tex": "9067af700da457c8df2e80f113464a9be69e8d711e6969716078198ea8c39b28",
     "sections/11-discussion.tex": "06391a93b40bc53843285355dd23bb840fda584c199d09acce7b1f3b87d91a1b",
     "sections/12-conclusion.tex": "b12efc6121d8bc0f971c1dd7dad688bbae0d07da9a6bb1c45c551863cb16ed28",
     "sections/26-corpus-map.tex": "9f3c0e29499c5fe042f89e352777e29d5e8033481fea10e80a00af0a8b7a6c4b",
     "sections/27-intervention-contracts.tex": "1de25858046d4d5ced772acd8aa5d27ba1d5eebbac5fdfcdcadac62223afa12c",
     "sections/28-fingerprint-dependencies.tex": "5d285964be1d5f57440a225350cfc236215c7746e7e50f66ec789c16688af9b4",
     "sections/30-reproducibility-guide.tex": "0e5064bb9eef8afd8ef389fcec22d44ddaef47b37465b11a06c50e0d0ff0945b",
-    "sections/37-transfer-tests.tex": "5d882f97af61c668c89541bc3be1bbc2abf87be1532a382c30df96f4d9550572",
+    "sections/37-transfer-tests.tex": "bfa8cbbe9dd04911a582b91ef1dd52ed7a57b4ee4f1d124c9d58ffb5ab7f82a6",
     "tables/boundary-rules.tex": "48fad0ffb9aec59f2acc34e720f55b0335a8a688dd07a456f62ad74eabf2147b",
     "tables/comparison-contracts.tex": "d0788cdaf7b93cbbf7d3926f9672d6973ea4745f08b2db914b6d2cad68c11b2b",
     "tables/core-family-map.tex": "53dc9b28bcfd83fa07d0e1b3117446e81e0977b1ded77333696105e4256592b9",
@@ -135,7 +139,8 @@
     "sections/34-search-update.tex": "e08c368a454f10ac4f878c6662339669055135fad632025a86bc3a1d71a47aa0",
     "sections/36-tau-cover-details.tex": "00d663e6727d1898d679142d166f128a60a358c24eb1c5685033d1d56257e20b",
     "sections/38-retained-controlled.tex": "32cc36df7ba6b706108b2af39ee4245081ec0ceca0ae0cfd82971f4bb6dc99ee",
-    "supplement.tex": "0c9c7452e0564a390991ffabb8744dcc4484410494705e9d6553abccdf2433b8",
+    "sections/39-shadow-deployment.tex": "03201d382925bdde76bd14dc546dd6066296899b993b3878680124d296a5012f",
+    "supplement.tex": "97d15ae01eeb5c3df18847a4f95fce66b4b85a8d6848de1549ba48aed1a80424",
     "tables/conclusion-source-dependencies.tex": "074e266a11ea655d231259a442b76aa3d495751c4c9eb20e9d663e50f21571ce",
     "tables/conditional-null.tex": "fecad28ae0d392bf25146a43ee348d8d171a92c0e51a41660ee26f0fd485a162",
     "tables/controlled-placement.tex": "ea6378570b04d2dfc52188288b39e1855548c5928dae47682083da244af041ff",
@@ -313,20 +318,20 @@
     "uploaded": false
   },
   "current_manuscript": {
-    "revision": "58-family map and 20x9 audit in main; references before appendix; paired E9 program contrasts and planner-visible equivalence",
+    "revision": "Shadow Cover deployment paths and observer boundaries; complete tunnel vs per-call padding",
     "source_directory": "experiments/sp2027-r4-full-20261023",
     "results_sha256": "722a44e2a29cb9cbab9f23b631589a23495a843783a4339256552f6600609e86",
     "pdf_pages": {
-      "main": 16,
+      "main": 17,
       "main_body": 13,
       "references_start": 13,
-      "appendix_start": 16,
-      "supplement": 27,
-      "supplement_s14_first_page": 18
+      "appendix_start": 17,
+      "supplement": 29,
+      "supplement_s17_start": 24,
+      "supplement_references_start": 26
     },
-    "previous_manuscript_commit": "17db1ab1973b4949b5734c50c581dbc88576a7b2",
-    "previous_snapshot_commit": "9e1278bf500034486c025407f51866e0ff0da439",
-    "current_verification": "provenance/sok-restructure/validation.json",
+    "previous_manuscript_commit": "35d43a8d4866737571faf4cc3f91581bdd4dc144",
+    "current_verification": "provenance/shadow-deployment/validation.json",
     "earlier_revision_blocks": "Historical records; current document hashes above supersede their manuscript metadata."
   }
 }

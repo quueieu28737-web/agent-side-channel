@@ -1,6 +1,6 @@
 # 完整 690 次真实 Agent 实验与 SoK 主文结构修订版
 
-当前论文：`pdf/main.pdf`、`pdf/supplement.pdf`；源文件在 `manuscript/`。正文截至第 13 页，References 从第 13 页开始，附录在第 16 页，全文 16 页；补充材料 27 页。E9 使用完整 414 训练＋276 测试。当前修订来源与检查在 `provenance/sok-restructure/`；`provenance/main-690/` 保留上一轮文稿版本的记录。
+当前论文：`pdf/main.pdf`、`pdf/supplement.pdf`；源文件在 `manuscript/`。正文截至第 13 页，References 从第 13 页开始，附录在第 17 页，全文 17 页；补充材料 29 页。E9 使用完整 414 训练＋276 测试。当前修订来源与检查在 `provenance/shadow-deployment/`；`provenance/sok-restructure/` 保留上一轮 SoK 文稿与配对统计记录；`provenance/main-690/` 保留上一轮文稿版本的记录。
 
 主文 Table 5 显示全部 58 个核心研究族的生成层、观察层及威胁类型；Table 8 显示 20 个防御族的全部 180 个 R1–R9 审计单元。符号区分绑定、部分、未报告、未核实和不适用。检索对账表与 24 场景混淆矩阵已移到补充材料。`artifact-index.json` 将 Appendix A 中的四个逻辑模块映射到实际归档文件；保留物理目录及旧数据以保障可追溯性。
 
@@ -34,7 +34,7 @@
 ```text
 python -B verify_package.py
 python -B verify_revision.py
-python -B provenance/sok-restructure/verify_manuscript.py
+python -B provenance/shadow-deployment/verify_manuscript.py
 python -B experiments/sp2027-r4-full-20261023/verify_release.py
 python -B experiments/sp2027-r4-full-20261023/verify_extension.py
 python -B experiments/sp2027-r4-full-20261023/reproduce.py --reanalyze
@@ -50,3 +50,7 @@ python -B experiments/sp2027-r4-full-20261023/reproduce.py --reanalyze
 `experiments/sp2027-r5-crossfit/` 保留远端已发布的交叉拟合、六点前沿、训练内选点和写调用定位数据。当前主文 §8.5 / Table 12 及补充 S15 引用这些结果；其 README 与 `REVISION-R5.md` 保留历史写作记录，当前范围和解释以本文及 `provenance/sok-restructure/` 为准。
 
 新增 S16 的 32 格任务置换参考由 `provenance/sok-restructure/conditional_null.py` 生成，`--check` 可作确定性重算核对；它不替代原客户簇区间或阈值。R5 再验证收据在 `r5-reverification.json`，表格可用 `verify_r5_tables.py` 重新生成比对。
+
+## 2026-10-24 部署架构修订
+
+§8.2–§8.4、§9.1 与新增 S17 将 per-call padding、完整传输隧道、调用可见中继、可信网关及提供方状态观察分开。三条 shadow 实现路径为合法读取/no-op、原生非提交/测试环境、网关隔离模拟器。新增五条官方部署引用，原 82 研究族与全部实验数据不变。当前文稿检查使用 `provenance/shadow-deployment/verify_manuscript.py`；旧 `provenance/sok-restructure/verify_manuscript.py` 对应 16/27 页历史版本。

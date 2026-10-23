@@ -1,6 +1,10 @@
 # agent-side-channel
 
-当前版本：**2026-10-23，完整 690 次真实 Agent 实验与 SoK 主文结构修订版**。
+当前版本：**2026-10-24，完整 690 次真实 Agent 实验与 Shadow Cover 部署架构修订版**。
+
+## 本轮更新：Shadow Cover 的部署路径与观察者边界
+
+主稿 §8.2–§8.4、§9.1 和新增补充 S17 明确逐调用 padding 与完整恒定速率隧道的区别，给出只读/no-op、API 原生隔离、可信 MCP/Tool 网关三条路径，以及中继、网关和提供方的信任边界。详见 [修订说明](docs/Shadow-Cover-部署架构修订说明.md)。全部 690 次实验与历史归档保持原样，本轮增加架构论证与官方文档引用。
 
 ## R5 新增：交叉拟合、运行点前沿与泄漏定位（已写入主稿 §8.5 与 S15）
 
@@ -15,9 +19,9 @@
 
 ## 最新论文
 
-- [主稿](main.pdf)：正文截至第 13 页，References 从第 13 页开始，Appendix 在第 16 页；全文 16 页。
-- [补充材料](supplement.pdf)：S14 已统一为完整队列的方法、消融、区间、成本及 prompt 对照。
-- [本次修订说明](docs/SOK-结构与统计修订说明.md)：主文 58 族映射、20×9 审计矩阵、配对程序差值与轨迹等价性。
+- [主稿](main.pdf)：正文截至第 13 页，References 从第 13 页开始，Appendix 在第 17 页；全文 17 页。
+- [补充材料](supplement.pdf)：共 29 页；S14 为完整队列结果，S17 为部署架构与观察者边界。
+- [上一轮 SoK 修订说明](docs/SOK-结构与统计修订说明.md)：主文 58 族映射、20×9 审计矩阵、配对程序差值与轨迹等价性。
 - [上一轮完整队列主稿修订说明](docs/R4-690主稿修订说明.md)：完整 690 次结果首次进入主稿的历史记录。
 
 论文题目改为 **SoK: Evaluating LLM and Agent Side-Channel Defenses — From Evidence Audits to Real-Agent Measurements**。主线是将结果记录审计、可执行部署检查与真实 Agent 测量连接起来，明确哪些观察、状态和评估条件决定防御效果。
@@ -47,7 +51,8 @@
 - `experiments/sp2027-r4-full-20261023/`：完整队列结果、预测、TLS 捕获及新增 27 次运行。
 - `experiments/sp2027-r4-snapshot-20261023/`：不可变 663 次运行快照和基础模型档案。
 - `artifact-index.json`：附录四个逻辑模块到实际归档路径的索引。
-- `provenance/sok-restructure/`：本轮文稿修订来源、表格生成器、配对重算和校验收据。
+- `provenance/shadow-deployment/`：当前部署架构修订的来源、历史文件保全和 PDF 校验收据。
+- `provenance/sok-restructure/`：上一轮 SoK 修订来源、表格生成器、配对重算和历史文稿收据。
 - `provenance/main-690/`：上一轮主稿版本的历史来源与收据；其文稿校验器对应旧版排版。
 
 在包目录运行：
@@ -55,18 +60,19 @@
 ```text
 python -B verify_package.py
 python -B verify_revision.py
-python -B provenance/sok-restructure/verify_manuscript.py
+python -B provenance/shadow-deployment/verify_manuscript.py
 python -B experiments/sp2027-r4-full-20261023/verify_release.py
 ```
 
-完整实验已通过 690 次运行、11,586 个模型决策、2,760 次 TLS 回放和 176 组攻击预测校验；离线重算与保存结果完全一致。本轮复用冻结结果，并复核全部 2,760 个会话的真实调用投影。新增配对差值可用 `python -B provenance/sok-restructure/analyze_paired.py` 重算（需要 numpy 和 scikit-learn）；表格校验与文稿检查需要 pypdf。详细环境见完整队列目录 README。上述校验和复算不调用模型。
+完整实验已通过 690 次运行、11,586 个模型决策、2,760 次 TLS 回放和 176 组攻击预测校验；离线重算与保存结果完全一致。此前校验已核对全部 2,760 个会话的真实调用投影；本轮逐文件核对冻结数据与这些收据保持原样。配对差值可用 `python -B provenance/sok-restructure/analyze_paired.py` 重算（需要 numpy 和 scikit-learn）；表格校验与文稿检查需要 pypdf。详细环境见完整队列目录 README。上述校验和复算不调用模型。旧 `provenance/sok-restructure/verify_manuscript.py` 校验旧版页数，当前稿件使用上方新文稿校验器。
 
 LaTeX 使用 IEEEtran 1.8b conference,compsoc；在 `manuscript/` 分别对 `main`、`supplement` 运行 pdflatex、bibtex、pdflatex 两次。
 
 ## 版本与交付包
 
 - 当前 GitHub main 的 `main.pdf`、`supplement.pdf` 已纳入完整队列。
-- `paper-sok-restructure-20261023.zip` 为本轮增量更新包，适用于已合入 R5 的提交 `17db1ab`；校验信息见同名 JSON。
+- `paper-shadow-deployment-20261024.zip` 为当前部署架构增量包，基于 `35d43a8`；配套 JSON 核对全部条目与归档哈希。
+- `paper-sok-restructure-20261023.zip` 为上一轮增量更新包，适用于已合入 R5 的提交 `17db1ab`；校验信息见同名 JSON。
 - `paper-690-manuscript-update-20261023.zip` 保留上一轮完整队列主稿更新版，适用于包含完整队列提交 `c8e90bb` 的仓库。
 - [完整队列独立补充](full-cohort-supplement.pdf) 和 `r4-full-cohort-extension-20261023.zip` 保留上一轮状态；前者中的“保留原主稿”描述对应当时版本。
 - `paper-review-revised-20261023.zip.001` 等分卷是 **663 次运行的历史论文包**，不代表当前主稿。`reassemble_r4_release.py` 可恢复它；`paper-review-revised-20261021.zip` 保留更早 R3 版本。
