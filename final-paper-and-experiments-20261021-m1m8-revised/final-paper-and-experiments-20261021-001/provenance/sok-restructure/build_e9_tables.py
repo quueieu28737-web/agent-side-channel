@@ -24,6 +24,10 @@ def sources():
     oldtext=r'Baseline joint upper bounds are 60.6\%/65.5\%. Rules-plus-joint return BA is 60.6\%; its paired contrast includes zero, as does the reward contrast.'
     newtext=r'Baseline joint upper bounds are 60.6\%/65.5\%, leaving the absolute-threshold conclusion inconclusive. The full-sample suite maximum equals the 50\% majority baseline; several fitted attacks make heterogeneous predictions whose customer-resampled BA can exceed 50\%. With only five cancellation-positive and seven return-positive customers, reselecting the maximum within each draw yields wider intervals. This mechanism does not imply a universal 10-point resolution floor or prove absence of residual population signal. The paired reduction intervals above exclude zero. Rules-plus-joint return BA is 60.6\%; its rules-minus-baseline contrast includes zero, as does the reward contrast.'
     assert oldtext in s;s=s.replace(oldtext,newtext)
+    s=s.replace('measured workflow compliance','mechanical adherence to the two read-order rules')
+    s=s.replace(r'Measured workflow compliance (\% with customer-cluster interval). These checks cover the two specified rules.',r'Mechanical adherence to the two prompt-specified read-order rules (\% with customer-cluster interval).')
+    s=s.replace('Rules improve measured workflow compliance','Rules improve mechanical rule adherence')
+    s=s.replace('The paired reduction intervals above exclude zero.','The paired reduction intervals above exclude zero. Supplement S16 adds a task-permutation reference; the primary intervals remain clustered by customer.')
     tables['tables/r4-supp.tex']=s
     return tables
 def main():

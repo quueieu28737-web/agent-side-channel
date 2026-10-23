@@ -1,0 +1,2214 @@
+{
+ "chosen": "r4_bucket",
+ "results": [
+  {
+   "config": "r4",
+   "target": "cancel",
+   "view": "dispatch",
+   "prompt": "baseline",
+   "condition": "raw",
+   "episodes": 123,
+   "customers": 22,
+   "positive_customers": 5,
+   "positive_tasks": 5,
+   "bytes_ratio": 1.0,
+   "calls_ratio": 1.0,
+   "template_overflow_rate": 0.0,
+   "core_ba": 0.9666666666666667,
+   "core_ba_ci95": [
+    0.8888888888888888,
+    1.0
+   ],
+   "core_auroc": 0.9975308641975309,
+   "ext_ba": 0.9666666666666667,
+   "ext_ba_ci95": [
+    0.8888888888888888,
+    1.0
+   ],
+   "ext_auroc": 0.9975308641975309,
+   "sign_agnostic_auroc": 0.9975308641975309,
+   "sign_agnostic_auroc_ci95": [
+    0.9884138135228252,
+    1.0
+   ],
+   "attackers": {
+    "majority": {
+     "ba": 0.5,
+     "auroc": 0.5
+    },
+    "D0_gboost": {
+     "ba": 0.962037037037037,
+     "auroc": 0.9975308641975309
+    },
+    "D2_logreg": {
+     "ba": 0.7055555555555555,
+     "auroc": 0.9290123456790124
+    },
+    "D2_gboost": {
+     "ba": 0.962037037037037,
+     "auroc": 0.9975308641975309
+    },
+    "ext_D2_rf": {
+     "ba": 0.9287037037037037,
+     "auroc": 0.9895061728395061
+    },
+    "ext_D2_knn": {
+     "ba": 0.7055555555555555,
+     "auroc": 0.7913580246913581
+    },
+    "D2_count_rule": {
+     "ba": 0.9666666666666667,
+     "auroc": 0.9666666666666667
+    }
+   },
+   "invalid_draws": 8,
+   "criterion_core": "above_threshold",
+   "criterion_ext": "above_threshold",
+   "role": "r4_reference"
+  },
+  {
+   "config": "r4",
+   "target": "cancel",
+   "view": "network",
+   "prompt": "baseline",
+   "condition": "raw",
+   "episodes": 123,
+   "customers": 22,
+   "positive_customers": 5,
+   "positive_tasks": 5,
+   "bytes_ratio": 1.0,
+   "calls_ratio": 1.0,
+   "template_overflow_rate": 0.0,
+   "core_ba": 0.9666666666666667,
+   "core_ba_ci95": [
+    0.8888888888888888,
+    1.0
+   ],
+   "core_auroc": 0.9901234567901235,
+   "ext_ba": 0.9666666666666667,
+   "ext_ba_ci95": [
+    0.8888888888888888,
+    1.0
+   ],
+   "ext_auroc": 0.991358024691358,
+   "sign_agnostic_auroc": 0.991358024691358,
+   "sign_agnostic_auroc_ci95": [
+    0.968515704154002,
+    1.0
+   ],
+   "attackers": {
+    "majority": {
+     "ba": 0.5,
+     "auroc": 0.5
+    },
+    "D0_gboost": {
+     "ba": 0.7388888888888889,
+     "auroc": 0.7148148148148148
+    },
+    "D2_logreg": {
+     "ba": 0.6824074074074074,
+     "auroc": 0.8388888888888889
+    },
+    "D2_gboost": {
+     "ba": 0.7388888888888889,
+     "auroc": 0.7148148148148148
+    },
+    "ext_D2_rf": {
+     "ba": 0.500925925925926,
+     "auroc": 0.6172839506172839
+    },
+    "ext_D2_knn": {
+     "ba": 0.7055555555555555,
+     "auroc": 0.8666666666666667
+    },
+    "network_decode_gboost": {
+     "ba": 0.962037037037037,
+     "auroc": 0.9901234567901235
+    },
+    "network_decode_count_rule": {
+     "ba": 0.9666666666666667,
+     "auroc": 0.9666666666666667
+    },
+    "ext_network_decode_rf": {
+     "ba": 0.9666666666666667,
+     "auroc": 0.991358024691358
+    }
+   },
+   "invalid_draws": 8,
+   "criterion_core": "above_threshold",
+   "criterion_ext": "above_threshold",
+   "role": "r4_reference"
+  },
+  {
+   "config": "r4",
+   "target": "return",
+   "view": "dispatch",
+   "prompt": "baseline",
+   "condition": "raw",
+   "episodes": 123,
+   "customers": 22,
+   "positive_customers": 7,
+   "positive_tasks": 10,
+   "bytes_ratio": 1.0,
+   "calls_ratio": 1.0,
+   "template_overflow_rate": 0.0,
+   "core_ba": 0.9666666666666667,
+   "core_ba_ci95": [
+    0.8666666666666667,
+    1.0
+   ],
+   "core_auroc": 0.967741935483871,
+   "ext_ba": 0.9666666666666667,
+   "ext_ba_ci95": [
+    0.8666666666666667,
+    1.0
+   ],
+   "ext_auroc": 0.967741935483871,
+   "sign_agnostic_auroc": 0.967741935483871,
+   "sign_agnostic_auroc_ci95": [
+    0.9027523712737128,
+    1.0
+   ],
+   "attackers": {
+    "majority": {
+     "ba": 0.5,
+     "auroc": 0.5
+    },
+    "D0_gboost": {
+     "ba": 0.9344086021505376,
+     "auroc": 0.9365591397849462
+    },
+    "D2_logreg": {
+     "ba": 0.8844086021505376,
+     "auroc": 0.967741935483871
+    },
+    "D2_gboost": {
+     "ba": 0.9344086021505376,
+     "auroc": 0.9365591397849462
+    },
+    "ext_D2_rf": {
+     "ba": 0.9344086021505376,
+     "auroc": 0.9551971326164874
+    },
+    "ext_D2_knn": {
+     "ba": 0.7586021505376344,
+     "auroc": 0.8387096774193549
+    },
+    "D2_count_rule": {
+     "ba": 0.9666666666666667,
+     "auroc": 0.9666666666666667
+    }
+   },
+   "invalid_draws": 2,
+   "criterion_core": "above_threshold",
+   "criterion_ext": "above_threshold",
+   "role": "r4_reference"
+  },
+  {
+   "config": "r4",
+   "target": "return",
+   "view": "network",
+   "prompt": "baseline",
+   "condition": "raw",
+   "episodes": 123,
+   "customers": 22,
+   "positive_customers": 7,
+   "positive_tasks": 10,
+   "bytes_ratio": 1.0,
+   "calls_ratio": 1.0,
+   "template_overflow_rate": 0.0,
+   "core_ba": 0.9338709677419355,
+   "core_ba_ci95": [
+    0.8368409062342885,
+    1.0
+   ],
+   "core_auroc": 0.9444444444444444,
+   "ext_ba": 0.9338709677419355,
+   "ext_ba_ci95": [
+    0.8368409062342885,
+    1.0
+   ],
+   "ext_auroc": 0.9444444444444444,
+   "sign_agnostic_auroc": 0.9444444444444444,
+   "sign_agnostic_auroc_ci95": [
+    0.8920401936026936,
+    1.0
+   ],
+   "attackers": {
+    "majority": {
+     "ba": 0.5,
+     "auroc": 0.5
+    },
+    "D0_gboost": {
+     "ba": 0.8446236559139785,
+     "auroc": 0.8471326164874552
+    },
+    "D2_logreg": {
+     "ba": 0.7688172043010753,
+     "auroc": 0.8956989247311828
+    },
+    "D2_gboost": {
+     "ba": 0.8446236559139785,
+     "auroc": 0.8471326164874552
+    },
+    "ext_D2_rf": {
+     "ba": 0.628494623655914,
+     "auroc": 0.7111111111111111
+    },
+    "ext_D2_knn": {
+     "ba": 0.628494623655914,
+     "auroc": 0.6922939068100359
+    },
+    "network_decode_gboost": {
+     "ba": 0.8801075268817204,
+     "auroc": 0.9444444444444444
+    },
+    "network_decode_count_rule": {
+     "ba": 0.9338709677419355,
+     "auroc": 0.9338709677419355
+    },
+    "ext_network_decode_rf": {
+     "ba": 0.896236559139785,
+     "auroc": 0.9415770609318996
+    }
+   },
+   "invalid_draws": 2,
+   "criterion_core": "above_threshold",
+   "criterion_ext": "above_threshold",
+   "role": "r4_reference"
+  },
+  {
+   "config": "r4",
+   "target": "cancel",
+   "view": "dispatch",
+   "prompt": "baseline",
+   "condition": "shape_const",
+   "episodes": 123,
+   "customers": 22,
+   "positive_customers": 5,
+   "positive_tasks": 5,
+   "bytes_ratio": 15.325485904952448,
+   "calls_ratio": 3.8344594594594597,
+   "template_overflow_rate": 0.3821138211382114,
+   "core_ba": 0.5666666666666667,
+   "core_ba_ci95": [
+    0.5,
+    0.6666666666666666
+   ],
+   "core_auroc": 0.5666666666666667,
+   "ext_ba": 0.5666666666666667,
+   "ext_ba_ci95": [
+    0.5208333333333334,
+    0.6666666666666666
+   ],
+   "ext_auroc": 0.6682098765432098,
+   "sign_agnostic_auroc": 0.6682098765432098,
+   "sign_agnostic_auroc_ci95": [
+    0.613046626984127,
+    0.7651926054974835
+   ],
+   "attackers": {
+    "majority": {
+     "ba": 0.5,
+     "auroc": 0.5
+    },
+    "D0_gboost": {
+     "ba": 0.5,
+     "auroc": 0.4046296296296296
+    },
+    "D2_logreg": {
+     "ba": 0.5185185185185185,
+     "auroc": 0.48641975308641977
+    },
+    "D2_gboost": {
+     "ba": 0.4407407407407407,
+     "auroc": 0.4919753086419753
+    },
+    "ext_D2_rf": {
+     "ba": 0.49074074074074076,
+     "auroc": 0.4802469135802469
+    },
+    "ext_D2_knn": {
+     "ba": 0.5240740740740741,
+     "auroc": 0.6682098765432098
+    },
+    "D2_count_rule": {
+     "ba": 0.5666666666666667,
+     "auroc": 0.5666666666666667
+    }
+   },
+   "invalid_draws": 8,
+   "criterion_core": "inconclusive",
+   "criterion_ext": "inconclusive",
+   "role": "r4_reference"
+  },
+  {
+   "config": "r4",
+   "target": "cancel",
+   "view": "network",
+   "prompt": "baseline",
+   "condition": "shape_const",
+   "episodes": 123,
+   "customers": 22,
+   "positive_customers": 5,
+   "positive_tasks": 5,
+   "bytes_ratio": 15.325485904952448,
+   "calls_ratio": 3.8344594594594597,
+   "template_overflow_rate": 0.3821138211382114,
+   "core_ba": 0.5,
+   "core_ba_ci95": [
+    0.5,
+    0.6454894986449862
+   ],
+   "core_auroc": 0.5,
+   "ext_ba": 0.5,
+   "ext_ba_ci95": [
+    0.5,
+    0.6454894986449862
+   ],
+   "ext_auroc": 0.5,
+   "sign_agnostic_auroc": 0.6675925925925925,
+   "sign_agnostic_auroc_ci95": [
+    0.591922123015873,
+    0.8418726053639846
+   ],
+   "attackers": {
+    "majority": {
+     "ba": 0.5,
+     "auroc": 0.5
+    },
+    "D0_gboost": {
+     "ba": 0.5,
+     "auroc": 0.5
+    },
+    "D2_logreg": {
+     "ba": 0.43981481481481477,
+     "auroc": 0.47160493827160493
+    },
+    "D2_gboost": {
+     "ba": 0.43425925925925923,
+     "auroc": 0.46358024691358024
+    },
+    "ext_D2_rf": {
+     "ba": 0.42500000000000004,
+     "auroc": 0.33240740740740743
+    },
+    "ext_D2_knn": {
+     "ba": 0.4305555555555556,
+     "auroc": 0.3941358024691358
+    },
+    "network_decode_gboost": {
+     "ba": 0.43425925925925923,
+     "auroc": 0.45493827160493827
+    },
+    "network_decode_count_rule": {
+     "ba": 0.5,
+     "auroc": 0.5
+    },
+    "ext_network_decode_rf": {
+     "ba": 0.42500000000000004,
+     "auroc": 0.44290123456790126
+    }
+   },
+   "invalid_draws": 8,
+   "criterion_core": "inconclusive",
+   "criterion_ext": "inconclusive",
+   "role": "r4_reference"
+  },
+  {
+   "config": "r4",
+   "target": "return",
+   "view": "dispatch",
+   "prompt": "baseline",
+   "condition": "shape_const",
+   "episodes": 123,
+   "customers": 22,
+   "positive_customers": 7,
+   "positive_tasks": 10,
+   "bytes_ratio": 15.325485904952448,
+   "calls_ratio": 3.8344594594594597,
+   "template_overflow_rate": 0.3821138211382114,
+   "core_ba": 0.5725806451612903,
+   "core_ba_ci95": [
+    0.5,
+    0.6839920033670034
+   ],
+   "core_auroc": 0.6265232974910394,
+   "ext_ba": 0.5725806451612903,
+   "ext_ba_ci95": [
+    0.5,
+    0.6858317669172932
+   ],
+   "ext_auroc": 0.6734767025089605,
+   "sign_agnostic_auroc": 0.7127240143369176,
+   "sign_agnostic_auroc_ci95": [
+    0.6724929628388234,
+    0.8164322718026951
+   ],
+   "attackers": {
+    "majority": {
+     "ba": 0.5,
+     "auroc": 0.5
+    },
+    "D0_gboost": {
+     "ba": 0.5,
+     "auroc": 0.28727598566308243
+    },
+    "D2_logreg": {
+     "ba": 0.5725806451612903,
+     "auroc": 0.6265232974910394
+    },
+    "D2_gboost": {
+     "ba": 0.5370967741935484,
+     "auroc": 0.6007168458781362
+    },
+    "ext_D2_rf": {
+     "ba": 0.4693548387096774,
+     "auroc": 0.560573476702509
+    },
+    "ext_D2_knn": {
+     "ba": 0.5301075268817205,
+     "auroc": 0.6734767025089605
+    },
+    "D2_count_rule": {
+     "ba": 0.5166666666666667,
+     "auroc": 0.5166666666666667
+    }
+   },
+   "invalid_draws": 2,
+   "criterion_core": "inconclusive",
+   "criterion_ext": "inconclusive",
+   "role": "r4_reference"
+  },
+  {
+   "config": "r4",
+   "target": "return",
+   "view": "network",
+   "prompt": "baseline",
+   "condition": "shape_const",
+   "episodes": 123,
+   "customers": 22,
+   "positive_customers": 7,
+   "positive_tasks": 10,
+   "bytes_ratio": 15.325485904952448,
+   "calls_ratio": 3.8344594594594597,
+   "template_overflow_rate": 0.3821138211382114,
+   "core_ba": 0.5,
+   "core_ba_ci95": [
+    0.5,
+    0.6309845559845559
+   ],
+   "core_auroc": 0.5,
+   "ext_ba": 0.5258064516129032,
+   "ext_ba_ci95": [
+    0.5,
+    0.6909659090909092
+   ],
+   "ext_auroc": 0.5292114695340502,
+   "sign_agnostic_auroc": 0.5971326164874552,
+   "sign_agnostic_auroc_ci95": [
+    0.5560956200662083,
+    0.7848567363866843
+   ],
+   "attackers": {
+    "majority": {
+     "ba": 0.5,
+     "auroc": 0.5
+    },
+    "D0_gboost": {
+     "ba": 0.5,
+     "auroc": 0.5
+    },
+    "D2_logreg": {
+     "ba": 0.4467741935483871,
+     "auroc": 0.4172043010752688
+    },
+    "D2_gboost": {
+     "ba": 0.42365591397849467,
+     "auroc": 0.4043010752688172
+    },
+    "ext_D2_rf": {
+     "ba": 0.5064516129032258,
+     "auroc": 0.5075268817204301
+    },
+    "ext_D2_knn": {
+     "ba": 0.4897849462365591,
+     "auroc": 0.5066308243727599
+    },
+    "network_decode_gboost": {
+     "ba": 0.42365591397849467,
+     "auroc": 0.4028673835125448
+    },
+    "network_decode_count_rule": {
+     "ba": 0.5,
+     "auroc": 0.5
+    },
+    "ext_network_decode_rf": {
+     "ba": 0.5258064516129032,
+     "auroc": 0.5292114695340502
+    }
+   },
+   "invalid_draws": 2,
+   "criterion_core": "inconclusive",
+   "criterion_ext": "inconclusive",
+   "role": "r4_reference"
+  },
+  {
+   "config": "r4",
+   "target": "cancel",
+   "view": "dispatch",
+   "prompt": "rules",
+   "condition": "raw",
+   "episodes": 123,
+   "customers": 22,
+   "positive_customers": 5,
+   "positive_tasks": 5,
+   "bytes_ratio": 1.0,
+   "calls_ratio": 1.0,
+   "template_overflow_rate": 0.0,
+   "core_ba": 0.9666666666666667,
+   "core_ba_ci95": [
+    0.8888888888888888,
+    1.0
+   ],
+   "core_auroc": 0.9666666666666667,
+   "ext_ba": 0.9666666666666667,
+   "ext_ba_ci95": [
+    0.8888888888888888,
+    1.0
+   ],
+   "ext_auroc": 0.975,
+   "sign_agnostic_auroc": 0.975,
+   "sign_agnostic_auroc_ci95": [
+    0.9253804492291334,
+    1.0
+   ],
+   "attackers": {
+    "majority": {
+     "ba": 0.5,
+     "auroc": 0.5
+    },
+    "D0_gboost": {
+     "ba": 0.9435185185185185,
+     "auroc": 0.9299382716049382
+    },
+    "D2_logreg": {
+     "ba": 0.8722222222222222,
+     "auroc": 0.9317901234567901
+    },
+    "D2_gboost": {
+     "ba": 0.9435185185185185,
+     "auroc": 0.9299382716049382
+    },
+    "ext_D2_rf": {
+     "ba": 0.9574074074074075,
+     "auroc": 0.975
+    },
+    "ext_D2_knn": {
+     "ba": 0.5768518518518518,
+     "auroc": 0.9234567901234568
+    },
+    "D2_count_rule": {
+     "ba": 0.9666666666666667,
+     "auroc": 0.9666666666666667
+    }
+   },
+   "invalid_draws": 8,
+   "criterion_core": "above_threshold",
+   "criterion_ext": "above_threshold",
+   "role": "r4_reference"
+  },
+  {
+   "config": "r4",
+   "target": "cancel",
+   "view": "network",
+   "prompt": "rules",
+   "condition": "raw",
+   "episodes": 123,
+   "customers": 22,
+   "positive_customers": 5,
+   "positive_tasks": 5,
+   "bytes_ratio": 1.0,
+   "calls_ratio": 1.0,
+   "template_overflow_rate": 0.0,
+   "core_ba": 0.9666666666666667,
+   "core_ba_ci95": [
+    0.8888888888888888,
+    1.0
+   ],
+   "core_auroc": 0.9728395061728395,
+   "ext_ba": 0.9666666666666667,
+   "ext_ba_ci95": [
+    0.8888888888888888,
+    1.0
+   ],
+   "ext_auroc": 0.9907407407407407,
+   "sign_agnostic_auroc": 0.9907407407407407,
+   "sign_agnostic_auroc_ci95": [
+    0.967479674796748,
+    1.0
+   ],
+   "attackers": {
+    "majority": {
+     "ba": 0.5,
+     "auroc": 0.5
+    },
+    "D0_gboost": {
+     "ba": 0.7388888888888889,
+     "auroc": 0.8324074074074074
+    },
+    "D2_logreg": {
+     "ba": 0.8203703703703704,
+     "auroc": 0.8975308641975308
+    },
+    "D2_gboost": {
+     "ba": 0.7388888888888889,
+     "auroc": 0.8324074074074074
+    },
+    "ext_D2_rf": {
+     "ba": 0.6490740740740741,
+     "auroc": 0.6833333333333333
+    },
+    "ext_D2_knn": {
+     "ba": 0.5157407407407407,
+     "auroc": 0.7975308641975308
+    },
+    "network_decode_gboost": {
+     "ba": 0.8527777777777777,
+     "auroc": 0.9728395061728395
+    },
+    "network_decode_count_rule": {
+     "ba": 0.9666666666666667,
+     "auroc": 0.9666666666666667
+    },
+    "ext_network_decode_rf": {
+     "ba": 0.9666666666666667,
+     "auroc": 0.9907407407407407
+    }
+   },
+   "invalid_draws": 8,
+   "criterion_core": "above_threshold",
+   "criterion_ext": "above_threshold",
+   "role": "r4_reference"
+  },
+  {
+   "config": "r4",
+   "target": "return",
+   "view": "dispatch",
+   "prompt": "rules",
+   "condition": "raw",
+   "episodes": 123,
+   "customers": 22,
+   "positive_customers": 7,
+   "positive_tasks": 10,
+   "bytes_ratio": 1.0,
+   "calls_ratio": 1.0,
+   "template_overflow_rate": 0.0,
+   "core_ba": 0.9666666666666667,
+   "core_ba_ci95": [
+    0.8666666666666667,
+    1.0
+   ],
+   "core_auroc": 0.9666666666666667,
+   "ext_ba": 0.9666666666666667,
+   "ext_ba_ci95": [
+    0.8666666666666667,
+    1.0
+   ],
+   "ext_auroc": 0.9666666666666667,
+   "sign_agnostic_auroc": 0.9666666666666667,
+   "sign_agnostic_auroc_ci95": [
+    0.875,
+    1.0
+   ],
+   "attackers": {
+    "majority": {
+     "ba": 0.5,
+     "auroc": 0.5
+    },
+    "D0_gboost": {
+     "ba": 0.9505376344086022,
+     "auroc": 0.9378136200716846
+    },
+    "D2_logreg": {
+     "ba": 0.8736559139784946,
+     "auroc": 0.9449820788530466
+    },
+    "D2_gboost": {
+     "ba": 0.9505376344086022,
+     "auroc": 0.9378136200716846
+    },
+    "ext_D2_rf": {
+     "ba": 0.9559139784946237,
+     "auroc": 0.9546594982078853
+    },
+    "ext_D2_knn": {
+     "ba": 0.8069892473118279,
+     "auroc": 0.8623655913978494
+    },
+    "D2_count_rule": {
+     "ba": 0.9666666666666667,
+     "auroc": 0.9666666666666667
+    }
+   },
+   "invalid_draws": 2,
+   "criterion_core": "above_threshold",
+   "criterion_ext": "above_threshold",
+   "role": "r4_reference"
+  },
+  {
+   "config": "r4",
+   "target": "return",
+   "view": "network",
+   "prompt": "rules",
+   "condition": "raw",
+   "episodes": 123,
+   "customers": 22,
+   "positive_customers": 7,
+   "positive_tasks": 10,
+   "bytes_ratio": 1.0,
+   "calls_ratio": 1.0,
+   "template_overflow_rate": 0.0,
+   "core_ba": 0.928494623655914,
+   "core_ba_ci95": [
+    0.8295454545454545,
+    0.9898989898989898
+   ],
+   "core_auroc": 0.928494623655914,
+   "ext_ba": 0.928494623655914,
+   "ext_ba_ci95": [
+    0.8295454545454545,
+    0.9946236559139785
+   ],
+   "ext_auroc": 0.9306451612903226,
+   "sign_agnostic_auroc": 0.9306451612903226,
+   "sign_agnostic_auroc_ci95": [
+    0.8455627705627705,
+    1.0
+   ],
+   "attackers": {
+    "majority": {
+     "ba": 0.5,
+     "auroc": 0.5
+    },
+    "D0_gboost": {
+     "ba": 0.7564516129032258,
+     "auroc": 0.7568100358422939
+    },
+    "D2_logreg": {
+     "ba": 0.7526881720430108,
+     "auroc": 0.8125448028673835
+    },
+    "D2_gboost": {
+     "ba": 0.7564516129032258,
+     "auroc": 0.7568100358422939
+    },
+    "ext_D2_rf": {
+     "ba": 0.6736559139784946,
+     "auroc": 0.6872759856630825
+    },
+    "ext_D2_knn": {
+     "ba": 0.589247311827957,
+     "auroc": 0.6254480286738351
+    },
+    "network_decode_gboost": {
+     "ba": 0.8801075268817204,
+     "auroc": 0.9152329749103942
+    },
+    "network_decode_count_rule": {
+     "ba": 0.928494623655914,
+     "auroc": 0.928494623655914
+    },
+    "ext_network_decode_rf": {
+     "ba": 0.9231182795698925,
+     "auroc": 0.9306451612903226
+    }
+   },
+   "invalid_draws": 2,
+   "criterion_core": "above_threshold",
+   "criterion_ext": "above_threshold",
+   "role": "r4_reference"
+  },
+  {
+   "config": "r4",
+   "target": "cancel",
+   "view": "dispatch",
+   "prompt": "rules",
+   "condition": "shape_const",
+   "episodes": 123,
+   "customers": 22,
+   "positive_customers": 5,
+   "positive_tasks": 5,
+   "bytes_ratio": 15.699792672360442,
+   "calls_ratio": 3.898169336384439,
+   "template_overflow_rate": 0.45528455284552843,
+   "core_ba": 0.5583333333333333,
+   "core_ba_ci95": [
+    0.5,
+    0.7160042735042734
+   ],
+   "core_auroc": 0.6296296296296297,
+   "ext_ba": 0.5583333333333333,
+   "ext_ba_ci95": [
+    0.5,
+    0.7160042735042734
+   ],
+   "ext_auroc": 0.6296296296296297,
+   "sign_agnostic_auroc": 0.6296296296296297,
+   "sign_agnostic_auroc_ci95": [
+    0.5736364152142339,
+    0.9075810185185185
+   ],
+   "attackers": {
+    "majority": {
+     "ba": 0.5,
+     "auroc": 0.5
+    },
+    "D0_gboost": {
+     "ba": 0.5,
+     "auroc": 0.45401234567901233
+    },
+    "D2_logreg": {
+     "ba": 0.5175925925925926,
+     "auroc": 0.5450617283950617
+    },
+    "D2_gboost": {
+     "ba": 0.5583333333333333,
+     "auroc": 0.6296296296296297
+    },
+    "ext_D2_rf": {
+     "ba": 0.5435185185185185,
+     "auroc": 0.5487654320987654
+    },
+    "ext_D2_knn": {
+     "ba": 0.5,
+     "auroc": 0.4382716049382716
+    },
+    "D2_count_rule": {
+     "ba": 0.5,
+     "auroc": 0.5
+    }
+   },
+   "invalid_draws": 8,
+   "criterion_core": "inconclusive",
+   "criterion_ext": "inconclusive",
+   "role": "r4_reference"
+  },
+  {
+   "config": "r4",
+   "target": "cancel",
+   "view": "network",
+   "prompt": "rules",
+   "condition": "shape_const",
+   "episodes": 123,
+   "customers": 22,
+   "positive_customers": 5,
+   "positive_tasks": 5,
+   "bytes_ratio": 15.699792672360442,
+   "calls_ratio": 3.898169336384439,
+   "template_overflow_rate": 0.45528455284552843,
+   "core_ba": 0.5,
+   "core_ba_ci95": [
+    0.5,
+    0.6652495348219033
+   ],
+   "core_auroc": 0.5,
+   "ext_ba": 0.5055555555555555,
+   "ext_ba_ci95": [
+    0.5,
+    0.6784340111642742
+   ],
+   "ext_auroc": 0.5,
+   "sign_agnostic_auroc": 0.6157407407407407,
+   "sign_agnostic_auroc_ci95": [
+    0.5504511864805983,
+    0.8668407977939426
+   ],
+   "attackers": {
+    "majority": {
+     "ba": 0.5,
+     "auroc": 0.5
+    },
+    "D0_gboost": {
+     "ba": 0.5,
+     "auroc": 0.5
+    },
+    "D2_logreg": {
+     "ba": 0.4481481481481482,
+     "auroc": 0.38425925925925924
+    },
+    "D2_gboost": {
+     "ba": 0.4527777777777777,
+     "auroc": 0.4780864197530864
+    },
+    "ext_D2_rf": {
+     "ba": 0.4481481481481482,
+     "auroc": 0.43333333333333335
+    },
+    "ext_D2_knn": {
+     "ba": 0.5055555555555555,
+     "auroc": 0.4351851851851852
+    },
+    "network_decode_gboost": {
+     "ba": 0.4527777777777777,
+     "auroc": 0.38549382716049385
+    },
+    "network_decode_count_rule": {
+     "ba": 0.5,
+     "auroc": 0.5
+    },
+    "ext_network_decode_rf": {
+     "ba": 0.475925925925926,
+     "auroc": 0.48117283950617284
+    }
+   },
+   "invalid_draws": 8,
+   "criterion_core": "inconclusive",
+   "criterion_ext": "inconclusive",
+   "role": "r4_reference"
+  },
+  {
+   "config": "r4",
+   "target": "return",
+   "view": "dispatch",
+   "prompt": "rules",
+   "condition": "shape_const",
+   "episodes": 123,
+   "customers": 22,
+   "positive_customers": 7,
+   "positive_tasks": 10,
+   "bytes_ratio": 15.699792672360442,
+   "calls_ratio": 3.898169336384439,
+   "template_overflow_rate": 0.45528455284552843,
+   "core_ba": 0.6526881720430108,
+   "core_ba_ci95": [
+    0.5333333333333333,
+    0.7777777777777777
+   ],
+   "core_auroc": 0.7172043010752688,
+   "ext_ba": 0.6526881720430108,
+   "ext_ba_ci95": [
+    0.5333333333333333,
+    0.7777777777777777
+   ],
+   "ext_auroc": 0.7172043010752688,
+   "sign_agnostic_auroc": 0.7994623655913978,
+   "sign_agnostic_auroc_ci95": [
+    0.6642693744164333,
+    0.9026369724025974
+   ],
+   "attackers": {
+    "majority": {
+     "ba": 0.5,
+     "auroc": 0.5
+    },
+    "D0_gboost": {
+     "ba": 0.5,
+     "auroc": 0.20053763440860214
+    },
+    "D2_logreg": {
+     "ba": 0.6526881720430108,
+     "auroc": 0.7172043010752688
+    },
+    "D2_gboost": {
+     "ba": 0.5311827956989247,
+     "auroc": 0.5827956989247312
+    },
+    "ext_D2_rf": {
+     "ba": 0.5080645161290323,
+     "auroc": 0.5254480286738351
+    },
+    "ext_D2_knn": {
+     "ba": 0.5844086021505376,
+     "auroc": 0.6810035842293907
+    },
+    "D2_count_rule": {
+     "ba": 0.5166666666666667,
+     "auroc": 0.5166666666666667
+    }
+   },
+   "invalid_draws": 2,
+   "criterion_core": "inconclusive",
+   "criterion_ext": "inconclusive",
+   "role": "r4_reference"
+  },
+  {
+   "config": "r4",
+   "target": "return",
+   "view": "network",
+   "prompt": "rules",
+   "condition": "shape_const",
+   "episodes": 123,
+   "customers": 22,
+   "positive_customers": 7,
+   "positive_tasks": 10,
+   "bytes_ratio": 15.699792672360442,
+   "calls_ratio": 3.898169336384439,
+   "template_overflow_rate": 0.45528455284552843,
+   "core_ba": 0.6408602150537634,
+   "core_ba_ci95": [
+    0.5482368186509053,
+    0.7611017661900757
+   ],
+   "core_auroc": 0.6935483870967742,
+   "ext_ba": 0.6408602150537634,
+   "ext_ba_ci95": [
+    0.5484100877192982,
+    0.7635218253968253
+   ],
+   "ext_auroc": 0.6935483870967742,
+   "sign_agnostic_auroc": 0.6935483870967742,
+   "sign_agnostic_auroc_ci95": [
+    0.5631943709582599,
+    0.8143180941358026
+   ],
+   "attackers": {
+    "majority": {
+     "ba": 0.5,
+     "auroc": 0.5
+    },
+    "D0_gboost": {
+     "ba": 0.5,
+     "auroc": 0.5
+    },
+    "D2_logreg": {
+     "ba": 0.5295698924731183,
+     "auroc": 0.5383512544802868
+    },
+    "D2_gboost": {
+     "ba": 0.6408602150537634,
+     "auroc": 0.6338709677419355
+    },
+    "ext_D2_rf": {
+     "ba": 0.5913978494623655,
+     "auroc": 0.6100358422939068
+    },
+    "ext_D2_knn": {
+     "ba": 0.5956989247311828,
+     "auroc": 0.6096774193548387
+    },
+    "network_decode_gboost": {
+     "ba": 0.6048387096774194,
+     "auroc": 0.6935483870967742
+    },
+    "network_decode_count_rule": {
+     "ba": 0.5,
+     "auroc": 0.5
+    },
+    "ext_network_decode_rf": {
+     "ba": 0.6086021505376344,
+     "auroc": 0.6189964157706093
+    }
+   },
+   "invalid_draws": 2,
+   "criterion_core": "inconclusive",
+   "criterion_ext": "inconclusive",
+   "role": "r4_reference"
+  },
+  {
+   "config": "r4_bucket",
+   "target": "cancel",
+   "view": "dispatch",
+   "prompt": "baseline",
+   "condition": "raw",
+   "episodes": 123,
+   "customers": 22,
+   "positive_customers": 5,
+   "positive_tasks": 5,
+   "bytes_ratio": 1.0,
+   "calls_ratio": 1.0,
+   "template_overflow_rate": 0.0,
+   "core_ba": 0.9666666666666667,
+   "core_ba_ci95": [
+    0.8888888888888888,
+    1.0
+   ],
+   "core_auroc": 0.9975308641975309,
+   "ext_ba": 0.9666666666666667,
+   "ext_ba_ci95": [
+    0.8888888888888888,
+    1.0
+   ],
+   "ext_auroc": 0.9975308641975309,
+   "sign_agnostic_auroc": 0.9975308641975309,
+   "sign_agnostic_auroc_ci95": [
+    0.9884138135228252,
+    1.0
+   ],
+   "attackers": {
+    "majority": {
+     "ba": 0.5,
+     "auroc": 0.5
+    },
+    "D0_gboost": {
+     "ba": 0.962037037037037,
+     "auroc": 0.9975308641975309
+    },
+    "D2_logreg": {
+     "ba": 0.7055555555555555,
+     "auroc": 0.9290123456790124
+    },
+    "D2_gboost": {
+     "ba": 0.962037037037037,
+     "auroc": 0.9975308641975309
+    },
+    "ext_D2_rf": {
+     "ba": 0.9287037037037037,
+     "auroc": 0.9895061728395061
+    },
+    "ext_D2_knn": {
+     "ba": 0.7055555555555555,
+     "auroc": 0.7913580246913581
+    },
+    "D2_count_rule": {
+     "ba": 0.9666666666666667,
+     "auroc": 0.9666666666666667
+    }
+   },
+   "invalid_draws": 8,
+   "criterion_core": "above_threshold",
+   "criterion_ext": "above_threshold",
+   "role": "selected"
+  },
+  {
+   "config": "r4_bucket",
+   "target": "cancel",
+   "view": "network",
+   "prompt": "baseline",
+   "condition": "raw",
+   "episodes": 123,
+   "customers": 22,
+   "positive_customers": 5,
+   "positive_tasks": 5,
+   "bytes_ratio": 1.0,
+   "calls_ratio": 1.0,
+   "template_overflow_rate": 0.0,
+   "core_ba": 0.9666666666666667,
+   "core_ba_ci95": [
+    0.8888888888888888,
+    1.0
+   ],
+   "core_auroc": 0.9901234567901235,
+   "ext_ba": 0.9666666666666667,
+   "ext_ba_ci95": [
+    0.8888888888888888,
+    1.0
+   ],
+   "ext_auroc": 0.991358024691358,
+   "sign_agnostic_auroc": 0.991358024691358,
+   "sign_agnostic_auroc_ci95": [
+    0.968515704154002,
+    1.0
+   ],
+   "attackers": {
+    "majority": {
+     "ba": 0.5,
+     "auroc": 0.5
+    },
+    "D0_gboost": {
+     "ba": 0.7388888888888889,
+     "auroc": 0.7148148148148148
+    },
+    "D2_logreg": {
+     "ba": 0.6824074074074074,
+     "auroc": 0.8388888888888889
+    },
+    "D2_gboost": {
+     "ba": 0.7388888888888889,
+     "auroc": 0.7148148148148148
+    },
+    "ext_D2_rf": {
+     "ba": 0.500925925925926,
+     "auroc": 0.6172839506172839
+    },
+    "ext_D2_knn": {
+     "ba": 0.7055555555555555,
+     "auroc": 0.8666666666666667
+    },
+    "network_decode_gboost": {
+     "ba": 0.962037037037037,
+     "auroc": 0.9901234567901235
+    },
+    "network_decode_count_rule": {
+     "ba": 0.9666666666666667,
+     "auroc": 0.9666666666666667
+    },
+    "ext_network_decode_rf": {
+     "ba": 0.9666666666666667,
+     "auroc": 0.991358024691358
+    }
+   },
+   "invalid_draws": 8,
+   "criterion_core": "above_threshold",
+   "criterion_ext": "above_threshold",
+   "role": "selected"
+  },
+  {
+   "config": "r4_bucket",
+   "target": "return",
+   "view": "dispatch",
+   "prompt": "baseline",
+   "condition": "raw",
+   "episodes": 123,
+   "customers": 22,
+   "positive_customers": 7,
+   "positive_tasks": 10,
+   "bytes_ratio": 1.0,
+   "calls_ratio": 1.0,
+   "template_overflow_rate": 0.0,
+   "core_ba": 0.9666666666666667,
+   "core_ba_ci95": [
+    0.8666666666666667,
+    1.0
+   ],
+   "core_auroc": 0.967741935483871,
+   "ext_ba": 0.9666666666666667,
+   "ext_ba_ci95": [
+    0.8666666666666667,
+    1.0
+   ],
+   "ext_auroc": 0.967741935483871,
+   "sign_agnostic_auroc": 0.967741935483871,
+   "sign_agnostic_auroc_ci95": [
+    0.9027523712737128,
+    1.0
+   ],
+   "attackers": {
+    "majority": {
+     "ba": 0.5,
+     "auroc": 0.5
+    },
+    "D0_gboost": {
+     "ba": 0.9344086021505376,
+     "auroc": 0.9365591397849462
+    },
+    "D2_logreg": {
+     "ba": 0.8844086021505376,
+     "auroc": 0.967741935483871
+    },
+    "D2_gboost": {
+     "ba": 0.9344086021505376,
+     "auroc": 0.9365591397849462
+    },
+    "ext_D2_rf": {
+     "ba": 0.9344086021505376,
+     "auroc": 0.9551971326164874
+    },
+    "ext_D2_knn": {
+     "ba": 0.7586021505376344,
+     "auroc": 0.8387096774193549
+    },
+    "D2_count_rule": {
+     "ba": 0.9666666666666667,
+     "auroc": 0.9666666666666667
+    }
+   },
+   "invalid_draws": 2,
+   "criterion_core": "above_threshold",
+   "criterion_ext": "above_threshold",
+   "role": "selected"
+  },
+  {
+   "config": "r4_bucket",
+   "target": "return",
+   "view": "network",
+   "prompt": "baseline",
+   "condition": "raw",
+   "episodes": 123,
+   "customers": 22,
+   "positive_customers": 7,
+   "positive_tasks": 10,
+   "bytes_ratio": 1.0,
+   "calls_ratio": 1.0,
+   "template_overflow_rate": 0.0,
+   "core_ba": 0.9338709677419355,
+   "core_ba_ci95": [
+    0.8368409062342885,
+    1.0
+   ],
+   "core_auroc": 0.9444444444444444,
+   "ext_ba": 0.9338709677419355,
+   "ext_ba_ci95": [
+    0.8368409062342885,
+    1.0
+   ],
+   "ext_auroc": 0.9444444444444444,
+   "sign_agnostic_auroc": 0.9444444444444444,
+   "sign_agnostic_auroc_ci95": [
+    0.8920401936026936,
+    1.0
+   ],
+   "attackers": {
+    "majority": {
+     "ba": 0.5,
+     "auroc": 0.5
+    },
+    "D0_gboost": {
+     "ba": 0.8446236559139785,
+     "auroc": 0.8471326164874552
+    },
+    "D2_logreg": {
+     "ba": 0.7688172043010753,
+     "auroc": 0.8956989247311828
+    },
+    "D2_gboost": {
+     "ba": 0.8446236559139785,
+     "auroc": 0.8471326164874552
+    },
+    "ext_D2_rf": {
+     "ba": 0.628494623655914,
+     "auroc": 0.7111111111111111
+    },
+    "ext_D2_knn": {
+     "ba": 0.628494623655914,
+     "auroc": 0.6922939068100359
+    },
+    "network_decode_gboost": {
+     "ba": 0.8801075268817204,
+     "auroc": 0.9444444444444444
+    },
+    "network_decode_count_rule": {
+     "ba": 0.9338709677419355,
+     "auroc": 0.9338709677419355
+    },
+    "ext_network_decode_rf": {
+     "ba": 0.896236559139785,
+     "auroc": 0.9415770609318996
+    }
+   },
+   "invalid_draws": 2,
+   "criterion_core": "above_threshold",
+   "criterion_ext": "above_threshold",
+   "role": "selected"
+  },
+  {
+   "config": "r4_bucket",
+   "target": "cancel",
+   "view": "dispatch",
+   "prompt": "baseline",
+   "condition": "shape_const",
+   "episodes": 123,
+   "customers": 22,
+   "positive_customers": 5,
+   "positive_tasks": 5,
+   "bytes_ratio": 9.738462219143107,
+   "calls_ratio": 3.8344594594594597,
+   "template_overflow_rate": 0.3821138211382114,
+   "core_ba": 0.5666666666666667,
+   "core_ba_ci95": [
+    0.5,
+    0.6666666666666666
+   ],
+   "core_auroc": 0.5666666666666667,
+   "ext_ba": 0.5666666666666667,
+   "ext_ba_ci95": [
+    0.5208333333333334,
+    0.6666666666666666
+   ],
+   "ext_auroc": 0.6682098765432098,
+   "sign_agnostic_auroc": 0.6682098765432098,
+   "sign_agnostic_auroc_ci95": [
+    0.613046626984127,
+    0.7651926054974835
+   ],
+   "attackers": {
+    "majority": {
+     "ba": 0.5,
+     "auroc": 0.5
+    },
+    "D0_gboost": {
+     "ba": 0.5,
+     "auroc": 0.4046296296296296
+    },
+    "D2_logreg": {
+     "ba": 0.5185185185185185,
+     "auroc": 0.48641975308641977
+    },
+    "D2_gboost": {
+     "ba": 0.4407407407407407,
+     "auroc": 0.4919753086419753
+    },
+    "ext_D2_rf": {
+     "ba": 0.49074074074074076,
+     "auroc": 0.4802469135802469
+    },
+    "ext_D2_knn": {
+     "ba": 0.5240740740740741,
+     "auroc": 0.6682098765432098
+    },
+    "D2_count_rule": {
+     "ba": 0.5666666666666667,
+     "auroc": 0.5666666666666667
+    }
+   },
+   "invalid_draws": 8,
+   "criterion_core": "inconclusive",
+   "criterion_ext": "inconclusive",
+   "role": "selected"
+  },
+  {
+   "config": "r4_bucket",
+   "target": "cancel",
+   "view": "network",
+   "prompt": "baseline",
+   "condition": "shape_const",
+   "episodes": 123,
+   "customers": 22,
+   "positive_customers": 5,
+   "positive_tasks": 5,
+   "bytes_ratio": 9.738462219143107,
+   "calls_ratio": 3.8344594594594597,
+   "template_overflow_rate": 0.3821138211382114,
+   "core_ba": 0.5546296296296296,
+   "core_ba_ci95": [
+    0.5,
+    0.7047727272727272
+   ],
+   "core_auroc": 0.6466049382716049,
+   "ext_ba": 0.5546296296296296,
+   "ext_ba_ci95": [
+    0.5,
+    0.7223675710594315
+   ],
+   "ext_auroc": 0.6466049382716049,
+   "sign_agnostic_auroc": 0.6466049382716049,
+   "sign_agnostic_auroc_ci95": [
+    0.5898570210247842,
+    0.835837542087542
+   ],
+   "attackers": {
+    "majority": {
+     "ba": 0.5,
+     "auroc": 0.5
+    },
+    "D0_gboost": {
+     "ba": 0.5,
+     "auroc": 0.6003086419753086
+    },
+    "D2_logreg": {
+     "ba": 0.5203703703703704,
+     "auroc": 0.5438271604938272
+    },
+    "D2_gboost": {
+     "ba": 0.42777777777777776,
+     "auroc": 0.5592592592592592
+    },
+    "ext_D2_rf": {
+     "ba": 0.4990740740740741,
+     "auroc": 0.5413580246913581
+    },
+    "ext_D2_knn": {
+     "ba": 0.4675925925925926,
+     "auroc": 0.5259259259259259
+    },
+    "network_decode_gboost": {
+     "ba": 0.5546296296296296,
+     "auroc": 0.6466049382716049
+    },
+    "network_decode_count_rule": {
+     "ba": 0.5,
+     "auroc": 0.5
+    },
+    "ext_network_decode_rf": {
+     "ba": 0.5435185185185185,
+     "auroc": 0.6212962962962963
+    }
+   },
+   "invalid_draws": 8,
+   "criterion_core": "inconclusive",
+   "criterion_ext": "inconclusive",
+   "role": "selected"
+  },
+  {
+   "config": "r4_bucket",
+   "target": "return",
+   "view": "dispatch",
+   "prompt": "baseline",
+   "condition": "shape_const",
+   "episodes": 123,
+   "customers": 22,
+   "positive_customers": 7,
+   "positive_tasks": 10,
+   "bytes_ratio": 9.738462219143107,
+   "calls_ratio": 3.8344594594594597,
+   "template_overflow_rate": 0.3821138211382114,
+   "core_ba": 0.5725806451612903,
+   "core_ba_ci95": [
+    0.5,
+    0.6839920033670034
+   ],
+   "core_auroc": 0.6265232974910394,
+   "ext_ba": 0.5725806451612903,
+   "ext_ba_ci95": [
+    0.5,
+    0.6858317669172932
+   ],
+   "ext_auroc": 0.6734767025089605,
+   "sign_agnostic_auroc": 0.7127240143369176,
+   "sign_agnostic_auroc_ci95": [
+    0.6724929628388234,
+    0.8164322718026951
+   ],
+   "attackers": {
+    "majority": {
+     "ba": 0.5,
+     "auroc": 0.5
+    },
+    "D0_gboost": {
+     "ba": 0.5,
+     "auroc": 0.28727598566308243
+    },
+    "D2_logreg": {
+     "ba": 0.5725806451612903,
+     "auroc": 0.6265232974910394
+    },
+    "D2_gboost": {
+     "ba": 0.5370967741935484,
+     "auroc": 0.6007168458781362
+    },
+    "ext_D2_rf": {
+     "ba": 0.4693548387096774,
+     "auroc": 0.560573476702509
+    },
+    "ext_D2_knn": {
+     "ba": 0.5301075268817205,
+     "auroc": 0.6734767025089605
+    },
+    "D2_count_rule": {
+     "ba": 0.5166666666666667,
+     "auroc": 0.5166666666666667
+    }
+   },
+   "invalid_draws": 2,
+   "criterion_core": "inconclusive",
+   "criterion_ext": "inconclusive",
+   "role": "selected"
+  },
+  {
+   "config": "r4_bucket",
+   "target": "return",
+   "view": "network",
+   "prompt": "baseline",
+   "condition": "shape_const",
+   "episodes": 123,
+   "customers": 22,
+   "positive_customers": 7,
+   "positive_tasks": 10,
+   "bytes_ratio": 9.738462219143107,
+   "calls_ratio": 3.8344594594594597,
+   "template_overflow_rate": 0.3821138211382114,
+   "core_ba": 0.5935483870967742,
+   "core_ba_ci95": [
+    0.5218844696969697,
+    0.6926884390119685
+   ],
+   "core_auroc": 0.6437275985663082,
+   "ext_ba": 0.5935483870967742,
+   "ext_ba_ci95": [
+    0.5607758620689655,
+    0.7330970625798212
+   ],
+   "ext_auroc": 0.6437275985663082,
+   "sign_agnostic_auroc": 0.6437275985663082,
+   "sign_agnostic_auroc_ci95": [
+    0.6236436412738496,
+    0.8155718537414967
+   ],
+   "attackers": {
+    "majority": {
+     "ba": 0.5,
+     "auroc": 0.5
+    },
+    "D0_gboost": {
+     "ba": 0.5,
+     "auroc": 0.41792114695340504
+    },
+    "D2_logreg": {
+     "ba": 0.4478494623655914,
+     "auroc": 0.43476702508960574
+    },
+    "D2_gboost": {
+     "ba": 0.5935483870967742,
+     "auroc": 0.6437275985663082
+    },
+    "ext_D2_rf": {
+     "ba": 0.5935483870967742,
+     "auroc": 0.63584229390681
+    },
+    "ext_D2_knn": {
+     "ba": 0.5413978494623656,
+     "auroc": 0.5811827956989247
+    },
+    "network_decode_gboost": {
+     "ba": 0.5150537634408602,
+     "auroc": 0.5259856630824373
+    },
+    "network_decode_count_rule": {
+     "ba": 0.5,
+     "auroc": 0.5
+    },
+    "ext_network_decode_rf": {
+     "ba": 0.5919354838709677,
+     "auroc": 0.6385304659498208
+    }
+   },
+   "invalid_draws": 2,
+   "criterion_core": "inconclusive",
+   "criterion_ext": "inconclusive",
+   "role": "selected"
+  },
+  {
+   "config": "r4_bucket",
+   "target": "cancel",
+   "view": "dispatch",
+   "prompt": "rules",
+   "condition": "raw",
+   "episodes": 123,
+   "customers": 22,
+   "positive_customers": 5,
+   "positive_tasks": 5,
+   "bytes_ratio": 1.0,
+   "calls_ratio": 1.0,
+   "template_overflow_rate": 0.0,
+   "core_ba": 0.9666666666666667,
+   "core_ba_ci95": [
+    0.8888888888888888,
+    1.0
+   ],
+   "core_auroc": 0.9666666666666667,
+   "ext_ba": 0.9666666666666667,
+   "ext_ba_ci95": [
+    0.8888888888888888,
+    1.0
+   ],
+   "ext_auroc": 0.975,
+   "sign_agnostic_auroc": 0.975,
+   "sign_agnostic_auroc_ci95": [
+    0.9253804492291334,
+    1.0
+   ],
+   "attackers": {
+    "majority": {
+     "ba": 0.5,
+     "auroc": 0.5
+    },
+    "D0_gboost": {
+     "ba": 0.9435185185185185,
+     "auroc": 0.9299382716049382
+    },
+    "D2_logreg": {
+     "ba": 0.8722222222222222,
+     "auroc": 0.9317901234567901
+    },
+    "D2_gboost": {
+     "ba": 0.9435185185185185,
+     "auroc": 0.9299382716049382
+    },
+    "ext_D2_rf": {
+     "ba": 0.9574074074074075,
+     "auroc": 0.975
+    },
+    "ext_D2_knn": {
+     "ba": 0.5768518518518518,
+     "auroc": 0.9234567901234568
+    },
+    "D2_count_rule": {
+     "ba": 0.9666666666666667,
+     "auroc": 0.9666666666666667
+    }
+   },
+   "invalid_draws": 8,
+   "criterion_core": "above_threshold",
+   "criterion_ext": "above_threshold",
+   "role": "selected"
+  },
+  {
+   "config": "r4_bucket",
+   "target": "cancel",
+   "view": "network",
+   "prompt": "rules",
+   "condition": "raw",
+   "episodes": 123,
+   "customers": 22,
+   "positive_customers": 5,
+   "positive_tasks": 5,
+   "bytes_ratio": 1.0,
+   "calls_ratio": 1.0,
+   "template_overflow_rate": 0.0,
+   "core_ba": 0.9666666666666667,
+   "core_ba_ci95": [
+    0.8888888888888888,
+    1.0
+   ],
+   "core_auroc": 0.9728395061728395,
+   "ext_ba": 0.9666666666666667,
+   "ext_ba_ci95": [
+    0.8888888888888888,
+    1.0
+   ],
+   "ext_auroc": 0.9907407407407407,
+   "sign_agnostic_auroc": 0.9907407407407407,
+   "sign_agnostic_auroc_ci95": [
+    0.967479674796748,
+    1.0
+   ],
+   "attackers": {
+    "majority": {
+     "ba": 0.5,
+     "auroc": 0.5
+    },
+    "D0_gboost": {
+     "ba": 0.7388888888888889,
+     "auroc": 0.8324074074074074
+    },
+    "D2_logreg": {
+     "ba": 0.8203703703703704,
+     "auroc": 0.8975308641975308
+    },
+    "D2_gboost": {
+     "ba": 0.7388888888888889,
+     "auroc": 0.8324074074074074
+    },
+    "ext_D2_rf": {
+     "ba": 0.6490740740740741,
+     "auroc": 0.6833333333333333
+    },
+    "ext_D2_knn": {
+     "ba": 0.5157407407407407,
+     "auroc": 0.7975308641975308
+    },
+    "network_decode_gboost": {
+     "ba": 0.8527777777777777,
+     "auroc": 0.9728395061728395
+    },
+    "network_decode_count_rule": {
+     "ba": 0.9666666666666667,
+     "auroc": 0.9666666666666667
+    },
+    "ext_network_decode_rf": {
+     "ba": 0.9666666666666667,
+     "auroc": 0.9907407407407407
+    }
+   },
+   "invalid_draws": 8,
+   "criterion_core": "above_threshold",
+   "criterion_ext": "above_threshold",
+   "role": "selected"
+  },
+  {
+   "config": "r4_bucket",
+   "target": "return",
+   "view": "dispatch",
+   "prompt": "rules",
+   "condition": "raw",
+   "episodes": 123,
+   "customers": 22,
+   "positive_customers": 7,
+   "positive_tasks": 10,
+   "bytes_ratio": 1.0,
+   "calls_ratio": 1.0,
+   "template_overflow_rate": 0.0,
+   "core_ba": 0.9666666666666667,
+   "core_ba_ci95": [
+    0.8666666666666667,
+    1.0
+   ],
+   "core_auroc": 0.9666666666666667,
+   "ext_ba": 0.9666666666666667,
+   "ext_ba_ci95": [
+    0.8666666666666667,
+    1.0
+   ],
+   "ext_auroc": 0.9666666666666667,
+   "sign_agnostic_auroc": 0.9666666666666667,
+   "sign_agnostic_auroc_ci95": [
+    0.875,
+    1.0
+   ],
+   "attackers": {
+    "majority": {
+     "ba": 0.5,
+     "auroc": 0.5
+    },
+    "D0_gboost": {
+     "ba": 0.9505376344086022,
+     "auroc": 0.9378136200716846
+    },
+    "D2_logreg": {
+     "ba": 0.8736559139784946,
+     "auroc": 0.9449820788530466
+    },
+    "D2_gboost": {
+     "ba": 0.9505376344086022,
+     "auroc": 0.9378136200716846
+    },
+    "ext_D2_rf": {
+     "ba": 0.9559139784946237,
+     "auroc": 0.9546594982078853
+    },
+    "ext_D2_knn": {
+     "ba": 0.8069892473118279,
+     "auroc": 0.8623655913978494
+    },
+    "D2_count_rule": {
+     "ba": 0.9666666666666667,
+     "auroc": 0.9666666666666667
+    }
+   },
+   "invalid_draws": 2,
+   "criterion_core": "above_threshold",
+   "criterion_ext": "above_threshold",
+   "role": "selected"
+  },
+  {
+   "config": "r4_bucket",
+   "target": "return",
+   "view": "network",
+   "prompt": "rules",
+   "condition": "raw",
+   "episodes": 123,
+   "customers": 22,
+   "positive_customers": 7,
+   "positive_tasks": 10,
+   "bytes_ratio": 1.0,
+   "calls_ratio": 1.0,
+   "template_overflow_rate": 0.0,
+   "core_ba": 0.928494623655914,
+   "core_ba_ci95": [
+    0.8295454545454545,
+    0.9898989898989898
+   ],
+   "core_auroc": 0.928494623655914,
+   "ext_ba": 0.928494623655914,
+   "ext_ba_ci95": [
+    0.8295454545454545,
+    0.9946236559139785
+   ],
+   "ext_auroc": 0.9306451612903226,
+   "sign_agnostic_auroc": 0.9306451612903226,
+   "sign_agnostic_auroc_ci95": [
+    0.8455627705627705,
+    1.0
+   ],
+   "attackers": {
+    "majority": {
+     "ba": 0.5,
+     "auroc": 0.5
+    },
+    "D0_gboost": {
+     "ba": 0.7564516129032258,
+     "auroc": 0.7568100358422939
+    },
+    "D2_logreg": {
+     "ba": 0.7526881720430108,
+     "auroc": 0.8125448028673835
+    },
+    "D2_gboost": {
+     "ba": 0.7564516129032258,
+     "auroc": 0.7568100358422939
+    },
+    "ext_D2_rf": {
+     "ba": 0.6736559139784946,
+     "auroc": 0.6872759856630825
+    },
+    "ext_D2_knn": {
+     "ba": 0.589247311827957,
+     "auroc": 0.6254480286738351
+    },
+    "network_decode_gboost": {
+     "ba": 0.8801075268817204,
+     "auroc": 0.9152329749103942
+    },
+    "network_decode_count_rule": {
+     "ba": 0.928494623655914,
+     "auroc": 0.928494623655914
+    },
+    "ext_network_decode_rf": {
+     "ba": 0.9231182795698925,
+     "auroc": 0.9306451612903226
+    }
+   },
+   "invalid_draws": 2,
+   "criterion_core": "above_threshold",
+   "criterion_ext": "above_threshold",
+   "role": "selected"
+  },
+  {
+   "config": "r4_bucket",
+   "target": "cancel",
+   "view": "dispatch",
+   "prompt": "rules",
+   "condition": "shape_const",
+   "episodes": 123,
+   "customers": 22,
+   "positive_customers": 5,
+   "positive_tasks": 5,
+   "bytes_ratio": 9.975746202677135,
+   "calls_ratio": 3.898169336384439,
+   "template_overflow_rate": 0.45528455284552843,
+   "core_ba": 0.5583333333333333,
+   "core_ba_ci95": [
+    0.5,
+    0.7160042735042734
+   ],
+   "core_auroc": 0.6296296296296297,
+   "ext_ba": 0.5583333333333333,
+   "ext_ba_ci95": [
+    0.5,
+    0.7160042735042734
+   ],
+   "ext_auroc": 0.6296296296296297,
+   "sign_agnostic_auroc": 0.6296296296296297,
+   "sign_agnostic_auroc_ci95": [
+    0.5736364152142339,
+    0.9075810185185185
+   ],
+   "attackers": {
+    "majority": {
+     "ba": 0.5,
+     "auroc": 0.5
+    },
+    "D0_gboost": {
+     "ba": 0.5,
+     "auroc": 0.45401234567901233
+    },
+    "D2_logreg": {
+     "ba": 0.5175925925925926,
+     "auroc": 0.5450617283950617
+    },
+    "D2_gboost": {
+     "ba": 0.5583333333333333,
+     "auroc": 0.6296296296296297
+    },
+    "ext_D2_rf": {
+     "ba": 0.5435185185185185,
+     "auroc": 0.5487654320987654
+    },
+    "ext_D2_knn": {
+     "ba": 0.5,
+     "auroc": 0.4382716049382716
+    },
+    "D2_count_rule": {
+     "ba": 0.5,
+     "auroc": 0.5
+    }
+   },
+   "invalid_draws": 8,
+   "criterion_core": "inconclusive",
+   "criterion_ext": "inconclusive",
+   "role": "selected"
+  },
+  {
+   "config": "r4_bucket",
+   "target": "cancel",
+   "view": "network",
+   "prompt": "rules",
+   "condition": "shape_const",
+   "episodes": 123,
+   "customers": 22,
+   "positive_customers": 5,
+   "positive_tasks": 5,
+   "bytes_ratio": 9.975746202677135,
+   "calls_ratio": 3.898169336384439,
+   "template_overflow_rate": 0.45528455284552843,
+   "core_ba": 0.6342592592592593,
+   "core_ba_ci95": [
+    0.5126791076791076,
+    0.7888104407359862
+   ],
+   "core_auroc": 0.5743827160493827,
+   "ext_ba": 0.6342592592592593,
+   "ext_ba_ci95": [
+    0.5130376956984344,
+    0.81633547008547
+   ],
+   "ext_auroc": 0.6101851851851852,
+   "sign_agnostic_auroc": 0.6101851851851852,
+   "sign_agnostic_auroc_ci95": [
+    0.57515639589169,
+    0.8772490530303029
+   ],
+   "attackers": {
+    "majority": {
+     "ba": 0.5,
+     "auroc": 0.5
+    },
+    "D0_gboost": {
+     "ba": 0.5,
+     "auroc": 0.5271604938271605
+    },
+    "D2_logreg": {
+     "ba": 0.42592592592592593,
+     "auroc": 0.3925925925925926
+    },
+    "D2_gboost": {
+     "ba": 0.475925925925926,
+     "auroc": 0.4666666666666667
+    },
+    "ext_D2_rf": {
+     "ba": 0.5240740740740741,
+     "auroc": 0.4759259259259259
+    },
+    "ext_D2_knn": {
+     "ba": 0.5101851851851852,
+     "auroc": 0.44814814814814813
+    },
+    "network_decode_gboost": {
+     "ba": 0.6342592592592593,
+     "auroc": 0.5743827160493827
+    },
+    "network_decode_count_rule": {
+     "ba": 0.5,
+     "auroc": 0.5
+    },
+    "ext_network_decode_rf": {
+     "ba": 0.624074074074074,
+     "auroc": 0.6101851851851852
+    }
+   },
+   "invalid_draws": 8,
+   "criterion_core": "inconclusive",
+   "criterion_ext": "inconclusive",
+   "role": "selected"
+  },
+  {
+   "config": "r4_bucket",
+   "target": "return",
+   "view": "dispatch",
+   "prompt": "rules",
+   "condition": "shape_const",
+   "episodes": 123,
+   "customers": 22,
+   "positive_customers": 7,
+   "positive_tasks": 10,
+   "bytes_ratio": 9.975746202677135,
+   "calls_ratio": 3.898169336384439,
+   "template_overflow_rate": 0.45528455284552843,
+   "core_ba": 0.6526881720430108,
+   "core_ba_ci95": [
+    0.5333333333333333,
+    0.7777777777777777
+   ],
+   "core_auroc": 0.7172043010752688,
+   "ext_ba": 0.6526881720430108,
+   "ext_ba_ci95": [
+    0.5333333333333333,
+    0.7777777777777777
+   ],
+   "ext_auroc": 0.7172043010752688,
+   "sign_agnostic_auroc": 0.7994623655913978,
+   "sign_agnostic_auroc_ci95": [
+    0.6642693744164333,
+    0.9026369724025974
+   ],
+   "attackers": {
+    "majority": {
+     "ba": 0.5,
+     "auroc": 0.5
+    },
+    "D0_gboost": {
+     "ba": 0.5,
+     "auroc": 0.20053763440860214
+    },
+    "D2_logreg": {
+     "ba": 0.6526881720430108,
+     "auroc": 0.7172043010752688
+    },
+    "D2_gboost": {
+     "ba": 0.5311827956989247,
+     "auroc": 0.5827956989247312
+    },
+    "ext_D2_rf": {
+     "ba": 0.5080645161290323,
+     "auroc": 0.5254480286738351
+    },
+    "ext_D2_knn": {
+     "ba": 0.5844086021505376,
+     "auroc": 0.6810035842293907
+    },
+    "D2_count_rule": {
+     "ba": 0.5166666666666667,
+     "auroc": 0.5166666666666667
+    }
+   },
+   "invalid_draws": 2,
+   "criterion_core": "inconclusive",
+   "criterion_ext": "inconclusive",
+   "role": "selected"
+  },
+  {
+   "config": "r4_bucket",
+   "target": "return",
+   "view": "network",
+   "prompt": "rules",
+   "condition": "shape_const",
+   "episodes": 123,
+   "customers": 22,
+   "positive_customers": 7,
+   "positive_tasks": 10,
+   "bytes_ratio": 9.975746202677135,
+   "calls_ratio": 3.898169336384439,
+   "template_overflow_rate": 0.45528455284552843,
+   "core_ba": 0.5682795698924732,
+   "core_ba_ci95": [
+    0.5,
+    0.6956488648090816
+   ],
+   "core_auroc": 0.5793906810035843,
+   "ext_ba": 0.5844086021505377,
+   "ext_ba_ci95": [
+    0.5250370125370125,
+    0.7166666666666666
+   ],
+   "ext_auroc": 0.6198924731182796,
+   "sign_agnostic_auroc": 0.6532258064516129,
+   "sign_agnostic_auroc_ci95": [
+    0.5918461328976035,
+    0.8072128041031228
+   ],
+   "attackers": {
+    "majority": {
+     "ba": 0.5,
+     "auroc": 0.5
+    },
+    "D0_gboost": {
+     "ba": 0.5,
+     "auroc": 0.3467741935483871
+    },
+    "D2_logreg": {
+     "ba": 0.5247311827956989,
+     "auroc": 0.5473118279569893
+    },
+    "D2_gboost": {
+     "ba": 0.4790322580645161,
+     "auroc": 0.492831541218638
+    },
+    "ext_D2_rf": {
+     "ba": 0.5387096774193548,
+     "auroc": 0.4917562724014337
+    },
+    "ext_D2_knn": {
+     "ba": 0.47419354838709676,
+     "auroc": 0.5616487455197132
+    },
+    "network_decode_gboost": {
+     "ba": 0.5682795698924732,
+     "auroc": 0.5793906810035843
+    },
+    "network_decode_count_rule": {
+     "ba": 0.5,
+     "auroc": 0.5
+    },
+    "ext_network_decode_rf": {
+     "ba": 0.5844086021505377,
+     "auroc": 0.6198924731182796
+    }
+   },
+   "invalid_draws": 2,
+   "criterion_core": "inconclusive",
+   "criterion_ext": "inconclusive",
+   "role": "selected"
+  }
+ ],
+ "scope": "Frozen R4 split: calibration on 414 training episodes, single evaluation on 246 held-out episodes."
+}

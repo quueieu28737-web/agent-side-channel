@@ -1,6 +1,6 @@
 # 完整 690 次真实 Agent 实验与 SoK 主文结构修订版
 
-当前论文：`pdf/main.pdf`、`pdf/supplement.pdf`；源文件在 `manuscript/`。正文截至第 13 页，References 从第 13 页开始，附录在第 17 页，全文 17 页；补充材料 24 页。E9 使用完整 414 训练＋276 测试。当前修订来源与检查在 `provenance/sok-restructure/`；`provenance/main-690/` 保留上一轮文稿版本的记录。
+当前论文：`pdf/main.pdf`、`pdf/supplement.pdf`；源文件在 `manuscript/`。正文截至第 13 页，References 从第 13 页开始，附录在第 16 页，全文 16 页；补充材料 27 页。E9 使用完整 414 训练＋276 测试。当前修订来源与检查在 `provenance/sok-restructure/`；`provenance/main-690/` 保留上一轮文稿版本的记录。
 
 主文 Table 5 显示全部 58 个核心研究族的生成层、观察层及威胁类型；Table 8 显示 20 个防御族的全部 180 个 R1–R9 审计单元。符号区分绑定、部分、未报告、未核实和不适用。检索对账表与 24 场景混淆矩阵已移到补充材料。`artifact-index.json` 将 Appendix A 中的四个逻辑模块映射到实际归档文件；保留物理目录及旧数据以保障可追溯性。
 
@@ -10,7 +10,7 @@
 
 - 基线网络取消/退货 BA 为 **97.2% / 94.0%**。
 - 仅训练集校准的在线 shadow cover + 恒定分帧降低 **47.2 / 44.0 个百分点**至 **50.0% / 50.0%**；成本 **15.39× 字节、3.83× 调用**。
-- 规则 prompt 将测得合规率提高到 **97.1%**，但网络 BA 仍为 **97.2% / 93.5%**。
+- 规则 prompt 将机械规则遵循度提高到 **97.1%**，但网络 BA 仍为 **97.2% / 93.5%**。
 - 主表加入 padding-only 与 shape-only 消融；S14 给出全部区间、资源成本和配对 prompt 差异。
 - 新增事后配对程序差值：联合减原始的 BA 为 −47.2 [−50.0, −33.3] 和 −44.0 [−48.9, −27.8] 个百分点。使用原 2,000 次共同客户簇抽样，每次重新取两种条件的攻击套件最大值。原绝对阈值及原始结果不变。
 
@@ -43,3 +43,10 @@ python -B experiments/sp2027-r4-full-20261023/reproduce.py --reanalyze
 前四项为文件、来源和文稿一致性检查；文稿检查另需 pypdf。后两项核对决策和评分、重建完整队列并运行冻结分析。新增配对差值由 `python -B provenance/sok-restructure/analyze_paired.py` 复算；两份表格生成器接受 `--check` 做只读比对。实验复算环境为 Python 3.12、numpy 2.5.4、scikit-learn 1.9.0，详见实验 README。全部命令均不发起模型请求。旧 `provenance/main-690/verify_manuscript.py` 对应提交 `f0fb3d2` 的历史布局，不用于当前稿件。
 
 在 `manuscript/` 中，对 main、supplement 分别运行 pdflatex、bibtex、pdflatex 两次。IEEEtran 1.8b conference,compsoc；最新 PDF 与编译日志随包交付。
+
+
+## 已合并的 R5 与当前统计补充
+
+`experiments/sp2027-r5-crossfit/` 保留远端已发布的交叉拟合、六点前沿、训练内选点和写调用定位数据。当前主文 §8.5 / Table 12 及补充 S15 引用这些结果；其 README 与 `REVISION-R5.md` 保留历史写作记录，当前范围和解释以本文及 `provenance/sok-restructure/` 为准。
+
+新增 S16 的 32 格任务置换参考由 `provenance/sok-restructure/conditional_null.py` 生成，`--check` 可作确定性重算核对；它不替代原客户簇区间或阈值。R5 再验证收据在 `r5-reverification.json`，表格可用 `verify_r5_tables.py` 重新生成比对。

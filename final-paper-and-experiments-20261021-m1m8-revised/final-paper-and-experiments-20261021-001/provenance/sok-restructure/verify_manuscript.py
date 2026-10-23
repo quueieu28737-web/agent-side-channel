@@ -31,7 +31,7 @@ def sha(path):
 
 
 def main():
-    for script in ('build_sok_tables.py', 'build_e9_tables.py'):
+    for script in ('build_sok_tables.py', 'build_e9_tables.py', 'build_null_table.py', 'verify_r5_tables.py'):
         subprocess.run([sys.executable, '-B', str(HERE / script), '--check'], check=True)
     prior = read(HERE / 'prior-package-manifest.json')['files']
     kept = [n for n in prior if n.startswith(('evidence/', 'experiments/', 'provenance/main-690/'))
@@ -43,6 +43,16 @@ def main():
     assert full['status'] == 'VERIFIED' and full['episodes'] == 690
     assert read(F / 'extension_validation.json')['status'] == 'FULL_COHORT_EXTENSION_VERIFIED'
     assert read(F / 'reproduction_validation.json')['status'] == 'FROZEN_FULL_VERIFIER_REPRODUCED'
+    upstream = read(HERE / 'upstream-r5.json')
+    for name, value in upstream['files'].items():
+        assert sha(P / name) == value, ('Upstream R5 data changed', name)
+    renewed = read(HERE / 'r5-reverification.json')
+    assert renewed == read(P / 'experiments/sp2027-r5-crossfit/validation_r5.json')
+    assert renewed['fresh_socket_captures_match_model'] == 120
+    null = read(HERE / 'conditional_null_results.json')
+    assert null['status'] == 'CONDITIONAL_TASK_PERMUTATION_REFERENCE_PASS'
+    assert len(null['cells']) == 32 and null['permutations'] == 2000
+    assert null['source_predictions_sha256'] == sha(F / 'predictions.json')
     paired = read(HERE / 'paired_program_results.json')
     assert paired['status'] == 'PAIRED_PROGRAM_CONTRAST_AND_PROJECTION_CHECK_PASS'
     assert paired['projection_check']['episodes'] == 690
@@ -107,6 +117,9 @@ def main():
             assert abs(float(page.mediabox.width) - 612) < 1
             assert abs(float(page.mediabox.height) - 792) < 1
         texts = [p.extract_text() for p in doc.pages]
+        searchable = (str(doc.metadata) + '\n'.join(texts)).lower()
+        for identity in ('quueieu28737', 'administrator', 'c:/users/', 'c:\\users\\', '@gmail.com'):
+            assert identity not in searchable, ('Local identity string in PDF', name, identity)
         if name == 'main':
             refs = next(i + 1 for i, t in enumerate(texts) if re.search(r'(?m)^References\s*$', t))
             app = next(i + 1 for i, t in enumerate(texts) if 'Appendix A.' in t)
@@ -122,7 +135,7 @@ def main():
             log = (P / folder / (name + '.log')).read_text(errors='replace')
             for bad in ('undefined references', 'undefined on input line', 'multiply defined', 'Overfull', 'Float too large'):
                 assert bad not in log, (name, bad)
-    assert pages['main'] == 17 and pages['supplement'] == 24
+    assert pages['main'] == 16 and pages['supplement'] == 27
     visual = read(HERE / 'visual_qa.json')
     assert visual['status'] == 'RENDERED_PAGES_INSPECTED'
     assert visual['pdf_sha256'] == hashes
@@ -133,6 +146,11 @@ def main():
         'original_validation_sha256': sha(F / 'validation.json'),
         'prior_verified_reproduction_sha256': sha(F / 'reproduction_validation.json'),
         'paired_program_analysis_sha256': sha(HERE / 'paired_program_results.json'),
+        'merged_upstream_commit': upstream['remote_commit'],
+        'upstream_r5_files_preserved': len(upstream['files']),
+        'upstream_r5_reverification_sha256': sha(HERE / 'r5-reverification.json'),
+        'conditional_reference_cells': 32,
+        'pdf_known_local_identity_scan': 'No configured local identity strings in extracted text or PDF metadata; this is not an audit of public repository history.',
         'preserved_data_bibliography_and_previous_provenance_files': len(kept),
         'core_families': 58, 'audit_families': 20, 'audit_cells': 180,
         'resolved_artifact_paths': len(paths),
