@@ -1,0 +1,439 @@
+diff --git a/final-paper-and-experiments-20261021-m1m8-revised/final-paper-and-experiments-20261021-001/manuscript/main.tex b/final-paper-and-experiments-20261021-m1m8-revised/final-paper-and-experiments-20261021-001/manuscript/main.tex
+index 64034cc..e432e9a 100644
+--- a/final-paper-and-experiments-20261021-m1m8-revised/final-paper-and-experiments-20261021-001/manuscript/main.tex
++++ b/final-paper-and-experiments-20261021-m1m8-revised/final-paper-and-experiments-20261021-001/manuscript/main.tex
+@@ -32,7 +32,7 @@
+   }\par\smallskip
+ }
+ \newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+-\newcommand{\auditpartial}{\tikz[baseline=-.5ex]{\fill (0,0) -- (0,.5ex) arc (90:270:.5ex) -- cycle;\draw[line width=.3pt] (0,0) circle (.5ex);}}
++\newcommand{\auditpartial}{\textbf{P}}
+ \input{tables/final-counts}
+ 
+ \title{SoK: Evaluating LLM and Agent Side-Channel Defenses\\From Evidence Audits to Real-Agent Measurements}
+diff --git a/final-paper-and-experiments-20261021-m1m8-revised/final-paper-and-experiments-20261021-001/manuscript/sections/03-methodology.tex b/final-paper-and-experiments-20261021-m1m8-revised/final-paper-and-experiments-20261021-001/manuscript/sections/03-methodology.tex
+index f407fbe..16947f7 100644
+--- a/final-paper-and-experiments-20261021-m1m8-revised/final-paper-and-experiments-20261021-001/manuscript/sections/03-methodology.tex
++++ b/final-paper-and-experiments-20261021-m1m8-revised/final-paper-and-experiments-20261021-001/manuscript/sections/03-methodology.tex
+@@ -17,6 +17,6 @@ We use four narrative groupings of objectives and observer roles, not mutually e
+ We construct a purposive corpus through 40 seeds, venue-targeted proceedings screening and one-hop citation snowballing, supplemented by native database and bulk keyword searches. The completed supplementary search returned 615 occurrences and 565 unique records; an enriched audit of 204 exclusions rerouted four records, yielding 15 new core and seven adjacent families. The resulting collection contains \FinalCore{} core and \FinalAdjacent{} adjacent families; Table~\ref{tab:core-family-map} maps every core family to its signal and observer layers and threat roles. The query set overlaps 17/24 selected seed papers and 25/60 earlier indexed families, motivating complementary discovery routes; full queries, exclusion accounting and version reconciliation are in Supplement S1/S10.
+ 
+ \subsection{Coding procedure and consistency}
+-The archived coding record contains an initial AI-assisted extraction and a subsequent review pass. Recorded agreement is 93/100 screening decisions ($\kappa=0.886$), 134/144 audit cells across 16 families ($\kappa=0.876$), and 141/150 judgments in 50 record pairs ($\kappa=0.916$). The four additional mitigation families contribute 36 further cells outside that agreement sample. Supplement S8 preserves the coding columns, disagreement summaries and descriptive intervals; Section~\ref{sec:agenda} states the validation scope.
++AI assistance produced initial schema-guided field drafts. Authors checked and corrected all 39 result records and 180 audit cells against source section/table/figure/paragraph locators, and reviewed all 82 family classifications using titles, abstracts and experimental sections. These version-bound locators make the evidence inspectable. Agreement compares the archived initial extraction and subsequent author-verification columns: 93/100 screening decisions ($\kappa=0.886$), 134/144 audit cells ($\kappa=0.876$) and 141/150 pair judgments ($\kappa=0.916$). These are extraction--verification agreement statistics, not independent human inter-rater reliability. The 36 cells from four added families are author-verified but outside that agreement sample. S8/S18 give the column provenance and final resolved labels.
+ 
+ \soktakeaway{SoK Takeaway 1 (Map evidence to the receiving deployment)}{A family-level label does not identify which signal, observer permission or protected objective a result supports. The complete core map separates signal origin from receiving access; the result ledger then binds each comparison to a source version and operating point.}
+diff --git a/final-paper-and-experiments-20261021-m1m8-revised/final-paper-and-experiments-20261021-001/manuscript/sections/04-scope.tex b/final-paper-and-experiments-20261021-m1m8-revised/final-paper-and-experiments-20261021-001/manuscript/sections/04-scope.tex
+index e8cc6b3..4d9347b 100644
+--- a/final-paper-and-experiments-20261021-m1m8-revised/final-paper-and-experiments-20261021-001/manuscript/sections/04-scope.tex
++++ b/final-paper-and-experiments-20261021-m1m8-revised/final-paper-and-experiments-20261021-001/manuscript/sections/04-scope.tex
+@@ -9,4 +9,4 @@ The mnemonic \scope{} (Secret/target, Channel, Observer, Pipeline, Exploitation
+ 
+ 
+ \paragraph{Rule-application consistency check}
+-We exercise the comparison rules on 24 author-constructed cases spanning seven Compatible, twelve Incompatible and five Unresolved judgments. The two recorded coding columns match the case labels on 23/24 and 22/24 cases and agree on 21/24 ($\kappa=0.795$). This check documents how the rules resolve aligned results, explicit boundary conflicts and missing bindings; case-level outcomes and confusion matrices are in Supplement S7. The indexing exercise in S7 separately tests retrieval through the evidence schema.
++We exercise the comparison rules on 24 author-constructed cases spanning seven Compatible, twelve Incompatible and five Unresolved judgments. The two recorded coding columns match the case labels on 23/24 and 22/24 cases and agree on 21/24 ($\kappa=0.795$). These construction-time examples check rule application, without estimating accuracy on independently sampled cases; case-level outcomes and confusion matrices are in Supplement S7. The indexing exercise in S7 separately tests retrieval through the evidence schema.
+diff --git a/final-paper-and-experiments-20261021-m1m8-revised/final-paper-and-experiments-20261021-001/manuscript/sections/10-open-challenges.tex b/final-paper-and-experiments-20261021-m1m8-revised/final-paper-and-experiments-20261021-001/manuscript/sections/10-open-challenges.tex
+index 8ddad1a..3b3ff7b 100644
+--- a/final-paper-and-experiments-20261021-m1m8-revised/final-paper-and-experiments-20261021-001/manuscript/sections/10-open-challenges.tex
++++ b/final-paper-and-experiments-20261021-m1m8-revised/final-paper-and-experiments-20261021-001/manuscript/sections/10-open-challenges.tex
+@@ -10,6 +10,6 @@ Tool executions and traffic captures use cloned public benchmark databases and l
+ The artifact preserves sources, raw observations, structured model decisions, frozen calibration and executable checks. AI-assisted implementation and manuscript revision do not constitute independent validation. The paper distinguishes saved-output replays, real model-generated trajectories and local TLS measurement.
+ 
+ \subsection{Threats to validity}
+-The purposive corpus and query overlaps do not estimate field-wide recall. Coding agreement and the 24-case rule-application check characterize the archived annotation workflow. Independent recoding, held-out comparisons with simpler review procedures, and independent screening of the 617-record second search remain follow-up validation targets.
++The purposive corpus and query overlaps do not estimate field-wide recall. Source-bound author verification supports inspectability; the two-stage agreement statistics do not measure independent human reliability. Standardized blind recoding sheets and an adjudication protocol are provided for community replication. The 24 constructed cases test rule application, not external decision accuracy; independently sampled cases and simpler-review baselines remain useful validation targets.
+ 
+-E5 uses 48 saved outputs and a proxy tokenizer; E6/E7 use reference programs with known-population calibration. E9--E12 cover one public retail environment and one mutable model alias, also used for user simulation; earlier development had access to all 115 tasks. Cross-fitting expands customer coverage within the same population, and intervals condition on fitted attackers. Program conditions reuse trajectories, so equal reward is structural. External replication, broader model/environment transfer, provider-traffic measurement and interactive latency/feedback effects are the next evaluation targets.
++E5 uses 48 saved outputs and a proxy tokenizer; E6/E7 use reference programs with known-population calibration. E9--E12 cover one public retail environment and one mutable model alias, also used for user simulation; earlier development had access to all 115 tasks. Cross-fitting expands customer coverage within the same population, and intervals condition on fitted attackers. Program conditions reuse trajectories, so equal reward is structural. The 3.8--5.0$\times$ call counts are resource ratios, not latency measurements. Serial cover can delay interaction; concurrent cover can expose bursts. S18 specifies joint size/timing attacks, flush segmentation and end-to-end latency measurements needed to evaluate this boundary. External replication and broader model/environment transfer remain open.
+diff --git a/final-paper-and-experiments-20261021-m1m8-revised/final-paper-and-experiments-20261021-001/manuscript/sections/27-intervention-contracts.tex b/final-paper-and-experiments-20261021-m1m8-revised/final-paper-and-experiments-20261021-001/manuscript/sections/27-intervention-contracts.tex
+index 55aa4a0..dd731f0 100644
+--- a/final-paper-and-experiments-20261021-m1m8-revised/final-paper-and-experiments-20261021-001/manuscript/sections/27-intervention-contracts.tex
++++ b/final-paper-and-experiments-20261021-m1m8-revised/final-paper-and-experiments-20261021-001/manuscript/sections/27-intervention-contracts.tex
+@@ -1,6 +1,6 @@
+ \section{Comparability Audit Across All 58 Core Families}\label{sec:defenses}
+ \subsection{Unified 58-core disposition and 39-record ledger}
+-Across the \FinalCore{} core families, 20 evaluate mitigation components, two use fixed guardrails, five evaluate interventions for other objectives or split-decoy boundaries, 22 report no mitigation evaluation within the inspected scope, five supply authorized diagnostics, and four contain unbound quantitative defense assertions. The mitigation families and contextual comparators contribute 39 scoped result records from 26 families, with 78 utility/cost field positions. Table~\ref{tab:defense-types} organizes intervention mechanisms; Table~\ref{tab:family-audit} exposes the evidence bindings of every mitigation family.
++The corpus partitions as $82=58$ core $+24$ adjacent families. Within the core, $58=20$ mitigation $+6$ contextual-record $+32$ map-only families; the result ledger contains $39=33+6$ records, respectively, from the first two groups. The six are SIGLEAK, AgentTell, FP-Agent, Behind Bars, LLMs Have Rhythm and ML privacy channels \cite{geng2026sigleak,shahriar2026agenttell,wang2026fpagent,gu2026behindbars,alhazbi2025rhythm,debenedetti2024privacy}. They supply fixed-guardrail, access-control, interference, VPN or filter-origin contrasts rather than the audited mitigation claim. The remaining 32 comprise 22 without a scoped mitigation evaluation, five diagnostics, four unbound assertions and SplitDecoy's boundary case. S18 maps every family and record. Table~\ref{tab:defense-types} groups mechanisms; Table~\ref{tab:family-audit} reports the 20-family audit.
+ \input{tables/defense-types}
+ 
+ \subsection{Within-family and within-cohort record comparisons}
+diff --git a/final-paper-and-experiments-20261021-m1m8-revised/final-paper-and-experiments-20261021-001/manuscript/sections/31-result-audit.tex b/final-paper-and-experiments-20261021-m1m8-revised/final-paper-and-experiments-20261021-001/manuscript/sections/31-result-audit.tex
+index 8586754..e54c310 100644
+--- a/final-paper-and-experiments-20261021-m1m8-revised/final-paper-and-experiments-20261021-001/manuscript/sections/31-result-audit.tex
++++ b/final-paper-and-experiments-20261021-m1m8-revised/final-paper-and-experiments-20261021-001/manuscript/sections/31-result-audit.tex
+@@ -1,23 +1,23 @@
+-\section{Result-Pair Comparability, Nine-Item Split Audit and Dual-Coding}\label{app:result-audit}
+-This audit applies the paper's comparison rules to the 33 result records across 22 families (and the nine-item split reporting checklist to the 16 baseline and 4 newly added evaluated-mitigation families). The supplied second-coder columns are retained for agreement analysis; coder independence and blinding are not verified by these files (\path{experiments/revision-m1-m8/}).
+-
+-\subsection{Within-family and within-cohort pairwise comparability}
+-While the machine-readable inventory retains all $\binom{33}{2}=528$ unordered pairs for completeness, 426 pairs cross unrelated mechanism cohorts and are outside scope by definition. Table~\ref{tab:pair-descriptive} summarizes two nested informative subsets (the 13 are included in the 102): the \textbf{13 within-family pairs} and the \textbf{102 within-cohort related pairs} (traffic-envelope: 66; cache-service: 28; behavioral humanization: 3; generator fingerprint: 3; local-memory: 1; fixed guardrail: 1).
+-
+-\begin{table}[t]\centering\footnotesize
+-\caption{Descriptive comparability within the 13 same-family pairs and 102 related-cohort pairs. Supplied two-column coding over 50 pairs (150 judgments) reached 94.0\% agreement ($\kappa=0.916$).}\label{tab:pair-descriptive}
+-\begin{tabularx}{\columnwidth}{@{}Yrrr@{}}\toprule
+-Subset & Compatible & Incompatible & Unresolved\\\midrule
+-Same family ($n=13$) &7 (53.8\%)&6 (46.2\%)&0\\
+-Related cohort ($n=102$) &16 (15.7\%)&80 (78.4\%)&6 (5.9\%)\\\bottomrule
+-\end{tabularx}\end{table}
+-
+-Within the 13 same-family pairs, seven compare aligned outcomes and six substitute different primitives or cost objects. Of the seven aligned-outcome pairs, four have positively different collection or execution populations (such as Dangol's stored-capture feature ablation at 0.17 accuracy versus live loopback OHTTP at 0.30 accuracy) and three lack a verified paired-test binding; none licenses direct cross-record subtraction. Across the 50 dual-coded pairs (all 13 same-family pairs plus 37 stratified related-cohort pairs = 150 judgments across descriptive, paired-effect and transfer rules), recorded two-column agreement is \textbf{94.0\% (141/150)} with \textbf{Cohen's $\kappa=0.916$} (95\% bootstrap CI $[0.856,0.963]$; \path{m7_dual_coding_pairs.csv}).
+-
+-\subsection{Nine-item split reporting audit and supplied coding records}
+-Table~\ref{tab:six-check-audit} uses R4 for defended fitting, R5 for a matched adaptation contrast, R7 for inference, R8 for utility and R9 for cost across both the 16 original evaluated-mitigation families (144 cells) and the 20 total evaluated-mitigation families (including \texttt{wu2026cacheprune}, \texttt{lee2026otro}, \texttt{chen2026sparleak} and \texttt{hadad2026shape}; 180 cells).
+-\input{tables/six-check-audit}
+-
+-Across the 144 baseline cells, supplied two-column coding (\path{m7_dual_coding_checks.csv}) reached \textbf{93.1\% raw agreement (134/144)} and \textbf{Cohen's $\kappa=0.876$} (95\% bootstrap CI $[0.798,0.943]$). All 10 pre-adjudication differences occurred across adjacent \emph{Partial} versus \emph{Bound}/\NRR{}/\NRV{} boundaries (e.g., whether AHB's verified refit code without Table~1 run provenance is \emph{Partial} or \NRV{} on R4, and whether WRA's separate Table~11 visibility utility is \emph{Partial} or \NRR{} on R8). Full cell-by-cell rationales and source locators are preserved in \path{m6_split_checks.csv} and \path{m7_dual_coding_checks.csv}.
+-
+-The current \path{combined_result_records.json} makes the six expansion records explicit alongside the 33 preserved baseline records: 39 records from 26 distinct families, while the reporting audit covers 20 mitigation families. The six additions are recordizations of the supplied source-bound extraction, not a new independent coding pass.
++\section{Result-Pair Comparability, Nine-Item Split Audit and Two-Stage Agreement}\label{app:result-audit}
++This audit applies the paper's comparison rules to the 33 result records across 22 families (and the nine-item split reporting checklist to the 16 baseline and 4 newly added evaluated-mitigation families). The archived initial extraction and author-verification columns support two-stage agreement analysis; S18 records their provenance and separates them from final resolved labels (\path{experiments/revision-m1-m8/}).
++
++\subsection{Within-family and within-cohort pairwise comparability}
++While the machine-readable inventory retains all $\binom{33}{2}=528$ unordered pairs for completeness, 426 pairs cross unrelated mechanism cohorts and are outside scope by definition. Table~\ref{tab:pair-descriptive} summarizes two nested informative subsets (the 13 are included in the 102): the \textbf{13 within-family pairs} and the \textbf{102 within-cohort related pairs} (traffic-envelope: 66; cache-service: 28; behavioral humanization: 3; generator fingerprint: 3; local-memory: 1; fixed guardrail: 1).
++
++\begin{table}[t]\centering\footnotesize
++\caption{Descriptive comparability within the 13 same-family pairs and 102 related-cohort pairs. Supplied two-column coding over 50 pairs (150 judgments) reached 94.0\% agreement ($\kappa=0.916$).}\label{tab:pair-descriptive}
++\begin{tabularx}{\columnwidth}{@{}Yrrr@{}}\toprule
++Subset & Compatible & Incompatible & Unresolved\\\midrule
++Same family ($n=13$) &7 (53.8\%)&6 (46.2\%)&0\\
++Related cohort ($n=102$) &16 (15.7\%)&80 (78.4\%)&6 (5.9\%)\\\bottomrule
++\end{tabularx}\end{table}
++
++Within the 13 same-family pairs, seven compare aligned outcomes and six substitute different primitives or cost objects. Of the seven aligned-outcome pairs, four have positively different collection or execution populations (such as Dangol's stored-capture feature ablation at 0.17 accuracy versus live loopback OHTTP at 0.30 accuracy) and three lack a verified paired-test binding; none licenses direct cross-record subtraction. Across the 50 pairs with both extraction and verification labels (all 13 same-family pairs plus 37 stratified related-cohort pairs = 150 judgments across descriptive, paired-effect and transfer rules), recorded two-column agreement is \textbf{94.0\% (141/150)} with \textbf{Cohen's $\kappa=0.916$} (95\% bootstrap CI $[0.856,0.963]$; \path{m7_dual_coding_pairs.csv}).
++
++\subsection{Nine-item split reporting audit and supplied coding records}
++Table~\ref{tab:six-check-audit} uses R4 for defended fitting, R5 for a matched adaptation contrast, R7 for inference, R8 for utility and R9 for cost across both the 16 original evaluated-mitigation families (144 cells) and the 20 total evaluated-mitigation families (including \texttt{wu2026cacheprune}, \texttt{lee2026otro}, \texttt{chen2026sparleak} and \texttt{hadad2026shape}; 180 cells).
++\input{tables/six-check-audit}
++
++Across the 144 baseline cells, supplied two-column coding (\path{m7_dual_coding_checks.csv}) reached \textbf{93.1\% raw agreement (134/144)} and \textbf{Cohen's $\kappa=0.876$} (95\% bootstrap CI $[0.798,0.943]$). All 10 pre-adjudication differences occurred across adjacent \emph{Partial} versus \emph{Bound}/\NRR{}/\NRV{} boundaries (e.g., whether AHB's verified refit code without Table~1 run provenance is \emph{Partial} or \NRV{} on R4, and whether WRA's separate Table~11 visibility utility is \emph{Partial} or \NRR{} on R8). Full cell-by-cell rationales and source locators are preserved in \path{m6_split_checks.csv} and \path{m7_dual_coding_checks.csv}.
++
++The current \path{combined_result_records.json} makes the six expansion records explicit alongside the 33 preserved baseline records: 39 records from 26 distinct families, while the reporting audit covers 20 mitigation families. The six additions are recordizations of the supplied source-bound extraction, not a new independent coding pass.
+diff --git a/final-paper-and-experiments-20261021-m1m8-revised/final-paper-and-experiments-20261021-001/manuscript/sections/34-search-update.tex b/final-paper-and-experiments-20261021-m1m8-revised/final-paper-and-experiments-20261021-001/manuscript/sections/34-search-update.tex
+index 4fc180a..5acbcf7 100644
+--- a/final-paper-and-experiments-20261021-m1m8-revised/final-paper-and-experiments-20261021-001/manuscript/sections/34-search-update.tex
++++ b/final-paper-and-experiments-20261021-m1m8-revised/final-paper-and-experiments-20261021-001/manuscript/sections/34-search-update.tex
+@@ -34,5 +34,5 @@ Other security background / reviewed background / proposal & 53 / 4 / 1\\
+ Missing abstract / unavailable primary full text & 16 / 1\\\bottomrule
+ \end{tabularx}\end{table}
+ 
+-\subsection{Seed overlap clarification and dual-coding reliability}
++\subsection{Seed overlap clarification and extraction--verification agreement}
+ As noted in Main Paper Section~2, the 24 fixed known papers (\texttt{known24}) are a 24-paper core subset of our 40 initial citation-tracing seeds (\texttt{seed\_n=24} in \path{check_known24_offline.py}), not an external holdout. Their 17/24 query recovery (and 25/60 snapshot recovery) measures lexical overlap between the six Boolean keyword queries and our seed-and-snowball corpus. Supplied second-coder annotations of a 100-record stratified subsample of the 565-record frame (\path{m7_dual_coding_screening.csv}) achieved 93.0\% three-class agreement ($\kappa=0.886$, 95\% CI $[0.801,0.963]$) and 95.0\% binary Core-inclusion agreement ($\kappa=0.880$, CI $[0.764,0.975]$).
+diff --git a/final-paper-and-experiments-20261021-m1m8-revised/final-paper-and-experiments-20261021-001/manuscript/sections/37-transfer-tests.tex b/final-paper-and-experiments-20261021-m1m8-revised/final-paper-and-experiments-20261021-001/manuscript/sections/37-transfer-tests.tex
+index 987ec2a..f3221ca 100644
+--- a/final-paper-and-experiments-20261021-m1m8-revised/final-paper-and-experiments-20261021-001/manuscript/sections/37-transfer-tests.tex
++++ b/final-paper-and-experiments-20261021-m1m8-revised/final-paper-and-experiments-20261021-001/manuscript/sections/37-transfer-tests.tex
+@@ -1,5 +1,5 @@
+ \section{Controlled Transfer Tests}\label{sec:controlled-placement}\label{sec:tau-cover-bridge}
+-The experiments operationalize the audit's three bindings: observation, execution and matched evaluation. E5--E7 isolate mechanisms using saved outputs and reference programs; E9 evaluates real LLM-generated trajectories with training-only calibration. Seven author-written judgments were recorded before E5--E7; their reassessment is retained in Supplement S12. These cases test mechanisms, not the audit's external decision accuracy.
++The experiments connect observation, execution and matched evaluation. We retain artifact identifiers: E1/E3 cover buffered transport and adaptive fitting (\S8.1; S11), E2 tests state-preserving cover (\S8.2; S9/S11), E5--E7 isolate streaming and dispatch mechanisms, E8 tests stand-in planners (S13), and E9--E12 analyze real-agent trajectories. S18 gives the full concordance, including unused E4. Seven author-constructed mechanism checks were recorded before E5--E7 (S12); they are engineering checks rather than a sample of external review decisions.
+ 
+ For E6/E7/E9, a cell meets the \emph{evaluated-suite criterion} when maximum BA has an upper 95\% bound below 0.60 and maximum AUROC is below 0.65. This absolute-threshold assessment is separate from the measured reduction relative to raw transport: a lower BA bound above 0.60 indicates above-threshold leakage, while an interval crossing 0.60 leaves the absolute threshold inconclusive. We recompute the suite maximum within each of 2,000 common bootstrap draws: tasks for E6/E7 and customers for E9, retaining their tasks and repeats together. Intervals condition on fitted predictions and do not cover unknown attackers.
+ 
+@@ -28,7 +28,7 @@ Table~\ref{tab:transfer-cover} shows that one cancellation drives clean-trained
+ \input{tables/r3-transfer-cover}
+ 
+ \subsection{E7: composing execution and transport on the agent--tool link}
+-E7 composes dispatch and transport on an encrypted agent--tool link (Figure~\ref{fig:system-model}). Four cover policies yield 4,140 TLS~1.2 sessions. Framing is raw, 1024-byte buckets or constant requests/responses with overflow buckets. A network observer sees direction-tagged record lengths, not tool names. A profiling attacker learns size-to-tool mappings from training-fold API calls and applies dispatch attacks to decoded traces; S12 specifies caps and classifiers.
++E7 composes dispatch and transport on an encrypted agent--tool link (Figure~\ref{fig:system-model}). Four cover policies yield 4,140 TLS~1.2 sessions. Framing is raw, 1024-byte buckets or constant requests/responses with overflow buckets. The evaluated network projection contains direction-tagged TLS record lengths and order; it excludes tool names and inter-arrival times. A profiling attacker learns size-to-tool mappings from training-fold API calls and applies dispatch attacks to decoded traces; S12 specifies caps and classifiers.
+ 
+ Request-only tool identification reaches 89.9\%/91.4\% under cancellation/return folds (582 calls; majority 29.4\%). Count and decoy cover leave 72.7--95.7\% network BA, extending their dispatch leakage (P5). Framing alone leaves bucketed return BA at 73.9\%. Shape cover gives 51.2\%/60.5\% with raw framing and 54.4\%/50.0\% with constant framing. No configuration meets the absolute criterion for both targets. Joint constant framing costs 26.3$\times$ bytes and 7.7$\times$ calls with 100\% database equality: one operating point, not a minimum cost (P7). E8's stand-in planners (S13) motivate the causal, training-only dispatcher evaluated next with real model decisions.
+ 
+@@ -39,9 +39,9 @@ Per-call framing leaves call counts and turn structure exposed. A full traffic-f
+ E9 tests defense reuse on autonomous model-generated trajectories under a strict calibration boundary. GPT-6.1 Sol (low reasoning effort) plans and responds from the retail policy, public tool schemas and actual sandbox observations. A separate context of the same model simulates the user. The rules arm adds one customer-details read before order access and a read before each order write. All 115 tasks have two prompt arms and three repeats, completing the frozen 690-run protocol. All 414 training runs on 69 tasks precede freezing of a shared count template, donor pools and framing caps; the 276 test runs cover 46 tasks from 24 disjoint customers.
+ 
+ \paragraph{Planner-visible equivalence}
+-Let $H$ be the planner's message/tool-observation history, excluding wall-clock timing. Real calls and responses pass unchanged; cover uses isolated state and hidden responses. Thus the planner projection satisfies $\pi_{\rm plan}(D(H))=H$ (Appendix~\ref{app:equivalence}). E9 replays each realized trajectory through four program conditions, isolating the program-layer effect from LLM sampling variation. Online denotes prefix-only scheduling; interactive latency and feedback require separate measurement. The trusted cover executor knows which calls are shadow calls; E9 protects the measured dispatch/network projections, not this executor or a provider's commit log.
++Let $H$ be the planner's message/tool-observation history, excluding wall-clock timing. Real calls and responses pass unchanged; cover uses isolated state and hidden responses. Thus the planner projection satisfies $\pi_{\rm plan}(D(H))=H$ (Appendix~\ref{app:equivalence}). E9 replays each realized trajectory through four program conditions, isolating the program-layer effect from LLM sampling variation. Online denotes prefix-only scheduling; this equivalence does not preserve elapsed time, queueing or timeout behavior. The trusted cover executor knows which calls are shadow calls; E9 protects the measured dispatch/network projections, not this executor or a provider's commit log.
+ 
+-The dispatcher inserts training-derived cover using only past calls and flushes unmet counts at episode end. Four program conditions per prompt isolate raw transport, padding, shape cover and their combination. Training-fitted attackers evaluate dispatch and network observations across 2,760 TLS replay sessions. Every test task, failure and handoff remains in the analysis. Supplement S14 supplies the full ablations and customer-cluster intervals.
++The dispatcher inserts training-derived cover using only past calls and flushes unmet counts at episode end. A timing-aware observer could exploit this flush or read/write service times; E9 measures the length/order projection, not a defense against that observer. Four program conditions per prompt isolate raw transport, padding, shape cover and their combination. Training-fitted attackers evaluate dispatch and network observations across 2,760 TLS replay sessions. Every test task, failure and handoff remains in the analysis. Supplement S14 supplies the full ablations and customer-cluster intervals.
+ 
+ \input{tables/r4-primary}
+ 
+@@ -51,7 +51,7 @@ Table~\ref{tab:r4-primary} shows baseline network BA of 97.2\% for cancellation
+ \paragraph{Joint shaping removes most measured inference advantage}
+ On baseline trajectories, shadow cover with constant framing reduces network BA by 47.2/44.0 points to 50.0\%/50.0\% at 15.4$\times$ bytes and 3.8$\times$ calls. Per-call padding alone leaves 66.1\%/55.5\%, and shape cover alone 60.8\%/51.9\%. These ablations motivate jointly shaping length and call structure at the measured boundary; they do not establish superiority over a complete tunnel.
+ 
+-The joint point estimates match the 50\% majority baseline, removing the measured BA advantage of this attack suite. Post hoc paired customer-bootstrap contrasts quantify the reduction: $-47.2$ points [$-50.0,-33.3$] for cancellation and $-44.0$ [$-48.9,-27.8$] for return (Table~\ref{tab:r4-primary}). The separate absolute-threshold assessment remains inconclusive: joint BA upper bounds are 60.6\%/65.5\%. Only five cancellation-positive and seven return-positive customers contribute to these estimates; resampling their heterogeneous predictions and reselecting the suite maximum can exceed 50\% even when the original maximum equals 50\%. Thus the measured reduction is supported while the tighter absolute bound needs more evidence. Rules plus joint shaping yields 50.0\%/60.6\%; its return contrast with program-only spans zero (S14).
++The joint point estimates match the 50\% majority baseline, removing the measured BA advantage of this attack suite. Post hoc paired customer-bootstrap contrasts quantify the reduction: $-47.2$ points [$-50.0,-33.3$] for cancellation and $-44.0$ [$-48.9,-27.8$] for return (Table~\ref{tab:r4-primary}). The separate absolute-threshold assessment remains inconclusive: joint BA upper bounds are 60.6\%/65.5\%. Only five cancellation-positive and seven return-positive customers contribute to these estimates; resampling their heterogeneous predictions and reselecting the suite maximum can exceed 50\% even when the original maximum equals 50\%. These finite-cluster intervals do not certify the absolute bound; their width cannot be attributed solely to sample count. The paired reductions answer a separate question. Rules plus joint shaping yields 50.0\%/60.6\%; its return contrast with program-only spans zero (S14).
+ 
+ \subsection{E10--E12: cross-fitting, operating points and mechanism}\label{sec:r5}
+ \paragraph{E10: cross-fitting}
+@@ -60,7 +60,7 @@ A post hoc customer-grouped stratified 5-fold analysis reuses all 690 runs: 53 c
+ \input{tables/r5-main}
+ 
+ \paragraph{E11: choosing the operating point}
+-Among six evaluated configurations, 1024-byte buckets reach 52.2\%/52.7\% BA at 12.4$\times$ bytes versus 19.8$\times$ for constant framing; the upper bounds are 60.5\%/60.2\%. Selecting the cheapest configuration with all four inner-fold BAs $\leq60\%$, using only the original 69 training tasks, picks buckets. On the 46-task test split, cost falls from 15.4$\times$ to 9.8$\times$ bytes at 53.2\%/58.4\% BA. This is a retrospective operating-point analysis; the original pretest-frozen E9 evaluation remains separate.
++Among six evaluated configurations, 1024-byte buckets reach 52.2\%/52.7\% BA at 12.4$\times$ bytes versus 19.8$\times$ for constant framing; the upper bounds are 60.5\%/60.2\%. Selecting the cheapest configuration with all four inner-fold BAs $\leq60\%$, using only the original 69 training tasks, picks buckets. On the 46-task test split, cost falls from 15.4$\times$ to 9.8$\times$ bytes at 53.2\%/58.4\% BA. This retrospective analysis neither changes the E9 threshold nor supplies an independent confirmatory test; neither baseline operating point certifies the two-target absolute bound.
+ 
+ \paragraph{E12: locating the signal}
+ An oracle ablation retains 91.7\%/84.9\% BA using only state-changing calls; removing them leaves 55.2\%/59.9\%. Rules reduce distinct read sequences from 74 to 62, while write sequences remain 37 versus 36. This localizes the dominant measured signal beyond the reads targeted by the prompt. The tested writes-only defenses fail the inner-fold selection rule; full-profile shaping supplies the selected operating point.
+@@ -70,4 +70,4 @@ Each experiment instantiates one audit obligation and changes a reuse judgment.
+ 
+ \soktakeaway{SoK Takeaway 3 (Bind the projection the emitter produces)}{Padding applies to the record sequence it equalizes. Buffered caps, per-event padding and batching have distinct leakage and cost objects. Evaluate the attacker on defended data and price the same emitter that supplies the protection claim.}
+ 
+-\soktakeaway{SoK Takeaway 4 (Shape what the agent changes, and price it)}{Across 690 real-agent runs, rules yield 97.1\% mechanical rule adherence while intent inference remains above 93\%, while the observer ablation localizes the dominant signal to state-changing calls. Training-calibrated joint shaping lowers inference by 31--47 points; bucketed framing reaches 52--53\% at 12.4$\times$ bytes, 37\% below constant framing. Evaluate behavioral compliance, state preservation, metadata protection and cost as distinct outcomes.}
++\soktakeaway{SoK Takeaway 4 (Shape what the agent changes, and price it)}{Across 690 real-agent runs, rules yield 97.1\% mechanical rule adherence while intent inference remains above 93\%. The observer ablation localizes the dominant signal to state-changing calls. Training-calibrated joint shaping lowers inference by 31--47 points; bucketed framing reaches 52--53\% at 12.4$\times$ bytes, 37\% below constant framing. Evaluate behavioral compliance, state preservation, metadata protection and cost as distinct outcomes.}
+diff --git a/final-paper-and-experiments-20261021-m1m8-revised/final-paper-and-experiments-20261021-001/manuscript/supplement.tex b/final-paper-and-experiments-20261021-m1m8-revised/final-paper-and-experiments-20261021-001/manuscript/supplement.tex
+index d67b362..1b83cfc 100644
+--- a/final-paper-and-experiments-20261021-m1m8-revised/final-paper-and-experiments-20261021-001/manuscript/supplement.tex
++++ b/final-paper-and-experiments-20261021-m1m8-revised/final-paper-and-experiments-20261021-001/manuscript/supplement.tex
+@@ -23,7 +23,7 @@
+   }\par\smallskip
+ }
+ \newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+-\newcommand{\auditpartial}{\tikz[baseline=-.5ex]{\fill (0,0) -- (0,.5ex) arc (90:270:.5ex) -- cycle;\draw[line width=.3pt] (0,0) circle (.5ex);}}
++\newcommand{\auditpartial}{\textbf{P}}
+ \input{tables/final-counts}
+ \renewcommand{\thesection}{S\arabic{section}}
+ \renewcommand{\thesubsection}{\thesection.\arabic{subsection}}
+@@ -32,7 +32,7 @@
+ \author{}
+ \begin{document}
+ \maketitle
+-This supplement provides the search accounting, corpus maps, saved empirical results, dual-coding records and source-bound audits accompanying the main paper. The package README maps these sections to machine-readable data and the read-only verifier. Original failed and negative outcomes are preserved alongside positive results.
++This supplement provides the search accounting, corpus maps, saved empirical results, extraction--verification records and source-bound audits accompanying the main paper. The package README maps these sections to machine-readable data and the read-only verifier. Original failed and negative outcomes are preserved alongside positive results.
+ \section{Search and Evidence Audit}\label{app:search}
+ \input{tables/selection-flow}
+ \input{sections/22-search-audit-summary}
+@@ -77,6 +77,8 @@ Records are computed with an analytic TLS~1.2 AES-GCM model (fragment plus 24 by
+ \twocolumn
+ \input{sections/39-shadow-deployment}
+ \clearpage
++\input{sections/40-evidence-concordance}
++\clearpage
+ \input{tables/corpus-citations}
+ 
+ \bibliographystyle{IEEEtran}
+diff --git a/final-paper-and-experiments-20261021-m1m8-revised/final-paper-and-experiments-20261021-001/manuscript/tables/core-family-map.tex b/final-paper-and-experiments-20261021-m1m8-revised/final-paper-and-experiments-20261021-001/manuscript/tables/core-family-map.tex
+index 00c4c83..a51aaed 100644
+--- a/final-paper-and-experiments-20261021-m1m8-revised/final-paper-and-experiments-20261021-001/manuscript/tables/core-family-map.tex
++++ b/final-paper-and-experiments-20261021-m1m8-revised/final-paper-and-experiments-20261021-001/manuscript/tables/core-family-map.tex
+@@ -2,36 +2,36 @@
+ \caption{Complete map of the 58 core study families. Each family appears once; multiple layer/type labels describe different components or objectives within the family.}\label{tab:core-family-map}
+ \setlength{\tabcolsep}{3pt}
+ \begin{tabularx}{\textwidth}{@{}Ycc@{\hspace{1.5em}}Ycc@{}}\toprule
+-Core family & $G\!\to\!O$ & Type & Core family & $G\!\to\!O$ & Type\\\midrule
+-ArchSnoop~\cite{weng2026archsnoop} & $1\!\to\!1$ & II & PromptPeek~\cite{promptpeek2025} & $2\!\to\!4$ & I\\
+-Behind Bars~\cite{gu2026behindbars} & $1\!\to\!1$ & I & Remote keylogging~\cite{weiss2024prompt} & $2\!\to\!3$ & I\\
+-Edge EM leakage~\cite{alhalawani2026physicaledge} & $1\!\to\!1$ & I & Remote timing~\cite{carlini2024remote} & $2\!\to\!3$ & I\\
+-Energon~\cite{chaudhuri2025energon} & $1\!\to\!1$ & II & Routing metadata~\cite{chen2026routingmetadata} & $2\!\to\!4$ & I\\
+-I Know What You Said~\cite{gao2025iknow} & $1\!\to\!1$ & I & SafeKV~\cite{chu2025safekv} & $2\!\to\!4$ & I\\
+-MoEcho~\cite{ding2025moecho} & $1\!\to\!1$ & I & Speculative decoding~\cite{wei2024speculation} & $2\!\to\!3$ & I\\
+-PAGE404~\cite{nazaraliyev2026page404} & $1\!\to\!1$ & I & SpliceLeak~\cite{spliceleak2026} & $2\!\to\!4$ & I\\
+-Spill the Beans~\cite{spillbeans2025} & $1\!\to\!1$ & I & SplitDecoy~\cite{politis2026splitdecoy} & $2\!\to\!2$ & I\\
+-Detokenization Leaks~\cite{weiss2026detokenization} & $1,2\!\to\!1$ & I & Time Will Tell~\cite{timewilltell2024} & $2\!\to\!4$ & I\\
+-LLM-serving RCA~\cite{scheinert2026rca} & $1,2\!\to\!2$ & IV & Whisper Leak~\cite{whisperleak2025} & $2\!\to\!3$ & I\\
+-LLM-WFIN~\cite{jiao2025llmwfin} & $1,2\!\to\!1,3$ & I & MIRAGE~\cite{revankar2026mirage} & $2,5\!\to\!2$ & IV\\
+-OTRO~\cite{lee2026otro} & $1,2\!\to\!1$ & I & Cloud traffic benchmark~\cite{pouryousef2026traffic} & $2,5,8\!\to\!3$ & I,II\\
+-Shape and Substance~\cite{hadad2026shape} & $1,2\!\to\!1$ & I & Web-agent unmasking~\cite{fayolle2026webagents} & $3,7\!\to\!3,7$ & II,III\\
+-SparLeak~\cite{chen2026sparleak} & $1,2\!\to\!1$ & I & LumiMAS~\cite{solomon2026lumimas} & $4,5\!\to\!4,6$ & IV\\
+-SparSEEty~\cite{jo2026sparseety} & $1,2\!\to\!1$ & I & AgentPrint~\cite{agentprint2025} & $5\!\to\!3$ & I,II\\
+-TDXRay~\cite{hornetz2026tdxray} & $1,2\!\to\!1$ & I & Cycle detection~\cite{george2025cycles} & $5\!\to\!4,6$ & IV\\
+-ClawGuard~\cite{gan2026clawguard} & $1,5\!\to\!1$ & IV & AgentProv~\cite{wang2026agentprov} & $5,6\!\to\!6$ & II\\
+-Cache contention~\cite{abubakar2026contention} & $2\!\to\!4$ & I & Lidar~\cite{wang2026lidar} & $5,6\!\to\!6$ & II\\
+-CachePrune~\cite{wu2026cacheprune} & $2\!\to\!4$ & I & ProcGrep~\cite{oderinwale2026procgrep} & $5,6\!\to\!4,6$ & II\\
+-Early Bird~\cite{earlybird2025} & $2\!\to\!4$ & I & SIGLEAK~\cite{geng2026sigleak} & $5,6\!\to\!4,6$ & I\\
+-InputSnatch~\cite{inputsnatch2024} & $2\!\to\!4$ & I & Campaign attribution~\cite{park2026crosscampaign} & $5,6,8\!\to\!6,8$ & II\\
+-KVGov~\cite{addagada2026kvgov} & $2\!\to\!2,4$ & I & Dangol workflow~\cite{dangol2026workflow} & $5,6,8\!\to\!3,6,8$ & I\\
+-Leaky Language Models~\cite{majidi2026leakylms} & $2\!\to\!4$ & I & AgentTell~\cite{shahriar2026agenttell} & $5,7\!\to\!7$ & I\\
+-LLMs Have Rhythm~\cite{alhazbi2025rhythm} & $2\!\to\!3$ & II & AHB~\cite{zhu2026turing} & $5,7\!\to\!7$ & III\\
+-ML privacy channels~\cite{debenedetti2024privacy} & $2\!\to\!4$ & I & FP-Agent~\cite{wang2026fpagent} & $5,7\!\to\!7$ & II\\
+-MoE prompt stealing~\cite{yona2024stealing} & $2\!\to\!4$ & I & PersonaFingerprint~\cite{song2026personafingerprint} & $5,7\!\to\!3$ & I\\
+-NetEcho~\cite{netecho2025} & $2\!\to\!3$ & I & UI Traces~\cite{uitraces2026} & $5,7\!\to\!7$ & II\\
+-Prompt Echo~\cite{prompt_echo2026} & $2\!\to\!3$ & I & Whose Agent?~\cite{kang2026whoseagent} & $5,7\!\to\!7$ & II\\
+-Prompt-cache audit~\cite{gu2025promptcaching} & $2\!\to\!4$ & I & WRA~\cite{jeong2026wra} & $5,7\!\to\!3$ & I\\
++Core family & $G\,\to\,O$ & Type & Core family & $G\,\to\,O$ & Type\\\midrule
++ArchSnoop~\cite{weng2026archsnoop} & $1\,\to\,1$ & \texttt{II} & PromptPeek~\cite{promptpeek2025} & $2\,\to\,4$ & \texttt{I}\\
++Behind Bars~\cite{gu2026behindbars} & $1\,\to\,1$ & \texttt{I} & Remote keylogging~\cite{weiss2024prompt} & $2\,\to\,3$ & \texttt{I}\\
++Edge EM leakage~\cite{alhalawani2026physicaledge} & $1\,\to\,1$ & \texttt{I} & Remote timing~\cite{carlini2024remote} & $2\,\to\,3$ & \texttt{I}\\
++Energon~\cite{chaudhuri2025energon} & $1\,\to\,1$ & \texttt{II} & Routing metadata~\cite{chen2026routingmetadata} & $2\,\to\,4$ & \texttt{I}\\
++I Know What You Said~\cite{gao2025iknow} & $1\,\to\,1$ & \texttt{I} & SafeKV~\cite{chu2025safekv} & $2\,\to\,4$ & \texttt{I}\\
++MoEcho~\cite{ding2025moecho} & $1\,\to\,1$ & \texttt{I} & Speculative decoding~\cite{wei2024speculation} & $2\,\to\,3$ & \texttt{I}\\
++PAGE404~\cite{nazaraliyev2026page404} & $1\,\to\,1$ & \texttt{I} & SpliceLeak~\cite{spliceleak2026} & $2\,\to\,4$ & \texttt{I}\\
++Spill the Beans~\cite{spillbeans2025} & $1\,\to\,1$ & \texttt{I} & SplitDecoy~\cite{politis2026splitdecoy} & $2\,\to\,2$ & \texttt{I}\\
++Detokenization Leaks~\cite{weiss2026detokenization} & $1,2\,\to\,1$ & \texttt{I} & Time Will Tell~\cite{timewilltell2024} & $2\,\to\,4$ & \texttt{I}\\
++LLM-serving RCA~\cite{scheinert2026rca} & $1,2\,\to\,2$ & \texttt{IV} & Whisper Leak~\cite{whisperleak2025} & $2\,\to\,3$ & \texttt{I}\\
++LLM-WFIN~\cite{jiao2025llmwfin} & $1,2\,\to\,1,3$ & \texttt{I} & MIRAGE~\cite{revankar2026mirage} & $2,5\,\to\,2$ & \texttt{IV}\\
++OTRO~\cite{lee2026otro} & $1,2\,\to\,1$ & \texttt{I} & Cloud traffic benchmark~\cite{pouryousef2026traffic} & $2,5,8\,\to\,3$ & \texttt{I,II}\\
++Shape and Substance~\cite{hadad2026shape} & $1,2\,\to\,1$ & \texttt{I} & Web-agent unmasking~\cite{fayolle2026webagents} & $3,7\,\to\,3,7$ & \texttt{II,III}\\
++SparLeak~\cite{chen2026sparleak} & $1,2\,\to\,1$ & \texttt{I} & LumiMAS~\cite{solomon2026lumimas} & $4,5\,\to\,4,6$ & \texttt{IV}\\
++SparSEEty~\cite{jo2026sparseety} & $1,2\,\to\,1$ & \texttt{I} & AgentPrint~\cite{agentprint2025} & $5\,\to\,3$ & \texttt{I,II}\\
++TDXRay~\cite{hornetz2026tdxray} & $1,2\,\to\,1$ & \texttt{I} & Cycle detection~\cite{george2025cycles} & $5\,\to\,4,6$ & \texttt{IV}\\
++ClawGuard~\cite{gan2026clawguard} & $1,5\,\to\,1$ & \texttt{IV} & AgentProv~\cite{wang2026agentprov} & $5,6\,\to\,6$ & \texttt{II}\\
++Cache contention~\cite{abubakar2026contention} & $2\,\to\,4$ & \texttt{I} & Lidar~\cite{wang2026lidar} & $5,6\,\to\,6$ & \texttt{II}\\
++CachePrune~\cite{wu2026cacheprune} & $2\,\to\,4$ & \texttt{I} & ProcGrep~\cite{oderinwale2026procgrep} & $5,6\,\to\,4,6$ & \texttt{II}\\
++Early Bird~\cite{earlybird2025} & $2\,\to\,4$ & \texttt{I} & SIGLEAK~\cite{geng2026sigleak} & $5,6\,\to\,4,6$ & \texttt{I}\\
++InputSnatch~\cite{inputsnatch2024} & $2\,\to\,4$ & \texttt{I} & Campaign attribution~\cite{park2026crosscampaign} & $5,6,8\,\to\,6,8$ & \texttt{II}\\
++KVGov~\cite{addagada2026kvgov} & $2\,\to\,2,4$ & \texttt{I} & Dangol workflow~\cite{dangol2026workflow} & $5,6,8\,\to\,3,6,8$ & \texttt{I}\\
++Leaky Language Models~\cite{majidi2026leakylms} & $2\,\to\,4$ & \texttt{I} & AgentTell~\cite{shahriar2026agenttell} & $5,7\,\to\,7$ & \texttt{I}\\
++LLMs Have Rhythm~\cite{alhazbi2025rhythm} & $2\,\to\,3$ & \texttt{II} & AHB~\cite{zhu2026turing} & $5,7\,\to\,7$ & \texttt{III}\\
++ML privacy channels~\cite{debenedetti2024privacy} & $2\,\to\,4$ & \texttt{I} & FP-Agent~\cite{wang2026fpagent} & $5,7\,\to\,7$ & \texttt{II}\\
++MoE prompt stealing~\cite{yona2024stealing} & $2\,\to\,4$ & \texttt{I} & PersonaFingerprint~\cite{song2026personafingerprint} & $5,7\,\to\,3$ & \texttt{I}\\
++NetEcho~\cite{netecho2025} & $2\,\to\,3$ & \texttt{I} & UI Traces~\cite{uitraces2026} & $5,7\,\to\,7$ & \texttt{II}\\
++Prompt Echo~\cite{prompt_echo2026} & $2\,\to\,3$ & \texttt{I} & Whose Agent?~\cite{kang2026whoseagent} & $5,7\,\to\,7$ & \texttt{II}\\
++Prompt-cache audit~\cite{gu2025promptcaching} & $2\,\to\,4$ & \texttt{I} & WRA~\cite{jeong2026wra} & $5,7\,\to\,3$ & \texttt{I}\\
+ \bottomrule\end{tabularx}
+ \par\smallskip\raggedright $G$ denotes signal-generation layers and $O$ the receiving observation layers. Layer indices: 1 hardware; 2 serving/runtime; 3 transport; 4 application/API; 5 orchestration; 6 tools; 7 browser/environment; 8 multi-agent communication. Types: I confidentiality/privacy; II attribution; III human--agent distinction/evasion; IV authorized diagnostics. These are objectives and observer roles, not mutually exclusive security guarantees. Privileged operator receivers and physical receivers are marked by the layer they inspect. Source versions, locators and the normalization of prose-only layer descriptions are in the artifact.
+ \end{table*}
+diff --git a/final-paper-and-experiments-20261021-m1m8-revised/final-paper-and-experiments-20261021-001/manuscript/tables/family-audit-matrix.tex b/final-paper-and-experiments-20261021-m1m8-revised/final-paper-and-experiments-20261021-001/manuscript/tables/family-audit-matrix.tex
+index 903124f..c27f6d7 100644
+--- a/final-paper-and-experiments-20261021-m1m8-revised/final-paper-and-experiments-20261021-001/manuscript/tables/family-audit-matrix.tex
++++ b/final-paper-and-experiments-20261021-m1m8-revised/final-paper-and-experiments-20261021-001/manuscript/tables/family-audit-matrix.tex
+@@ -3,28 +3,28 @@
+ \setlength{\tabcolsep}{2.2pt}
+ \begin{tabularx}{\columnwidth}{@{}Y*{9}{c}@{}}\toprule
+ Family & R1 & R2 & R3 & R4 & R5 & R6 & R7 & R8 & R9\\\midrule
+-UI Traces~\cite{uitraces2026} & $\bullet$ & \auditpartial & $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$ & $\circ$ & --\\
+-WRA~\cite{jeong2026wra} & $\bullet$ & \auditpartial & $\bullet$ & -- & -- & \auditpartial & $\bullet$ & \auditpartial & $\circ$\\
+-NetEcho~\cite{netecho2025} & $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$ & \auditpartial & $\bullet$ & $\bullet$ & $\circ$ & $\circ$\\
+-Early Bird~\cite{earlybird2025} & $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$ & \auditpartial & $\bullet$ & $\bullet$ & $\circ$ & $\bullet$\\
+-Whisper Leak~\cite{whisperleak2025} & $\bullet$ & $\bullet$ & \auditpartial & ? & ? & $\bullet$ & $\bullet$ & $\circ$ & $\bullet$\\
+-SpliceLeak~\cite{spliceleak2026} & $\bullet$ & $\bullet$ & $\bullet$ & -- & -- & $\bullet$ & $\bullet$ & $\circ$ & $\bullet$\\
+-Time Will Tell~\cite{timewilltell2024} & $\bullet$ & $\bullet$ & $\bullet$ & ? & ? & $\bullet$ & $\bullet$ & $\circ$ & $\bullet$\\
+-I Know What You Said~\cite{gao2025iknow} & $\bullet$ & $\bullet$ & $\bullet$ & -- & -- & $\bullet$ & $\circ$ & -- & $\bullet$\\
+-Speculative decoding~\cite{wei2024speculation} & $\bullet$ & $\bullet$ & \auditpartial & ? & ? & $\bullet$ & $\bullet$ & -- & $\bullet$\\
+-Dangol workflow~\cite{dangol2026workflow} & $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$ & $\circ$ & $\bullet$\\
+-Cloud traffic benchmark~\cite{pouryousef2026traffic} & $\bullet$ & \auditpartial & ? & ? & ? & \auditpartial & $\bullet$ & \auditpartial & $\circ$\\
+-Remote timing~\cite{carlini2024remote} & $\bullet$ & $\bullet$ & $\bullet$ & -- & -- & $\bullet$ & $\bullet$ & $\circ$ & \auditpartial\\
+-TDXRay~\cite{hornetz2026tdxray} & $\bullet$ & $\bullet$ & $\bullet$ & -- & -- & $\bullet$ & $\circ$ & $\bullet$ & $\bullet$\\
+-SafeKV~\cite{chu2025safekv} & $\bullet$ & $\bullet$ & $\bullet$ & -- & -- & $\bullet$ & $\bullet$ & $\circ$ & $\bullet$\\
+-AHB~\cite{zhu2026turing} & $\bullet$ & $\bullet$ & $\bullet$ & \auditpartial & ? & $\bullet$ & $\bullet$ & $\bullet$ & $\circ$\\
+-KVGov~\cite{addagada2026kvgov} & $\bullet$ & $\bullet$ & $\bullet$ & -- & -- & $\bullet$ & $\bullet$ & $\circ$ & $\bullet$\\
+-CachePrune~\cite{wu2026cacheprune} & $\bullet$ & $\bullet$ & $\bullet$ & -- & -- & $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$\\
+-OTRO~\cite{lee2026otro} & $\bullet$ & $\bullet$ & $\bullet$ & -- & -- & $\bullet$ & $\bullet$ & -- & \auditpartial\\
+-SparLeak~\cite{chen2026sparleak} & $\bullet$ & $\bullet$ & $\bullet$ & ? & ? & $\bullet$ & $\bullet$ & \auditpartial & $\circ$\\
+-Shape and Substance~\cite{hadad2026shape} & $\bullet$ & $\bullet$ & \auditpartial & ? & ? & $\bullet$ & \auditpartial & $\circ$ & \auditpartial\\
++UI Traces~\cite{uitraces2026} & \textbf{B} & \textbf{P} & \textbf{B} & \textbf{B} & \textbf{B} & \textbf{B} & \textbf{B} & U & --\\
++WRA~\cite{jeong2026wra} & \textbf{B} & \textbf{P} & \textbf{B} & -- & -- & \textbf{P} & \textbf{B} & \textbf{P} & U\\
++NetEcho~\cite{netecho2025} & \textbf{B} & \textbf{B} & \textbf{B} & \textbf{B} & \textbf{P} & \textbf{B} & \textbf{B} & U & U\\
++Early Bird~\cite{earlybird2025} & \textbf{B} & \textbf{B} & \textbf{B} & \textbf{B} & \textbf{P} & \textbf{B} & \textbf{B} & U & \textbf{B}\\
++Whisper Leak~\cite{whisperleak2025} & \textbf{B} & \textbf{B} & \textbf{P} & ? & ? & \textbf{B} & \textbf{B} & U & \textbf{B}\\
++SpliceLeak~\cite{spliceleak2026} & \textbf{B} & \textbf{B} & \textbf{B} & -- & -- & \textbf{B} & \textbf{B} & U & \textbf{B}\\
++Time Will Tell~\cite{timewilltell2024} & \textbf{B} & \textbf{B} & \textbf{B} & ? & ? & \textbf{B} & \textbf{B} & U & \textbf{B}\\
++I Know What You Said~\cite{gao2025iknow} & \textbf{B} & \textbf{B} & \textbf{B} & -- & -- & \textbf{B} & U & -- & \textbf{B}\\
++Speculative decoding~\cite{wei2024speculation} & \textbf{B} & \textbf{B} & \textbf{P} & ? & ? & \textbf{B} & \textbf{B} & -- & \textbf{B}\\
++Dangol workflow~\cite{dangol2026workflow} & \textbf{B} & \textbf{B} & \textbf{B} & \textbf{B} & \textbf{B} & \textbf{B} & \textbf{B} & U & \textbf{B}\\
++Cloud traffic benchmark~\cite{pouryousef2026traffic} & \textbf{B} & \textbf{P} & ? & ? & ? & \textbf{P} & \textbf{B} & \textbf{P} & U\\
++Remote timing~\cite{carlini2024remote} & \textbf{B} & \textbf{B} & \textbf{B} & -- & -- & \textbf{B} & \textbf{B} & U & \textbf{P}\\
++TDXRay~\cite{hornetz2026tdxray} & \textbf{B} & \textbf{B} & \textbf{B} & -- & -- & \textbf{B} & U & \textbf{B} & \textbf{B}\\
++SafeKV~\cite{chu2025safekv} & \textbf{B} & \textbf{B} & \textbf{B} & -- & -- & \textbf{B} & \textbf{B} & U & \textbf{B}\\
++AHB~\cite{zhu2026turing} & \textbf{B} & \textbf{B} & \textbf{B} & \textbf{P} & ? & \textbf{B} & \textbf{B} & \textbf{B} & U\\
++KVGov~\cite{addagada2026kvgov} & \textbf{B} & \textbf{B} & \textbf{B} & -- & -- & \textbf{B} & \textbf{B} & U & \textbf{B}\\
++CachePrune~\cite{wu2026cacheprune} & \textbf{B} & \textbf{B} & \textbf{B} & -- & -- & \textbf{B} & \textbf{B} & \textbf{B} & \textbf{B}\\
++OTRO~\cite{lee2026otro} & \textbf{B} & \textbf{B} & \textbf{B} & -- & -- & \textbf{B} & \textbf{B} & -- & \textbf{P}\\
++SparLeak~\cite{chen2026sparleak} & \textbf{B} & \textbf{B} & \textbf{B} & ? & ? & \textbf{B} & \textbf{B} & \textbf{P} & U\\
++Shape and Substance~\cite{hadad2026shape} & \textbf{B} & \textbf{B} & \textbf{P} & ? & ? & \textbf{B} & \textbf{P} & U & \textbf{P}\\
+ \midrule Bound & 20 & 17 & 16 & 4 & 2 & 18 & 17 & 3 & 11\\
+ Applicable & 20 & 20 & 20 & 11 & 11 & 20 & 20 & 17 & 19\\
+ \bottomrule\end{tabularx}
+-\par\smallskip\raggedright $\bullet$: bound; \auditpartial: partial; $\circ$: unreported in inspected scope; ?: unverified binding; --: inapplicable. R1 target/polarity; R2 receiver; R3 placement/execution; R4 defended-condition fit; R5 matched adaptation; R6 workload/generator shifts; R7 inference; R8 utility; R9 cost. A bound cell is supported by at least one scoped record. Dangol R5 concerns stored capture; its live-refit binding remains unverified. CachePrune jointly binds R7--R9 at one operating point.
++\par\smallskip\raggedright \textbf{B}: bound; \textbf{P}: partial; U: unreported in inspected scope; ?: unverified binding (intentional); --: inapplicable. R1 target/polarity; R2 receiver; R3 placement/execution; R4 defended-condition fit; R5 matched adaptation; R6 workload/generator shifts; R7 inference; R8 utility; R9 cost. A bound cell is supported by at least one scoped record. Dangol R5 concerns stored capture; its live-refit binding remains unverified. CachePrune jointly binds R7--R9 at one operating point.
+ \end{table}
+diff --git a/final-paper-and-experiments-20261021-m1m8-revised/final-paper-and-experiments-20261021-001/manuscript/tables/r5-main.tex b/final-paper-and-experiments-20261021-m1m8-revised/final-paper-and-experiments-20261021-001/manuscript/tables/r5-main.tex
+index 90a9007..8c43b2a 100644
+--- a/final-paper-and-experiments-20261021-m1m8-revised/final-paper-and-experiments-20261021-001/manuscript/tables/r5-main.tex
++++ b/final-paper-and-experiments-20261021-m1m8-revised/final-paper-and-experiments-20261021-001/manuscript/tables/r5-main.tex
+@@ -1,17 +1,17 @@
+-\begin{table}[t]\centering\scriptsize\setlength{\tabcolsep}{2.5pt}
++\begin{table}[t]\centering\footnotesize\setlength{\tabcolsep}{2pt}
+ \caption{E10--E12: network-view maximum BA (\%) over the fixed suite with customer-cluster 95\% intervals. Cross-fitting raises positive customers to 14 (cancel) and 18 (return). Baseline prompt unless stated; bytes/calls relative to raw transport. Writes: state-changing calls.}\label{tab:r5}
+ \begin{tabular}{@{}lrrr@{}}\toprule
+ Configuration & Cancel BA & Return BA & B$\times$/C$\times$\\\midrule
+ \multicolumn{4}{@{}l}{\emph{E10: cross-fitted, 690 episodes, 53 customers}}\\
+-Undefended & 91.7 [82.1, 100.0] & 85.5 [76.6, 93.4] & 1.0/1.0\\
+-E9 point (constant) & 60.5 [51.5, 70.5] & 52.1 [50.0, 60.3] & 19.8/5.0\\
+-1024-B buckets & 52.2 [50.0, 60.5] & 52.7 [50.0, 60.2] & 12.4/5.0\\
+-Writes-only cover & 53.5 [50.0, 65.8] & 56.1 [50.0, 67.4] & 11.3/2.9\\
+-Rules + buckets & 53.4 [50.0, 60.6] & 50.7 [50.0, 57.3] & 12.4/5.0\\
++Undefended & \mbox{91.7 [82.1, 100.0]} & \mbox{85.5 [76.6, 93.4]} & 1.0/1.0\\
++E9 constant & \mbox{60.5 [51.5, 70.5]} & \mbox{52.1 [50.0, 60.3]} & 19.8/5.0\\
++1024-B buckets & \mbox{52.2 [50.0, 60.5]} & \mbox{52.7 [50.0, 60.2]} & 12.4/5.0\\
++Write cover & \mbox{53.5 [50.0, 65.8]} & \mbox{56.1 [50.0, 67.4]} & 11.3/2.9\\
++Rules + buckets & \mbox{53.4 [50.0, 60.6]} & \mbox{50.7 [50.0, 57.3]} & 12.4/5.0\\
+ \midrule\multicolumn{4}{@{}l}{\emph{E11: chosen on training folds; frozen 46-task test}}\\
+-E9 point & 50.0 [50.0, 60.6] & 50.0 [50.0, 65.5] & 15.4/3.8\\
+-Selected: 1024-B buckets & 53.2 [50.0, 69.5] & 58.4 [52.9, 69.1] & 9.8/3.8\\
++E9 point & \mbox{50.0 [50.0, 60.6]} & \mbox{50.0 [50.0, 65.5]} & 15.4/3.8\\
++Selected buckets & \mbox{53.2 [50.0, 69.5]} & \mbox{58.4 [52.9, 69.1]} & 9.8/3.8\\
+ \midrule\multicolumn{4}{@{}l}{\emph{E12: undefended observer ablation, cross-fitted}}\\
+-Writes removed & 55.2 [50.0, 68.7] & 59.9 [50.5, 71.7] & --\\
+-Writes only & 91.7 [82.1, 100.0] & 84.9 [78.2, 93.7] & --\\
++Writes removed & \mbox{55.2 [50.0, 68.7]} & \mbox{59.9 [50.5, 71.7]} & --\\
++Writes only & \mbox{91.7 [82.1, 100.0]} & \mbox{84.9 [78.2, 93.7]} & --\\
+ \bottomrule\end{tabular}\end{table}
+diff --git a/final-paper-and-experiments-20261021-m1m8-revised/final-paper-and-experiments-20261021-001/manuscript/tables/result-lineage-example.tex b/final-paper-and-experiments-20261021-m1m8-revised/final-paper-and-experiments-20261021-001/manuscript/tables/result-lineage-example.tex
+index 10eda72..7c87fa5 100644
+--- a/final-paper-and-experiments-20261021-m1m8-revised/final-paper-and-experiments-20261021-001/manuscript/tables/result-lineage-example.tex
++++ b/final-paper-and-experiments-20261021-m1m8-revised/final-paper-and-experiments-20261021-001/manuscript/tables/result-lineage-example.tex
+@@ -1,13 +1,13 @@
+-\begin{table}[t]\centering\footnotesize
+-\caption{Filled record and its licensed judgment. Values are source-reported; no cross-mode effect is computed.}\label{tab:result-lineage}
+-\begin{tabularx}{\columnwidth}{@{}p{.24\columnwidth}Y@{}}\toprule
+-Join key / field & Entry\\\midrule
+-Family / result & \texttt{dangol2026workflow} / \texttt{DANGOL-livebinding}.\\
+-Version / locator & arXiv:2606.07150v3, \S9.7, live-protocol paragraph after Table~5 \cite{dangol2026workflow}.\\
+-Target / view & Workflow classification from live Oblivious HTTP (OHTTP)/Agent-to-Agent (A2A) traffic; not GUI-state observation.\\
+-Intervention & Live fixed-rate cover with fresh per-session identifiers, distinct from transformed stored captures.\\
+-Workload / testbed & Workflow classes with client, relay, gateway and agent co-located on one loopback host.\\
+-Outcome / cost & Accuracy 0.30; about 13$\times$ bytes and 11$\times$ latency in that condition.\\
+-Unresolved fields & Objective terminal task utility \NRR{}; precise paired live-refit comparison \NRV{}.\\
+-Licensed judgment & These costs describe this live protocol condition. They neither price dummy GUI actions nor prove task preservation. A matched objective endpoint is needed for the latter.\\\bottomrule
+-\end{tabularx}\end{table}
++\begin{table}[t]\centering\footnotesize
++\caption{Filled record and its licensed judgment. Values are source-reported; no cross-mode effect is computed.}\label{tab:result-lineage}
++\begin{tabularx}{\columnwidth}{@{}p{.24\columnwidth}Y@{}}\toprule
++Join key / field & Entry\\\midrule
++Family / result & Dangol workflow / \texttt{DANGOL-livebinding}.\\
++Version / locator & arXiv:2606.07150v3, \S9.7, live-protocol paragraph after Table~5 \cite{dangol2026workflow}.\\
++Target / view & Workflow classification from live Oblivious HTTP (OHTTP)/Agent-to-Agent (A2A) traffic; not GUI-state observation.\\
++Intervention & Live fixed-rate cover with fresh per-session identifiers, distinct from transformed stored captures.\\
++Workload / testbed & Workflow classes with client, relay, gateway and agent co-located on one loopback host.\\
++Outcome / cost & Accuracy 0.30; about 13$\times$ bytes and 11$\times$ latency in that condition.\\
++Unresolved fields & Objective terminal task utility \NRR{}; precise paired live-refit comparison \NRV{}.\\
++Licensed judgment & These costs describe this live protocol condition. They neither price dummy GUI actions nor prove task preservation. A matched objective endpoint is needed for the latter.\\\bottomrule
++\end{tabularx}\end{table}
+diff --git a/final-paper-and-experiments-20261021-m1m8-revised/final-paper-and-experiments-20261021-001/manuscript/tables/result-record-schema.tex b/final-paper-and-experiments-20261021-m1m8-revised/final-paper-and-experiments-20261021-001/manuscript/tables/result-record-schema.tex
+index 6a7eccf..fe5fce2 100644
+--- a/final-paper-and-experiments-20261021-m1m8-revised/final-paper-and-experiments-20261021-001/manuscript/tables/result-record-schema.tex
++++ b/final-paper-and-experiments-20261021-m1m8-revised/final-paper-and-experiments-20261021-001/manuscript/tables/result-record-schema.tex
+@@ -1,12 +1,12 @@
+-\begin{table}[t]\centering\footnotesize
+-\caption{A single result record. Only fields relevant to the requested comparison must align; unavailable required fields remain unresolved.}\label{tab:result-record}
+-\begin{tabularx}{\columnwidth}{@{}p{.24\columnwidth}Y@{}}\toprule
+-Record field & Required meaning\\\midrule
+-Source & Family/result ID, version, source locator, reading scope and hash.\\
+-Target & Hidden property, inference goal and protection relation: confidentiality, attribution, human/agent distinction or authorized diagnosis.\\
+-Receiver & Actual permission and released representation, including session/document linkage and any auxiliary inputs.\\
+-Intervention & Where protection ends; whether edits affect stored traces, transmission or executed actions.\\
+-Attacker & Fit/calibration condition, test population, training access and adaptation budget.\\
+-Workload & Task, system, topology/hardware and grouping/holdout.\\
+-Outcomes & Inference metric/denominator; objective or proxy utility; applicable cost object; uncertainty and field states.\\\bottomrule
+-\end{tabularx}\end{table}
++\begin{table}[t]\centering\footnotesize
++\caption{A single result record. Only fields relevant to the requested comparison must align; unavailable required fields remain unresolved.}\label{tab:result-record}
++\begin{tabularx}{\columnwidth}{@{}p{.24\columnwidth}Y@{}}\toprule
++Record field & Required meaning\\\midrule
++Source & Family/result ID, version, source locator, reading scope and hash.\\
++Target & Hidden property, inference goal and protection relation: confidentiality, attribution, human/agent distinction or authorized diagnosis.\\
++Receiver & Actual permission and released representation, including session/document linkage and any auxiliary inputs.\\
++Intervention & Where protection ends; whether edits affect stored traces, transmission or executed actions.\\
++Attacker & Fit/calibration condition, test population, training access and adaptation budget.\\
++Workload & Task, system, topology/hardware and grouping/holdout.\\
++Outcomes & Inference metric / denominator; objective or proxy utility; applicable cost object; uncertainty and field states.\\\bottomrule
++\end{tabularx}\end{table}
+diff --git a/final-paper-and-experiments-20261021-m1m8-revised/final-paper-and-experiments-20261021-001/manuscript/tables/synthesis-decisions.tex b/final-paper-and-experiments-20261021-m1m8-revised/final-paper-and-experiments-20261021-001/manuscript/tables/synthesis-decisions.tex
+index 961a9d2..2f64707 100644
+--- a/final-paper-and-experiments-20261021-m1m8-revised/final-paper-and-experiments-20261021-001/manuscript/tables/synthesis-decisions.tex
++++ b/final-paper-and-experiments-20261021-m1m8-revised/final-paper-and-experiments-20261021-001/manuscript/tables/synthesis-decisions.tex
+@@ -2,7 +2,7 @@
+ \caption{Source-local findings, cross-study synthesis and the resulting measurement obligation. These are reuse judgments, not accusations that the source authors claimed end-to-end protection.}\label{tab:synthesis-decisions}
+ \begin{tabularx}{\textwidth}{@{}p{.14\textwidth}YYY@{}}\toprule
+ Check & Source-local evidence and locator & Synthesis added by record separation & Changed judgment / controlled evidence\\\midrule
+-1. Receiver & NetEcho IV-C--E/Fig.5: frontend re-emission; SplitDecoy 5.1--5.3: backward gradient support. & Protected upstream and forward views do not cover newly exposed downstream or backward inputs. & Bind the final observer or prove the postprocessing condition. A buffered cap (2.18$\times$) does not price a token stream: per-event padding leaves verbosity at 100\% (E5).\\
++1. Receiver & NetEcho IV-C--E/Fig.5: frontend \mbox{re-emission}; SplitDecoy 5.1--5.3: backward gradient support. & Protected upstream and forward views do not cover newly exposed downstream or backward inputs. & Bind the final observer or prove the postprocessing condition. A buffered cap (2.18$\times$) does not price a token stream: per-event padding leaves verbosity at 100\% (E5).\\
+ 2. Execution & WRA 8.1/Table8: read-only query decoys; AHB 5.2.3/Table1/E.3: live GUI humanization. & Objectives, live action semantics and protected state scopes differ, so their utility outcomes are not contradictory. & Evaluate task objects, full account and shared database separately. Same-item writes change status; randomized and decoy cover stay at 77--100\% BA; dispatch cover leaks on the tool link (E6, E7).\\
+ 3. Adaptation and cost & UI Traces 6.1: delayed-trace refit; Dangol 9.7: capture versus live protocol; Early Bird's KV-prefix versus semantic-cache mechanisms. & A paired attack contrast requires the same defended tests; costs from another mode or mechanism cannot price the claimed protection. & Keep source-local comparisons and mark missing bridges unresolved. $D_0$ reads 50\% where $D_2$ reads 100\% under batching and probabilistic cover (E5, E6).\\\bottomrule
+ \end{tabularx}\end{table*}

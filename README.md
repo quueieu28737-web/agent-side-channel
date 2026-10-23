@@ -1,8 +1,12 @@
 # agent-side-channel
 
-当前版本：**2026-10-24，完整 690 次真实 Agent 实验与 Shadow Cover 部署架构修订版**。
+当前版本：**2026-10-24，完整 690 次真实 Agent 实验、作者复核溯源与表格可读性修订版**。
 
-## 本轮更新：Shadow Cover 的部署路径与观察者边界
+## 本轮更新：审稿问题 2–5
+
+主文明确两阶段提取—作者复核流程，Table 8 使用清晰的文字状态码，Table 5/12 改善数字和区间展示。§6.1 与新增 S18 给出 **20 族 / 33 条缓解记录＋6 族 / 6 条对照记录**的精确映射，补齐实验编号定位，并明确 Timing 与绝对阈值的评估边界。详见 [修订与核对说明](docs/审稿问题2-5-修订与证据核对.md)。实验数据不变；没有新增 Timing 或独立盲审结果。
+
+## 前轮更新：Shadow Cover 的部署路径与观察者边界
 
 主稿 §8.2–§8.4、§9.1 和新增补充 S17 明确逐调用 padding 与完整恒定速率隧道的区别，给出只读/no-op、API 原生隔离、可信 MCP/Tool 网关三条路径，以及中继、网关和提供方的信任边界。详见 [修订说明](docs/Shadow-Cover-部署架构修订说明.md)。全部 690 次实验与历史归档保持原样，本轮增加架构论证与官方文档引用。
 
@@ -15,12 +19,12 @@
 - E11 运行点前沿：
   - 1024 字节分桶使 BA 降到 52.2%/52.7%，字节成本 12.4×，比恒定分帧（19.8×）低 37%，两目标 BA 为 52.2%/52.7%（恒定分帧为 60.5%/52.1%）。
   - 按训练集规则选中分桶点后，在冻结的 46 个测试任务上，字节成本从 15.4× 降到 9.8×。
-- E12 泄漏定位：意图由写调用携带。只看写调用时 BA 为 84–92%，去掉写调用后约为 55–60%；规则 prompt 只统一了读调用序列。
+- E12 泄漏定位：意图由写调用携带。只看写调用时 BA 为 84–92%，去掉写调用后约为 55–60%；规则 prompt 降低读序列多样性，写序列多样性近似不变。
 
 ## 最新论文
 
 - [主稿](main.pdf)：正文截至第 13 页，References 从第 13 页开始，Appendix 在第 17 页；全文 17 页。
-- [补充材料](supplement.pdf)：共 29 页；S14 为完整队列结果，S17 为部署架构与观察者边界。
+- [补充材料](supplement.pdf)：共 31 页；S14 为完整队列结果，S17 为部署架构与观察者边界，S18 为证据映射、编码流程与后续评估规格。
 - [上一轮 SoK 修订说明](docs/SOK-结构与统计修订说明.md)：主文 58 族映射、20×9 审计矩阵、配对程序差值与轨迹等价性。
 - [上一轮完整队列主稿修订说明](docs/R4-690主稿修订说明.md)：完整 690 次结果首次进入主稿的历史记录。
 
@@ -51,7 +55,8 @@
 - `experiments/sp2027-r4-full-20261023/`：完整队列结果、预测、TLS 捕获及新增 27 次运行。
 - `experiments/sp2027-r4-snapshot-20261023/`：不可变 663 次运行快照和基础模型档案。
 - `artifact-index.json`：附录四个逻辑模块到实际归档路径的索引。
-- `provenance/shadow-deployment/`：当前部署架构修订的来源、历史文件保全和 PDF 校验收据。
+- `provenance/review-closure/`：当前表格、映射、作者声明、历史文件保全与 PDF 校验收据。
+- `provenance/shadow-deployment/`：前轮部署架构修订的来源与历史收据。
 - `provenance/sok-restructure/`：上一轮 SoK 修订来源、表格生成器、配对重算和历史文稿收据。
 - `provenance/main-690/`：上一轮主稿版本的历史来源与收据；其文稿校验器对应旧版排版。
 
@@ -60,7 +65,7 @@
 ```text
 python -B verify_package.py
 python -B verify_revision.py
-python -B provenance/shadow-deployment/verify_manuscript.py
+python -B provenance/review-closure/verify_manuscript.py
 python -B experiments/sp2027-r4-full-20261023/verify_release.py
 ```
 
@@ -71,7 +76,8 @@ LaTeX 使用 IEEEtran 1.8b conference,compsoc；在 `manuscript/` 分别对 `mai
 ## 版本与交付包
 
 - 当前 GitHub main 的 `main.pdf`、`supplement.pdf` 已纳入完整队列。
-- `paper-shadow-deployment-20261024.zip` 为当前部署架构增量包，基于 `35d43a8`；配套 JSON 核对全部条目与归档哈希。
+- `paper-review-closure-20261024.zip` 为当前审稿修订增量包，基于 `74ea9e8`，配套 JSON 核对全部条目与归档哈希。
+- `paper-shadow-deployment-20261024.zip` 为前轮部署架构增量包，基于 `35d43a8`；配套 JSON 核对全部条目与归档哈希。
 - `paper-sok-restructure-20261023.zip` 为上一轮增量更新包，适用于已合入 R5 的提交 `17db1ab`；校验信息见同名 JSON。
 - `paper-690-manuscript-update-20261023.zip` 保留上一轮完整队列主稿更新版，适用于包含完整队列提交 `c8e90bb` 的仓库。
 - [完整队列独立补充](full-cohort-supplement.pdf) 和 `r4-full-cohort-extension-20261023.zip` 保留上一轮状态；前者中的“保留原主稿”描述对应当时版本。

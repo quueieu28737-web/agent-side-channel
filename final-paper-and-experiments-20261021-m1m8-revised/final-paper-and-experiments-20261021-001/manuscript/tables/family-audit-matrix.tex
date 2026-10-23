@@ -3,28 +3,28 @@
 \setlength{\tabcolsep}{2.2pt}
 \begin{tabularx}{\columnwidth}{@{}Y*{9}{c}@{}}\toprule
 Family & R1 & R2 & R3 & R4 & R5 & R6 & R7 & R8 & R9\\\midrule
-UI Traces~\cite{uitraces2026} & $\bullet$ & \auditpartial & $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$ & $\circ$ & --\\
-WRA~\cite{jeong2026wra} & $\bullet$ & \auditpartial & $\bullet$ & -- & -- & \auditpartial & $\bullet$ & \auditpartial & $\circ$\\
-NetEcho~\cite{netecho2025} & $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$ & \auditpartial & $\bullet$ & $\bullet$ & $\circ$ & $\circ$\\
-Early Bird~\cite{earlybird2025} & $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$ & \auditpartial & $\bullet$ & $\bullet$ & $\circ$ & $\bullet$\\
-Whisper Leak~\cite{whisperleak2025} & $\bullet$ & $\bullet$ & \auditpartial & ? & ? & $\bullet$ & $\bullet$ & $\circ$ & $\bullet$\\
-SpliceLeak~\cite{spliceleak2026} & $\bullet$ & $\bullet$ & $\bullet$ & -- & -- & $\bullet$ & $\bullet$ & $\circ$ & $\bullet$\\
-Time Will Tell~\cite{timewilltell2024} & $\bullet$ & $\bullet$ & $\bullet$ & ? & ? & $\bullet$ & $\bullet$ & $\circ$ & $\bullet$\\
-I Know What You Said~\cite{gao2025iknow} & $\bullet$ & $\bullet$ & $\bullet$ & -- & -- & $\bullet$ & $\circ$ & -- & $\bullet$\\
-Speculative decoding~\cite{wei2024speculation} & $\bullet$ & $\bullet$ & \auditpartial & ? & ? & $\bullet$ & $\bullet$ & -- & $\bullet$\\
-Dangol workflow~\cite{dangol2026workflow} & $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$ & $\circ$ & $\bullet$\\
-Cloud traffic benchmark~\cite{pouryousef2026traffic} & $\bullet$ & \auditpartial & ? & ? & ? & \auditpartial & $\bullet$ & \auditpartial & $\circ$\\
-Remote timing~\cite{carlini2024remote} & $\bullet$ & $\bullet$ & $\bullet$ & -- & -- & $\bullet$ & $\bullet$ & $\circ$ & \auditpartial\\
-TDXRay~\cite{hornetz2026tdxray} & $\bullet$ & $\bullet$ & $\bullet$ & -- & -- & $\bullet$ & $\circ$ & $\bullet$ & $\bullet$\\
-SafeKV~\cite{chu2025safekv} & $\bullet$ & $\bullet$ & $\bullet$ & -- & -- & $\bullet$ & $\bullet$ & $\circ$ & $\bullet$\\
-AHB~\cite{zhu2026turing} & $\bullet$ & $\bullet$ & $\bullet$ & \auditpartial & ? & $\bullet$ & $\bullet$ & $\bullet$ & $\circ$\\
-KVGov~\cite{addagada2026kvgov} & $\bullet$ & $\bullet$ & $\bullet$ & -- & -- & $\bullet$ & $\bullet$ & $\circ$ & $\bullet$\\
-CachePrune~\cite{wu2026cacheprune} & $\bullet$ & $\bullet$ & $\bullet$ & -- & -- & $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$\\
-OTRO~\cite{lee2026otro} & $\bullet$ & $\bullet$ & $\bullet$ & -- & -- & $\bullet$ & $\bullet$ & -- & \auditpartial\\
-SparLeak~\cite{chen2026sparleak} & $\bullet$ & $\bullet$ & $\bullet$ & ? & ? & $\bullet$ & $\bullet$ & \auditpartial & $\circ$\\
-Shape and Substance~\cite{hadad2026shape} & $\bullet$ & $\bullet$ & \auditpartial & ? & ? & $\bullet$ & \auditpartial & $\circ$ & \auditpartial\\
+UI Traces~\cite{uitraces2026} & \textbf{B} & \textbf{P} & \textbf{B} & \textbf{B} & \textbf{B} & \textbf{B} & \textbf{B} & U & --\\
+WRA~\cite{jeong2026wra} & \textbf{B} & \textbf{P} & \textbf{B} & -- & -- & \textbf{P} & \textbf{B} & \textbf{P} & U\\
+NetEcho~\cite{netecho2025} & \textbf{B} & \textbf{B} & \textbf{B} & \textbf{B} & \textbf{P} & \textbf{B} & \textbf{B} & U & U\\
+Early Bird~\cite{earlybird2025} & \textbf{B} & \textbf{B} & \textbf{B} & \textbf{B} & \textbf{P} & \textbf{B} & \textbf{B} & U & \textbf{B}\\
+Whisper Leak~\cite{whisperleak2025} & \textbf{B} & \textbf{B} & \textbf{P} & ? & ? & \textbf{B} & \textbf{B} & U & \textbf{B}\\
+SpliceLeak~\cite{spliceleak2026} & \textbf{B} & \textbf{B} & \textbf{B} & -- & -- & \textbf{B} & \textbf{B} & U & \textbf{B}\\
+Time Will Tell~\cite{timewilltell2024} & \textbf{B} & \textbf{B} & \textbf{B} & ? & ? & \textbf{B} & \textbf{B} & U & \textbf{B}\\
+I Know What You Said~\cite{gao2025iknow} & \textbf{B} & \textbf{B} & \textbf{B} & -- & -- & \textbf{B} & U & -- & \textbf{B}\\
+Speculative decoding~\cite{wei2024speculation} & \textbf{B} & \textbf{B} & \textbf{P} & ? & ? & \textbf{B} & \textbf{B} & -- & \textbf{B}\\
+Dangol workflow~\cite{dangol2026workflow} & \textbf{B} & \textbf{B} & \textbf{B} & \textbf{B} & \textbf{B} & \textbf{B} & \textbf{B} & U & \textbf{B}\\
+Cloud traffic benchmark~\cite{pouryousef2026traffic} & \textbf{B} & \textbf{P} & ? & ? & ? & \textbf{P} & \textbf{B} & \textbf{P} & U\\
+Remote timing~\cite{carlini2024remote} & \textbf{B} & \textbf{B} & \textbf{B} & -- & -- & \textbf{B} & \textbf{B} & U & \textbf{P}\\
+TDXRay~\cite{hornetz2026tdxray} & \textbf{B} & \textbf{B} & \textbf{B} & -- & -- & \textbf{B} & U & \textbf{B} & \textbf{B}\\
+SafeKV~\cite{chu2025safekv} & \textbf{B} & \textbf{B} & \textbf{B} & -- & -- & \textbf{B} & \textbf{B} & U & \textbf{B}\\
+AHB~\cite{zhu2026turing} & \textbf{B} & \textbf{B} & \textbf{B} & \textbf{P} & ? & \textbf{B} & \textbf{B} & \textbf{B} & U\\
+KVGov~\cite{addagada2026kvgov} & \textbf{B} & \textbf{B} & \textbf{B} & -- & -- & \textbf{B} & \textbf{B} & U & \textbf{B}\\
+CachePrune~\cite{wu2026cacheprune} & \textbf{B} & \textbf{B} & \textbf{B} & -- & -- & \textbf{B} & \textbf{B} & \textbf{B} & \textbf{B}\\
+OTRO~\cite{lee2026otro} & \textbf{B} & \textbf{B} & \textbf{B} & -- & -- & \textbf{B} & \textbf{B} & -- & \textbf{P}\\
+SparLeak~\cite{chen2026sparleak} & \textbf{B} & \textbf{B} & \textbf{B} & ? & ? & \textbf{B} & \textbf{B} & \textbf{P} & U\\
+Shape and Substance~\cite{hadad2026shape} & \textbf{B} & \textbf{B} & \textbf{P} & ? & ? & \textbf{B} & \textbf{P} & U & \textbf{P}\\
 \midrule Bound & 20 & 17 & 16 & 4 & 2 & 18 & 17 & 3 & 11\\
 Applicable & 20 & 20 & 20 & 11 & 11 & 20 & 20 & 17 & 19\\
 \bottomrule\end{tabularx}
-\par\smallskip\raggedright $\bullet$: bound; \auditpartial: partial; $\circ$: unreported in inspected scope; ?: unverified binding; --: inapplicable. R1 target/polarity; R2 receiver; R3 placement/execution; R4 defended-condition fit; R5 matched adaptation; R6 workload/generator shifts; R7 inference; R8 utility; R9 cost. A bound cell is supported by at least one scoped record. Dangol R5 concerns stored capture; its live-refit binding remains unverified. CachePrune jointly binds R7--R9 at one operating point.
+\par\smallskip\raggedright \textbf{B}: bound; \textbf{P}: partial; U: unreported in inspected scope; ?: unverified binding (intentional); --: inapplicable. R1 target/polarity; R2 receiver; R3 placement/execution; R4 defended-condition fit; R5 matched adaptation; R6 workload/generator shifts; R7 inference; R8 utility; R9 cost. A bound cell is supported by at least one scoped record. Dangol R5 concerns stored capture; its live-refit binding remains unverified. CachePrune jointly binds R7--R9 at one operating point.
 \end{table}

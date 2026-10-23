@@ -1,6 +1,6 @@
 # 完整 690 次真实 Agent 实验与 SoK 主文结构修订版
 
-当前论文：`pdf/main.pdf`、`pdf/supplement.pdf`；源文件在 `manuscript/`。正文截至第 13 页，References 从第 13 页开始，附录在第 17 页，全文 17 页；补充材料 29 页。E9 使用完整 414 训练＋276 测试。当前修订来源与检查在 `provenance/shadow-deployment/`；`provenance/sok-restructure/` 保留上一轮 SoK 文稿与配对统计记录；`provenance/main-690/` 保留上一轮文稿版本的记录。
+当前论文：`pdf/main.pdf`、`pdf/supplement.pdf`；源文件在 `manuscript/`。正文截至第 13 页，References 从第 13 页开始，附录在第 17 页，全文 17 页；补充材料 31 页。E9 使用完整 414 训练＋276 测试。当前修订来源与检查在 `provenance/review-closure/`；`provenance/shadow-deployment/` 保留前轮部署论证；`provenance/sok-restructure/` 保留上一轮 SoK 文稿与配对统计记录；`provenance/main-690/` 保留上一轮文稿版本的记录。
 
 主文 Table 5 显示全部 58 个核心研究族的生成层、观察层及威胁类型；Table 8 显示 20 个防御族的全部 180 个 R1–R9 审计单元。符号区分绑定、部分、未报告、未核实和不适用。检索对账表与 24 场景混淆矩阵已移到补充材料。`artifact-index.json` 将 Appendix A 中的四个逻辑模块映射到实际归档文件；保留物理目录及旧数据以保障可追溯性。
 
@@ -34,7 +34,7 @@
 ```text
 python -B verify_package.py
 python -B verify_revision.py
-python -B provenance/shadow-deployment/verify_manuscript.py
+python -B provenance/review-closure/verify_manuscript.py
 python -B experiments/sp2027-r4-full-20261023/verify_release.py
 python -B experiments/sp2027-r4-full-20261023/verify_extension.py
 python -B experiments/sp2027-r4-full-20261023/reproduce.py --reanalyze
@@ -53,4 +53,10 @@ python -B experiments/sp2027-r4-full-20261023/reproduce.py --reanalyze
 
 ## 2026-10-24 部署架构修订
 
-§8.2–§8.4、§9.1 与新增 S17 将 per-call padding、完整传输隧道、调用可见中继、可信网关及提供方状态观察分开。三条 shadow 实现路径为合法读取/no-op、原生非提交/测试环境、网关隔离模拟器。新增五条官方部署引用，原 82 研究族与全部实验数据不变。当前文稿检查使用 `provenance/shadow-deployment/verify_manuscript.py`；旧 `provenance/sok-restructure/verify_manuscript.py` 对应 16/27 页历史版本。
+§8.2–§8.4、§9.1 与新增 S17 将 per-call padding、完整传输隧道、调用可见中继、可信网关及提供方状态观察分开。三条 shadow 实现路径为合法读取/no-op、原生非提交/测试环境、网关隔离模拟器。新增五条官方部署引用，原 82 研究族与全部实验数据不变。当前文稿检查使用 `provenance/review-closure/verify_manuscript.py`（包含本轮后续修订）；旧 `provenance/sok-restructure/verify_manuscript.py` 对应 16/27 页历史版本。
+
+## 审稿问题 2–5 修订
+
+新增 S18 列出 82 族到 39 条记录的完整映射：20 个缓解族贡献 33 条记录，6 个对照族各贡献 1 条。作者已明确确认 39 条记录和 180 单元格的定位核验，以及 82 族分类复核；κ 表示归档提取—复核两列的一致性，另有最终裁定列。独立盲审模板是复现基础设施。
+
+Table 8 改用 B/P/U/?/–，不改变状态；Table 5 与 Table 12 改善排版而保持数值。S18 同时提供实验编号对应、绝对阈值解释和 Timing/闭环评估规格。没有新增模型、Timing 或外部验证结果。旧 shadow-deployment 文稿检查针对前轮 17/29 页，当前为 17/31 页。
