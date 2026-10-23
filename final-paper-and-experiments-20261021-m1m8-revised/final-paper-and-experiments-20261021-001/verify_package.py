@@ -59,8 +59,22 @@ def closure(root, entry):
 
 
 def check_manifest(root, manifest_name):
-    expected = load(root / manifest_name)["files"]
-    paths = list(root.rglob("*"))
+    manifest = load(root / manifest_name)
+    expected = manifest["files"]
+    local_only = manifest.get("local_only_directories", [])
+    assert not local_only or (root == ROOT and local_only == ["experiments/sp2027-r4"])
+    # The continuing collector is not part of the immutable publication package.
+    # The committed snapshot has its own complete manifest membership.
+    paths = []
+    def walk(folder):
+        for path in folder.iterdir():
+            rel = path.relative_to(root).as_posix()
+            if rel in local_only or path.name == "__pycache__":
+                continue
+            paths.append(path)
+            if path.is_dir() and not path.is_symlink():
+                walk(path)
+    walk(root)
     assert not any(path.is_symlink() for path in paths)
     actual = {path.relative_to(root).as_posix() for path in paths if path.is_file()}
     assert actual == set(expected) | {manifest_name}, "Manifest membership differs"
@@ -129,7 +143,8 @@ def main():
                           "audit_144": round(m7_dc["split_check_audit_144_cells"]["cohen_kappa"], 3),
                           "pairs_150": round(m7_dc["pairwise_comparability_50_pairs_150_judgments"]["cohen_kappa"], 3),
                       },
-                      "new_model_calls": 0, "new_task_collection": False,
+                      "historical_revision_model_calls": 0,
+                      "fourth_round": snapshot.get("fourth_round"),
                       "uploads": 0}, indent=2))
 
 

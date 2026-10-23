@@ -1,0 +1,17 @@
+{
+ "changed_utc": "2026-10-21T18:09:04.914626+00:00",
+ "authorization": "User requested switching to another model when 429 occurs, retaining all 690 runs.",
+ "reason": "Persistent Luna HTTP 429 infrastructure throttling. Choice based on connectivity, not benchmark rewards or attack metrics.",
+ "old_model": "gpt-6-luna",
+ "new_model": "gpt-6.1-sol",
+ "old_protocol_sha256": "db147e6a05c6a7857ce81c43ee98a3dc8cfcbb3fe5a0c6ab1ed5343f775f5549",
+ "new_protocol_sha256": "54787c563c74cba9c18f7c18b2b26651c335a23a4ab79855cf6c9812009cd5ad",
+ "old_runtime_manifest_sha256": "2cd47ed60816fb309937002c82e6a93aed88da544e075bf140bacfab1281184f",
+ "old_completed_training_episodes": 4,
+ "old_successful_model_calls": 109,
+ "prior_observation": "Collector printed statuses and rewards for completed training episodes before change. No test episode or attack evaluation was collected.",
+ "disposition": "All Luna RPC episodes and partial calls archived in aborted-luna-rpc and excluded from formal analysis; no continuation of partial conversations with another model.",
+ "probe": "One schema-constrained connectivity request; no benchmark data; model-connectivity-sol. A successful probe does not establish sustained throughput.",
+ "design": "690 fresh Sol episodes: 115 tasks x 2 prompt arms x 3 repeats. Both agent and user simulator use Sol with low reasoning. Split, prompts, step budget and analysis unchanged.",
+ "failure_policy": "No per-call model fallback. Respect provider retry/backoff; shared quota exhaustion cannot be repaired by rotating models."
+}

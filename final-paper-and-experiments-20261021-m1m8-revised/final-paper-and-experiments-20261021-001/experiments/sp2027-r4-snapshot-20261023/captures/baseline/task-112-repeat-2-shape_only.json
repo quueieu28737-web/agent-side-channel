@@ -1,0 +1,464 @@
+{
+ "task": 112,
+ "repeat": 2,
+ "seed": 2,
+ "prompt": "baseline",
+ "user": "yara_silva_7567",
+ "has_cancel": 0,
+ "has_return": 0,
+ "native_reward": 1,
+ "db_eq": true,
+ "status": "user_stop",
+ "condition": "shape_only",
+ "calls": [
+  {
+   "name": "get_product_details",
+   "kind": "cover",
+   "req": 74,
+   "resp": 3370,
+   "err": false,
+   "donor_task": 74
+  },
+  {
+   "name": "find_user_id_by_name_zip",
+   "kind": "real",
+   "req": 111,
+   "resp": 15,
+   "err": false
+  },
+  {
+   "name": "find_user_id_by_email",
+   "kind": "cover",
+   "req": 87,
+   "resp": 15,
+   "err": false,
+   "donor_task": 11
+  },
+  {
+   "name": "get_user_details",
+   "kind": "real",
+   "req": 73,
+   "resp": 403,
+   "err": false
+  },
+  {
+   "name": "modify_pending_order_items",
+   "kind": "cover",
+   "req": 177,
+   "resp": 1038,
+   "err": false,
+   "donor_task": 72
+  },
+  {
+   "name": "get_order_details",
+   "kind": "real",
+   "req": 69,
+   "resp": 854,
+   "err": false
+  },
+  {
+   "name": "get_order_details",
+   "kind": "real",
+   "req": 69,
+   "resp": 1073,
+   "err": false
+  },
+  {
+   "name": "get_order_details",
+   "kind": "real",
+   "req": 69,
+   "resp": 1377,
+   "err": false
+  },
+  {
+   "name": "modify_user_address",
+   "kind": "cover",
+   "req": 203,
+   "resp": 369,
+   "err": false,
+   "donor_task": 33
+  },
+  {
+   "name": "get_order_details",
+   "kind": "real",
+   "req": 69,
+   "resp": 738,
+   "err": false
+  },
+  {
+   "name": "list_all_product_types",
+   "kind": "cover",
+   "req": 51,
+   "resp": 1478,
+   "err": false,
+   "donor_task": 52
+  },
+  {
+   "name": "get_product_details",
+   "kind": "real",
+   "req": 74,
+   "resp": 3370,
+   "err": false
+  },
+  {
+   "name": "calculate",
+   "kind": "cover",
+   "req": 69,
+   "resp": 7,
+   "err": false,
+   "donor_task": 76
+  },
+  {
+   "name": "get_product_details",
+   "kind": "real",
+   "req": 74,
+   "resp": 1203,
+   "err": false
+  },
+  {
+   "name": "transfer_to_human_agents",
+   "kind": "cover",
+   "req": 440,
+   "resp": 19,
+   "err": false,
+   "donor_task": 32
+  },
+  {
+   "name": "modify_pending_order_address",
+   "kind": "real",
+   "req": 208,
+   "resp": 742,
+   "err": false
+  },
+  {
+   "name": "modify_pending_order_items",
+   "kind": "real",
+   "req": 180,
+   "resp": 866,
+   "err": false
+  },
+  {
+   "name": "return_delivered_order_items",
+   "kind": "cover",
+   "req": 161,
+   "resp": 1077,
+   "err": false,
+   "donor_task": 26
+  },
+  {
+   "name": "modify_pending_order_items",
+   "kind": "real",
+   "req": 180,
+   "resp": 974,
+   "err": false
+  },
+  {
+   "name": "exchange_delivered_order_items",
+   "kind": "cover",
+   "req": 186,
+   "resp": 1585,
+   "err": false,
+   "donor_task": 95
+  },
+  {
+   "name": "find_user_id_by_email",
+   "kind": "cover",
+   "req": 87,
+   "resp": 15,
+   "err": false,
+   "donor_task": 10
+  },
+  {
+   "name": "get_order_details",
+   "kind": "cover",
+   "req": 69,
+   "resp": 595,
+   "err": false,
+   "donor_task": 100
+  },
+  {
+   "name": "return_delivered_order_items",
+   "kind": "cover",
+   "req": 147,
+   "resp": 1511,
+   "err": false,
+   "donor_task": 48
+  },
+  {
+   "name": "return_delivered_order_items",
+   "kind": "cover",
+   "req": 161,
+   "resp": 45,
+   "err": true,
+   "donor_task": 47
+  },
+  {
+   "name": "get_order_details",
+   "kind": "cover",
+   "req": 69,
+   "resp": 1243,
+   "err": false,
+   "donor_task": 96
+  },
+  {
+   "name": "cancel_pending_order",
+   "kind": "cover",
+   "req": 104,
+   "resp": 1019,
+   "err": false,
+   "donor_task": 76
+  },
+  {
+   "name": "cancel_pending_order",
+   "kind": "cover",
+   "req": 102,
+   "resp": 864,
+   "err": false,
+   "donor_task": 55
+  },
+  {
+   "name": "exchange_delivered_order_items",
+   "kind": "cover",
+   "req": 214,
+   "resp": 978,
+   "err": false,
+   "donor_task": 99
+  }
+ ],
+ "records": [
+  [
+   "c2s",
+   102
+  ],
+  [
+   "s2c",
+   3398
+  ],
+  [
+   "c2s",
+   139
+  ],
+  [
+   "s2c",
+   43
+  ],
+  [
+   "c2s",
+   115
+  ],
+  [
+   "s2c",
+   43
+  ],
+  [
+   "c2s",
+   101
+  ],
+  [
+   "s2c",
+   431
+  ],
+  [
+   "c2s",
+   205
+  ],
+  [
+   "s2c",
+   1066
+  ],
+  [
+   "c2s",
+   97
+  ],
+  [
+   "s2c",
+   882
+  ],
+  [
+   "c2s",
+   97
+  ],
+  [
+   "s2c",
+   1101
+  ],
+  [
+   "c2s",
+   97
+  ],
+  [
+   "s2c",
+   1405
+  ],
+  [
+   "c2s",
+   231
+  ],
+  [
+   "s2c",
+   397
+  ],
+  [
+   "c2s",
+   97
+  ],
+  [
+   "s2c",
+   766
+  ],
+  [
+   "c2s",
+   79
+  ],
+  [
+   "s2c",
+   1506
+  ],
+  [
+   "c2s",
+   102
+  ],
+  [
+   "s2c",
+   3398
+  ],
+  [
+   "c2s",
+   97
+  ],
+  [
+   "s2c",
+   35
+  ],
+  [
+   "c2s",
+   102
+  ],
+  [
+   "s2c",
+   1231
+  ],
+  [
+   "c2s",
+   468
+  ],
+  [
+   "s2c",
+   47
+  ],
+  [
+   "c2s",
+   236
+  ],
+  [
+   "s2c",
+   770
+  ],
+  [
+   "c2s",
+   208
+  ],
+  [
+   "s2c",
+   894
+  ],
+  [
+   "c2s",
+   189
+  ],
+  [
+   "s2c",
+   1105
+  ],
+  [
+   "c2s",
+   208
+  ],
+  [
+   "s2c",
+   1002
+  ],
+  [
+   "c2s",
+   214
+  ],
+  [
+   "s2c",
+   1613
+  ],
+  [
+   "c2s",
+   115
+  ],
+  [
+   "s2c",
+   43
+  ],
+  [
+   "c2s",
+   97
+  ],
+  [
+   "s2c",
+   623
+  ],
+  [
+   "c2s",
+   175
+  ],
+  [
+   "s2c",
+   1539
+  ],
+  [
+   "c2s",
+   189
+  ],
+  [
+   "s2c",
+   73
+  ],
+  [
+   "c2s",
+   97
+  ],
+  [
+   "s2c",
+   1271
+  ],
+  [
+   "c2s",
+   132
+  ],
+  [
+   "s2c",
+   1047
+  ],
+  [
+   "c2s",
+   130
+  ],
+  [
+   "s2c",
+   892
+  ],
+  [
+   "c2s",
+   242
+  ],
+  [
+   "s2c",
+   1006
+  ]
+ ],
+ "application_wire_bytes": 32268,
+ "framing_overflow_messages": 0,
+ "template_flags": {
+  "template_overflow": true,
+  "template_underfill": false,
+  "missing_donor_attempts": {}
+ },
+ "calibration_sha256": "d7a4ff38be31191f7043080ce7fc1ff64df811e03ad255dc2da21e4d2d815db8",
+ "episode_sha256": "e7e3ac49e885db1949723e00380c5d364d2462347ce97f8f0cf5aeda6cf929a5",
+ "measurement": "TLS 1.2 loopback replay of real model trajectory; provider link and wall-clock timing excluded"
+}

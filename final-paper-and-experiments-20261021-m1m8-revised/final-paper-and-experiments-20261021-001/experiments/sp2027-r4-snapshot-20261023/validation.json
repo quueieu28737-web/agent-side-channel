@@ -1,0 +1,67 @@
+{
+ "status": "VERIFIED",
+ "episodes": 660,
+ "training_tasks": 69,
+ "test_tasks": 41,
+ "test_customers": 22,
+ "tls_sessions": 2640,
+ "prediction_sets": 176,
+ "model_calls": 11002,
+ "model_usage": {
+  "input_tokens": 116436224,
+  "cached_input_tokens": 48961024,
+  "output_tokens": 606577,
+  "reasoning_output_tokens": 6411
+ },
+ "protocol_sha256": "54787c563c74cba9c18f7c18b2b26651c335a23a4ab79855cf6c9812009cd5ad",
+ "calibration_sha256": "d7a4ff38be31191f7043080ce7fc1ff64df811e03ad255dc2da21e4d2d815db8",
+ "checks": [
+  "group disjointness",
+  "episode grid and versions",
+  "training-only calibration refit",
+  "sandbox state replay",
+  "online cover reconstruction",
+  "TLS record counts/byte totals",
+  "independent sklearn point metrics",
+  "customer-cluster suite intervals",
+  "paired contrasts",
+  "model request provenance"
+ ],
+ "release_scope": "INTERIM_COMPLETION_SNAPSHOT",
+ "planned_episodes": 690,
+ "completed_episodes_in_release": 663,
+ "primary_analysis_episodes": 660,
+ "additional_completed_episodes": [
+  [
+   "baseline",
+   105,
+   0
+  ],
+  [
+   "baseline",
+   105,
+   1
+  ],
+  [
+   "rules",
+   105,
+   0
+  ]
+ ],
+ "all_completed_model_calls": 11112,
+ "snapshot_utc": "2026-10-23T10:01:03.161207+00:00",
+ "snapshot_amendment_sha256": "b389f2ddc7815b5bedd990db714ff6eb58eb51d8cbe2ae069b9659e841ae3bb9",
+ "decision_alignment": {
+  "status": "DECISION_ALIGNMENT_PASS",
+  "episodes": 663,
+  "model_decisions": 11112,
+  "additional_episode_state_checks": 3,
+  "checks": [
+   "model actions to tool-call sequence",
+   "assistant and user messages to model outputs",
+   "usage totals",
+   "serialized request and response lengths",
+   "additional episode state and output scoring"
+  ]
+ }
+}

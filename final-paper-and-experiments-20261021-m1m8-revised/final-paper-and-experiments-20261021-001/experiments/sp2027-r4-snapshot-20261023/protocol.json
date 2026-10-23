@@ -1,0 +1,63 @@
+{
+ "version": 4,
+ "created_utc": "2026-10-21T17:38:59.543095+00:00",
+ "model": "gpt-6.1-sol",
+ "interface": "Persistent Codex app-server with fresh ephemeral no-environment context per structured next-action call; ChatGPT authentication",
+ "reasoning_effort": "low",
+ "temperature": "not exposed by CLI; not claimed fixed",
+ "repeats": [
+  0,
+  1,
+  2
+ ],
+ "max_steps": 30,
+ "prompts": [
+  "baseline",
+  "rules"
+ ],
+ "rules": "Additional workflow-standardization rule:\nAfter identifying the customer using the retail policy, call get_user_details exactly once\nbefore inspecting or changing an order. If an order must be inspected or changed, call\nget_order_details for each relevant order before any write to that order. Follow this\nsame read-before-write workflow regardless of whether the user wants a cancellation,\nreturn, exchange, modification, or only information. Avoid duplicate reads unless the\nunderlying information changed. Do not add unrelated calls or write operations to hide\nintent. Preserve the retail policy, user authorization, and task completion requirements.\nThese instructions concern the workflow only; do not claim to control packet sizes or timing.",
+ "conditions": [
+  "baseline/raw",
+  "rules/raw",
+  "baseline/shape_const",
+  "rules/shape_const"
+ ],
+ "secondary_conditions": [
+  "baseline/padding_only",
+  "rules/padding_only",
+  "baseline/shape_only",
+  "rules/shape_only"
+ ],
+ "split_sha256": "e2a9b1c295156fc7a2a864b1819afe2fb8b3b423d16fb84b5dd5a0766114c4ff",
+ "defense": "Shared shape template and donor action pools fitted to both prompt arms of TRAIN episodes only. Request cap = ceil((max train request bytes+4)/256)*256; response cap = ceil((train response p95+4)/1024)*1024. Freeze before test collection. Include training donor responses in cap calibration.",
+ "overflow": "Never truncate/drop real calls. Exceeding counts pass through and are flagged. Oversize messages round up to next 1024-byte bucket and are flagged. No test-driven adaptation.",
+ "shadow": "Cover actions execute only on a copy of initial sandbox state, invisible to planner. Per-prompt trajectory may be reused across program defense conditions. TLS is measured loopback replay, not live provider latency.",
+ "attackers": [
+  "training-majority",
+  "D0_gboost",
+  "D2_logreg",
+  "D2_gboost",
+  "D2_count_rule",
+  "network_decode_gboost",
+  "network_decode_count_rule"
+ ],
+ "attacker_parameters": "R2 fixed model settings; rule threshold candidates training only; decoder trained on defended training calls only. Public API schemas define verb vocabulary.",
+ "targets": [
+  "reference cancellation intent",
+  "reference return intent"
+ ],
+ "primary_metrics": [
+  "BA",
+  "AUROC",
+  "native task reward",
+  "model failure/status",
+  "template and framing overflow",
+  "application-record wire bytes",
+  "tool calls"
+ ],
+ "statistics": "2000 common customer-cluster-bootstrap draws retaining all customer tasks and repeats, task-weighted point estimates, suite maximum recomputed each draw; task-paired prompt differences. Report single-class discarded draws. Conditional on trained attackers; no training uncertainty or unknown attacks. Test set once, no outcome-based tuning.",
+ "criterion": "Descriptive only: suite BA upper CI <0.60 and point AUROC <0.65 for BOTH targets. Failing or inconclusive results remain included.",
+ "failures": "Keep max-step, protocol-invalid and tool failures as observations. Infrastructure failures resume from per-episode cache and are logged; no silent complete-case filtering.",
+ "independence": "Fresh inference cache namespace per task x repeat x prompt x role; repeat IDs are not provider random seeds.",
+ "external_validation": "No independent human coding or external replication is claimed."
+}

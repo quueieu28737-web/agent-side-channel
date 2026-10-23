@@ -1,0 +1,113 @@
+{
+ "task": 69,
+ "repeat": 0,
+ "seed": 0,
+ "prompt": "rules",
+ "user": "emma_smith_8564",
+ "has_cancel": 1,
+ "has_return": 0,
+ "native_reward": 1,
+ "db_eq": true,
+ "status": "user_stop",
+ "condition": "raw",
+ "calls": [
+  {
+   "name": "find_user_id_by_name_zip",
+   "kind": "real",
+   "req": 111,
+   "resp": 15,
+   "err": false
+  },
+  {
+   "name": "get_user_details",
+   "kind": "real",
+   "req": 73,
+   "resp": 459,
+   "err": false
+  },
+  {
+   "name": "get_order_details",
+   "kind": "real",
+   "req": 69,
+   "resp": 573,
+   "err": false
+  },
+  {
+   "name": "get_order_details",
+   "kind": "real",
+   "req": 69,
+   "resp": 597,
+   "err": false
+  },
+  {
+   "name": "get_order_details",
+   "kind": "real",
+   "req": 69,
+   "resp": 879,
+   "err": false
+  },
+  {
+   "name": "cancel_pending_order",
+   "kind": "real",
+   "req": 102,
+   "resp": 704,
+   "err": false
+  }
+ ],
+ "records": [
+  [
+   "c2s",
+   139
+  ],
+  [
+   "s2c",
+   43
+  ],
+  [
+   "c2s",
+   101
+  ],
+  [
+   "s2c",
+   487
+  ],
+  [
+   "c2s",
+   97
+  ],
+  [
+   "s2c",
+   601
+  ],
+  [
+   "c2s",
+   97
+  ],
+  [
+   "s2c",
+   625
+  ],
+  [
+   "c2s",
+   97
+  ],
+  [
+   "s2c",
+   907
+  ],
+  [
+   "c2s",
+   130
+  ],
+  [
+   "s2c",
+   732
+  ]
+ ],
+ "application_wire_bytes": 4116,
+ "framing_overflow_messages": 0,
+ "template_flags": null,
+ "calibration_sha256": "d7a4ff38be31191f7043080ce7fc1ff64df811e03ad255dc2da21e4d2d815db8",
+ "episode_sha256": "f60cb00661de63d7d33d26b22a25684765af171cdb83ca50ea28e3e65018aae1",
+ "measurement": "TLS 1.2 loopback replay of real model trajectory; provider link and wall-clock timing excluded"
+}

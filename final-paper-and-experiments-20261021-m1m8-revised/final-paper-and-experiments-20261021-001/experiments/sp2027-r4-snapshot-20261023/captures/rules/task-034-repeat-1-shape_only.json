@@ -1,0 +1,455 @@
+{
+ "task": 34,
+ "repeat": 1,
+ "seed": 1,
+ "prompt": "rules",
+ "user": "noah_patel_6952",
+ "has_cancel": 0,
+ "has_return": 0,
+ "native_reward": 0,
+ "db_eq": true,
+ "status": "user_stop",
+ "condition": "shape_only",
+ "calls": [
+  {
+   "name": "find_user_id_by_name_zip",
+   "kind": "real",
+   "req": 111,
+   "resp": 15,
+   "err": false
+  },
+  {
+   "name": "get_order_details",
+   "kind": "cover",
+   "req": 69,
+   "resp": 1263,
+   "err": false,
+   "donor_task": 74
+  },
+  {
+   "name": "get_user_details",
+   "kind": "real",
+   "req": 73,
+   "resp": 366,
+   "err": false
+  },
+  {
+   "name": "exchange_delivered_order_items",
+   "kind": "cover",
+   "req": 181,
+   "resp": 1592,
+   "err": false,
+   "donor_task": 45
+  },
+  {
+   "name": "get_order_details",
+   "kind": "real",
+   "req": 69,
+   "resp": 1249,
+   "err": false
+  },
+  {
+   "name": "modify_pending_order_address",
+   "kind": "real",
+   "req": 204,
+   "resp": 1246,
+   "err": false
+  },
+  {
+   "name": "modify_user_address",
+   "kind": "cover",
+   "req": 202,
+   "resp": 417,
+   "err": false,
+   "donor_task": 110
+  },
+  {
+   "name": "get_product_details",
+   "kind": "cover",
+   "req": 74,
+   "resp": 3370,
+   "err": false,
+   "donor_task": 93
+  },
+  {
+   "name": "cancel_pending_order",
+   "kind": "cover",
+   "req": 102,
+   "resp": 1373,
+   "err": false,
+   "donor_task": 16
+  },
+  {
+   "name": "get_product_details",
+   "kind": "cover",
+   "req": 74,
+   "resp": 1894,
+   "err": false,
+   "donor_task": 23
+  },
+  {
+   "name": "calculate",
+   "kind": "cover",
+   "req": 80,
+   "resp": 7,
+   "err": false,
+   "donor_task": 16
+  },
+  {
+   "name": "return_delivered_order_items",
+   "kind": "cover",
+   "req": 150,
+   "resp": 682,
+   "err": false,
+   "donor_task": 55
+  },
+  {
+   "name": "get_product_details",
+   "kind": "cover",
+   "req": 74,
+   "resp": 3370,
+   "err": false,
+   "donor_task": 113
+  },
+  {
+   "name": "find_user_id_by_email",
+   "kind": "cover",
+   "req": 87,
+   "resp": 15,
+   "err": false,
+   "donor_task": 11
+  },
+  {
+   "name": "get_order_details",
+   "kind": "cover",
+   "req": 69,
+   "resp": 1377,
+   "err": false,
+   "donor_task": 112
+  },
+  {
+   "name": "modify_pending_order_items",
+   "kind": "cover",
+   "req": 208,
+   "resp": 1036,
+   "err": false,
+   "donor_task": 71
+  },
+  {
+   "name": "transfer_to_human_agents",
+   "kind": "cover",
+   "req": 518,
+   "resp": 19,
+   "err": false,
+   "donor_task": 69
+  },
+  {
+   "name": "exchange_delivered_order_items",
+   "kind": "cover",
+   "req": 181,
+   "resp": 1542,
+   "err": false,
+   "donor_task": 27
+  },
+  {
+   "name": "return_delivered_order_items",
+   "kind": "cover",
+   "req": 161,
+   "resp": 1077,
+   "err": false,
+   "donor_task": 28
+  },
+  {
+   "name": "get_order_details",
+   "kind": "cover",
+   "req": 69,
+   "resp": 540,
+   "err": false,
+   "donor_task": 110
+  },
+  {
+   "name": "modify_pending_order_items",
+   "kind": "cover",
+   "req": 182,
+   "resp": 665,
+   "err": false,
+   "donor_task": 4
+  },
+  {
+   "name": "get_order_details",
+   "kind": "cover",
+   "req": 69,
+   "resp": 1084,
+   "err": false,
+   "donor_task": 55
+  },
+  {
+   "name": "return_delivered_order_items",
+   "kind": "cover",
+   "req": 194,
+   "resp": 1306,
+   "err": false,
+   "donor_task": 11
+  },
+  {
+   "name": "get_order_details",
+   "kind": "cover",
+   "req": 69,
+   "resp": 540,
+   "err": false,
+   "donor_task": 110
+  },
+  {
+   "name": "list_all_product_types",
+   "kind": "cover",
+   "req": 51,
+   "resp": 1478,
+   "err": false,
+   "donor_task": 3
+  },
+  {
+   "name": "find_user_id_by_email",
+   "kind": "cover",
+   "req": 90,
+   "resp": 18,
+   "err": false,
+   "donor_task": 111
+  },
+  {
+   "name": "cancel_pending_order",
+   "kind": "cover",
+   "req": 102,
+   "resp": 1227,
+   "err": false,
+   "donor_task": 55
+  }
+ ],
+ "records": [
+  [
+   "c2s",
+   139
+  ],
+  [
+   "s2c",
+   43
+  ],
+  [
+   "c2s",
+   97
+  ],
+  [
+   "s2c",
+   1291
+  ],
+  [
+   "c2s",
+   101
+  ],
+  [
+   "s2c",
+   394
+  ],
+  [
+   "c2s",
+   209
+  ],
+  [
+   "s2c",
+   1620
+  ],
+  [
+   "c2s",
+   97
+  ],
+  [
+   "s2c",
+   1277
+  ],
+  [
+   "c2s",
+   232
+  ],
+  [
+   "s2c",
+   1274
+  ],
+  [
+   "c2s",
+   230
+  ],
+  [
+   "s2c",
+   445
+  ],
+  [
+   "c2s",
+   102
+  ],
+  [
+   "s2c",
+   3398
+  ],
+  [
+   "c2s",
+   130
+  ],
+  [
+   "s2c",
+   1401
+  ],
+  [
+   "c2s",
+   102
+  ],
+  [
+   "s2c",
+   1922
+  ],
+  [
+   "c2s",
+   108
+  ],
+  [
+   "s2c",
+   35
+  ],
+  [
+   "c2s",
+   178
+  ],
+  [
+   "s2c",
+   710
+  ],
+  [
+   "c2s",
+   102
+  ],
+  [
+   "s2c",
+   3398
+  ],
+  [
+   "c2s",
+   115
+  ],
+  [
+   "s2c",
+   43
+  ],
+  [
+   "c2s",
+   97
+  ],
+  [
+   "s2c",
+   1405
+  ],
+  [
+   "c2s",
+   236
+  ],
+  [
+   "s2c",
+   1064
+  ],
+  [
+   "c2s",
+   546
+  ],
+  [
+   "s2c",
+   47
+  ],
+  [
+   "c2s",
+   209
+  ],
+  [
+   "s2c",
+   1570
+  ],
+  [
+   "c2s",
+   189
+  ],
+  [
+   "s2c",
+   1105
+  ],
+  [
+   "c2s",
+   97
+  ],
+  [
+   "s2c",
+   568
+  ],
+  [
+   "c2s",
+   210
+  ],
+  [
+   "s2c",
+   693
+  ],
+  [
+   "c2s",
+   97
+  ],
+  [
+   "s2c",
+   1112
+  ],
+  [
+   "c2s",
+   222
+  ],
+  [
+   "s2c",
+   1334
+  ],
+  [
+   "c2s",
+   97
+  ],
+  [
+   "s2c",
+   568
+  ],
+  [
+   "c2s",
+   79
+  ],
+  [
+   "s2c",
+   1506
+  ],
+  [
+   "c2s",
+   118
+  ],
+  [
+   "s2c",
+   46
+  ],
+  [
+   "c2s",
+   130
+  ],
+  [
+   "s2c",
+   1255
+  ]
+ ],
+ "application_wire_bytes": 34063,
+ "framing_overflow_messages": 0,
+ "template_flags": {
+  "template_overflow": false,
+  "template_underfill": false,
+  "missing_donor_attempts": {}
+ },
+ "calibration_sha256": "d7a4ff38be31191f7043080ce7fc1ff64df811e03ad255dc2da21e4d2d815db8",
+ "episode_sha256": "61300614649f9996d18cff78e3f77d44295b2b864c35bdb0337a803a2df0e52a",
+ "measurement": "TLS 1.2 loopback replay of real model trajectory; provider link and wall-clock timing excluded"
+}

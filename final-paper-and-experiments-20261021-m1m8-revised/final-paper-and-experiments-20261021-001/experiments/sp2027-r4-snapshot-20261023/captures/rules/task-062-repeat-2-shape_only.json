@@ -1,0 +1,458 @@
+{
+ "task": 62,
+ "repeat": 2,
+ "seed": 2,
+ "prompt": "rules",
+ "user": "chen_johnson_4204",
+ "has_cancel": 0,
+ "has_return": 0,
+ "native_reward": 0,
+ "db_eq": true,
+ "status": "transfer",
+ "condition": "shape_only",
+ "calls": [
+  {
+   "name": "cancel_pending_order",
+   "kind": "cover",
+   "req": 102,
+   "resp": 1392,
+   "err": false,
+   "donor_task": 74
+  },
+  {
+   "name": "transfer_to_human_agents",
+   "kind": "real",
+   "req": 216,
+   "resp": 19,
+   "err": false
+  },
+  {
+   "name": "modify_pending_order_items",
+   "kind": "cover",
+   "req": 177,
+   "resp": 684,
+   "err": false,
+   "donor_task": 74
+  },
+  {
+   "name": "return_delivered_order_items",
+   "kind": "cover",
+   "req": 147,
+   "resp": 684,
+   "err": false,
+   "donor_task": 11
+  },
+  {
+   "name": "list_all_product_types",
+   "kind": "cover",
+   "req": 51,
+   "resp": 1478,
+   "err": false,
+   "donor_task": 65
+  },
+  {
+   "name": "return_delivered_order_items",
+   "kind": "cover",
+   "req": 180,
+   "resp": 1292,
+   "err": false,
+   "donor_task": 13
+  },
+  {
+   "name": "exchange_delivered_order_items",
+   "kind": "cover",
+   "req": 214,
+   "resp": 978,
+   "err": false,
+   "donor_task": 100
+  },
+  {
+   "name": "get_product_details",
+   "kind": "cover",
+   "req": 74,
+   "resp": 2029,
+   "err": false,
+   "donor_task": 39
+  },
+  {
+   "name": "get_order_details",
+   "kind": "cover",
+   "req": 69,
+   "resp": 1248,
+   "err": false,
+   "donor_task": 94
+  },
+  {
+   "name": "find_user_id_by_name_zip",
+   "kind": "cover",
+   "req": 115,
+   "resp": 19,
+   "err": false,
+   "donor_task": 109
+  },
+  {
+   "name": "find_user_id_by_email",
+   "kind": "cover",
+   "req": 89,
+   "resp": 21,
+   "err": true,
+   "donor_task": 35
+  },
+  {
+   "name": "get_user_details",
+   "kind": "cover",
+   "req": 78,
+   "resp": 442,
+   "err": false,
+   "donor_task": 23
+  },
+  {
+   "name": "get_product_details",
+   "kind": "cover",
+   "req": 74,
+   "resp": 1955,
+   "err": false,
+   "donor_task": 8
+  },
+  {
+   "name": "get_order_details",
+   "kind": "cover",
+   "req": 69,
+   "resp": 915,
+   "err": false,
+   "donor_task": 71
+  },
+  {
+   "name": "get_order_details",
+   "kind": "cover",
+   "req": 69,
+   "resp": 712,
+   "err": false,
+   "donor_task": 4
+  },
+  {
+   "name": "get_order_details",
+   "kind": "cover",
+   "req": 69,
+   "resp": 731,
+   "err": false,
+   "donor_task": 3
+  },
+  {
+   "name": "return_delivered_order_items",
+   "kind": "cover",
+   "req": 147,
+   "resp": 1288,
+   "err": false,
+   "donor_task": 35
+  },
+  {
+   "name": "modify_pending_order_items",
+   "kind": "cover",
+   "req": 182,
+   "resp": 653,
+   "err": false,
+   "donor_task": 23
+  },
+  {
+   "name": "calculate",
+   "kind": "cover",
+   "req": 95,
+   "resp": 6,
+   "err": false,
+   "donor_task": 28
+  },
+  {
+   "name": "get_order_details",
+   "kind": "cover",
+   "req": 69,
+   "resp": 854,
+   "err": false,
+   "donor_task": 112
+  },
+  {
+   "name": "modify_pending_order_address",
+   "kind": "cover",
+   "req": 208,
+   "resp": 742,
+   "err": false,
+   "donor_task": 113
+  },
+  {
+   "name": "get_order_details",
+   "kind": "cover",
+   "req": 69,
+   "resp": 1059,
+   "err": false,
+   "donor_task": 53
+  },
+  {
+   "name": "get_product_details",
+   "kind": "cover",
+   "req": 74,
+   "resp": 2164,
+   "err": false,
+   "donor_task": 65
+  },
+  {
+   "name": "cancel_pending_order",
+   "kind": "cover",
+   "req": 102,
+   "resp": 704,
+   "err": false,
+   "donor_task": 69
+  },
+  {
+   "name": "exchange_delivered_order_items",
+   "kind": "cover",
+   "req": 186,
+   "resp": 766,
+   "err": false,
+   "donor_task": 99
+  },
+  {
+   "name": "modify_user_address",
+   "kind": "cover",
+   "req": 202,
+   "resp": 398,
+   "err": false,
+   "donor_task": 39
+  },
+  {
+   "name": "find_user_id_by_email",
+   "kind": "cover",
+   "req": 92,
+   "resp": 20,
+   "err": false,
+   "donor_task": 80
+  }
+ ],
+ "records": [
+  [
+   "c2s",
+   130
+  ],
+  [
+   "s2c",
+   1420
+  ],
+  [
+   "c2s",
+   244
+  ],
+  [
+   "s2c",
+   47
+  ],
+  [
+   "c2s",
+   205
+  ],
+  [
+   "s2c",
+   712
+  ],
+  [
+   "c2s",
+   175
+  ],
+  [
+   "s2c",
+   712
+  ],
+  [
+   "c2s",
+   79
+  ],
+  [
+   "s2c",
+   1506
+  ],
+  [
+   "c2s",
+   208
+  ],
+  [
+   "s2c",
+   1320
+  ],
+  [
+   "c2s",
+   242
+  ],
+  [
+   "s2c",
+   1006
+  ],
+  [
+   "c2s",
+   102
+  ],
+  [
+   "s2c",
+   2057
+  ],
+  [
+   "c2s",
+   97
+  ],
+  [
+   "s2c",
+   1276
+  ],
+  [
+   "c2s",
+   143
+  ],
+  [
+   "s2c",
+   47
+  ],
+  [
+   "c2s",
+   117
+  ],
+  [
+   "s2c",
+   49
+  ],
+  [
+   "c2s",
+   106
+  ],
+  [
+   "s2c",
+   470
+  ],
+  [
+   "c2s",
+   102
+  ],
+  [
+   "s2c",
+   1983
+  ],
+  [
+   "c2s",
+   97
+  ],
+  [
+   "s2c",
+   943
+  ],
+  [
+   "c2s",
+   97
+  ],
+  [
+   "s2c",
+   740
+  ],
+  [
+   "c2s",
+   97
+  ],
+  [
+   "s2c",
+   759
+  ],
+  [
+   "c2s",
+   175
+  ],
+  [
+   "s2c",
+   1316
+  ],
+  [
+   "c2s",
+   210
+  ],
+  [
+   "s2c",
+   681
+  ],
+  [
+   "c2s",
+   123
+  ],
+  [
+   "s2c",
+   34
+  ],
+  [
+   "c2s",
+   97
+  ],
+  [
+   "s2c",
+   882
+  ],
+  [
+   "c2s",
+   236
+  ],
+  [
+   "s2c",
+   770
+  ],
+  [
+   "c2s",
+   97
+  ],
+  [
+   "s2c",
+   1087
+  ],
+  [
+   "c2s",
+   102
+  ],
+  [
+   "s2c",
+   2192
+  ],
+  [
+   "c2s",
+   130
+  ],
+  [
+   "s2c",
+   732
+  ],
+  [
+   "c2s",
+   214
+  ],
+  [
+   "s2c",
+   794
+  ],
+  [
+   "c2s",
+   230
+  ],
+  [
+   "s2c",
+   426
+  ],
+  [
+   "c2s",
+   120
+  ],
+  [
+   "s2c",
+   48
+  ]
+ ],
+ "application_wire_bytes": 28254,
+ "framing_overflow_messages": 0,
+ "template_flags": {
+  "template_overflow": false,
+  "template_underfill": false,
+  "missing_donor_attempts": {}
+ },
+ "calibration_sha256": "d7a4ff38be31191f7043080ce7fc1ff64df811e03ad255dc2da21e4d2d815db8",
+ "episode_sha256": "ab20a13a8c8f66f11af65dc9b38defb604cebddab7efd5fa5e0a3e1a057d91df",
+ "measurement": "TLS 1.2 loopback replay of real model trajectory; provider link and wall-clock timing excluded"
+}

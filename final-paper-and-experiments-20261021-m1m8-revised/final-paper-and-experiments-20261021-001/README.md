@@ -1,60 +1,35 @@
-# 审稿意见修订版（2026-10-21，第三轮）
+# 真实 Agent 快照修订版（2026-10-23，R4）
 
-当前结论与评估以 REVISION-R3.txt 和 experiments/sp2027-r3/ 为准。
-R3 重算固定攻击器、折外 request-only 工具识别与套件最大值区间，补充训练模板溢出审计。
-没有网络配置同时满足两个目标的有限套件判据；P5 缺少源端保护前提。
-七项作者判断不构成审计区分能力验证。R2 原始注册和结果保持历史内容。
-最终校验记录：experiments/sp2027-r3/validation.txt。
+最新阅读文件：pdf/main.pdf、pdf/supplement.pdf；来源在 manuscript/。修订说明见 REVISION-R4.md。
 
-本包已按两份意见重写主稿、同步补充材料，并从保存输入重跑本地 TLS 和零售工具实验。
+R4 新增 GPT-6.1 Sol / low 真实 Agent 轨迹、仅训练集校准的完整防御组件评估和规则 prompt 对照。当前固定快照保留 663 个完成运行；主分析使用 414 训练运行及 41 个完整配对测试任务的 246 运行。剩余计划运行作为后续补充，不混入本轮数字。
 
-- 阅读：`pdf/main.pdf`（18页：13正文＋1附录＋4参考文献）；`pdf/supplement.pdf`（20页）。
-- 修订说明：`REVISION-RESPONSE.txt`，逐条对应 A1–A16、B1–B21，并列出没有补做的研究。
-- 编辑：`manuscript/main.tex`、`manuscript/supplement.tex`。
-- 第一轮实验（R2/R3 另见上述说明）：`experiments/reviewer-audit/`；脚本、逐单位结果、预测、区间及混淆矩阵均保留。
-- 文本差异：`provenance/manuscript.patch`；原稿备份：`provenance/pre-review-manuscript.zip`。
-- 历史证据：`evidence/retained-release007/`和`experiments/revision-m1-m8/`保持历史内容，不能用其中旧摘要覆盖本轮修正。
+核心结果：基线网络取消/退货 BA 为 96.7%/93.4%，在线 shadow cover + 恒定分帧为 50.0%/50.0%，成本为 15.3× 字节和 3.8× 调用。规则 prompt 达到 96.7% 的工作流合规率，但意图识别仍高于 92%。正文突出这些实测贡献；完整区间、消融、成本与方法在 Supplement S14。
 
-## 第二轮修订（2026-10-21，`test` 分支）
+## 实验和来源
 
-- 新增 `experiments/sp2027-r2/`：E5 流式发射器（TLS 1.2/1.3）、E6 随机化 cover 与策略感知攻击者、E7 加密 agent–tool 链路组合，以及实验前提交的 7 条审计判断（`PREREGISTRATION.json`，commit `16f6254`）。历史标签曾为 5 条证实、2 条部分证实；当前判读见 R3，不能作为框架准确率。
-- 主稿第 8 节改写为 “Controlled Transfer Tests”（Table 10–12）；第一轮受控实验完整表格移到 Supplement S11，E5–E7 全部区间在 S12。
-- 审稿意见与修改清单：仓库根目录 `docs/R2-SP2027-审稿与修改清单.md`。
-- 校验：`python -B experiments/sp2027-r2/verify_r2.py`（仅用标准库）。
-- 复跑：需要 scikit-learn 1.9 和 tiktoken（o200k_base），命令见 `experiments/sp2027-r2/README.md`。
-- 仍未完成：独立盲法人工编码、匿名公开仓库、自主 Agent 实验，详见清单 B 类。
+- experiments/sp2027-r4-snapshot-20261023/：当前不可变快照，全部原始轨迹、压缩模型记录、冻结校准、TLS 捕获、预测和校验程序。
+- experiments/sp2027-r3/：历史后审稿重分析；E6/E7 的当前历史区间和工具识别结果以 R3 为准。
+- experiments/sp2027-r2/：历史 E5–E8、原始注册和结果。注册 commit 16f6254。
+- experiments/reviewer-audit/、experiments/revision-m1-m8/、evidence/retained-release007/：更早的证据与修订数据，保持历史范围。
+- provenance/snapshot.json 和 SHA256SUMS.json：当前来源闭包和全包字节清单。
 
-## 关键改动
-
-T2/T3匹配成本为2.30×/1.43×；训练集定cap为2.18×。旧0.87×/0.91×跨工作负载分母已撤回。
-工具测试多数类基线77.55%；取消计数及已知插入位置攻击为100%，撤回隐私—效用前沿主张。
-DB、完整账户和reference-changed对象指标分列。39记录覆盖26个家族；20是报告审计家族数。
-24场景仅作作者构造示例，不再宣称独立有效性或64.6pp优势。
+本地活跃目录 experiments/sp2027-r4/ 是继续采集的工作区，不属于冻结交付包；清单显式排除它。发布目录自身的所有文件仍逐一校验。
 
 ## 校验与复算
 
-只读校验（Python标准库，不调用模型、不重跑实验）：
+    python -B verify_package.py
+    python -B verify_revision.py
+    python -B experiments/sp2027-r2/verify_r2.py
+    python -B experiments/sp2027-r3/verify_r3.py
+    python -B experiments/sp2027-r4-snapshot-20261023/verify_snapshot.py
 
-```text
-python -B verify_package.py
-python -B verify_revision.py
-```
+前三项使用标准库。R3/R4 依赖 numpy / scikit-learn；R4 运行环境与离线复算顺序见其实验 README。校验不调用模型。R4 的最终收据为 validation.json。
 
-当前实验重算需要Python 3.10+、numpy、cryptography、pydantic；只运行本地socket和公开模拟数据。
+LaTeX 使用 IEEEtran 1.8b conference,compsoc。进入 manuscript/，对 main、supplement 分别运行 pdflatex、bibtex、pdflatex 两次。最新 PDF 和编译日志均在本包。
 
-```text
-python -B experiments/reviewer-audit/recompute.py tls
-python -B experiments/reviewer-audit/recompute.py retail
-python -B experiments/reviewer-audit/recompute.py scenarios
-```
+## 结果范围
 
-零售重跑约数分钟，保存6210条任务/种子/位置/策略记录；TLS随机padding包含首次socket及其余49次记录核算。
-重跑会更新输出，随后需要更新SHA256清单；原始交付清单是本次保存版本的凭据，不是未来重跑的通用哈希。
+E9 测量真实模型轨迹的本地 TLS 回放，防御参数不接触测试集。程序条件复用同一轨迹，故奖励不变是结构性质。当前是一个模型、一个公开基准的内部完成快照，尚非完整 690 队列或外部独立验证。主稿保留必要范围说明，操作日志放入归档。
 
-LaTeX使用IEEEtran 1.8b conference,compsoc。进入manuscript，分别运行pdflatex、bibtex、pdflatex两次。
-当前PDF已编译并检查，无未定义引用/标签和overfull box。日志保存在provenance/build-logs。
-
-## 证据范围
-
-E5 包含 TLS 1.2/1.3 应用层 padding；没有真实 LLM 自主 Agent 联合实验、QUIC/时序攻击、外部独立场景、真实 MCP/API 普查或新增人工编码。训练专用防御校准的完整效果仍未测量。
-本包是本地可复查材料，不是匿名线上发布凭据，也不保证论文录用。匿名仓库及作者级来源确认仍需完成。
+REVISION-R3.txt、REVISION-RESPONSE.txt 和原始输入包是历史文档，其中“未运行真实 LLM”等状态只适用于当时版本。后续全队列结果以单独补充交付，不覆盖本轮冻结快照。

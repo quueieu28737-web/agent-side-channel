@@ -1,0 +1,143 @@
+{
+ "task": 22,
+ "repeat": 2,
+ "seed": 2,
+ "prompt": "rules",
+ "user": "ethan_garcia_1261",
+ "has_cancel": 0,
+ "has_return": 0,
+ "native_reward": 1,
+ "db_eq": true,
+ "status": "user_stop",
+ "condition": "raw",
+ "calls": [
+  {
+   "name": "find_user_id_by_name_zip",
+   "kind": "real",
+   "req": 113,
+   "resp": 17,
+   "err": false
+  },
+  {
+   "name": "get_user_details",
+   "kind": "real",
+   "req": 75,
+   "resp": 460,
+   "err": false
+  },
+  {
+   "name": "get_order_details",
+   "kind": "real",
+   "req": 69,
+   "resp": 1202,
+   "err": false
+  },
+  {
+   "name": "get_order_details",
+   "kind": "real",
+   "req": 69,
+   "resp": 1082,
+   "err": false
+  },
+  {
+   "name": "get_order_details",
+   "kind": "real",
+   "req": 69,
+   "resp": 996,
+   "err": false
+  },
+  {
+   "name": "modify_user_address",
+   "kind": "real",
+   "req": 190,
+   "resp": 446,
+   "err": false
+  },
+  {
+   "name": "modify_pending_order_address",
+   "kind": "real",
+   "req": 192,
+   "resp": 1068,
+   "err": false
+  },
+  {
+   "name": "modify_user_address",
+   "kind": "real",
+   "req": 204,
+   "resp": 460,
+   "err": false
+  }
+ ],
+ "records": [
+  [
+   "c2s",
+   141
+  ],
+  [
+   "s2c",
+   45
+  ],
+  [
+   "c2s",
+   103
+  ],
+  [
+   "s2c",
+   488
+  ],
+  [
+   "c2s",
+   97
+  ],
+  [
+   "s2c",
+   1230
+  ],
+  [
+   "c2s",
+   97
+  ],
+  [
+   "s2c",
+   1110
+  ],
+  [
+   "c2s",
+   97
+  ],
+  [
+   "s2c",
+   1024
+  ],
+  [
+   "c2s",
+   218
+  ],
+  [
+   "s2c",
+   474
+  ],
+  [
+   "c2s",
+   220
+  ],
+  [
+   "s2c",
+   1096
+  ],
+  [
+   "c2s",
+   232
+  ],
+  [
+   "s2c",
+   488
+  ]
+ ],
+ "application_wire_bytes": 7240,
+ "framing_overflow_messages": 0,
+ "template_flags": null,
+ "calibration_sha256": "d7a4ff38be31191f7043080ce7fc1ff64df811e03ad255dc2da21e4d2d815db8",
+ "episode_sha256": "23e9166911e47cf7b21e4e151b207a047700fce543b6101da2909a19d6d6814f",
+ "measurement": "TLS 1.2 loopback replay of real model trajectory; provider link and wall-clock timing excluded"
+}

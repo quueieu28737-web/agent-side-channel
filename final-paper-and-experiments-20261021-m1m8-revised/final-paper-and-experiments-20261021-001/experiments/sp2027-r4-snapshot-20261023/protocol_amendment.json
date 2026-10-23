@@ -1,0 +1,12 @@
+{
+ "stage": "before all formal collection",
+ "changes": [
+  "customer-cluster bootstrap instead of task bootstrap",
+  "inference source/environment fingerprint",
+  "append-only per-attempt model logs"
+ ],
+ "pilot": "4 episodes on training tasks 0/1 only, excluded from all formal results",
+ "pilot_issue": "Initial benign skip_host_skill_discovery warning misclassified as host tool event. Pilot first-attempt logs were overwritten on restart; cannot independently reconstruct those original bytes. Fixed before formal collection.",
+ "new_protocol_sha256": "f9a7464d60ba53e8c3f2d8dadc7561d590728d1a93770df2cf357ec46c730375",
+ "previous_protocol_sha256": "91dee8414149fbfa14ae8a51408d458df031be6df1bd1da3f30b51bed31cf897"
+}

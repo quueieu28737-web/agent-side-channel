@@ -1,0 +1,8 @@
+{
+ "utc": "2026-10-23T10:40:53.027978+00:00",
+ "scope": "Verifier implementation only; no change to collection, calibration, predictions, statistics or episode membership.",
+ "change": "Compare replayed JSON database objects directly instead of hashing cloned databases. This independently checks the state equality criterion and avoids repeated full-database serialization. Immutable file hash caching is rechecked at exit.",
+ "before_verify_r4_sha256": "f5887845633d3521f00f528b8f95bf932f9455349108bc0b2407f04f01374c39",
+ "after_verify_r4_sha256": "cce1acb2b6fc8fb3784ac54dfd198cdc4459b8391cf2b2a55c697d9ef9cab746",
+ "pretest_original": "pretest-source/verify_r4.py"
+}

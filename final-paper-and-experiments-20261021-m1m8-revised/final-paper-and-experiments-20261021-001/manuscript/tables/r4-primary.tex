@@ -1,0 +1,11 @@
+\begin{table*}[t]\centering\footnotesize
+\caption{E9: real-agent evaluation with training-only defense calibration. Primary snapshot: 41 held-out tasks, 22 customers, two prompts, three repeats (246 episodes). Network values are maximum balanced accuracy (\%) over the fixed attack suite with customer-cluster 95\% intervals. Program = online shadow cover plus constant framing.}\label{tab:r4-primary}
+\begin{tabularx}{\textwidth}{@{}Yrrrrr@{}}\toprule
+Condition & Cancellation BA [CI] & Return BA [CI] & Task reward (\%) & Bytes$\times$ & Calls$\times$\\\midrule
+Baseline & 96.7 [88.9, 100.0] & 93.4 [83.7, 100.0] & 82.1 & 1.00 & 1.00\\
+Rules prompt & 96.7 [88.9, 100.0] & 92.8 [83.0, 99.0] & 78.0 & 1.00 & 1.00\\
+Program defense & 50.0 [50.0, 64.5] & 50.0 [50.0, 63.1] & 82.1 & 15.33 & 3.83\\
+Rules + program & 50.0 [50.0, 66.5] & 64.1 [54.8, 76.1] & 78.0 & 15.70 & 3.90\\
+\bottomrule\end{tabularx}
+\par\smallskip\raggedright Ratios use raw transport within the same prompt. Program conditions replay the same trajectory, so reward is unchanged by construction. The measurement is TLS~1.2 loopback replay of real model-generated tool calls. The 663-run completion snapshot includes 414 training runs and three further test runs outside the complete-task primary analysis; the planned cohort is 690. Full methods and ablations: Supplement S14.
+\end{table*}
