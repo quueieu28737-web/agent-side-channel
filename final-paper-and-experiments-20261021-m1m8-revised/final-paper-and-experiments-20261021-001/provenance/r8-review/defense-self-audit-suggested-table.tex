@@ -1,0 +1,15 @@
+\begin{table*}[t]\centering\footnotesize
+\caption{Suggested R8 self-audit comparison: identical seven-model suite on the same 138 held-out trajectories per prompt (24 customers). BA is cancel/return; byte/call ratios use prompt-specific undefended totals. These are descriptive evaluated points, not statistically certified dominance. WT is an offline RPC adaptation; shadow and tunnel use live local tools on fixed saved actions. None measures live LLM utility under defense.}
+\begin{tabular}{@{}llrrrr@{}}\toprule Prompt & Condition & BA (C/R, \%) & Bytes$\times$ & Calls$\times$ & Execution\\\midrule
+baseline & walkie\_talkie & 50.0/56.7 & 2.04 & 1.00 & offline\\
+baseline & shadow\_serial & 50.0/52.9 & 15.11 & 3.83 & local tools\\
+baseline & shadow\_parallel2 & 50.0/57.3 & 15.11 & 3.83 & local tools\\
+baseline & tunnel\_2ms & 59.9/55.2 & 125.71 & 1.00 & local tools\\
+baseline & tunnel\_5ms & 54.6/53.7 & 125.71 & 1.00 & local tools\\
+rules & walkie\_talkie & 51.4/56.3 & 2.23 & 1.00 & offline\\
+rules & shadow\_serial & 56.1/59.8 & 15.47 & 3.88 & local tools\\
+rules & shadow\_parallel2 & 56.9/57.1 & 15.47 & 3.88 & local tools\\
+rules & tunnel\_2ms & 52.8/55.3 & 128.38 & 1.00 & local tools\\
+rules & tunnel\_5ms & 58.3/54.3 & 128.38 & 1.00 & local tools\\
+\bottomrule\end{tabular}
+\end{table*}

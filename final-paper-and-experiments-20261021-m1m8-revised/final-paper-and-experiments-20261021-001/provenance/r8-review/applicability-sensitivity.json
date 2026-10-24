@@ -1,0 +1,42 @@
+{
+  "source": "evidence/retained-release007/history-release006/decision-audit/six-checks.csv",
+  "unit": "16 historical VERIFIED_EVALUATION families; 6 source-audit rows each",
+  "r5_applicability_sensitivity_using_historical_C4": {
+    "rationale": "C4 explicitly conditions protected fitting/matched testing on adaptation being at issue; using its NA status as the applicability screen avoids requiring adaptive refits for fixed/non-learning mitigations. Status counts are C4 baseline values, not recoded nine-item R5 outcomes.",
+    "applicable_n": 9,
+    "not_applicable_n": 7,
+    "status_counts": {
+      "PARTIAL": 4,
+      "NR-V": 5
+    },
+    "applicable_family_ids": [
+      "uitraces2026",
+      "netecho2025",
+      "earlybird2025",
+      "whisperleak2025",
+      "timewilltell2024",
+      "wei2024speculation",
+      "dangol2026workflow",
+      "pouryousef2026traffic",
+      "zhu2026turing"
+    ],
+    "NA_family_ids": [
+      "jeong2026wra",
+      "spliceleak2026",
+      "gao2025iknow",
+      "carlini2024remote",
+      "hornetz2026tdxray",
+      "chu2025safekv",
+      "addagada2026kvgov"
+    ]
+  },
+  "r8_check6_component_vs_objective_lens": {
+    "families_with_explicit_component_utility_scope": [
+      "gao2025iknow",
+      "hornetz2026tdxray"
+    ],
+    "n": 2,
+    "interpretation": "These remain in broad component-utility R8; the lens separates component outcome from deployment task utility and does not mark them globally NA."
+  },
+  "caution": "Historical source rows are read-only. This calculation covers the 16-family baseline only; the expanded manuscript table separately reports 20 families."
+}

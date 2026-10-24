@@ -1,0 +1,82 @@
+{
+  "status": "PASS",
+  "cohort_sources": {
+    "E9": {
+      "bytes_ratio": 15.393631058425948,
+      "calls_ratio": 3.8266533066132267,
+      "episodes_both_prompts": 276,
+      "customers": 24,
+      "positive_customers": [
+        5,
+        7
+      ],
+      "source": "sp2027-r4-full-20261023/results.json / utility baseline shape_const; results baseline raw network",
+      "raw_ba": [
+        0.9722222222222222,
+        0.9402597402597402
+      ]
+    },
+    "E10": {
+      "bytes_ratio": 19.75787137877281,
+      "calls_ratio": 5.035505430242273,
+      "episodes_both_prompts": 690,
+      "customers": 53,
+      "positive_customers": [
+        14,
+        18
+      ],
+      "source": "sp2027-r7-crossfit/detailed_results.json / baseline jointconstant and undefended cells",
+      "raw_ba": [
+        0.9166666666666667,
+        0.8549196787148594
+      ]
+    },
+    "E13/14": {
+      "bytes_ratio": 15.106016216696373,
+      "calls_ratio": 3.8266533066132267,
+      "episodes_both_prompts": 276,
+      "customers": 24,
+      "positive_customers": [
+        5,
+        7
+      ],
+      "source": "sp2027-r6-timing/results.json / resources baseline shadow_serial; E14 union raw cells",
+      "raw_ba": [
+        0.9166666666666667,
+        0.8636363636363636
+      ]
+    }
+  },
+  "control_rows_checked": 13,
+  "flush_rows_checked": 4,
+  "supplement_generator_exact_match": true,
+  "make_tables_check": "PASS",
+  "findings": [
+    "No numerical column swaps or incorrect rounding found in requested tables.",
+    "Cohort raw BA and byte ratio are distinct estimands, not a same-condition raw-cost pair: the caption correctly says byte ratios price joint constant shaping.",
+    "E9 15.39 and E13 15.11 are not contradictory: different RPC serialization/envelope and each own undefended denominator.",
+    "E10 19.76/5.04 uses fold-specific analytic calibration on 345 trajectories per prompt, not measured E13 timing or E9 pretest template.",
+    "Cohort sample counts cover both prompts, but BA/byte/call values are standard prompt; positive customers are unique shared customers, not doubled with prompt.",
+    "r8-controls upper BA is the full-union upper 95% bound; common-seven and full-union columns are correctly distinct.",
+    "S simulated rows correctly omit RPC latency; M p95 is last real response, excluding planner/WAN and excluding tail drain.",
+    "Flush table uses the 138-episode-per-prompt intent task after estimated removal, not 15278 record-level detector BA.",
+    "47 matches its generator exactly; cluster table uses 345 trajectories/53 customers, not 345 independent customers."
+  ],
+  "limitations": "This numerical review does not rerun the science verifier or model fitting. It validates saved-result mappings, units and generated text.",
+  "sha256": {
+    "experiments/sp2027-r4-full-20261023/results.json": "722a44e2a29cb9cbab9f23b631589a23495a843783a4339256552f6600609e86",
+    "experiments/sp2027-r6-timing/results.json": "1da5fd7af16698c53a049fc95f9c5db6fd1961441dece7b3312ca27464fe4c1d",
+    "experiments/sp2027-r7-robustness/results.json": "160904fb406a781e15c5e9aac3751b81669369926e8e7e372b633123e669230c",
+    "experiments/sp2027-r7-robustness/common-suite.json": "575c44a0581d4a1295a7283037bb08146d24f2ce1fe70ee67597fd7d45995f93",
+    "experiments/sp2027-r7-crossfit/detailed_results.json": "873b912272c1924c215b21f7e3fd529e567189426eff4cdca319d88144e6b80c",
+    "experiments/sp2027-r8-cluster-sensitivity/results.json": "2f73074503c19989e684c98e0106931b698d1b8a157bb5180bc862317a545ace",
+    "provenance/r8-review/defense-self-audit.json": "5661763025ad721e88375d95c8123d22511c98fc24d68aa0e5f42ecda3201b3c",
+    "provenance/r8-review/make_tables.py": "ddb17a2aa8630c3255476892d19349a2605ce029378cc1d6ef8d26b59b56bd69",
+    "provenance/r8-review/build_empirical_audit.py": "10770697cd4e9e7db4f2674c806924beaea36f0239e2356b120c8900743318be",
+    "manuscript/tables/r8-cohorts.tex": "19d4dc08e0abc7e124417c1f5305f4fb38e372dc036503c5fb76377d8bbb2c6b",
+    "manuscript/tables/r8-controls.tex": "cc4eb7ed6098d2f31517c9c9d14f5adfecb40d9494b13b2a9f34e025c38d2a31",
+    "manuscript/tables/r8-flush.tex": "d4d82f288ab019a82f971239518e15bffc9c0f4eb5fe4496e53c05c50708dea3",
+    "manuscript/sections/47-r8-empirical-audit.tex": "c570654e321ef46646b2d5905ea119395c0e914f6e762e184e18dd890de9ff8e"
+  },
+  "review_code_sha256": "e2e8675f9ec7b61099989570e916a15250bec6cf87b04ea5c0c033a108e990aa"
+}

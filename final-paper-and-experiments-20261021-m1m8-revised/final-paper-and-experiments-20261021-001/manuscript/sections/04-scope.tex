@@ -1,5 +1,6 @@
 \section{Result Records, Comparability Rules and Validity}\label{sec:scope}
 The atomic unit of our repository is one \emph{evaluated result record}, rather than a whole paper or a single headline score. A result record binds a source version and locator to seven structured fields: Source, Target (and threat polarity Types~I--IV), Receiver projection, Intervention boundary, Attacker training/calibration ($D_0$ vs.\ $D_2$), Workload/holdout, and Outcomes (inference metric, task/component utility, and cost object; Table~\ref{tab:result-record}). A study family contributes multiple records whenever it evaluates distinct execution modes (e.g., stored capture vs.\ live loopback in Dangol \cite{dangol2026workflow}), distinct mechanisms (e.g., $K$-prefix KV simulation vs.\ GPTCache semantic de-identification in Early Bird \cite{earlybird2025}), or separately scoped performance benchmarks (e.g., SafeKV \cite{chu2025safekv} and OTRO \cite{lee2026otro}).
+Across 77 cited entries, the bibliography labels 49 arXiv-only, 21 venue-labelled (5 also cite a preprint), 1 book, 2 standards and 4 vendor documents; these are citation forms, not peer-review certifications (Supplement S18).
 \input{tables/result-record-schema}
 
 \paragraph{Indexing schema and comparison contracts}

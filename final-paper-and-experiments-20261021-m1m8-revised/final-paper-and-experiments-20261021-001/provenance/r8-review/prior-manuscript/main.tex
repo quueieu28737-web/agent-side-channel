@@ -1,0 +1,65 @@
+% IEEE S&P 2027 submission format; requires IEEEtran.cls v1.8b.
+\documentclass[conference,compsoc]{IEEEtran}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage[dvipsnames,table]{xcolor}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,positioning,fit,calc,matrix,shapes.geometric}
+\usepackage[hyphens]{url}
+\usepackage{hyperref}
+
+\hypersetup{hidelinks,pdfauthor={}}
+\newcommand{\scope}{\textsc{Scope}}
+\newcommand{\NRR}{\textsc{nr-r}}
+\newcommand{\NRA}{\textsc{nr-a}}
+\newcommand{\NRV}{\textsc{nr-v}}
+\newcommand{\NA}{\textsc{na}}
+\newcommand{\evidenceStrong}{\cellcolor{ForestGreen!22}Strong}
+\newcommand{\evidenceLimited}{\cellcolor{Goldenrod!24}Limited}
+\newcommand{\evidenceNone}{\cellcolor{Gray!18}No verified direct evidence}
+\newcommand{\soktakeaway}[2]{%
+  \par\smallskip\noindent
+  \fcolorbox{MidnightBlue!45}{MidnightBlue!5}{%
+    \parbox{\dimexpr\columnwidth-2\fboxsep-2\fboxrule\relax}{%
+      \footnotesize\textbf{\color{MidnightBlue!85!black}#1.} #2%
+    }%
+  }\par\smallskip
+}
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+\newcommand{\auditpartial}{\textbf{P}}
+\input{tables/final-counts}
+
+\title{SoK: Evaluating LLM and Agent Side-Channel Defenses\\From Evidence Audits to Real-Agent Measurements}
+\author{}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+Encryption conceals content while exposing the structure of agent workflows. We systematize 82 study families through 39 source-bound result records, separating the observer, execution boundary and evaluation conditions that determine whether defense evidence transfers. The audit exposes three recurring mismatches: protection attached to the wrong receiving view, utility attached to a different state boundary, and cost attached to a different mechanism or attacker. Experiments on 690 real-agent runs turn these distinctions into measurable consequences. Customer-grouped cross-fitting shows approximately 30--35 percentage-point paired reductions in balanced accuracy under joint shaping in the standard-prompt arm, while a write-only ablation locates the dominant signal beyond a rules prompt's read-order constraints. The prompt supplies a behavioral control. Live tool measurements and stronger attacker comparisons expose timing leakage and substantial resource costs; the absolute security criterion remains unconfirmed. Classical traffic-shaping controls locate these results within a workload-specific cost comparison. The contribution is an auditable connection from published evidence to mechanism-level findings and deployment decisions.
+\end{abstract}
+
+\input{sections/01-introduction}
+\input{sections/03-methodology}
+\input{sections/04-scope}
+\input{sections/26-corpus-map}
+\input{sections/11-discussion}
+\input{sections/27-intervention-contracts}
+\input{sections/28-fingerprint-dependencies}
+\input{sections/37-transfer-tests}
+\input{sections/10-open-challenges}
+\input{sections/12-conclusion}
+
+
+\bibliographystyle{IEEEtran}
+\bibliography{refs,refs-final-additions,refs-deployment,evidence/search-completion-20261021-001/new_refs,evidence/search-completion-20261021-001/new_refs_adjacent}
+\clearpage
+\appendices
+\input{sections/30-reproducibility-guide}
+\end{document}

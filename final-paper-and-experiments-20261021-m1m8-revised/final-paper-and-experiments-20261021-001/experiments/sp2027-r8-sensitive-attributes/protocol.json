@@ -1,0 +1,58 @@
+{
+  "status": "posthoc exploratory reused known cohort, fixed before fitting; not preregistered or confirmatory",
+  "frozen_utc": "2026-10-24T07:09:29.210580+00:00",
+  "source_hashes": {
+    "DESIGN.md": "aab762b39c143576e09c11e229f244693258a5eca6339323296f02e9e82559c8",
+    "inventory.py": "c0420d5b517bdc728cfff779a5f4863769e087f96437ee9c3846a4f69d1348f0",
+    "availability.py": "31c026f5b73df637535b92c635e6a39b09592142015e24ba9e58dfe7060fd1e5",
+    "fold_feasibility.py": "d098a35dcfa0d4cc069d2e5725e469338a805880be9ad57521a0e52d93cef0f0",
+    "prepare.py": "d892a7157dc880fa2bd51c81b49bb7efbd4a1d296f4cf097b3bf9e0dd9c44bb9",
+    "run.py": "5d45b03a312425c0fc8bc29b7a945e86927674a66c81e88575ef3f7a7af57100",
+    "verify.py": "6ac280d6f30fd5ff117d195c82a561b6315b8545d785f93cca344d93e864f345",
+    "aligned_calls.json": "215b78e0a2daf97db3fa9a9981acb718394ab863e4c5ff816d713bc6689263b6",
+    "alignment.json": "f77584ce1954616eff274cb2f694ac21ffd95193da6c8319a16ba115a8c3a6ac",
+    "attribute_availability.json": "1d4b5d4b8da529fd2c244d1d0a580f4c411eedad6c7ee2e5e4f83b92a2e3bfef",
+    "source_inventory.json": "88bf0b8757f99eb898ce7b98a319e44dcf737307eb5e2d9e7a300c2272b9072c",
+    "actual_attribute_instances.json": "4aa4e14b42d9b2e2ec2d9d98f304415552d40fa7301dcf753f856fe4feefd76e",
+    "episode_metadata.json": "6d2c212ac0c0cddac19f7e2696379a9197401ee8dd8d79a952477762b4232c3c",
+    "fold_feasibility.json": "97f8f5622ea57508c844b1481ff38e29744a4ed16356ebcae6ffa92ea77efa8c",
+    "../sp2027-r7-crossfit/protocol.json": "ad2527ec1a03b13012441d8deb0a3f5ea5188139d7f687ac15f07124a2ed07ed",
+    "../tau-cover-bridge/vendor/tau_bench__envs__retail__data__orders.json": "2598a12586d28f2d6bd16bc86f4c800029b6af18e0abb5c475ef5c869c11ced1",
+    "../tau-cover-bridge/vendor/tau_bench__envs__retail__data__products.json": "a9eabcc1a9742c5f5288c2779acce52b9308423383ed24706bbaf0889f762a0f"
+  },
+  "positive_native_names": [
+    "Action Camera",
+    "Bluetooth Speaker",
+    "Digital Camera",
+    "E-Reader",
+    "Gaming Mouse",
+    "Headphones",
+    "Indoor Security Camera",
+    "Laptop",
+    "Mechanical Keyboard",
+    "Portable Charger",
+    "Smart Thermostat",
+    "Smart Watch",
+    "Smartphone",
+    "Tablet",
+    "Wireless Earbuds"
+  ],
+  "target": "single requested initial-order item, return_delivered_order_items only; synthetic digital-device name membership",
+  "unit": "mean record summary over calls/repeats/tasks with same prompt/customer/order/item; one row per instance per prompt",
+  "folds": "unchanged original customer 5 folds; separate prompts; pooled OOF",
+  "features": "c2s and s2c record count,total,max,min; exact oracle known-call slice; no timing/plaintext/identifier features",
+  "learners": {
+    "LR": "standard scaler + liblinear C1 balanced, seed20261024 max_iter1000",
+    "RF": "200trees depth3 leaf2 balanced n_jobs1 seed20261024",
+    "GB": "50trees depth1 learning_rate0.05 seed20261024"
+  },
+  "conditions": [
+    "raw",
+    "operation_constant (identical zero feature vectors)",
+    "constant_size (identical zero feature vectors, same as operation_constant)",
+    "order_count_only (initial full-order item rows confounding diagnostic)",
+    "shuffled_labels (fixed seed20261024 permutation of unique instance labels within original fold; shared across prompts/repeats)"
+  ],
+  "bootstrap": "2000 fixed prediction customer-cluster resamples, equal instance weighting; one-class draws omitted; percentile95; suite max reselected; no refitting",
+  "scope": "15 customers/20 pooled distinct item instances anticipated; no population or general defense-ranking claim"
+}

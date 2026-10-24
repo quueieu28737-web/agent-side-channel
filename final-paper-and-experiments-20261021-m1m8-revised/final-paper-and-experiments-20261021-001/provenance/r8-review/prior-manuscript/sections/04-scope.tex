@@ -1,0 +1,12 @@
+\section{Result Records, Comparability Rules and Validity}\label{sec:scope}
+The atomic unit of our repository is one \emph{evaluated result record}, rather than a whole paper or a single headline score. A result record binds a source version and locator to seven structured fields: Source, Target (and threat polarity Types~I--IV), Receiver projection, Intervention boundary, Attacker training/calibration ($D_0$ vs.\ $D_2$), Workload/holdout, and Outcomes (inference metric, task/component utility, and cost object; Table~\ref{tab:result-record}). A study family contributes multiple records whenever it evaluates distinct execution modes (e.g., stored capture vs.\ live loopback in Dangol \cite{dangol2026workflow}), distinct mechanisms (e.g., $K$-prefix KV simulation vs.\ GPTCache semantic de-identification in Early Bird \cite{earlybird2025}), or separately scoped performance benchmarks (e.g., SafeKV \cite{chu2025safekv} and OTRO \cite{lee2026otro}).
+\input{tables/result-record-schema}
+
+\paragraph{Indexing schema and comparison contracts}
+The mnemonic \scope{} (Secret/target, Channel, Observer, Pipeline, Exploitation goal) names the target-and-channel columns of our index, paired with evaluation provenance. Generating layers span hardware (P1), serving (P2), transport (P3), application/API (P4), orchestration (P5), tools/MCP (P6), environment (P7) and multi-agent communication (P8). We apply three comparison contracts (Table~\ref{tab:comparison-contracts}): a comparison is \emph{compatible} when required fields align; \emph{incompatible} when a positive mechanism or boundary conflict is established (such as substituting token-payload ratios for wire bytes or offline timestamp edits for live action delays); and \emph{unresolved} when a required binding is unreported (\NRR{}), unavailable (\NRA{}) or unverified (\NRV{}). Table~\ref{tab:result-lineage} illustrates a complete record-to-judgment lineage.
+\input{tables/comparison-contracts}
+\input{tables/result-lineage-example}
+
+
+\paragraph{Rule-application consistency check}
+Twenty-four author-constructed cases exercise Compatible/Incompatible/Unresolved rules. Their construction-time agreement checks implementation consistency; they do not estimate decision accuracy on external cases. Supplement S7 preserves every case and outcome. The seven mechanism checks recorded before E5--E7 have the same engineering role, rather than serving as independent validation of the framework.

@@ -10,7 +10,7 @@ At the orchestrator-to-tool boundary, a multiparty relay may instead see decoded
 
 \subsection{Three execution paths}
 \paragraph{1. Authorized reads and verified no-ops}
-Where authorized read operations suffice for the protected observation, issue them against permitted live resources and discard their responses before the planner. This can avoid a replicated backend. The read-only decoy pattern is related to WRA \cite{jeong2026wra}; its ability to conceal write intent depends on what the observer sees. A receiver that recognizes write methods cannot be confused by adding only reads. The E12 writes-only ablation directly motivates covering the write-bearing part of the profile as well.
+Where authorized read operations suffice for the protected observation, issue them against permitted live resources and discard their responses before the planner. This can avoid a replicated backend. The read-only decoy pattern is related to WRA \cite{jeong2026wra}; its ability to conceal write intent depends on what the observer sees. A receiver that recognizes write methods cannot be confused by adding only reads. E12 localizes operation-category information in the write-bearing profile; its action-defined labels do not establish leakage of unrelated attributes.
 
 A no-op needs the invariant $f(s,a)=s$ for the designated protected state. Idempotence alone permits the first call to change state. Reads can also incur billing, access logs, cache changes or rate limits, so the adapter must specify its state scope and budget those effects. Cover selection must respect resource authorization and avoid exposing unrelated users' data. No claim about reads being the majority of production tool traffic is needed for this path.
 

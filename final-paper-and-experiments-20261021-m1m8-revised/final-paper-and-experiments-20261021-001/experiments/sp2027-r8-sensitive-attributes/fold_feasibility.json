@@ -1,0 +1,979 @@
+{
+  "fold_source": "../sp2027-r7-crossfit/protocol.json:fold_of_customer",
+  "fold_source_sha256": "ad2527ec1a03b13012441d8deb0a3f5ea5188139d7f687ac15f07124a2ed07ed",
+  "reports": [
+    {
+      "verb": "return_delivered_order_items",
+      "prompt": "pooled",
+      "folds": [
+        {
+          "fold": 0,
+          "train": {
+            "customers": 12,
+            "positive_customers": 7,
+            "negative_customers": 7,
+            "mixed_customers": 2,
+            "call_rows": 124
+          },
+          "test": {
+            "customers": 3,
+            "positive_customers": 1,
+            "negative_customers": 2,
+            "mixed_customers": 0,
+            "call_rows": 14
+          }
+        },
+        {
+          "fold": 1,
+          "train": {
+            "customers": 11,
+            "positive_customers": 5,
+            "negative_customers": 7,
+            "mixed_customers": 1,
+            "call_rows": 92
+          },
+          "test": {
+            "customers": 4,
+            "positive_customers": 3,
+            "negative_customers": 2,
+            "mixed_customers": 1,
+            "call_rows": 46
+          }
+        },
+        {
+          "fold": 2,
+          "train": {
+            "customers": 12,
+            "positive_customers": 5,
+            "negative_customers": 8,
+            "mixed_customers": 1,
+            "call_rows": 114
+          },
+          "test": {
+            "customers": 3,
+            "positive_customers": 3,
+            "negative_customers": 1,
+            "mixed_customers": 1,
+            "call_rows": 24
+          }
+        },
+        {
+          "fold": 3,
+          "train": {
+            "customers": 13,
+            "positive_customers": 7,
+            "negative_customers": 8,
+            "mixed_customers": 2,
+            "call_rows": 102
+          },
+          "test": {
+            "customers": 2,
+            "positive_customers": 1,
+            "negative_customers": 1,
+            "mixed_customers": 0,
+            "call_rows": 36
+          }
+        },
+        {
+          "fold": 4,
+          "train": {
+            "customers": 12,
+            "positive_customers": 8,
+            "negative_customers": 6,
+            "mixed_customers": 2,
+            "call_rows": 120
+          },
+          "test": {
+            "customers": 3,
+            "positive_customers": 0,
+            "negative_customers": 3,
+            "mixed_customers": 0,
+            "call_rows": 18
+          }
+        }
+      ],
+      "native_product_name_customer_support": {
+        "Air Purifier": 1,
+        "Backpack": 1,
+        "Bicycle": 1,
+        "Bluetooth Speaker": 1,
+        "Bookshelf": 1,
+        "Digital Camera": 1,
+        "E-Reader": 1,
+        "Gaming Mouse": 1,
+        "Hiking Boots": 2,
+        "Jigsaw Puzzle": 1,
+        "Mechanical Keyboard": 2,
+        "Skateboard": 1,
+        "Smart Watch": 1,
+        "Sneakers": 1,
+        "Tablet": 2,
+        "Water Bottle": 2
+      }
+    },
+    {
+      "verb": "return_delivered_order_items",
+      "prompt": "baseline",
+      "folds": [
+        {
+          "fold": 0,
+          "train": {
+            "customers": 12,
+            "positive_customers": 7,
+            "negative_customers": 7,
+            "mixed_customers": 2,
+            "call_rows": 62
+          },
+          "test": {
+            "customers": 3,
+            "positive_customers": 1,
+            "negative_customers": 2,
+            "mixed_customers": 0,
+            "call_rows": 7
+          }
+        },
+        {
+          "fold": 1,
+          "train": {
+            "customers": 11,
+            "positive_customers": 5,
+            "negative_customers": 7,
+            "mixed_customers": 1,
+            "call_rows": 46
+          },
+          "test": {
+            "customers": 4,
+            "positive_customers": 3,
+            "negative_customers": 2,
+            "mixed_customers": 1,
+            "call_rows": 23
+          }
+        },
+        {
+          "fold": 2,
+          "train": {
+            "customers": 12,
+            "positive_customers": 5,
+            "negative_customers": 8,
+            "mixed_customers": 1,
+            "call_rows": 57
+          },
+          "test": {
+            "customers": 3,
+            "positive_customers": 3,
+            "negative_customers": 1,
+            "mixed_customers": 1,
+            "call_rows": 12
+          }
+        },
+        {
+          "fold": 3,
+          "train": {
+            "customers": 13,
+            "positive_customers": 7,
+            "negative_customers": 8,
+            "mixed_customers": 2,
+            "call_rows": 51
+          },
+          "test": {
+            "customers": 2,
+            "positive_customers": 1,
+            "negative_customers": 1,
+            "mixed_customers": 0,
+            "call_rows": 18
+          }
+        },
+        {
+          "fold": 4,
+          "train": {
+            "customers": 12,
+            "positive_customers": 8,
+            "negative_customers": 6,
+            "mixed_customers": 2,
+            "call_rows": 60
+          },
+          "test": {
+            "customers": 3,
+            "positive_customers": 0,
+            "negative_customers": 3,
+            "mixed_customers": 0,
+            "call_rows": 9
+          }
+        }
+      ],
+      "native_product_name_customer_support": {
+        "Air Purifier": 1,
+        "Backpack": 1,
+        "Bicycle": 1,
+        "Bluetooth Speaker": 1,
+        "Bookshelf": 1,
+        "Digital Camera": 1,
+        "E-Reader": 1,
+        "Gaming Mouse": 1,
+        "Hiking Boots": 2,
+        "Jigsaw Puzzle": 1,
+        "Mechanical Keyboard": 2,
+        "Skateboard": 1,
+        "Smart Watch": 1,
+        "Sneakers": 1,
+        "Tablet": 2,
+        "Water Bottle": 2
+      }
+    },
+    {
+      "verb": "return_delivered_order_items",
+      "prompt": "rules",
+      "folds": [
+        {
+          "fold": 0,
+          "train": {
+            "customers": 12,
+            "positive_customers": 7,
+            "negative_customers": 7,
+            "mixed_customers": 2,
+            "call_rows": 62
+          },
+          "test": {
+            "customers": 3,
+            "positive_customers": 1,
+            "negative_customers": 2,
+            "mixed_customers": 0,
+            "call_rows": 7
+          }
+        },
+        {
+          "fold": 1,
+          "train": {
+            "customers": 11,
+            "positive_customers": 5,
+            "negative_customers": 7,
+            "mixed_customers": 1,
+            "call_rows": 46
+          },
+          "test": {
+            "customers": 4,
+            "positive_customers": 3,
+            "negative_customers": 2,
+            "mixed_customers": 1,
+            "call_rows": 23
+          }
+        },
+        {
+          "fold": 2,
+          "train": {
+            "customers": 12,
+            "positive_customers": 5,
+            "negative_customers": 8,
+            "mixed_customers": 1,
+            "call_rows": 57
+          },
+          "test": {
+            "customers": 3,
+            "positive_customers": 3,
+            "negative_customers": 1,
+            "mixed_customers": 1,
+            "call_rows": 12
+          }
+        },
+        {
+          "fold": 3,
+          "train": {
+            "customers": 13,
+            "positive_customers": 7,
+            "negative_customers": 8,
+            "mixed_customers": 2,
+            "call_rows": 51
+          },
+          "test": {
+            "customers": 2,
+            "positive_customers": 1,
+            "negative_customers": 1,
+            "mixed_customers": 0,
+            "call_rows": 18
+          }
+        },
+        {
+          "fold": 4,
+          "train": {
+            "customers": 12,
+            "positive_customers": 8,
+            "negative_customers": 6,
+            "mixed_customers": 2,
+            "call_rows": 60
+          },
+          "test": {
+            "customers": 3,
+            "positive_customers": 0,
+            "negative_customers": 3,
+            "mixed_customers": 0,
+            "call_rows": 9
+          }
+        }
+      ],
+      "native_product_name_customer_support": {
+        "Air Purifier": 1,
+        "Backpack": 1,
+        "Bicycle": 1,
+        "Bluetooth Speaker": 1,
+        "Bookshelf": 1,
+        "Digital Camera": 1,
+        "E-Reader": 1,
+        "Gaming Mouse": 1,
+        "Hiking Boots": 2,
+        "Jigsaw Puzzle": 1,
+        "Mechanical Keyboard": 2,
+        "Skateboard": 1,
+        "Smart Watch": 1,
+        "Sneakers": 1,
+        "Tablet": 2,
+        "Water Bottle": 2
+      }
+    },
+    {
+      "verb": "modify_pending_order_items",
+      "prompt": "pooled",
+      "folds": [
+        {
+          "fold": 0,
+          "train": {
+            "customers": 15,
+            "positive_customers": 6,
+            "negative_customers": 10,
+            "mixed_customers": 1,
+            "call_rows": 167
+          },
+          "test": {
+            "customers": 2,
+            "positive_customers": 0,
+            "negative_customers": 2,
+            "mixed_customers": 0,
+            "call_rows": 14
+          }
+        },
+        {
+          "fold": 1,
+          "train": {
+            "customers": 15,
+            "positive_customers": 6,
+            "negative_customers": 10,
+            "mixed_customers": 1,
+            "call_rows": 163
+          },
+          "test": {
+            "customers": 2,
+            "positive_customers": 0,
+            "negative_customers": 2,
+            "mixed_customers": 0,
+            "call_rows": 18
+          }
+        },
+        {
+          "fold": 2,
+          "train": {
+            "customers": 11,
+            "positive_customers": 2,
+            "negative_customers": 9,
+            "mixed_customers": 0,
+            "call_rows": 116
+          },
+          "test": {
+            "customers": 6,
+            "positive_customers": 4,
+            "negative_customers": 3,
+            "mixed_customers": 1,
+            "call_rows": 65
+          }
+        },
+        {
+          "fold": 3,
+          "train": {
+            "customers": 14,
+            "positive_customers": 5,
+            "negative_customers": 10,
+            "mixed_customers": 1,
+            "call_rows": 145
+          },
+          "test": {
+            "customers": 3,
+            "positive_customers": 1,
+            "negative_customers": 2,
+            "mixed_customers": 0,
+            "call_rows": 36
+          }
+        },
+        {
+          "fold": 4,
+          "train": {
+            "customers": 13,
+            "positive_customers": 5,
+            "negative_customers": 9,
+            "mixed_customers": 1,
+            "call_rows": 133
+          },
+          "test": {
+            "customers": 4,
+            "positive_customers": 1,
+            "negative_customers": 3,
+            "mixed_customers": 0,
+            "call_rows": 48
+          }
+        }
+      ],
+      "native_product_name_customer_support": {
+        "Air Purifier": 1,
+        "Backpack": 1,
+        "Bluetooth Speaker": 2,
+        "Desk Lamp": 1,
+        "Fleece Jacket": 1,
+        "Grill": 1,
+        "Hiking Boots": 1,
+        "Jigsaw Puzzle": 1,
+        "Laptop": 3,
+        "Luggage Set": 1,
+        "Makeup Kit": 1,
+        "T-Shirt": 1,
+        "Tablet": 1,
+        "Water Bottle": 1,
+        "Wireless Earbuds": 1,
+        "Wristwatch": 2
+      }
+    },
+    {
+      "verb": "modify_pending_order_items",
+      "prompt": "baseline",
+      "folds": [
+        {
+          "fold": 0,
+          "train": {
+            "customers": 15,
+            "positive_customers": 6,
+            "negative_customers": 10,
+            "mixed_customers": 1,
+            "call_rows": 84
+          },
+          "test": {
+            "customers": 2,
+            "positive_customers": 0,
+            "negative_customers": 2,
+            "mixed_customers": 0,
+            "call_rows": 8
+          }
+        },
+        {
+          "fold": 1,
+          "train": {
+            "customers": 15,
+            "positive_customers": 6,
+            "negative_customers": 10,
+            "mixed_customers": 1,
+            "call_rows": 83
+          },
+          "test": {
+            "customers": 2,
+            "positive_customers": 0,
+            "negative_customers": 2,
+            "mixed_customers": 0,
+            "call_rows": 9
+          }
+        },
+        {
+          "fold": 2,
+          "train": {
+            "customers": 11,
+            "positive_customers": 2,
+            "negative_customers": 9,
+            "mixed_customers": 0,
+            "call_rows": 59
+          },
+          "test": {
+            "customers": 6,
+            "positive_customers": 4,
+            "negative_customers": 3,
+            "mixed_customers": 1,
+            "call_rows": 33
+          }
+        },
+        {
+          "fold": 3,
+          "train": {
+            "customers": 14,
+            "positive_customers": 5,
+            "negative_customers": 10,
+            "mixed_customers": 1,
+            "call_rows": 74
+          },
+          "test": {
+            "customers": 3,
+            "positive_customers": 1,
+            "negative_customers": 2,
+            "mixed_customers": 0,
+            "call_rows": 18
+          }
+        },
+        {
+          "fold": 4,
+          "train": {
+            "customers": 13,
+            "positive_customers": 5,
+            "negative_customers": 9,
+            "mixed_customers": 1,
+            "call_rows": 68
+          },
+          "test": {
+            "customers": 4,
+            "positive_customers": 1,
+            "negative_customers": 3,
+            "mixed_customers": 0,
+            "call_rows": 24
+          }
+        }
+      ],
+      "native_product_name_customer_support": {
+        "Backpack": 1,
+        "Bluetooth Speaker": 2,
+        "Desk Lamp": 1,
+        "Fleece Jacket": 1,
+        "Grill": 1,
+        "Hiking Boots": 1,
+        "Jigsaw Puzzle": 1,
+        "Laptop": 3,
+        "Luggage Set": 1,
+        "Makeup Kit": 1,
+        "T-Shirt": 1,
+        "Tablet": 1,
+        "Water Bottle": 1,
+        "Wireless Earbuds": 1,
+        "Wristwatch": 2
+      }
+    },
+    {
+      "verb": "modify_pending_order_items",
+      "prompt": "rules",
+      "folds": [
+        {
+          "fold": 0,
+          "train": {
+            "customers": 15,
+            "positive_customers": 6,
+            "negative_customers": 10,
+            "mixed_customers": 1,
+            "call_rows": 83
+          },
+          "test": {
+            "customers": 2,
+            "positive_customers": 0,
+            "negative_customers": 2,
+            "mixed_customers": 0,
+            "call_rows": 6
+          }
+        },
+        {
+          "fold": 1,
+          "train": {
+            "customers": 15,
+            "positive_customers": 6,
+            "negative_customers": 10,
+            "mixed_customers": 1,
+            "call_rows": 80
+          },
+          "test": {
+            "customers": 2,
+            "positive_customers": 0,
+            "negative_customers": 2,
+            "mixed_customers": 0,
+            "call_rows": 9
+          }
+        },
+        {
+          "fold": 2,
+          "train": {
+            "customers": 11,
+            "positive_customers": 2,
+            "negative_customers": 9,
+            "mixed_customers": 0,
+            "call_rows": 57
+          },
+          "test": {
+            "customers": 6,
+            "positive_customers": 4,
+            "negative_customers": 3,
+            "mixed_customers": 1,
+            "call_rows": 32
+          }
+        },
+        {
+          "fold": 3,
+          "train": {
+            "customers": 14,
+            "positive_customers": 5,
+            "negative_customers": 10,
+            "mixed_customers": 1,
+            "call_rows": 71
+          },
+          "test": {
+            "customers": 3,
+            "positive_customers": 1,
+            "negative_customers": 2,
+            "mixed_customers": 0,
+            "call_rows": 18
+          }
+        },
+        {
+          "fold": 4,
+          "train": {
+            "customers": 13,
+            "positive_customers": 5,
+            "negative_customers": 9,
+            "mixed_customers": 1,
+            "call_rows": 65
+          },
+          "test": {
+            "customers": 4,
+            "positive_customers": 1,
+            "negative_customers": 3,
+            "mixed_customers": 0,
+            "call_rows": 24
+          }
+        }
+      ],
+      "native_product_name_customer_support": {
+        "Air Purifier": 1,
+        "Backpack": 1,
+        "Bluetooth Speaker": 2,
+        "Desk Lamp": 1,
+        "Fleece Jacket": 1,
+        "Grill": 1,
+        "Hiking Boots": 1,
+        "Jigsaw Puzzle": 1,
+        "Laptop": 3,
+        "Luggage Set": 1,
+        "Makeup Kit": 1,
+        "T-Shirt": 1,
+        "Tablet": 1,
+        "Water Bottle": 1,
+        "Wireless Earbuds": 1,
+        "Wristwatch": 2
+      }
+    },
+    {
+      "verb": "exchange_delivered_order_items",
+      "prompt": "pooled",
+      "folds": [
+        {
+          "fold": 0,
+          "train": {
+            "customers": 9,
+            "positive_customers": 3,
+            "negative_customers": 6,
+            "mixed_customers": 0,
+            "call_rows": 94
+          },
+          "test": {
+            "customers": 4,
+            "positive_customers": 2,
+            "negative_customers": 2,
+            "mixed_customers": 0,
+            "call_rows": 46
+          }
+        },
+        {
+          "fold": 1,
+          "train": {
+            "customers": 12,
+            "positive_customers": 5,
+            "negative_customers": 7,
+            "mixed_customers": 0,
+            "call_rows": 134
+          },
+          "test": {
+            "customers": 1,
+            "positive_customers": 0,
+            "negative_customers": 1,
+            "mixed_customers": 0,
+            "call_rows": 6
+          }
+        },
+        {
+          "fold": 2,
+          "train": {
+            "customers": 11,
+            "positive_customers": 4,
+            "negative_customers": 7,
+            "mixed_customers": 0,
+            "call_rows": 110
+          },
+          "test": {
+            "customers": 2,
+            "positive_customers": 1,
+            "negative_customers": 1,
+            "mixed_customers": 0,
+            "call_rows": 30
+          }
+        },
+        {
+          "fold": 3,
+          "train": {
+            "customers": 12,
+            "positive_customers": 4,
+            "negative_customers": 8,
+            "mixed_customers": 0,
+            "call_rows": 139
+          },
+          "test": {
+            "customers": 1,
+            "positive_customers": 1,
+            "negative_customers": 0,
+            "mixed_customers": 0,
+            "call_rows": 1
+          }
+        },
+        {
+          "fold": 4,
+          "train": {
+            "customers": 8,
+            "positive_customers": 4,
+            "negative_customers": 4,
+            "mixed_customers": 0,
+            "call_rows": 83
+          },
+          "test": {
+            "customers": 5,
+            "positive_customers": 1,
+            "negative_customers": 4,
+            "mixed_customers": 0,
+            "call_rows": 57
+          }
+        }
+      ],
+      "native_product_name_customer_support": {
+        "Air Purifier": 1,
+        "Cycling Helmet": 1,
+        "Desk Lamp": 1,
+        "Digital Camera": 1,
+        "Garden Hose": 1,
+        "Hiking Boots": 1,
+        "Laptop": 1,
+        "Luggage Set": 1,
+        "Perfume": 1,
+        "Skateboard": 1,
+        "Smart Thermostat": 1,
+        "T-Shirt": 2,
+        "Vacuum Cleaner": 1,
+        "Wireless Earbuds": 2
+      }
+    },
+    {
+      "verb": "exchange_delivered_order_items",
+      "prompt": "baseline",
+      "folds": [
+        {
+          "fold": 0,
+          "train": {
+            "customers": 9,
+            "positive_customers": 3,
+            "negative_customers": 6,
+            "mixed_customers": 0,
+            "call_rows": 47
+          },
+          "test": {
+            "customers": 4,
+            "positive_customers": 2,
+            "negative_customers": 2,
+            "mixed_customers": 0,
+            "call_rows": 22
+          }
+        },
+        {
+          "fold": 1,
+          "train": {
+            "customers": 12,
+            "positive_customers": 5,
+            "negative_customers": 7,
+            "mixed_customers": 0,
+            "call_rows": 66
+          },
+          "test": {
+            "customers": 1,
+            "positive_customers": 0,
+            "negative_customers": 1,
+            "mixed_customers": 0,
+            "call_rows": 3
+          }
+        },
+        {
+          "fold": 2,
+          "train": {
+            "customers": 11,
+            "positive_customers": 4,
+            "negative_customers": 7,
+            "mixed_customers": 0,
+            "call_rows": 54
+          },
+          "test": {
+            "customers": 2,
+            "positive_customers": 1,
+            "negative_customers": 1,
+            "mixed_customers": 0,
+            "call_rows": 15
+          }
+        },
+        {
+          "fold": 3,
+          "train": {
+            "customers": 12,
+            "positive_customers": 4,
+            "negative_customers": 8,
+            "mixed_customers": 0,
+            "call_rows": 68
+          },
+          "test": {
+            "customers": 1,
+            "positive_customers": 1,
+            "negative_customers": 0,
+            "mixed_customers": 0,
+            "call_rows": 1
+          }
+        },
+        {
+          "fold": 4,
+          "train": {
+            "customers": 8,
+            "positive_customers": 4,
+            "negative_customers": 4,
+            "mixed_customers": 0,
+            "call_rows": 41
+          },
+          "test": {
+            "customers": 5,
+            "positive_customers": 1,
+            "negative_customers": 4,
+            "mixed_customers": 0,
+            "call_rows": 28
+          }
+        }
+      ],
+      "native_product_name_customer_support": {
+        "Air Purifier": 1,
+        "Cycling Helmet": 1,
+        "Desk Lamp": 1,
+        "Digital Camera": 1,
+        "Garden Hose": 1,
+        "Hiking Boots": 1,
+        "Laptop": 1,
+        "Luggage Set": 1,
+        "Perfume": 1,
+        "Skateboard": 1,
+        "Smart Thermostat": 1,
+        "T-Shirt": 2,
+        "Vacuum Cleaner": 1,
+        "Wireless Earbuds": 2
+      }
+    },
+    {
+      "verb": "exchange_delivered_order_items",
+      "prompt": "rules",
+      "folds": [
+        {
+          "fold": 0,
+          "train": {
+            "customers": 8,
+            "positive_customers": 2,
+            "negative_customers": 6,
+            "mixed_customers": 0,
+            "call_rows": 47
+          },
+          "test": {
+            "customers": 4,
+            "positive_customers": 2,
+            "negative_customers": 2,
+            "mixed_customers": 0,
+            "call_rows": 24
+          }
+        },
+        {
+          "fold": 1,
+          "train": {
+            "customers": 11,
+            "positive_customers": 4,
+            "negative_customers": 7,
+            "mixed_customers": 0,
+            "call_rows": 68
+          },
+          "test": {
+            "customers": 1,
+            "positive_customers": 0,
+            "negative_customers": 1,
+            "mixed_customers": 0,
+            "call_rows": 3
+          }
+        },
+        {
+          "fold": 2,
+          "train": {
+            "customers": 10,
+            "positive_customers": 3,
+            "negative_customers": 7,
+            "mixed_customers": 0,
+            "call_rows": 56
+          },
+          "test": {
+            "customers": 2,
+            "positive_customers": 1,
+            "negative_customers": 1,
+            "mixed_customers": 0,
+            "call_rows": 15
+          }
+        },
+        {
+          "fold": 3,
+          "train": {
+            "customers": 12,
+            "positive_customers": 4,
+            "negative_customers": 8,
+            "mixed_customers": 0,
+            "call_rows": 71
+          },
+          "test": {
+            "customers": 0,
+            "positive_customers": 0,
+            "negative_customers": 0,
+            "mixed_customers": 0,
+            "call_rows": 0
+          }
+        },
+        {
+          "fold": 4,
+          "train": {
+            "customers": 7,
+            "positive_customers": 3,
+            "negative_customers": 4,
+            "mixed_customers": 0,
+            "call_rows": 42
+          },
+          "test": {
+            "customers": 5,
+            "positive_customers": 1,
+            "negative_customers": 4,
+            "mixed_customers": 0,
+            "call_rows": 29
+          }
+        }
+      ],
+      "native_product_name_customer_support": {
+        "Air Purifier": 1,
+        "Cycling Helmet": 1,
+        "Desk Lamp": 1,
+        "Digital Camera": 1,
+        "Garden Hose": 1,
+        "Hiking Boots": 1,
+        "Laptop": 1,
+        "Luggage Set": 1,
+        "Perfume": 1,
+        "Skateboard": 1,
+        "T-Shirt": 2,
+        "Vacuum Cleaner": 1,
+        "Wireless Earbuds": 2
+      }
+    }
+  ]
+}

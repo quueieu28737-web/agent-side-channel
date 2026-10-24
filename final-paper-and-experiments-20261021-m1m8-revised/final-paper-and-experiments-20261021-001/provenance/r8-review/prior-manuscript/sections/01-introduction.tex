@@ -1,0 +1,22 @@
+\section{Introduction}\label{sec:introduction}
+Encryption conceals message content, yet LLM engines and agents expose packet sizes, cache timing, visited domains and tool sequences \cite{weiss2024prompt,promptpeek2025,earlybird2025,agentprint2025,uitraces2026,jeong2026wra}. A defense result applies to a particular receiver, execution boundary and workload. Reusing a headline score across a frontend, dispatcher or tool provider can change both its protected signal and its cost object.
+
+Our SoK uses the \emph{evaluated result record} to make these transfers inspectable. Separating Dangol's stored-capture and live-protocol results prevents subtracting unmatched scores; separating Early Bird's KV-prefix and semantic-cache mechanisms prevents pricing one with the other's overhead. Combining signal origin with observer access and threat polarity explains why read-only privacy cover and state-changing bot evasion have different utility consequences. These are systematization findings: they emerge from binding evidence across records, rather than from proposing a new defense component.
+
+\paragraph{Contributions}
+\begin{itemize}
+\item \textbf{A populated evidence framework.} A complete map of \FinalCore{} core and \FinalAdjacent{} adjacent families, 39 source-bound records and a nine-item audit of 20 mitigation families. The framework identifies which comparisons are compatible, incompatible or unresolved.
+\item \textbf{Three reusable comparison judgments.} Bind the final receiving projection; bind execution to the protected state; bind adaptive evaluation, utility and cost to the same operating point. Only 3/17 applicable families bind utility and 2/11 bind matched adaptation. The audit identifies the missing evidence needed for reuse.
+\item \textbf{Mechanism and cost evidence on a common agent--tool chain.} Controlled streaming/state tests and 690 real-agent runs show why emitter counts, state-changing calls and defended-data fitting matter. Customer-grouped cross-fitting supplies the main within-cohort summary; the original frozen-calibration split remains a separate reference. Live tool timing, stronger attackers and classical traffic-shaping adaptations test the boundaries of the measured reductions.
+\end{itemize}
+Shadow isolation, decoys, constant-rate tunnels and bucket padding have prior art; our contribution is their evidence-bound comparison. In particular, a high-overhead operating point is useful for diagnosing a protection boundary without being deployment-ready. Table~\ref{tab:rq-findings} states the answers to the four research questions and the evidence supporting each.
+\input{tables/r7-rq-findings}
+
+\soktakeaway{Scope of claims}{The corpus supports source-bound comparison judgments; the experiments support paired, workload-specific leakage and cost measurements. Original cross-fitting measures length/order; E13 additionally measures local arrival timing. Neither certifies an absolute bound against arbitrary attackers. The principal model cohort uses one retail environment and one mutable model alias. Preserved logical transcripts do not establish unchanged reward under timing-dependent LLM replanning.}
+
+Figure~\ref{fig:system-model} puts trace and action paths on the same agent--tool chain. Classical data processing motivates the receiving-view check; it is not a new theorem. A detailed decision flow is retained with the supplementary methods.
+\begin{figure*}[t]
+\centering\input{figures/fig1-system-model}
+\caption{Observation and execution boundaries. E5 tests streaming, E6 state scope, E7 encrypted composition, E9 frozen-calibration real-agent trajectories, and E13 live tool timing with complete tunnel controls.}
+\label{fig:system-model}
+\end{figure*}

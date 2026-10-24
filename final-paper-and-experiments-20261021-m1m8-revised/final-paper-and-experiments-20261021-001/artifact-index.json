@@ -1,7 +1,7 @@
 {
   "schema": "logical-artifact-modules-v1",
   "path_base": "directory containing this index",
-  "purpose": "Resolve current logical evidence modules to immutable historical archives and separately frozen R7 extensions.",
+  "purpose": "Current R8 SoK revision, construct-validity analysis, matched comparisons and applicability-aware audit; prior experiments preserved.",
   "modules": {
     "source-ledger-and-family-audit": {
       "description": "Version-bound family map, source/result records, coding columns and nine-item audit.",
@@ -132,6 +132,64 @@
         "experiments/sp2027-r7-agent-extension/PUBLIC_REDACTION.json",
         "experiments/sp2027-r7-agent-extension/verify_public.py"
       ]
+    },
+    "same_operation_attribute_diagnostic": {
+      "paths": [
+        "experiments/sp2027-r8-sensitive-attributes/DESIGN.md",
+        "experiments/sp2027-r8-sensitive-attributes/README.md",
+        "experiments/sp2027-r8-sensitive-attributes/REPORT.md",
+        "experiments/sp2027-r8-sensitive-attributes/actual_attribute_instances.json",
+        "experiments/sp2027-r8-sensitive-attributes/aligned_calls.json",
+        "experiments/sp2027-r8-sensitive-attributes/alignment.json",
+        "experiments/sp2027-r8-sensitive-attributes/artifact_manifest.json",
+        "experiments/sp2027-r8-sensitive-attributes/attribute_availability.json",
+        "experiments/sp2027-r8-sensitive-attributes/availability.py",
+        "experiments/sp2027-r8-sensitive-attributes/confounding_support.json",
+        "experiments/sp2027-r8-sensitive-attributes/describe.py",
+        "experiments/sp2027-r8-sensitive-attributes/descriptive_metrics.json",
+        "experiments/sp2027-r8-sensitive-attributes/descriptive_verification.json",
+        "experiments/sp2027-r8-sensitive-attributes/episode_metadata.json",
+        "experiments/sp2027-r8-sensitive-attributes/fold_feasibility.json",
+        "experiments/sp2027-r8-sensitive-attributes/fold_feasibility.py",
+        "experiments/sp2027-r8-sensitive-attributes/gold_attribute_instances.json",
+        "experiments/sp2027-r8-sensitive-attributes/instances.json",
+        "experiments/sp2027-r8-sensitive-attributes/inventory.py",
+        "experiments/sp2027-r8-sensitive-attributes/make_table.py",
+        "experiments/sp2027-r8-sensitive-attributes/models.pkl",
+        "experiments/sp2027-r8-sensitive-attributes/predictions.json",
+        "experiments/sp2027-r8-sensitive-attributes/prepare.py",
+        "experiments/sp2027-r8-sensitive-attributes/proposed-table.tex",
+        "experiments/sp2027-r8-sensitive-attributes/protocol.json",
+        "experiments/sp2027-r8-sensitive-attributes/requirements.txt",
+        "experiments/sp2027-r8-sensitive-attributes/results.json",
+        "experiments/sp2027-r8-sensitive-attributes/run.py",
+        "experiments/sp2027-r8-sensitive-attributes/runtime.json",
+        "experiments/sp2027-r8-sensitive-attributes/shuffled_label_map.json",
+        "experiments/sp2027-r8-sensitive-attributes/source_inventory.json",
+        "experiments/sp2027-r8-sensitive-attributes/task_action_inventory.json",
+        "experiments/sp2027-r8-sensitive-attributes/verification.json",
+        "experiments/sp2027-r8-sensitive-attributes/verify.py"
+      ]
+    },
+    "customer_composition_sensitivity": {
+      "paths": [
+        "experiments/sp2027-r8-cluster-sensitivity/PROTOCOL.md",
+        "experiments/sp2027-r8-cluster-sensitivity/README.md",
+        "experiments/sp2027-r8-cluster-sensitivity/RESULTS.md",
+        "experiments/sp2027-r8-cluster-sensitivity/analysis.py",
+        "experiments/sp2027-r8-cluster-sensitivity/freeze.json",
+        "experiments/sp2027-r8-cluster-sensitivity/results.json",
+        "experiments/sp2027-r8-cluster-sensitivity/verification.json",
+        "experiments/sp2027-r8-cluster-sensitivity/verify.py"
+      ]
+    },
+    "r8_record_applicability_and_self_audit": {
+      "paths": [
+        "provenance/r8-review/defense-self-audit.json",
+        "provenance/r8-review/applicability-sensitivity.json",
+        "provenance/r8-review/all-citations-form-labels.csv",
+        "provenance/r8-review/family-status-overlay.csv"
+      ]
     }
   },
   "current_publication": [
@@ -141,14 +199,15 @@
     "pdf/supplement.pdf",
     "provenance/snapshot.json",
     "SHA256SUMS.json",
-    "provenance/r7-review/verify_publication.py",
-    "provenance/r7-review/validation.json",
-    "provenance/r7-review/checklist-coverage.json",
-    "provenance/r7-review/visual_qa.json"
+    "provenance/r8-review/verify_publication.py",
+    "provenance/r8-review/validation.json",
+    "provenance/r8-review/checklist-coverage.json",
+    "provenance/r8-review/visual_qa.json"
   ],
-  "current_verification": "provenance/r7-review/verify_publication.py",
+  "current_verification": "provenance/r8-review/verify_publication.py",
   "historical_document_verifiers": [
     "provenance/review-closure/verify_manuscript.py",
-    "provenance/timing/verify_publication.py"
+    "provenance/timing/verify_publication.py",
+    "provenance/r7-review/verify_publication.py"
   ]
 }

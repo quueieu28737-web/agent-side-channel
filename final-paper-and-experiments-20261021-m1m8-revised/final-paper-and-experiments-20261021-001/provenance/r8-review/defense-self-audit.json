@@ -1,0 +1,2303 @@
+{
+  "kind": "R8 descriptive audit from complete saved result objects; no fitting or new LLM calls",
+  "common_attackers": [
+    "D2_extra_trees",
+    "D2_gradient_boosting",
+    "D2_leaf_fingerprint",
+    "D2_logistic",
+    "D2_random_forest",
+    "D2_sequence_CNN",
+    "majority"
+  ],
+  "matched_rows": [
+    {
+      "prompt": "baseline",
+      "condition": "raw",
+      "target": "cancel",
+      "common_ba": 0.8430555555555556,
+      "common_ba_ci95": [
+        0.7269350475232828,
+        0.9741554054054055
+      ],
+      "common_auroc": 0.8363425925925926,
+      "common_criterion": false,
+      "full_union_ba": 0.9166666666666667,
+      "full_union_suite_size": 19,
+      "wire_ratio": 1.0,
+      "call_ratio": 1.0,
+      "last_real_p95_ms": 15.445570000000002,
+      "traffic_p95_ms": 15.466340000000002,
+      "evidence": "measured_E13",
+      "ap_gap_caps": 0
+    },
+    {
+      "prompt": "baseline",
+      "condition": "raw",
+      "target": "return",
+      "common_ba": 0.7688311688311689,
+      "common_ba_ci95": [
+        0.6217717717717718,
+        0.9035103383458647
+      ],
+      "common_auroc": 0.8282828282828283,
+      "common_criterion": false,
+      "full_union_ba": 0.8636363636363636,
+      "full_union_suite_size": 19,
+      "wire_ratio": 1.0,
+      "call_ratio": 1.0,
+      "last_real_p95_ms": 15.445570000000002,
+      "traffic_p95_ms": 15.466340000000002,
+      "evidence": "measured_E13",
+      "ap_gap_caps": 0
+    },
+    {
+      "prompt": "baseline",
+      "condition": "padding",
+      "target": "cancel",
+      "common_ba": 0.5319444444444444,
+      "common_ba_ci95": [
+        0.5,
+        0.6948951455123502
+      ],
+      "common_auroc": 0.6041666666666666,
+      "common_criterion": false,
+      "full_union_ba": 0.6861111111111111,
+      "full_union_suite_size": 19,
+      "wire_ratio": 3.9222222867916194,
+      "call_ratio": 1.0,
+      "last_real_p95_ms": 16.64299,
+      "traffic_p95_ms": 16.67819,
+      "evidence": "measured_E13",
+      "ap_gap_caps": 0
+    },
+    {
+      "prompt": "baseline",
+      "condition": "padding",
+      "target": "return",
+      "common_ba": 0.5909090909090909,
+      "common_ba_ci95": [
+        0.5,
+        0.7380952380952381
+      ],
+      "common_auroc": 0.655988455988456,
+      "common_criterion": false,
+      "full_union_ba": 0.6268398268398269,
+      "full_union_suite_size": 19,
+      "wire_ratio": 3.9222222867916194,
+      "call_ratio": 1.0,
+      "last_real_p95_ms": 16.64299,
+      "traffic_p95_ms": 16.67819,
+      "evidence": "measured_E13",
+      "ap_gap_caps": 0
+    },
+    {
+      "prompt": "baseline",
+      "condition": "walkie_talkie",
+      "target": "cancel",
+      "common_ba": 0.5,
+      "common_ba_ci95": [
+        0.5,
+        0.6697543416622364
+      ],
+      "common_auroc": 0.5259259259259259,
+      "common_criterion": false,
+      "full_union_ba": 0.5,
+      "full_union_suite_size": 7,
+      "wire_ratio": 2.040380686407745,
+      "call_ratio": 1.0,
+      "last_real_p95_ms": 16.6094815625,
+      "traffic_p95_ms": 16.6094816,
+      "evidence": "offline_trace_transform",
+      "ap_gap_caps": 0
+    },
+    {
+      "prompt": "baseline",
+      "condition": "walkie_talkie",
+      "target": "return",
+      "common_ba": 0.5666666666666667,
+      "common_ba_ci95": [
+        0.516662912912913,
+        0.6779239341085269
+      ],
+      "common_auroc": 0.606926406926407,
+      "common_criterion": false,
+      "full_union_ba": 0.5666666666666667,
+      "full_union_suite_size": 7,
+      "wire_ratio": 2.040380686407745,
+      "call_ratio": 1.0,
+      "last_real_p95_ms": 16.6094815625,
+      "traffic_p95_ms": 16.6094816,
+      "evidence": "offline_trace_transform",
+      "ap_gap_caps": 0
+    },
+    {
+      "prompt": "baseline",
+      "condition": "shadow_serial",
+      "target": "cancel",
+      "common_ba": 0.5,
+      "common_ba_ci95": [
+        0.5,
+        0.649961607949413
+      ],
+      "common_auroc": 0.5476851851851852,
+      "common_criterion": false,
+      "full_union_ba": 0.6138888888888889,
+      "full_union_suite_size": 22,
+      "wire_ratio": 15.106016216696373,
+      "call_ratio": 3.8266533066132267,
+      "last_real_p95_ms": 26.230595000000005,
+      "traffic_p95_ms": 46.621235,
+      "evidence": "measured_E13",
+      "ap_gap_caps": 0
+    },
+    {
+      "prompt": "baseline",
+      "condition": "shadow_serial",
+      "target": "return",
+      "common_ba": 0.5285714285714286,
+      "common_ba_ci95": [
+        0.5,
+        0.6033904472720262
+      ],
+      "common_auroc": 0.5261183261183261,
+      "common_criterion": false,
+      "full_union_ba": 0.5341991341991342,
+      "full_union_suite_size": 22,
+      "wire_ratio": 15.106016216696373,
+      "call_ratio": 3.8266533066132267,
+      "last_real_p95_ms": 26.230595000000005,
+      "traffic_p95_ms": 46.621235,
+      "evidence": "measured_E13",
+      "ap_gap_caps": 0
+    },
+    {
+      "prompt": "baseline",
+      "condition": "shadow_parallel2",
+      "target": "cancel",
+      "common_ba": 0.5,
+      "common_ba_ci95": [
+        0.5,
+        0.5974184782608696
+      ],
+      "common_auroc": 0.5,
+      "common_criterion": true,
+      "full_union_ba": 0.5166666666666666,
+      "full_union_suite_size": 22,
+      "wire_ratio": 15.106016216696373,
+      "call_ratio": 3.8266533066132267,
+      "last_real_p95_ms": 20.848415000000003,
+      "traffic_p95_ms": 37.409020000000005,
+      "evidence": "measured_E13",
+      "ap_gap_caps": 0
+    },
+    {
+      "prompt": "baseline",
+      "condition": "shadow_parallel2",
+      "target": "return",
+      "common_ba": 0.5731601731601732,
+      "common_ba_ci95": [
+        0.5496742921161526,
+        0.692487297648588
+      ],
+      "common_auroc": 0.5959595959595959,
+      "common_criterion": false,
+      "full_union_ba": 0.5766233766233766,
+      "full_union_suite_size": 22,
+      "wire_ratio": 15.106016216696373,
+      "call_ratio": 3.8266533066132267,
+      "last_real_p95_ms": 20.848415000000003,
+      "traffic_p95_ms": 37.409020000000005,
+      "evidence": "measured_E13",
+      "ap_gap_caps": 0
+    },
+    {
+      "prompt": "baseline",
+      "condition": "tunnel_2ms",
+      "target": "cancel",
+      "common_ba": 0.5986111111111112,
+      "common_ba_ci95": [
+        0.5455879446640317,
+        0.6728087068160599
+      ],
+      "common_auroc": 0.7083333333333334,
+      "common_criterion": false,
+      "full_union_ba": 0.625,
+      "full_union_suite_size": 17,
+      "wire_ratio": 125.70596258719982,
+      "call_ratio": 1.0,
+      "last_real_p95_ms": 56.40077500000001,
+      "traffic_p95_ms": 270.432055,
+      "evidence": "measured_E13",
+      "ap_gap_caps": 0
+    },
+    {
+      "prompt": "baseline",
+      "condition": "tunnel_2ms",
+      "target": "return",
+      "common_ba": 0.551948051948052,
+      "common_ba_ci95": [
+        0.5010765590958606,
+        0.6095017764857881
+      ],
+      "common_auroc": 0.5670995670995671,
+      "common_criterion": false,
+      "full_union_ba": 0.551948051948052,
+      "full_union_suite_size": 17,
+      "wire_ratio": 125.70596258719982,
+      "call_ratio": 1.0,
+      "last_real_p95_ms": 56.40077500000001,
+      "traffic_p95_ms": 270.432055,
+      "evidence": "measured_E13",
+      "ap_gap_caps": 0
+    },
+    {
+      "prompt": "baseline",
+      "condition": "tunnel_5ms",
+      "target": "cancel",
+      "common_ba": 0.5458333333333333,
+      "common_ba_ci95": [
+        0.5,
+        0.7049479166666667
+      ],
+      "common_auroc": 0.6180555555555556,
+      "common_criterion": false,
+      "full_union_ba": 0.5458333333333333,
+      "full_union_suite_size": 17,
+      "wire_ratio": 125.70596258719982,
+      "call_ratio": 1.0,
+      "last_real_p95_ms": 112.304825,
+      "traffic_p95_ms": 666.6402999999999,
+      "evidence": "measured_E13",
+      "ap_gap_caps": 0
+    },
+    {
+      "prompt": "baseline",
+      "condition": "tunnel_5ms",
+      "target": "return",
+      "common_ba": 0.5367965367965368,
+      "common_ba_ci95": [
+        0.5127439309056956,
+        0.6118334968032548
+      ],
+      "common_auroc": 0.5506493506493506,
+      "common_criterion": false,
+      "full_union_ba": 0.5727272727272728,
+      "full_union_suite_size": 17,
+      "wire_ratio": 125.70596258719982,
+      "call_ratio": 1.0,
+      "last_real_p95_ms": 112.304825,
+      "traffic_p95_ms": 666.6402999999999,
+      "evidence": "measured_E13",
+      "ap_gap_caps": 0
+    },
+    {
+      "prompt": "rules",
+      "condition": "raw",
+      "target": "cancel",
+      "common_ba": 0.8472222222222222,
+      "common_ba_ci95": [
+        0.7516315901360544,
+        0.9848484848484849
+      ],
+      "common_auroc": 0.8513888888888889,
+      "common_criterion": false,
+      "full_union_ba": 0.9444444444444444,
+      "full_union_suite_size": 19,
+      "wire_ratio": 1.0,
+      "call_ratio": 1.0,
+      "last_real_p95_ms": 15.659645000000001,
+      "traffic_p95_ms": 15.695095,
+      "evidence": "measured_E13",
+      "ap_gap_caps": 0
+    },
+    {
+      "prompt": "rules",
+      "condition": "raw",
+      "target": "return",
+      "common_ba": 0.7826839826839826,
+      "common_ba_ci95": [
+        0.632877696775723,
+        0.9222435897435897
+      ],
+      "common_auroc": 0.8178932178932179,
+      "common_criterion": false,
+      "full_union_ba": 0.8701298701298701,
+      "full_union_suite_size": 19,
+      "wire_ratio": 1.0,
+      "call_ratio": 1.0,
+      "last_real_p95_ms": 15.659645000000001,
+      "traffic_p95_ms": 15.695095,
+      "evidence": "measured_E13",
+      "ap_gap_caps": 0
+    },
+    {
+      "prompt": "rules",
+      "condition": "padding",
+      "target": "cancel",
+      "common_ba": 0.5944444444444444,
+      "common_ba_ci95": [
+        0.5,
+        0.7754779411764706
+      ],
+      "common_auroc": 0.59375,
+      "common_criterion": false,
+      "full_union_ba": 0.7013888888888888,
+      "full_union_suite_size": 19,
+      "wire_ratio": 3.9502948867085625,
+      "call_ratio": 1.0,
+      "last_real_p95_ms": 15.497540000000004,
+      "traffic_p95_ms": 15.538180000000004,
+      "evidence": "measured_E13",
+      "ap_gap_caps": 0
+    },
+    {
+      "prompt": "rules",
+      "condition": "padding",
+      "target": "return",
+      "common_ba": 0.6186147186147186,
+      "common_ba_ci95": [
+        0.5,
+        0.773824555074555
+      ],
+      "common_auroc": 0.5627705627705628,
+      "common_criterion": false,
+      "full_union_ba": 0.6186147186147186,
+      "full_union_suite_size": 19,
+      "wire_ratio": 3.9502948867085625,
+      "call_ratio": 1.0,
+      "last_real_p95_ms": 15.497540000000004,
+      "traffic_p95_ms": 15.538180000000004,
+      "evidence": "measured_E13",
+      "ap_gap_caps": 0
+    },
+    {
+      "prompt": "rules",
+      "condition": "walkie_talkie",
+      "target": "cancel",
+      "common_ba": 0.5138888888888888,
+      "common_ba_ci95": [
+        0.5,
+        0.6876736111111111
+      ],
+      "common_auroc": 0.6064814814814815,
+      "common_criterion": false,
+      "full_union_ba": 0.5138888888888888,
+      "full_union_suite_size": 7,
+      "wire_ratio": 2.2333801918883265,
+      "call_ratio": 1.0,
+      "last_real_p95_ms": 15.778926874999998,
+      "traffic_p95_ms": 15.77892695,
+      "evidence": "offline_trace_transform",
+      "ap_gap_caps": 0
+    },
+    {
+      "prompt": "rules",
+      "condition": "walkie_talkie",
+      "target": "return",
+      "common_ba": 0.5627705627705628,
+      "common_ba_ci95": [
+        0.5,
+        0.6655869324473974
+      ],
+      "common_auroc": 0.5581529581529582,
+      "common_criterion": false,
+      "full_union_ba": 0.5627705627705628,
+      "full_union_suite_size": 7,
+      "wire_ratio": 2.2333801918883265,
+      "call_ratio": 1.0,
+      "last_real_p95_ms": 15.778926874999998,
+      "traffic_p95_ms": 15.77892695,
+      "evidence": "offline_trace_transform",
+      "ap_gap_caps": 0
+    },
+    {
+      "prompt": "rules",
+      "condition": "shadow_serial",
+      "target": "cancel",
+      "common_ba": 0.5611111111111111,
+      "common_ba_ci95": [
+        0.5,
+        0.7624113475177305
+      ],
+      "common_auroc": 0.5893518518518519,
+      "common_criterion": false,
+      "full_union_ba": 0.5819444444444444,
+      "full_union_suite_size": 22,
+      "wire_ratio": 15.468457805256072,
+      "call_ratio": 3.8821138211382116,
+      "last_real_p95_ms": 23.859700000000014,
+      "traffic_p95_ms": 41.82594,
+      "evidence": "measured_E13",
+      "ap_gap_caps": 0
+    },
+    {
+      "prompt": "rules",
+      "condition": "shadow_serial",
+      "target": "return",
+      "common_ba": 0.5978354978354978,
+      "common_ba_ci95": [
+        0.5376310483870967,
+        0.6944444444444444
+      ],
+      "common_auroc": 0.6255411255411255,
+      "common_criterion": false,
+      "full_union_ba": 0.6069264069264069,
+      "full_union_suite_size": 22,
+      "wire_ratio": 15.468457805256072,
+      "call_ratio": 3.8821138211382116,
+      "last_real_p95_ms": 23.859700000000014,
+      "traffic_p95_ms": 41.82594,
+      "evidence": "measured_E13",
+      "ap_gap_caps": 0
+    },
+    {
+      "prompt": "rules",
+      "condition": "shadow_parallel2",
+      "target": "cancel",
+      "common_ba": 0.5694444444444444,
+      "common_ba_ci95": [
+        0.5,
+        0.6916623600344531
+      ],
+      "common_auroc": 0.5662037037037037,
+      "common_criterion": false,
+      "full_union_ba": 0.5694444444444444,
+      "full_union_suite_size": 22,
+      "wire_ratio": 15.468457805256072,
+      "call_ratio": 3.8821138211382116,
+      "last_real_p95_ms": 20.70062,
+      "traffic_p95_ms": 36.54818,
+      "evidence": "measured_E13",
+      "ap_gap_caps": 0
+    },
+    {
+      "prompt": "rules",
+      "condition": "shadow_parallel2",
+      "target": "return",
+      "common_ba": 0.5705627705627706,
+      "common_ba_ci95": [
+        0.5379261363636363,
+        0.679176747311828
+      ],
+      "common_auroc": 0.638961038961039,
+      "common_criterion": false,
+      "full_union_ba": 0.6021645021645021,
+      "full_union_suite_size": 22,
+      "wire_ratio": 15.468457805256072,
+      "call_ratio": 3.8821138211382116,
+      "last_real_p95_ms": 20.70062,
+      "traffic_p95_ms": 36.54818,
+      "evidence": "measured_E13",
+      "ap_gap_caps": 0
+    },
+    {
+      "prompt": "rules",
+      "condition": "tunnel_2ms",
+      "target": "cancel",
+      "common_ba": 0.5277777777777778,
+      "common_ba_ci95": [
+        0.5119047619047619,
+        0.6161389119601329
+      ],
+      "common_auroc": 0.5037037037037037,
+      "common_criterion": false,
+      "full_union_ba": 0.5305555555555556,
+      "full_union_suite_size": 17,
+      "wire_ratio": 128.38382074143914,
+      "call_ratio": 1.0,
+      "last_real_p95_ms": 48.84085000000002,
+      "traffic_p95_ms": 267.913905,
+      "evidence": "measured_E13",
+      "ap_gap_caps": 0
+    },
+    {
+      "prompt": "rules",
+      "condition": "tunnel_2ms",
+      "target": "return",
+      "common_ba": 0.5528138528138529,
+      "common_ba_ci95": [
+        0.5166666666666667,
+        0.6623947811447811
+      ],
+      "common_auroc": 0.5772005772005772,
+      "common_criterion": false,
+      "full_union_ba": 0.5913419913419913,
+      "full_union_suite_size": 17,
+      "wire_ratio": 128.38382074143914,
+      "call_ratio": 1.0,
+      "last_real_p95_ms": 48.84085000000002,
+      "traffic_p95_ms": 267.913905,
+      "evidence": "measured_E13",
+      "ap_gap_caps": 0
+    },
+    {
+      "prompt": "rules",
+      "condition": "tunnel_5ms",
+      "target": "cancel",
+      "common_ba": 0.5833333333333333,
+      "common_ba_ci95": [
+        0.5,
+        0.6786936090225564
+      ],
+      "common_auroc": 0.5388888888888889,
+      "common_criterion": false,
+      "full_union_ba": 0.5833333333333333,
+      "full_union_suite_size": 17,
+      "wire_ratio": 128.38382074143914,
+      "call_ratio": 1.0,
+      "last_real_p95_ms": 112.94829000000003,
+      "traffic_p95_ms": 666.55638,
+      "evidence": "measured_E13",
+      "ap_gap_caps": 0
+    },
+    {
+      "prompt": "rules",
+      "condition": "tunnel_5ms",
+      "target": "return",
+      "common_ba": 0.5432900432900433,
+      "common_ba_ci95": [
+        0.5156235691391942,
+        0.6260190068116896
+      ],
+      "common_auroc": 0.5945165945165946,
+      "common_criterion": false,
+      "full_union_ba": 0.5632034632034632,
+      "full_union_suite_size": 17,
+      "wire_ratio": 128.38382074143914,
+      "call_ratio": 1.0,
+      "last_real_p95_ms": 112.94829000000003,
+      "traffic_p95_ms": 666.55638,
+      "evidence": "measured_E13",
+      "ap_gap_caps": 0
+    }
+  ],
+  "descriptive_point_dominance": [
+    {
+      "prompt": "baseline",
+      "lower_point": "walkie_talkie",
+      "higher_point": "shadow_parallel2",
+      "dimensions": [
+        "bytes",
+        "tool dispatches",
+        "cancel BA",
+        "return BA"
+      ],
+      "scope": "Descriptive saved point estimates only; not statistical or deployment dominance; clocks excluded"
+    },
+    {
+      "prompt": "baseline",
+      "lower_point": "shadow_serial",
+      "higher_point": "shadow_parallel2",
+      "dimensions": [
+        "bytes",
+        "tool dispatches",
+        "cancel BA",
+        "return BA"
+      ],
+      "scope": "Descriptive saved point estimates only; not statistical or deployment dominance; clocks excluded"
+    },
+    {
+      "prompt": "baseline",
+      "lower_point": "tunnel_5ms",
+      "higher_point": "tunnel_2ms",
+      "dimensions": [
+        "bytes",
+        "tool dispatches",
+        "cancel BA",
+        "return BA"
+      ],
+      "scope": "Descriptive saved point estimates only; not statistical or deployment dominance; clocks excluded"
+    },
+    {
+      "prompt": "rules",
+      "lower_point": "walkie_talkie",
+      "higher_point": "shadow_serial",
+      "dimensions": [
+        "bytes",
+        "tool dispatches",
+        "cancel BA",
+        "return BA"
+      ],
+      "scope": "Descriptive saved point estimates only; not statistical or deployment dominance; clocks excluded"
+    },
+    {
+      "prompt": "rules",
+      "lower_point": "walkie_talkie",
+      "higher_point": "shadow_parallel2",
+      "dimensions": [
+        "bytes",
+        "tool dispatches",
+        "cancel BA",
+        "return BA"
+      ],
+      "scope": "Descriptive saved point estimates only; not statistical or deployment dominance; clocks excluded"
+    }
+  ],
+  "detector_denominators": {
+    "shadow_serial-flush": {
+      "ba": {
+        "point": 0.904493023433472,
+        "ci95": [
+          0.8830712763570436,
+          0.9245678654598698
+        ],
+        "invalid_draws": 0
+      },
+      "auroc": 0.9667636154958763,
+      "records_or_calls": 15278,
+      "customers": 24,
+      "positive_labels": 8902,
+      "negative_labels": 6376,
+      "episodes": 276,
+      "labels": "after flush_start_ns",
+      "unit": "TLS record"
+    },
+    "shadow_serial-cover": {
+      "ba": {
+        "point": 0.8253064481518035,
+        "ci95": [
+          0.8033075212072066,
+          0.8471887667978334
+        ],
+        "invalid_draws": 0
+      },
+      "auroc": 0.89783551343388,
+      "records_or_calls": 7639,
+      "customers": 24,
+      "positive_labels": 5657,
+      "negative_labels": 1982,
+      "episodes": 276,
+      "labels": "cover request",
+      "unit": "encrypted request"
+    },
+    "shadow_parallel2-flush": {
+      "ba": {
+        "point": 0.9231062860135754,
+        "ci95": [
+          0.9064809903258109,
+          0.9390774369652239
+        ],
+        "invalid_draws": 0
+      },
+      "auroc": 0.9786650529944493,
+      "records_or_calls": 15278,
+      "customers": 24,
+      "positive_labels": 8902,
+      "negative_labels": 6376,
+      "episodes": 276,
+      "labels": "after flush_start_ns",
+      "unit": "TLS record"
+    },
+    "shadow_parallel2-cover": {
+      "ba": {
+        "point": 0.960798815644495,
+        "ci95": [
+          0.9539711614187727,
+          0.9672655642688538
+        ],
+        "invalid_draws": 0
+      },
+      "auroc": 0.9948250892289042,
+      "records_or_calls": 7639,
+      "customers": 24,
+      "positive_labels": 5657,
+      "negative_labels": 1982,
+      "episodes": 276,
+      "labels": "cover request",
+      "unit": "encrypted request"
+    }
+  },
+  "saved_flush_then_intent": {
+    "baseline|shadow_serial|flush_stripped_joint|cancel": {
+      "ba": {
+        "point": 0.5777777777777778,
+        "ci95": [
+          0.5,
+          0.7073464317976513
+        ],
+        "invalid_draws": 12
+      },
+      "auroc": {
+        "point": 0.5833333333333334,
+        "ci95": [
+          0.5,
+          0.7302387104712685
+        ],
+        "invalid_draws": 12
+      },
+      "models": {
+        "majority": {
+          "ba": {
+            "point": 0.5,
+            "ci95": [
+              0.5,
+              0.5
+            ],
+            "invalid_draws": 12
+          },
+          "auroc": {
+            "point": 0.5,
+            "ci95": [
+              0.5,
+              0.5
+            ],
+            "invalid_draws": 12
+          }
+        },
+        "logistic": {
+          "ba": {
+            "point": 0.5777777777777778,
+            "ci95": [
+              0.46790136946386945,
+              0.7073464317976513
+            ],
+            "invalid_draws": 12
+          },
+          "auroc": {
+            "point": 0.5833333333333334,
+            "ci95": [
+              0.4735254329004329,
+              0.7259055217831814
+            ],
+            "invalid_draws": 12
+          }
+        },
+        "gboost": {
+          "ba": {
+            "point": 0.46111111111111114,
+            "ci95": [
+              0.40625,
+              0.5578238770685578
+            ],
+            "invalid_draws": 12
+          },
+          "auroc": {
+            "point": 0.4425925925925926,
+            "ci95": [
+              0.28316530383197047,
+              0.5799882473637733
+            ],
+            "invalid_draws": 12
+          }
+        },
+        "forest": {
+          "ba": {
+            "point": 0.41944444444444445,
+            "ci95": [
+              0.35757452574525744,
+              0.4961929563492064
+            ],
+            "invalid_draws": 12
+          },
+          "auroc": {
+            "point": 0.4324074074074074,
+            "ci95": [
+              0.3075552104899931,
+              0.5705397173489279
+            ],
+            "invalid_draws": 12
+          }
+        }
+      },
+      "meets_absolute_criterion": false
+    },
+    "baseline|shadow_serial|flush_stripped_joint|return": {
+      "ba": {
+        "point": 0.5341991341991342,
+        "ci95": [
+          0.5,
+          0.6464646464646464
+        ],
+        "invalid_draws": 0
+      },
+      "auroc": {
+        "point": 0.5298701298701298,
+        "ci95": [
+          0.5,
+          0.6670571455293677
+        ],
+        "invalid_draws": 0
+      },
+      "models": {
+        "majority": {
+          "ba": {
+            "point": 0.5,
+            "ci95": [
+              0.5,
+              0.5
+            ],
+            "invalid_draws": 0
+          },
+          "auroc": {
+            "point": 0.5,
+            "ci95": [
+              0.5,
+              0.5
+            ],
+            "invalid_draws": 0
+          }
+        },
+        "logistic": {
+          "ba": {
+            "point": 0.4372294372294372,
+            "ci95": [
+              0.3230733442802408,
+              0.5458413461538462
+            ],
+            "invalid_draws": 0
+          },
+          "auroc": {
+            "point": 0.5102453102453103,
+            "ci95": [
+              0.35453926235535427,
+              0.6475902777777777
+            ],
+            "invalid_draws": 0
+          }
+        },
+        "gboost": {
+          "ba": {
+            "point": 0.5341991341991342,
+            "ci95": [
+              0.44016955676201286,
+              0.6222246588693957
+            ],
+            "invalid_draws": 0
+          },
+          "auroc": {
+            "point": 0.5298701298701298,
+            "ci95": [
+              0.40335022522522523,
+              0.6144204348227337
+            ],
+            "invalid_draws": 0
+          }
+        },
+        "forest": {
+          "ba": {
+            "point": 0.5341991341991342,
+            "ci95": [
+              0.44399675518627135,
+              0.6424284511784512
+            ],
+            "invalid_draws": 0
+          },
+          "auroc": {
+            "point": 0.5053391053391053,
+            "ci95": [
+              0.3283641975308642,
+              0.6546675377468061
+            ],
+            "invalid_draws": 0
+          }
+        }
+      },
+      "meets_absolute_criterion": false
+    },
+    "baseline|shadow_parallel2|flush_stripped_joint|cancel": {
+      "ba": {
+        "point": 0.5,
+        "ci95": [
+          0.5,
+          0.6404913632119514
+        ],
+        "invalid_draws": 12
+      },
+      "auroc": {
+        "point": 0.5,
+        "ci95": [
+          0.5,
+          0.6051388888888889
+        ],
+        "invalid_draws": 12
+      },
+      "models": {
+        "majority": {
+          "ba": {
+            "point": 0.5,
+            "ci95": [
+              0.5,
+              0.5
+            ],
+            "invalid_draws": 12
+          },
+          "auroc": {
+            "point": 0.5,
+            "ci95": [
+              0.5,
+              0.5
+            ],
+            "invalid_draws": 12
+          }
+        },
+        "logistic": {
+          "ba": {
+            "point": 0.45972222222222225,
+            "ci95": [
+              0.3197123015873016,
+              0.5654166666666668
+            ],
+            "invalid_draws": 12
+          },
+          "auroc": {
+            "point": 0.4601851851851852,
+            "ci95": [
+              0.3424342105263158,
+              0.5647723487201649
+            ],
+            "invalid_draws": 12
+          }
+        },
+        "gboost": {
+          "ba": {
+            "point": 0.4097222222222222,
+            "ci95": [
+              0.3333333333333333,
+              0.47669098016781086
+            ],
+            "invalid_draws": 12
+          },
+          "auroc": {
+            "point": 0.36527777777777776,
+            "ci95": [
+              0.23509820426487094,
+              0.5142276422764228
+            ],
+            "invalid_draws": 12
+          }
+        },
+        "forest": {
+          "ba": {
+            "point": 0.4638888888888889,
+            "ci95": [
+              0.3240433673469388,
+              0.6404913632119514
+            ],
+            "invalid_draws": 12
+          },
+          "auroc": {
+            "point": 0.3837962962962963,
+            "ci95": [
+              0.20821454678362575,
+              0.5997297241747853
+            ],
+            "invalid_draws": 12
+          }
+        }
+      },
+      "meets_absolute_criterion": false
+    },
+    "baseline|shadow_parallel2|flush_stripped_joint|return": {
+      "ba": {
+        "point": 0.5,
+        "ci95": [
+          0.5,
+          0.56726563423136
+        ],
+        "invalid_draws": 0
+      },
+      "auroc": {
+        "point": 0.5,
+        "ci95": [
+          0.5,
+          0.601946127946128
+        ],
+        "invalid_draws": 0
+      },
+      "models": {
+        "majority": {
+          "ba": {
+            "point": 0.5,
+            "ci95": [
+              0.5,
+              0.5
+            ],
+            "invalid_draws": 0
+          },
+          "auroc": {
+            "point": 0.5,
+            "ci95": [
+              0.5,
+              0.5
+            ],
+            "invalid_draws": 0
+          }
+        },
+        "logistic": {
+          "ba": {
+            "point": 0.4562770562770563,
+            "ci95": [
+              0.35075904392764856,
+              0.5394177169367824
+            ],
+            "invalid_draws": 0
+          },
+          "auroc": {
+            "point": 0.417027417027417,
+            "ci95": [
+              0.25834230548377835,
+              0.5178354165069141
+            ],
+            "invalid_draws": 0
+          }
+        },
+        "gboost": {
+          "ba": {
+            "point": 0.4298701298701299,
+            "ci95": [
+              0.3473902214091168,
+              0.5041690643648764
+            ],
+            "invalid_draws": 0
+          },
+          "auroc": {
+            "point": 0.4069264069264069,
+            "ci95": [
+              0.27477413019079683,
+              0.5211640211640212
+            ],
+            "invalid_draws": 0
+          }
+        },
+        "forest": {
+          "ba": {
+            "point": 0.4627705627705628,
+            "ci95": [
+              0.3387904783125371,
+              0.5648904586404586
+            ],
+            "invalid_draws": 0
+          },
+          "auroc": {
+            "point": 0.45555555555555555,
+            "ci95": [
+              0.27609006734006736,
+              0.601946127946128
+            ],
+            "invalid_draws": 0
+          }
+        }
+      },
+      "meets_absolute_criterion": true
+    },
+    "rules|shadow_serial|flush_stripped_joint|cancel": {
+      "ba": {
+        "point": 0.5013888888888889,
+        "ci95": [
+          0.5,
+          0.5559397163120569
+        ],
+        "invalid_draws": 12
+      },
+      "auroc": {
+        "point": 0.5,
+        "ci95": [
+          0.5,
+          0.6248648240972803
+        ],
+        "invalid_draws": 12
+      },
+      "models": {
+        "majority": {
+          "ba": {
+            "point": 0.5,
+            "ci95": [
+              0.5,
+              0.5
+            ],
+            "invalid_draws": 12
+          },
+          "auroc": {
+            "point": 0.5,
+            "ci95": [
+              0.5,
+              0.5
+            ],
+            "invalid_draws": 12
+          }
+        },
+        "logistic": {
+          "ba": {
+            "point": 0.5013888888888889,
+            "ci95": [
+              0.41666666666666663,
+              0.5540540540540541
+            ],
+            "invalid_draws": 12
+          },
+          "auroc": {
+            "point": 0.48148148148148145,
+            "ci95": [
+              0.3817614489489489,
+              0.5989682026988229
+            ],
+            "invalid_draws": 12
+          }
+        },
+        "gboost": {
+          "ba": {
+            "point": 0.45416666666666666,
+            "ci95": [
+              0.42777777777777776,
+              0.47685185185185186
+            ],
+            "invalid_draws": 12
+          },
+          "auroc": {
+            "point": 0.3787037037037037,
+            "ci95": [
+              0.30998981123981123,
+              0.46740876906318085
+            ],
+            "invalid_draws": 12
+          }
+        },
+        "forest": {
+          "ba": {
+            "point": 0.4472222222222222,
+            "ci95": [
+              0.37218023255813953,
+              0.5097798844938434
+            ],
+            "invalid_draws": 12
+          },
+          "auroc": {
+            "point": 0.43287037037037035,
+            "ci95": [
+              0.2720429364157587,
+              0.5676799516908213
+            ],
+            "invalid_draws": 12
+          }
+        }
+      },
+      "meets_absolute_criterion": true
+    },
+    "rules|shadow_serial|flush_stripped_joint|return": {
+      "ba": {
+        "point": 0.6069264069264069,
+        "ci95": [
+          0.5083333333333333,
+          0.7094782913165265
+        ],
+        "invalid_draws": 0
+      },
+      "auroc": {
+        "point": 0.6216450216450217,
+        "ci95": [
+          0.5339581687352923,
+          0.727029267029267
+        ],
+        "invalid_draws": 0
+      },
+      "models": {
+        "majority": {
+          "ba": {
+            "point": 0.5,
+            "ci95": [
+              0.5,
+              0.5
+            ],
+            "invalid_draws": 0
+          },
+          "auroc": {
+            "point": 0.5,
+            "ci95": [
+              0.5,
+              0.5
+            ],
+            "invalid_draws": 0
+          }
+        },
+        "logistic": {
+          "ba": {
+            "point": 0.6069264069264069,
+            "ci95": [
+              0.5026885727190605,
+              0.7063545688545687
+            ],
+            "invalid_draws": 0
+          },
+          "auroc": {
+            "point": 0.6216450216450217,
+            "ci95": [
+              0.5263678058204202,
+              0.7141184041184041
+            ],
+            "invalid_draws": 0
+          }
+        },
+        "gboost": {
+          "ba": {
+            "point": 0.541991341991342,
+            "ci95": [
+              0.482976327391221,
+              0.6041666666666666
+            ],
+            "invalid_draws": 0
+          },
+          "auroc": {
+            "point": 0.5024531024531025,
+            "ci95": [
+              0.3833923593332196,
+              0.6135871056241426
+            ],
+            "invalid_draws": 0
+          }
+        },
+        "forest": {
+          "ba": {
+            "point": 0.5398268398268398,
+            "ci95": [
+              0.43272862554112557,
+              0.6605988492291683
+            ],
+            "invalid_draws": 0
+          },
+          "auroc": {
+            "point": 0.5330447330447331,
+            "ci95": [
+              0.36108796296296297,
+              0.7088579026984821
+            ],
+            "invalid_draws": 0
+          }
+        }
+      },
+      "meets_absolute_criterion": false
+    },
+    "rules|shadow_parallel2|flush_stripped_joint|cancel": {
+      "ba": {
+        "point": 0.5083333333333333,
+        "ci95": [
+          0.5,
+          0.6170524247651907
+        ],
+        "invalid_draws": 12
+      },
+      "auroc": {
+        "point": 0.5412037037037037,
+        "ci95": [
+          0.5,
+          0.7036677824759221
+        ],
+        "invalid_draws": 12
+      },
+      "models": {
+        "majority": {
+          "ba": {
+            "point": 0.5,
+            "ci95": [
+              0.5,
+              0.5
+            ],
+            "invalid_draws": 12
+          },
+          "auroc": {
+            "point": 0.5,
+            "ci95": [
+              0.5,
+              0.5
+            ],
+            "invalid_draws": 12
+          }
+        },
+        "logistic": {
+          "ba": {
+            "point": 0.5069444444444444,
+            "ci95": [
+              0.3782885174418605,
+              0.5996492256322818
+            ],
+            "invalid_draws": 12
+          },
+          "auroc": {
+            "point": 0.5078703703703704,
+            "ci95": [
+              0.3525915159345392,
+              0.626547619047619
+            ],
+            "invalid_draws": 12
+          }
+        },
+        "gboost": {
+          "ba": {
+            "point": 0.48333333333333334,
+            "ci95": [
+              0.3701515151515151,
+              0.5750752314814814
+            ],
+            "invalid_draws": 12
+          },
+          "auroc": {
+            "point": 0.4634259259259259,
+            "ci95": [
+              0.33953403078403077,
+              0.5778086419753086
+            ],
+            "invalid_draws": 12
+          }
+        },
+        "forest": {
+          "ba": {
+            "point": 0.5083333333333333,
+            "ci95": [
+              0.39015151515151514,
+              0.6118929584412381
+            ],
+            "invalid_draws": 12
+          },
+          "auroc": {
+            "point": 0.5412037037037037,
+            "ci95": [
+              0.36192589814120196,
+              0.7036677824759221
+            ],
+            "invalid_draws": 12
+          }
+        }
+      },
+      "meets_absolute_criterion": false
+    },
+    "rules|shadow_parallel2|flush_stripped_joint|return": {
+      "ba": {
+        "point": 0.5398268398268398,
+        "ci95": [
+          0.5,
+          0.6699034030485643
+        ],
+        "invalid_draws": 0
+      },
+      "auroc": {
+        "point": 0.5275613275613276,
+        "ci95": [
+          0.5,
+          0.691673611111111
+        ],
+        "invalid_draws": 0
+      },
+      "models": {
+        "majority": {
+          "ba": {
+            "point": 0.5,
+            "ci95": [
+              0.5,
+              0.5
+            ],
+            "invalid_draws": 0
+          },
+          "auroc": {
+            "point": 0.5,
+            "ci95": [
+              0.5,
+              0.5
+            ],
+            "invalid_draws": 0
+          }
+        },
+        "logistic": {
+          "ba": {
+            "point": 0.509090909090909,
+            "ci95": [
+              0.3879440235690236,
+              0.6426796683046684
+            ],
+            "invalid_draws": 0
+          },
+          "auroc": {
+            "point": 0.5275613275613276,
+            "ci95": [
+              0.3979081978319783,
+              0.6696739596739597
+            ],
+            "invalid_draws": 0
+          }
+        },
+        "gboost": {
+          "ba": {
+            "point": 0.5134199134199134,
+            "ci95": [
+              0.45238095238095233,
+              0.5810159826413697
+            ],
+            "invalid_draws": 0
+          },
+          "auroc": {
+            "point": 0.4738816738816739,
+            "ci95": [
+              0.37310487265124365,
+              0.577878289473684
+            ],
+            "invalid_draws": 0
+          }
+        },
+        "forest": {
+          "ba": {
+            "point": 0.5398268398268398,
+            "ci95": [
+              0.4315432422969188,
+              0.6625394531031785
+            ],
+            "invalid_draws": 0
+          },
+          "auroc": {
+            "point": 0.5235209235209235,
+            "ci95": [
+              0.38710564493671457,
+              0.6800014880952381
+            ],
+            "invalid_draws": 0
+          }
+        }
+      },
+      "meets_absolute_criterion": false
+    }
+  },
+  "r6_response_state_checks": {
+    "baseline|raw": {
+      "real_call_ms": {
+        "p50": 1.0251000000000001,
+        "p95": 1.82367,
+        "max": 10.9523
+      },
+      "client_queue_ms": {
+        "p50": 0.0067,
+        "p95": 0.012514999999999998,
+        "max": 0.0642
+      },
+      "service_ms": {
+        "p50": 0.0463,
+        "p95": 0.14662499999999992,
+        "max": 0.4471
+      },
+      "first_response_ms": {
+        "p50": 2.34645,
+        "p95": 3.398015000000001,
+        "max": 11.8448
+      },
+      "last_real_response_ms": {
+        "p50": 8.8275,
+        "p95": 15.445570000000002,
+        "max": 27.8489
+      },
+      "traffic_finish_ms": {
+        "p50": 8.84765,
+        "p95": 15.466340000000002,
+        "max": 27.9128
+      },
+      "slot_lateness_ms": null,
+      "wire_ratio": 1.0,
+      "call_ratio": 1.0,
+      "sessions": 138,
+      "failures": 0,
+      "response_equal": 138,
+      "db_equal": 138,
+      "preserved_native_reward": 110,
+      "total_native_reward": 110,
+      "deadline_misses_100ms": 0,
+      "clock_scope": "Tool RPC chain only: planner/user generation and WAN excluded",
+      "paired_mean_last_response_delta_ms": {
+        "point": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ],
+        "invalid_draws": 0
+      }
+    },
+    "baseline|padding": {
+      "real_call_ms": {
+        "p50": 1.0465499999999999,
+        "p95": 1.848515,
+        "max": 11.9676
+      },
+      "client_queue_ms": {
+        "p50": 0.0067,
+        "p95": 0.012,
+        "max": 0.0284
+      },
+      "service_ms": {
+        "p50": 0.04645,
+        "p95": 0.12563999999999997,
+        "max": 0.8083
+      },
+      "first_response_ms": {
+        "p50": 2.2586500000000003,
+        "p95": 3.7177800000000008,
+        "max": 13.0492
+      },
+      "last_real_response_ms": {
+        "p50": 8.4894,
+        "p95": 16.64299,
+        "max": 23.0278
+      },
+      "traffic_finish_ms": {
+        "p50": 8.5134,
+        "p95": 16.67819,
+        "max": 23.083
+      },
+      "slot_lateness_ms": null,
+      "wire_ratio": 3.9222222867916194,
+      "call_ratio": 1.0,
+      "sessions": 138,
+      "failures": 0,
+      "response_equal": 138,
+      "db_equal": 138,
+      "preserved_native_reward": 110,
+      "total_native_reward": 110,
+      "deadline_misses_100ms": 0,
+      "clock_scope": "Tool RPC chain only: planner/user generation and WAN excluded",
+      "paired_mean_last_response_delta_ms": {
+        "point": 0.2850673913043478,
+        "ci95": [
+          -0.14897829131976562,
+          0.8018475392441857
+        ],
+        "invalid_draws": 0
+      }
+    },
+    "baseline|shadow_serial": {
+      "real_call_ms": {
+        "p50": 0.90425,
+        "p95": 1.71671,
+        "max": 4.0312
+      },
+      "client_queue_ms": {
+        "p50": 0.0052,
+        "p95": 0.0102,
+        "max": 0.0921
+      },
+      "service_ms": {
+        "p50": 0.0465,
+        "p95": 0.12430999999999999,
+        "max": 0.8586
+      },
+      "first_response_ms": {
+        "p50": 3.042,
+        "p95": 4.978065,
+        "max": 13.9374
+      },
+      "last_real_response_ms": {
+        "p50": 12.512,
+        "p95": 26.230595000000005,
+        "max": 134.7765
+      },
+      "traffic_finish_ms": {
+        "p50": 27.7583,
+        "p95": 46.621235,
+        "max": 197.3444
+      },
+      "slot_lateness_ms": null,
+      "wire_ratio": 15.106016216696373,
+      "call_ratio": 3.8266533066132267,
+      "sessions": 138,
+      "failures": 0,
+      "response_equal": 138,
+      "db_equal": 138,
+      "preserved_native_reward": 110,
+      "total_native_reward": 110,
+      "deadline_misses_100ms": 0,
+      "clock_scope": "Tool RPC chain only: planner/user generation and WAN excluded",
+      "paired_mean_last_response_delta_ms": {
+        "point": 5.485506521739131,
+        "ci95": [
+          4.130418682104059,
+          7.62254164410719
+        ],
+        "invalid_draws": 0
+      }
+    },
+    "baseline|shadow_parallel2": {
+      "real_call_ms": {
+        "p50": 1.2441,
+        "p95": 2.409445,
+        "max": 12.1535
+      },
+      "client_queue_ms": {
+        "p50": 0.9781,
+        "p95": 12.596939999999998,
+        "max": 35.0308
+      },
+      "service_ms": {
+        "p50": 0.048,
+        "p95": 0.12612999999999996,
+        "max": 0.451
+      },
+      "first_response_ms": {
+        "p50": 2.68805,
+        "p95": 4.519515,
+        "max": 14.0348
+      },
+      "last_real_response_ms": {
+        "p50": 11.2991,
+        "p95": 20.848415000000003,
+        "max": 45.3249
+      },
+      "traffic_finish_ms": {
+        "p50": 23.55925,
+        "p95": 37.409020000000005,
+        "max": 85.5844
+      },
+      "slot_lateness_ms": null,
+      "wire_ratio": 15.106016216696373,
+      "call_ratio": 3.8266533066132267,
+      "sessions": 138,
+      "failures": 0,
+      "response_equal": 138,
+      "db_equal": 138,
+      "preserved_native_reward": 110,
+      "total_native_reward": 110,
+      "deadline_misses_100ms": 0,
+      "clock_scope": "Tool RPC chain only: planner/user generation and WAN excluded",
+      "paired_mean_last_response_delta_ms": {
+        "point": 2.9213057971014487,
+        "ci95": [
+          2.2071542658730166,
+          3.663723260255168
+        ],
+        "invalid_draws": 0
+      }
+    },
+    "baseline|tunnel_2ms": {
+      "real_call_ms": {
+        "p50": 4.00915,
+        "p95": 6.232919999999997,
+        "max": 33.702
+      },
+      "client_queue_ms": {
+        "p50": 0.0069,
+        "p95": 0.012114999999999997,
+        "max": 0.0512
+      },
+      "service_ms": {
+        "p50": 0.0519,
+        "p95": 0.14343,
+        "max": 0.3435
+      },
+      "first_response_ms": {
+        "p50": 5.36345,
+        "p95": 11.249995000000004,
+        "max": 13.7342
+      },
+      "last_real_response_ms": {
+        "p50": 30.938850000000002,
+        "p95": 56.40077500000001,
+        "max": 78.4366
+      },
+      "traffic_finish_ms": {
+        "p50": 266.97195,
+        "p95": 270.432055,
+        "max": 422.4173
+      },
+      "slot_lateness_ms": {
+        "p50": 0.87505,
+        "p95": 1.8816050000000026,
+        "max": 282.5911
+      },
+      "wire_ratio": 125.70596258719982,
+      "call_ratio": 1.0,
+      "sessions": 138,
+      "failures": 0,
+      "response_equal": 138,
+      "db_equal": 138,
+      "preserved_native_reward": 110,
+      "total_native_reward": 110,
+      "deadline_misses_100ms": 0,
+      "clock_scope": "Tool RPC chain only: planner/user generation and WAN excluded",
+      "paired_mean_last_response_delta_ms": {
+        "point": 23.581218115942033,
+        "ci95": [
+          19.596101932539685,
+          27.334391449612404
+        ],
+        "invalid_draws": 0
+      }
+    },
+    "baseline|tunnel_5ms": {
+      "real_call_ms": {
+        "p50": 9.9571,
+        "p95": 10.926515,
+        "max": 18.6434
+      },
+      "client_queue_ms": {
+        "p50": 0.00895,
+        "p95": 0.012629999999999995,
+        "max": 0.0812
+      },
+      "service_ms": {
+        "p50": 0.060450000000000004,
+        "p95": 0.144815,
+        "max": 0.4772
+      },
+      "first_response_ms": {
+        "p50": 11.2838,
+        "p95": 12.448644999999999,
+        "max": 16.4305
+      },
+      "last_real_response_ms": {
+        "p50": 71.43084999999999,
+        "p95": 112.304825,
+        "max": 132.2222
+      },
+      "traffic_finish_ms": {
+        "p50": 666.1351999999999,
+        "p95": 666.6402999999999,
+        "max": 789.0634
+      },
+      "slot_lateness_ms": {
+        "p50": 1.0653,
+        "p95": 1.6770650000000002,
+        "max": 307.46
+      },
+      "wire_ratio": 125.70596258719982,
+      "call_ratio": 1.0,
+      "sessions": 138,
+      "failures": 0,
+      "response_equal": 138,
+      "db_equal": 138,
+      "preserved_native_reward": 110,
+      "total_native_reward": 110,
+      "deadline_misses_100ms": 0,
+      "clock_scope": "Tool RPC chain only: planner/user generation and WAN excluded",
+      "paired_mean_last_response_delta_ms": {
+        "point": 63.18256449275363,
+        "ci95": [
+          53.34878451792637,
+          72.19905712560386
+        ],
+        "invalid_draws": 0
+      }
+    },
+    "rules|raw": {
+      "real_call_ms": {
+        "p50": 0.9592,
+        "p95": 1.7386499999999996,
+        "max": 11.0016
+      },
+      "client_queue_ms": {
+        "p50": 0.0062,
+        "p95": 0.012184999999999991,
+        "max": 0.1
+      },
+      "service_ms": {
+        "p50": 0.0424,
+        "p95": 0.130185,
+        "max": 0.3094
+      },
+      "first_response_ms": {
+        "p50": 2.1738999999999997,
+        "p95": 3.710615000000001,
+        "max": 13.4864
+      },
+      "last_real_response_ms": {
+        "p50": 8.1478,
+        "p95": 15.659645000000001,
+        "max": 23.2908
+      },
+      "traffic_finish_ms": {
+        "p50": 8.1722,
+        "p95": 15.695095,
+        "max": 23.3293
+      },
+      "slot_lateness_ms": null,
+      "wire_ratio": 1.0,
+      "call_ratio": 1.0,
+      "sessions": 138,
+      "failures": 0,
+      "response_equal": 138,
+      "db_equal": 138,
+      "preserved_native_reward": 105,
+      "total_native_reward": 105,
+      "deadline_misses_100ms": 0,
+      "clock_scope": "Tool RPC chain only: planner/user generation and WAN excluded",
+      "paired_mean_last_response_delta_ms": {
+        "point": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ],
+        "invalid_draws": 0
+      }
+    },
+    "rules|padding": {
+      "real_call_ms": {
+        "p50": 0.986,
+        "p95": 1.8210799999999996,
+        "max": 10.0474
+      },
+      "client_queue_ms": {
+        "p50": 0.006,
+        "p95": 0.0118,
+        "max": 0.0465
+      },
+      "service_ms": {
+        "p50": 0.04285,
+        "p95": 0.14610999999999993,
+        "max": 0.5847
+      },
+      "first_response_ms": {
+        "p50": 2.2447,
+        "p95": 3.5696400000000006,
+        "max": 11.6031
+      },
+      "last_real_response_ms": {
+        "p50": 8.41405,
+        "p95": 15.497540000000004,
+        "max": 24.257
+      },
+      "traffic_finish_ms": {
+        "p50": 8.4384,
+        "p95": 15.538180000000004,
+        "max": 24.2998
+      },
+      "slot_lateness_ms": null,
+      "wire_ratio": 3.9502948867085625,
+      "call_ratio": 1.0,
+      "sessions": 138,
+      "failures": 0,
+      "response_equal": 138,
+      "db_equal": 138,
+      "preserved_native_reward": 105,
+      "total_native_reward": 105,
+      "deadline_misses_100ms": 0,
+      "clock_scope": "Tool RPC chain only: planner/user generation and WAN excluded",
+      "paired_mean_last_response_delta_ms": {
+        "point": 0.2970811594202898,
+        "ci95": [
+          -0.2369188095238095,
+          0.8572206824431902
+        ],
+        "invalid_draws": 0
+      }
+    },
+    "rules|shadow_serial": {
+      "real_call_ms": {
+        "p50": 0.96,
+        "p95": 1.7452999999999996,
+        "max": 11.3596
+      },
+      "client_queue_ms": {
+        "p50": 0.0054,
+        "p95": 0.0101,
+        "max": 0.151
+      },
+      "service_ms": {
+        "p50": 0.048,
+        "p95": 0.12590999999999997,
+        "max": 1.619
+      },
+      "first_response_ms": {
+        "p50": 3.0187,
+        "p95": 5.202570000000001,
+        "max": 14.1924
+      },
+      "last_real_response_ms": {
+        "p50": 12.67205,
+        "p95": 23.859700000000014,
+        "max": 57.8283
+      },
+      "traffic_finish_ms": {
+        "p50": 28.92355,
+        "p95": 41.82594,
+        "max": 109.0811
+      },
+      "slot_lateness_ms": null,
+      "wire_ratio": 15.468457805256072,
+      "call_ratio": 3.8821138211382116,
+      "sessions": 138,
+      "failures": 0,
+      "response_equal": 138,
+      "db_equal": 138,
+      "preserved_native_reward": 105,
+      "total_native_reward": 105,
+      "deadline_misses_100ms": 0,
+      "clock_scope": "Tool RPC chain only: planner/user generation and WAN excluded",
+      "paired_mean_last_response_delta_ms": {
+        "point": 5.158654347826087,
+        "ci95": [
+          4.123127972222222,
+          6.307773647154471
+        ],
+        "invalid_draws": 0
+      }
+    },
+    "rules|shadow_parallel2": {
+      "real_call_ms": {
+        "p50": 1.2187999999999999,
+        "p95": 2.4374549999999995,
+        "max": 11.4636
+      },
+      "client_queue_ms": {
+        "p50": 1.0448,
+        "p95": 13.114029999999998,
+        "max": 29.7012
+      },
+      "service_ms": {
+        "p50": 0.0485,
+        "p95": 0.1241,
+        "max": 0.932
+      },
+      "first_response_ms": {
+        "p50": 2.6868499999999997,
+        "p95": 4.4430250000000004,
+        "max": 12.0517
+      },
+      "last_real_response_ms": {
+        "p50": 11.06795,
+        "p95": 20.70062,
+        "max": 27.1034
+      },
+      "traffic_finish_ms": {
+        "p50": 23.79595,
+        "p95": 36.54818,
+        "max": 54.4741
+      },
+      "slot_lateness_ms": null,
+      "wire_ratio": 15.468457805256072,
+      "call_ratio": 3.8821138211382116,
+      "sessions": 138,
+      "failures": 0,
+      "response_equal": 138,
+      "db_equal": 138,
+      "preserved_native_reward": 105,
+      "total_native_reward": 105,
+      "deadline_misses_100ms": 0,
+      "clock_scope": "Tool RPC chain only: planner/user generation and WAN excluded",
+      "paired_mean_last_response_delta_ms": {
+        "point": 3.0024920289855075,
+        "ci95": [
+          2.37447400024178,
+          3.6190044975700397
+        ],
+        "invalid_draws": 0
+      }
+    },
+    "rules|tunnel_2ms": {
+      "real_call_ms": {
+        "p50": 3.9730999999999996,
+        "p95": 5.829784999999999,
+        "max": 18.2597
+      },
+      "client_queue_ms": {
+        "p50": 0.0069,
+        "p95": 0.0123,
+        "max": 0.0554
+      },
+      "service_ms": {
+        "p50": 0.048350000000000004,
+        "p95": 0.15093999999999996,
+        "max": 0.3759
+      },
+      "first_response_ms": {
+        "p50": 5.40105,
+        "p95": 7.714695000000001,
+        "max": 14.1891
+      },
+      "last_real_response_ms": {
+        "p50": 29.77555,
+        "p95": 48.84085000000002,
+        "max": 122.812
+      },
+      "traffic_finish_ms": {
+        "p50": 266.9513,
+        "p95": 267.913905,
+        "max": 278.3168
+      },
+      "slot_lateness_ms": {
+        "p50": 0.86935,
+        "p95": 1.6825650000000003,
+        "max": 29.1407
+      },
+      "wire_ratio": 128.38382074143914,
+      "call_ratio": 1.0,
+      "sessions": 138,
+      "failures": 0,
+      "response_equal": 138,
+      "db_equal": 138,
+      "preserved_native_reward": 105,
+      "total_native_reward": 105,
+      "deadline_misses_100ms": 0,
+      "clock_scope": "Tool RPC chain only: planner/user generation and WAN excluded",
+      "paired_mean_last_response_delta_ms": {
+        "point": 23.375626811594206,
+        "ci95": [
+          19.54640329899268,
+          27.008556802830185
+        ],
+        "invalid_draws": 0
+      }
+    },
+    "rules|tunnel_5ms": {
+      "real_call_ms": {
+        "p50": 9.9753,
+        "p95": 11.04656,
+        "max": 205.429
+      },
+      "client_queue_ms": {
+        "p50": 0.0086,
+        "p95": 0.013,
+        "max": 0.033
+      },
+      "service_ms": {
+        "p50": 0.0601,
+        "p95": 0.15678999999999968,
+        "max": 0.4113
+      },
+      "first_response_ms": {
+        "p50": 11.0561,
+        "p95": 12.424755,
+        "max": 16.677
+      },
+      "last_real_response_ms": {
+        "p50": 69.5361,
+        "p95": 112.94829000000003,
+        "max": 231.9957
+      },
+      "traffic_finish_ms": {
+        "p50": 666.16305,
+        "p95": 666.55638,
+        "max": 673.2412
+      },
+      "slot_lateness_ms": {
+        "p50": 1.07315,
+        "p95": 1.7016650000000002,
+        "max": 193.3833
+      },
+      "wire_ratio": 128.38382074143914,
+      "call_ratio": 1.0,
+      "sessions": 138,
+      "failures": 0,
+      "response_equal": 138,
+      "db_equal": 138,
+      "preserved_native_reward": 105,
+      "total_native_reward": 105,
+      "deadline_misses_100ms": 1,
+      "clock_scope": "Tool RPC chain only: planner/user generation and WAN excluded",
+      "paired_mean_last_response_delta_ms": {
+        "point": 64.40029347826086,
+        "ci95": [
+          55.02907350131753,
+          73.56100795056321
+        ],
+        "invalid_draws": 0
+      }
+    }
+  },
+  "absolute_gate": "upper 95% suite BA < .60 AND suite point AUROC < .65",
+  "inference_scope": "Action-labelled cancel/return trajectory targets, not unobserved psychological intent",
+  "utility_scope": "Inherited native reward is not defended live-planner utility; logical checks are separate",
+  "additional_flush_fit_executed": false,
+  "e5_cap_version_rows": [
+    {
+      "tls": "1.2",
+      "target": "T1",
+      "policy": "buffered_raw",
+      "draws": 1,
+      "binary_accuracy": {
+        "D0_total_threshold": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "D2_total_threshold": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "D2_count_threshold": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "D2_sequence_logreg": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "best_D2_binary_accuracy": 1.0,
+      "identification_top1": 0.875,
+      "identification_chance": 0.020833333333333332,
+      "mean_ambiguity_set": 1.2916666666666667,
+      "mean_records": 5.020833333333333,
+      "mean_wire_bytes": 720.9583333333334,
+      "ratio_vs_token_stream": 0.04794349743976238,
+      "ratio_vs_buffered_unpadded": 1.0,
+      "ttfb_token_intervals": 105.27083333333333,
+      "completion_token_intervals": 105.27083333333333,
+      "mean_delivery_delay_token_intervals": 52.135416666666664,
+      "test_overflow_outputs": 0,
+      "fitted": {
+        "tok_event_bytes": 144,
+        "batch_event_bytes": 192,
+        "n_cap_tokens": 208,
+        "buffered_cap_bytes": 1280
+      }
+    },
+    {
+      "tls": "1.2",
+      "target": "T1",
+      "policy": "buffered_cap",
+      "draws": 1,
+      "binary_accuracy": {
+        "D0_total_threshold": [
+          0.5,
+          0.5,
+          0.5
+        ],
+        "D2_total_threshold": [
+          0.5,
+          0.5,
+          0.5
+        ],
+        "D2_count_threshold": [
+          0.5,
+          0.5,
+          0.5
+        ],
+        "D2_sequence_logreg": [
+          0.5,
+          0.5,
+          0.5
+        ]
+      },
+      "best_D2_binary_accuracy": 0.5,
+      "identification_top1": 0.020833333333333332,
+      "identification_chance": 0.020833333333333332,
+      "mean_ambiguity_set": 48.0,
+      "mean_records": 10.0,
+      "mean_wire_bytes": 1570.0,
+      "ratio_vs_token_stream": 0.10440449537827234,
+      "ratio_vs_buffered_unpadded": 2.1776570536901114,
+      "ttfb_token_intervals": 105.27083333333333,
+      "completion_token_intervals": 105.27083333333333,
+      "mean_delivery_delay_token_intervals": 52.135416666666664,
+      "test_overflow_outputs": 0,
+      "fitted": {
+        "tok_event_bytes": 144,
+        "batch_event_bytes": 192,
+        "n_cap_tokens": 208,
+        "buffered_cap_bytes": 1280
+      }
+    },
+    {
+      "tls": "1.3",
+      "target": "T1",
+      "policy": "buffered_raw",
+      "draws": 1,
+      "binary_accuracy": {
+        "D0_total_threshold": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "D2_total_threshold": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "D2_count_threshold": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "D2_sequence_logreg": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "best_D2_binary_accuracy": 1.0,
+      "identification_top1": 0.875,
+      "identification_chance": 0.020833333333333332,
+      "mean_ambiguity_set": 1.2916666666666667,
+      "mean_records": 5.020833333333333,
+      "mean_wire_bytes": 685.8125,
+      "ratio_vs_token_stream": 0.04797981638271916,
+      "ratio_vs_buffered_unpadded": 1.0,
+      "ttfb_token_intervals": 105.27083333333333,
+      "completion_token_intervals": 105.27083333333333,
+      "mean_delivery_delay_token_intervals": 52.135416666666664,
+      "test_overflow_outputs": 0,
+      "fitted": {
+        "tok_event_bytes": 144,
+        "batch_event_bytes": 192,
+        "n_cap_tokens": 208,
+        "buffered_cap_bytes": 1280
+      }
+    },
+    {
+      "tls": "1.3",
+      "target": "T1",
+      "policy": "buffered_cap",
+      "draws": 1,
+      "binary_accuracy": {
+        "D0_total_threshold": [
+          0.5,
+          0.5,
+          0.5
+        ],
+        "D2_total_threshold": [
+          0.5,
+          0.5,
+          0.5
+        ],
+        "D2_count_threshold": [
+          0.5,
+          0.5,
+          0.5
+        ],
+        "D2_sequence_logreg": [
+          0.5,
+          0.5,
+          0.5
+        ]
+      },
+      "best_D2_binary_accuracy": 0.5,
+      "identification_top1": 0.020833333333333332,
+      "identification_chance": 0.020833333333333332,
+      "mean_ambiguity_set": 48.0,
+      "mean_records": 10.0,
+      "mean_wire_bytes": 1500.0,
+      "ratio_vs_token_stream": 0.10494081775132233,
+      "ratio_vs_buffered_unpadded": 2.1871867310671647,
+      "ttfb_token_intervals": 105.27083333333333,
+      "completion_token_intervals": 105.27083333333333,
+      "mean_delivery_delay_token_intervals": 52.135416666666664,
+      "test_overflow_outputs": 0,
+      "fitted": {
+        "tok_event_bytes": 144,
+        "batch_event_bytes": 192,
+        "n_cap_tokens": 208,
+        "buffered_cap_bytes": 1280
+      }
+    }
+  ],
+  "e5_denominators": "Byte means/ratios: all 48 saved outputs, source loops over items; binary accuracy: 24 heldout outputs / 12 topics; ID: 48-output closed world",
+  "input_sha256": {
+    "sp2027-r6-timing/results.json": "1da5fd7af16698c53a049fc95f9c5db6fd1961441dece7b3312ca27464fe4c1d",
+    "sp2027-r6-timing/predictions.json": "64c963c0fd2fff497dcaed0af2db5a6d5960f44e35f8f44775953ca78dd96fb3",
+    "sp2027-r6-timing/detector_predictions.json": "966e4731661dca8073ffb4dd7d05b1cd7c539c97baa7738201ef5eba3d715508",
+    "sp2027-r6-timing/training_cuts.json": "a1eeb74302bbc12f2e39f8aeed4ab71796947930f175f9d6274edeac0239d96c",
+    "sp2027-r6-timing/test_cuts.json": "7621ede4180b34a8c5f0d9d12c8ea9d0d5f11c4c58df87032509079670074038",
+    "sp2027-r6-timing/analyze.py": "328abd3c32bde78a8117cfe3599b4779e5ca444c0ecb0b16a02994fffbc9fe62",
+    "sp2027-r6-timing/features.py": "d94140cc97df06692cf4301c584d4cd3b929c52305e303c08f2bf7e116c450ff",
+    "sp2027-r6-timing/experiment.py": "16883b5974e4fa11844db799a21324225e72e9de4577441d50304fcb076a79b3",
+    "sp2027-r6-timing/attacker_freeze.json": "350d8d79d0d7c088ad13009c0321a009a00b8e803c604163a857b8f38aac259e",
+    "sp2027-r7-robustness/results.json": "160904fb406a781e15c5e9aac3751b81669369926e8e7e372b633123e669230c",
+    "sp2027-r7-robustness/common-suite.json": "575c44a0581d4a1295a7283037bb08146d24f2ce1fe70ee67597fd7d45995f93",
+    "sp2027-r7-robustness/adapters.py": "9d83fda128480407c0bb0d03f3713abbc59268c15941a4cca5085c7b0aa46d56",
+    "sp2027-r7-robustness/run.py": "19c9ab5e819e340186f553d941cfce6baf876117ea271879597f74d6a79c3594",
+    "sp2027-r7-robustness/IMPLEMENTATION.md": "d9ae55b230cd5e4d28186e00c74d04e261876140f20776036f3cb84b92f57c26",
+    "sp2027-r7-robustness/ERRATA.md": "4452032fd5d075e961f6b26445722ae981ab40cba5e0823b1fd22a8b3911fe42",
+    "sp2027-r4-full-20261023/results.json": "722a44e2a29cb9cbab9f23b631589a23495a843783a4339256552f6600609e86",
+    "sp2027-r5-crossfit/e10_crossfit_results.json": "9492e5ba201442787d92604d55c8485af3484c6667aaf4026e35b3c66e4cabd6",
+    "sp2027-r5-crossfit/e10_crossfit.py": "3f662667b2c541ca8452f5630913588a2970f77c5d4e6b69fb596725ee4d9a0d",
+    "sp2027-r7-agent-extension/network_results.json": "1175dd989e7a4caeb91f1cc54716c3ec8d30358ccf4434e6e3f9064e539632f6",
+    "sp2027-r7-agent-extension/compact_manifest.json": "7688a4e3bcb0d75272fafe59bcd6517e260dfbf9cc9c412fd801fd11378176c3",
+    "sp2027-r2/e5_streaming_results.json": "c7fb0227fb2c89357b46efc921d64d8f86577b8916880abab16ace5cfb8a1635",
+    "sp2027-r2/make_tables.py": "5c566308fede25f2a8c49df3893afe9f26411b8d2871f92f650457a05b7a0e20",
+    "sp2027-r2/e5_streaming.py": "7fe9d5396de4be948525ce89d77945ae6ec2f5c13c8b13c39cc0b3ab8576e855"
+  },
+  "code_sha256": "360f1d8eb1653836729dae512cee5e64889f2587aa98c21adfa9f5d9caef8d61"
+}

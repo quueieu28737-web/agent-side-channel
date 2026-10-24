@@ -1,0 +1,641 @@
+{
+  "schema": "R8-review-checklist-coverage-v1",
+  "scope": "R8 response to all 11 research/SoK criticisms and writing/submission details; source verification does not imply security efficacy.",
+  "items": [
+    {
+      "id": "1a",
+      "issue": "Purposive corpus size 25/60 was at risk of being described as recall.",
+      "action": "State that it is lexical query/snapshot recovery over a purposively assembled seed-and-snowball corpus, not field-wide recall.",
+      "status": "COMPLETED",
+      "evidence": [
+        "manuscript/sections/03-methodology.tex",
+        "manuscript/sections/34-search-update.tex",
+        "manuscript/sections/40-evidence-concordance.tex"
+      ],
+      "remaining": "Do not reuse the 25/60 fraction as recall in abstract or response letter.",
+      "user_problem": [
+        9
+      ]
+    },
+    {
+      "id": "1b",
+      "issue": "39 records and 180 audited cells could be mistaken for independent human blind review.",
+      "action": "Identify author verification and AI-assisted initial drafts; separate historical agreement columns from final adjudication.",
+      "status": "COMPLETED",
+      "evidence": [
+        "manuscript/sections/40-evidence-concordance.tex"
+      ],
+      "remaining": "No independent human blind recoding or independent kappa is available.",
+      "user_problem": [
+        9
+      ]
+    },
+    {
+      "id": "1c",
+      "issue": "Author-constructed cases could be overclaimed as external validation.",
+      "action": "Describe the 24 constructed cases and seven mechanism checks as rule/mechanism checks, not independently sampled validation.",
+      "status": "COMPLETED",
+      "evidence": [
+        "manuscript/sections/40-evidence-concordance.tex",
+        "manuscript/sections/37-transfer-tests.tex"
+      ],
+      "remaining": "No external sampled cases or independent decision set.",
+      "user_problem": [
+        9
+      ]
+    },
+    {
+      "id": "1d",
+      "issue": "R1–R9 may be read as universal paper-quality/security scores, including inapplicable hardware or service families.",
+      "action": "Define R1–R9 as reuse evidence conditions; mark applicability per scoped claim and retain NA separately.",
+      "status": "COMPLETED",
+      "evidence": [
+        "manuscript/sections/27-intervention-contracts.tex",
+        "manuscript/tables/family-audit-matrix.tex",
+        "provenance/r8-review/family-status-overlay.json"
+      ],
+      "remaining": "No inference about overall study quality from these dispositions.",
+      "user_problem": [
+        10
+      ]
+    },
+    {
+      "id": "1e",
+      "issue": "R4/R5 or R8 unreported cells may be read as failed experiments.",
+      "action": "Distinguish NR-R from NR-V and NA; R8 has 11 NR-R, not 11 failed families. The matrix’s separate 11 question marks are unverified bindings.",
+      "status": "COMPLETED",
+      "evidence": [
+        "manuscript/sections/27-intervention-contracts.tex",
+        "manuscript/tables/family-audit-matrix.tex",
+        "manuscript/sections/46-r8-sok-audit.tex",
+        "provenance/r8-review/content-review.md"
+      ],
+      "remaining": "Preserve distinct labels in any summary chart.",
+      "user_problem": [
+        10
+      ]
+    },
+    {
+      "id": "2a",
+      "issue": "SoK emphasis should be the populated evidence synthesis, not a new defense component or theorem.",
+      "action": "Frame the contribution around result-record binding, cross-record transfer errors, and the evidence map.",
+      "status": "COMPLETED",
+      "evidence": [
+        "manuscript/sections/01-introduction.tex",
+        "manuscript/sections/26-corpus-map.tex",
+        "manuscript/sections/12-conclusion.tex"
+      ],
+      "remaining": "No new general defense theorem is claimed.",
+      "user_problem": [
+        11
+      ]
+    },
+    {
+      "id": "2b",
+      "issue": "The 58-family map and 20-family mitigation audit should remain distinct and visible.",
+      "action": "Retain the full 58-core map and the scoped 20-family R1–R9 matrix, with six contextual and 32 map-only families explained.",
+      "status": "COMPLETED",
+      "evidence": [
+        "manuscript/sections/26-corpus-map.tex",
+        "manuscript/sections/27-intervention-contracts.tex",
+        "manuscript/tables/core-family-map.tex",
+        "manuscript/tables/family-audit-matrix.tex"
+      ],
+      "remaining": "No known coverage gap identified in the current main input closure.",
+      "user_problem": [
+        "writing/self-containment"
+      ]
+    },
+    {
+      "id": "2c",
+      "issue": "Contribution needs three concrete cross-record transfer errors.",
+      "action": "Use upstream B shaping vs new frontend B emission; read-only WRA cover vs stateful AHB actions; and borrowed utility/cost or same A call projection vs state claims.",
+      "status": "COMPLETED",
+      "evidence": [
+        "manuscript/sections/01-introduction.tex",
+        "manuscript/sections/11-discussion.tex",
+        "manuscript/sections/28-fingerprint-dependencies.tex",
+        "manuscript/tables/r8-rq-findings.tex"
+      ],
+      "remaining": "These are record-level corrections, not new theorems or cross-vendor generalization.",
+      "user_problem": [
+        11
+      ]
+    },
+    {
+      "id": "2d",
+      "issue": "Origin A/B may be misunderstood as inferring receiver access or threat polarity.",
+      "action": "Define A/B as signal-generation origin only; explicitly separate receiver projection, polarity, and state effects.",
+      "status": "COMPLETED",
+      "evidence": [
+        "manuscript/sections/26-corpus-map.tex",
+        "manuscript/sections/11-discussion.tex",
+        "manuscript/sections/28-fingerprint-dependencies.tex",
+        "manuscript/tables/r8-rq-findings.tex"
+      ],
+      "remaining": "Do not use A/B as a proxy for permission or deployment portability.",
+      "user_problem": [
+        11
+      ]
+    },
+    {
+      "id": "3a",
+      "issue": "E9 operation-category localization risks implying unrelated private-attribute inference.",
+      "action": "State label coupling: target labels the intended write operation; inference localizes an operation signature and does not prove writes generally reveal unrelated attributes.",
+      "status": "COMPLETED",
+      "evidence": [
+        "manuscript/sections/37-transfer-tests.tex",
+        "manuscript/tables/r7-e12-main.tex",
+        "manuscript/sections/45-luna-extension.tex"
+      ],
+      "remaining": "Keep oracle selection explicitly diagnostic and non-deployable.",
+      "user_problem": [
+        1
+      ]
+    },
+    {
+      "id": "3b",
+      "issue": "E9/E10 customer support, task repeats, and post-hoc chronology need explicit limits.",
+      "action": "Report customer counts, positive customers, known-cohort access, post-hoc status, and intervals conditional on fitted predictions.",
+      "status": "COMPLETED",
+      "evidence": [
+        "manuscript/sections/37-transfer-tests.tex",
+        "manuscript/sections/10-open-challenges.tex",
+        "manuscript/sections/42-live-timing-main.tex"
+      ],
+      "remaining": "No new-customer confirmation.",
+      "user_problem": [
+        4,
+        7
+      ]
+    },
+    {
+      "id": "4a",
+      "issue": "R8 customer-cluster sensitivity requested with all positive-customer deletions.",
+      "action": "Recompute saved-prediction cluster sensitivity across 12 cells and 192 deletions; no model refits or new data. Main text now reports customer-equal and deletion values; S23 contains the full table and checks.",
+      "status": "COMPLETED",
+      "evidence": [
+        "experiments/sp2027-r8-cluster-sensitivity/results.json",
+        "experiments/sp2027-r8-cluster-sensitivity/verification.json",
+        "manuscript/sections/47-r8-empirical-audit.tex"
+      ],
+      "remaining": "Fixed-prediction sensitivity omits attacker-refitting uncertainty and does not create new customers.",
+      "user_problem": [
+        4
+      ]
+    },
+    {
+      "id": "4b",
+      "issue": "Cluster-deletion values could be presented as a confidence interval or independent population estimate.",
+      "action": "Label ranges as deterministic leave-one-positive-customer influence ranges, not CIs; retain 53 customers/345 episodes denominator. Main text now reports customer-equal and deletion values; S23 contains the full table and checks.",
+      "status": "COMPLETED",
+      "evidence": [
+        "experiments/sp2027-r8-cluster-sensitivity/results.json",
+        "experiments/sp2027-r8-cluster-sensitivity/verification.json",
+        "manuscript/sections/47-r8-empirical-audit.tex"
+      ],
+      "remaining": "Fixed-prediction sensitivity omits attacker-refitting uncertainty and does not create new customers.",
+      "user_problem": [
+        4
+      ]
+    },
+    {
+      "id": "5a",
+      "issue": "Same-operation sensitive-attribute analysis risks false positive or overgeneralized attribute inference.",
+      "action": "Keep the exploratory diagnostic limited to 15 customers/20 instances and report observed raw suite maximum 30.3% and shuffled-label maximum 65.2% without claiming positive attribute leakage. E16 is now integrated into the main text and S23 with all negative controls and exact score validation.",
+      "status": "PARTIALLY_ADDRESSED",
+      "evidence": [
+        "experiments/sp2027-r8-sensitive-attributes/README.md",
+        "experiments/sp2027-r8-sensitive-attributes/results.json",
+        "experiments/sp2027-r8-sensitive-attributes/verification.json",
+        "experiments/sp2027-r8-sensitive-attributes/protocol.json",
+        "manuscript/sections/48-r8-attributes.tex",
+        "experiments/sp2027-r8-sensitive-attributes/verification.json"
+      ],
+      "remaining": "Only 15 customers/20 instances; no stable non-action-attribute result or new-population confirmation.",
+      "user_problem": [
+        1,
+        8
+      ]
+    },
+    {
+      "id": "5b",
+      "issue": "Sensitive-attribute labels may reflect action-template or customer confounding.",
+      "action": "Retain availability/confounding analyses and shuffled-label control; state that the control can itself produce high finite-sample maxima.",
+      "status": "COMPLETED",
+      "evidence": [
+        "experiments/sp2027-r8-sensitive-attributes/confounding_support.json",
+        "experiments/sp2027-r8-sensitive-attributes/attribute_availability.json",
+        "experiments/sp2027-r8-sensitive-attributes/results.json"
+      ],
+      "remaining": "No causal or semantic-attribute inference claim.",
+      "user_problem": [
+        1
+      ]
+    },
+    {
+      "id": "6a",
+      "issue": "R8 E14 comparisons should expose a common seven-attacker suite.",
+      "action": "Report common seven results alongside the full strongest union; reselect the suite maximum in bootstrap draws.",
+      "status": "COMPLETED",
+      "evidence": [
+        "manuscript/sections/42-live-timing-main.tex",
+        "manuscript/tables/r7-controls.tex",
+        "provenance/r8-review/defense-self-audit.md",
+        "provenance/r8-review/defense-self-audit.json"
+      ],
+      "remaining": "Common-seven sensitivity is not an arbitrary-attacker security proof.",
+      "user_problem": [
+        3
+      ]
+    },
+    {
+      "id": "6b",
+      "issue": "WT point comparisons must report cost and avoid global dominance or equal-utility claims.",
+      "action": "Report byte/call ratios and BA points; describe selected point-metric comparisons and explicitly disclaim statistical dominance/equal utility.",
+      "status": "COMPLETED",
+      "evidence": [
+        "manuscript/sections/42-live-timing-main.tex",
+        "provenance/r8-review/defense-self-audit.md"
+      ],
+      "remaining": "WT is an offline RPC adaptation; no live-planner utility measurement.",
+      "user_problem": [
+        3
+      ]
+    },
+    {
+      "id": "7a",
+      "issue": "Flush detector performance could be mistaken for intent recovery.",
+      "action": "Separate record-level flush-phase detection from task-category attack and cover-vs-real request classification.",
+      "status": "COMPLETED",
+      "evidence": [
+        "manuscript/sections/42-live-timing-main.tex",
+        "manuscript/tables/r8-flush.tex",
+        "provenance/r8-review/defense-self-audit.md"
+      ],
+      "remaining": "Do not equate 90.4/92.3% flush BA with intent inference.",
+      "user_problem": [
+        5
+      ]
+    },
+    {
+      "id": "7b",
+      "issue": "Suffix stripping attack should be reported as performed, with honest limits.",
+      "action": "Describe training-fitted boundary estimation, prefix stripping, composed intent attack, strongest return point, and union retaining stripped/unstripped traces.",
+      "status": "COMPLETED",
+      "evidence": [
+        "manuscript/sections/42-live-timing-main.tex",
+        "manuscript/tables/r8-flush.tex",
+        "provenance/r8-review/defense-self-audit.md"
+      ],
+      "remaining": "No ground-truth oracle filtering presented as deployable.",
+      "user_problem": [
+        5
+      ]
+    },
+    {
+      "id": "8a",
+      "issue": "Utility standard should apply consistently to the literature and this paper’s own defenses.",
+      "action": "Separate native undefended reward, replay response/state conformance, and live defended-planner utility.",
+      "status": "COMPLETED",
+      "evidence": [
+        "manuscript/sections/10-open-challenges.tex",
+        "manuscript/sections/42-live-timing-main.tex",
+        "provenance/r8-review/defense-self-audit.md"
+      ],
+      "remaining": "No live defended LLM re-planning utility measured.",
+      "user_problem": [
+        6
+      ]
+    },
+    {
+      "id": "8b",
+      "issue": "E13 RPC latency must not be represented as live defended LLM utility or end-to-end latency.",
+      "action": "Limit clocks to local RPC chain and exclude LLM generation, WAN, deadlines, and replanning.",
+      "status": "COMPLETED",
+      "evidence": [
+        "manuscript/sections/42-live-timing-main.tex",
+        "manuscript/sections/10-open-challenges.tex"
+      ],
+      "remaining": "A new live defended-planner study would be needed for that claim.",
+      "user_problem": [
+        6
+      ]
+    },
+    {
+      "id": "9a",
+      "issue": "Luna alias replication could be overcalled as independent confirmation or a new setting.",
+      "action": "Describe it as a same-provider alias and same retail environment; retain smaller suite/training limitations.",
+      "status": "COMPLETED",
+      "evidence": [
+        "manuscript/sections/45-luna-extension.tex",
+        "manuscript/tables/r7-luna-utility.tex",
+        "manuscript/tables/r7-luna-dispatch.tex",
+        "manuscript/sections/10-open-challenges.tex"
+      ],
+      "remaining": "No new customer population, provider, environment, or independent confirmation.",
+      "user_problem": [
+        8
+      ]
+    },
+    {
+      "id": "9b",
+      "issue": "Luna workflow fit and tool attempts need accurate denominators.",
+      "action": "Retain all 150 runs, 75 per prompt, failures/errors; distinguish dispatch attempts from successful actions and disclose 29 training rows/GB constant behavior.",
+      "status": "COMPLETED",
+      "evidence": [
+        "manuscript/sections/45-luna-extension.tex",
+        "manuscript/tables/r7-luna-utility.tex",
+        "manuscript/tables/r7-luna-network.tex"
+      ],
+      "remaining": "No claim that 150 runs means 150 per prompt or independent customers.",
+      "user_problem": [
+        8
+      ]
+    },
+    {
+      "id": "10a",
+      "issue": "Citation status needs to describe bibliography form without inventing publication status.",
+      "action": "Inventory 77 current citation forms; classify 49 arXiv-only, 21 venue-labelled including 5 with preprint, 1 book, 2 standards, 4 vendor docs; zero unknown after fixing Jiao generator rule.",
+      "status": "COMPLETED",
+      "evidence": [
+        "manuscript/sections/04-scope.tex",
+        "manuscript/sections/46-r8-sok-audit.tex",
+        "provenance/r8-review/build_overlay.py",
+        "provenance/r8-review/all-citations-form-labels.csv",
+        "provenance/r8-review/official-source-status-checks.json"
+      ],
+      "remaining": "Labels are not independent peer-review certification; bounded official checks do not prove unlisted preprint papers are unpublished.",
+      "user_problem": [
+        "writing/preprints"
+      ]
+    },
+    {
+      "id": "10b",
+      "issue": "Early Bird venue versus arXiv citation form must be distinguished.",
+      "action": "Retain venue-labelled-with-preprint for current TIFS citation with consulted arXiv version.",
+      "status": "COMPLETED",
+      "evidence": [
+        "manuscript/main.bbl",
+        "provenance/r8-review/all-citations-form-labels.csv",
+        "provenance/r8-review/official-source-status-checks.json"
+      ],
+      "remaining": "No claim that an arXiv version was the only publication form.",
+      "user_problem": [
+        "writing/preprints"
+      ]
+    },
+    {
+      "id": "11a",
+      "issue": "Anonymous source bundle should contain only manuscript and supplement sources.",
+      "action": "Created and independently scanned 101-member anonymous paper/source ZIP, including current main and supplement PDFs, source closure and IEEE class/style; excluded Git history and machine logs.",
+      "status": "COMPLETED",
+      "evidence": [
+        "provenance/r8-review/anonymous-paper-source.zip",
+        "provenance/r8-review/anonymous-paper-check.json"
+      ],
+      "remaining": "This is not the complete experimental artifact or anonymous hosting; author final review is still needed.",
+      "user_problem": [
+        "writing/anonymity"
+      ]
+    },
+    {
+      "id": "11b",
+      "issue": "Full data anonymized hosting cannot be claimed from a source-only bundle.",
+      "action": "Separate anonymous paper-source packaging from complete data/artifact hosting.",
+      "status": "REQUIRES_NEW_DATA",
+      "evidence": [],
+      "remaining": "Authors must choose and configure an anonymous repository/host for the complete shareable artifact and verify access.",
+      "user_problem": [
+        "writing/anonymity"
+      ]
+    },
+    {
+      "id": "12a",
+      "issue": "AI assistance disclosure should match what was actually used.",
+      "action": "Keep AI assistance and author verification distinct; do not imply independent human coding.",
+      "status": "COMPLETED",
+      "evidence": [
+        "manuscript/sections/40-evidence-concordance.tex",
+        "manuscript/sections/03-methodology.tex"
+      ],
+      "remaining": "Disclosure must be checked against venue instructions at submission.",
+      "user_problem": [
+        "writing/AI"
+      ]
+    },
+    {
+      "id": "12b",
+      "issue": "AI registration/disclosure draft requested for submission workflow.",
+      "action": "Drafted an explicit AI-use submission statement and its factual author-review prerequisites in the R8 submission document; no HotCRP statement submitted.",
+      "status": "COMPLETED",
+      "evidence": [
+        "manuscript/sections/40-evidence-concordance.tex"
+      ],
+      "remaining": "Final author inspection, registration and attestation are author actions, not completed by PDF validation.",
+      "user_problem": [
+        "writing/AI"
+      ]
+    },
+    {
+      "id": "13a",
+      "issue": "Main-text narrative, tables, counts, and terminology should be internally consistent.",
+      "action": "Review actual main input closure for A/B semantics, R1–R9 applicability, the separate 11 NR-R and 11 unverified matrix cells, and current citation counts.",
+      "status": "COMPLETED",
+      "evidence": [
+        "provenance/r8-review/content-review.md",
+        "provenance/r8-review/numerical-review.md",
+        "manuscript/main.tex"
+      ],
+      "remaining": "Final rendered-page and release checks are separately bound to the delivered PDF hashes.",
+      "user_problem": [
+        "writing/numbers",
+        "writing/terminology"
+      ]
+    },
+    {
+      "id": "13b",
+      "issue": "No generic claim that leakage reduction, attack chance-level points, or state equality proves defense effectiveness.",
+      "action": "Retain evaluated-suite threshold caveat, fitted-suite scope, and explicit absence of security guarantee/live utility proof.",
+      "status": "COMPLETED",
+      "evidence": [
+        "manuscript/sections/37-transfer-tests.tex",
+        "manuscript/sections/42-live-timing-main.tex",
+        "manuscript/sections/10-open-challenges.tex",
+        "manuscript/sections/01-introduction.tex"
+      ],
+      "remaining": "Do not weaken these limits in the abstract or conclusion.",
+      "user_problem": [
+        2
+      ]
+    },
+    {
+      "id": "13c",
+      "issue": "Pre-registration, independent validation, and confirmation language must reflect chronology and provenance.",
+      "action": "Use author-recorded mechanism checks, frozen E9 calibration, and post-hoc E10–E14 labels; do not call existing known-cohort analysis independent or externally blind.",
+      "status": "COMPLETED",
+      "evidence": [
+        "manuscript/sections/26-corpus-map.tex",
+        "manuscript/sections/37-transfer-tests.tex",
+        "manuscript/sections/40-evidence-concordance.tex",
+        "provenance/r8-review/content-review.md"
+      ],
+      "remaining": "No preregistered external human study or new-customer confirmation.",
+      "user_problem": [
+        7
+      ]
+    },
+    {
+      "id": "14a",
+      "user_problem": [
+        5
+      ],
+      "issue": "Observer placement and the trusted gateway boundary need an explicit deployment argument.",
+      "action": "Added operator/VPC/relay access assumptions and excluded the marker-aware executor/commit logs; these are visibility assumptions, not prevalence measurements.",
+      "status": "COMPLETED",
+      "evidence": [
+        "manuscript/sections/10-open-challenges.tex",
+        "manuscript/tables/r7-deployment.tex"
+      ],
+      "remaining": "No measured deployment prevalence or production deployment."
+    },
+    {
+      "id": "14b",
+      "user_problem": [
+        5
+      ],
+      "issue": "Provider sandboxes, dry-run and rollback were only proposed, not measured.",
+      "action": "Labeled the provider-specific options as feasibility examples; only the local gateway was measured.",
+      "status": "REQUIRES_NEW_DATA",
+      "evidence": [
+        "manuscript/sections/10-open-challenges.tex"
+      ],
+      "remaining": "Real provider-backend integration and execution measurement remain absent."
+    },
+    {
+      "id": "14c",
+      "user_problem": [
+        5,
+        6
+      ],
+      "issue": "Database equality and planner-visible equivalence are constructed invariants.",
+      "action": "Reclassified state/response results as implementation-conformance checks, separated from independent empirical utility.",
+      "status": "COMPLETED",
+      "evidence": [
+        "manuscript/sections/37-transfer-tests.tex",
+        "manuscript/sections/10-open-challenges.tex"
+      ],
+      "remaining": "No live defended-planner utility claim."
+    },
+    {
+      "id": "14d",
+      "user_problem": [
+        3,
+        5
+      ],
+      "issue": "Per-call padding must not be conflated with full traffic-flow confidentiality.",
+      "action": "Distinguished per-call frames from complete fixed-horizon transport cover; dummy tunnel cells execute no tools, and passive-link protection does not require application-layer shadow calls.",
+      "status": "COMPLETED",
+      "evidence": [
+        "manuscript/sections/37-transfer-tests.tex",
+        "manuscript/sections/42-live-timing-main.tex"
+      ],
+      "remaining": "No tuned minimum-cost tunnel or blanket shadow advantage."
+    },
+    {
+      "id": "15a",
+      "user_problem": [
+        2,
+        4,
+        7
+      ],
+      "issue": "The author-chosen absolute gate is unconfirmed, and paired reduction is not security.",
+      "action": "Retained the frozen gate, labeled it an engineering screen and made unsupported security certification explicit. SoK claims use record-specific transfer failures.",
+      "status": "PARTIALLY_ADDRESSED",
+      "evidence": [
+        "manuscript/sections/37-transfer-tests.tex",
+        "manuscript/main.tex"
+      ],
+      "remaining": "A new, adequately powered customer cohort and defensible deployment-risk target would be needed for a security-efficacy claim."
+    },
+    {
+      "id": "15b",
+      "user_problem": [
+        3
+      ],
+      "issue": "WF adaptations are not full reproductions of original algorithms and guarantees.",
+      "action": "Main text states missing symmetric WT pairing, training-IAT WTF-PAD, simulated-versus-measured clocks and common-suite versus larger-union differences.",
+      "status": "PARTIALLY_ADDRESSED",
+      "evidence": [
+        "manuscript/sections/42-live-timing-main.tex",
+        "manuscript/tables/r8-controls.tex"
+      ],
+      "remaining": "Full original-protocol WF reproduction and equal live planner utility are not established."
+    },
+    {
+      "id": "15c",
+      "user_problem": [
+        4
+      ],
+      "issue": "Saved-prediction intervals omit attacker training uncertainty.",
+      "action": "Explained this in main/supplement and preserved all fitted-conditional intervals; added only explicitly deterministic influence analyses.",
+      "status": "PARTIALLY_ADDRESSED",
+      "evidence": [
+        "manuscript/sections/47-r8-empirical-audit.tex",
+        "manuscript/sections/10-open-challenges.tex"
+      ],
+      "remaining": "Nested refitting uncertainty and independent population replication remain unmeasured."
+    },
+    {
+      "id": "15d",
+      "user_problem": [
+        "writing/numbers"
+      ],
+      "issue": "Distinct BA effects and byte multipliers appear contradictory without cohorts.",
+      "action": "Added the E9/E10/E13 denominator table, fixed TLS1.2 2.18 versus TLS1.3 2.19 explanation, and retained historical numbers only in their original scope.",
+      "status": "COMPLETED",
+      "evidence": [
+        "manuscript/tables/r8-cohorts.tex",
+        "provenance/r8-review/numerical-review.json"
+      ],
+      "remaining": "No pooling of incompatible observation/attacker/serialization estimands."
+    }
+  ],
+  "unresolved_resources": [
+    {
+      "resource": "Anonymous complete artifact/data hosting",
+      "reason": "Source-only anonymous paper bundle does not provide a hosted complete dataset/artifact; repository/host access and disclosure must be author-managed.",
+      "status": "REQUIRES_NEW_DATA"
+    },
+    {
+      "resource": "Independent human blind recoding and independent kappa",
+      "reason": "No independent human panel or study has been run; current author verification and stored historical agreement columns do not substitute.",
+      "status": "REQUIRES_NEW_DATA"
+    },
+    {
+      "resource": "Cross-provider/new-environment/new-customer confirmation",
+      "reason": "Luna is a same-provider alias in the same retail environment and known cohort; no such independent setting was collected.",
+      "status": "REQUIRES_NEW_DATA"
+    },
+    {
+      "resource": "Live defended LLM re-planning utility",
+      "reason": "Existing E13 is fixed-trajectory local RPC with real tool responses/state, not live LLM replanning under defense.",
+      "status": "REQUIRES_NEW_DATA"
+    },
+    {
+      "resource": "real provider-backend measurements",
+      "status": "REQUIRES_NEW_DATA",
+      "reason": "Not established by this revision; the corresponding evidence boundary is explicit."
+    },
+    {
+      "resource": "attacker-refitting uncertainty",
+      "status": "REQUIRES_NEW_DATA",
+      "reason": "Not established by this revision; the corresponding evidence boundary is explicit."
+    },
+    {
+      "resource": "full original-protocol WF reproduction",
+      "status": "REQUIRES_NEW_DATA",
+      "reason": "Not established by this revision; the corresponding evidence boundary is explicit."
+    }
+  ]
+}
