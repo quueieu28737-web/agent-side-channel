@@ -1,0 +1,4212 @@
+{
+  "scope": "post_hoc_existing_690_trajectories",
+  "cells": {
+    "baseline|raw|cancel": {
+      "ba": {
+        "point": 0.9166666666666667,
+        "ci95": [
+          0.8470475222609369,
+          1.0
+        ],
+        "invalid_draws": 12
+      },
+      "auroc": {
+        "point": 0.9166666666666666,
+        "ci95": [
+          0.8578794807834441,
+          1.0
+        ],
+        "invalid_draws": 12
+      },
+      "attackers": {
+        "majority": {
+          "ba": 0.5,
+          "auroc": 0.5
+        },
+        "D2_logistic": {
+          "ba": 0.5486111111111112,
+          "auroc": 0.7134259259259259
+        },
+        "D2_gradient_boosting": {
+          "ba": 0.8430555555555556,
+          "auroc": 0.8363425925925926
+        },
+        "D2_random_forest": {
+          "ba": 0.5444444444444445,
+          "auroc": 0.5587962962962963
+        },
+        "D2_extra_trees": {
+          "ba": 0.5819444444444444,
+          "auroc": 0.6814814814814815
+        },
+        "D2_leaf_fingerprint": {
+          "ba": 0.5569444444444445,
+          "auroc": 0.5537037037037037
+        },
+        "D2_sequence_CNN": {
+          "ba": 0.4458333333333333,
+          "auroc": 0.48842592592592593
+        },
+        "E13/majority": {
+          "ba": 0.5,
+          "auroc": 0.5
+        },
+        "E13/size_order/logistic": {
+          "ba": 0.5861111111111111,
+          "auroc": 0.7189814814814814
+        },
+        "E13/size_order/gboost": {
+          "ba": 0.8430555555555556,
+          "auroc": 0.8363425925925926
+        },
+        "E13/size_order/forest": {
+          "ba": 0.5527777777777778,
+          "auroc": 0.6412037037037037
+        },
+        "E13/size_order/profile_gboost": {
+          "ba": 0.9125000000000001,
+          "auroc": 0.8939814814814815
+        },
+        "E13/size_order/profile_count_rule": {
+          "ba": 0.9166666666666667,
+          "auroc": 0.9166666666666666
+        },
+        "E13/timing_direction/logistic": {
+          "ba": 0.5375,
+          "auroc": 0.48518518518518516
+        },
+        "E13/timing_direction/gboost": {
+          "ba": 0.45138888888888884,
+          "auroc": 0.4965277777777778
+        },
+        "E13/timing_direction/forest": {
+          "ba": 0.5263888888888889,
+          "auroc": 0.5310185185185186
+        },
+        "E13/joint/logistic": {
+          "ba": 0.5569444444444445,
+          "auroc": 0.7300925925925926
+        },
+        "E13/joint/gboost": {
+          "ba": 0.8430555555555556,
+          "auroc": 0.8363425925925926
+        },
+        "E13/joint/forest": {
+          "ba": 0.5569444444444445,
+          "auroc": 0.6175925925925926
+        }
+      },
+      "suite_size": 19,
+      "criterion": false,
+      "strongest_ba": [
+        "E13/size_order/profile_count_rule"
+      ],
+      "cnn_test_truncated": 0
+    },
+    "baseline|raw|return": {
+      "ba": {
+        "point": 0.8636363636363636,
+        "ci95": [
+          0.7948717948717949,
+          0.9722222222222222
+        ],
+        "invalid_draws": 0
+      },
+      "auroc": {
+        "point": 0.8746031746031746,
+        "ci95": [
+          0.805514705882353,
+          0.9972981981981982
+        ],
+        "invalid_draws": 0
+      },
+      "attackers": {
+        "majority": {
+          "ba": 0.5,
+          "auroc": 0.5
+        },
+        "D2_logistic": {
+          "ba": 0.7688311688311689,
+          "auroc": 0.8282828282828283
+        },
+        "D2_gradient_boosting": {
+          "ba": 0.7476190476190476,
+          "auroc": 0.8056277056277056
+        },
+        "D2_random_forest": {
+          "ba": 0.687878787878788,
+          "auroc": 0.7155844155844155
+        },
+        "D2_extra_trees": {
+          "ba": 0.6246753246753247,
+          "auroc": 0.7344877344877345
+        },
+        "D2_leaf_fingerprint": {
+          "ba": 0.7341991341991343,
+          "auroc": 0.7542568542568543
+        },
+        "D2_sequence_CNN": {
+          "ba": 0.5909090909090909,
+          "auroc": 0.5422799422799423
+        },
+        "E13/majority": {
+          "ba": 0.5,
+          "auroc": 0.5
+        },
+        "E13/size_order/logistic": {
+          "ba": 0.8445887445887446,
+          "auroc": 0.8724386724386725
+        },
+        "E13/size_order/gboost": {
+          "ba": 0.8350649350649351,
+          "auroc": 0.8240981240981241
+        },
+        "E13/size_order/forest": {
+          "ba": 0.6922077922077923,
+          "auroc": 0.7318903318903319
+        },
+        "E13/size_order/profile_gboost": {
+          "ba": 0.8303030303030303,
+          "auroc": 0.8746031746031746
+        },
+        "E13/size_order/profile_count_rule": {
+          "ba": 0.8636363636363636,
+          "auroc": 0.8636363636363636
+        },
+        "E13/timing_direction/logistic": {
+          "ba": 0.5294372294372294,
+          "auroc": 0.5696969696969697
+        },
+        "E13/timing_direction/gboost": {
+          "ba": 0.5051948051948052,
+          "auroc": 0.5001443001443001
+        },
+        "E13/timing_direction/forest": {
+          "ba": 0.49264069264069266,
+          "auroc": 0.5226551226551227
+        },
+        "E13/joint/logistic": {
+          "ba": 0.8047619047619048,
+          "auroc": 0.8253968253968254
+        },
+        "E13/joint/gboost": {
+          "ba": 0.8038961038961039,
+          "auroc": 0.834920634920635
+        },
+        "E13/joint/forest": {
+          "ba": 0.6753246753246753,
+          "auroc": 0.7090909090909091
+        }
+      },
+      "suite_size": 19,
+      "criterion": false,
+      "strongest_ba": [
+        "E13/size_order/profile_count_rule"
+      ],
+      "cnn_test_truncated": 0
+    },
+    "baseline|padding|cancel": {
+      "ba": {
+        "point": 0.6861111111111111,
+        "ci95": [
+          0.5143739837398374,
+          0.9281304798342102
+        ],
+        "invalid_draws": 12
+      },
+      "auroc": {
+        "point": 0.6784722222222223,
+        "ci95": [
+          0.5,
+          0.9528985507246377
+        ],
+        "invalid_draws": 12
+      },
+      "attackers": {
+        "majority": {
+          "ba": 0.5,
+          "auroc": 0.5
+        },
+        "D2_logistic": {
+          "ba": 0.5180555555555555,
+          "auroc": 0.5879629629629629
+        },
+        "D2_gradient_boosting": {
+          "ba": 0.5138888888888888,
+          "auroc": 0.5819444444444445
+        },
+        "D2_random_forest": {
+          "ba": 0.4736111111111111,
+          "auroc": 0.5282407407407408
+        },
+        "D2_extra_trees": {
+          "ba": 0.5319444444444444,
+          "auroc": 0.6041666666666666
+        },
+        "D2_leaf_fingerprint": {
+          "ba": 0.5,
+          "auroc": 0.5013888888888889
+        },
+        "D2_sequence_CNN": {
+          "ba": 0.4458333333333333,
+          "auroc": 0.4532407407407407
+        },
+        "E13/majority": {
+          "ba": 0.5,
+          "auroc": 0.5
+        },
+        "E13/size_order/logistic": {
+          "ba": 0.6736111111111112,
+          "auroc": 0.655787037037037
+        },
+        "E13/size_order/gboost": {
+          "ba": 0.6791666666666667,
+          "auroc": 0.656712962962963
+        },
+        "E13/size_order/forest": {
+          "ba": 0.6861111111111111,
+          "auroc": 0.6784722222222223
+        },
+        "E13/size_order/profile_gboost": {
+          "ba": 0.65,
+          "auroc": 0.6525462962962963
+        },
+        "E13/size_order/profile_count_rule": {
+          "ba": 0.5,
+          "auroc": 0.5
+        },
+        "E13/timing_direction/logistic": {
+          "ba": 0.5458333333333333,
+          "auroc": 0.5
+        },
+        "E13/timing_direction/gboost": {
+          "ba": 0.4583333333333333,
+          "auroc": 0.42916666666666664
+        },
+        "E13/timing_direction/forest": {
+          "ba": 0.41666666666666663,
+          "auroc": 0.4564814814814815
+        },
+        "E13/joint/logistic": {
+          "ba": 0.5097222222222222,
+          "auroc": 0.5689814814814815
+        },
+        "E13/joint/gboost": {
+          "ba": 0.49722222222222223,
+          "auroc": 0.5282407407407408
+        },
+        "E13/joint/forest": {
+          "ba": 0.48055555555555557,
+          "auroc": 0.5078703703703704
+        }
+      },
+      "suite_size": 19,
+      "criterion": false,
+      "strongest_ba": [
+        "E13/size_order/forest"
+      ],
+      "cnn_test_truncated": 0
+    },
+    "baseline|padding|return": {
+      "ba": {
+        "point": 0.6268398268398269,
+        "ci95": [
+          0.5420770202020202,
+          0.7948863636363637
+        ],
+        "invalid_draws": 0
+      },
+      "auroc": {
+        "point": 0.6574314574314575,
+        "ci95": [
+          0.5254034391534391,
+          0.8381847183317771
+        ],
+        "invalid_draws": 0
+      },
+      "attackers": {
+        "majority": {
+          "ba": 0.5,
+          "auroc": 0.5
+        },
+        "D2_logistic": {
+          "ba": 0.4714285714285714,
+          "auroc": 0.5240981240981241
+        },
+        "D2_gradient_boosting": {
+          "ba": 0.4640692640692641,
+          "auroc": 0.511976911976912
+        },
+        "D2_random_forest": {
+          "ba": 0.4835497835497835,
+          "auroc": 0.5243867243867244
+        },
+        "D2_extra_trees": {
+          "ba": 0.45151515151515154,
+          "auroc": 0.4961038961038961
+        },
+        "D2_leaf_fingerprint": {
+          "ba": 0.46580086580086577,
+          "auroc": 0.4613275613275613
+        },
+        "D2_sequence_CNN": {
+          "ba": 0.5909090909090909,
+          "auroc": 0.655988455988456
+        },
+        "E13/majority": {
+          "ba": 0.5,
+          "auroc": 0.5
+        },
+        "E13/size_order/logistic": {
+          "ba": 0.5428571428571428,
+          "auroc": 0.4873015873015873
+        },
+        "E13/size_order/gboost": {
+          "ba": 0.5125541125541125,
+          "auroc": 0.47734487734487735
+        },
+        "E13/size_order/forest": {
+          "ba": 0.5476190476190476,
+          "auroc": 0.5144300144300145
+        },
+        "E13/size_order/profile_gboost": {
+          "ba": 0.4649350649350649,
+          "auroc": 0.4909090909090909
+        },
+        "E13/size_order/profile_count_rule": {
+          "ba": 0.5,
+          "auroc": 0.5
+        },
+        "E13/timing_direction/logistic": {
+          "ba": 0.5844155844155844,
+          "auroc": 0.5411255411255411
+        },
+        "E13/timing_direction/gboost": {
+          "ba": 0.5874458874458874,
+          "auroc": 0.6124098124098124
+        },
+        "E13/timing_direction/forest": {
+          "ba": 0.6268398268398269,
+          "auroc": 0.6574314574314575
+        },
+        "E13/joint/logistic": {
+          "ba": 0.5017316017316018,
+          "auroc": 0.5258297258297259
+        },
+        "E13/joint/gboost": {
+          "ba": 0.4896103896103896,
+          "auroc": 0.5431457431457432
+        },
+        "E13/joint/forest": {
+          "ba": 0.47099567099567097,
+          "auroc": 0.5454545454545454
+        }
+      },
+      "suite_size": 19,
+      "criterion": false,
+      "strongest_ba": [
+        "E13/timing_direction/forest"
+      ],
+      "cnn_test_truncated": 0
+    },
+    "baseline|shadow_serial|cancel": {
+      "ba": {
+        "point": 0.6138888888888889,
+        "ci95": [
+          0.5462085667600374,
+          0.7136752136752136
+        ],
+        "invalid_draws": 12
+      },
+      "auroc": {
+        "point": 0.625462962962963,
+        "ci95": [
+          0.5784331019857336,
+          0.7904053748870823
+        ],
+        "invalid_draws": 12
+      },
+      "attackers": {
+        "majority": {
+          "ba": 0.5,
+          "auroc": 0.5
+        },
+        "D2_logistic": {
+          "ba": 0.48333333333333334,
+          "auroc": 0.5361111111111111
+        },
+        "D2_gradient_boosting": {
+          "ba": 0.48888888888888893,
+          "auroc": 0.5074074074074074
+        },
+        "D2_random_forest": {
+          "ba": 0.4805555555555555,
+          "auroc": 0.45601851851851855
+        },
+        "D2_extra_trees": {
+          "ba": 0.4930555555555556,
+          "auroc": 0.5476851851851852
+        },
+        "D2_leaf_fingerprint": {
+          "ba": 0.46944444444444444,
+          "auroc": 0.43287037037037035
+        },
+        "D2_sequence_CNN": {
+          "ba": 0.5,
+          "auroc": 0.5435185185185185
+        },
+        "E13/majority": {
+          "ba": 0.5,
+          "auroc": 0.5
+        },
+        "E13/size_order/logistic": {
+          "ba": 0.44305555555555554,
+          "auroc": 0.4828703703703704
+        },
+        "E13/size_order/gboost": {
+          "ba": 0.45416666666666666,
+          "auroc": 0.45092592592592595
+        },
+        "E13/size_order/forest": {
+          "ba": 0.3888888888888889,
+          "auroc": 0.44537037037037036
+        },
+        "E13/size_order/profile_gboost": {
+          "ba": 0.5,
+          "auroc": 0.45902777777777776
+        },
+        "E13/size_order/profile_count_rule": {
+          "ba": 0.5,
+          "auroc": 0.5
+        },
+        "E13/timing_direction/logistic": {
+          "ba": 0.6138888888888889,
+          "auroc": 0.625462962962963
+        },
+        "E13/timing_direction/gboost": {
+          "ba": 0.4625,
+          "auroc": 0.5712962962962963
+        },
+        "E13/timing_direction/forest": {
+          "ba": 0.5027777777777778,
+          "auroc": 0.46435185185185185
+        },
+        "E13/joint/logistic": {
+          "ba": 0.5097222222222222,
+          "auroc": 0.5962962962962963
+        },
+        "E13/joint/gboost": {
+          "ba": 0.4902777777777778,
+          "auroc": 0.5597222222222222
+        },
+        "E13/joint/forest": {
+          "ba": 0.49444444444444446,
+          "auroc": 0.49722222222222223
+        },
+        "E13/flush_stripped_joint/logistic": {
+          "ba": 0.5777777777777778,
+          "auroc": 0.5833333333333334
+        },
+        "E13/flush_stripped_joint/gboost": {
+          "ba": 0.46111111111111114,
+          "auroc": 0.4425925925925926
+        },
+        "E13/flush_stripped_joint/forest": {
+          "ba": 0.41944444444444445,
+          "auroc": 0.4324074074074074
+        }
+      },
+      "suite_size": 22,
+      "criterion": false,
+      "strongest_ba": [
+        "E13/timing_direction/logistic"
+      ],
+      "cnn_test_truncated": 0
+    },
+    "baseline|shadow_serial|return": {
+      "ba": {
+        "point": 0.5341991341991342,
+        "ci95": [
+          0.5031534090909091,
+          0.6581478698666199
+        ],
+        "invalid_draws": 0
+      },
+      "auroc": {
+        "point": 0.5298701298701298,
+        "ci95": [
+          0.5,
+          0.6815037037037036
+        ],
+        "invalid_draws": 0
+      },
+      "attackers": {
+        "majority": {
+          "ba": 0.5,
+          "auroc": 0.5
+        },
+        "D2_logistic": {
+          "ba": 0.4627705627705628,
+          "auroc": 0.509090909090909
+        },
+        "D2_gradient_boosting": {
+          "ba": 0.48787878787878786,
+          "auroc": 0.5036075036075036
+        },
+        "D2_random_forest": {
+          "ba": 0.461038961038961,
+          "auroc": 0.49552669552669554
+        },
+        "D2_extra_trees": {
+          "ba": 0.5285714285714286,
+          "auroc": 0.5261183261183261
+        },
+        "D2_leaf_fingerprint": {
+          "ba": 0.45930735930735933,
+          "auroc": 0.4844155844155844
+        },
+        "D2_sequence_CNN": {
+          "ba": 0.5,
+          "auroc": 0.33535353535353535
+        },
+        "E13/majority": {
+          "ba": 0.5,
+          "auroc": 0.5
+        },
+        "E13/size_order/logistic": {
+          "ba": 0.4688311688311688,
+          "auroc": 0.4728715728715729
+        },
+        "E13/size_order/gboost": {
+          "ba": 0.506926406926407,
+          "auroc": 0.5054834054834055
+        },
+        "E13/size_order/forest": {
+          "ba": 0.47445887445887447,
+          "auroc": 0.4627705627705628
+        },
+        "E13/size_order/profile_gboost": {
+          "ba": 0.49004329004329006,
+          "auroc": 0.45454545454545453
+        },
+        "E13/size_order/profile_count_rule": {
+          "ba": 0.5,
+          "auroc": 0.5
+        },
+        "E13/timing_direction/logistic": {
+          "ba": 0.5290043290043289,
+          "auroc": 0.4862914862914863
+        },
+        "E13/timing_direction/gboost": {
+          "ba": 0.4199134199134199,
+          "auroc": 0.4383838383838384
+        },
+        "E13/timing_direction/forest": {
+          "ba": 0.4367965367965368,
+          "auroc": 0.4432900432900433
+        },
+        "E13/joint/logistic": {
+          "ba": 0.47316017316017317,
+          "auroc": 0.48744588744588746
+        },
+        "E13/joint/gboost": {
+          "ba": 0.48225108225108226,
+          "auroc": 0.4692640692640693
+        },
+        "E13/joint/forest": {
+          "ba": 0.44155844155844154,
+          "auroc": 0.4484848484848485
+        },
+        "E13/flush_stripped_joint/logistic": {
+          "ba": 0.4372294372294372,
+          "auroc": 0.5102453102453103
+        },
+        "E13/flush_stripped_joint/gboost": {
+          "ba": 0.5341991341991342,
+          "auroc": 0.5298701298701298
+        },
+        "E13/flush_stripped_joint/forest": {
+          "ba": 0.5341991341991342,
+          "auroc": 0.5053391053391053
+        }
+      },
+      "suite_size": 22,
+      "criterion": false,
+      "strongest_ba": [
+        "E13/flush_stripped_joint/gboost",
+        "E13/flush_stripped_joint/forest"
+      ],
+      "cnn_test_truncated": 0
+    },
+    "baseline|shadow_parallel2|cancel": {
+      "ba": {
+        "point": 0.5166666666666666,
+        "ci95": [
+          0.5,
+          0.690664924506388
+        ],
+        "invalid_draws": 12
+      },
+      "auroc": {
+        "point": 0.5541666666666667,
+        "ci95": [
+          0.5083654572940287,
+          0.7047521786492374
+        ],
+        "invalid_draws": 12
+      },
+      "attackers": {
+        "majority": {
+          "ba": 0.5,
+          "auroc": 0.5
+        },
+        "D2_logistic": {
+          "ba": 0.41111111111111115,
+          "auroc": 0.4587962962962963
+        },
+        "D2_gradient_boosting": {
+          "ba": 0.43194444444444446,
+          "auroc": 0.37175925925925923
+        },
+        "D2_random_forest": {
+          "ba": 0.46249999999999997,
+          "auroc": 0.387037037037037
+        },
+        "D2_extra_trees": {
+          "ba": 0.4527777777777778,
+          "auroc": 0.3773148148148148
+        },
+        "D2_leaf_fingerprint": {
+          "ba": 0.43194444444444446,
+          "auroc": 0.44375
+        },
+        "D2_sequence_CNN": {
+          "ba": 0.45972222222222225,
+          "auroc": 0.4759259259259259
+        },
+        "E13/majority": {
+          "ba": 0.5,
+          "auroc": 0.5
+        },
+        "E13/size_order/logistic": {
+          "ba": 0.5166666666666666,
+          "auroc": 0.5092592592592593
+        },
+        "E13/size_order/gboost": {
+          "ba": 0.48888888888888893,
+          "auroc": 0.42962962962962964
+        },
+        "E13/size_order/forest": {
+          "ba": 0.41666666666666663,
+          "auroc": 0.4148148148148148
+        },
+        "E13/size_order/profile_gboost": {
+          "ba": 0.5,
+          "auroc": 0.4391203703703704
+        },
+        "E13/size_order/profile_count_rule": {
+          "ba": 0.5,
+          "auroc": 0.5
+        },
+        "E13/timing_direction/logistic": {
+          "ba": 0.4986111111111111,
+          "auroc": 0.5541666666666667
+        },
+        "E13/timing_direction/gboost": {
+          "ba": 0.43194444444444446,
+          "auroc": 0.4222222222222222
+        },
+        "E13/timing_direction/forest": {
+          "ba": 0.44166666666666665,
+          "auroc": 0.3902777777777778
+        },
+        "E13/joint/logistic": {
+          "ba": 0.4875,
+          "auroc": 0.5305555555555556
+        },
+        "E13/joint/gboost": {
+          "ba": 0.4486111111111111,
+          "auroc": 0.4125
+        },
+        "E13/joint/forest": {
+          "ba": 0.42083333333333334,
+          "auroc": 0.40925925925925927
+        },
+        "E13/flush_stripped_joint/logistic": {
+          "ba": 0.45972222222222225,
+          "auroc": 0.4601851851851852
+        },
+        "E13/flush_stripped_joint/gboost": {
+          "ba": 0.4097222222222222,
+          "auroc": 0.36527777777777776
+        },
+        "E13/flush_stripped_joint/forest": {
+          "ba": 0.4638888888888889,
+          "auroc": 0.3837962962962963
+        }
+      },
+      "suite_size": 22,
+      "criterion": false,
+      "strongest_ba": [
+        "E13/size_order/logistic"
+      ],
+      "cnn_test_truncated": 0
+    },
+    "baseline|shadow_parallel2|return": {
+      "ba": {
+        "point": 0.5766233766233766,
+        "ci95": [
+          0.5655197811447812,
+          0.6968389724310776
+        ],
+        "invalid_draws": 0
+      },
+      "auroc": {
+        "point": 0.5959595959595959,
+        "ci95": [
+          0.5581077160493827,
+          0.7339529156816391
+        ],
+        "invalid_draws": 0
+      },
+      "attackers": {
+        "majority": {
+          "ba": 0.5,
+          "auroc": 0.5
+        },
+        "D2_logistic": {
+          "ba": 0.5255411255411255,
+          "auroc": 0.5417027417027417
+        },
+        "D2_gradient_boosting": {
+          "ba": 0.5476190476190476,
+          "auroc": 0.552958152958153
+        },
+        "D2_random_forest": {
+          "ba": 0.5320346320346321,
+          "auroc": 0.513997113997114
+        },
+        "D2_extra_trees": {
+          "ba": 0.5636363636363636,
+          "auroc": 0.5959595959595959
+        },
+        "D2_leaf_fingerprint": {
+          "ba": 0.5047619047619047,
+          "auroc": 0.49278499278499277
+        },
+        "D2_sequence_CNN": {
+          "ba": 0.5731601731601732,
+          "auroc": 0.5812409812409812
+        },
+        "E13/majority": {
+          "ba": 0.5,
+          "auroc": 0.5
+        },
+        "E13/size_order/logistic": {
+          "ba": 0.5025974025974026,
+          "auroc": 0.5401154401154401
+        },
+        "E13/size_order/gboost": {
+          "ba": 0.5233766233766234,
+          "auroc": 0.5691197691197691
+        },
+        "E13/size_order/forest": {
+          "ba": 0.5766233766233766,
+          "auroc": 0.5554112554112555
+        },
+        "E13/size_order/profile_gboost": {
+          "ba": 0.4974025974025974,
+          "auroc": 0.43044733044733047
+        },
+        "E13/size_order/profile_count_rule": {
+          "ba": 0.5,
+          "auroc": 0.5
+        },
+        "E13/timing_direction/logistic": {
+          "ba": 0.47878787878787876,
+          "auroc": 0.4923520923520924
+        },
+        "E13/timing_direction/gboost": {
+          "ba": 0.4471861471861472,
+          "auroc": 0.46464646464646464
+        },
+        "E13/timing_direction/forest": {
+          "ba": 0.4861471861471861,
+          "auroc": 0.44906204906204905
+        },
+        "E13/joint/logistic": {
+          "ba": 0.5255411255411255,
+          "auroc": 0.5215007215007215
+        },
+        "E13/joint/gboost": {
+          "ba": 0.5060606060606061,
+          "auroc": 0.47763347763347763
+        },
+        "E13/joint/forest": {
+          "ba": 0.4774891774891775,
+          "auroc": 0.4357864357864358
+        },
+        "E13/flush_stripped_joint/logistic": {
+          "ba": 0.4562770562770563,
+          "auroc": 0.417027417027417
+        },
+        "E13/flush_stripped_joint/gboost": {
+          "ba": 0.4298701298701299,
+          "auroc": 0.4069264069264069
+        },
+        "E13/flush_stripped_joint/forest": {
+          "ba": 0.4627705627705628,
+          "auroc": 0.45555555555555555
+        }
+      },
+      "suite_size": 22,
+      "criterion": false,
+      "strongest_ba": [
+        "E13/size_order/forest"
+      ],
+      "cnn_test_truncated": 0
+    },
+    "baseline|tunnel_2ms|cancel": {
+      "ba": {
+        "point": 0.625,
+        "ci95": [
+          0.5759367568165478,
+          0.7024568160597572
+        ],
+        "invalid_draws": 12
+      },
+      "auroc": {
+        "point": 0.7083333333333334,
+        "ci95": [
+          0.6355465584632252,
+          0.8320662507427214
+        ],
+        "invalid_draws": 12
+      },
+      "attackers": {
+        "majority": {
+          "ba": 0.5,
+          "auroc": 0.5
+        },
+        "D2_logistic": {
+          "ba": 0.47777777777777775,
+          "auroc": 0.5226851851851851
+        },
+        "D2_gradient_boosting": {
+          "ba": 0.525,
+          "auroc": 0.5782407407407407
+        },
+        "D2_random_forest": {
+          "ba": 0.5,
+          "auroc": 0.6074074074074074
+        },
+        "D2_extra_trees": {
+          "ba": 0.5,
+          "auroc": 0.7083333333333334
+        },
+        "D2_leaf_fingerprint": {
+          "ba": 0.49583333333333335,
+          "auroc": 0.5259259259259259
+        },
+        "D2_sequence_CNN": {
+          "ba": 0.5986111111111112,
+          "auroc": 0.6518518518518519
+        },
+        "E13/majority": {
+          "ba": 0.5,
+          "auroc": 0.5
+        },
+        "E13/size_order/logistic": {
+          "ba": 0.625,
+          "auroc": 0.5944444444444444
+        },
+        "E13/size_order/gboost": {
+          "ba": 0.5055555555555555,
+          "auroc": 0.5777777777777777
+        },
+        "E13/size_order/forest": {
+          "ba": 0.5152777777777777,
+          "auroc": 0.562037037037037
+        },
+        "E13/timing_direction/logistic": {
+          "ba": 0.5305555555555556,
+          "auroc": 0.6407407407407407
+        },
+        "E13/timing_direction/gboost": {
+          "ba": 0.5194444444444444,
+          "auroc": 0.5550925925925926
+        },
+        "E13/timing_direction/forest": {
+          "ba": 0.49583333333333335,
+          "auroc": 0.6268518518518519
+        },
+        "E13/joint/logistic": {
+          "ba": 0.5625,
+          "auroc": 0.6555555555555556
+        },
+        "E13/joint/gboost": {
+          "ba": 0.523611111111111,
+          "auroc": 0.5527777777777778
+        },
+        "E13/joint/forest": {
+          "ba": 0.5,
+          "auroc": 0.5773148148148148
+        }
+      },
+      "suite_size": 17,
+      "criterion": false,
+      "strongest_ba": [
+        "E13/size_order/logistic"
+      ],
+      "cnn_test_truncated": 0
+    },
+    "baseline|tunnel_2ms|return": {
+      "ba": {
+        "point": 0.551948051948052,
+        "ci95": [
+          0.5194767875802359,
+          0.6204270833333332
+        ],
+        "invalid_draws": 0
+      },
+      "auroc": {
+        "point": 0.5688311688311688,
+        "ci95": [
+          0.528484623015873,
+          0.7061565951916828
+        ],
+        "invalid_draws": 0
+      },
+      "attackers": {
+        "majority": {
+          "ba": 0.5,
+          "auroc": 0.5
+        },
+        "D2_logistic": {
+          "ba": 0.4467532467532468,
+          "auroc": 0.4098124098124098
+        },
+        "D2_gradient_boosting": {
+          "ba": 0.5073593073593073,
+          "auroc": 0.5670995670995671
+        },
+        "D2_random_forest": {
+          "ba": 0.48095238095238096,
+          "auroc": 0.4686868686868687
+        },
+        "D2_extra_trees": {
+          "ba": 0.49523809523809526,
+          "auroc": 0.45916305916305916
+        },
+        "D2_leaf_fingerprint": {
+          "ba": 0.48658008658008656,
+          "auroc": 0.5168831168831168
+        },
+        "D2_sequence_CNN": {
+          "ba": 0.551948051948052,
+          "auroc": 0.5431457431457432
+        },
+        "E13/majority": {
+          "ba": 0.5,
+          "auroc": 0.5
+        },
+        "E13/size_order/logistic": {
+          "ba": 0.5047619047619047,
+          "auroc": 0.5206349206349207
+        },
+        "E13/size_order/gboost": {
+          "ba": 0.529004329004329,
+          "auroc": 0.5131313131313131
+        },
+        "E13/size_order/forest": {
+          "ba": 0.4861471861471861,
+          "auroc": 0.46695526695526696
+        },
+        "E13/timing_direction/logistic": {
+          "ba": 0.4809523809523809,
+          "auroc": 0.4444444444444444
+        },
+        "E13/timing_direction/gboost": {
+          "ba": 0.4484848484848485,
+          "auroc": 0.49956709956709955
+        },
+        "E13/timing_direction/forest": {
+          "ba": 0.44761904761904764,
+          "auroc": 0.46984126984126984
+        },
+        "E13/joint/logistic": {
+          "ba": 0.4961038961038961,
+          "auroc": 0.43722943722943725
+        },
+        "E13/joint/gboost": {
+          "ba": 0.4826839826839827,
+          "auroc": 0.5688311688311688
+        },
+        "E13/joint/forest": {
+          "ba": 0.47792207792207797,
+          "auroc": 0.4738816738816739
+        }
+      },
+      "suite_size": 17,
+      "criterion": false,
+      "strongest_ba": [
+        "D2_sequence_CNN"
+      ],
+      "cnn_test_truncated": 0
+    },
+    "baseline|tunnel_5ms|cancel": {
+      "ba": {
+        "point": 0.5458333333333333,
+        "ci95": [
+          0.5135303556397307,
+          0.7288921188630492
+        ],
+        "invalid_draws": 12
+      },
+      "auroc": {
+        "point": 0.6180555555555556,
+        "ci95": [
+          0.5121124031007752,
+          0.8074455083965955
+        ],
+        "invalid_draws": 12
+      },
+      "attackers": {
+        "majority": {
+          "ba": 0.5,
+          "auroc": 0.5
+        },
+        "D2_logistic": {
+          "ba": 0.4333333333333333,
+          "auroc": 0.36064814814814816
+        },
+        "D2_gradient_boosting": {
+          "ba": 0.475,
+          "auroc": 0.4351851851851852
+        },
+        "D2_random_forest": {
+          "ba": 0.49583333333333335,
+          "auroc": 0.4875
+        },
+        "D2_extra_trees": {
+          "ba": 0.5,
+          "auroc": 0.3592592592592593
+        },
+        "D2_leaf_fingerprint": {
+          "ba": 0.5194444444444444,
+          "auroc": 0.4997685185185185
+        },
+        "D2_sequence_CNN": {
+          "ba": 0.5458333333333333,
+          "auroc": 0.6180555555555556
+        },
+        "E13/majority": {
+          "ba": 0.5,
+          "auroc": 0.5
+        },
+        "E13/size_order/logistic": {
+          "ba": 0.45972222222222225,
+          "auroc": 0.40324074074074073
+        },
+        "E13/size_order/gboost": {
+          "ba": 0.5138888888888888,
+          "auroc": 0.4041666666666667
+        },
+        "E13/size_order/forest": {
+          "ba": 0.4986111111111111,
+          "auroc": 0.40046296296296297
+        },
+        "E13/timing_direction/logistic": {
+          "ba": 0.5125,
+          "auroc": 0.42453703703703705
+        },
+        "E13/timing_direction/gboost": {
+          "ba": 0.4625,
+          "auroc": 0.42685185185185187
+        },
+        "E13/timing_direction/forest": {
+          "ba": 0.5305555555555556,
+          "auroc": 0.575
+        },
+        "E13/joint/logistic": {
+          "ba": 0.48750000000000004,
+          "auroc": 0.3875
+        },
+        "E13/joint/gboost": {
+          "ba": 0.4902777777777778,
+          "auroc": 0.39166666666666666
+        },
+        "E13/joint/forest": {
+          "ba": 0.5236111111111111,
+          "auroc": 0.5342592592592592
+        }
+      },
+      "suite_size": 17,
+      "criterion": false,
+      "strongest_ba": [
+        "D2_sequence_CNN"
+      ],
+      "cnn_test_truncated": 0
+    },
+    "baseline|tunnel_5ms|return": {
+      "ba": {
+        "point": 0.5727272727272728,
+        "ci95": [
+          0.5423036398467432,
+          0.6419798474945533
+        ],
+        "invalid_draws": 0
+      },
+      "auroc": {
+        "point": 0.554978354978355,
+        "ci95": [
+          0.5436497269158559,
+          0.7076446105574012
+        ],
+        "invalid_draws": 0
+      },
+      "attackers": {
+        "majority": {
+          "ba": 0.5,
+          "auroc": 0.5
+        },
+        "D2_logistic": {
+          "ba": 0.5229437229437229,
+          "auroc": 0.5070707070707071
+        },
+        "D2_gradient_boosting": {
+          "ba": 0.529004329004329,
+          "auroc": 0.5506493506493506
+        },
+        "D2_random_forest": {
+          "ba": 0.5320346320346321,
+          "auroc": 0.5278499278499279
+        },
+        "D2_extra_trees": {
+          "ba": 0.5056277056277056,
+          "auroc": 0.4536796536796537
+        },
+        "D2_leaf_fingerprint": {
+          "ba": 0.5367965367965368,
+          "auroc": 0.48528138528138526
+        },
+        "D2_sequence_CNN": {
+          "ba": 0.4597402597402598,
+          "auroc": 0.46435786435786436
+        },
+        "E13/majority": {
+          "ba": 0.5,
+          "auroc": 0.5
+        },
+        "E13/size_order/logistic": {
+          "ba": 0.45238095238095233,
+          "auroc": 0.4764790764790765
+        },
+        "E13/size_order/gboost": {
+          "ba": 0.545021645021645,
+          "auroc": 0.5125541125541125
+        },
+        "E13/size_order/forest": {
+          "ba": 0.4948051948051948,
+          "auroc": 0.49927849927849927
+        },
+        "E13/timing_direction/logistic": {
+          "ba": 0.5125541125541125,
+          "auroc": 0.5362193362193363
+        },
+        "E13/timing_direction/gboost": {
+          "ba": 0.5281385281385281,
+          "auroc": 0.4923520923520924
+        },
+        "E13/timing_direction/forest": {
+          "ba": 0.5320346320346321,
+          "auroc": 0.548051948051948
+        },
+        "E13/joint/logistic": {
+          "ba": 0.5398268398268398,
+          "auroc": 0.5411255411255411
+        },
+        "E13/joint/gboost": {
+          "ba": 0.548051948051948,
+          "auroc": 0.5212121212121212
+        },
+        "E13/joint/forest": {
+          "ba": 0.5727272727272728,
+          "auroc": 0.554978354978355
+        }
+      },
+      "suite_size": 17,
+      "criterion": false,
+      "strongest_ba": [
+        "E13/joint/forest"
+      ],
+      "cnn_test_truncated": 0
+    },
+    "baseline|bucket1024|cancel": {
+      "ba": {
+        "point": 0.5305555555555556,
+        "ci95": [
+          0.5,
+          0.7850826866223208
+        ],
+        "invalid_draws": 12
+      },
+      "auroc": {
+        "point": 0.5101851851851852,
+        "ci95": [
+          0.5,
+          0.8620798683298684
+        ],
+        "invalid_draws": 12
+      },
+      "attackers": {
+        "majority": {
+          "ba": 0.5,
+          "auroc": 0.5
+        },
+        "D2_logistic": {
+          "ba": 0.4930555555555556,
+          "auroc": 0.4898148148148148
+        },
+        "D2_gradient_boosting": {
+          "ba": 0.5305555555555556,
+          "auroc": 0.48726851851851855
+        },
+        "D2_random_forest": {
+          "ba": 0.4805555555555555,
+          "auroc": 0.45601851851851855
+        },
+        "D2_extra_trees": {
+          "ba": 0.4527777777777778,
+          "auroc": 0.5101851851851852
+        },
+        "D2_leaf_fingerprint": {
+          "ba": 0.4527777777777778,
+          "auroc": 0.46944444444444444
+        },
+        "D2_sequence_CNN": {
+          "ba": 0.4458333333333333,
+          "auroc": 0.5009259259259259
+        }
+      },
+      "suite_size": 7,
+      "criterion": false,
+      "strongest_ba": [
+        "D2_gradient_boosting"
+      ],
+      "cnn_test_truncated": 0
+    },
+    "baseline|bucket1024|return": {
+      "ba": {
+        "point": 0.6982683982683983,
+        "ci95": [
+          0.5,
+          0.8691017316017313
+        ],
+        "invalid_draws": 0
+      },
+      "auroc": {
+        "point": 0.6891774891774892,
+        "ci95": [
+          0.5,
+          0.8874634502923975
+        ],
+        "invalid_draws": 0
+      },
+      "attackers": {
+        "majority": {
+          "ba": 0.5,
+          "auroc": 0.5
+        },
+        "D2_logistic": {
+          "ba": 0.5995670995670996,
+          "auroc": 0.6354978354978355
+        },
+        "D2_gradient_boosting": {
+          "ba": 0.574025974025974,
+          "auroc": 0.6694083694083695
+        },
+        "D2_random_forest": {
+          "ba": 0.6489177489177489,
+          "auroc": 0.6455988455988456
+        },
+        "D2_extra_trees": {
+          "ba": 0.6281385281385281,
+          "auroc": 0.6588744588744588
+        },
+        "D2_leaf_fingerprint": {
+          "ba": 0.6982683982683983,
+          "auroc": 0.6891774891774892
+        },
+        "D2_sequence_CNN": {
+          "ba": 0.5909090909090909,
+          "auroc": 0.6141414141414141
+        }
+      },
+      "suite_size": 7,
+      "criterion": false,
+      "strongest_ba": [
+        "D2_leaf_fingerprint"
+      ],
+      "cnn_test_truncated": 0
+    },
+    "baseline|tamaraw|cancel": {
+      "ba": {
+        "point": 0.5527777777777778,
+        "ci95": [
+          0.5,
+          0.687280771030771
+        ],
+        "invalid_draws": 12
+      },
+      "auroc": {
+        "point": 0.5900462962962963,
+        "ci95": [
+          0.5,
+          0.7756666666666667
+        ],
+        "invalid_draws": 12
+      },
+      "attackers": {
+        "majority": {
+          "ba": 0.5,
+          "auroc": 0.5
+        },
+        "D2_logistic": {
+          "ba": 0.5263888888888889,
+          "auroc": 0.5402777777777777
+        },
+        "D2_gradient_boosting": {
+          "ba": 0.5,
+          "auroc": 0.4863425925925926
+        },
+        "D2_random_forest": {
+          "ba": 0.5097222222222222,
+          "auroc": 0.48356481481481484
+        },
+        "D2_extra_trees": {
+          "ba": 0.5097222222222222,
+          "auroc": 0.4756944444444444
+        },
+        "D2_leaf_fingerprint": {
+          "ba": 0.5,
+          "auroc": 0.45
+        },
+        "D2_sequence_CNN": {
+          "ba": 0.5527777777777778,
+          "auroc": 0.5900462962962963
+        }
+      },
+      "suite_size": 7,
+      "criterion": false,
+      "strongest_ba": [
+        "D2_sequence_CNN"
+      ],
+      "cnn_test_truncated": 2
+    },
+    "baseline|tamaraw|return": {
+      "ba": {
+        "point": 0.5528138528138529,
+        "ci95": [
+          0.5111080586080586,
+          0.6444739057239055
+        ],
+        "invalid_draws": 0
+      },
+      "auroc": {
+        "point": 0.5940836940836941,
+        "ci95": [
+          0.5161525054466232,
+          0.7082492320869513
+        ],
+        "invalid_draws": 0
+      },
+      "attackers": {
+        "majority": {
+          "ba": 0.5,
+          "auroc": 0.5
+        },
+        "D2_logistic": {
+          "ba": 0.5528138528138529,
+          "auroc": 0.5653679653679654
+        },
+        "D2_gradient_boosting": {
+          "ba": 0.5103896103896104,
+          "auroc": 0.5421356421356421
+        },
+        "D2_random_forest": {
+          "ba": 0.532900432900433,
+          "auroc": 0.5652236652236652
+        },
+        "D2_extra_trees": {
+          "ba": 0.532900432900433,
+          "auroc": 0.5375180375180375
+        },
+        "D2_leaf_fingerprint": {
+          "ba": 0.5012987012987012,
+          "auroc": 0.5683982683982683
+        },
+        "D2_sequence_CNN": {
+          "ba": 0.5497835497835498,
+          "auroc": 0.5940836940836941
+        }
+      },
+      "suite_size": 7,
+      "criterion": false,
+      "strongest_ba": [
+        "D2_logistic"
+      ],
+      "cnn_test_truncated": 2
+    },
+    "baseline|tamaraw_fast|cancel": {
+      "ba": {
+        "point": 0.5777777777777777,
+        "ci95": [
+          0.5,
+          0.7180891009397108
+        ],
+        "invalid_draws": 12
+      },
+      "auroc": {
+        "point": 0.6092592592592593,
+        "ci95": [
+          0.5174831138129011,
+          0.7727936507936509
+        ],
+        "invalid_draws": 12
+      },
+      "attackers": {
+        "majority": {
+          "ba": 0.5,
+          "auroc": 0.5
+        },
+        "D2_logistic": {
+          "ba": 0.5625,
+          "auroc": 0.5835648148148148
+        },
+        "D2_gradient_boosting": {
+          "ba": 0.49583333333333335,
+          "auroc": 0.5861111111111111
+        },
+        "D2_random_forest": {
+          "ba": 0.5777777777777777,
+          "auroc": 0.5949074074074074
+        },
+        "D2_extra_trees": {
+          "ba": 0.5777777777777777,
+          "auroc": 0.5921296296296297
+        },
+        "D2_leaf_fingerprint": {
+          "ba": 0.5,
+          "auroc": 0.5027777777777778
+        },
+        "D2_sequence_CNN": {
+          "ba": 0.5666666666666667,
+          "auroc": 0.6092592592592593
+        }
+      },
+      "suite_size": 7,
+      "criterion": false,
+      "strongest_ba": [
+        "D2_random_forest",
+        "D2_extra_trees"
+      ],
+      "cnn_test_truncated": 1
+    },
+    "baseline|tamaraw_fast|return": {
+      "ba": {
+        "point": 0.5177489177489177,
+        "ci95": [
+          0.5,
+          0.6184367167919799
+        ],
+        "invalid_draws": 0
+      },
+      "auroc": {
+        "point": 0.5253968253968254,
+        "ci95": [
+          0.5,
+          0.59524360670194
+        ],
+        "invalid_draws": 0
+      },
+      "attackers": {
+        "majority": {
+          "ba": 0.5,
+          "auroc": 0.5
+        },
+        "D2_logistic": {
+          "ba": 0.4982683982683983,
+          "auroc": 0.5079365079365079
+        },
+        "D2_gradient_boosting": {
+          "ba": 0.49523809523809526,
+          "auroc": 0.5204906204906204
+        },
+        "D2_random_forest": {
+          "ba": 0.4982683982683983,
+          "auroc": 0.5144300144300145
+        },
+        "D2_extra_trees": {
+          "ba": 0.4982683982683983,
+          "auroc": 0.5253968253968254
+        },
+        "D2_leaf_fingerprint": {
+          "ba": 0.5177489177489177,
+          "auroc": 0.4888888888888889
+        },
+        "D2_sequence_CNN": {
+          "ba": 0.454978354978355,
+          "auroc": 0.42813852813852815
+        }
+      },
+      "suite_size": 7,
+      "criterion": false,
+      "strongest_ba": [
+        "D2_leaf_fingerprint"
+      ],
+      "cnn_test_truncated": 1
+    },
+    "baseline|front|cancel": {
+      "ba": {
+        "point": 0.5902777777777778,
+        "ci95": [
+          0.5,
+          0.699186507936508
+        ],
+        "invalid_draws": 12
+      },
+      "auroc": {
+        "point": 0.6226851851851852,
+        "ci95": [
+          0.5,
+          0.8036666666666666
+        ],
+        "invalid_draws": 12
+      },
+      "attackers": {
+        "majority": {
+          "ba": 0.5,
+          "auroc": 0.5
+        },
+        "D2_logistic": {
+          "ba": 0.5125,
+          "auroc": 0.49444444444444446
+        },
+        "D2_gradient_boosting": {
+          "ba": 0.4861111111111111,
+          "auroc": 0.5194444444444445
+        },
+        "D2_random_forest": {
+          "ba": 0.4958333333333333,
+          "auroc": 0.475
+        },
+        "D2_extra_trees": {
+          "ba": 0.4875,
+          "auroc": 0.5060185185185185
+        },
+        "D2_leaf_fingerprint": {
+          "ba": 0.4875,
+          "auroc": 0.49398148148148147
+        },
+        "D2_sequence_CNN": {
+          "ba": 0.5902777777777778,
+          "auroc": 0.6226851851851852
+        }
+      },
+      "suite_size": 7,
+      "criterion": false,
+      "strongest_ba": [
+        "D2_sequence_CNN"
+      ],
+      "cnn_test_truncated": 0
+    },
+    "baseline|front|return": {
+      "ba": {
+        "point": 0.6930735930735931,
+        "ci95": [
+          0.583311556329849,
+          0.8179908526948
+        ],
+        "invalid_draws": 0
+      },
+      "auroc": {
+        "point": 0.7134199134199134,
+        "ci95": [
+          0.5693795093795093,
+          0.8478889603889603
+        ],
+        "invalid_draws": 0
+      },
+      "attackers": {
+        "majority": {
+          "ba": 0.5,
+          "auroc": 0.5
+        },
+        "D2_logistic": {
+          "ba": 0.6930735930735931,
+          "auroc": 0.7134199134199134
+        },
+        "D2_gradient_boosting": {
+          "ba": 0.5571428571428572,
+          "auroc": 0.5751803751803751
+        },
+        "D2_random_forest": {
+          "ba": 0.629004329004329,
+          "auroc": 0.6545454545454545
+        },
+        "D2_extra_trees": {
+          "ba": 0.5515151515151515,
+          "auroc": 0.6248196248196248
+        },
+        "D2_leaf_fingerprint": {
+          "ba": 0.612987012987013,
+          "auroc": 0.638961038961039
+        },
+        "D2_sequence_CNN": {
+          "ba": 0.5692640692640693,
+          "auroc": 0.6274170274170274
+        }
+      },
+      "suite_size": 7,
+      "criterion": false,
+      "strongest_ba": [
+        "D2_logistic"
+      ],
+      "cnn_test_truncated": 0
+    },
+    "baseline|wtfpad|cancel": {
+      "ba": {
+        "point": 0.5194444444444444,
+        "ci95": [
+          0.5,
+          0.6409978015596483
+        ],
+        "invalid_draws": 12
+      },
+      "auroc": {
+        "point": 0.5601851851851852,
+        "ci95": [
+          0.5,
+          0.773513888888889
+        ],
+        "invalid_draws": 12
+      },
+      "attackers": {
+        "majority": {
+          "ba": 0.5,
+          "auroc": 0.5
+        },
+        "D2_logistic": {
+          "ba": 0.4930555555555556,
+          "auroc": 0.45555555555555555
+        },
+        "D2_gradient_boosting": {
+          "ba": 0.4555555555555556,
+          "auroc": 0.4708333333333333
+        },
+        "D2_random_forest": {
+          "ba": 0.49166666666666664,
+          "auroc": 0.5601851851851852
+        },
+        "D2_extra_trees": {
+          "ba": 0.47361111111111115,
+          "auroc": 0.5425925925925926
+        },
+        "D2_leaf_fingerprint": {
+          "ba": 0.5194444444444444,
+          "auroc": 0.5194444444444445
+        },
+        "D2_sequence_CNN": {
+          "ba": 0.45416666666666666,
+          "auroc": 0.5402777777777777
+        }
+      },
+      "suite_size": 7,
+      "criterion": false,
+      "strongest_ba": [
+        "D2_leaf_fingerprint"
+      ],
+      "cnn_test_truncated": 0
+    },
+    "baseline|wtfpad|return": {
+      "ba": {
+        "point": 0.6268398268398269,
+        "ci95": [
+          0.5,
+          0.7963497494020748
+        ],
+        "invalid_draws": 0
+      },
+      "auroc": {
+        "point": 0.6352092352092352,
+        "ci95": [
+          0.5,
+          0.827588287601626
+        ],
+        "invalid_draws": 0
+      },
+      "attackers": {
+        "majority": {
+          "ba": 0.5,
+          "auroc": 0.5
+        },
+        "D2_logistic": {
+          "ba": 0.5190476190476191,
+          "auroc": 0.5275613275613276
+        },
+        "D2_gradient_boosting": {
+          "ba": 0.5619047619047619,
+          "auroc": 0.559018759018759
+        },
+        "D2_random_forest": {
+          "ba": 0.5701298701298702,
+          "auroc": 0.5826839826839827
+        },
+        "D2_extra_trees": {
+          "ba": 0.5476190476190476,
+          "auroc": 0.5829725829725829
+        },
+        "D2_leaf_fingerprint": {
+          "ba": 0.5653679653679654,
+          "auroc": 0.5845598845598846
+        },
+        "D2_sequence_CNN": {
+          "ba": 0.6268398268398269,
+          "auroc": 0.6352092352092352
+        }
+      },
+      "suite_size": 7,
+      "criterion": false,
+      "strongest_ba": [
+        "D2_sequence_CNN"
+      ],
+      "cnn_test_truncated": 0
+    },
+    "baseline|walkie_talkie|cancel": {
+      "ba": {
+        "point": 0.5,
+        "ci95": [
+          0.5,
+          0.6697543416622364
+        ],
+        "invalid_draws": 12
+      },
+      "auroc": {
+        "point": 0.5259259259259259,
+        "ci95": [
+          0.5,
+          0.7310741521036473
+        ],
+        "invalid_draws": 12
+      },
+      "attackers": {
+        "majority": {
+          "ba": 0.5,
+          "auroc": 0.5
+        },
+        "D2_logistic": {
+          "ba": 0.4486111111111111,
+          "auroc": 0.5162037037037037
+        },
+        "D2_gradient_boosting": {
+          "ba": 0.4652777777777778,
+          "auroc": 0.47453703703703703
+        },
+        "D2_random_forest": {
+          "ba": 0.46944444444444444,
+          "auroc": 0.4842592592592593
+        },
+        "D2_extra_trees": {
+          "ba": 0.4666666666666667,
+          "auroc": 0.5259259259259259
+        },
+        "D2_leaf_fingerprint": {
+          "ba": 0.46944444444444444,
+          "auroc": 0.45625
+        },
+        "D2_sequence_CNN": {
+          "ba": 0.45138888888888884,
+          "auroc": 0.4703703703703704
+        }
+      },
+      "suite_size": 7,
+      "criterion": false,
+      "strongest_ba": [
+        "majority"
+      ],
+      "cnn_test_truncated": 0
+    },
+    "baseline|walkie_talkie|return": {
+      "ba": {
+        "point": 0.5666666666666667,
+        "ci95": [
+          0.516662912912913,
+          0.6779239341085269
+        ],
+        "invalid_draws": 0
+      },
+      "auroc": {
+        "point": 0.606926406926407,
+        "ci95": [
+          0.5,
+          0.7720595238095237
+        ],
+        "invalid_draws": 0
+      },
+      "attackers": {
+        "majority": {
+          "ba": 0.5,
+          "auroc": 0.5
+        },
+        "D2_logistic": {
+          "ba": 0.506926406926407,
+          "auroc": 0.5558441558441558
+        },
+        "D2_gradient_boosting": {
+          "ba": 0.5658008658008659,
+          "auroc": 0.606926406926407
+        },
+        "D2_random_forest": {
+          "ba": 0.5012987012987012,
+          "auroc": 0.5408369408369408
+        },
+        "D2_extra_trees": {
+          "ba": 0.5337662337662338,
+          "auroc": 0.5976911976911977
+        },
+        "D2_leaf_fingerprint": {
+          "ba": 0.4948051948051948,
+          "auroc": 0.5425685425685426
+        },
+        "D2_sequence_CNN": {
+          "ba": 0.5666666666666667,
+          "auroc": 0.5774891774891775
+        }
+      },
+      "suite_size": 7,
+      "criterion": false,
+      "strongest_ba": [
+        "D2_sequence_CNN"
+      ],
+      "cnn_test_truncated": 0
+    },
+    "baseline|front_shift|cancel": {
+      "ba": {
+        "point": 0.523611111111111,
+        "ci95": [
+          0.5,
+          0.6126906295009743
+        ],
+        "invalid_draws": 12
+      },
+      "auroc": {
+        "point": 0.5458333333333333,
+        "ci95": [
+          0.5,
+          0.7452941508581752
+        ],
+        "invalid_draws": 12
+      },
+      "attackers": {
+        "majority": {
+          "ba": 0.5,
+          "auroc": 0.5
+        },
+        "D2_logistic": {
+          "ba": 0.4875,
+          "auroc": 0.5300925925925926
+        },
+        "D2_gradient_boosting": {
+          "ba": 0.47916666666666663,
+          "auroc": 0.46620370370370373
+        },
+        "D2_random_forest": {
+          "ba": 0.5041666666666667,
+          "auroc": 0.5347222222222222
+        },
+        "D2_extra_trees": {
+          "ba": 0.49166666666666664,
+          "auroc": 0.5120370370370371
+        },
+        "D2_leaf_fingerprint": {
+          "ba": 0.523611111111111,
+          "auroc": 0.5293981481481481
+        },
+        "D2_sequence_CNN": {
+          "ba": 0.475,
+          "auroc": 0.5458333333333333
+        }
+      },
+      "suite_size": 7,
+      "criterion": false,
+      "strongest_ba": [
+        "D2_leaf_fingerprint"
+      ],
+      "cnn_test_truncated": 0
+    },
+    "baseline|front_shift|return": {
+      "ba": {
+        "point": 0.5597402597402598,
+        "ci95": [
+          0.5,
+          0.7106651688453158
+        ],
+        "invalid_draws": 0
+      },
+      "auroc": {
+        "point": 0.6184704184704185,
+        "ci95": [
+          0.5,
+          0.7641783686520528
+        ],
+        "invalid_draws": 0
+      },
+      "attackers": {
+        "majority": {
+          "ba": 0.5,
+          "auroc": 0.5
+        },
+        "D2_logistic": {
+          "ba": 0.5597402597402598,
+          "auroc": 0.6184704184704185
+        },
+        "D2_gradient_boosting": {
+          "ba": 0.506926406926407,
+          "auroc": 0.5425685425685426
+        },
+        "D2_random_forest": {
+          "ba": 0.4961038961038961,
+          "auroc": 0.5125541125541125
+        },
+        "D2_extra_trees": {
+          "ba": 0.45584415584415583,
+          "auroc": 0.5463203463203463
+        },
+        "D2_leaf_fingerprint": {
+          "ba": 0.46190476190476193,
+          "auroc": 0.4696969696969697
+        },
+        "D2_sequence_CNN": {
+          "ba": 0.5471861471861472,
+          "auroc": 0.5451659451659452
+        }
+      },
+      "suite_size": 7,
+      "criterion": false,
+      "strongest_ba": [
+        "D2_logistic"
+      ],
+      "cnn_test_truncated": 0
+    },
+    "rules|raw|cancel": {
+      "ba": {
+        "point": 0.9444444444444444,
+        "ci95": [
+          0.8333333333333333,
+          1.0
+        ],
+        "invalid_draws": 12
+      },
+      "auroc": {
+        "point": 0.9444444444444444,
+        "ci95": [
+          0.8448306405895691,
+          1.0
+        ],
+        "invalid_draws": 12
+      },
+      "attackers": {
+        "majority": {
+          "ba": 0.5,
+          "auroc": 0.5
+        },
+        "D2_logistic": {
+          "ba": 0.6388888888888888,
+          "auroc": 0.7319444444444444
+        },
+        "D2_gradient_boosting": {
+          "ba": 0.8472222222222222,
+          "auroc": 0.8513888888888889
+        },
+        "D2_random_forest": {
+          "ba": 0.6208333333333333,
+          "auroc": 0.6708333333333333
+        },
+        "D2_extra_trees": {
+          "ba": 0.6416666666666666,
+          "auroc": 0.749537037037037
+        },
+        "D2_leaf_fingerprint": {
+          "ba": 0.625,
+          "auroc": 0.6166666666666667
+        },
+        "D2_sequence_CNN": {
+          "ba": 0.4263888888888889,
+          "auroc": 0.5
+        },
+        "E13/majority": {
+          "ba": 0.5,
+          "auroc": 0.5
+        },
+        "E13/size_order/logistic": {
+          "ba": 0.6847222222222222,
+          "auroc": 0.7722222222222223
+        },
+        "E13/size_order/gboost": {
+          "ba": 0.8472222222222222,
+          "auroc": 0.8513888888888889
+        },
+        "E13/size_order/forest": {
+          "ba": 0.6208333333333333,
+          "auroc": 0.6756944444444445
+        },
+        "E13/size_order/profile_gboost": {
+          "ba": 0.9444444444444444,
+          "auroc": 0.9331018518518519
+        },
+        "E13/size_order/profile_count_rule": {
+          "ba": 0.9444444444444444,
+          "auroc": 0.9444444444444444
+        },
+        "E13/timing_direction/logistic": {
+          "ba": 0.5777777777777777,
+          "auroc": 0.5976851851851852
+        },
+        "E13/timing_direction/gboost": {
+          "ba": 0.48888888888888893,
+          "auroc": 0.5115740740740741
+        },
+        "E13/timing_direction/forest": {
+          "ba": 0.45416666666666666,
+          "auroc": 0.5
+        },
+        "E13/joint/logistic": {
+          "ba": 0.6472222222222223,
+          "auroc": 0.7486111111111111
+        },
+        "E13/joint/gboost": {
+          "ba": 0.8472222222222222,
+          "auroc": 0.8513888888888889
+        },
+        "E13/joint/forest": {
+          "ba": 0.6208333333333333,
+          "auroc": 0.6666666666666666
+        }
+      },
+      "suite_size": 19,
+      "criterion": false,
+      "strongest_ba": [
+        "E13/size_order/profile_gboost",
+        "E13/size_order/profile_count_rule"
+      ],
+      "cnn_test_truncated": 0
+    },
+    "rules|raw|return": {
+      "ba": {
+        "point": 0.8701298701298701,
+        "ci95": [
+          0.7840792796384901,
+          0.9762175324675323
+        ],
+        "invalid_draws": 0
+      },
+      "auroc": {
+        "point": 0.9054834054834054,
+        "ci95": [
+          0.7962962962962963,
+          0.9954984589853011
+        ],
+        "invalid_draws": 0
+      },
+      "attackers": {
+        "majority": {
+          "ba": 0.5,
+          "auroc": 0.5
+        },
+        "D2_logistic": {
+          "ba": 0.7467532467532467,
+          "auroc": 0.8178932178932179
+        },
+        "D2_gradient_boosting": {
+          "ba": 0.7826839826839826,
+          "auroc": 0.7985569985569986
+        },
+        "D2_random_forest": {
+          "ba": 0.7636363636363637,
+          "auroc": 0.7341991341991342
+        },
+        "D2_extra_trees": {
+          "ba": 0.654978354978355,
+          "auroc": 0.7165945165945166
+        },
+        "D2_leaf_fingerprint": {
+          "ba": 0.7207792207792207,
+          "auroc": 0.7298701298701299
+        },
+        "D2_sequence_CNN": {
+          "ba": 0.6108225108225108,
+          "auroc": 0.5696969696969697
+        },
+        "E13/majority": {
+          "ba": 0.5,
+          "auroc": 0.5
+        },
+        "E13/size_order/logistic": {
+          "ba": 0.8151515151515152,
+          "auroc": 0.8303030303030303
+        },
+        "E13/size_order/gboost": {
+          "ba": 0.7896103896103897,
+          "auroc": 0.7815295815295815
+        },
+        "E13/size_order/forest": {
+          "ba": 0.7125541125541126,
+          "auroc": 0.7262626262626263
+        },
+        "E13/size_order/profile_gboost": {
+          "ba": 0.8558441558441559,
+          "auroc": 0.9054834054834054
+        },
+        "E13/size_order/profile_count_rule": {
+          "ba": 0.8701298701298701,
+          "auroc": 0.8759018759018758
+        },
+        "E13/timing_direction/logistic": {
+          "ba": 0.5238095238095238,
+          "auroc": 0.4701298701298701
+        },
+        "E13/timing_direction/gboost": {
+          "ba": 0.561038961038961,
+          "auroc": 0.5572871572871573
+        },
+        "E13/timing_direction/forest": {
+          "ba": 0.5285714285714286,
+          "auroc": 0.5321789321789322
+        },
+        "E13/joint/logistic": {
+          "ba": 0.7913419913419913,
+          "auroc": 0.8222222222222222
+        },
+        "E13/joint/gboost": {
+          "ba": 0.7896103896103897,
+          "auroc": 0.7855699855699856
+        },
+        "E13/joint/forest": {
+          "ba": 0.6913419913419914,
+          "auroc": 0.7151515151515152
+        }
+      },
+      "suite_size": 19,
+      "criterion": false,
+      "strongest_ba": [
+        "E13/size_order/profile_count_rule"
+      ],
+      "cnn_test_truncated": 0
+    },
+    "rules|padding|cancel": {
+      "ba": {
+        "point": 0.7013888888888888,
+        "ci95": [
+          0.5,
+          0.8601974742599743
+        ],
+        "invalid_draws": 12
+      },
+      "auroc": {
+        "point": 0.6800925925925926,
+        "ci95": [
+          0.5,
+          0.8669398757309942
+        ],
+        "invalid_draws": 12
+      },
+      "attackers": {
+        "majority": {
+          "ba": 0.5,
+          "auroc": 0.5
+        },
+        "D2_logistic": {
+          "ba": 0.5527777777777778,
+          "auroc": 0.5777777777777777
+        },
+        "D2_gradient_boosting": {
+          "ba": 0.45694444444444443,
+          "auroc": 0.46064814814814814
+        },
+        "D2_random_forest": {
+          "ba": 0.5944444444444444,
+          "auroc": 0.5546296296296296
+        },
+        "D2_extra_trees": {
+          "ba": 0.575,
+          "auroc": 0.59375
+        },
+        "D2_leaf_fingerprint": {
+          "ba": 0.5319444444444444,
+          "auroc": 0.5199074074074074
+        },
+        "D2_sequence_CNN": {
+          "ba": 0.4263888888888889,
+          "auroc": 0.5314814814814814
+        },
+        "E13/majority": {
+          "ba": 0.5,
+          "auroc": 0.5
+        },
+        "E13/size_order/logistic": {
+          "ba": 0.7013888888888888,
+          "auroc": 0.6800925925925926
+        },
+        "E13/size_order/gboost": {
+          "ba": 0.5375,
+          "auroc": 0.6643518518518519
+        },
+        "E13/size_order/forest": {
+          "ba": 0.6888888888888889,
+          "auroc": 0.6458333333333334
+        },
+        "E13/size_order/profile_gboost": {
+          "ba": 0.5375,
+          "auroc": 0.6236111111111111
+        },
+        "E13/size_order/profile_count_rule": {
+          "ba": 0.5,
+          "auroc": 0.5
+        },
+        "E13/timing_direction/logistic": {
+          "ba": 0.5,
+          "auroc": 0.5180555555555556
+        },
+        "E13/timing_direction/gboost": {
+          "ba": 0.47638888888888886,
+          "auroc": 0.46944444444444444
+        },
+        "E13/timing_direction/forest": {
+          "ba": 0.5583333333333333,
+          "auroc": 0.5296296296296297
+        },
+        "E13/joint/logistic": {
+          "ba": 0.5486111111111112,
+          "auroc": 0.575
+        },
+        "E13/joint/gboost": {
+          "ba": 0.45694444444444443,
+          "auroc": 0.48055555555555557
+        },
+        "E13/joint/forest": {
+          "ba": 0.5944444444444444,
+          "auroc": 0.5476851851851852
+        }
+      },
+      "suite_size": 19,
+      "criterion": false,
+      "strongest_ba": [
+        "E13/size_order/logistic"
+      ],
+      "cnn_test_truncated": 0
+    },
+    "rules|padding|return": {
+      "ba": {
+        "point": 0.6186147186147186,
+        "ci95": [
+          0.507919254658385,
+          0.7797985473259069
+        ],
+        "invalid_draws": 0
+      },
+      "auroc": {
+        "point": 0.5627705627705628,
+        "ci95": [
+          0.5,
+          0.7875578300425861
+        ],
+        "invalid_draws": 0
+      },
+      "attackers": {
+        "majority": {
+          "ba": 0.5,
+          "auroc": 0.5
+        },
+        "D2_logistic": {
+          "ba": 0.4277056277056277,
+          "auroc": 0.4248196248196248
+        },
+        "D2_gradient_boosting": {
+          "ba": 0.6186147186147186,
+          "auroc": 0.5373737373737374
+        },
+        "D2_random_forest": {
+          "ba": 0.4714285714285714,
+          "auroc": 0.4629148629148629
+        },
+        "D2_extra_trees": {
+          "ba": 0.4991341991341991,
+          "auroc": 0.4754689754689755
+        },
+        "D2_leaf_fingerprint": {
+          "ba": 0.4991341991341991,
+          "auroc": 0.4937950937950938
+        },
+        "D2_sequence_CNN": {
+          "ba": 0.6108225108225108,
+          "auroc": 0.5627705627705628
+        },
+        "E13/majority": {
+          "ba": 0.5,
+          "auroc": 0.5
+        },
+        "E13/size_order/logistic": {
+          "ba": 0.4831168831168831,
+          "auroc": 0.47056277056277057
+        },
+        "E13/size_order/gboost": {
+          "ba": 0.5476190476190476,
+          "auroc": 0.45584415584415583
+        },
+        "E13/size_order/forest": {
+          "ba": 0.4904761904761905,
+          "auroc": 0.45007215007215007
+        },
+        "E13/size_order/profile_gboost": {
+          "ba": 0.5476190476190476,
+          "auroc": 0.45021645021645024
+        },
+        "E13/size_order/profile_count_rule": {
+          "ba": 0.5,
+          "auroc": 0.5
+        },
+        "E13/timing_direction/logistic": {
+          "ba": 0.4865800865800866,
+          "auroc": 0.45425685425685425
+        },
+        "E13/timing_direction/gboost": {
+          "ba": 0.44805194805194803,
+          "auroc": 0.4288600288600289
+        },
+        "E13/timing_direction/forest": {
+          "ba": 0.5060606060606061,
+          "auroc": 0.5337662337662338
+        },
+        "E13/joint/logistic": {
+          "ba": 0.4277056277056277,
+          "auroc": 0.4173160173160173
+        },
+        "E13/joint/gboost": {
+          "ba": 0.5363636363636364,
+          "auroc": 0.49783549783549785
+        },
+        "E13/joint/forest": {
+          "ba": 0.49783549783549785,
+          "auroc": 0.5079365079365079
+        }
+      },
+      "suite_size": 19,
+      "criterion": false,
+      "strongest_ba": [
+        "D2_gradient_boosting"
+      ],
+      "cnn_test_truncated": 0
+    },
+    "rules|shadow_serial|cancel": {
+      "ba": {
+        "point": 0.5819444444444444,
+        "ci95": [
+          0.5381980079265749,
+          0.7625443262411348
+        ],
+        "invalid_draws": 12
+      },
+      "auroc": {
+        "point": 0.5893518518518519,
+        "ci95": [
+          0.5443775720164609,
+          0.8049179614397005
+        ],
+        "invalid_draws": 12
+      },
+      "attackers": {
+        "majority": {
+          "ba": 0.5,
+          "auroc": 0.5
+        },
+        "D2_logistic": {
+          "ba": 0.48055555555555557,
+          "auroc": 0.5152777777777777
+        },
+        "D2_gradient_boosting": {
+          "ba": 0.4805555555555555,
+          "auroc": 0.4875
+        },
+        "D2_random_forest": {
+          "ba": 0.5569444444444445,
+          "auroc": 0.5185185185185185
+        },
+        "D2_extra_trees": {
+          "ba": 0.5208333333333334,
+          "auroc": 0.5879629629629629
+        },
+        "D2_leaf_fingerprint": {
+          "ba": 0.5611111111111111,
+          "auroc": 0.5893518518518519
+        },
+        "D2_sequence_CNN": {
+          "ba": 0.5,
+          "auroc": 0.3958333333333333
+        },
+        "E13/majority": {
+          "ba": 0.5,
+          "auroc": 0.5
+        },
+        "E13/size_order/logistic": {
+          "ba": 0.5819444444444444,
+          "auroc": 0.5356481481481481
+        },
+        "E13/size_order/gboost": {
+          "ba": 0.5013888888888889,
+          "auroc": 0.5421296296296296
+        },
+        "E13/size_order/forest": {
+          "ba": 0.5708333333333333,
+          "auroc": 0.580787037037037
+        },
+        "E13/size_order/profile_gboost": {
+          "ba": 0.4875,
+          "auroc": 0.5726851851851852
+        },
+        "E13/size_order/profile_count_rule": {
+          "ba": 0.5,
+          "auroc": 0.5
+        },
+        "E13/timing_direction/logistic": {
+          "ba": 0.49444444444444446,
+          "auroc": 0.4671296296296296
+        },
+        "E13/timing_direction/gboost": {
+          "ba": 0.4652777777777778,
+          "auroc": 0.4009259259259259
+        },
+        "E13/timing_direction/forest": {
+          "ba": 0.5152777777777777,
+          "auroc": 0.42962962962962964
+        },
+        "E13/joint/logistic": {
+          "ba": 0.46805555555555556,
+          "auroc": 0.5189814814814815
+        },
+        "E13/joint/gboost": {
+          "ba": 0.46111111111111114,
+          "auroc": 0.43657407407407406
+        },
+        "E13/joint/forest": {
+          "ba": 0.5111111111111111,
+          "auroc": 0.47824074074074074
+        },
+        "E13/flush_stripped_joint/logistic": {
+          "ba": 0.5013888888888889,
+          "auroc": 0.48148148148148145
+        },
+        "E13/flush_stripped_joint/gboost": {
+          "ba": 0.45416666666666666,
+          "auroc": 0.3787037037037037
+        },
+        "E13/flush_stripped_joint/forest": {
+          "ba": 0.4472222222222222,
+          "auroc": 0.43287037037037035
+        }
+      },
+      "suite_size": 22,
+      "criterion": false,
+      "strongest_ba": [
+        "E13/size_order/logistic"
+      ],
+      "cnn_test_truncated": 0
+    },
+    "rules|shadow_serial|return": {
+      "ba": {
+        "point": 0.6069264069264069,
+        "ci95": [
+          0.5706333118833119,
+          0.7264943736115135
+        ],
+        "invalid_draws": 0
+      },
+      "auroc": {
+        "point": 0.6255411255411255,
+        "ci95": [
+          0.6006385635062106,
+          0.7524363490297861
+        ],
+        "invalid_draws": 0
+      },
+      "attackers": {
+        "majority": {
+          "ba": 0.5,
+          "auroc": 0.5
+        },
+        "D2_logistic": {
+          "ba": 0.5251082251082251,
+          "auroc": 0.4886002886002886
+        },
+        "D2_gradient_boosting": {
+          "ba": 0.4774891774891775,
+          "auroc": 0.5518037518037519
+        },
+        "D2_random_forest": {
+          "ba": 0.5978354978354978,
+          "auroc": 0.6098124098124098
+        },
+        "D2_extra_trees": {
+          "ba": 0.5307359307359307,
+          "auroc": 0.5321789321789322
+        },
+        "D2_leaf_fingerprint": {
+          "ba": 0.5722943722943723,
+          "auroc": 0.6255411255411255
+        },
+        "D2_sequence_CNN": {
+          "ba": 0.5,
+          "auroc": 0.5577200577200577
+        },
+        "E13/majority": {
+          "ba": 0.5,
+          "auroc": 0.5
+        },
+        "E13/size_order/logistic": {
+          "ba": 0.5792207792207793,
+          "auroc": 0.5744588744588744
+        },
+        "E13/size_order/gboost": {
+          "ba": 0.5099567099567099,
+          "auroc": 0.5489177489177489
+        },
+        "E13/size_order/forest": {
+          "ba": 0.509090909090909,
+          "auroc": 0.49913419913419915
+        },
+        "E13/size_order/profile_gboost": {
+          "ba": 0.5,
+          "auroc": 0.5966810966810967
+        },
+        "E13/size_order/profile_count_rule": {
+          "ba": 0.5,
+          "auroc": 0.5
+        },
+        "E13/timing_direction/logistic": {
+          "ba": 0.5774891774891775,
+          "auroc": 0.5526695526695526
+        },
+        "E13/timing_direction/gboost": {
+          "ba": 0.5220779220779221,
+          "auroc": 0.5601731601731602
+        },
+        "E13/timing_direction/forest": {
+          "ba": 0.4727272727272727,
+          "auroc": 0.4883116883116883
+        },
+        "E13/joint/logistic": {
+          "ba": 0.5506493506493506,
+          "auroc": 0.5272727272727272
+        },
+        "E13/joint/gboost": {
+          "ba": 0.4974025974025974,
+          "auroc": 0.5552669552669552
+        },
+        "E13/joint/forest": {
+          "ba": 0.5229437229437229,
+          "auroc": 0.5183261183261183
+        },
+        "E13/flush_stripped_joint/logistic": {
+          "ba": 0.6069264069264069,
+          "auroc": 0.6216450216450217
+        },
+        "E13/flush_stripped_joint/gboost": {
+          "ba": 0.541991341991342,
+          "auroc": 0.5024531024531025
+        },
+        "E13/flush_stripped_joint/forest": {
+          "ba": 0.5398268398268398,
+          "auroc": 0.5330447330447331
+        }
+      },
+      "suite_size": 22,
+      "criterion": false,
+      "strongest_ba": [
+        "E13/flush_stripped_joint/logistic"
+      ],
+      "cnn_test_truncated": 0
+    },
+    "rules|shadow_parallel2|cancel": {
+      "ba": {
+        "point": 0.5694444444444444,
+        "ci95": [
+          0.5191098484848485,
+          0.7041102514506771
+        ],
+        "invalid_draws": 12
+      },
+      "auroc": {
+        "point": 0.580324074074074,
+        "ci95": [
+          0.5142283950617283,
+          0.76802398989899
+        ],
+        "invalid_draws": 12
+      },
+      "attackers": {
+        "majority": {
+          "ba": 0.5,
+          "auroc": 0.5
+        },
+        "D2_logistic": {
+          "ba": 0.49027777777777776,
+          "auroc": 0.5282407407407408
+        },
+        "D2_gradient_boosting": {
+          "ba": 0.46805555555555556,
+          "auroc": 0.4134259259259259
+        },
+        "D2_random_forest": {
+          "ba": 0.5111111111111111,
+          "auroc": 0.5662037037037037
+        },
+        "D2_extra_trees": {
+          "ba": 0.5694444444444444,
+          "auroc": 0.5518518518518518
+        },
+        "D2_leaf_fingerprint": {
+          "ba": 0.5402777777777777,
+          "auroc": 0.5277777777777778
+        },
+        "D2_sequence_CNN": {
+          "ba": 0.5111111111111111,
+          "auroc": 0.5597222222222222
+        },
+        "E13/majority": {
+          "ba": 0.5,
+          "auroc": 0.5
+        },
+        "E13/size_order/logistic": {
+          "ba": 0.5111111111111111,
+          "auroc": 0.49907407407407406
+        },
+        "E13/size_order/gboost": {
+          "ba": 0.5402777777777777,
+          "auroc": 0.580324074074074
+        },
+        "E13/size_order/forest": {
+          "ba": 0.5472222222222223,
+          "auroc": 0.512962962962963
+        },
+        "E13/size_order/profile_gboost": {
+          "ba": 0.4875,
+          "auroc": 0.5652777777777778
+        },
+        "E13/size_order/profile_count_rule": {
+          "ba": 0.5,
+          "auroc": 0.5
+        },
+        "E13/timing_direction/logistic": {
+          "ba": 0.48194444444444445,
+          "auroc": 0.47824074074074074
+        },
+        "E13/timing_direction/gboost": {
+          "ba": 0.5,
+          "auroc": 0.5092592592592593
+        },
+        "E13/timing_direction/forest": {
+          "ba": 0.49444444444444446,
+          "auroc": 0.5560185185185185
+        },
+        "E13/joint/logistic": {
+          "ba": 0.5527777777777778,
+          "auroc": 0.5583333333333333
+        },
+        "E13/joint/gboost": {
+          "ba": 0.4638888888888889,
+          "auroc": 0.48148148148148145
+        },
+        "E13/joint/forest": {
+          "ba": 0.4777777777777778,
+          "auroc": 0.5782407407407407
+        },
+        "E13/flush_stripped_joint/logistic": {
+          "ba": 0.5069444444444444,
+          "auroc": 0.5078703703703704
+        },
+        "E13/flush_stripped_joint/gboost": {
+          "ba": 0.48333333333333334,
+          "auroc": 0.4634259259259259
+        },
+        "E13/flush_stripped_joint/forest": {
+          "ba": 0.5083333333333333,
+          "auroc": 0.5412037037037037
+        }
+      },
+      "suite_size": 22,
+      "criterion": false,
+      "strongest_ba": [
+        "D2_extra_trees"
+      ],
+      "cnn_test_truncated": 0
+    },
+    "rules|shadow_parallel2|return": {
+      "ba": {
+        "point": 0.6021645021645021,
+        "ci95": [
+          0.5540649801587301,
+          0.7388953726453726
+        ],
+        "invalid_draws": 0
+      },
+      "auroc": {
+        "point": 0.638961038961039,
+        "ci95": [
+          0.5902011150935882,
+          0.7709020518776616
+        ],
+        "invalid_draws": 0
+      },
+      "attackers": {
+        "majority": {
+          "ba": 0.5,
+          "auroc": 0.5
+        },
+        "D2_logistic": {
+          "ba": 0.5588744588744589,
+          "auroc": 0.584992784992785
+        },
+        "D2_gradient_boosting": {
+          "ba": 0.5012987012987012,
+          "auroc": 0.5232323232323233
+        },
+        "D2_random_forest": {
+          "ba": 0.5636363636363636,
+          "auroc": 0.6002886002886003
+        },
+        "D2_extra_trees": {
+          "ba": 0.5705627705627706,
+          "auroc": 0.638961038961039
+        },
+        "D2_leaf_fingerprint": {
+          "ba": 0.561038961038961,
+          "auroc": 0.5998556998556999
+        },
+        "D2_sequence_CNN": {
+          "ba": 0.5186147186147186,
+          "auroc": 0.5079365079365079
+        },
+        "E13/majority": {
+          "ba": 0.5,
+          "auroc": 0.5
+        },
+        "E13/size_order/logistic": {
+          "ba": 0.6021645021645021,
+          "auroc": 0.5744588744588744
+        },
+        "E13/size_order/gboost": {
+          "ba": 0.5212121212121212,
+          "auroc": 0.5531024531024531
+        },
+        "E13/size_order/forest": {
+          "ba": 0.5510822510822511,
+          "auroc": 0.564935064935065
+        },
+        "E13/size_order/profile_gboost": {
+          "ba": 0.5056277056277056,
+          "auroc": 0.576046176046176
+        },
+        "E13/size_order/profile_count_rule": {
+          "ba": 0.5,
+          "auroc": 0.5
+        },
+        "E13/timing_direction/logistic": {
+          "ba": 0.5398268398268398,
+          "auroc": 0.5847041847041847
+        },
+        "E13/timing_direction/gboost": {
+          "ba": 0.4662337662337662,
+          "auroc": 0.48744588744588746
+        },
+        "E13/timing_direction/forest": {
+          "ba": 0.5173160173160173,
+          "auroc": 0.4636363636363636
+        },
+        "E13/joint/logistic": {
+          "ba": 0.4865800865800866,
+          "auroc": 0.5457431457431458
+        },
+        "E13/joint/gboost": {
+          "ba": 0.45584415584415583,
+          "auroc": 0.4548340548340548
+        },
+        "E13/joint/forest": {
+          "ba": 0.5229437229437229,
+          "auroc": 0.4871572871572872
+        },
+        "E13/flush_stripped_joint/logistic": {
+          "ba": 0.509090909090909,
+          "auroc": 0.5275613275613276
+        },
+        "E13/flush_stripped_joint/gboost": {
+          "ba": 0.5134199134199134,
+          "auroc": 0.4738816738816739
+        },
+        "E13/flush_stripped_joint/forest": {
+          "ba": 0.5398268398268398,
+          "auroc": 0.5235209235209235
+        }
+      },
+      "suite_size": 22,
+      "criterion": false,
+      "strongest_ba": [
+        "E13/size_order/logistic"
+      ],
+      "cnn_test_truncated": 0
+    },
+    "rules|tunnel_2ms|cancel": {
+      "ba": {
+        "point": 0.5305555555555556,
+        "ci95": [
+          0.5166666666666667,
+          0.6569791666666667
+        ],
+        "invalid_draws": 12
+      },
+      "auroc": {
+        "point": 0.5037037037037037,
+        "ci95": [
+          0.5,
+          0.686744660601368
+        ],
+        "invalid_draws": 12
+      },
+      "attackers": {
+        "majority": {
+          "ba": 0.5,
+          "auroc": 0.5
+        },
+        "D2_logistic": {
+          "ba": 0.46944444444444444,
+          "auroc": 0.5037037037037037
+        },
+        "D2_gradient_boosting": {
+          "ba": 0.5208333333333334,
+          "auroc": 0.46944444444444444
+        },
+        "D2_random_forest": {
+          "ba": 0.5277777777777778,
+          "auroc": 0.4615740740740741
+        },
+        "D2_extra_trees": {
+          "ba": 0.5,
+          "auroc": 0.4949074074074074
+        },
+        "D2_leaf_fingerprint": {
+          "ba": 0.5194444444444444,
+          "auroc": 0.49583333333333335
+        },
+        "D2_sequence_CNN": {
+          "ba": 0.44166666666666665,
+          "auroc": 0.43472222222222223
+        },
+        "E13/majority": {
+          "ba": 0.5,
+          "auroc": 0.5
+        },
+        "E13/size_order/logistic": {
+          "ba": 0.5152777777777778,
+          "auroc": 0.4041666666666667
+        },
+        "E13/size_order/gboost": {
+          "ba": 0.4902777777777778,
+          "auroc": 0.3814814814814815
+        },
+        "E13/size_order/forest": {
+          "ba": 0.4666666666666667,
+          "auroc": 0.4162037037037037
+        },
+        "E13/timing_direction/logistic": {
+          "ba": 0.5027777777777778,
+          "auroc": 0.44907407407407407
+        },
+        "E13/timing_direction/gboost": {
+          "ba": 0.4527777777777778,
+          "auroc": 0.43425925925925923
+        },
+        "E13/timing_direction/forest": {
+          "ba": 0.5305555555555556,
+          "auroc": 0.4652777777777778
+        },
+        "E13/joint/logistic": {
+          "ba": 0.4513888888888889,
+          "auroc": 0.43425925925925923
+        },
+        "E13/joint/gboost": {
+          "ba": 0.4486111111111111,
+          "auroc": 0.4097222222222222
+        },
+        "E13/joint/forest": {
+          "ba": 0.5152777777777777,
+          "auroc": 0.4162037037037037
+        }
+      },
+      "suite_size": 17,
+      "criterion": false,
+      "strongest_ba": [
+        "E13/timing_direction/forest"
+      ],
+      "cnn_test_truncated": 0
+    },
+    "rules|tunnel_2ms|return": {
+      "ba": {
+        "point": 0.5913419913419913,
+        "ci95": [
+          0.553030303030303,
+          0.6761914867814697
+        ],
+        "invalid_draws": 0
+      },
+      "auroc": {
+        "point": 0.5904761904761905,
+        "ci95": [
+          0.5518486590038314,
+          0.7153464963221061
+        ],
+        "invalid_draws": 0
+      },
+      "attackers": {
+        "majority": {
+          "ba": 0.5,
+          "auroc": 0.5
+        },
+        "D2_logistic": {
+          "ba": 0.5502164502164503,
+          "auroc": 0.5154401154401155
+        },
+        "D2_gradient_boosting": {
+          "ba": 0.5203463203463203,
+          "auroc": 0.49292929292929294
+        },
+        "D2_random_forest": {
+          "ba": 0.49393939393939396,
+          "auroc": 0.5593073593073593
+        },
+        "D2_extra_trees": {
+          "ba": 0.5151515151515151,
+          "auroc": 0.5365079365079365
+        },
+        "D2_leaf_fingerprint": {
+          "ba": 0.4454545454545455,
+          "auroc": 0.47359307359307357
+        },
+        "D2_sequence_CNN": {
+          "ba": 0.5528138528138529,
+          "auroc": 0.5772005772005772
+        },
+        "E13/majority": {
+          "ba": 0.5,
+          "auroc": 0.5
+        },
+        "E13/size_order/logistic": {
+          "ba": 0.4666666666666667,
+          "auroc": 0.42683982683982685
+        },
+        "E13/size_order/gboost": {
+          "ba": 0.5051948051948052,
+          "auroc": 0.4305916305916306
+        },
+        "E13/size_order/forest": {
+          "ba": 0.5372294372294373,
+          "auroc": 0.49754689754689757
+        },
+        "E13/timing_direction/logistic": {
+          "ba": 0.5082251082251082,
+          "auroc": 0.5194805194805194
+        },
+        "E13/timing_direction/gboost": {
+          "ba": 0.5307359307359307,
+          "auroc": 0.5318903318903319
+        },
+        "E13/timing_direction/forest": {
+          "ba": 0.5203463203463203,
+          "auroc": 0.5633477633477634
+        },
+        "E13/joint/logistic": {
+          "ba": 0.4835497835497835,
+          "auroc": 0.5021645021645021
+        },
+        "E13/joint/gboost": {
+          "ba": 0.5913419913419913,
+          "auroc": 0.5598845598845599
+        },
+        "E13/joint/forest": {
+          "ba": 0.4692640692640693,
+          "auroc": 0.5904761904761905
+        }
+      },
+      "suite_size": 17,
+      "criterion": false,
+      "strongest_ba": [
+        "E13/joint/gboost"
+      ],
+      "cnn_test_truncated": 0
+    },
+    "rules|tunnel_5ms|cancel": {
+      "ba": {
+        "point": 0.5833333333333333,
+        "ci95": [
+          0.5,
+          0.6786936090225564
+        ],
+        "invalid_draws": 12
+      },
+      "auroc": {
+        "point": 0.5388888888888889,
+        "ci95": [
+          0.5,
+          0.7003067960304803
+        ],
+        "invalid_draws": 12
+      },
+      "attackers": {
+        "majority": {
+          "ba": 0.5,
+          "auroc": 0.5
+        },
+        "D2_logistic": {
+          "ba": 0.4361111111111111,
+          "auroc": 0.34814814814814815
+        },
+        "D2_gradient_boosting": {
+          "ba": 0.5152777777777777,
+          "auroc": 0.5125
+        },
+        "D2_random_forest": {
+          "ba": 0.49583333333333335,
+          "auroc": 0.4537037037037037
+        },
+        "D2_extra_trees": {
+          "ba": 0.5,
+          "auroc": 0.3439814814814815
+        },
+        "D2_leaf_fingerprint": {
+          "ba": 0.49583333333333335,
+          "auroc": 0.4875
+        },
+        "D2_sequence_CNN": {
+          "ba": 0.5833333333333333,
+          "auroc": 0.5388888888888889
+        },
+        "E13/majority": {
+          "ba": 0.5,
+          "auroc": 0.5
+        },
+        "E13/size_order/logistic": {
+          "ba": 0.4652777777777778,
+          "auroc": 0.3800925925925926
+        },
+        "E13/size_order/gboost": {
+          "ba": 0.475,
+          "auroc": 0.4050925925925926
+        },
+        "E13/size_order/forest": {
+          "ba": 0.49583333333333335,
+          "auroc": 0.39305555555555555
+        },
+        "E13/timing_direction/logistic": {
+          "ba": 0.4125,
+          "auroc": 0.3490740740740741
+        },
+        "E13/timing_direction/gboost": {
+          "ba": 0.4708333333333333,
+          "auroc": 0.4824074074074074
+        },
+        "E13/timing_direction/forest": {
+          "ba": 0.5,
+          "auroc": 0.45092592592592595
+        },
+        "E13/joint/logistic": {
+          "ba": 0.4375,
+          "auroc": 0.36944444444444446
+        },
+        "E13/joint/gboost": {
+          "ba": 0.4986111111111111,
+          "auroc": 0.45601851851851855
+        },
+        "E13/joint/forest": {
+          "ba": 0.5,
+          "auroc": 0.40879629629629627
+        }
+      },
+      "suite_size": 17,
+      "criterion": false,
+      "strongest_ba": [
+        "D2_sequence_CNN"
+      ],
+      "cnn_test_truncated": 0
+    },
+    "rules|tunnel_5ms|return": {
+      "ba": {
+        "point": 0.5632034632034632,
+        "ci95": [
+          0.5571407121407121,
+          0.6395367713681668
+        ],
+        "invalid_draws": 0
+      },
+      "auroc": {
+        "point": 0.5945165945165946,
+        "ci95": [
+          0.5461122664554037,
+          0.7113907453819733
+        ],
+        "invalid_draws": 0
+      },
+      "attackers": {
+        "majority": {
+          "ba": 0.5,
+          "auroc": 0.5
+        },
+        "D2_logistic": {
+          "ba": 0.4627705627705628,
+          "auroc": 0.44877344877344877
+        },
+        "D2_gradient_boosting": {
+          "ba": 0.5411255411255411,
+          "auroc": 0.563059163059163
+        },
+        "D2_random_forest": {
+          "ba": 0.5025974025974026,
+          "auroc": 0.46002886002886
+        },
+        "D2_extra_trees": {
+          "ba": 0.49047619047619045,
+          "auroc": 0.47186147186147187
+        },
+        "D2_leaf_fingerprint": {
+          "ba": 0.4948051948051948,
+          "auroc": 0.4769119769119769
+        },
+        "D2_sequence_CNN": {
+          "ba": 0.5432900432900433,
+          "auroc": 0.5945165945165946
+        },
+        "E13/majority": {
+          "ba": 0.5,
+          "auroc": 0.5
+        },
+        "E13/size_order/logistic": {
+          "ba": 0.5536796536796537,
+          "auroc": 0.5367965367965368
+        },
+        "E13/size_order/gboost": {
+          "ba": 0.4805194805194805,
+          "auroc": 0.5298701298701298
+        },
+        "E13/size_order/forest": {
+          "ba": 0.5458874458874459,
+          "auroc": 0.5489177489177489
+        },
+        "E13/timing_direction/logistic": {
+          "ba": 0.49567099567099565,
+          "auroc": 0.4548340548340548
+        },
+        "E13/timing_direction/gboost": {
+          "ba": 0.4917748917748918,
+          "auroc": 0.5108225108225108
+        },
+        "E13/timing_direction/forest": {
+          "ba": 0.5632034632034632,
+          "auroc": 0.5295815295815296
+        },
+        "E13/joint/logistic": {
+          "ba": 0.5043290043290043,
+          "auroc": 0.48484848484848486
+        },
+        "E13/joint/gboost": {
+          "ba": 0.5164502164502165,
+          "auroc": 0.5339105339105339
+        },
+        "E13/joint/forest": {
+          "ba": 0.5233766233766234,
+          "auroc": 0.501010101010101
+        }
+      },
+      "suite_size": 17,
+      "criterion": false,
+      "strongest_ba": [
+        "E13/timing_direction/forest"
+      ],
+      "cnn_test_truncated": 0
+    },
+    "rules|bucket1024|cancel": {
+      "ba": {
+        "point": 0.5666666666666667,
+        "ci95": [
+          0.5,
+          0.8124000862564693
+        ],
+        "invalid_draws": 12
+      },
+      "auroc": {
+        "point": 0.6152777777777778,
+        "ci95": [
+          0.5,
+          0.8674789562289562
+        ],
+        "invalid_draws": 12
+      },
+      "attackers": {
+        "majority": {
+          "ba": 0.5,
+          "auroc": 0.5
+        },
+        "D2_logistic": {
+          "ba": 0.5666666666666667,
+          "auroc": 0.5902777777777778
+        },
+        "D2_gradient_boosting": {
+          "ba": 0.5638888888888889,
+          "auroc": 0.6152777777777778
+        },
+        "D2_random_forest": {
+          "ba": 0.5333333333333333,
+          "auroc": 0.5412037037037037
+        },
+        "D2_extra_trees": {
+          "ba": 0.5319444444444444,
+          "auroc": 0.5780092592592593
+        },
+        "D2_leaf_fingerprint": {
+          "ba": 0.5291666666666667,
+          "auroc": 0.5125
+        },
+        "D2_sequence_CNN": {
+          "ba": 0.4263888888888889,
+          "auroc": 0.5092592592592593
+        }
+      },
+      "suite_size": 7,
+      "criterion": false,
+      "strongest_ba": [
+        "D2_logistic"
+      ],
+      "cnn_test_truncated": 0
+    },
+    "rules|bucket1024|return": {
+      "ba": {
+        "point": 0.7077922077922079,
+        "ci95": [
+          0.5118117296092316,
+          0.8800018696581197
+        ],
+        "invalid_draws": 0
+      },
+      "auroc": {
+        "point": 0.7033189033189033,
+        "ci95": [
+          0.5209087557787343,
+          0.8888983585858585
+        ],
+        "invalid_draws": 0
+      },
+      "attackers": {
+        "majority": {
+          "ba": 0.5,
+          "auroc": 0.5
+        },
+        "D2_logistic": {
+          "ba": 0.5909090909090908,
+          "auroc": 0.587012987012987
+        },
+        "D2_gradient_boosting": {
+          "ba": 0.6281385281385281,
+          "auroc": 0.6972582972582972
+        },
+        "D2_random_forest": {
+          "ba": 0.6545454545454545,
+          "auroc": 0.6199134199134199
+        },
+        "D2_extra_trees": {
+          "ba": 0.577056277056277,
+          "auroc": 0.6362193362193362
+        },
+        "D2_leaf_fingerprint": {
+          "ba": 0.7077922077922079,
+          "auroc": 0.7033189033189033
+        },
+        "D2_sequence_CNN": {
+          "ba": 0.6108225108225108,
+          "auroc": 0.6320346320346321
+        }
+      },
+      "suite_size": 7,
+      "criterion": false,
+      "strongest_ba": [
+        "D2_leaf_fingerprint"
+      ],
+      "cnn_test_truncated": 0
+    },
+    "rules|tamaraw|cancel": {
+      "ba": {
+        "point": 0.5861111111111111,
+        "ci95": [
+          0.563094084533038,
+          0.7081153100775194
+        ],
+        "invalid_draws": 12
+      },
+      "auroc": {
+        "point": 0.6222222222222222,
+        "ci95": [
+          0.547888608305275,
+          0.7819910343747554
+        ],
+        "invalid_draws": 12
+      },
+      "attackers": {
+        "majority": {
+          "ba": 0.5,
+          "auroc": 0.5
+        },
+        "D2_logistic": {
+          "ba": 0.575,
+          "auroc": 0.6222222222222222
+        },
+        "D2_gradient_boosting": {
+          "ba": 0.5458333333333334,
+          "auroc": 0.5479166666666667
+        },
+        "D2_random_forest": {
+          "ba": 0.5583333333333333,
+          "auroc": 0.5849537037037037
+        },
+        "D2_extra_trees": {
+          "ba": 0.5194444444444444,
+          "auroc": 0.5974537037037037
+        },
+        "D2_leaf_fingerprint": {
+          "ba": 0.49583333333333335,
+          "auroc": 0.5694444444444444
+        },
+        "D2_sequence_CNN": {
+          "ba": 0.5861111111111111,
+          "auroc": 0.5719907407407407
+        }
+      },
+      "suite_size": 7,
+      "criterion": false,
+      "strongest_ba": [
+        "D2_sequence_CNN"
+      ],
+      "cnn_test_truncated": 0
+    },
+    "rules|tamaraw|return": {
+      "ba": {
+        "point": 0.5,
+        "ci95": [
+          0.5,
+          0.6031878306878307
+        ],
+        "invalid_draws": 0
+      },
+      "auroc": {
+        "point": 0.5,
+        "ci95": [
+          0.5,
+          0.631395243282498
+        ],
+        "invalid_draws": 0
+      },
+      "attackers": {
+        "majority": {
+          "ba": 0.5,
+          "auroc": 0.5
+        },
+        "D2_logistic": {
+          "ba": 0.4748917748917749,
+          "auroc": 0.42337662337662335
+        },
+        "D2_gradient_boosting": {
+          "ba": 0.4913419913419913,
+          "auroc": 0.42914862914862917
+        },
+        "D2_random_forest": {
+          "ba": 0.4597402597402598,
+          "auroc": 0.4277056277056277
+        },
+        "D2_extra_trees": {
+          "ba": 0.4748917748917749,
+          "auroc": 0.4202020202020202
+        },
+        "D2_leaf_fingerprint": {
+          "ba": 0.4731601731601731,
+          "auroc": 0.4340548340548341
+        },
+        "D2_sequence_CNN": {
+          "ba": 0.4640692640692641,
+          "auroc": 0.4883116883116883
+        }
+      },
+      "suite_size": 7,
+      "criterion": false,
+      "strongest_ba": [
+        "majority"
+      ],
+      "cnn_test_truncated": 0
+    },
+    "rules|tamaraw_fast|cancel": {
+      "ba": {
+        "point": 0.525,
+        "ci95": [
+          0.5,
+          0.6162790697674418
+        ],
+        "invalid_draws": 12
+      },
+      "auroc": {
+        "point": 0.5050925925925925,
+        "ci95": [
+          0.5,
+          0.6017188731284476
+        ],
+        "invalid_draws": 12
+      },
+      "attackers": {
+        "majority": {
+          "ba": 0.5,
+          "auroc": 0.5
+        },
+        "D2_logistic": {
+          "ba": 0.4569444444444445,
+          "auroc": 0.45
+        },
+        "D2_gradient_boosting": {
+          "ba": 0.5111111111111111,
+          "auroc": 0.4685185185185185
+        },
+        "D2_random_forest": {
+          "ba": 0.4722222222222222,
+          "auroc": 0.4726851851851852
+        },
+        "D2_extra_trees": {
+          "ba": 0.4597222222222222,
+          "auroc": 0.46087962962962964
+        },
+        "D2_leaf_fingerprint": {
+          "ba": 0.4986111111111111,
+          "auroc": 0.5050925925925925
+        },
+        "D2_sequence_CNN": {
+          "ba": 0.525,
+          "auroc": 0.49675925925925923
+        }
+      },
+      "suite_size": 7,
+      "criterion": false,
+      "strongest_ba": [
+        "D2_sequence_CNN"
+      ],
+      "cnn_test_truncated": 3
+    },
+    "rules|tamaraw_fast|return": {
+      "ba": {
+        "point": 0.5463203463203463,
+        "ci95": [
+          0.5144376832844575,
+          0.6146122685185182
+        ],
+        "invalid_draws": 0
+      },
+      "auroc": {
+        "point": 0.5337662337662338,
+        "ci95": [
+          0.5,
+          0.6351592156129192
+        ],
+        "invalid_draws": 0
+      },
+      "attackers": {
+        "majority": {
+          "ba": 0.5,
+          "auroc": 0.5
+        },
+        "D2_logistic": {
+          "ba": 0.5099567099567099,
+          "auroc": 0.5307359307359307
+        },
+        "D2_gradient_boosting": {
+          "ba": 0.5367965367965368,
+          "auroc": 0.5320346320346321
+        },
+        "D2_random_forest": {
+          "ba": 0.5099567099567099,
+          "auroc": 0.5337662337662338
+        },
+        "D2_extra_trees": {
+          "ba": 0.5012987012987012,
+          "auroc": 0.5323232323232323
+        },
+        "D2_leaf_fingerprint": {
+          "ba": 0.5463203463203463,
+          "auroc": 0.5059163059163059
+        },
+        "D2_sequence_CNN": {
+          "ba": 0.44372294372294374,
+          "auroc": 0.4668109668109668
+        }
+      },
+      "suite_size": 7,
+      "criterion": false,
+      "strongest_ba": [
+        "D2_leaf_fingerprint"
+      ],
+      "cnn_test_truncated": 3
+    },
+    "rules|front|cancel": {
+      "ba": {
+        "point": 0.5847222222222221,
+        "ci95": [
+          0.5,
+          0.6960267857142857
+        ],
+        "invalid_draws": 12
+      },
+      "auroc": {
+        "point": 0.5444444444444444,
+        "ci95": [
+          0.5,
+          0.695268039875883
+        ],
+        "invalid_draws": 12
+      },
+      "attackers": {
+        "majority": {
+          "ba": 0.5,
+          "auroc": 0.5
+        },
+        "D2_logistic": {
+          "ba": 0.49027777777777776,
+          "auroc": 0.4824074074074074
+        },
+        "D2_gradient_boosting": {
+          "ba": 0.46944444444444444,
+          "auroc": 0.40046296296296297
+        },
+        "D2_random_forest": {
+          "ba": 0.5027777777777778,
+          "auroc": 0.42268518518518516
+        },
+        "D2_extra_trees": {
+          "ba": 0.4986111111111111,
+          "auroc": 0.39490740740740743
+        },
+        "D2_leaf_fingerprint": {
+          "ba": 0.4875,
+          "auroc": 0.4685185185185185
+        },
+        "D2_sequence_CNN": {
+          "ba": 0.5847222222222221,
+          "auroc": 0.5444444444444444
+        }
+      },
+      "suite_size": 7,
+      "criterion": false,
+      "strongest_ba": [
+        "D2_sequence_CNN"
+      ],
+      "cnn_test_truncated": 0
+    },
+    "rules|front|return": {
+      "ba": {
+        "point": 0.6043290043290044,
+        "ci95": [
+          0.5,
+          0.7505904634581105
+        ],
+        "invalid_draws": 0
+      },
+      "auroc": {
+        "point": 0.6350649350649351,
+        "ci95": [
+          0.5,
+          0.786066485630646
+        ],
+        "invalid_draws": 0
+      },
+      "attackers": {
+        "majority": {
+          "ba": 0.5,
+          "auroc": 0.5
+        },
+        "D2_logistic": {
+          "ba": 0.5199134199134199,
+          "auroc": 0.5595959595959596
+        },
+        "D2_gradient_boosting": {
+          "ba": 0.4653679653679654,
+          "auroc": 0.5073593073593073
+        },
+        "D2_random_forest": {
+          "ba": 0.5151515151515151,
+          "auroc": 0.5682539682539682
+        },
+        "D2_extra_trees": {
+          "ba": 0.512987012987013,
+          "auroc": 0.625974025974026
+        },
+        "D2_leaf_fingerprint": {
+          "ba": 0.6043290043290044,
+          "auroc": 0.6350649350649351
+        },
+        "D2_sequence_CNN": {
+          "ba": 0.5883116883116883,
+          "auroc": 0.5497835497835498
+        }
+      },
+      "suite_size": 7,
+      "criterion": false,
+      "strongest_ba": [
+        "D2_leaf_fingerprint"
+      ],
+      "cnn_test_truncated": 0
+    },
+    "rules|wtfpad|cancel": {
+      "ba": {
+        "point": 0.5722222222222222,
+        "ci95": [
+          0.5,
+          0.7419956140350878
+        ],
+        "invalid_draws": 12
+      },
+      "auroc": {
+        "point": 0.5587962962962963,
+        "ci95": [
+          0.5,
+          0.8242399796195653
+        ],
+        "invalid_draws": 12
+      },
+      "attackers": {
+        "majority": {
+          "ba": 0.5,
+          "auroc": 0.5
+        },
+        "D2_logistic": {
+          "ba": 0.5722222222222222,
+          "auroc": 0.5314814814814814
+        },
+        "D2_gradient_boosting": {
+          "ba": 0.44583333333333336,
+          "auroc": 0.5097222222222222
+        },
+        "D2_random_forest": {
+          "ba": 0.48194444444444445,
+          "auroc": 0.5060185185185185
+        },
+        "D2_extra_trees": {
+          "ba": 0.5527777777777778,
+          "auroc": 0.5587962962962963
+        },
+        "D2_leaf_fingerprint": {
+          "ba": 0.4875,
+          "auroc": 0.5104166666666666
+        },
+        "D2_sequence_CNN": {
+          "ba": 0.5291666666666667,
+          "auroc": 0.5013888888888889
+        }
+      },
+      "suite_size": 7,
+      "criterion": false,
+      "strongest_ba": [
+        "D2_logistic"
+      ],
+      "cnn_test_truncated": 0
+    },
+    "rules|wtfpad|return": {
+      "ba": {
+        "point": 0.60995670995671,
+        "ci95": [
+          0.5,
+          0.7761962833914052
+        ],
+        "invalid_draws": 0
+      },
+      "auroc": {
+        "point": 0.6245310245310245,
+        "ci95": [
+          0.5,
+          0.8418735647944573
+        ],
+        "invalid_draws": 0
+      },
+      "attackers": {
+        "majority": {
+          "ba": 0.5,
+          "auroc": 0.5
+        },
+        "D2_logistic": {
+          "ba": 0.5077922077922078,
+          "auroc": 0.5512265512265512
+        },
+        "D2_gradient_boosting": {
+          "ba": 0.5134199134199134,
+          "auroc": 0.5382395382395382
+        },
+        "D2_random_forest": {
+          "ba": 0.5480519480519481,
+          "auroc": 0.5728715728715729
+        },
+        "D2_extra_trees": {
+          "ba": 0.4935064935064935,
+          "auroc": 0.5754689754689755
+        },
+        "D2_leaf_fingerprint": {
+          "ba": 0.5406926406926407,
+          "auroc": 0.5266955266955267
+        },
+        "D2_sequence_CNN": {
+          "ba": 0.60995670995671,
+          "auroc": 0.6245310245310245
+        }
+      },
+      "suite_size": 7,
+      "criterion": false,
+      "strongest_ba": [
+        "D2_sequence_CNN"
+      ],
+      "cnn_test_truncated": 0
+    },
+    "rules|walkie_talkie|cancel": {
+      "ba": {
+        "point": 0.5138888888888888,
+        "ci95": [
+          0.5,
+          0.6876736111111111
+        ],
+        "invalid_draws": 12
+      },
+      "auroc": {
+        "point": 0.6064814814814815,
+        "ci95": [
+          0.5,
+          0.7732986111111111
+        ],
+        "invalid_draws": 12
+      },
+      "attackers": {
+        "majority": {
+          "ba": 0.5,
+          "auroc": 0.5
+        },
+        "D2_logistic": {
+          "ba": 0.5138888888888888,
+          "auroc": 0.6064814814814815
+        },
+        "D2_gradient_boosting": {
+          "ba": 0.46944444444444444,
+          "auroc": 0.5212962962962963
+        },
+        "D2_random_forest": {
+          "ba": 0.4472222222222222,
+          "auroc": 0.512962962962963
+        },
+        "D2_extra_trees": {
+          "ba": 0.5055555555555555,
+          "auroc": 0.5773148148148148
+        },
+        "D2_leaf_fingerprint": {
+          "ba": 0.4638888888888889,
+          "auroc": 0.48009259259259257
+        },
+        "D2_sequence_CNN": {
+          "ba": 0.5069444444444444,
+          "auroc": 0.5949074074074074
+        }
+      },
+      "suite_size": 7,
+      "criterion": false,
+      "strongest_ba": [
+        "D2_logistic"
+      ],
+      "cnn_test_truncated": 0
+    },
+    "rules|walkie_talkie|return": {
+      "ba": {
+        "point": 0.5627705627705628,
+        "ci95": [
+          0.5,
+          0.6655869324473974
+        ],
+        "invalid_draws": 0
+      },
+      "auroc": {
+        "point": 0.5581529581529582,
+        "ci95": [
+          0.5,
+          0.7121282151716931
+        ],
+        "invalid_draws": 0
+      },
+      "attackers": {
+        "majority": {
+          "ba": 0.5,
+          "auroc": 0.5
+        },
+        "D2_logistic": {
+          "ba": 0.47532467532467537,
+          "auroc": 0.5044733044733045
+        },
+        "D2_gradient_boosting": {
+          "ba": 0.5627705627705628,
+          "auroc": 0.5581529581529582
+        },
+        "D2_random_forest": {
+          "ba": 0.47835497835497837,
+          "auroc": 0.5255411255411255
+        },
+        "D2_extra_trees": {
+          "ba": 0.49653679653679655,
+          "auroc": 0.5226551226551227
+        },
+        "D2_leaf_fingerprint": {
+          "ba": 0.5116883116883117,
+          "auroc": 0.5278499278499279
+        },
+        "D2_sequence_CNN": {
+          "ba": 0.5367965367965368,
+          "auroc": 0.5012987012987012
+        }
+      },
+      "suite_size": 7,
+      "criterion": false,
+      "strongest_ba": [
+        "D2_gradient_boosting"
+      ],
+      "cnn_test_truncated": 0
+    },
+    "rules|front_shift|cancel": {
+      "ba": {
+        "point": 0.5125,
+        "ci95": [
+          0.5,
+          0.7012319401444789
+        ],
+        "invalid_draws": 12
+      },
+      "auroc": {
+        "point": 0.5009259259259259,
+        "ci95": [
+          0.5,
+          0.7057910750507099
+        ],
+        "invalid_draws": 12
+      },
+      "attackers": {
+        "majority": {
+          "ba": 0.5,
+          "auroc": 0.5
+        },
+        "D2_logistic": {
+          "ba": 0.5125,
+          "auroc": 0.5009259259259259
+        },
+        "D2_gradient_boosting": {
+          "ba": 0.43333333333333335,
+          "auroc": 0.37592592592592594
+        },
+        "D2_random_forest": {
+          "ba": 0.42638888888888893,
+          "auroc": 0.4134259259259259
+        },
+        "D2_extra_trees": {
+          "ba": 0.45,
+          "auroc": 0.42777777777777776
+        },
+        "D2_leaf_fingerprint": {
+          "ba": 0.4041666666666667,
+          "auroc": 0.40069444444444446
+        },
+        "D2_sequence_CNN": {
+          "ba": 0.4305555555555556,
+          "auroc": 0.3921296296296296
+        }
+      },
+      "suite_size": 7,
+      "criterion": false,
+      "strongest_ba": [
+        "D2_logistic"
+      ],
+      "cnn_test_truncated": 0
+    },
+    "rules|front_shift|return": {
+      "ba": {
+        "point": 0.629004329004329,
+        "ci95": [
+          0.5,
+          0.7718212365591396
+        ],
+        "invalid_draws": 0
+      },
+      "auroc": {
+        "point": 0.6548340548340549,
+        "ci95": [
+          0.5,
+          0.8273385885885884
+        ],
+        "invalid_draws": 0
+      },
+      "attackers": {
+        "majority": {
+          "ba": 0.5,
+          "auroc": 0.5
+        },
+        "D2_logistic": {
+          "ba": 0.622077922077922,
+          "auroc": 0.6063492063492063
+        },
+        "D2_gradient_boosting": {
+          "ba": 0.4536796536796537,
+          "auroc": 0.5018759018759019
+        },
+        "D2_random_forest": {
+          "ba": 0.5242424242424242,
+          "auroc": 0.6017316017316018
+        },
+        "D2_extra_trees": {
+          "ba": 0.629004329004329,
+          "auroc": 0.6548340548340549
+        },
+        "D2_leaf_fingerprint": {
+          "ba": 0.5766233766233766,
+          "auroc": 0.5773448773448774
+        },
+        "D2_sequence_CNN": {
+          "ba": 0.5025974025974026,
+          "auroc": 0.5177489177489177
+        }
+      },
+      "suite_size": 7,
+      "criterion": false,
+      "strongest_ba": [
+        "D2_extra_trees"
+      ],
+      "cnn_test_truncated": 0
+    }
+  },
+  "resources": {
+    "baseline|raw": {
+      "wire_ratio": 1.0,
+      "call_ratio": 1.0,
+      "last_real_p95_ms": 15.445570000000002,
+      "traffic_p95_ms": 15.466340000000002,
+      "evidence": "measured_E13",
+      "ap_gap_caps": 0
+    },
+    "baseline|padding": {
+      "wire_ratio": 3.9222222867916194,
+      "call_ratio": 1.0,
+      "last_real_p95_ms": 16.64299,
+      "traffic_p95_ms": 16.67819,
+      "evidence": "measured_E13",
+      "ap_gap_caps": 0
+    },
+    "baseline|shadow_serial": {
+      "wire_ratio": 15.106016216696373,
+      "call_ratio": 3.8266533066132267,
+      "last_real_p95_ms": 26.230595000000005,
+      "traffic_p95_ms": 46.621235,
+      "evidence": "measured_E13",
+      "ap_gap_caps": 0
+    },
+    "baseline|shadow_parallel2": {
+      "wire_ratio": 15.106016216696373,
+      "call_ratio": 3.8266533066132267,
+      "last_real_p95_ms": 20.848415000000003,
+      "traffic_p95_ms": 37.409020000000005,
+      "evidence": "measured_E13",
+      "ap_gap_caps": 0
+    },
+    "baseline|tunnel_2ms": {
+      "wire_ratio": 125.70596258719982,
+      "call_ratio": 1.0,
+      "last_real_p95_ms": 56.40077500000001,
+      "traffic_p95_ms": 270.432055,
+      "evidence": "measured_E13",
+      "ap_gap_caps": 0
+    },
+    "baseline|tunnel_5ms": {
+      "wire_ratio": 125.70596258719982,
+      "call_ratio": 1.0,
+      "last_real_p95_ms": 112.304825,
+      "traffic_p95_ms": 666.6402999999999,
+      "evidence": "measured_E13",
+      "ap_gap_caps": 0
+    },
+    "baseline|bucket1024": {
+      "wire_ratio": 2.247268506949835,
+      "call_ratio": 1.0,
+      "last_real_p95_ms": 13.847135000000002,
+      "traffic_p95_ms": 13.847135000000002,
+      "evidence": "offline_trace_transform",
+      "ap_gap_caps": 0
+    },
+    "baseline|tamaraw": {
+      "wire_ratio": 12.148865852372774,
+      "call_ratio": 1.0,
+      "last_real_p95_ms": 648.0000000000003,
+      "traffic_p95_ms": 8000.0,
+      "evidence": "offline_trace_transform",
+      "ap_gap_caps": 0
+    },
+    "baseline|tamaraw_fast": {
+      "wire_ratio": 11.991671654652608,
+      "call_ratio": 1.0,
+      "last_real_p95_ms": 70.80000000000003,
+      "traffic_p95_ms": 800.0,
+      "evidence": "offline_trace_transform",
+      "ap_gap_caps": 0
+    },
+    "baseline|front": {
+      "wire_ratio": 2.5074720167762363,
+      "call_ratio": 1.0,
+      "last_real_p95_ms": 13.847135000000002,
+      "traffic_p95_ms": 13.847135000000002,
+      "evidence": "offline_trace_transform",
+      "ap_gap_caps": 0
+    },
+    "baseline|wtfpad": {
+      "wire_ratio": 1.8809408572915776,
+      "call_ratio": 1.0,
+      "last_real_p95_ms": 13.847135000000002,
+      "traffic_p95_ms": 13.847135000000002,
+      "evidence": "offline_trace_transform",
+      "ap_gap_caps": 0
+    },
+    "baseline|walkie_talkie": {
+      "wire_ratio": 2.040380686407745,
+      "call_ratio": 1.0,
+      "last_real_p95_ms": 16.6094815625,
+      "traffic_p95_ms": 16.6094816,
+      "evidence": "offline_trace_transform",
+      "ap_gap_caps": 0
+    },
+    "baseline|front_shift": {
+      "wire_ratio": 2.3260249999792455,
+      "call_ratio": 1.0,
+      "last_real_p95_ms": 13.847135000000002,
+      "traffic_p95_ms": 13.847135000000002,
+      "evidence": "offline_trace_transform",
+      "ap_gap_caps": 0
+    },
+    "rules|raw": {
+      "wire_ratio": 1.0,
+      "call_ratio": 1.0,
+      "last_real_p95_ms": 15.659645000000001,
+      "traffic_p95_ms": 15.695095,
+      "evidence": "measured_E13",
+      "ap_gap_caps": 0
+    },
+    "rules|padding": {
+      "wire_ratio": 3.9502948867085625,
+      "call_ratio": 1.0,
+      "last_real_p95_ms": 15.497540000000004,
+      "traffic_p95_ms": 15.538180000000004,
+      "evidence": "measured_E13",
+      "ap_gap_caps": 0
+    },
+    "rules|shadow_serial": {
+      "wire_ratio": 15.468457805256072,
+      "call_ratio": 3.8821138211382116,
+      "last_real_p95_ms": 23.859700000000014,
+      "traffic_p95_ms": 41.82594,
+      "evidence": "measured_E13",
+      "ap_gap_caps": 0
+    },
+    "rules|shadow_parallel2": {
+      "wire_ratio": 15.468457805256072,
+      "call_ratio": 3.8821138211382116,
+      "last_real_p95_ms": 20.70062,
+      "traffic_p95_ms": 36.54818,
+      "evidence": "measured_E13",
+      "ap_gap_caps": 0
+    },
+    "rules|tunnel_2ms": {
+      "wire_ratio": 128.38382074143914,
+      "call_ratio": 1.0,
+      "last_real_p95_ms": 48.84085000000002,
+      "traffic_p95_ms": 267.913905,
+      "evidence": "measured_E13",
+      "ap_gap_caps": 0
+    },
+    "rules|tunnel_5ms": {
+      "wire_ratio": 128.38382074143914,
+      "call_ratio": 1.0,
+      "last_real_p95_ms": 112.94829000000003,
+      "traffic_p95_ms": 666.55638,
+      "evidence": "measured_E13",
+      "ap_gap_caps": 0
+    },
+    "rules|bucket1024": {
+      "wire_ratio": 2.251910235061504,
+      "call_ratio": 1.0,
+      "last_real_p95_ms": 13.221405000000003,
+      "traffic_p95_ms": 13.221405000000003,
+      "evidence": "offline_trace_transform",
+      "ap_gap_caps": 0
+    },
+    "rules|tamaraw": {
+      "wire_ratio": 12.935165621534361,
+      "call_ratio": 1.0,
+      "last_real_p95_ms": 648.0000000000003,
+      "traffic_p95_ms": 10000.0,
+      "evidence": "offline_trace_transform",
+      "ap_gap_caps": 0
+    },
+    "rules|tamaraw_fast": {
+      "wire_ratio": 13.944292017540587,
+      "call_ratio": 1.0,
+      "last_real_p95_ms": 66.18,
+      "traffic_p95_ms": 1030.0000000000011,
+      "evidence": "offline_trace_transform",
+      "ap_gap_caps": 0
+    },
+    "rules|front": {
+      "wire_ratio": 2.4631857938879262,
+      "call_ratio": 1.0,
+      "last_real_p95_ms": 13.221405000000003,
+      "traffic_p95_ms": 13.221405000000003,
+      "evidence": "offline_trace_transform",
+      "ap_gap_caps": 0
+    },
+    "rules|wtfpad": {
+      "wire_ratio": 1.8581686501005565,
+      "call_ratio": 1.0,
+      "last_real_p95_ms": 13.221405000000003,
+      "traffic_p95_ms": 13.221405000000003,
+      "evidence": "offline_trace_transform",
+      "ap_gap_caps": 0
+    },
+    "rules|walkie_talkie": {
+      "wire_ratio": 2.2333801918883265,
+      "call_ratio": 1.0,
+      "last_real_p95_ms": 15.778926874999998,
+      "traffic_p95_ms": 15.77892695,
+      "evidence": "offline_trace_transform",
+      "ap_gap_caps": 0
+    },
+    "rules|front_shift": {
+      "wire_ratio": 2.294386469465066,
+      "call_ratio": 1.0,
+      "last_real_p95_ms": 13.221405000000003,
+      "traffic_p95_ms": 13.221405000000003,
+      "evidence": "offline_trace_transform",
+      "ap_gap_caps": 0
+    }
+  },
+  "fit_sha256": "82837f3f91dc9d41a51069e5b98adeb55a6167618016f2c84b33550fbd1b6aca",
+  "protocol_sha256": "0fb1ad35140d0583d9a0935a5bb4a637f650a0e332fc32b1a43afd37f63609da"
+}

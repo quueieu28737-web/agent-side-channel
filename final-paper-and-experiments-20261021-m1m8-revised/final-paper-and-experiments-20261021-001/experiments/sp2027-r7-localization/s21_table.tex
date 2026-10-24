@@ -1,0 +1,21 @@
+\begin{tabular}{lllrrl}
+\toprule
+Target & Prompt & Oracle view & BA [95\% CI] & AUROC [95\% CI] & BA winner \\
+\midrule
+Cancel & baseline & full & 0.917 [0.821, 1.000] & 0.979 [0.949, 1.000] & network\_decode\_count\_rule \\
+Cancel & baseline & no\_writes & 0.628 [0.546, 0.753] & 0.611 [0.533, 0.768] & ext\_D2\_knn \\
+Cancel & baseline & writes\_only & 0.917 [0.821, 1.000] & 0.973 [0.936, 1.000] & network\_decode\_count\_rule \\
+Cancel & rules & full & 0.907 [0.815, 0.989] & 0.978 [0.954, 0.999] & network\_decode\_count\_rule \\
+Cancel & rules & no\_writes & 0.687 [0.594, 0.802] & 0.690 [0.593, 0.822] & ext\_D2\_knn \\
+Cancel & rules & writes\_only & 0.907 [0.814, 0.989] & 0.968 [0.930, 0.998] & network\_decode\_count\_rule \\
+Return & baseline & full & 0.855 [0.767, 0.934] & 0.897 [0.849, 0.965] & network\_decode\_count\_rule \\
+Return & baseline & no\_writes & 0.599 [0.522, 0.718] & 0.657 [0.571, 0.789] & D2\_logreg \\
+Return & baseline & writes\_only & 0.849 [0.788, 0.940] & 0.906 [0.864, 0.973] & network\_decode\_gboost \\
+Return & rules & full & 0.855 [0.766, 0.936] & 0.880 [0.805, 0.955] & network\_decode\_count\_rule \\
+Return & rules & no\_writes & 0.665 [0.565, 0.777] & 0.664 [0.579, 0.807] & ext\_network\_decode\_rf \\
+Return & rules & writes\_only & 0.851 [0.786, 0.937] & 0.917 [0.862, 0.978] & ext\_D2\_rf \\
+\bottomrule
+\end{tabular}
+% Posthoc original 690 Sol episodes; original R5 customer 5-fold OOF; union of all 9 legacy attacks plus CNN and k-FP-style (11 total).
+% BA confidence intervals: 2000 customer-cluster bootstrap draws, 11-attack maximum reselected each draw; conditional on fitted attacks.
+% Oracle uses true write-call identities to retain or remove exchanges. Direction/length only, timing identically zero. Full OOF reused from verified R7 crossfit.

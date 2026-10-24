@@ -1,0 +1,113 @@
+{
+ "task": 32,
+ "repeat": 0,
+ "seed": 0,
+ "prompt": "baseline",
+ "user": "olivia_lopez_3865",
+ "has_cancel": 1,
+ "has_return": 1,
+ "native_reward": 0,
+ "db_eq": false,
+ "status": "transfer",
+ "condition": "raw",
+ "calls": [
+  {
+   "name": "find_user_id_by_name_zip",
+   "kind": "real",
+   "req": 113,
+   "resp": 17,
+   "err": false
+  },
+  {
+   "name": "get_user_details",
+   "kind": "real",
+   "req": 75,
+   "resp": 423,
+   "err": false
+  },
+  {
+   "name": "get_order_details",
+   "kind": "real",
+   "req": 69,
+   "resp": 623,
+   "err": false
+  },
+  {
+   "name": "get_order_details",
+   "kind": "real",
+   "req": 69,
+   "resp": 539,
+   "err": false
+  },
+  {
+   "name": "get_order_details",
+   "kind": "real",
+   "req": 69,
+   "resp": 593,
+   "err": false
+  },
+  {
+   "name": "transfer_to_human_agents",
+   "kind": "real",
+   "req": 346,
+   "resp": 19,
+   "err": false
+  }
+ ],
+ "records": [
+  [
+   "c2s",
+   141
+  ],
+  [
+   "s2c",
+   45
+  ],
+  [
+   "c2s",
+   103
+  ],
+  [
+   "s2c",
+   451
+  ],
+  [
+   "c2s",
+   97
+  ],
+  [
+   "s2c",
+   651
+  ],
+  [
+   "c2s",
+   97
+  ],
+  [
+   "s2c",
+   567
+  ],
+  [
+   "c2s",
+   97
+  ],
+  [
+   "s2c",
+   621
+  ],
+  [
+   "c2s",
+   374
+  ],
+  [
+   "s2c",
+   47
+  ]
+ ],
+ "application_wire_bytes": 3351,
+ "framing_overflow_messages": 0,
+ "template_flags": null,
+ "calibration_sha256": "f5d4968501627e9f06e3a27bf71a02225cbbe3465e357b590cc19f190d2ec240",
+ "episode_sha256": "a1b38274ba7582236fa1f91aba37720fc95ba0416cef434ca5b5ba0012375cbf",
+ "measurement": "TLS 1.2 loopback replay of real model trajectory; provider link and wall-clock timing excluded"
+}

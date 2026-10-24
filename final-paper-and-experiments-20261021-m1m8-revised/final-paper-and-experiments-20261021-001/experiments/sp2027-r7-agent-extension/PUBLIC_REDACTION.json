@@ -1,0 +1,7 @@
+{
+ "rule": "Parse JSON/JSONL, recursively replace any Windows drive:/Users/user-component prefix, including case and short-name aliases (backslash or slash spelling) by <USER_HOME>; serialize UTF-8. No task/response/reward/tool scientific values otherwise changed. Original files retained byte-for-byte.",
+ "replacements": 9851,
+ "credential_scan": "No Authorization/Bearer/access_token/refresh_token/api_key/apiKey patterns; archive construction fails closed if any present.",
+ "absolute_user_path_scan": "No drive:/Users path in public copies; fails closed.",
+ "originals_retained": true
+}

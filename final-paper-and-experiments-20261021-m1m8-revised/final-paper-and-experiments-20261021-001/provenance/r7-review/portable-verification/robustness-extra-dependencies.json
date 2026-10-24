@@ -1,0 +1,132 @@
+{
+  "version": 1,
+  "scope": "R7 robustness relocated verification support; no primary/frozen file changed",
+  "direct_import_source_dependencies": [
+    {
+      "sha256": "328abd3c32bde78a8117cfe3599b4779e5ca444c0ecb0b16a02994fffbc9fe62",
+      "authority_manifest": "experiments/sp2027-r6-timing/attacker_freeze.json",
+      "authority_table": "source_sha256",
+      "already_covered_by_L_closure_36": true,
+      "authority_key": "analyze.py",
+      "relative_path": "experiments/sp2027-r6-timing/analyze.py"
+    },
+    {
+      "sha256": "d94140cc97df06692cf4301c584d4cd3b929c52305e303c08f2bf7e116c450ff",
+      "authority_manifest": "experiments/sp2027-r6-timing/attacker_freeze.json",
+      "authority_table": "source_sha256",
+      "already_covered_by_L_closure_36": true,
+      "authority_key": "features.py",
+      "relative_path": "experiments/sp2027-r6-timing/features.py"
+    },
+    {
+      "sha256": "a3261bb899a332b9b0bd95fa1d6be46f2caea51badb29f36c80dfb49ed0685cc",
+      "authority_manifest": "experiments/sp2027-r6-timing/attacker_freeze.json",
+      "authority_table": "source_sha256",
+      "already_covered_by_L_closure_36": true,
+      "authority_key": "profile_attack.py",
+      "relative_path": "experiments/sp2027-r6-timing/profile_attack.py"
+    },
+    {
+      "sha256": "8a4ecae734adbbe1057c22bd2d83def9edc4d8048ddbf6ed83dbb7fb4bde897c",
+      "authority_manifest": "experiments/sp2027-r6-timing/frozen.json",
+      "authority_table": "source_sha256",
+      "already_covered_by_L_closure_36": true,
+      "authority_key": "r6common.py",
+      "relative_path": "experiments/sp2027-r6-timing/r6common.py"
+    }
+  ],
+  "direct_r6_data_dependencies": [
+    {
+      "authority": "sp2027-r7-robustness/freeze.json:r6_captures_sha256",
+      "copied_sha256": "9c22755ae3c3a346638cb8f7ce9eed471c5a86e124953c46cf5a73a2cc56bf89",
+      "relative_path": "experiments/sp2027-r6-timing/captures.zip",
+      "sha256": "9c22755ae3c3a346638cb8f7ce9eed471c5a86e124953c46cf5a73a2cc56bf89",
+      "bytes": 20322373
+    },
+    {
+      "authority": "sp2027-r6-timing/reproduction_validation.json:outputs",
+      "copied_sha256": "64c963c0fd2fff497dcaed0af2db5a6d5960f44e35f8f44775953ca78dd96fb3",
+      "relative_path": "experiments/sp2027-r6-timing/predictions.json",
+      "sha256": "64c963c0fd2fff497dcaed0af2db5a6d5960f44e35f8f44775953ca78dd96fb3",
+      "bytes": 3498039
+    },
+    {
+      "authority": "sp2027-r6-timing/reproduction_validation.json:outputs",
+      "copied_sha256": "1da5fd7af16698c53a049fc95f9c5db6fd1961441dece7b3312ca27464fe4c1d",
+      "relative_path": "experiments/sp2027-r6-timing/results.json",
+      "sha256": "1da5fd7af16698c53a049fc95f9c5db6fd1961441dece7b3312ca27464fe4c1d",
+      "bytes": 275855
+    },
+    {
+      "authority": "original file SHA recorded in this receipt",
+      "copied_sha256": "f7e3ea28a7d044a781073b4449afe33890d9ed453a4fbb376f34ceb33cda43cd",
+      "relative_path": "experiments/sp2027-r6-timing/reproduction_validation.json",
+      "sha256": "f7e3ea28a7d044a781073b4449afe33890d9ed453a4fbb376f34ceb33cda43cd",
+      "bytes": 851
+    }
+  ],
+  "authority_files": [
+    {
+      "authority": "R6 frozen source_sha256 authority",
+      "sha256": "350d8d79d0d7c088ad13009c0321a009a00b8e803c604163a857b8f38aac259e",
+      "relative_path": "experiments/sp2027-r6-timing/attacker_freeze.json"
+    },
+    {
+      "authority": "R6 frozen authority chain",
+      "sha256": "735dac5271069c544c5cb4e86c96112b689fd253822a0771aaab9310827bad31",
+      "relative_path": "experiments/sp2027-r6-timing/frozen.json"
+    },
+    {
+      "authority": "R6 reproduction receipt; its outputs field binds predictions/results hashes",
+      "sha256": "f7e3ea28a7d044a781073b4449afe33890d9ed453a4fbb376f34ceb33cda43cd",
+      "relative_path": "experiments/sp2027-r6-timing/reproduction_validation.json"
+    }
+  ],
+  "localization_protocol_only_source_dependencies": [
+    {
+      "copied_sha256": "4414deda9a7aa9fe188bb87c1b03c6b59f11c086804a4deb3ec1d849a2042882",
+      "authority": "sp2027-r7-localization/protocol.json:source_hashes",
+      "relative_path": "experiments/sp2027-r6-timing/continue_r6.py",
+      "sha256": "4414deda9a7aa9fe188bb87c1b03c6b59f11c086804a4deb3ec1d849a2042882"
+    },
+    {
+      "copied_sha256": "16883b5974e4fa11844db799a21324225e72e9de4577441d50304fcb076a79b3",
+      "authority": "sp2027-r7-localization/protocol.json:source_hashes",
+      "relative_path": "experiments/sp2027-r6-timing/experiment.py",
+      "sha256": "16883b5974e4fa11844db799a21324225e72e9de4577441d50304fcb076a79b3"
+    },
+    {
+      "copied_sha256": "5db9c71d5bbaadb21d704b76ff1238782bc01ba7f0f77fe872da15b283acc74f",
+      "authority": "sp2027-r7-localization/protocol.json:source_hashes",
+      "relative_path": "experiments/sp2027-r6-timing/make_tables.py",
+      "sha256": "5db9c71d5bbaadb21d704b76ff1238782bc01ba7f0f77fe872da15b283acc74f"
+    },
+    {
+      "copied_sha256": "21e86914964b7ad5f7a9cef0525a7ba2f1d7195851b9cb20740445ca62a22ad0",
+      "authority": "sp2027-r7-localization/protocol.json:source_hashes",
+      "relative_path": "experiments/sp2027-r6-timing/reproduce.py",
+      "sha256": "21e86914964b7ad5f7a9cef0525a7ba2f1d7195851b9cb20740445ca62a22ad0"
+    },
+    {
+      "copied_sha256": "2720a8d0fdcb5f4ad4cf23add64c13c367d4a55052115e801e833e127310edb1",
+      "authority": "sp2027-r7-localization/protocol.json:source_hashes",
+      "relative_path": "experiments/sp2027-r6-timing/test_r6.py",
+      "sha256": "2720a8d0fdcb5f4ad4cf23add64c13c367d4a55052115e801e833e127310edb1"
+    },
+    {
+      "copied_sha256": "e2fe5a98c9e0e860e6b4453ba3c07d2136765b63963a409da0859236e98135ed",
+      "authority": "sp2027-r7-localization/protocol.json:source_hashes",
+      "relative_path": "experiments/sp2027-r6-timing/transport.py",
+      "sha256": "e2fe5a98c9e0e860e6b4453ba3c07d2136765b63963a409da0859236e98135ed"
+    },
+    {
+      "copied_sha256": "01719db9c5eb3ff9b9e912d2efd77c2ab4cac6595eeb98fb48d450ccf289327a",
+      "authority": "sp2027-r7-localization/protocol.json:source_hashes",
+      "relative_path": "experiments/sp2027-r6-timing/verify_r6.py",
+      "sha256": "01719db9c5eb3ff9b9e912d2efd77c2ab4cac6595eeb98fb48d450ccf289327a"
+    }
+  ],
+  "localization_protocol_sha256": "6ad219ca6dba31fc88c6bf235aa8a53aa4f3ac6ee61a106bf1ae037e59afa462",
+  "robustness_freeze_sha256": "3a5becbdd949a10f89a93f0323ceb12df1055afad4b31f60347d247cd5bb2015",
+  "note": "The 7 R6 files listed in localization_protocol_only_source_dependencies are checked by localization verify.py protocol source_hashes; they are not imported by robustness run.py. Shared R6 helpers are in L/C dependency closure. D reads captures.zip, predictions.json and results.json; the exact authorities are stated per item."
+}

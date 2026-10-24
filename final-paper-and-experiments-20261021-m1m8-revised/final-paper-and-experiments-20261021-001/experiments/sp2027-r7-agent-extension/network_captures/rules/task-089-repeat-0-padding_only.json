@@ -1,0 +1,113 @@
+{
+ "task": 89,
+ "repeat": 0,
+ "seed": 0,
+ "prompt": "rules",
+ "user": "raj_santos_9079",
+ "has_cancel": 0,
+ "has_return": 1,
+ "native_reward": 1,
+ "db_eq": true,
+ "status": "user_stop",
+ "condition": "padding_only",
+ "calls": [
+  {
+   "name": "find_user_id_by_name_zip",
+   "kind": "real",
+   "req": 111,
+   "resp": 15,
+   "err": false
+  },
+  {
+   "name": "get_user_details",
+   "kind": "real",
+   "req": 73,
+   "resp": 356,
+   "err": false
+  },
+  {
+   "name": "list_all_product_types",
+   "kind": "real",
+   "req": 51,
+   "resp": 1478,
+   "err": false
+  },
+  {
+   "name": "get_product_details",
+   "kind": "real",
+   "req": 74,
+   "resp": 3151,
+   "err": false
+  },
+  {
+   "name": "get_order_details",
+   "kind": "real",
+   "req": 69,
+   "resp": 952,
+   "err": false
+  },
+  {
+   "name": "return_delivered_order_items",
+   "kind": "real",
+   "req": 147,
+   "resp": 1037,
+   "err": false
+  }
+ ],
+ "records": [
+  [
+   "c2s",
+   792
+  ],
+  [
+   "s2c",
+   3096
+  ],
+  [
+   "c2s",
+   792
+  ],
+  [
+   "s2c",
+   3096
+  ],
+  [
+   "c2s",
+   792
+  ],
+  [
+   "s2c",
+   3096
+  ],
+  [
+   "c2s",
+   792
+  ],
+  [
+   "s2c",
+   4120
+  ],
+  [
+   "c2s",
+   792
+  ],
+  [
+   "s2c",
+   3096
+  ],
+  [
+   "c2s",
+   792
+  ],
+  [
+   "s2c",
+   3096
+  ]
+ ],
+ "application_wire_bytes": 24412,
+ "framing_overflow_messages": 1,
+ "template_flags": null,
+ "calibration_sha256": "f5d4968501627e9f06e3a27bf71a02225cbbe3465e357b590cc19f190d2ec240",
+ "episode_sha256": "348bed8322137b89ca1e8b378bde17818bbb118978ea6f1631b319944ebcbc0a",
+ "measurement": "TLS 1.2 loopback replay of real model trajectory; provider link and wall-clock timing excluded"
+}

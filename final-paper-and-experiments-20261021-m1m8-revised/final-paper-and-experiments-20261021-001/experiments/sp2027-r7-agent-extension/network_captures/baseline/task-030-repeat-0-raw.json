@@ -1,0 +1,143 @@
+{
+ "task": 30,
+ "repeat": 0,
+ "seed": 0,
+ "prompt": "baseline",
+ "user": "olivia_lopez_3865",
+ "has_cancel": 1,
+ "has_return": 1,
+ "native_reward": 0,
+ "db_eq": false,
+ "status": "protocol_error",
+ "condition": "raw",
+ "calls": [
+  {
+   "name": "find_user_id_by_email",
+   "kind": "real",
+   "req": 85,
+   "resp": 21,
+   "err": true
+  },
+  {
+   "name": "find_user_id_by_name_zip",
+   "kind": "real",
+   "req": 113,
+   "resp": 17,
+   "err": false
+  },
+  {
+   "name": "get_user_details",
+   "kind": "real",
+   "req": 75,
+   "resp": 423,
+   "err": false
+  },
+  {
+   "name": "tool_action",
+   "kind": "real",
+   "req": 63,
+   "resp": 26,
+   "err": true
+  },
+  {
+   "name": "get_order_details",
+   "kind": "real",
+   "req": 69,
+   "resp": 623,
+   "err": false
+  },
+  {
+   "name": "get_order_details",
+   "kind": "real",
+   "req": 69,
+   "resp": 539,
+   "err": false
+  },
+  {
+   "name": "get_order_details",
+   "kind": "real",
+   "req": 69,
+   "resp": 593,
+   "err": false
+  },
+  {
+   "name": "get_product_details",
+   "kind": "real",
+   "req": 74,
+   "resp": 2213,
+   "err": false
+  }
+ ],
+ "records": [
+  [
+   "c2s",
+   113
+  ],
+  [
+   "s2c",
+   49
+  ],
+  [
+   "c2s",
+   141
+  ],
+  [
+   "s2c",
+   45
+  ],
+  [
+   "c2s",
+   103
+  ],
+  [
+   "s2c",
+   451
+  ],
+  [
+   "c2s",
+   91
+  ],
+  [
+   "s2c",
+   54
+  ],
+  [
+   "c2s",
+   97
+  ],
+  [
+   "s2c",
+   651
+  ],
+  [
+   "c2s",
+   97
+  ],
+  [
+   "s2c",
+   567
+  ],
+  [
+   "c2s",
+   97
+  ],
+  [
+   "s2c",
+   621
+  ],
+  [
+   "c2s",
+   102
+  ],
+  [
+   "s2c",
+   2241
+  ]
+ ],
+ "application_wire_bytes": 5600,
+ "framing_overflow_messages": 0,
+ "template_flags": null,
+ "calibration_sha256": "f5d4968501627e9f06e3a27bf71a02225cbbe3465e357b590cc19f190d2ec240",
+ "episode_sha256": "a0674060c2aa115c877e88acf3713ef057d961b532277ddf1fdddeb3e3dd439d",
+ "measurement": "TLS 1.2 loopback replay of real model trajectory; provider link and wall-clock timing excluded"
+}

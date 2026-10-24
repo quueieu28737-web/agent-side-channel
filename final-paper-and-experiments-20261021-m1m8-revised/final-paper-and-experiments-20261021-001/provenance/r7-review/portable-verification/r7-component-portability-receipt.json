@@ -1,0 +1,198 @@
+{
+  "task": "R7 localization + robustness relocated package verification",
+  "completed_local": "2026-10-24T04:56:20.9715207+01:00",
+  "runtime": {
+    "python": "3.12.10",
+    "numpy": "2.5.4",
+    "scikit_learn": "1.9.0",
+    "scipy": "1.18.1",
+    "torch": "2.14.1+cpu",
+    "joblib": "1.6.0"
+  },
+  "copied_component_files": {
+    "count": 90,
+    "same_existing": 2,
+    "copied_missing": 88,
+    "conflicts": 0,
+    "source_map": "component-copy-audit.json"
+  },
+  "localization": {
+    "passed": true,
+    "bundles": 40,
+    "prediction_rows": 2760,
+    "exact_score_checks": 30360,
+    "customer_overlap": 0,
+    "closure_dependencies": 36,
+    "closure_passed": true,
+    "verification_sha256_clone": "646bbdbedceab0eaafd10c4bd94591828bd4d8907a41dc36db25db504fc97973",
+    "verification_sha256_original": "646bbdbedceab0eaafd10c4bd94591828bd4d8907a41dc36db25db504fc97973",
+    "output_log": "verify-localization.log"
+  },
+  "robustness": {
+    "verify_status": "PASS",
+    "checks": [
+      "input_hashes",
+      "train_test_customer_disjoint",
+      "complete_grid",
+      "all_transformations_reproduced",
+      "all_real_fragments_preserved",
+      "all_measured_state_checks",
+      "all_metrics_recomputed",
+      "all_E13_attackers_retained"
+    ],
+    "train_transformed_sessions": 5382,
+    "test_transformed_sessions": 3588,
+    "total_transformations": 8970,
+    "independent_customers": 53,
+    "reproduce": "EXACT_REPRODUCTION_PASS",
+    "model_packs": 52,
+    "models_zip_sha256": "06e9485c5cdb8b78ae1985319b3cbf33551c3bab4b33eee73f131ffc5a53ec31",
+    "model_archive_manifest_sha256": "af977617a4fdafe3953c48f8bfa28b0ce9d4a067253cd7cc9d0e2210d6cd2277",
+    "verify_log": "verify-robustness.log",
+    "reproduce_log": "reproduce-robustness.log"
+  },
+  "source_clone_hashes": [
+    {
+      "source_sha256": "6ad219ca6dba31fc88c6bf235aa8a53aa4f3ac6ee61a106bf1ae037e59afa462",
+      "match": true,
+      "clone_sha256": "6ad219ca6dba31fc88c6bf235aa8a53aa4f3ac6ee61a106bf1ae037e59afa462",
+      "file": "protocol.json",
+      "component": "localization"
+    },
+    {
+      "source_sha256": "646bbdbedceab0eaafd10c4bd94591828bd4d8907a41dc36db25db504fc97973",
+      "match": true,
+      "clone_sha256": "646bbdbedceab0eaafd10c4bd94591828bd4d8907a41dc36db25db504fc97973",
+      "file": "verification.json",
+      "component": "localization"
+    },
+    {
+      "source_sha256": "a25f1f212053052e8ed767d0ffdd9cc8b14aafa134ac721c9b1e87011a9deab1",
+      "match": true,
+      "clone_sha256": "a25f1f212053052e8ed767d0ffdd9cc8b14aafa134ac721c9b1e87011a9deab1",
+      "file": "predictions.json",
+      "component": "localization"
+    },
+    {
+      "source_sha256": "6ea34fd519bf2306fee5d1278f12f551303cae0e7873172d5544afd15c4de054",
+      "match": false,
+      "clone_sha256": "26bee077a94fef97b3d2c8b97f550f601aeb2c82a4ac815d3d558272f38569cb",
+      "file": "artifact_manifest.json",
+      "component": "localization"
+    },
+    {
+      "source_sha256": "8034d994cfa5f6beb59af4e3e7c6c56e6da724d8229a9814957cf4fa3170bb13",
+      "match": true,
+      "clone_sha256": "8034d994cfa5f6beb59af4e3e7c6c56e6da724d8229a9814957cf4fa3170bb13",
+      "file": "dependency-closure.json",
+      "component": "localization"
+    },
+    {
+      "source_sha256": "516e39dbf5182d48a0b3c328e0ff756a4db8fd371628e17f529bfb07dc8a8139",
+      "match": true,
+      "clone_sha256": "516e39dbf5182d48a0b3c328e0ff756a4db8fd371628e17f529bfb07dc8a8139",
+      "file": "dependency-path-map.json",
+      "component": "localization"
+    },
+    {
+      "source_sha256": "3a5becbdd949a10f89a93f0323ceb12df1055afad4b31f60347d247cd5bb2015",
+      "match": true,
+      "clone_sha256": "3a5becbdd949a10f89a93f0323ceb12df1055afad4b31f60347d247cd5bb2015",
+      "file": "freeze.json",
+      "component": "robustness"
+    },
+    {
+      "source_sha256": "0fb1ad35140d0583d9a0935a5bb4a637f650a0e332fc32b1a43afd37f63609da",
+      "match": true,
+      "clone_sha256": "0fb1ad35140d0583d9a0935a5bb4a637f650a0e332fc32b1a43afd37f63609da",
+      "file": "PROTOCOL.md",
+      "component": "robustness"
+    },
+    {
+      "source_sha256": "06e9485c5cdb8b78ae1985319b3cbf33551c3bab4b33eee73f131ffc5a53ec31",
+      "match": true,
+      "clone_sha256": "06e9485c5cdb8b78ae1985319b3cbf33551c3bab4b33eee73f131ffc5a53ec31",
+      "file": "models.zip",
+      "component": "robustness"
+    },
+    {
+      "source_sha256": "af977617a4fdafe3953c48f8bfa28b0ce9d4a067253cd7cc9d0e2210d6cd2277",
+      "match": true,
+      "clone_sha256": "af977617a4fdafe3953c48f8bfa28b0ce9d4a067253cd7cc9d0e2210d6cd2277",
+      "file": "model_archive_manifest.json",
+      "component": "robustness"
+    },
+    {
+      "source_sha256": "d605a9917b604e49670dd0db684fbda890aa1ea26f60f4a978d5cc62d273603a",
+      "match": true,
+      "clone_sha256": "d605a9917b604e49670dd0db684fbda890aa1ea26f60f4a978d5cc62d273603a",
+      "file": "predictions.json",
+      "component": "robustness"
+    },
+    {
+      "source_sha256": "160904fb406a781e15c5e9aac3751b81669369926e8e7e372b633123e669230c",
+      "match": true,
+      "clone_sha256": "160904fb406a781e15c5e9aac3751b81669369926e8e7e372b633123e669230c",
+      "file": "results.json",
+      "component": "robustness"
+    },
+    {
+      "source_sha256": "44378f5ac6693cfe471a9f8ef7ba01d248fafe5bd6edfd8ddc945e6803faf30c",
+      "match": true,
+      "clone_sha256": "44378f5ac6693cfe471a9f8ef7ba01d248fafe5bd6edfd8ddc945e6803faf30c",
+      "file": "calibration.json",
+      "component": "robustness"
+    },
+    {
+      "source_sha256": "1f522d1616b895d34379f891e37b255dc557df6c2f1bebb3fbf21ba19e72330c",
+      "match": true,
+      "clone_sha256": "1f522d1616b895d34379f891e37b255dc557df6c2f1bebb3fbf21ba19e72330c",
+      "file": "train.zip",
+      "component": "robustness"
+    },
+    {
+      "source_sha256": "ca8587627a76e1c528dce87c2b694e607e897d3ca64dd994a7f58da9823c6936",
+      "match": true,
+      "clone_sha256": "ca8587627a76e1c528dce87c2b694e607e897d3ca64dd994a7f58da9823c6936",
+      "file": "test.zip",
+      "component": "robustness"
+    },
+    {
+      "source_sha256": "82837f3f91dc9d41a51069e5b98adeb55a6167618016f2c84b33550fbd1b6aca",
+      "match": true,
+      "clone_sha256": "82837f3f91dc9d41a51069e5b98adeb55a6167618016f2c84b33550fbd1b6aca",
+      "file": "fit_complete.json",
+      "component": "robustness"
+    }
+  ],
+  "dependencies": {
+    "localization_r6_source_sha_manifest": "localization-r6-protocol-sources.json",
+    "localization_r6_authority_manifests": "extra-authority-manifests.json",
+    "localization_closure_sync": "localization-closure-sync.json",
+    "localization_closure_36_result": "relocated-package/experiments/sp2027-r7-localization/dependency-verification.json",
+    "robustness_r6_data": "robustness-r6-data-dependencies.json",
+    "robustness_shared_r6_import_helpers": [
+      "experiments/sp2027-r6-timing/analyze.py",
+      "features.py",
+      "profile_attack.py",
+      "r6common.py"
+    ],
+    "component_copy_audit": "component-copy-audit.json"
+  },
+  "preserved_originals": [
+    "No source, frozen protocols, input data, model bundles, predictions, results or original verification receipts were changed. Execution and generated dependency-verification receipt were confined to the relocated package."
+  ],
+  "warnings": [
+    "D verify/reproduce emitted RuntimeWarning All-NaN axis encountered while recomputing bootstrap maxima; all specified verification checks and exact reproduction passed.",
+    "Python patch version is 3.12.10 versus 3.12.14 in frozen environment; dependency versions match: NumPy 2.5.4, scikit-learn 1.9.0, SciPy 1.18.1, Torch 2.14.1+cpu, joblib 1.6.0.",
+    "One non-frozen localization artifact_manifest.json differs because the source manifest was updated after initial package copy during the formal 36-item closure erratum. It was preserved in the relocated tree; protocol, numerical receipt, predictions and dependency closure/path-map hashes match current source."
+  ],
+  "logs": [
+    "verify-localization-r6-source-missing-failure.log",
+    "localization-first-failure-log-note.json",
+    "dependency-check-localization-36.log",
+    "verify-localization.log",
+    "verify-robustness.log",
+    "reproduce-robustness.log"
+  ]
+}

@@ -1,0 +1,53 @@
+{
+ "task": 35,
+ "repeat": 0,
+ "seed": 0,
+ "prompt": "rules",
+ "user": "aarav_santos_2259",
+ "has_cancel": 0,
+ "has_return": 1,
+ "native_reward": 0,
+ "db_eq": false,
+ "status": "transfer",
+ "condition": "padding_only",
+ "calls": [
+  {
+   "name": "find_user_id_by_email",
+   "kind": "real",
+   "req": 89,
+   "resp": 21,
+   "err": true
+  },
+  {
+   "name": "transfer_to_human_agents",
+   "kind": "real",
+   "req": 348,
+   "resp": 19,
+   "err": false
+  }
+ ],
+ "records": [
+  [
+   "c2s",
+   792
+  ],
+  [
+   "s2c",
+   3096
+  ],
+  [
+   "c2s",
+   792
+  ],
+  [
+   "s2c",
+   3096
+  ]
+ ],
+ "application_wire_bytes": 7796,
+ "framing_overflow_messages": 0,
+ "template_flags": null,
+ "calibration_sha256": "f5d4968501627e9f06e3a27bf71a02225cbbe3465e357b590cc19f190d2ec240",
+ "episode_sha256": "e69eae2540745cdda3d106832458876300654ec45b4c8d1f5e8b8cb1c8c56de9",
+ "measurement": "TLS 1.2 loopback replay of real model trajectory; provider link and wall-clock timing excluded"
+}

@@ -1,0 +1,23 @@
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Documents\ChatGPT\agent-side-channel\final-paper-and-experiments-20261021-m1m8-revised\final-paper-and-experiments-20261021-001\revision-preview\r7-portability\relocated-package\experiments\sp2027-r7-crossfit\verify.py", line 51, in <module>
+    if __name__=='__main__':main()
+                            ^^^^^^
+  File "C:\Users\Administrator\Documents\ChatGPT\agent-side-channel\final-paper-and-experiments-20261021-m1m8-revised\final-paper-and-experiments-20261021-001\revision-preview\r7-portability\relocated-package\experiments\sp2027-r7-crossfit\verify.py", line 21, in main
+    rows,_=L.all_episodes();assert {str(k):v for k,v in folds_of(rows).items()}==fold
+           ^^^^^^^^^^^^^^^^
+  File "C:\Users\Administrator\Documents\ChatGPT\agent-side-channel\final-paper-and-experiments-20261021-m1m8-revised\final-paper-and-experiments-20261021-001\revision-preview\r7-portability\relocated-package\experiments\sp2027-r5-crossfit\r5lib.py", line 70, in all_episodes
+    assert e['inference_fingerprint'] == inference_fingerprint()
+                                         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Administrator\Documents\ChatGPT\agent-side-channel\final-paper-and-experiments-20261021-m1m8-revised\final-paper-and-experiments-20261021-001\revision-preview\r7-portability\relocated-package\experiments\sp2027-r4-snapshot-20261023\common.py", line 41, in inference_fingerprint
+    return {'model':MODEL,'reasoning_effort':'low','protocol_sha256':sha(HERE/'protocol.json'),
+                                                                     ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Administrator\Documents\ChatGPT\agent-side-channel\final-paper-and-experiments-20261021-m1m8-revised\final-paper-and-experiments-20261021-001\revision-preview\r7-portability\relocated-package\experiments\sp2027-r4-snapshot-20261023\common.py", line 38, in sha
+    return hashlib.sha256(path.read_bytes()).hexdigest()
+                          ^^^^^^^^^^^^^^^^^
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python312\Lib\pathlib.py", line 1019, in read_bytes
+    with self.open(mode='rb') as f:
+         ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python312\Lib\pathlib.py", line 1013, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\Administrator\\Documents\\ChatGPT\\agent-side-channel\\final-paper-and-experiments-20261021-m1m8-revised\\final-paper-and-experiments-20261021-001\\revision-preview\\r7-portability\\relocated-package\\experiments\\sp2027-r4-snapshot-20261023\\protocol.json'

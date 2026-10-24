@@ -1,0 +1,1261 @@
+{
+ "complete": true,
+ "episodes": 150,
+ "model_calls": 3072,
+ "unknown_tool_attempts": 12,
+ "tool_dispatch_attempts": 1015,
+ "real_tool_calls": 1003,
+ "protocol_rejected_decisions": 7,
+ "checks": [
+  "result.answer == attempt.answer.json == last completed agentMessage JSON",
+  "role request messages exactly match final history prefixes",
+  "action arguments and next assistant/tool record match",
+  "tool order/name/kwargs/request/response UTF8 lengths match",
+  "user simulation answers and cross-role response links match",
+  "per-call usage matches final raw usage event; per-episode usage/model_calls match"
+ ],
+ "episodes_detail": [
+  {
+   "task": 5,
+   "prompt": "baseline",
+   "model_calls": 18,
+   "tool_dispatch_attempts": 5,
+   "protocol_rejections": [],
+   "aligned": true
+  },
+  {
+   "task": 6,
+   "prompt": "baseline",
+   "model_calls": 23,
+   "tool_dispatch_attempts": 6,
+   "protocol_rejections": [],
+   "aligned": true
+  },
+  {
+   "task": 7,
+   "prompt": "baseline",
+   "model_calls": 19,
+   "tool_dispatch_attempts": 6,
+   "protocol_rejections": [],
+   "aligned": true
+  },
+  {
+   "task": 8,
+   "prompt": "baseline",
+   "model_calls": 20,
+   "tool_dispatch_attempts": 7,
+   "protocol_rejections": [],
+   "aligned": true
+  },
+  {
+   "task": 9,
+   "prompt": "baseline",
+   "model_calls": 19,
+   "tool_dispatch_attempts": 6,
+   "protocol_rejections": [],
+   "aligned": true
+  },
+  {
+   "task": 10,
+   "prompt": "baseline",
+   "model_calls": 12,
+   "tool_dispatch_attempts": 5,
+   "protocol_rejections": [],
+   "aligned": true
+  },
+  {
+   "task": 11,
+   "prompt": "baseline",
+   "model_calls": 18,
+   "tool_dispatch_attempts": 7,
+   "protocol_rejections": [],
+   "aligned": true
+  },
+  {
+   "task": 12,
+   "prompt": "baseline",
+   "model_calls": 14,
+   "tool_dispatch_attempts": 5,
+   "protocol_rejections": [],
+   "aligned": true
+  },
+  {
+   "task": 13,
+   "prompt": "baseline",
+   "model_calls": 16,
+   "tool_dispatch_attempts": 5,
+   "protocol_rejections": [],
+   "aligned": true
+  },
+  {
+   "task": 14,
+   "prompt": "baseline",
+   "model_calls": 13,
+   "tool_dispatch_attempts": 4,
+   "protocol_rejections": [],
+   "aligned": true
+  },
+  {
+   "task": 15,
+   "prompt": "baseline",
+   "model_calls": 15,
+   "tool_dispatch_attempts": 4,
+   "protocol_rejections": [],
+   "aligned": true
+  },
+  {
+   "task": 16,
+   "prompt": "baseline",
+   "model_calls": 22,
+   "tool_dispatch_attempts": 9,
+   "protocol_rejections": [],
+   "aligned": true
+  },
+  {
+   "task": 17,
+   "prompt": "baseline",
+   "model_calls": 16,
+   "tool_dispatch_attempts": 3,
+   "protocol_rejections": [],
+   "aligned": true
+  },
+  {
+   "task": 18,
+   "prompt": "baseline",
+   "model_calls": 19,
+   "tool_dispatch_attempts": 4,
+   "protocol_rejections": [],
+   "aligned": true
+  },
+  {
+   "task": 19,
+   "prompt": "baseline",
+   "model_calls": 21,
+   "tool_dispatch_attempts": 8,
+   "protocol_rejections": [],
+   "aligned": true
+  },
+  {
+   "task": 20,
+   "prompt": "baseline",
+   "model_calls": 10,
+   "tool_dispatch_attempts": 3,
+   "protocol_rejections": [],
+   "aligned": true
+  },
+  {
+   "task": 21,
+   "prompt": "baseline",
+   "model_calls": 29,
+   "tool_dispatch_attempts": 6,
+   "protocol_rejections": [],
+   "aligned": true
+  },
+  {
+   "task": 22,
+   "prompt": "baseline",
+   "model_calls": 29,
+   "tool_dispatch_attempts": 8,
+   "protocol_rejections": [],
+   "aligned": true
+  },
+  {
+   "task": 23,
+   "prompt": "baseline",
+   "model_calls": 22,
+   "tool_dispatch_attempts": 10,
+   "protocol_rejections": [
+    {
+     "role": "agent",
+     "index": 15,
+     "error": "Expecting ',' delimiter: line 1 column 122 (char 121)"
+    }
+   ],
+   "aligned": true
+  },
+  {
+   "task": 24,
+   "prompt": "baseline",
+   "model_calls": 15,
+   "tool_dispatch_attempts": 4,
+   "protocol_rejections": [],
+   "aligned": true
+  },
+  {
+   "task": 25,
+   "prompt": "baseline",
+   "model_calls": 22,
+   "tool_dispatch_attempts": 7,
+   "protocol_rejections": [],
+   "aligned": true
+  },
+  {
+   "task": 26,
+   "prompt": "baseline",
+   "model_calls": 19,
+   "tool_dispatch_attempts": 6,
+   "protocol_rejections": [],
+   "aligned": true
+  },
+  {
+   "task": 27,
+   "prompt": "baseline",
+   "model_calls": 14,
+   "tool_dispatch_attempts": 7,
+   "protocol_rejections": [],
+   "aligned": true
+  },
+  {
+   "task": 28,
+   "prompt": "baseline",
+   "model_calls": 36,
+   "tool_dispatch_attempts": 9,
+   "protocol_rejections": [],
+   "aligned": true
+  },
+  {
+   "task": 29,
+   "prompt": "baseline",
+   "model_calls": 33,
+   "tool_dispatch_attempts": 10,
+   "protocol_rejections": [],
+   "aligned": true
+  },
+  {
+   "task": 30,
+   "prompt": "baseline",
+   "model_calls": 20,
+   "tool_dispatch_attempts": 8,
+   "protocol_rejections": [
+    {
+     "role": "agent",
+     "index": 13,
+     "error": "Expecting ',' delimiter: line 1 column 90 (char 89)"
+    }
+   ],
+   "aligned": true
+  },
+  {
+   "task": 31,
+   "prompt": "baseline",
+   "model_calls": 21,
+   "tool_dispatch_attempts": 8,
+   "protocol_rejections": [],
+   "aligned": true
+  },
+  {
+   "task": 32,
+   "prompt": "baseline",
+   "model_calls": 13,
+   "tool_dispatch_attempts": 6,
+   "protocol_rejections": [],
+   "aligned": true
+  },
+  {
+   "task": 33,
+   "prompt": "baseline",
+   "model_calls": 16,
+   "tool_dispatch_attempts": 5,
+   "protocol_rejections": [],
+   "aligned": true
+  },
+  {
+   "task": 34,
+   "prompt": "baseline",
+   "model_calls": 17,
+   "tool_dispatch_attempts": 4,
+   "protocol_rejections": [],
+   "aligned": true
+  },
+  {
+   "task": 35,
+   "prompt": "baseline",
+   "model_calls": 22,
+   "tool_dispatch_attempts": 9,
+   "protocol_rejections": [],
+   "aligned": true
+  },
+  {
+   "task": 36,
+   "prompt": "baseline",
+   "model_calls": 29,
+   "tool_dispatch_attempts": 10,
+   "protocol_rejections": [],
+   "aligned": true
+  },
+  {
+   "task": 37,
+   "prompt": "baseline",
+   "model_calls": 27,
+   "tool_dispatch_attempts": 10,
+   "protocol_rejections": [],
+   "aligned": true
+  },
+  {
+   "task": 38,
+   "prompt": "baseline",
+   "model_calls": 23,
+   "tool_dispatch_attempts": 8,
+   "protocol_rejections": [],
+   "aligned": true
+  },
+  {
+   "task": 39,
+   "prompt": "baseline",
+   "model_calls": 14,
+   "tool_dispatch_attempts": 3,
+   "protocol_rejections": [],
+   "aligned": true
+  },
+  {
+   "task": 40,
+   "prompt": "baseline",
+   "model_calls": 20,
+   "tool_dispatch_attempts": 5,
+   "protocol_rejections": [],
+   "aligned": true
+  },
+  {
+   "task": 41,
+   "prompt": "baseline",
+   "model_calls": 19,
+   "tool_dispatch_attempts": 8,
+   "protocol_rejections": [],
+   "aligned": true
+  },
+  {
+   "task": 42,
+   "prompt": "baseline",
+   "model_calls": 36,
+   "tool_dispatch_attempts": 11,
+   "protocol_rejections": [],
+   "aligned": true
+  },
+  {
+   "task": 43,
+   "prompt": "baseline",
+   "model_calls": 20,
+   "tool_dispatch_attempts": 5,
+   "protocol_rejections": [],
+   "aligned": true
+  },
+  {
+   "task": 44,
+   "prompt": "baseline",
+   "model_calls": 15,
+   "tool_dispatch_attempts": 4,
+   "protocol_rejections": [],
+   "aligned": true
+  },
+  {
+   "task": 45,
+   "prompt": "baseline",
+   "model_calls": 18,
+   "tool_dispatch_attempts": 7,
+   "protocol_rejections": [],
+   "aligned": true
+  },
+  {
+   "task": 46,
+   "prompt": "baseline",
+   "model_calls": 21,
+   "tool_dispatch_attempts": 6,
+   "protocol_rejections": [],
+   "aligned": true
+  },
+  {
+   "task": 49,
+   "prompt": "baseline",
+   "model_calls": 22,
+   "tool_dispatch_attempts": 9,
+   "protocol_rejections": [],
+   "aligned": true
+  },
+  {
+   "task": 59,
+   "prompt": "baseline",
+   "model_calls": 15,
+   "tool_dispatch_attempts": 6,
+   "protocol_rejections": [],
+   "aligned": true
+  },
+  {
+   "task": 60,
+   "prompt": "baseline",
+   "model_calls": 9,
+   "tool_dispatch_attempts": 4,
+   "protocol_rejections": [],
+   "aligned": true
+  },
+  {
+   "task": 61,
+   "prompt": "baseline",
+   "model_calls": 9,
+   "tool_dispatch_attempts": 4,
+   "protocol_rejections": [],
+   "aligned": true
+  },
+  {
+   "task": 62,
+   "prompt": "baseline",
+   "model_calls": 21,
+   "tool_dispatch_attempts": 6,
+   "protocol_rejections": [],
+   "aligned": true
+  },
+  {
+   "task": 63,
+   "prompt": "baseline",
+   "model_calls": 23,
+   "tool_dispatch_attempts": 6,
+   "protocol_rejections": [],
+   "aligned": true
+  },
+  {
+   "task": 64,
+   "prompt": "baseline",
+   "model_calls": 17,
+   "tool_dispatch_attempts": 8,
+   "protocol_rejections": [],
+   "aligned": true
+  },
+  {
+   "task": 66,
+   "prompt": "baseline",
+   "model_calls": 20,
+   "tool_dispatch_attempts": 5,
+   "protocol_rejections": [],
+   "aligned": true
+  },
+  {
+   "task": 67,
+   "prompt": "baseline",
+   "model_calls": 17,
+   "tool_dispatch_attempts": 4,
+   "protocol_rejections": [],
+   "aligned": true
+  },
+  {
+   "task": 68,
+   "prompt": "baseline",
+   "model_calls": 11,
+   "tool_dispatch_attempts": 4,
+   "protocol_rejections": [],
+   "aligned": true
+  },
+  {
+   "task": 73,
+   "prompt": "baseline",
+   "model_calls": 13,
+   "tool_dispatch_attempts": 4,
+   "protocol_rejections": [],
+   "aligned": true
+  },
+  {
+   "task": 78,
+   "prompt": "baseline",
+   "model_calls": 33,
+   "tool_dispatch_attempts": 8,
+   "protocol_rejections": [],
+   "aligned": true
+  },
+  {
+   "task": 82,
+   "prompt": "baseline",
+   "model_calls": 19,
+   "tool_dispatch_attempts": 10,
+   "protocol_rejections": [],
+   "aligned": true
+  },
+  {
+   "task": 83,
+   "prompt": "baseline",
+   "model_calls": 24,
+   "tool_dispatch_attempts": 9,
+   "protocol_rejections": [],
+   "aligned": true
+  },
+  {
+   "task": 84,
+   "prompt": "baseline",
+   "model_calls": 19,
+   "tool_dispatch_attempts": 8,
+   "protocol_rejections": [],
+   "aligned": true
+  },
+  {
+   "task": 85,
+   "prompt": "baseline",
+   "model_calls": 15,
+   "tool_dispatch_attempts": 6,
+   "protocol_rejections": [],
+   "aligned": true
+  },
+  {
+   "task": 86,
+   "prompt": "baseline",
+   "model_calls": 24,
+   "tool_dispatch_attempts": 9,
+   "protocol_rejections": [],
+   "aligned": true
+  },
+  {
+   "task": 87,
+   "prompt": "baseline",
+   "model_calls": 26,
+   "tool_dispatch_attempts": 11,
+   "protocol_rejections": [],
+   "aligned": true
+  },
+  {
+   "task": 88,
+   "prompt": "baseline",
+   "model_calls": 17,
+   "tool_dispatch_attempts": 6,
+   "protocol_rejections": [],
+   "aligned": true
+  },
+  {
+   "task": 89,
+   "prompt": "baseline",
+   "model_calls": 17,
+   "tool_dispatch_attempts": 8,
+   "protocol_rejections": [],
+   "aligned": true
+  },
+  {
+   "task": 91,
+   "prompt": "baseline",
+   "model_calls": 33,
+   "tool_dispatch_attempts": 8,
+   "protocol_rejections": [],
+   "aligned": true
+  },
+  {
+   "task": 92,
+   "prompt": "baseline",
+   "model_calls": 22,
+   "tool_dispatch_attempts": 7,
+   "protocol_rejections": [],
+   "aligned": true
+  },
+  {
+   "task": 97,
+   "prompt": "baseline",
+   "model_calls": 18,
+   "tool_dispatch_attempts": 7,
+   "protocol_rejections": [],
+   "aligned": true
+  },
+  {
+   "task": 98,
+   "prompt": "baseline",
+   "model_calls": 13,
+   "tool_dispatch_attempts": 6,
+   "protocol_rejections": [],
+   "aligned": true
+  },
+  {
+   "task": 101,
+   "prompt": "baseline",
+   "model_calls": 32,
+   "tool_dispatch_attempts": 13,
+   "protocol_rejections": [],
+   "aligned": true
+  },
+  {
+   "task": 102,
+   "prompt": "baseline",
+   "model_calls": 28,
+   "tool_dispatch_attempts": 9,
+   "protocol_rejections": [],
+   "aligned": true
+  },
+  {
+   "task": 103,
+   "prompt": "baseline",
+   "model_calls": 33,
+   "tool_dispatch_attempts": 8,
+   "protocol_rejections": [],
+   "aligned": true
+  },
+  {
+   "task": 104,
+   "prompt": "baseline",
+   "model_calls": 44,
+   "tool_dispatch_attempts": 13,
+   "protocol_rejections": [],
+   "aligned": true
+  },
+  {
+   "task": 105,
+   "prompt": "baseline",
+   "model_calls": 15,
+   "tool_dispatch_attempts": 5,
+   "protocol_rejections": [
+    {
+     "role": "agent",
+     "index": 9,
+     "error": "Expecting ',' delimiter: line 1 column 92 (char 91)"
+    }
+   ],
+   "aligned": true
+  },
+  {
+   "task": 106,
+   "prompt": "baseline",
+   "model_calls": 16,
+   "tool_dispatch_attempts": 5,
+   "protocol_rejections": [],
+   "aligned": true
+  },
+  {
+   "task": 107,
+   "prompt": "baseline",
+   "model_calls": 27,
+   "tool_dispatch_attempts": 8,
+   "protocol_rejections": [],
+   "aligned": true
+  },
+  {
+   "task": 108,
+   "prompt": "baseline",
+   "model_calls": 19,
+   "tool_dispatch_attempts": 6,
+   "protocol_rejections": [],
+   "aligned": true
+  },
+  {
+   "task": 114,
+   "prompt": "baseline",
+   "model_calls": 14,
+   "tool_dispatch_attempts": 5,
+   "protocol_rejections": [],
+   "aligned": true
+  },
+  {
+   "task": 5,
+   "prompt": "rules",
+   "model_calls": 21,
+   "tool_dispatch_attempts": 6,
+   "protocol_rejections": [],
+   "aligned": true
+  },
+  {
+   "task": 6,
+   "prompt": "rules",
+   "model_calls": 19,
+   "tool_dispatch_attempts": 6,
+   "protocol_rejections": [],
+   "aligned": true
+  },
+  {
+   "task": 7,
+   "prompt": "rules",
+   "model_calls": 21,
+   "tool_dispatch_attempts": 6,
+   "protocol_rejections": [],
+   "aligned": true
+  },
+  {
+   "task": 8,
+   "prompt": "rules",
+   "model_calls": 21,
+   "tool_dispatch_attempts": 6,
+   "protocol_rejections": [],
+   "aligned": true
+  },
+  {
+   "task": 9,
+   "prompt": "rules",
+   "model_calls": 24,
+   "tool_dispatch_attempts": 7,
+   "protocol_rejections": [],
+   "aligned": true
+  },
+  {
+   "task": 10,
+   "prompt": "rules",
+   "model_calls": 12,
+   "tool_dispatch_attempts": 5,
+   "protocol_rejections": [],
+   "aligned": true
+  },
+  {
+   "task": 11,
+   "prompt": "rules",
+   "model_calls": 17,
+   "tool_dispatch_attempts": 6,
+   "protocol_rejections": [],
+   "aligned": true
+  },
+  {
+   "task": 12,
+   "prompt": "rules",
+   "model_calls": 11,
+   "tool_dispatch_attempts": 4,
+   "protocol_rejections": [],
+   "aligned": true
+  },
+  {
+   "task": 13,
+   "prompt": "rules",
+   "model_calls": 16,
+   "tool_dispatch_attempts": 5,
+   "protocol_rejections": [],
+   "aligned": true
+  },
+  {
+   "task": 14,
+   "prompt": "rules",
+   "model_calls": 15,
+   "tool_dispatch_attempts": 4,
+   "protocol_rejections": [],
+   "aligned": true
+  },
+  {
+   "task": 15,
+   "prompt": "rules",
+   "model_calls": 18,
+   "tool_dispatch_attempts": 5,
+   "protocol_rejections": [],
+   "aligned": true
+  },
+  {
+   "task": 16,
+   "prompt": "rules",
+   "model_calls": 21,
+   "tool_dispatch_attempts": 8,
+   "protocol_rejections": [],
+   "aligned": true
+  },
+  {
+   "task": 17,
+   "prompt": "rules",
+   "model_calls": 16,
+   "tool_dispatch_attempts": 5,
+   "protocol_rejections": [],
+   "aligned": true
+  },
+  {
+   "task": 18,
+   "prompt": "rules",
+   "model_calls": 16,
+   "tool_dispatch_attempts": 3,
+   "protocol_rejections": [],
+   "aligned": true
+  },
+  {
+   "task": 19,
+   "prompt": "rules",
+   "model_calls": 16,
+   "tool_dispatch_attempts": 7,
+   "protocol_rejections": [],
+   "aligned": true
+  },
+  {
+   "task": 20,
+   "prompt": "rules",
+   "model_calls": 30,
+   "tool_dispatch_attempts": 9,
+   "protocol_rejections": [],
+   "aligned": true
+  },
+  {
+   "task": 21,
+   "prompt": "rules",
+   "model_calls": 29,
+   "tool_dispatch_attempts": 8,
+   "protocol_rejections": [],
+   "aligned": true
+  },
+  {
+   "task": 22,
+   "prompt": "rules",
+   "model_calls": 29,
+   "tool_dispatch_attempts": 8,
+   "protocol_rejections": [],
+   "aligned": true
+  },
+  {
+   "task": 23,
+   "prompt": "rules",
+   "model_calls": 25,
+   "tool_dispatch_attempts": 10,
+   "protocol_rejections": [],
+   "aligned": true
+  },
+  {
+   "task": 24,
+   "prompt": "rules",
+   "model_calls": 18,
+   "tool_dispatch_attempts": 7,
+   "protocol_rejections": [],
+   "aligned": true
+  },
+  {
+   "task": 25,
+   "prompt": "rules",
+   "model_calls": 12,
+   "tool_dispatch_attempts": 5,
+   "protocol_rejections": [],
+   "aligned": true
+  },
+  {
+   "task": 26,
+   "prompt": "rules",
+   "model_calls": 15,
+   "tool_dispatch_attempts": 4,
+   "protocol_rejections": [],
+   "aligned": true
+  },
+  {
+   "task": 27,
+   "prompt": "rules",
+   "model_calls": 16,
+   "tool_dispatch_attempts": 7,
+   "protocol_rejections": [],
+   "aligned": true
+  },
+  {
+   "task": 28,
+   "prompt": "rules",
+   "model_calls": 35,
+   "tool_dispatch_attempts": 12,
+   "protocol_rejections": [],
+   "aligned": true
+  },
+  {
+   "task": 29,
+   "prompt": "rules",
+   "model_calls": 35,
+   "tool_dispatch_attempts": 12,
+   "protocol_rejections": [],
+   "aligned": true
+  },
+  {
+   "task": 30,
+   "prompt": "rules",
+   "model_calls": 31,
+   "tool_dispatch_attempts": 12,
+   "protocol_rejections": [],
+   "aligned": true
+  },
+  {
+   "task": 31,
+   "prompt": "rules",
+   "model_calls": 38,
+   "tool_dispatch_attempts": 9,
+   "protocol_rejections": [],
+   "aligned": true
+  },
+  {
+   "task": 32,
+   "prompt": "rules",
+   "model_calls": 25,
+   "tool_dispatch_attempts": 8,
+   "protocol_rejections": [],
+   "aligned": true
+  },
+  {
+   "task": 33,
+   "prompt": "rules",
+   "model_calls": 17,
+   "tool_dispatch_attempts": 4,
+   "protocol_rejections": [],
+   "aligned": true
+  },
+  {
+   "task": 34,
+   "prompt": "rules",
+   "model_calls": 19,
+   "tool_dispatch_attempts": 4,
+   "protocol_rejections": [],
+   "aligned": true
+  },
+  {
+   "task": 35,
+   "prompt": "rules",
+   "model_calls": 13,
+   "tool_dispatch_attempts": 2,
+   "protocol_rejections": [],
+   "aligned": true
+  },
+  {
+   "task": 36,
+   "prompt": "rules",
+   "model_calls": 30,
+   "tool_dispatch_attempts": 9,
+   "protocol_rejections": [],
+   "aligned": true
+  },
+  {
+   "task": 37,
+   "prompt": "rules",
+   "model_calls": 13,
+   "tool_dispatch_attempts": 4,
+   "protocol_rejections": [],
+   "aligned": true
+  },
+  {
+   "task": 38,
+   "prompt": "rules",
+   "model_calls": 31,
+   "tool_dispatch_attempts": 10,
+   "protocol_rejections": [],
+   "aligned": true
+  },
+  {
+   "task": 39,
+   "prompt": "rules",
+   "model_calls": 16,
+   "tool_dispatch_attempts": 5,
+   "protocol_rejections": [],
+   "aligned": true
+  },
+  {
+   "task": 40,
+   "prompt": "rules",
+   "model_calls": 13,
+   "tool_dispatch_attempts": 4,
+   "protocol_rejections": [],
+   "aligned": true
+  },
+  {
+   "task": 41,
+   "prompt": "rules",
+   "model_calls": 15,
+   "tool_dispatch_attempts": 7,
+   "protocol_rejections": [
+    {
+     "role": "agent",
+     "index": 10,
+     "error": "Expecting ',' delimiter: line 1 column 117 (char 116)"
+    }
+   ],
+   "aligned": true
+  },
+  {
+   "task": 42,
+   "prompt": "rules",
+   "model_calls": 29,
+   "tool_dispatch_attempts": 11,
+   "protocol_rejections": [
+    {
+     "role": "agent",
+     "index": 19,
+     "error": "Expecting ',' delimiter: line 1 column 117 (char 116)"
+    }
+   ],
+   "aligned": true
+  },
+  {
+   "task": 43,
+   "prompt": "rules",
+   "model_calls": 16,
+   "tool_dispatch_attempts": 5,
+   "protocol_rejections": [],
+   "aligned": true
+  },
+  {
+   "task": 44,
+   "prompt": "rules",
+   "model_calls": 24,
+   "tool_dispatch_attempts": 11,
+   "protocol_rejections": [],
+   "aligned": true
+  },
+  {
+   "task": 45,
+   "prompt": "rules",
+   "model_calls": 22,
+   "tool_dispatch_attempts": 7,
+   "protocol_rejections": [],
+   "aligned": true
+  },
+  {
+   "task": 46,
+   "prompt": "rules",
+   "model_calls": 20,
+   "tool_dispatch_attempts": 7,
+   "protocol_rejections": [],
+   "aligned": true
+  },
+  {
+   "task": 49,
+   "prompt": "rules",
+   "model_calls": 23,
+   "tool_dispatch_attempts": 8,
+   "protocol_rejections": [],
+   "aligned": true
+  },
+  {
+   "task": 59,
+   "prompt": "rules",
+   "model_calls": 14,
+   "tool_dispatch_attempts": 5,
+   "protocol_rejections": [],
+   "aligned": true
+  },
+  {
+   "task": 60,
+   "prompt": "rules",
+   "model_calls": 10,
+   "tool_dispatch_attempts": 5,
+   "protocol_rejections": [],
+   "aligned": true
+  },
+  {
+   "task": 61,
+   "prompt": "rules",
+   "model_calls": 12,
+   "tool_dispatch_attempts": 5,
+   "protocol_rejections": [],
+   "aligned": true
+  },
+  {
+   "task": 62,
+   "prompt": "rules",
+   "model_calls": 22,
+   "tool_dispatch_attempts": 7,
+   "protocol_rejections": [],
+   "aligned": true
+  },
+  {
+   "task": 63,
+   "prompt": "rules",
+   "model_calls": 26,
+   "tool_dispatch_attempts": 7,
+   "protocol_rejections": [],
+   "aligned": true
+  },
+  {
+   "task": 64,
+   "prompt": "rules",
+   "model_calls": 16,
+   "tool_dispatch_attempts": 5,
+   "protocol_rejections": [],
+   "aligned": true
+  },
+  {
+   "task": 66,
+   "prompt": "rules",
+   "model_calls": 5,
+   "tool_dispatch_attempts": 2,
+   "protocol_rejections": [],
+   "aligned": true
+  },
+  {
+   "task": 67,
+   "prompt": "rules",
+   "model_calls": 13,
+   "tool_dispatch_attempts": 4,
+   "protocol_rejections": [],
+   "aligned": true
+  },
+  {
+   "task": 68,
+   "prompt": "rules",
+   "model_calls": 8,
+   "tool_dispatch_attempts": 3,
+   "protocol_rejections": [],
+   "aligned": true
+  },
+  {
+   "task": 73,
+   "prompt": "rules",
+   "model_calls": 13,
+   "tool_dispatch_attempts": 4,
+   "protocol_rejections": [],
+   "aligned": true
+  },
+  {
+   "task": 78,
+   "prompt": "rules",
+   "model_calls": 28,
+   "tool_dispatch_attempts": 9,
+   "protocol_rejections": [],
+   "aligned": true
+  },
+  {
+   "task": 82,
+   "prompt": "rules",
+   "model_calls": 18,
+   "tool_dispatch_attempts": 7,
+   "protocol_rejections": [],
+   "aligned": true
+  },
+  {
+   "task": 83,
+   "prompt": "rules",
+   "model_calls": 16,
+   "tool_dispatch_attempts": 5,
+   "protocol_rejections": [],
+   "aligned": true
+  },
+  {
+   "task": 84,
+   "prompt": "rules",
+   "model_calls": 18,
+   "tool_dispatch_attempts": 5,
+   "protocol_rejections": [],
+   "aligned": true
+  },
+  {
+   "task": 85,
+   "prompt": "rules",
+   "model_calls": 22,
+   "tool_dispatch_attempts": 7,
+   "protocol_rejections": [],
+   "aligned": true
+  },
+  {
+   "task": 86,
+   "prompt": "rules",
+   "model_calls": 23,
+   "tool_dispatch_attempts": 8,
+   "protocol_rejections": [],
+   "aligned": true
+  },
+  {
+   "task": 87,
+   "prompt": "rules",
+   "model_calls": 22,
+   "tool_dispatch_attempts": 7,
+   "protocol_rejections": [],
+   "aligned": true
+  },
+  {
+   "task": 88,
+   "prompt": "rules",
+   "model_calls": 16,
+   "tool_dispatch_attempts": 7,
+   "protocol_rejections": [],
+   "aligned": true
+  },
+  {
+   "task": 89,
+   "prompt": "rules",
+   "model_calls": 15,
+   "tool_dispatch_attempts": 6,
+   "protocol_rejections": [],
+   "aligned": true
+  },
+  {
+   "task": 91,
+   "prompt": "rules",
+   "model_calls": 25,
+   "tool_dispatch_attempts": 8,
+   "protocol_rejections": [],
+   "aligned": true
+  },
+  {
+   "task": 92,
+   "prompt": "rules",
+   "model_calls": 16,
+   "tool_dispatch_attempts": 5,
+   "protocol_rejections": [],
+   "aligned": true
+  },
+  {
+   "task": 97,
+   "prompt": "rules",
+   "model_calls": 21,
+   "tool_dispatch_attempts": 6,
+   "protocol_rejections": [],
+   "aligned": true
+  },
+  {
+   "task": 98,
+   "prompt": "rules",
+   "model_calls": 14,
+   "tool_dispatch_attempts": 7,
+   "protocol_rejections": [],
+   "aligned": true
+  },
+  {
+   "task": 101,
+   "prompt": "rules",
+   "model_calls": 32,
+   "tool_dispatch_attempts": 15,
+   "protocol_rejections": [],
+   "aligned": true
+  },
+  {
+   "task": 102,
+   "prompt": "rules",
+   "model_calls": 28,
+   "tool_dispatch_attempts": 7,
+   "protocol_rejections": [],
+   "aligned": true
+  },
+  {
+   "task": 103,
+   "prompt": "rules",
+   "model_calls": 35,
+   "tool_dispatch_attempts": 10,
+   "protocol_rejections": [],
+   "aligned": true
+  },
+  {
+   "task": 104,
+   "prompt": "rules",
+   "model_calls": 39,
+   "tool_dispatch_attempts": 12,
+   "protocol_rejections": [],
+   "aligned": true
+  },
+  {
+   "task": 105,
+   "prompt": "rules",
+   "model_calls": 30,
+   "tool_dispatch_attempts": 12,
+   "protocol_rejections": [
+    {
+     "role": "agent",
+     "index": 20,
+     "error": "Expecting ',' delimiter: line 1 column 92 (char 91)"
+    }
+   ],
+   "aligned": true
+  },
+  {
+   "task": 106,
+   "prompt": "rules",
+   "model_calls": 27,
+   "tool_dispatch_attempts": 6,
+   "protocol_rejections": [],
+   "aligned": true
+  },
+  {
+   "task": 107,
+   "prompt": "rules",
+   "model_calls": 23,
+   "tool_dispatch_attempts": 8,
+   "protocol_rejections": [],
+   "aligned": true
+  },
+  {
+   "task": 108,
+   "prompt": "rules",
+   "model_calls": 15,
+   "tool_dispatch_attempts": 5,
+   "protocol_rejections": [
+    {
+     "role": "agent",
+     "index": 9,
+     "error": "Expecting ',' delimiter: line 1 column 87 (char 86)"
+    }
+   ],
+   "aligned": true
+  },
+  {
+   "task": 114,
+   "prompt": "rules",
+   "model_calls": 17,
+   "tool_dispatch_attempts": 8,
+   "protocol_rejections": [],
+   "aligned": true
+  }
+ ]
+}

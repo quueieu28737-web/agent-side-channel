@@ -1,0 +1,11 @@
+\begin{tabular}{lccc}
+\toprule
+Target & Full trace & Reads only (oracle) & Writes only (oracle) \\
+\midrule
+Cancel & 0.917 [0.821, 1.000] & 0.628 [0.546, 0.753] & 0.917 [0.821, 1.000] \\
+Return & 0.855 [0.767, 0.934] & 0.599 [0.522, 0.718] & 0.849 [0.788, 0.940] \\
+\bottomrule
+\end{tabular}
+% Posthoc original 690 Sol episodes; original R5 customer 5-fold OOF; union of all 9 legacy attacks plus CNN and k-FP-style (11 total).
+% BA confidence intervals: 2000 customer-cluster bootstrap draws, 11-attack maximum reselected each draw; conditional on fitted attacks.
+% Oracle uses true write-call identities to retain or remove exchanges. Direction/length only, timing identically zero. Full OOF reused from verified R7 crossfit.

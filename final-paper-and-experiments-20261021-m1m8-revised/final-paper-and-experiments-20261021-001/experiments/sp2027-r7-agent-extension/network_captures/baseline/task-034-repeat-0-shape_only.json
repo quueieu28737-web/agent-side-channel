@@ -1,0 +1,457 @@
+{
+ "task": 34,
+ "repeat": 0,
+ "seed": 0,
+ "prompt": "baseline",
+ "user": "noah_patel_6952",
+ "has_cancel": 0,
+ "has_return": 0,
+ "native_reward": 0,
+ "db_eq": false,
+ "status": "user_stop",
+ "condition": "shape_only",
+ "calls": [
+  {
+   "name": "exchange_delivered_order_items",
+   "kind": "cover",
+   "req": 181,
+   "resp": 1591,
+   "err": false,
+   "donor_task": 45
+  },
+  {
+   "name": "find_user_id_by_name_zip",
+   "kind": "real",
+   "req": 111,
+   "resp": 15,
+   "err": false
+  },
+  {
+   "name": "get_order_details",
+   "kind": "cover",
+   "req": 69,
+   "resp": 955,
+   "err": false,
+   "donor_task": 7
+  },
+  {
+   "name": "get_user_details",
+   "kind": "real",
+   "req": 73,
+   "resp": 366,
+   "err": false
+  },
+  {
+   "name": "get_order_details",
+   "kind": "cover",
+   "req": 69,
+   "resp": 593,
+   "err": false,
+   "donor_task": 30
+  },
+  {
+   "name": "get_order_details",
+   "kind": "real",
+   "req": 69,
+   "resp": 1249,
+   "err": false
+  },
+  {
+   "name": "modify_pending_order_address",
+   "kind": "cover",
+   "req": 202,
+   "resp": 1244,
+   "err": false,
+   "donor_task": 17
+  },
+  {
+   "name": "modify_pending_order_address",
+   "kind": "real",
+   "req": 196,
+   "resp": 1238,
+   "err": false
+  },
+  {
+   "name": "cancel_pending_order",
+   "kind": "cover",
+   "req": 102,
+   "resp": 1325,
+   "err": false,
+   "donor_task": 16
+  },
+  {
+   "name": "get_order_details",
+   "kind": "cover",
+   "req": 69,
+   "resp": 539,
+   "err": false,
+   "donor_task": 31
+  },
+  {
+   "name": "return_delivered_order_items",
+   "kind": "cover",
+   "req": 161,
+   "resp": 1475,
+   "err": false,
+   "donor_task": 28
+  },
+  {
+   "name": "transfer_to_human_agents",
+   "kind": "cover",
+   "req": 491,
+   "resp": 19,
+   "err": false,
+   "donor_task": 27
+  },
+  {
+   "name": "cancel_pending_order",
+   "kind": "cover",
+   "req": 102,
+   "resp": 670,
+   "err": false,
+   "donor_task": 31
+  },
+  {
+   "name": "find_user_id_by_email",
+   "kind": "cover",
+   "req": 85,
+   "resp": 21,
+   "err": true,
+   "donor_task": 30
+  },
+  {
+   "name": "exchange_delivered_order_items",
+   "kind": "cover",
+   "req": 181,
+   "resp": 1119,
+   "err": false,
+   "donor_task": 7
+  },
+  {
+   "name": "find_user_id_by_email",
+   "kind": "cover",
+   "req": 87,
+   "resp": 15,
+   "err": false,
+   "donor_task": 13
+  },
+  {
+   "name": "get_product_details",
+   "kind": "cover",
+   "req": 74,
+   "resp": 1894,
+   "err": false,
+   "donor_task": 23
+  },
+  {
+   "name": "find_user_id_by_name_zip",
+   "kind": "cover",
+   "req": 119,
+   "resp": 23,
+   "err": false,
+   "donor_task": 28
+  },
+  {
+   "name": "get_user_details",
+   "kind": "cover",
+   "req": 81,
+   "resp": 404,
+   "err": false,
+   "donor_task": 29
+  },
+  {
+   "name": "get_product_details",
+   "kind": "cover",
+   "req": 74,
+   "resp": 2843,
+   "err": false,
+   "donor_task": 9
+  },
+  {
+   "name": "modify_pending_order_items",
+   "kind": "cover",
+   "req": 177,
+   "resp": 43,
+   "err": true,
+   "donor_task": 15
+  },
+  {
+   "name": "get_order_details",
+   "kind": "cover",
+   "req": 69,
+   "resp": 1174,
+   "err": false,
+   "donor_task": 11
+  },
+  {
+   "name": "return_delivered_order_items",
+   "kind": "cover",
+   "req": 152,
+   "resp": 1264,
+   "err": false,
+   "donor_task": 14
+  },
+  {
+   "name": "get_product_details",
+   "kind": "cover",
+   "req": 74,
+   "resp": 2843,
+   "err": false,
+   "donor_task": 5
+  },
+  {
+   "name": "list_all_product_types",
+   "kind": "cover",
+   "req": 51,
+   "resp": 1478,
+   "err": false,
+   "donor_task": 23
+  },
+  {
+   "name": "get_order_details",
+   "kind": "cover",
+   "req": 69,
+   "resp": 1119,
+   "err": false,
+   "donor_task": 6
+  },
+  {
+   "name": "return_delivered_order_items",
+   "kind": "cover",
+   "req": 147,
+   "resp": 692,
+   "err": false,
+   "donor_task": 26
+  }
+ ],
+ "records": [
+  [
+   "c2s",
+   209
+  ],
+  [
+   "s2c",
+   1619
+  ],
+  [
+   "c2s",
+   139
+  ],
+  [
+   "s2c",
+   43
+  ],
+  [
+   "c2s",
+   97
+  ],
+  [
+   "s2c",
+   983
+  ],
+  [
+   "c2s",
+   101
+  ],
+  [
+   "s2c",
+   394
+  ],
+  [
+   "c2s",
+   97
+  ],
+  [
+   "s2c",
+   621
+  ],
+  [
+   "c2s",
+   97
+  ],
+  [
+   "s2c",
+   1277
+  ],
+  [
+   "c2s",
+   230
+  ],
+  [
+   "s2c",
+   1272
+  ],
+  [
+   "c2s",
+   224
+  ],
+  [
+   "s2c",
+   1266
+  ],
+  [
+   "c2s",
+   130
+  ],
+  [
+   "s2c",
+   1353
+  ],
+  [
+   "c2s",
+   97
+  ],
+  [
+   "s2c",
+   567
+  ],
+  [
+   "c2s",
+   189
+  ],
+  [
+   "s2c",
+   1503
+  ],
+  [
+   "c2s",
+   519
+  ],
+  [
+   "s2c",
+   47
+  ],
+  [
+   "c2s",
+   130
+  ],
+  [
+   "s2c",
+   698
+  ],
+  [
+   "c2s",
+   113
+  ],
+  [
+   "s2c",
+   49
+  ],
+  [
+   "c2s",
+   209
+  ],
+  [
+   "s2c",
+   1147
+  ],
+  [
+   "c2s",
+   115
+  ],
+  [
+   "s2c",
+   43
+  ],
+  [
+   "c2s",
+   102
+  ],
+  [
+   "s2c",
+   1922
+  ],
+  [
+   "c2s",
+   147
+  ],
+  [
+   "s2c",
+   51
+  ],
+  [
+   "c2s",
+   109
+  ],
+  [
+   "s2c",
+   432
+  ],
+  [
+   "c2s",
+   102
+  ],
+  [
+   "s2c",
+   2871
+  ],
+  [
+   "c2s",
+   205
+  ],
+  [
+   "s2c",
+   71
+  ],
+  [
+   "c2s",
+   97
+  ],
+  [
+   "s2c",
+   1202
+  ],
+  [
+   "c2s",
+   180
+  ],
+  [
+   "s2c",
+   1292
+  ],
+  [
+   "c2s",
+   102
+  ],
+  [
+   "s2c",
+   2871
+  ],
+  [
+   "c2s",
+   79
+  ],
+  [
+   "s2c",
+   1506
+  ],
+  [
+   "c2s",
+   97
+  ],
+  [
+   "s2c",
+   1147
+  ],
+  [
+   "c2s",
+   175
+  ],
+  [
+   "s2c",
+   720
+  ]
+ ],
+ "application_wire_bytes": 31328,
+ "framing_overflow_messages": 0,
+ "template_flags": {
+  "template_overflow": true,
+  "template_underfill": true,
+  "missing_donor_attempts": {
+   "modify_user_address": 1
+  }
+ },
+ "calibration_sha256": "f5d4968501627e9f06e3a27bf71a02225cbbe3465e357b590cc19f190d2ec240",
+ "episode_sha256": "622dd847c0a3968941b3a56a96eb86f456021a8ca2a9e66e4f1860941cc46513",
+ "measurement": "TLS 1.2 loopback replay of real model trajectory; provider link and wall-clock timing excluded"
+}

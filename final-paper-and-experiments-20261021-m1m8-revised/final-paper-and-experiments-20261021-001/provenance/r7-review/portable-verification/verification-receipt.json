@@ -1,0 +1,50 @@
+{
+  "task": "relocated R7 crossfit package portability validation",
+  "completed_local": "2026-10-24T04:37:55.4793128+01:00",
+  "original_package_root": "C:\\Users\\Administrator\\Documents\\ChatGPT\\agent-side-channel\\final-paper-and-experiments-20261021-m1m8-revised\\final-paper-and-experiments-20261021-001",
+  "relocated_root": "C:\\Users\\Administrator\\Documents\\ChatGPT\\agent-side-channel\\final-paper-and-experiments-20261021-m1m8-revised\\final-paper-and-experiments-20261021-001\\revision-preview\\r7-portability\\relocated-package",
+  "copied_frozen_input_files": 725,
+  "protocol_source_hash_entries": 5,
+  "transitive_source_dependencies": 28,
+  "supplemental_verified_files": 8,
+  "inputs_manifest_sha256": "ae05e3b0045e07bea4eace44da06366cf2a87ac6c57a78e73e042f4e5215e758",
+  "portable_path_map_sha256": "d32493ae9a257a541e78edf21c807899a17e2ae0cd1dd3f364cac5f8f4bbda39",
+  "protocol_sha256": "ad2527ec1a03b13012441d8deb0a3f5ea5188139d7f687ac15f07124a2ed07ed",
+  "source_verification_json_sha256": "6a8da8e6caf0bd08d724b77f5b4409f1f3c2cbbd1bcee464fe2ccf49696c7eb8",
+  "relocated_verification_json_sha256": "6a8da8e6caf0bd08d724b77f5b4409f1f3c2cbbd1bcee464fe2ccf49696c7eb8",
+  "runtime": {
+    "python": "3.12.10",
+    "numpy": "2.5.4",
+    "scikit_learn": "1.9.0",
+    "scipy": "1.18.1",
+    "torch": "2.14.1+cpu",
+    "joblib": "1.6.0"
+  },
+  "command": "python -B verify.py (cwd: relocated package experiments/sp2027-r7-crossfit)",
+  "exit_code": 0,
+  "result": {
+    "passed": true,
+    "bundles": 60,
+    "prediction_rows": 4140,
+    "exact_score_checks": 45540,
+    "split": "same R5 customer 5 folds; zero train/test customer overlap",
+    "timing": "all third columns zero; direction and length only"
+  },
+  "failure_logs": [
+    "verify-first-import-failure.log",
+    "verify-python39-failure.log",
+    "verify-python312.log",
+    "verify-split-missing-failure.log",
+    "verify-protocol-missing-failure.log",
+    "verify-fingerprint-files-missing-failure.log"
+  ],
+  "initial_sklearn_191_run_log": "verify-sklearn191-pass.log",
+  "final_run_log": "verify-pass.log",
+  "notes": [
+    "All work was in a relocated temporary package tree; original frozen source and result files were not modified.",
+    "Python runtime was 3.12.10; pinned artifact dependencies recorded by R7 detailed_results: numpy 2.5.4, scikit-learn 1.9.0, scipy 1.18.1, torch 2.14.1+cpu, joblib 1.6.0.",
+    "R7 agent-extension requirements-public.txt specifies scikit-learn 1.9.1; first full pass under 1.9.1 emitted pickle version warnings but passed. Final full pass reran with recorded scikit-learn 1.9.0.",
+    "Supplemental R4 split/protocol/runtime fingerprint inputs were copied only to satisfy R5 verifier reads; each item and hash authority is documented in supplemental*.json."
+  ],
+  "archived_root": "C:\\Users\\Administrator\\Documents\\ChatGPT\\agent-side-channel\\revision-preview\\r7-package-portability\\r7-portability"
+}

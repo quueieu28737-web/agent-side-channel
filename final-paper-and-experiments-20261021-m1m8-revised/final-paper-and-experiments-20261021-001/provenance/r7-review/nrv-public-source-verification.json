@@ -1,0 +1,67 @@
+{
+  "audit": "R7 NR-V public-source follow-up",
+  "as_of": "2026-10-24",
+  "reviewer_role": "Luna-assisted source check; not an independent human blind review",
+  "scope": "14 family-level Table 8 NR-V cells; statuses remain unchanged",
+  "local_cache": "The source-cache paths recorded in combined_result_records.json were not present locally.",
+  "sources": [
+    {
+      "family": "pouryousef2026traffic",
+      "cells": ["R3", "R4", "R5"],
+      "paper": "https://arxiv.org/html/2609.31877v1",
+      "paper_locator": "V-C1, HTML lines 261-273; Fig. 9(a), four prompt-grouped folds",
+      "read_finding": "The text describes an application/model-level prompt rewrite and says LLMmap inserts execution-trigger instructions before and after the original prompt; Fig. 9(a) reports accuracy under reformulation and temperature variation. This supports a high-level placement account, but does not bind a production dispatch/run artifact or disclose fitted-on-protected and shared-held-out sample IDs.",
+      "repository": "https://github.com/IQSeC-Lab/AI-Traffic-Analysis",
+      "repository_finding": "Public repository/README accessible. It contains data collection and temperature/crafted-prompt folders; inspected README does not map its current code/data to the paper's Fig. 9(a) classifier split or run."
+    },
+    {
+      "family": "whisperleak2025",
+      "cells": ["R4", "R5"],
+      "paper": "https://arxiv.org/html/2511.03675v1",
+      "paper_locator": "6.1 lines 321-330 and Table 4 lines 324-329; 6.2 lines 332-337 and Fig. 7; 6.3 lines 342 onward and Table 5",
+      "read_finding": "Paper reports parallel captures with and without random padding, LightGBM median AUPRC over five trials, simulated batching, and stochastic packet-injection replay. The inspected text does not specify a protected-condition fit for each mitigation result or common held-out trace/sample IDs across clean and defended results.",
+      "repository": "https://github.com/yo-yo-yo-jbo/whisper_leak",
+      "repository_files": ["whisper_leak_benchmark.py", "core/classifiers/utils.py"],
+      "repository_finding": "Public main branch exposes benchmark/training code. In whisper_leak_benchmark.py around lines 486-507 it applies mitigation to the full dataframe before splitting into train/validation/test. This is evidence of a generic current pipeline, not a version-pinned link from that code/commit/config to the historical arXiv v1 tables; it does not establish the published run's matched test IDs."
+    },
+    {
+      "family": "timewilltell2024",
+      "cells": ["R4", "R5"],
+      "paper": "https://arxiv.org/html/2412.15431v1",
+      "paper_locator": "V-B lines 218-225 (200 known inputs, threshold fitted during profiling); VII-B/C and lines 345 onward; padding estimate line 360",
+      "read_finding": "The source describes clean profiling and an input-length-conditioned threshold, while the mitigation discussion reports padding overhead. No protected-condition refit or same protected held-out attack comparison is disclosed at these locators. Accessible text therefore supplies no binding capable of closing R4/R5; do not infer that an unreported adaptive experiment exists."
+    },
+    {
+      "family": "wei2024speculation",
+      "cells": ["R4", "R5"],
+      "paper": "https://arxiv.org/html/2411.01076v4",
+      "paper_locator": "4.4 lines 161-163; Appendix D lines 721-743/Table 2; Appendix E lines 744 onward",
+      "read_finding": "Appendix D directly reports attack accuracy under fixed/random packet padding, with 20 traces per prompt at temperature 0.8 and a maximum 8.7x token-payload overhead. It does not state that the classifier was refit on padded traces for those table cells or identify shared held-out trace IDs across no-padding/padding conditions. Both bindings remain open."
+    },
+    {
+      "family": "zhu2026turing",
+      "cells": ["R5"],
+      "paper": "https://arxiv.org/html/2604.09574v1",
+      "paper_locator": "4.3 lines 236-251; 5.1.2 lines 326-337; Table 1 lines 264-280; Appendix E.3 lines 749-751",
+      "read_finding": "The source explicitly distinguishes real-time online execution from post-hoc offline modification and provides Table 1 detector/task-accuracy rows. It does not expose episode IDs showing that raw and humanized detector outcomes were scored on the same held-out episodes. This supports the mode distinction but not R5 matched-test binding."
+    },
+    {
+      "family": "chen2026sparleak",
+      "cells": ["R4", "R5"],
+      "paper": "https://arxiv.org/html/2609.38830v1",
+      "paper_locator": "7.1 methodology, line 294; 7.5 lines 307-315 and Table 4",
+      "read_finding": "Paper states an 8:1:1 sample-disjoint split for primary attack evaluation and describes random selected-token replacement as a mitigation at inference. It does not say whether the attack model for Table 4 was retrained under each replacement condition or that the same test IDs were used for baseline and mitigation. No cell is closed.",
+      "artifact": "https://anonymous.4open.science/r/Janus_artifacts/",
+      "artifact_finding": "The paper advertises anonymous artifacts, but direct page retrieval was inaccessible in this browser session; no artifact files were inspected."
+    },
+    {
+      "family": "hadad2026shape",
+      "cells": ["R4", "R5"],
+      "paper": "https://arxiv.org/html/2603.25403v1",
+      "paper_locator": "VII-B dataset/protocol and VII-C results; IX-A to IX-B1 lines 370-387",
+      "read_finding": "Paper reports the side-channel attack/evaluation and proposes constant-work padding, deriving a 126% latency estimate from measured 49s vs 111s workload values. In the inspected mitigation section this is a proposal/estimate, not a measured protected refit or defended-attack test; no paired test IDs are given. Source is accessible, but the needed empirical bindings are not reported at the cited mitigation scope."
+    }
+  ],
+  "cell_tally": {"R3": 1, "R4": 6, "R5": 7, "total": 14},
+  "disposition": "No audit labels changed. Public text/code was read where available; all 14 NR-V cells remain open because the required result-to-fit or result-to-matched-test bindings were not found. For proposals with no such experiment reported, author adjudication may need to distinguish NR-V from NR-R under the existing rules."
+}

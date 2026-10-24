@@ -1,0 +1,16 @@
+\begin{tabular}{lllrrrrrl}
+\toprule
+Target & Prompt & Defense & BA [95\% CI] & AUROC & $\Delta$BA [95\% CI] & Wire $\times$ & Calls $\times$ & Winner \\
+\midrule
+Cancel & baseline & Undefended & 0.917 [0.821, 1.000] & 0.979 & -- & 1.00 & 1.00 & network\_decode\_count\_rule \\
+Cancel & baseline & Joint constant & 0.605 [0.529, 0.724] & 0.594 & 0.312 [0.153, 0.410] & 19.76 & 5.04 & D2\_logreg \\
+Cancel & baseline & Joint bucket 1024 & 0.571 [0.500, 0.715] & 0.579 & 0.346 [0.151, 0.464] & 12.36 & 5.04 & ext\_D2\_cnn \\
+Return & baseline & Undefended & 0.855 [0.767, 0.934] & 0.897 & -- & 1.00 & 1.00 & network\_decode\_count\_rule \\
+Return & baseline & Joint constant & 0.555 [0.518, 0.642] & 0.533 & 0.300 [0.148, 0.392] & 19.76 & 5.04 & ext\_D2\_kfp\_style \\
+Return & baseline & Joint bucket 1024 & 0.527 [0.500, 0.617] & 0.536 & 0.328 [0.208, 0.389] & 12.36 & 5.04 & network\_decode\_gboost \\
+\bottomrule
+\end{tabular}
+% Posthoc original 690 Sol episodes, R5 customer five-fold OOF, train-only defense calibration and attacks.
+% 11 attacks in the union; all legacy network extended attacks plus fixed CNN and k-FP-style learner.
+% 2000 paired customer-cluster bootstrap draws; max over full suite reselected on each draw; conditional on fitted attacks.
+% Delta BA = undefended minus defended. Direction and length only; timing channel identically zero.

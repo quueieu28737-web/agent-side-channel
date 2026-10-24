@@ -1,0 +1,17 @@
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Documents\ChatGPT\agent-side-channel\revision-preview\r7-package-portability\r7-portability\relocated-package\experiments\sp2027-r7-localization\verify.py", line 44, in <module>
+    if __name__=='__main__':main()
+                            ^^^^^^
+  File "C:\Users\Administrator\Documents\ChatGPT\agent-side-channel\revision-preview\r7-package-portability\r7-portability\relocated-package\experiments\sp2027-r7-localization\verify.py", line 9, in main
+    target=(PACKAGE/rel).resolve();assert target.is_relative_to(PACKAGE.resolve());assert sha(target)==digest,(rel,'hash changed')
+                                                                                          ^^^^^^^^^^^
+  File "C:\Users\Administrator\Documents\ChatGPT\agent-side-channel\revision-preview\r7-package-portability\r7-portability\relocated-package\experiments\sp2027-r7-localization\run.py", line 15, in sha
+    def sha(p):return hashlib.sha256(Path(p).read_bytes()).hexdigest()
+                                     ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python312\Lib\pathlib.py", line 1019, in read_bytes
+    with self.open(mode='rb') as f:
+         ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python312\Lib\pathlib.py", line 1013, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\Administrator\\Documents\\ChatGPT\\agent-side-channel\\revision-preview\\r7-package-portability\\r7-portability\\relocated-package\\experiments\\sp2027-r6-timing\\continue_r6.py'

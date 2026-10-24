@@ -1,0 +1,98 @@
+{
+ "task": 59,
+ "repeat": 0,
+ "seed": 0,
+ "prompt": "rules",
+ "user": "yusuf_taylor_7149",
+ "has_cancel": 1,
+ "has_return": 0,
+ "native_reward": 0,
+ "db_eq": false,
+ "status": "user_stop",
+ "condition": "raw",
+ "calls": [
+  {
+   "name": "find_user_id_by_name_zip",
+   "kind": "real",
+   "req": 113,
+   "resp": 17,
+   "err": false
+  },
+  {
+   "name": "get_user_details",
+   "kind": "real",
+   "req": 75,
+   "resp": 425,
+   "err": false
+  },
+  {
+   "name": "get_order_details",
+   "kind": "real",
+   "req": 69,
+   "resp": 697,
+   "err": false
+  },
+  {
+   "name": "get_order_details",
+   "kind": "real",
+   "req": 69,
+   "resp": 533,
+   "err": false
+  },
+  {
+   "name": "cancel_pending_order",
+   "kind": "real",
+   "req": 102,
+   "resp": 829,
+   "err": false
+  }
+ ],
+ "records": [
+  [
+   "c2s",
+   141
+  ],
+  [
+   "s2c",
+   45
+  ],
+  [
+   "c2s",
+   103
+  ],
+  [
+   "s2c",
+   453
+  ],
+  [
+   "c2s",
+   97
+  ],
+  [
+   "s2c",
+   725
+  ],
+  [
+   "c2s",
+   97
+  ],
+  [
+   "s2c",
+   561
+  ],
+  [
+   "c2s",
+   130
+  ],
+  [
+   "s2c",
+   857
+  ]
+ ],
+ "application_wire_bytes": 3259,
+ "framing_overflow_messages": 0,
+ "template_flags": null,
+ "calibration_sha256": "f5d4968501627e9f06e3a27bf71a02225cbbe3465e357b590cc19f190d2ec240",
+ "episode_sha256": "97bce50a2f5b7ec410dce86b3ae06b8c69d2b6fe1ffba3b580506b01a7beaa3f",
+ "measurement": "TLS 1.2 loopback replay of real model trajectory; provider link and wall-clock timing excluded"
+}

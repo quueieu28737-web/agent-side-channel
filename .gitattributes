@@ -3,6 +3,9 @@
 *.zip.* binary
 # Unified-diff context markers are part of preserved provenance patches.
 *.patch -whitespace
+# Publication manifests bind exact bytes on every checkout, regardless of the
+# reader's core.autocrlf setting. This includes frozen code and text receipts.
+final-paper-and-experiments-20261021-m1m8-revised/final-paper-and-experiments-20261021-001/** -text whitespace=cr-at-eol
 final-paper-and-experiments-20261021-m1m8-revised/final-paper-and-experiments-20261021-001/experiments/sp2027-r4-snapshot-20261023/** -text whitespace=cr-at-eol
 final-paper-and-experiments-20261021-m1m8-revised/final-paper-and-experiments-20261021-001/experiments/sp2027-r4-full-20261023/** -text whitespace=cr-at-eol
 # Frozen E13 hashes bind exact bytes, including native receipt line endings.
@@ -10,3 +13,10 @@ final-paper-and-experiments-20261021-m1m8-revised/final-paper-and-experiments-20
 # Preserve compiler diagnostics verbatim; TeX emits trailing spaces in log lines.
 final-paper-and-experiments-20261021-m1m8-revised/final-paper-and-experiments-20261021-001/pdf/build-logs/*.log -whitespace
 final-paper-and-experiments-20261021-m1m8-revised/final-paper-and-experiments-20261021-001/provenance/build-logs/*.log -whitespace
+# Frozen R7 files and retained dependency-checker snapshots include final blank
+# lines. Preserve their hashed bytes; continue checking other whitespace errors.
+final-paper-and-experiments-20261021-m1m8-revised/final-paper-and-experiments-20261021-001/experiments/sp2027-r7-*/** whitespace=cr-at-eol,-blank-at-eof
+final-paper-and-experiments-20261021-m1m8-revised/final-paper-and-experiments-20261021-001/provenance/r7-review/portable-verification/** whitespace=cr-at-eol,-blank-at-eof
+# Original reviewer input and first source-audit notes are verbatim provenance.
+final-paper-and-experiments-20261021-m1m8-revised/final-paper-and-experiments-20261021-001/provenance/r7-review/reviewer-comments.txt -whitespace
+final-paper-and-experiments-20261021-m1m8-revised/final-paper-and-experiments-20261021-001/provenance/r7-review/nrv-initial-review.md -whitespace

@@ -1,0 +1,98 @@
+{
+ "task": 40,
+ "repeat": 0,
+ "seed": 0,
+ "prompt": "baseline",
+ "user": "isabella_lopez_6490",
+ "has_cancel": 0,
+ "has_return": 0,
+ "native_reward": 1,
+ "db_eq": true,
+ "status": "user_stop",
+ "condition": "raw",
+ "calls": [
+  {
+   "name": "find_user_id_by_name_zip",
+   "kind": "real",
+   "req": 53,
+   "resp": 113,
+   "err": true
+  },
+  {
+   "name": "find_user_id_by_email",
+   "kind": "real",
+   "req": 91,
+   "resp": 19,
+   "err": false
+  },
+  {
+   "name": "get_user_details",
+   "kind": "real",
+   "req": 77,
+   "resp": 677,
+   "err": false
+  },
+  {
+   "name": "get_order_details",
+   "kind": "real",
+   "req": 69,
+   "resp": 550,
+   "err": false
+  },
+  {
+   "name": "modify_pending_order_payment",
+   "kind": "real",
+   "req": 124,
+   "resp": 739,
+   "err": false
+  }
+ ],
+ "records": [
+  [
+   "c2s",
+   81
+  ],
+  [
+   "s2c",
+   141
+  ],
+  [
+   "c2s",
+   119
+  ],
+  [
+   "s2c",
+   47
+  ],
+  [
+   "c2s",
+   105
+  ],
+  [
+   "s2c",
+   705
+  ],
+  [
+   "c2s",
+   97
+  ],
+  [
+   "s2c",
+   578
+  ],
+  [
+   "c2s",
+   152
+  ],
+  [
+   "s2c",
+   767
+  ]
+ ],
+ "application_wire_bytes": 2842,
+ "framing_overflow_messages": 0,
+ "template_flags": null,
+ "calibration_sha256": "f5d4968501627e9f06e3a27bf71a02225cbbe3465e357b590cc19f190d2ec240",
+ "episode_sha256": "0ba2682039ef4384a1ba36d6ef48a1598261a76ee28ef08801293df5373812f0",
+ "measurement": "TLS 1.2 loopback replay of real model trajectory; provider link and wall-clock timing excluded"
+}

@@ -1,7 +1,7 @@
 {
   "schema": "logical-artifact-modules-v1",
   "path_base": "directory containing this index",
-  "purpose": "Resolve the four logical modules named in Appendix A to preserved archive paths. Logical module names are not renamed physical directories.",
+  "purpose": "Resolve current logical evidence modules to immutable historical archives and separately frozen R7 extensions.",
   "modules": {
     "source-ledger-and-family-audit": {
       "description": "Version-bound family map, source/result records, coding columns and nine-item audit.",
@@ -13,7 +13,9 @@
         "provenance/sok-restructure/table_sources.json",
         "provenance/sok-restructure/build_sok_tables.py",
         "provenance/review-closure/build_tables.py",
-        "provenance/review-closure/coding-columns.json"
+        "provenance/review-closure/coding-columns.json",
+        "provenance/r7-review/audit-corrections.json",
+        "provenance/r7-review/nrv-current-summary.md"
       ]
     },
     "transport-experiments": {
@@ -74,6 +76,62 @@
         "experiments/sp2027-r6-timing/captures.zip",
         "experiments/sp2027-r6-timing/models.zip"
       ]
+    },
+    "expanded_timing_and_wf_controls": {
+      "paths": [
+        "experiments/sp2027-r7-robustness/README.md",
+        "experiments/sp2027-r7-robustness/PROTOCOL.md",
+        "experiments/sp2027-r7-robustness/freeze.json",
+        "experiments/sp2027-r7-robustness/results.json",
+        "experiments/sp2027-r7-robustness/common-suite.json",
+        "experiments/sp2027-r7-robustness/predictions.json",
+        "experiments/sp2027-r7-robustness/models.zip",
+        "experiments/sp2027-r7-robustness/validation.json",
+        "experiments/sp2027-r7-robustness/retraining_validation.json",
+        "experiments/sp2027-r7-robustness/dependency-closure.json",
+        "experiments/sp2027-r7-robustness/dependency-verification.json"
+      ]
+    },
+    "expanded_customer_crossfit": {
+      "paths": [
+        "experiments/sp2027-r7-crossfit/README.md",
+        "experiments/sp2027-r7-crossfit/protocol.json",
+        "experiments/sp2027-r7-crossfit/detailed_results.json",
+        "experiments/sp2027-r7-crossfit/verification.json",
+        "experiments/sp2027-r7-crossfit/dependency-closure.json",
+        "experiments/sp2027-r7-crossfit/dependency-verification.json",
+        "experiments/sp2027-r7-crossfit/verify.py"
+      ]
+    },
+    "expanded_oracle_write_localization": {
+      "paths": [
+        "experiments/sp2027-r7-localization/README.md",
+        "experiments/sp2027-r7-localization/protocol.json",
+        "experiments/sp2027-r7-localization/detailed_results.json",
+        "experiments/sp2027-r7-localization/verification.json",
+        "experiments/sp2027-r7-localization/dependency-closure.json",
+        "experiments/sp2027-r7-localization/dependency-verification.json",
+        "experiments/sp2027-r7-localization/verify.py"
+      ]
+    },
+    "additional_luna_real_agent_study": {
+      "paths": [
+        "experiments/sp2027-r7-agent-extension/README.md",
+        "experiments/sp2027-r7-agent-extension/formal_plan.json",
+        "experiments/sp2027-r7-agent-extension/APPENDED_ANALYSIS_FREEZE.json",
+        "experiments/sp2027-r7-agent-extension/formal_validation.json",
+        "experiments/sp2027-r7-agent-extension/formal_validation_corrected.json",
+        "experiments/sp2027-r7-agent-extension/compact_manifest.json",
+        "experiments/sp2027-r7-agent-extension/decision_alignment.json",
+        "experiments/sp2027-r7-agent-extension/public_decision_alignment.json",
+        "experiments/sp2027-r7-agent-extension/public_validation_corrected.json",
+        "experiments/sp2027-r7-agent-extension/public_network_validation.json",
+        "experiments/sp2027-r7-agent-extension/public_d2_validation.json",
+        "experiments/sp2027-r7-agent-extension/PACKAGING_AMENDMENT.json",
+        "experiments/sp2027-r7-agent-extension/raw-evidence-public.zip",
+        "experiments/sp2027-r7-agent-extension/PUBLIC_REDACTION.json",
+        "experiments/sp2027-r7-agent-extension/verify_public.py"
+      ]
     }
   },
   "current_publication": [
@@ -81,21 +139,16 @@
     "manuscript/supplement.tex",
     "pdf/main.pdf",
     "pdf/supplement.pdf",
-    "provenance/review-closure/verify_manuscript.py",
-    "provenance/review-closure/validation.json",
     "provenance/snapshot.json",
     "SHA256SUMS.json",
-    "manuscript/sections/39-shadow-deployment.tex",
-    "manuscript/refs-deployment.bib",
-    "provenance/shadow-deployment/sources.json",
-    "manuscript/sections/40-evidence-concordance.tex",
-    "provenance/review-closure/family-record-concordance.csv",
-    "provenance/review-closure/author-verification-attestation.json",
-    "manuscript/sections/41-live-timing.tex",
-    "manuscript/sections/42-live-timing-main.tex",
-    "manuscript/tables/r6-main.tex",
-    "manuscript/tables/r6-supp.tex",
-    "provenance/timing/validation.json"
+    "provenance/r7-review/verify_publication.py",
+    "provenance/r7-review/validation.json",
+    "provenance/r7-review/checklist-coverage.json",
+    "provenance/r7-review/visual_qa.json"
   ],
-  "current_verification": "provenance/timing/verify_publication.py"
+  "current_verification": "provenance/r7-review/verify_publication.py",
+  "historical_document_verifiers": [
+    "provenance/review-closure/verify_manuscript.py",
+    "provenance/timing/verify_publication.py"
+  ]
 }

@@ -1,0 +1,83 @@
+{
+ "task": 12,
+ "repeat": 0,
+ "seed": 0,
+ "prompt": "rules",
+ "user": "mia_garcia_4516",
+ "has_cancel": 0,
+ "has_return": 1,
+ "native_reward": 1,
+ "db_eq": true,
+ "status": "transfer",
+ "condition": "raw",
+ "calls": [
+  {
+   "name": "find_user_id_by_email",
+   "kind": "real",
+   "req": 87,
+   "resp": 15,
+   "err": false
+  },
+  {
+   "name": "get_user_details",
+   "kind": "real",
+   "req": 73,
+   "resp": 475,
+   "err": false
+  },
+  {
+   "name": "get_order_details",
+   "kind": "real",
+   "req": 69,
+   "resp": 1174,
+   "err": false
+  },
+  {
+   "name": "transfer_to_human_agents",
+   "kind": "real",
+   "req": 289,
+   "resp": 19,
+   "err": false
+  }
+ ],
+ "records": [
+  [
+   "c2s",
+   115
+  ],
+  [
+   "s2c",
+   43
+  ],
+  [
+   "c2s",
+   101
+  ],
+  [
+   "s2c",
+   503
+  ],
+  [
+   "c2s",
+   97
+  ],
+  [
+   "s2c",
+   1202
+  ],
+  [
+   "c2s",
+   317
+  ],
+  [
+   "s2c",
+   47
+  ]
+ ],
+ "application_wire_bytes": 2465,
+ "framing_overflow_messages": 0,
+ "template_flags": null,
+ "calibration_sha256": "f5d4968501627e9f06e3a27bf71a02225cbbe3465e357b590cc19f190d2ec240",
+ "episode_sha256": "99ed1177790d4f4f3b81cda0db28f4bf2219529df2a35034d30ce536f05b9d9a",
+ "measurement": "TLS 1.2 loopback replay of real model trajectory; provider link and wall-clock timing excluded"
+}

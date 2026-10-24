@@ -1,0 +1,98 @@
+能站住的部分：
+- 以"result record"而非论文为单位的证据绑定框架。它能暴露 Dangol 的 stored 与 live 记录、Early Bird 的两个机制这类被混淆的比较，这是真正有用的 SoK 视角。
+- “state-changing calls 承载主信号，而 prompt 规则只改变读序”这一机制性发现，具体且反直觉。
+- 把 trace path 与 action path 放进同一条 agent–tool 链路来评估。
+会被质疑的部分：
+1. Remark 1 是教科书级 DPI，不是贡献。建议降格为一句话，不要编号。
+2. 防御组件几乎都有先例。 影子/诱饵查询来自 WRA，常速率隧道来自 IP-TFS/RFC 9347，桶化填充和常形状来自 WF 防御（Tamaraw、FRONT 等）。论文 4.2 节自己也承认 E5 “not claiming it as new”。审稿人会问：新的到底是什么？
+3. 身份危机。 它同时想当 SoK（82 家族、39 记录）、方法论论文（三个 check）、实证论文（690 + 4,140 次）和防御论文（shadow shaping）。每一块都"够用但不极致"。S&P 的 SoK 要求有明确的 systematization insight，而 RQ1–RQ4 在正文中没有被逐条回答。
+4. SoK 部分的方法学弱点： 
+   - 初稿由 AI 辅助，作者验证。κ 是"抽取 vs 验证"的一致性，不是独立评分者信度，论文自己也承认。
+   - 语料是 purposive 的，且无召回估计。
+   - 24 个 rule-application 案例由作者构造，只检验规则应用，不检验准确率。
+优点： 690 次真实 agent 运行；训练/测试按客户分离；defense calibration 仅用训练集；TLS 重放有解析模型校验；E13 加入了 timing 和完整隧道对照。
+关键缺口（按杀伤力排序）：
+A. Headline 与 cross-fit 不自洽。
+- 摘要和贡献写"降到 50%"，但 Table 10 中同一个 E9 constant 设计在 cross-fit 下是 60.5%/52.1%。
+- Rules + joint 在冻结测试集上是 50.0/60.6，仅 prompt 不同就差 10 点。这说明估计量噪声很大，50% 是有利的一次实现。
+- 测试集只有 5 个 cancel 阳性客户、7 个 return 阳性客户，CI 为 [50, 60.6] 和 [50, 65.5]，绝对阈值（BA 上界 <0.60）没有任何一个关键 cell 通过。
+- 论文自己写了 “do not certify the absolute bound”，但摘要没有对应的收敛。
+B. 单环境、单模型、单别名。 只有 τ-bench retail，一个可变的模型别名，同一模型兼任用户模拟器，且开发阶段见过全部 115 个任务。泛化性完全靠自述。
+C. 攻击者偏弱，且没有真正的 defense-aware 自适应攻击。
+- 攻击套件是 GBDT/LR 加手工特征（计数、bigram、长度）加计数规则。
+- 没有序列模型（CNN/Transformer/LSTM）、没有 k-FP 类 WF 攻击，也没有知晓防御设计和参数分布的攻击者。
+- 防御者校准时知道总体分布（"known-population calibration"），这对防御有利。
+D. “utility 不受损”是构造出来的，不是测出来的。 Reward 在四个程序条件下完全相同，因为是对同一轨迹重放，论文也承认 “equal reward is structural”。真正的 RQ4（端到端 utility）在真实 agent 上没有被回答。E13 虽然 live 执行，但轨迹仍是固定的，没有 timing-dependent replanning。
+E. 缺少与标准防御的同口径 Pareto 对比。 没有把 Tamaraw/FRONT/WTF-PAD 等适配到同一批 E9 轨迹上，因此"新方案处于什么前沿"无法判断。唯一对照是 constant framing 和完整隧道。
+F. 成本不实用，却声称 “actionable”。 12 到 15 倍字节、3.8 倍调用、隧道 125.7 倍；serial shadow 在 timing 视角下还泄漏（+11.4 点）。E13 结论是没有任何一个配置满足绝对准则。
+G. 威胁模型落地性。
+- 谁是 agent→tool 链路上的被动观察者？
+- 多个 tool 端点时，SNI/IP/ECH 已经泄露工具身份，shadow 的收益是否仍成立？
+- 信任的 shadow executor/gateway 本身就是新的信任点，provider 的 commit log 也在范围外。
+- 诱饵调用带来的计费、限流和 DoS 放大没有讨论。
+H. 规则 prompt 是稻草人。 它本来只约束读序，当然不会隐藏意图。"behavioral compliance ≠ metadata protection"这一点成立，但分量被夸大成一个主要 takeaway。
+I. E10–E12 是 post hoc。 E11 的"操作点选择"是回溯性的，作者自己也说不是独立确认。
+- 4.2 节写"pre-registered tests"，而第 8 节只说"七个作者构造的机制检查在 E5–E7 之前记录"，这是 overclaim。
+- 正文依赖 S1–S19 十余次，但审稿人没有义务读补充材料，主文必须自足。
+- Table 8 的 “?”（intentional）读起来像偷懒。为什么不联系作者或复现？
+- Table 9（BA 97.2/94.0，276 episodes）、Table 10（91.7/85.5，690 episodes）、Table 11（91.7/86.4，138 trajectories）的 “undefended” 数字口径不同，读者很容易混淆。
+- 摘要数字密度过高，结构上不像摘要。
+T1. 把 cross-fit 提升为主结果，改写 headline
+1. 以 690 次的 customer-grouped cross-fit 作为 primary result，冻结 46 任务测试集降为 confirmatory/sanity。
+2. 摘要和贡献改为：undefended 91.7/85.5 → 联合方案 52–60%，配对下降 31–47 点；"50%" 仅作为冻结测试集上的点估计出现一次并附 CI。
+3. 全文统一一个术语表：undefended / baseline / raw 只用一个。
+4. 在引言末加一个 Scope of claims 小框：成立什么，不成立什么（不认证绝对界，仅限单环境、定长/顺序视角、已拟合攻击者）。
+T2. 增加第二个环境和第二个模型
+1. 环境：τ-bench airline（同框架，改动最小），或一个 MCP 文件/Git 类工具集，状态改变调用的结构要不同。
+2. 模型：至少一个开源权重模型（固定版本，可复现）和一个不同厂商的闭源模型，替换"可变别名"。
+3. 规模：不必重做 690 次，每组 ≥150 次且保证阳性客户数足够即可。
+4. 用两个新环境/模型检验 E12 的"write calls 承载信号"是否复现，这是最有价值的泛化检验。
+5. 验收标准：主要定性结论（规则无效、writes 主导、联合 shaping 显著降低）在 ≥2 个额外设置中复现。若不复现，如实报告并收窄 claim。
+T3. 解决统计功效问题
+1. 做功效分析：为让 BA 上界 <0.60 的绝对准则有机会通过，需要多少阳性客户。
+2. 用任务生成器或多模板合成扩充客户数，把阳性客户提升到 ≥30（cancel）和 ≥30（return）。
+3. 预先写明主指标、阈值和统计检验，再运行，并把这条记录放进补充材料的预注册文件里。
+4. 若无法达标，摘要中去掉任何"达到阈值"的暗示，改为"配对降低显著、绝对界未确认"。
+T4. 强化攻击者
+1. 加入序列模型攻击（1D-CNN/Transformer 对记录长度和方向序列）和 k-FP 类特征，把"max over suite"扩到 ≥6 个攻击器。
+2. 加入 defense-aware 攻击者：知道防御算法、模板分布和 bucket 大小，在防御后训练数据上训练（这就是你已有的 D2，把它明确命名并作为主攻击者）。
+3. 加一个训练-测试分布不匹配的防御：防御者校准用的分布与真实分布不同（去掉 known-population 假设）。
+4. 验收标准：主表中的数字都对应"最强攻击者"，并说明攻击套件规模和来源。
+T5. 补 Pareto 对照实验
+1. 把 Tamaraw、FRONT、WTF-PAD、Walkie-Talkie 适配到 E9 的记录序列（可用已有 WF 实现，适配层要写清）。
+2. 以"最强攻击者 BA 对字节/延迟/调用数"画 Pareto 图，包含 constant、bucket、shadow、完整隧道。
+3. 论文主张改为"落在前沿的哪个位置"，而不是"绝对安全"。
+T6. 实测端到端 utility
+1. 选一个子集（比如 100 到 150 个任务），让真实 LLM 规划器在 live 循环中执行，cover 实际插入并产生延迟。
+2. 记录 reward、墙钟时间和超时/重试率。
+3. 如果成本不允许，把 RQ4 的措辞收窄为"状态保持（logical planner transcript）"，并明确 live replanning 未测。
+T7. 威胁模型与部署场景章节（新增半页到一页）
+1. 列表给出 3 到 4 个部署场景：同机 sidecar、同 VPC 网关、远程 SaaS/MCP、跨组织，注明谁是被动观察者、能看到什么（SNI/IP/ECH）。
+2. 对每个场景说明哪些防御适用，哪些不适用（比如多端点下工具身份已泄露）。
+3. 增加成本讨论：诱饵带来的计费、限流和 DoS 放大；shadow executor 的信任假设。
+T8. 补独立编码一致性
+1. 找 2 名外部研究生，对 20 个缓解家族的一个分层样本（如 8 到 10 个家族、约 70 个 cell）独立打标，算真正的 κ。
+2. 对 “?”（NR-V）逐个联系作者或复现，能解决的转成 B/U，并在表中保留未解决的数量。
+3. 把"抽取-验证一致性"的措辞改成显式的 non-independent，并把独立 κ 放在旁边。
+T9. 重写 SoK 叙事，逐条回答 RQ1–RQ4
+1. 在引言后加一张 RQ → Finding → Evidence 表，一行一个研究问题，附章节和表号。
+2. 提炼 2 到 3 个"只有 systematization 才能得出"的洞见（例如：Origin A/B 与 Type I–IV 的交叉使哪些防御转移不成立）。
+3. 删去或下放不构成洞见的内容（Remark 1，Table 7 的部分行）。
+T10. 修正 overclaim
+1. 把 “pre-registered tests” 改成 “mechanism checks recorded before the experiments (S12)”，E9 标 “frozen calibration”，E10–E12 标 “post hoc”。
+2. 把 “rules attain” 一类结果的表述改成"规则提高机械遵守但不改变元数据泄露"，并说明这是一个控制实验而不是一个防御方案。
+T11. 数字口径一致化
+1. 增加一张小表，列出 Table 9/10/11 各自的样本集（276 / 690 / 138）、视角和 undefended 数字，避免读者误以为矛盾。
+2. 摘要中只保留 4 到 5 个关键数字，其余移入正文。
+T12. 让主文自足
+1. 把支撑每个主结论的最小表格或图（E5 全 cell、E6 主表、E12 的 ablation）放回主文，补充材料只放细节。
+2. 检查 S-引用，凡是论证链断在补充材料里的，补回正文。
+T13. 合规性检查
+1. 对照 S&P 2027 CFP（页数、匿名化、伦理与 open science 声明）逐项核对，我无法确认当年的具体要求，请以官方页面为准。
+2. 增加一段 ethics/stakeholder 说明：诱饵执行对真实服务的影响，以及负责任披露（如适用）。
+考虑到今天是 10 月 24 日，若目标是近期截止，建议顺序：
+1. 先做零实验改动：T1、T10、T11、T9、T12，主要是改写，几天内可完成，收益最大。
+2. 再做低成本实验：T4（攻击者）、T5（Pareto 对照），都可以在已有 E9 轨迹上离线完成。
+3. 最后做需要新采集的：T2、T3、T6，如赶不上这一轮，宁可把 claim 收窄，也不要仓促补数据而引入新的不一致。
+加密隐藏内容，却暴露 agent 的工作流结构。我们（1）提供一套把已发表防御结果绑定到接收视角、执行边界和评估条件的证据框架；（2）在真实 agent 上显示，行为合规无法隐藏意图，信号集中在状态改变调用；（3）给出训练校准的联合 shaping 及其可量化的成本前沿，同时明确哪些条件下它不提供保证。
+这样的叙事强调框架、机制发现和成本-泄露前沿，不依赖"50%"这个脆弱的点估计，也更难被审稿人攻击。

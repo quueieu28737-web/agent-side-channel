@@ -1,0 +1,575 @@
+{
+ "created_utc": "2026-10-24T02:15:10.980035+00:00",
+ "model": "gpt-6-luna",
+ "effort": "low",
+ "domain": "existing-public-retail",
+ "runs": 150,
+ "task_count": 75,
+ "train": [
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12,
+  13,
+  14,
+  15,
+  16,
+  17,
+  23,
+  24,
+  25,
+  26,
+  27,
+  28,
+  29,
+  30,
+  31,
+  32,
+  33,
+  34,
+  35,
+  39,
+  45,
+  46
+ ],
+ "test": [
+  18,
+  19,
+  20,
+  21,
+  22,
+  36,
+  37,
+  38,
+  40,
+  41,
+  42,
+  43,
+  44,
+  49,
+  59,
+  60,
+  61,
+  62,
+  63,
+  64,
+  66,
+  67,
+  68,
+  73,
+  78,
+  82,
+  83,
+  84,
+  85,
+  86,
+  87,
+  88,
+  89,
+  91,
+  92,
+  97,
+  98,
+  101,
+  102,
+  103,
+  104,
+  105,
+  106,
+  107,
+  108,
+  114
+ ],
+ "prompts": [
+  "baseline",
+  "rules"
+ ],
+ "repeats": [
+  0
+ ],
+ "workers": 2,
+ "per_call_timeout_seconds": 180,
+ "no_result_stop": 3,
+ "pilot_included": false,
+ "new_customers": false,
+ "selection": "All 46 inherited test tasks plus first 29 inherited training tasks excluding pilot 0..4; fixed before formal collection",
+ "prior_exposure": "All 115 public tasks previously used in development; neither unseen environment nor independent human validation. Same provider second model. Different cohort from Sol prevents direct causal model comparison.",
+ "train_only_calibration": true,
+ "tasks": [
+  {
+   "task": 5,
+   "customer": "mei_kovacs_8020",
+   "label": 2,
+   "partition": "train"
+  },
+  {
+   "task": 6,
+   "customer": "mei_kovacs_8020",
+   "label": 0,
+   "partition": "train"
+  },
+  {
+   "task": 7,
+   "customer": "mei_kovacs_8020",
+   "label": 0,
+   "partition": "train"
+  },
+  {
+   "task": 8,
+   "customer": "mei_kovacs_8020",
+   "label": 0,
+   "partition": "train"
+  },
+  {
+   "task": 9,
+   "customer": "mei_kovacs_8020",
+   "label": 0,
+   "partition": "train"
+  },
+  {
+   "task": 10,
+   "customer": "mia_garcia_4516",
+   "label": 0,
+   "partition": "train"
+  },
+  {
+   "task": 11,
+   "customer": "mia_garcia_4516",
+   "label": 2,
+   "partition": "train"
+  },
+  {
+   "task": 12,
+   "customer": "mia_garcia_4516",
+   "label": 2,
+   "partition": "train"
+  },
+  {
+   "task": 13,
+   "customer": "mia_garcia_4516",
+   "label": 2,
+   "partition": "train"
+  },
+  {
+   "task": 14,
+   "customer": "mia_garcia_4516",
+   "label": 2,
+   "partition": "train"
+  },
+  {
+   "task": 15,
+   "customer": "fatima_johnson_7581",
+   "label": 0,
+   "partition": "train"
+  },
+  {
+   "task": 16,
+   "customer": "fatima_johnson_7581",
+   "label": 3,
+   "partition": "train"
+  },
+  {
+   "task": 17,
+   "customer": "fatima_johnson_7581",
+   "label": 0,
+   "partition": "train"
+  },
+  {
+   "task": 23,
+   "customer": "sofia_hernandez_5364",
+   "label": 0,
+   "partition": "train"
+  },
+  {
+   "task": 24,
+   "customer": "sofia_hernandez_5364",
+   "label": 0,
+   "partition": "train"
+  },
+  {
+   "task": 25,
+   "customer": "isabella_johansson_2152",
+   "label": 0,
+   "partition": "train"
+  },
+  {
+   "task": 26,
+   "customer": "isabella_johansson_2152",
+   "label": 2,
+   "partition": "train"
+  },
+  {
+   "task": 27,
+   "customer": "isabella_johansson_2152",
+   "label": 0,
+   "partition": "train"
+  },
+  {
+   "task": 28,
+   "customer": "isabella_johansson_2152",
+   "label": 2,
+   "partition": "train"
+  },
+  {
+   "task": 29,
+   "customer": "isabella_johansson_2152",
+   "label": 0,
+   "partition": "train"
+  },
+  {
+   "task": 30,
+   "customer": "olivia_lopez_3865",
+   "label": 3,
+   "partition": "train"
+  },
+  {
+   "task": 31,
+   "customer": "olivia_lopez_3865",
+   "label": 3,
+   "partition": "train"
+  },
+  {
+   "task": 32,
+   "customer": "olivia_lopez_3865",
+   "label": 3,
+   "partition": "train"
+  },
+  {
+   "task": 33,
+   "customer": "noah_patel_6952",
+   "label": 0,
+   "partition": "train"
+  },
+  {
+   "task": 34,
+   "customer": "noah_patel_6952",
+   "label": 0,
+   "partition": "train"
+  },
+  {
+   "task": 35,
+   "customer": "aarav_santos_2259",
+   "label": 2,
+   "partition": "train"
+  },
+  {
+   "task": 39,
+   "customer": "fatima_taylor_3452",
+   "label": 0,
+   "partition": "train"
+  },
+  {
+   "task": 45,
+   "customer": "daiki_johnson_9523",
+   "label": 0,
+   "partition": "train"
+  },
+  {
+   "task": 46,
+   "customer": "daiki_johnson_9523",
+   "label": 2,
+   "partition": "train"
+  },
+  {
+   "task": 18,
+   "customer": "mei_davis_8935",
+   "label": 0,
+   "partition": "test"
+  },
+  {
+   "task": 19,
+   "customer": "mei_davis_8935",
+   "label": 2,
+   "partition": "test"
+  },
+  {
+   "task": 20,
+   "customer": "ethan_garcia_1261",
+   "label": 0,
+   "partition": "test"
+  },
+  {
+   "task": 21,
+   "customer": "ethan_garcia_1261",
+   "label": 0,
+   "partition": "test"
+  },
+  {
+   "task": 22,
+   "customer": "ethan_garcia_1261",
+   "label": 0,
+   "partition": "test"
+  },
+  {
+   "task": 36,
+   "customer": "daiki_sanchez_3253",
+   "label": 0,
+   "partition": "test"
+  },
+  {
+   "task": 37,
+   "customer": "daiki_sanchez_3253",
+   "label": 0,
+   "partition": "test"
+  },
+  {
+   "task": 38,
+   "customer": "daiki_sanchez_3253",
+   "label": 1,
+   "partition": "test"
+  },
+  {
+   "task": 40,
+   "customer": "isabella_lopez_6490",
+   "label": 0,
+   "partition": "test"
+  },
+  {
+   "task": 41,
+   "customer": "mei_patel_7272",
+   "label": 0,
+   "partition": "test"
+  },
+  {
+   "task": 42,
+   "customer": "mei_patel_7272",
+   "label": 0,
+   "partition": "test"
+  },
+  {
+   "task": 43,
+   "customer": "lucas_santos_6600",
+   "label": 0,
+   "partition": "test"
+  },
+  {
+   "task": 44,
+   "customer": "aarav_anderson_8794",
+   "label": 0,
+   "partition": "test"
+  },
+  {
+   "task": 49,
+   "customer": "aarav_anderson_8794",
+   "label": 0,
+   "partition": "test"
+  },
+  {
+   "task": 59,
+   "customer": "yusuf_taylor_7149",
+   "label": 1,
+   "partition": "test"
+  },
+  {
+   "task": 60,
+   "customer": "chen_johnson_4204",
+   "label": 0,
+   "partition": "test"
+  },
+  {
+   "task": 61,
+   "customer": "chen_johnson_4204",
+   "label": 0,
+   "partition": "test"
+  },
+  {
+   "task": 62,
+   "customer": "chen_johnson_4204",
+   "label": 0,
+   "partition": "test"
+  },
+  {
+   "task": 63,
+   "customer": "chen_johnson_4204",
+   "label": 0,
+   "partition": "test"
+  },
+  {
+   "task": 64,
+   "customer": "harper_moore_6183",
+   "label": 0,
+   "partition": "test"
+  },
+  {
+   "task": 66,
+   "customer": "aarav_lee_1982",
+   "label": 1,
+   "partition": "test"
+  },
+  {
+   "task": 67,
+   "customer": "noah_ito_3850",
+   "label": 0,
+   "partition": "test"
+  },
+  {
+   "task": 68,
+   "customer": "noah_ito_3850",
+   "label": 0,
+   "partition": "test"
+  },
+  {
+   "task": 73,
+   "customer": "fatima_wilson_7472",
+   "label": 2,
+   "partition": "test"
+  },
+  {
+   "task": 78,
+   "customer": "yara_muller_8652",
+   "label": 1,
+   "partition": "test"
+  },
+  {
+   "task": 82,
+   "customer": "chen_silva_7485",
+   "label": 2,
+   "partition": "test"
+  },
+  {
+   "task": 83,
+   "customer": "chen_silva_7485",
+   "label": 2,
+   "partition": "test"
+  },
+  {
+   "task": 84,
+   "customer": "chen_silva_7485",
+   "label": 2,
+   "partition": "test"
+  },
+  {
+   "task": 85,
+   "customer": "yusuf_hernandez_6785",
+   "label": 0,
+   "partition": "test"
+  },
+  {
+   "task": 86,
+   "customer": "yusuf_hernandez_6785",
+   "label": 0,
+   "partition": "test"
+  },
+  {
+   "task": 87,
+   "customer": "yusuf_hernandez_6785",
+   "label": 0,
+   "partition": "test"
+  },
+  {
+   "task": 88,
+   "customer": "daiki_silva_2903",
+   "label": 1,
+   "partition": "test"
+  },
+  {
+   "task": 89,
+   "customer": "raj_santos_9079",
+   "label": 2,
+   "partition": "test"
+  },
+  {
+   "task": 91,
+   "customer": "mei_ahmed_4909",
+   "label": 2,
+   "partition": "test"
+  },
+  {
+   "task": 92,
+   "customer": "mei_ahmed_4909",
+   "label": 2,
+   "partition": "test"
+  },
+  {
+   "task": 97,
+   "customer": "yusuf_li_7255",
+   "label": 0,
+   "partition": "test"
+  },
+  {
+   "task": 98,
+   "customer": "yusuf_li_7255",
+   "label": 0,
+   "partition": "test"
+  },
+  {
+   "task": 101,
+   "customer": "liam_thomas_7882",
+   "label": 2,
+   "partition": "test"
+  },
+  {
+   "task": 102,
+   "customer": "noah_ito_3850",
+   "label": 0,
+   "partition": "test"
+  },
+  {
+   "task": 103,
+   "customer": "noah_ito_3850",
+   "label": 0,
+   "partition": "test"
+  },
+  {
+   "task": 104,
+   "customer": "lucas_brown_6720",
+   "label": 2,
+   "partition": "test"
+  },
+  {
+   "task": 105,
+   "customer": "lucas_brown_6720",
+   "label": 2,
+   "partition": "test"
+  },
+  {
+   "task": 106,
+   "customer": "aarav_anderson_8794",
+   "label": 0,
+   "partition": "test"
+  },
+  {
+   "task": 107,
+   "customer": "sofia_thomas_1518",
+   "label": 0,
+   "partition": "test"
+  },
+  {
+   "task": 108,
+   "customer": "yara_ito_8499",
+   "label": 0,
+   "partition": "test"
+  },
+  {
+   "task": 114,
+   "customer": "yara_muller_8652",
+   "label": 1,
+   "partition": "test"
+  }
+ ],
+ "files": {
+  "common.py": "0b8ebefe91576bd92c01c90d2f711e9a538233a729541a016e6319ae3559920e",
+  "collect_formal.py": "a7c593cae4c854490445eb272d0a875a408ac530c9d6c7837ec8d8af5df44eb3",
+  "rpc_backend.py": "72b1d129d99dcce89e877dae2f19dc5c57835726e61f7d7a3816326f38edcbf2",
+  "action.schema.json": "2ae8f2eb7f87cbda18a9ccd38333b7d57fa89e7b71db25da800f08833e57768c",
+  "model_instructions.txt": "408f625b1c2a709a454a5fdf5c6fb38f20fddbc11a9c30ec525b3daf5c669177",
+  "split.json": "e2a9b1c295156fc7a2a864b1819afe2fb8b3b423d16fb84b5dd5a0766114c4ff",
+  "protocol.json": "a910baae7bfec334f2be49b07f79c4505083529d990e5ea96a69674087661d9f"
+ },
+ "train_counts": {
+  "tasks": 29,
+  "customers": 10,
+  "cancel_positive_tasks": 4,
+  "return_positive_tasks": 13
+ },
+ "test_counts": {
+  "tasks": 46,
+  "customers": 24,
+  "cancel_positive_tasks": 6,
+  "return_positive_tasks": 11
+ }
+}

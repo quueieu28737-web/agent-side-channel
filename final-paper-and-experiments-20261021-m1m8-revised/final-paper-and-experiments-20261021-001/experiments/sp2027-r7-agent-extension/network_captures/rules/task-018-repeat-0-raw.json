@@ -1,0 +1,68 @@
+{
+ "task": 18,
+ "repeat": 0,
+ "seed": 0,
+ "prompt": "rules",
+ "user": "mei_davis_8935",
+ "has_cancel": 0,
+ "has_return": 0,
+ "native_reward": 0,
+ "db_eq": false,
+ "status": "user_stop",
+ "condition": "raw",
+ "calls": [
+  {
+   "name": "find_user_id_by_name_zip",
+   "kind": "real",
+   "req": 110,
+   "resp": 14,
+   "err": false
+  },
+  {
+   "name": "get_user_details",
+   "kind": "real",
+   "req": 72,
+   "resp": 409,
+   "err": false
+  },
+  {
+   "name": "get_order_details",
+   "kind": "real",
+   "req": 69,
+   "resp": 1181,
+   "err": false
+  }
+ ],
+ "records": [
+  [
+   "c2s",
+   138
+  ],
+  [
+   "s2c",
+   42
+  ],
+  [
+   "c2s",
+   100
+  ],
+  [
+   "s2c",
+   437
+  ],
+  [
+   "c2s",
+   97
+  ],
+  [
+   "s2c",
+   1209
+  ]
+ ],
+ "application_wire_bytes": 2053,
+ "framing_overflow_messages": 0,
+ "template_flags": null,
+ "calibration_sha256": "f5d4968501627e9f06e3a27bf71a02225cbbe3465e357b590cc19f190d2ec240",
+ "episode_sha256": "df8888c69a4744bced550d7c03c842f7f5618773a64533c4b8b436098ab740be",
+ "measurement": "TLS 1.2 loopback replay of real model trajectory; provider link and wall-clock timing excluded"
+}

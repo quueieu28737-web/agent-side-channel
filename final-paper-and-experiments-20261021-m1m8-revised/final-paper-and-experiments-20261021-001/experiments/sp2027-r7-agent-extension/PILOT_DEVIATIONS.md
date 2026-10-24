@@ -1,0 +1,3 @@
+# Pilot provenance deviation
+
+The inherited pilot_tasks list had only task IDs 0 and 1; this was discovered after launching the first pilot runner. Additional IDs 2, 3, 4 were recorded before their execution in pilot_extension_plan.json. A wording-only edit of the new protocol.json was briefly made and restored during the pilot; some pilot call fingerprints may therefore differ. No existing experiment protocol or data was changed. The pilot is feasibility evidence only and is excluded from formal 150-run collection. Formal collection uses the separately frozen formal_plan.json and verifies source hashes before collection. No pilot output is copied into formal namespaces.
