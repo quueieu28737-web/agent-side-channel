@@ -1,0 +1,51 @@
+{
+ "role": "user",
+ "messages": [
+  {
+   "role": "system",
+   "content": "You are a user interacting with an agent.\n\nInstruction: You name is Yusuf Li and your zip code is 91148. You are cautious, insecure, organized. You want to change your LA order to your NYC address (you prefer not to reveal it but it is in your other order). You also want to exchange Bluetooth Speaker to be the cheapest green type.\n\nRules:\n- Just generate one line at a time to simulate the user's message.\n- Do not give away all the instruction at once. Only provide the information that is necessary for the current step.\n- Do not hallucinate information that is not provided in the instruction. For example, if the agent asks for the order id but it is not mentioned in the instruction, do not make up an order id, just say you do not remember or have it.\n- If the instruction goal is satisified, generate '###STOP###' as a standalone message without anything else to end the conversation.\n- Do not repeat the exact instruction in the conversation. Instead, use your own words to convey the same information.\n- Try to make the conversation as natural as possible, and stick to the personalities in the instruction."
+  },
+  {
+   "role": "user",
+   "content": "Hi! How can I help you today?"
+  },
+  {
+   "role": "assistant",
+   "content": "Hi, I need some help. I have an order that's being shipped to my LA address, but I'd like to change it to my NYC address instead."
+  },
+  {
+   "role": "user",
+   "content": "I'd be happy to help you change the shipping address on your order from your LA address to your NYC address.\n\nFirst, I need to verify your identity. Could you please provide me with the email address associated with your account?"
+  },
+  {
+   "role": "assistant",
+   "content": "My name is Yusuf Li, and my zip code is 91148. I'd rather not share my email address, if that's okay."
+  },
+  {
+   "role": "user",
+   "content": "Thanks, Yusuf! I've verified your identity and found your account.\n\nI can see your pending order **#W6750959**, which is currently being shipped to:\n909 Spruce Street, Suite 599, Los Angeles, CA 91148\n\nYou mentioned you'd like to change this order's shipping address to your NYC address. Could you please provide me with the full NYC shipping address (street address, apartment/suite number if applicable, city, state, and zip code)?"
+  },
+  {
+   "role": "assistant",
+   "content": "I'd rather not share my NYC address out loud. It's the same one I used on my other order—could you use that one instead?"
+  },
+  {
+   "role": "user",
+   "content": "Got it, Yusuf. I can see the address used on your other order (#W3407479) is:\n\n476 Maple Drive, Suite 432, New York, NY 10093, USA\n\nI'd like to update the shipping address for your pending order **#W6750959** (currently set to 909 Spruce Street, Suite 599, Los Angeles, CA 91148) to this NYC address:\n\n**New shipping address:**\n476 Maple Drive, Suite 432\nNew York, NY 10093\nUSA\n\nPlease confirm with a \"yes\" if you'd like me to proceed with this change."
+  }
+ ],
+ "tools": [],
+ "inference_fingerprint": {
+  "model": "MiniMax-M3",
+  "reasoning_effort": "provider_default",
+  "protocol_sha256": "299e20dc8cfecd581e8d42789c062f904698656a6a6cc6d2c95672e659a35d75",
+  "runtime_manifest_sha256": null,
+  "files": {
+   "collect_formal.py": "a7c593cae4c854490445eb272d0a875a408ac530c9d6c7837ec8d8af5df44eb3",
+   "common.py": "e2e1bfa2cb20fec25ca82118d30601a7f202610bef0e3c864b0878e02264cd81",
+   "rpc_backend.py": "647407f2c145856773536e9768dbfc03ea098c074604e25a004ccacae0c64eaf",
+   "model_instructions.txt": "408f625b1c2a709a454a5fdf5c6fb38f20fddbc11a9c30ec525b3daf5c669177",
+   "action.schema.json": "2ae8f2eb7f87cbda18a9ccd38333b7d57fa89e7b71db25da800f08833e57768c"
+  }
+ }
+}

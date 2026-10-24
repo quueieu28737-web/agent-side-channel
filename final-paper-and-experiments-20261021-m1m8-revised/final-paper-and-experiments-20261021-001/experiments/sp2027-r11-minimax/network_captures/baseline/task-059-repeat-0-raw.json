@@ -1,0 +1,83 @@
+{
+ "task": 59,
+ "repeat": 0,
+ "seed": 0,
+ "prompt": "baseline",
+ "user": "yusuf_taylor_7149",
+ "has_cancel": 1,
+ "has_return": 0,
+ "native_reward": 0,
+ "db_eq": false,
+ "status": "protocol_error",
+ "condition": "raw",
+ "calls": [
+  {
+   "name": "authenticate_user",
+   "kind": "real",
+   "req": 106,
+   "resp": 32,
+   "err": true
+  },
+  {
+   "name": "find_user_id_by_name_zip",
+   "kind": "real",
+   "req": 113,
+   "resp": 17,
+   "err": false
+  },
+  {
+   "name": "get_order_details",
+   "kind": "real",
+   "req": 69,
+   "resp": 697,
+   "err": false
+  },
+  {
+   "name": "get_order_details",
+   "kind": "real",
+   "req": 69,
+   "resp": 533,
+   "err": false
+  }
+ ],
+ "records": [
+  [
+   "c2s",
+   134
+  ],
+  [
+   "s2c",
+   60
+  ],
+  [
+   "c2s",
+   141
+  ],
+  [
+   "s2c",
+   45
+  ],
+  [
+   "c2s",
+   97
+  ],
+  [
+   "s2c",
+   725
+  ],
+  [
+   "c2s",
+   97
+  ],
+  [
+   "s2c",
+   561
+  ]
+ ],
+ "application_wire_bytes": 1900,
+ "framing_overflow_messages": 0,
+ "template_flags": null,
+ "calibration_sha256": "9719c4bbff37e0542a5d260f1f589025c0e37e18c42fb7b9e216797ba26b969b",
+ "episode_sha256": "1cd2a8c7bfdc24a471895231537fe3ca55c4be9faddf027972eaeed96fe23e37",
+ "measurement": "TLS 1.2 loopback replay of real model trajectory; provider link and wall-clock timing excluded"
+}

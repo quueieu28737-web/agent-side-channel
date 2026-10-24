@@ -1,0 +1,158 @@
+{
+ "task": 1,
+ "repeat": 0,
+ "seed": 0,
+ "prompt": "baseline",
+ "user": "yusuf_rossi_9620",
+ "has_cancel": 0,
+ "has_return": 0,
+ "native_reward": 1,
+ "db_eq": true,
+ "status": "user_stop",
+ "condition": "raw",
+ "calls": [
+  {
+   "name": "find_user_id_by_name_zip",
+   "kind": "real",
+   "req": 112,
+   "resp": 16,
+   "err": false
+  },
+  {
+   "name": "get_user_details",
+   "kind": "real",
+   "req": 74,
+   "resp": 455,
+   "err": false
+  },
+  {
+   "name": "get_order_details",
+   "kind": "real",
+   "req": 69,
+   "resp": 1355,
+   "err": false
+  },
+  {
+   "name": "tool",
+   "kind": "real",
+   "req": 105,
+   "resp": 19,
+   "err": true
+  },
+  {
+   "name": "tool_action_get_product_details",
+   "kind": "real",
+   "req": 86,
+   "resp": 46,
+   "err": true
+  },
+  {
+   "name": "get_product_details",
+   "kind": "real",
+   "req": 74,
+   "resp": 3151,
+   "err": false
+  },
+  {
+   "name": "tool",
+   "kind": "real",
+   "req": 105,
+   "resp": 19,
+   "err": true
+  },
+  {
+   "name": "get_product_details",
+   "kind": "real",
+   "req": 74,
+   "resp": 1385,
+   "err": false
+  },
+  {
+   "name": "exchange_delivered_order_items",
+   "kind": "real",
+   "req": 186,
+   "resp": 1526,
+   "err": false
+  }
+ ],
+ "records": [
+  [
+   "c2s",
+   140
+  ],
+  [
+   "s2c",
+   44
+  ],
+  [
+   "c2s",
+   102
+  ],
+  [
+   "s2c",
+   483
+  ],
+  [
+   "c2s",
+   97
+  ],
+  [
+   "s2c",
+   1383
+  ],
+  [
+   "c2s",
+   133
+  ],
+  [
+   "s2c",
+   47
+  ],
+  [
+   "c2s",
+   114
+  ],
+  [
+   "s2c",
+   74
+  ],
+  [
+   "c2s",
+   102
+  ],
+  [
+   "s2c",
+   3179
+  ],
+  [
+   "c2s",
+   133
+  ],
+  [
+   "s2c",
+   47
+  ],
+  [
+   "c2s",
+   102
+  ],
+  [
+   "s2c",
+   1413
+  ],
+  [
+   "c2s",
+   214
+  ],
+  [
+   "s2c",
+   1554
+  ]
+ ],
+ "application_wire_bytes": 9451,
+ "framing_overflow_messages": 0,
+ "template_flags": null,
+ "calibration_sha256": "9719c4bbff37e0542a5d260f1f589025c0e37e18c42fb7b9e216797ba26b969b",
+ "episode_sha256": "377354c84ad6f7d08d9cecd160b47c830f95a7c34bf9fad1f32110af3e573f14",
+ "measurement": "TLS 1.2 loopback replay of real model trajectory; provider link and wall-clock timing excluded"
+}

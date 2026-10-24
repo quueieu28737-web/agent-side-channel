@@ -1,0 +1,113 @@
+{
+ "task": 50,
+ "repeat": 0,
+ "seed": 0,
+ "prompt": "baseline",
+ "user": "chen_smith_8425",
+ "has_cancel": 0,
+ "has_return": 0,
+ "native_reward": 1,
+ "db_eq": true,
+ "status": "transfer",
+ "condition": "raw",
+ "calls": [
+  {
+   "name": "find_user_id_by_name_zip",
+   "kind": "real",
+   "req": 111,
+   "resp": 15,
+   "err": false
+  },
+  {
+   "name": "get_user_details",
+   "kind": "real",
+   "req": 73,
+   "resp": 551,
+   "err": false
+  },
+  {
+   "name": "tool_call",
+   "kind": "real",
+   "req": 61,
+   "resp": 24,
+   "err": true
+  },
+  {
+   "name": "get_order_details",
+   "kind": "real",
+   "req": 69,
+   "resp": 1324,
+   "err": false
+  },
+  {
+   "name": "message",
+   "kind": "real",
+   "req": 36,
+   "resp": 22,
+   "err": true
+  },
+  {
+   "name": "transfer_to_human_agents",
+   "kind": "real",
+   "req": 486,
+   "resp": 19,
+   "err": false
+  }
+ ],
+ "records": [
+  [
+   "c2s",
+   139
+  ],
+  [
+   "s2c",
+   43
+  ],
+  [
+   "c2s",
+   101
+  ],
+  [
+   "s2c",
+   579
+  ],
+  [
+   "c2s",
+   89
+  ],
+  [
+   "s2c",
+   52
+  ],
+  [
+   "c2s",
+   97
+  ],
+  [
+   "s2c",
+   1352
+  ],
+  [
+   "c2s",
+   64
+  ],
+  [
+   "s2c",
+   50
+  ],
+  [
+   "c2s",
+   514
+  ],
+  [
+   "s2c",
+   47
+  ]
+ ],
+ "application_wire_bytes": 3187,
+ "framing_overflow_messages": 0,
+ "template_flags": null,
+ "calibration_sha256": "9719c4bbff37e0542a5d260f1f589025c0e37e18c42fb7b9e216797ba26b969b",
+ "episode_sha256": "440bd72f316b5d83a1c295d616181688e787861e03625348fe8f95195ed31c5a",
+ "measurement": "TLS 1.2 loopback replay of real model trajectory; provider link and wall-clock timing excluded"
+}

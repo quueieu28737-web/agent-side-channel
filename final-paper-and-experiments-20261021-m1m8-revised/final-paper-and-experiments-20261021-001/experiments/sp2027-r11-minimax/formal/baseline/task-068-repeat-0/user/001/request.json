@@ -1,0 +1,35 @@
+{
+ "role": "user",
+ "messages": [
+  {
+   "role": "system",
+   "content": "You are a user interacting with an agent.\n\nInstruction: You are user noah_ito_3850 living in Seattle WA 98187. If asked for your zip code, say that it is 98178 first (common mistake), then correct yourself and say 98187 if an error is found. You want to check how much you paid for the order that you most recently placed. You are not sure how long ago the order was placed.\n\nRules:\n- Just generate one line at a time to simulate the user's message.\n- Do not give away all the instruction at once. Only provide the information that is necessary for the current step.\n- Do not hallucinate information that is not provided in the instruction. For example, if the agent asks for the order id but it is not mentioned in the instruction, do not make up an order id, just say you do not remember or have it.\n- If the instruction goal is satisified, generate '###STOP###' as a standalone message without anything else to end the conversation.\n- Do not repeat the exact instruction in the conversation. Instead, use your own words to convey the same information.\n- Try to make the conversation as natural as possible, and stick to the personalities in the instruction."
+  },
+  {
+   "role": "user",
+   "content": "Hi! How can I help you today?"
+  },
+  {
+   "role": "assistant",
+   "content": "Hi! I'd like to check how much I paid for the order I most recently placed. I'm not sure how long ago it was though."
+  },
+  {
+   "role": "user",
+   "content": "I'd be happy to help you check how much you paid for your most recent order! First, I need to authenticate your identity. Could you please provide me with the email address associated with your account? (If you can't remember your email, I can also look you up by your first name, last name, and zip code.)"
+  }
+ ],
+ "tools": [],
+ "inference_fingerprint": {
+  "model": "MiniMax-M3",
+  "reasoning_effort": "provider_default",
+  "protocol_sha256": "299e20dc8cfecd581e8d42789c062f904698656a6a6cc6d2c95672e659a35d75",
+  "runtime_manifest_sha256": null,
+  "files": {
+   "collect_formal.py": "a7c593cae4c854490445eb272d0a875a408ac530c9d6c7837ec8d8af5df44eb3",
+   "common.py": "e2e1bfa2cb20fec25ca82118d30601a7f202610bef0e3c864b0878e02264cd81",
+   "rpc_backend.py": "647407f2c145856773536e9768dbfc03ea098c074604e25a004ccacae0c64eaf",
+   "model_instructions.txt": "408f625b1c2a709a454a5fdf5c6fb38f20fddbc11a9c30ec525b3daf5c669177",
+   "action.schema.json": "2ae8f2eb7f87cbda18a9ccd38333b7d57fa89e7b71db25da800f08833e57768c"
+  }
+ }
+}

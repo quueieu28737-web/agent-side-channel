@@ -1,0 +1,68 @@
+{
+ "task": 36,
+ "repeat": 0,
+ "seed": 0,
+ "prompt": "baseline",
+ "user": "daiki_sanchez_3253",
+ "has_cancel": 0,
+ "has_return": 0,
+ "native_reward": 0,
+ "db_eq": false,
+ "status": "protocol_error",
+ "condition": "raw",
+ "calls": [
+  {
+   "name": "find_user_id_by_email",
+   "kind": "real",
+   "req": 89,
+   "resp": 21,
+   "err": true
+  },
+  {
+   "name": "find_user_id_by_name_zip",
+   "kind": "real",
+   "req": 114,
+   "resp": 18,
+   "err": false
+  },
+  {
+   "name": "get_user_details",
+   "kind": "real",
+   "req": 76,
+   "resp": 403,
+   "err": false
+  }
+ ],
+ "records": [
+  [
+   "c2s",
+   117
+  ],
+  [
+   "s2c",
+   49
+  ],
+  [
+   "c2s",
+   142
+  ],
+  [
+   "s2c",
+   46
+  ],
+  [
+   "c2s",
+   104
+  ],
+  [
+   "s2c",
+   431
+  ]
+ ],
+ "application_wire_bytes": 919,
+ "framing_overflow_messages": 0,
+ "template_flags": null,
+ "calibration_sha256": "9719c4bbff37e0542a5d260f1f589025c0e37e18c42fb7b9e216797ba26b969b",
+ "episode_sha256": "f4f1d695932c8731296201f6bf378b36f80cf1008c11d137fdec0fb4b79c0dbf",
+ "measurement": "TLS 1.2 loopback replay of real model trajectory; provider link and wall-clock timing excluded"
+}

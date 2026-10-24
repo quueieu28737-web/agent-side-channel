@@ -1,0 +1,188 @@
+{
+ "task": 101,
+ "repeat": 0,
+ "seed": 0,
+ "prompt": "baseline",
+ "user": "liam_thomas_7882",
+ "has_cancel": 0,
+ "has_return": 1,
+ "native_reward": 0,
+ "db_eq": false,
+ "status": "protocol_error",
+ "condition": "raw",
+ "calls": [
+  {
+   "name": "think",
+   "kind": "real",
+   "req": 179,
+   "resp": 0,
+   "err": false
+  },
+  {
+   "name": "think",
+   "kind": "real",
+   "req": 187,
+   "resp": 0,
+   "err": false
+  },
+  {
+   "name": "find_user_id_by_name_zip",
+   "kind": "real",
+   "req": 112,
+   "resp": 16,
+   "err": false
+  },
+  {
+   "name": "Note: I need to look up the user's orders to find the items they want to return.",
+   "kind": "real",
+   "req": 138,
+   "resp": 95,
+   "err": true
+  },
+  {
+   "name": "get_user_details",
+   "kind": "real",
+   "req": 74,
+   "resp": 509,
+   "err": false
+  },
+  {
+   "name": "get_order_details",
+   "kind": "real",
+   "req": 69,
+   "resp": 717,
+   "err": false
+  },
+  {
+   "name": "get_order_details",
+   "kind": "real",
+   "req": 69,
+   "resp": 583,
+   "err": false
+  },
+  {
+   "name": "get_order_details",
+   "kind": "real",
+   "req": 69,
+   "resp": 1353,
+   "err": false
+  },
+  {
+   "name": "tool_call",
+   "kind": "real",
+   "req": 105,
+   "resp": 24,
+   "err": true
+  },
+  {
+   "name": "get_order_details",
+   "kind": "real",
+   "req": 69,
+   "resp": 987,
+   "err": false
+  },
+  {
+   "name": "get_order_details",
+   "kind": "real",
+   "req": 69,
+   "resp": 882,
+   "err": false
+  }
+ ],
+ "records": [
+  [
+   "c2s",
+   207
+  ],
+  [
+   "s2c",
+   28
+  ],
+  [
+   "c2s",
+   215
+  ],
+  [
+   "s2c",
+   28
+  ],
+  [
+   "c2s",
+   140
+  ],
+  [
+   "s2c",
+   44
+  ],
+  [
+   "c2s",
+   166
+  ],
+  [
+   "s2c",
+   123
+  ],
+  [
+   "c2s",
+   102
+  ],
+  [
+   "s2c",
+   537
+  ],
+  [
+   "c2s",
+   97
+  ],
+  [
+   "s2c",
+   745
+  ],
+  [
+   "c2s",
+   97
+  ],
+  [
+   "s2c",
+   611
+  ],
+  [
+   "c2s",
+   97
+  ],
+  [
+   "s2c",
+   1381
+  ],
+  [
+   "c2s",
+   133
+  ],
+  [
+   "s2c",
+   52
+  ],
+  [
+   "c2s",
+   97
+  ],
+  [
+   "s2c",
+   1015
+  ],
+  [
+   "c2s",
+   97
+  ],
+  [
+   "s2c",
+   910
+  ]
+ ],
+ "application_wire_bytes": 7032,
+ "framing_overflow_messages": 0,
+ "template_flags": null,
+ "calibration_sha256": "9719c4bbff37e0542a5d260f1f589025c0e37e18c42fb7b9e216797ba26b969b",
+ "episode_sha256": "d2fd3b116430b17f2cbe7d25e6c52e05fbf25fd1ab363ac681d0ac8964123e1e",
+ "measurement": "TLS 1.2 loopback replay of real model trajectory; provider link and wall-clock timing excluded"
+}

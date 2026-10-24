@@ -1,0 +1,23 @@
+{
+  "model": "MiniMax-M3",
+  "model_revision": "Unverified alias; no immutable weights supplied",
+  "design": "Prospective model replication on previously used tasks, not a new-customer confirmation",
+  "sample": "115 tasks, original customer-disjoint train/test partition; one baseline-prompt episode each",
+  "simulator": "MiniMax-M3 for both planner and simulated user, matching original role design",
+  "conditions": [
+    "undefended",
+    "joint program"
+  ],
+  "localization": "full dispatch versus removing write operations; identical inherited target labels",
+  "calibration": "Complete all training episodes and freeze training-only defense before any test collection",
+  "inference": {
+    "max_tokens": 4096,
+    "temperature": "provider default",
+    "reasoning": "provider default",
+    "workers": 2,
+    "max_agent_steps": 30
+  },
+  "retries": "Stop collection on first infrastructure error; retain request/response caches; no model rotation",
+  "metrics": "Inherited frozen train/test attack suite, BA/AUROC with customer-cluster uncertainty, native reward, call/byte overhead; no live defended-planner claim",
+  "credential_policy": "Environment only; never serialized; TLS verification enabled"
+}

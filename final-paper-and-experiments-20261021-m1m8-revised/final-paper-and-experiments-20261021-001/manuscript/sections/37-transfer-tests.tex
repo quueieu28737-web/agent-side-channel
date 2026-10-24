@@ -43,6 +43,10 @@ Five-fold cross-fitting refits templates, donors, caps and all attackers on othe
 \paragraph{Locate the observable operation signature}
 An oracle selects write exchanges using true tool types, then exposes only ciphertext lengths/order. Writes comprise 19.6\% of real calls yet retain 91.7/84.9\% BA; removing them leaves 62.8/59.9\% (Table~\ref{tab:r7-e12}). The target names an operation, so the result locates its metadata signature. It directs protection toward specific exchanges, while residual read inference shows why hiding one named call is insufficient.
 \input{tables/r9-localization}
+
+\paragraph{Same-provider model replication}
+Luna contributes 150 real-agent runs (75 existing tasks, two prompts, one repeat). Its standard-prompt replication row uses 29 training and 46 test trajectories: network BA changes from 64.2/84.9\% undefended to 60.4/57.0\% with joint shaping (Table~\ref{tab:r11-model-replication}). Write-only dispatch retains 87.5/66.6\%, versus 50.0/57.0\% on get/find/list reads. This supports a write-associated signature under another model alias. The smaller training set, inherited attack suite and read-view definition make this a within-model replication, not a controlled model ranking; its fitted defense used training data only, after collection.
+\input{tables/r11-model-replication}
 \textbf{Finding.} Better read-order compliance leaves operation inference intact; calibrated joint shaping reduces that fitted-suite inference; and the localization identifies which exchanges carry it. Semantic-attribute generalization is a separate estimand, tested by the small extension summarized in Appendix~\ref{app:experiments}.
 
 \input{sections/42-live-timing-main}

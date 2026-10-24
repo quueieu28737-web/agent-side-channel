@@ -1,0 +1,173 @@
+{
+ "task": 110,
+ "repeat": 0,
+ "seed": 0,
+ "prompt": "baseline",
+ "user": "sophia_martin_8570",
+ "has_cancel": 0,
+ "has_return": 0,
+ "native_reward": 0,
+ "db_eq": false,
+ "status": "protocol_error",
+ "condition": "raw",
+ "calls": [
+  {
+   "name": "find_user_id_by_email",
+   "kind": "real",
+   "req": 90,
+   "resp": 18,
+   "err": false
+  },
+  {
+   "name": "get_user_details",
+   "kind": "real",
+   "req": 76,
+   "resp": 417,
+   "err": false
+  },
+  {
+   "name": "think",
+   "kind": "real",
+   "req": 292,
+   "resp": 0,
+   "err": false
+  },
+  {
+   "name": "tool_call",
+   "kind": "real",
+   "req": 61,
+   "resp": 24,
+   "err": true
+  },
+  {
+   "name": "get_order_details",
+   "kind": "real",
+   "req": 69,
+   "resp": 1184,
+   "err": false
+  },
+  {
+   "name": "get_order_details",
+   "kind": "real",
+   "req": 69,
+   "resp": 540,
+   "err": false
+  },
+  {
+   "name": "tool",
+   "kind": "real",
+   "req": 105,
+   "resp": 19,
+   "err": true
+  },
+  {
+   "name": "tool",
+   "kind": "real",
+   "req": 105,
+   "resp": 19,
+   "err": true
+  },
+  {
+   "name": "get_product_details",
+   "kind": "real",
+   "req": 74,
+   "resp": 2213,
+   "err": false
+  },
+  {
+   "name": "calculate",
+   "kind": "real",
+   "req": 70,
+   "resp": 6,
+   "err": false
+  }
+ ],
+ "records": [
+  [
+   "c2s",
+   118
+  ],
+  [
+   "s2c",
+   46
+  ],
+  [
+   "c2s",
+   104
+  ],
+  [
+   "s2c",
+   445
+  ],
+  [
+   "c2s",
+   320
+  ],
+  [
+   "s2c",
+   28
+  ],
+  [
+   "c2s",
+   89
+  ],
+  [
+   "s2c",
+   52
+  ],
+  [
+   "c2s",
+   97
+  ],
+  [
+   "s2c",
+   1212
+  ],
+  [
+   "c2s",
+   97
+  ],
+  [
+   "s2c",
+   568
+  ],
+  [
+   "c2s",
+   133
+  ],
+  [
+   "s2c",
+   47
+  ],
+  [
+   "c2s",
+   133
+  ],
+  [
+   "s2c",
+   47
+  ],
+  [
+   "c2s",
+   102
+  ],
+  [
+   "s2c",
+   2241
+  ],
+  [
+   "c2s",
+   98
+  ],
+  [
+   "s2c",
+   34
+  ]
+ ],
+ "application_wire_bytes": 6111,
+ "framing_overflow_messages": 0,
+ "template_flags": null,
+ "calibration_sha256": "9719c4bbff37e0542a5d260f1f589025c0e37e18c42fb7b9e216797ba26b969b",
+ "episode_sha256": "c2a6757c5144c536f5969b202163f36a7ab088c5193c6a36ae1f6a1492480c60",
+ "measurement": "TLS 1.2 loopback replay of real model trajectory; provider link and wall-clock timing excluded"
+}

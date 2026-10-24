@@ -1,0 +1,128 @@
+{
+ "task": 72,
+ "repeat": 0,
+ "seed": 0,
+ "prompt": "baseline",
+ "user": "ivan_khan_7475",
+ "has_cancel": 0,
+ "has_return": 0,
+ "native_reward": 0,
+ "db_eq": false,
+ "status": "protocol_error",
+ "condition": "raw",
+ "calls": [
+  {
+   "name": "find_user_id_by_name_zip",
+   "kind": "real",
+   "req": 110,
+   "resp": 14,
+   "err": false
+  },
+  {
+   "name": "get_user_details",
+   "kind": "real",
+   "req": 72,
+   "resp": 468,
+   "err": false
+  },
+  {
+   "name": "get_order_details",
+   "kind": "real",
+   "req": 69,
+   "resp": 915,
+   "err": false
+  },
+  {
+   "name": "tool_call",
+   "kind": "real",
+   "req": 110,
+   "resp": 24,
+   "err": true
+  },
+  {
+   "name": "tool_call",
+   "kind": "real",
+   "req": 110,
+   "resp": 24,
+   "err": true
+  },
+  {
+   "name": "get_product_details",
+   "kind": "real",
+   "req": 74,
+   "resp": 2493,
+   "err": false
+  },
+  {
+   "name": "get_product_details",
+   "kind": "real",
+   "req": 74,
+   "resp": 1955,
+   "err": false
+  }
+ ],
+ "records": [
+  [
+   "c2s",
+   138
+  ],
+  [
+   "s2c",
+   42
+  ],
+  [
+   "c2s",
+   100
+  ],
+  [
+   "s2c",
+   496
+  ],
+  [
+   "c2s",
+   97
+  ],
+  [
+   "s2c",
+   943
+  ],
+  [
+   "c2s",
+   138
+  ],
+  [
+   "s2c",
+   52
+  ],
+  [
+   "c2s",
+   138
+  ],
+  [
+   "s2c",
+   52
+  ],
+  [
+   "c2s",
+   102
+  ],
+  [
+   "s2c",
+   2521
+  ],
+  [
+   "c2s",
+   102
+  ],
+  [
+   "s2c",
+   1983
+  ]
+ ],
+ "application_wire_bytes": 6974,
+ "framing_overflow_messages": 0,
+ "template_flags": null,
+ "calibration_sha256": "9719c4bbff37e0542a5d260f1f589025c0e37e18c42fb7b9e216797ba26b969b",
+ "episode_sha256": "b9840559e22346eae6d14b3f874b1a888626c83a6ea0576aa02031c385d5b1b4",
+ "measurement": "TLS 1.2 loopback replay of real model trajectory; provider link and wall-clock timing excluded"
+}

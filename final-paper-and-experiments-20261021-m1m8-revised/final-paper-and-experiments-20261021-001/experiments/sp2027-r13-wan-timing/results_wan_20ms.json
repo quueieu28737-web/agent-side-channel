@@ -1,0 +1,3489 @@
+{
+ "profile": "wan_20ms",
+ "wan_delay_ms": 20.0,
+ "wan_jitter_ms": 5.0,
+ "detectors": {
+  "shadow_serial-flush-transfer": {
+   "ba": {
+    "point": 0.8941992297559344,
+    "ci95": [
+     0.872473309106089,
+     0.9165083860089009
+    ],
+    "invalid_draws": 0
+   },
+   "auroc": 0.9623991827784885,
+   "records_or_calls": 15278,
+   "customers": 24
+  },
+  "shadow_serial-flush-adapted": {
+   "ba": {
+    "point": 0.8917222195285792,
+    "ci95": [
+     0.8659288824099297,
+     0.9148254919009714
+    ],
+    "invalid_draws": 0
+   },
+   "auroc": 0.9576573219416666,
+   "records_or_calls": 15278,
+   "customers": 24
+  }
+ },
+ "resources": {
+  "raw": {
+   "total_sessions": 276,
+   "complete_sessions": 276,
+   "horizon_exhausted": 0,
+   "timeouts": 0,
+   "real_chain_p95_ms": 506.36,
+   "duration_p95_ms": 506.39,
+   "byte_multiplier": 1.0,
+   "call_multiplier": 1.0
+  },
+  "padding": {
+   "total_sessions": 276,
+   "complete_sessions": 276,
+   "horizon_exhausted": 0,
+   "timeouts": 0,
+   "real_chain_p95_ms": 504.84,
+   "duration_p95_ms": 504.88,
+   "byte_multiplier": 3.94,
+   "call_multiplier": 1.0
+  },
+  "shadow_serial": {
+   "total_sessions": 276,
+   "complete_sessions": 276,
+   "horizon_exhausted": 0,
+   "timeouts": 0,
+   "real_chain_p95_ms": 855.41,
+   "duration_p95_ms": 1314.89,
+   "byte_multiplier": 15.29,
+   "call_multiplier": 3.85
+  },
+  "tunnel_2ms": {
+   "total_sessions": 276,
+   "complete_sessions": 85,
+   "horizon_exhausted": 191,
+   "timeouts": 0,
+   "real_chain_p95_ms": 286.69,
+   "duration_p95_ms": 291.65,
+   "byte_multiplier": 127.03,
+   "call_multiplier": 0.79
+  }
+ },
+ "cells": {
+  "baseline|raw|size_order|cancel": {
+   "models": {
+    "majority": {
+     "ba": {
+      "point": 0.5,
+      "ci95": [
+       0.5,
+       0.5
+      ],
+      "invalid_draws": 12
+     },
+     "auroc": 0.5
+    },
+    "logistic": {
+     "ba": {
+      "point": 0.5861111111111111,
+      "ci95": [
+       0.40141824365405077,
+       0.7484909297052155
+      ],
+      "invalid_draws": 12
+     },
+     "auroc": 0.7189814814814814
+    },
+    "gboost": {
+     "ba": {
+      "point": 0.8430555555555556,
+      "ci95": [
+       0.7241962327694235,
+       0.9741554054054055
+      ],
+      "invalid_draws": 12
+     },
+     "auroc": 0.8363425925925926
+    },
+    "forest": {
+     "ba": {
+      "point": 0.5527777777777778,
+      "ci95": [
+       0.41433926316738817,
+       0.6702447660098523
+      ],
+      "invalid_draws": 12
+     },
+     "auroc": 0.6412037037037037
+    },
+    "profile_gboost": {
+     "ba": {
+      "point": 0.9125000000000001,
+      "ci95": [
+       0.75,
+       1.0
+      ],
+      "invalid_draws": 12
+     },
+     "auroc": 0.8939814814814815
+    },
+    "profile_count_rule": {
+     "ba": {
+      "point": 0.9166666666666667,
+      "ci95": [
+       0.75,
+       1.0
+      ],
+      "invalid_draws": 12
+     },
+     "auroc": 0.9166666666666666
+    }
+   },
+   "suite": {
+    "ba": {
+     "point": 0.9166666666666667,
+     "ci95": [
+      0.8470475222609369,
+      1.0
+     ],
+     "invalid_draws": 12
+    },
+    "auroc": 0.9166666666666666
+   }
+  },
+  "baseline|raw|size_order|return": {
+   "models": {
+    "majority": {
+     "ba": {
+      "point": 0.5,
+      "ci95": [
+       0.5,
+       0.5
+      ],
+      "invalid_draws": 0
+     },
+     "auroc": 0.5
+    },
+    "logistic": {
+     "ba": {
+      "point": 0.8445887445887446,
+      "ci95": [
+       0.7232539682539683,
+       0.9473405659381269
+      ],
+      "invalid_draws": 0
+     },
+     "auroc": 0.8724386724386725
+    },
+    "gboost": {
+     "ba": {
+      "point": 0.8350649350649351,
+      "ci95": [
+       0.708671875,
+       0.9404936974789915
+      ],
+      "invalid_draws": 0
+     },
+     "auroc": 0.8240981240981241
+    },
+    "forest": {
+     "ba": {
+      "point": 0.6922077922077923,
+      "ci95": [
+       0.4496086521630408,
+       0.8555742521367521
+      ],
+      "invalid_draws": 0
+     },
+     "auroc": 0.7318903318903319
+    },
+    "profile_gboost": {
+     "ba": {
+      "point": 0.8303030303030303,
+      "ci95": [
+       0.6850735972683647,
+       0.9407028351881292
+      ],
+      "invalid_draws": 0
+     },
+     "auroc": 0.8746031746031746
+    },
+    "profile_count_rule": {
+     "ba": {
+      "point": 0.8636363636363636,
+      "ci95": [
+       0.7333333333333334,
+       0.962962962962963
+      ],
+      "invalid_draws": 0
+     },
+     "auroc": 0.8636363636363636
+    }
+   },
+   "suite": {
+    "ba": {
+     "point": 0.8636363636363636,
+     "ci95": [
+      0.7948643410852714,
+      0.9722222222222222
+     ],
+     "invalid_draws": 0
+    },
+    "auroc": 0.8746031746031746
+   }
+  },
+  "baseline|raw|timing_direction|cancel": {
+   "models": {
+    "majority": {
+     "ba": {
+      "point": 0.5,
+      "ci95": [
+       0.5,
+       0.5
+      ],
+      "invalid_draws": 12
+     },
+     "auroc": 0.5
+    },
+    "logistic": {
+     "ba": {
+      "point": 0.48750000000000004,
+      "ci95": [
+       0.2770208333333334,
+       0.5864505247376313
+      ],
+      "invalid_draws": 12
+     },
+     "auroc": 0.5041666666666667
+    },
+    "gboost": {
+     "ba": {
+      "point": 0.5,
+      "ci95": [
+       0.5,
+       0.5
+      ],
+      "invalid_draws": 12
+     },
+     "auroc": 0.48009259259259257
+    },
+    "forest": {
+     "ba": {
+      "point": 0.49583333333333335,
+      "ci95": [
+       0.4857142857142857,
+       0.5
+      ],
+      "invalid_draws": 12
+     },
+     "auroc": 0.549074074074074
+    }
+   },
+   "suite": {
+    "ba": {
+     "point": 0.5,
+     "ci95": [
+      0.5,
+      0.5864505247376313
+     ],
+     "invalid_draws": 12
+    },
+    "auroc": 0.549074074074074
+   }
+  },
+  "baseline|raw|timing_direction|return": {
+   "models": {
+    "majority": {
+     "ba": {
+      "point": 0.5,
+      "ci95": [
+       0.5,
+       0.5
+      ],
+      "invalid_draws": 0
+     },
+     "auroc": 0.5
+    },
+    "logistic": {
+     "ba": {
+      "point": 0.5965367965367965,
+      "ci95": [
+       0.34952393050716224,
+       0.7752246383002962
+      ],
+      "invalid_draws": 0
+     },
+     "auroc": 0.5835497835497836
+    },
+    "gboost": {
+     "ba": {
+      "point": 0.5142857142857142,
+      "ci95": [
+       0.5,
+       0.527027027027027
+      ],
+      "invalid_draws": 0
+     },
+     "auroc": 0.5875901875901876
+    },
+    "forest": {
+     "ba": {
+      "point": 0.5151515151515151,
+      "ci95": [
+       0.5,
+       0.5476190476190477
+      ],
+      "invalid_draws": 0
+     },
+     "auroc": 0.658008658008658
+    }
+   },
+   "suite": {
+    "ba": {
+     "point": 0.5965367965367965,
+     "ci95": [
+      0.5128205128205128,
+      0.7752246383002962
+     ],
+     "invalid_draws": 0
+    },
+    "auroc": 0.658008658008658
+   }
+  },
+  "baseline|raw|joint|cancel": {
+   "models": {
+    "majority": {
+     "ba": {
+      "point": 0.5,
+      "ci95": [
+       0.5,
+       0.5
+      ],
+      "invalid_draws": 12
+     },
+     "auroc": 0.5
+    },
+    "logistic": {
+     "ba": {
+      "point": 0.48333333333333334,
+      "ci95": [
+       0.4700854700854701,
+       0.4959349593495935
+      ],
+      "invalid_draws": 12
+     },
+     "auroc": 0.5990740740740741
+    },
+    "gboost": {
+     "ba": {
+      "point": 0.8430555555555556,
+      "ci95": [
+       0.7241962327694235,
+       0.9741554054054055
+      ],
+      "invalid_draws": 12
+     },
+     "auroc": 0.8349537037037037
+    },
+    "forest": {
+     "ba": {
+      "point": 0.5569444444444445,
+      "ci95": [
+       0.41801656832945944,
+       0.6739171864171865
+      ],
+      "invalid_draws": 12
+     },
+     "auroc": 0.6370370370370371
+    }
+   },
+   "suite": {
+    "ba": {
+     "point": 0.8430555555555556,
+     "ci95": [
+      0.7247760025062656,
+      0.9741554054054055
+     ],
+     "invalid_draws": 12
+    },
+    "auroc": 0.8349537037037037
+   }
+  },
+  "baseline|raw|joint|return": {
+   "models": {
+    "majority": {
+     "ba": {
+      "point": 0.5,
+      "ci95": [
+       0.5,
+       0.5
+      ],
+      "invalid_draws": 0
+     },
+     "auroc": 0.5
+    },
+    "logistic": {
+     "ba": {
+      "point": 0.4666666666666667,
+      "ci95": [
+       0.44144144144144143,
+       0.49047619047619045
+      ],
+      "invalid_draws": 0
+     },
+     "auroc": 0.5792207792207792
+    },
+    "gboost": {
+     "ba": {
+      "point": 0.7943722943722944,
+      "ci95": [
+       0.6716542322925302,
+       0.8785719417077176
+      ],
+      "invalid_draws": 0
+     },
+     "auroc": 0.8467532467532467
+    },
+    "forest": {
+     "ba": {
+      "point": 0.7316017316017316,
+      "ci95": [
+       0.4489930555555556,
+       0.8843594663742689
+      ],
+      "invalid_draws": 0
+     },
+     "auroc": 0.7431457431457431
+    }
+   },
+   "suite": {
+    "ba": {
+     "point": 0.7943722943722944,
+     "ci95": [
+      0.6716542322925302,
+      0.8936111111111109
+     ],
+     "invalid_draws": 0
+    },
+    "auroc": 0.8467532467532467
+   }
+  },
+  "baseline|raw|suite|cancel": {
+   "ba": {
+    "point": 0.9166666666666667
+   }
+  },
+  "baseline|raw|suite|return": {
+   "ba": {
+    "point": 0.8636363636363636
+   }
+  },
+  "baseline|padding|size_order|cancel": {
+   "models": {
+    "majority": {
+     "ba": {
+      "point": 0.5,
+      "ci95": [
+       0.5,
+       0.5
+      ],
+      "invalid_draws": 12
+     },
+     "auroc": 0.5
+    },
+    "logistic": {
+     "ba": {
+      "point": 0.6736111111111112,
+      "ci95": [
+       0.4298759655377302,
+       0.8530170401493932
+      ],
+      "invalid_draws": 12
+     },
+     "auroc": 0.655787037037037
+    },
+    "gboost": {
+     "ba": {
+      "point": 0.6791666666666667,
+      "ci95": [
+       0.42857142857142855,
+       0.9261666666666667
+      ],
+      "invalid_draws": 12
+     },
+     "auroc": 0.656712962962963
+    },
+    "forest": {
+     "ba": {
+      "point": 0.6861111111111111,
+      "ci95": [
+       0.42982843137254906,
+       0.8669852941176471
+      ],
+      "invalid_draws": 12
+     },
+     "auroc": 0.6784722222222223
+    },
+    "profile_gboost": {
+     "ba": {
+      "point": 0.65,
+      "ci95": [
+       0.46326784101174345,
+       0.887989222915485
+      ],
+      "invalid_draws": 12
+     },
+     "auroc": 0.6525462962962963
+    },
+    "profile_count_rule": {
+     "ba": {
+      "point": 0.5,
+      "ci95": [
+       0.5,
+       0.5
+      ],
+      "invalid_draws": 12
+     },
+     "auroc": 0.5
+    }
+   },
+   "suite": {
+    "ba": {
+     "point": 0.6861111111111111,
+     "ci95": [
+      0.5,
+      0.9281304798342102
+     ],
+     "invalid_draws": 12
+    },
+    "auroc": 0.6784722222222223
+   }
+  },
+  "baseline|padding|size_order|return": {
+   "models": {
+    "majority": {
+     "ba": {
+      "point": 0.5,
+      "ci95": [
+       0.5,
+       0.5
+      ],
+      "invalid_draws": 0
+     },
+     "auroc": 0.5
+    },
+    "logistic": {
+     "ba": {
+      "point": 0.5428571428571428,
+      "ci95": [
+       0.2777027027027027,
+       0.7202428955453148
+      ],
+      "invalid_draws": 0
+     },
+     "auroc": 0.4873015873015873
+    },
+    "gboost": {
+     "ba": {
+      "point": 0.5125541125541125,
+      "ci95": [
+       0.3294416509532788,
+       0.7126079088395262
+      ],
+      "invalid_draws": 0
+     },
+     "auroc": 0.47734487734487735
+    },
+    "forest": {
+     "ba": {
+      "point": 0.5476190476190476,
+      "ci95": [
+       0.2805518018018018,
+       0.7273041223041221
+      ],
+      "invalid_draws": 0
+     },
+     "auroc": 0.5144300144300145
+    },
+    "profile_gboost": {
+     "ba": {
+      "point": 0.4649350649350649,
+      "ci95": [
+       0.27718314905814906,
+       0.6641198979591837
+      ],
+      "invalid_draws": 0
+     },
+     "auroc": 0.4909090909090909
+    },
+    "profile_count_rule": {
+     "ba": {
+      "point": 0.5,
+      "ci95": [
+       0.5,
+       0.5
+      ],
+      "invalid_draws": 0
+     },
+     "auroc": 0.5
+    }
+   },
+   "suite": {
+    "ba": {
+     "point": 0.5476190476190476,
+     "ci95": [
+      0.5,
+      0.7478846153846153
+     ],
+     "invalid_draws": 0
+    },
+    "auroc": 0.5144300144300145
+   }
+  },
+  "baseline|padding|timing_direction|cancel": {
+   "models": {
+    "majority": {
+     "ba": {
+      "point": 0.5,
+      "ci95": [
+       0.5,
+       0.5
+      ],
+      "invalid_draws": 12
+     },
+     "auroc": 0.5
+    },
+    "logistic": {
+     "ba": {
+      "point": 0.4722222222222222,
+      "ci95": [
+       0.2676449275362319,
+       0.6870738636363637
+      ],
+      "invalid_draws": 12
+     },
+     "auroc": 0.4648148148148148
+    },
+    "gboost": {
+     "ba": {
+      "point": 0.5069444444444444,
+      "ci95": [
+       0.24454184704184703,
+       0.687929292929293
+      ],
+      "invalid_draws": 12
+     },
+     "auroc": 0.507175925925926
+    },
+    "forest": {
+     "ba": {
+      "point": 0.5,
+      "ci95": [
+       0.5,
+       0.5
+      ],
+      "invalid_draws": 12
+     },
+     "auroc": 0.44027777777777777
+    }
+   },
+   "suite": {
+    "ba": {
+     "point": 0.5069444444444444,
+     "ci95": [
+      0.5,
+      0.7079296251993621
+     ],
+     "invalid_draws": 12
+    },
+    "auroc": 0.507175925925926
+   }
+  },
+  "baseline|padding|timing_direction|return": {
+   "models": {
+    "majority": {
+     "ba": {
+      "point": 0.5,
+      "ci95": [
+       0.5,
+       0.5
+      ],
+      "invalid_draws": 0
+     },
+     "auroc": 0.5
+    },
+    "logistic": {
+     "ba": {
+      "point": 0.49870129870129865,
+      "ci95": [
+       0.34442982456140353,
+       0.6112280433006535
+      ],
+      "invalid_draws": 0
+     },
+     "auroc": 0.45411255411255413
+    },
+    "gboost": {
+     "ba": {
+      "point": 0.47705627705627707,
+      "ci95": [
+       0.3529244652406417,
+       0.5720726277264105
+      ],
+      "invalid_draws": 0
+     },
+     "auroc": 0.5401154401154401
+    },
+    "forest": {
+     "ba": {
+      "point": 0.5,
+      "ci95": [
+       0.5,
+       0.5
+      ],
+      "invalid_draws": 0
+     },
+     "auroc": 0.49668109668109667
+    }
+   },
+   "suite": {
+    "ba": {
+     "point": 0.5,
+     "ci95": [
+      0.5,
+      0.613430534607005
+     ],
+     "invalid_draws": 0
+    },
+    "auroc": 0.5401154401154401
+   }
+  },
+  "baseline|padding|joint|cancel": {
+   "models": {
+    "majority": {
+     "ba": {
+      "point": 0.5,
+      "ci95": [
+       0.5,
+       0.5
+      ],
+      "invalid_draws": 12
+     },
+     "auroc": 0.5
+    },
+    "logistic": {
+     "ba": {
+      "point": 0.5,
+      "ci95": [
+       0.5,
+       0.5
+      ],
+      "invalid_draws": 12
+     },
+     "auroc": 0.4875
+    },
+    "gboost": {
+     "ba": {
+      "point": 0.5236111111111111,
+      "ci95": [
+       0.2528125,
+       0.7028108465608466
+      ],
+      "invalid_draws": 12
+     },
+     "auroc": 0.5391203703703704
+    },
+    "forest": {
+     "ba": {
+      "point": 0.5,
+      "ci95": [
+       0.5,
+       0.5
+      ],
+      "invalid_draws": 12
+     },
+     "auroc": 0.5087962962962963
+    }
+   },
+   "suite": {
+    "ba": {
+     "point": 0.5236111111111111,
+     "ci95": [
+      0.5,
+      0.7028108465608466
+     ],
+     "invalid_draws": 12
+    },
+    "auroc": 0.5391203703703704
+   }
+  },
+  "baseline|padding|joint|return": {
+   "models": {
+    "majority": {
+     "ba": {
+      "point": 0.5,
+      "ci95": [
+       0.5,
+       0.5
+      ],
+      "invalid_draws": 0
+     },
+     "auroc": 0.5
+    },
+    "logistic": {
+     "ba": {
+      "point": 0.47619047619047616,
+      "ci95": [
+       0.4466607142857143,
+       0.49549845898530104
+      ],
+      "invalid_draws": 0
+     },
+     "auroc": 0.4144300144300144
+    },
+    "gboost": {
+     "ba": {
+      "point": 0.5367965367965368,
+      "ci95": [
+       0.34008142758142756,
+       0.6703650372615889
+      ],
+      "invalid_draws": 0
+     },
+     "auroc": 0.5421356421356421
+    },
+    "forest": {
+     "ba": {
+      "point": 0.4974025974025974,
+      "ci95": [
+       0.3674201251646904,
+       0.6250018568033274
+      ],
+      "invalid_draws": 0
+     },
+     "auroc": 0.4844155844155844
+    }
+   },
+   "suite": {
+    "ba": {
+     "point": 0.5367965367965368,
+     "ci95": [
+      0.5,
+      0.67508541295306
+     ],
+     "invalid_draws": 0
+    },
+    "auroc": 0.5421356421356421
+   }
+  },
+  "baseline|padding|suite|cancel": {
+   "ba": {
+    "point": 0.6861111111111111
+   }
+  },
+  "baseline|padding|suite|return": {
+   "ba": {
+    "point": 0.5476190476190476
+   }
+  },
+  "baseline|shadow_serial|size_order|cancel": {
+   "models": {
+    "majority": {
+     "ba": {
+      "point": 0.5,
+      "ci95": [
+       0.5,
+       0.5
+      ],
+      "invalid_draws": 12
+     },
+     "auroc": 0.5
+    },
+    "logistic": {
+     "ba": {
+      "point": 0.44305555555555554,
+      "ci95": [
+       0.32188380902043695,
+       0.5470910537593748
+      ],
+      "invalid_draws": 12
+     },
+     "auroc": 0.4828703703703704
+    },
+    "gboost": {
+     "ba": {
+      "point": 0.45416666666666666,
+      "ci95": [
+       0.419301889866406,
+       0.483739837398374
+      ],
+      "invalid_draws": 12
+     },
+     "auroc": 0.45092592592592595
+    },
+    "forest": {
+     "ba": {
+      "point": 0.3888888888888889,
+      "ci95": [
+       0.23114308406647116,
+       0.5622500000000001
+      ],
+      "invalid_draws": 12
+     },
+     "auroc": 0.44537037037037036
+    },
+    "profile_gboost": {
+     "ba": {
+      "point": 0.5,
+      "ci95": [
+       0.5,
+       0.5
+      ],
+      "invalid_draws": 12
+     },
+     "auroc": 0.45902777777777776
+    },
+    "profile_count_rule": {
+     "ba": {
+      "point": 0.5,
+      "ci95": [
+       0.5,
+       0.5
+      ],
+      "invalid_draws": 12
+     },
+     "auroc": 0.5
+    }
+   },
+   "suite": {
+    "ba": {
+     "point": 0.5,
+     "ci95": [
+      0.5,
+      0.5689407955596669
+     ],
+     "invalid_draws": 12
+    },
+    "auroc": 0.5
+   }
+  },
+  "baseline|shadow_serial|size_order|return": {
+   "models": {
+    "majority": {
+     "ba": {
+      "point": 0.5,
+      "ci95": [
+       0.5,
+       0.5
+      ],
+      "invalid_draws": 0
+     },
+     "auroc": 0.5
+    },
+    "logistic": {
+     "ba": {
+      "point": 0.4688311688311688,
+      "ci95": [
+       0.31038144122383254,
+       0.5702024117140396
+      ],
+      "invalid_draws": 0
+     },
+     "auroc": 0.4728715728715729
+    },
+    "gboost": {
+     "ba": {
+      "point": 0.506926406926407,
+      "ci95": [
+       0.4304514742014742,
+       0.5884469696969693
+      ],
+      "invalid_draws": 0
+     },
+     "auroc": 0.5054834054834055
+    },
+    "forest": {
+     "ba": {
+      "point": 0.47445887445887447,
+      "ci95": [
+       0.33088115588115585,
+       0.5667426327256049
+      ],
+      "invalid_draws": 0
+     },
+     "auroc": 0.4627705627705628
+    },
+    "profile_gboost": {
+     "ba": {
+      "point": 0.49004329004329006,
+      "ci95": [
+       0.3816524957972327,
+       0.6224730861244014
+      ],
+      "invalid_draws": 0
+     },
+     "auroc": 0.45454545454545453
+    },
+    "profile_count_rule": {
+     "ba": {
+      "point": 0.5,
+      "ci95": [
+       0.5,
+       0.5
+      ],
+      "invalid_draws": 0
+     },
+     "auroc": 0.5
+    }
+   },
+   "suite": {
+    "ba": {
+     "point": 0.506926406926407,
+     "ci95": [
+      0.5,
+      0.6250182748538011
+     ],
+     "invalid_draws": 0
+    },
+    "auroc": 0.5054834054834055
+   }
+  },
+  "baseline|shadow_serial|timing_direction|cancel": {
+   "models": {
+    "majority": {
+     "ba": {
+      "point": 0.5,
+      "ci95": [
+       0.5,
+       0.5
+      ],
+      "invalid_draws": 12
+     },
+     "auroc": 0.5
+    },
+    "logistic": {
+     "ba": {
+      "point": 0.5,
+      "ci95": [
+       0.5,
+       0.5
+      ],
+      "invalid_draws": 12
+     },
+     "auroc": 0.4810185185185185
+    },
+    "gboost": {
+     "ba": {
+      "point": 0.5,
+      "ci95": [
+       0.5,
+       0.5
+      ],
+      "invalid_draws": 12
+     },
+     "auroc": 0.6048611111111111
+    },
+    "forest": {
+     "ba": {
+      "point": 0.5,
+      "ci95": [
+       0.5,
+       0.5
+      ],
+      "invalid_draws": 12
+     },
+     "auroc": 0.35555555555555557
+    }
+   },
+   "suite": {
+    "ba": {
+     "point": 0.5,
+     "ci95": [
+      0.5,
+      0.5
+     ],
+     "invalid_draws": 12
+    },
+    "auroc": 0.6048611111111111
+   }
+  },
+  "baseline|shadow_serial|timing_direction|return": {
+   "models": {
+    "majority": {
+     "ba": {
+      "point": 0.5,
+      "ci95": [
+       0.5,
+       0.5
+      ],
+      "invalid_draws": 0
+     },
+     "auroc": 0.5
+    },
+    "logistic": {
+     "ba": {
+      "point": 0.5,
+      "ci95": [
+       0.5,
+       0.5
+      ],
+      "invalid_draws": 0
+     },
+     "auroc": 0.5
+    },
+    "gboost": {
+     "ba": {
+      "point": 0.4943722943722944,
+      "ci95": [
+       0.4465030820293978,
+       0.5202020202020202
+      ],
+      "invalid_draws": 0
+     },
+     "auroc": 0.4818181818181818
+    },
+    "forest": {
+     "ba": {
+      "point": 0.5,
+      "ci95": [
+       0.5,
+       0.5
+      ],
+      "invalid_draws": 0
+     },
+     "auroc": 0.46464646464646464
+    }
+   },
+   "suite": {
+    "ba": {
+     "point": 0.5,
+     "ci95": [
+      0.5,
+      0.5202020202020202
+     ],
+     "invalid_draws": 0
+    },
+    "auroc": 0.5
+   }
+  },
+  "baseline|shadow_serial|joint|cancel": {
+   "models": {
+    "majority": {
+     "ba": {
+      "point": 0.5,
+      "ci95": [
+       0.5,
+       0.5
+      ],
+      "invalid_draws": 12
+     },
+     "auroc": 0.5
+    },
+    "logistic": {
+     "ba": {
+      "point": 0.4444444444444444,
+      "ci95": [
+       0.3375390869293308,
+       0.5909085716150934
+      ],
+      "invalid_draws": 12
+     },
+     "auroc": 0.5532407407407407
+    },
+    "gboost": {
+     "ba": {
+      "point": 0.5,
+      "ci95": [
+       0.5,
+       0.5
+      ],
+      "invalid_draws": 12
+     },
+     "auroc": 0.5266203703703703
+    },
+    "forest": {
+     "ba": {
+      "point": 0.5,
+      "ci95": [
+       0.5,
+       0.5
+      ],
+      "invalid_draws": 12
+     },
+     "auroc": 0.4011574074074074
+    }
+   },
+   "suite": {
+    "ba": {
+     "point": 0.5,
+     "ci95": [
+      0.5,
+      0.5909085716150934
+     ],
+     "invalid_draws": 12
+    },
+    "auroc": 0.5532407407407407
+   }
+  },
+  "baseline|shadow_serial|joint|return": {
+   "models": {
+    "majority": {
+     "ba": {
+      "point": 0.5,
+      "ci95": [
+       0.5,
+       0.5
+      ],
+      "invalid_draws": 0
+     },
+     "auroc": 0.5
+    },
+    "logistic": {
+     "ba": {
+      "point": 0.5,
+      "ci95": [
+       0.5,
+       0.5
+      ],
+      "invalid_draws": 0
+     },
+     "auroc": 0.5
+    },
+    "gboost": {
+     "ba": {
+      "point": 0.4562770562770563,
+      "ci95": [
+       0.38587797619047615,
+       0.5483692956349207
+      ],
+      "invalid_draws": 0
+     },
+     "auroc": 0.4264069264069264
+    },
+    "forest": {
+     "ba": {
+      "point": 0.5,
+      "ci95": [
+       0.5,
+       0.5
+      ],
+      "invalid_draws": 0
+     },
+     "auroc": 0.47359307359307357
+    }
+   },
+   "suite": {
+    "ba": {
+     "point": 0.5,
+     "ci95": [
+      0.5,
+      0.5483692956349207
+     ],
+     "invalid_draws": 0
+    },
+    "auroc": 0.5
+   }
+  },
+  "baseline|shadow_serial|flush_stripped_joint|cancel": {
+   "models": {
+    "majority": {
+     "ba": {
+      "point": 0.5,
+      "ci95": [
+       0.5,
+       0.5
+      ],
+      "invalid_draws": 12
+     },
+     "auroc": 0.5
+    },
+    "logistic": {
+     "ba": {
+      "point": 0.4958333333333333,
+      "ci95": [
+       0.40310077519379844,
+       0.699166666666667
+      ],
+      "invalid_draws": 12
+     },
+     "auroc": 0.40717592592592594
+    },
+    "gboost": {
+     "ba": {
+      "point": 0.5,
+      "ci95": [
+       0.5,
+       0.5
+      ],
+      "invalid_draws": 12
+     },
+     "auroc": 0.4321759259259259
+    },
+    "forest": {
+     "ba": {
+      "point": 0.40694444444444444,
+      "ci95": [
+       0.2663738738738739,
+       0.5958648255813953
+      ],
+      "invalid_draws": 12
+     },
+     "auroc": 0.3678240740740741
+    }
+   },
+   "suite": {
+    "ba": {
+     "point": 0.5,
+     "ci95": [
+      0.5,
+      0.699166666666667
+     ],
+     "invalid_draws": 12
+    },
+    "auroc": 0.5
+   }
+  },
+  "baseline|shadow_serial|flush_stripped_joint|return": {
+   "models": {
+    "majority": {
+     "ba": {
+      "point": 0.5,
+      "ci95": [
+       0.5,
+       0.5
+      ],
+      "invalid_draws": 0
+     },
+     "auroc": 0.5
+    },
+    "logistic": {
+     "ba": {
+      "point": 0.5,
+      "ci95": [
+       0.5,
+       0.5
+      ],
+      "invalid_draws": 0
+     },
+     "auroc": 0.5
+    },
+    "gboost": {
+     "ba": {
+      "point": 0.45800865800865803,
+      "ci95": [
+       0.36109457671957673,
+       0.5460863479758828
+      ],
+      "invalid_draws": 0
+     },
+     "auroc": 0.4226551226551227
+    },
+    "forest": {
+     "ba": {
+      "point": 0.5,
+      "ci95": [
+       0.5,
+       0.5
+      ],
+      "invalid_draws": 0
+     },
+     "auroc": 0.5050505050505051
+    }
+   },
+   "suite": {
+    "ba": {
+     "point": 0.5,
+     "ci95": [
+      0.5,
+      0.5460863479758828
+     ],
+     "invalid_draws": 0
+    },
+    "auroc": 0.5050505050505051
+   }
+  },
+  "baseline|shadow_serial|suite|cancel": {
+   "ba": {
+    "point": 0.5
+   }
+  },
+  "baseline|shadow_serial|suite|return": {
+   "ba": {
+    "point": 0.506926406926407
+   }
+  },
+  "baseline|tunnel_2ms|size_order|cancel": {
+   "models": {
+    "majority": {
+     "ba": {
+      "point": 0.5,
+      "ci95": [
+       0.5,
+       0.5
+      ],
+      "invalid_draws": 12
+     },
+     "auroc": 0.5
+    },
+    "logistic": {
+     "ba": {
+      "point": 0.4875,
+      "ci95": [
+       0.4676933990442055,
+       0.5
+      ],
+      "invalid_draws": 12
+     },
+     "auroc": 0.5282407407407408
+    },
+    "gboost": {
+     "ba": {
+      "point": 0.5444444444444444,
+      "ci95": [
+       0.42935290404040405,
+       0.6752497096399537
+      ],
+      "invalid_draws": 12
+     },
+     "auroc": 0.5185185185185185
+    },
+    "forest": {
+     "ba": {
+      "point": 0.5,
+      "ci95": [
+       0.5,
+       0.5
+      ],
+      "invalid_draws": 12
+     },
+     "auroc": 0.549537037037037
+    }
+   },
+   "suite": {
+    "ba": {
+     "point": 0.5444444444444444,
+     "ci95": [
+      0.5,
+      0.6752497096399537
+     ],
+     "invalid_draws": 12
+    },
+    "auroc": 0.549537037037037
+   }
+  },
+  "baseline|tunnel_2ms|size_order|return": {
+   "models": {
+    "majority": {
+     "ba": {
+      "point": 0.5,
+      "ci95": [
+       0.5,
+       0.5
+      ],
+      "invalid_draws": 0
+     },
+     "auroc": 0.5
+    },
+    "logistic": {
+     "ba": {
+      "point": 0.5,
+      "ci95": [
+       0.5,
+       0.5
+      ],
+      "invalid_draws": 0
+     },
+     "auroc": 0.4305916305916306
+    },
+    "gboost": {
+     "ba": {
+      "point": 0.5008658008658009,
+      "ci95": [
+       0.41851430976430976,
+       0.586696174196174
+      ],
+      "invalid_draws": 0
+     },
+     "auroc": 0.5070707070707071
+    },
+    "forest": {
+     "ba": {
+      "point": 0.49047619047619045,
+      "ci95": [
+       0.47474747474747475,
+       0.5
+      ],
+      "invalid_draws": 0
+     },
+     "auroc": 0.4274170274170274
+    }
+   },
+   "suite": {
+    "ba": {
+     "point": 0.5008658008658009,
+     "ci95": [
+      0.5,
+      0.586696174196174
+     ],
+     "invalid_draws": 0
+    },
+    "auroc": 0.5070707070707071
+   }
+  },
+  "baseline|tunnel_2ms|timing_direction|cancel": {
+   "models": {
+    "majority": {
+     "ba": {
+      "point": 0.5,
+      "ci95": [
+       0.5,
+       0.5
+      ],
+      "invalid_draws": 12
+     },
+     "auroc": 0.5
+    },
+    "logistic": {
+     "ba": {
+      "point": 0.43472222222222223,
+      "ci95": [
+       0.36315527065527065,
+       0.5441141917293233
+      ],
+      "invalid_draws": 12
+     },
+     "auroc": 0.3560185185185185
+    },
+    "gboost": {
+     "ba": {
+      "point": 0.4888888888888889,
+      "ci95": [
+       0.4444444444444444,
+       0.5307545484080571
+      ],
+      "invalid_draws": 12
+     },
+     "auroc": 0.43148148148148147
+    },
+    "forest": {
+     "ba": {
+      "point": 0.5,
+      "ci95": [
+       0.5,
+       0.5
+      ],
+      "invalid_draws": 12
+     },
+     "auroc": 0.5986111111111111
+    }
+   },
+   "suite": {
+    "ba": {
+     "point": 0.5,
+     "ci95": [
+      0.5,
+      0.5450755442942943
+     ],
+     "invalid_draws": 12
+    },
+    "auroc": 0.5986111111111111
+   }
+  },
+  "baseline|tunnel_2ms|timing_direction|return": {
+   "models": {
+    "majority": {
+     "ba": {
+      "point": 0.5,
+      "ci95": [
+       0.5,
+       0.5
+      ],
+      "invalid_draws": 0
+     },
+     "auroc": 0.5
+    },
+    "logistic": {
+     "ba": {
+      "point": 0.5683982683982685,
+      "ci95": [
+       0.44605742296918766,
+       0.6619047619047619
+      ],
+      "invalid_draws": 0
+     },
+     "auroc": 0.5696969696969697
+    },
+    "gboost": {
+     "ba": {
+      "point": 0.5056277056277056,
+      "ci95": [
+       0.4184856630824373,
+       0.5694444444444444
+      ],
+      "invalid_draws": 0
+     },
+     "auroc": 0.5356421356421357
+    },
+    "forest": {
+     "ba": {
+      "point": 0.49523809523809526,
+      "ci95": [
+       0.48484848484848486,
+       0.5
+      ],
+      "invalid_draws": 0
+     },
+     "auroc": 0.43044733044733047
+    }
+   },
+   "suite": {
+    "ba": {
+     "point": 0.5683982683982685,
+     "ci95": [
+      0.5,
+      0.6619047619047619
+     ],
+     "invalid_draws": 0
+    },
+    "auroc": 0.5696969696969697
+   }
+  },
+  "baseline|tunnel_2ms|joint|cancel": {
+   "models": {
+    "majority": {
+     "ba": {
+      "point": 0.5,
+      "ci95": [
+       0.5,
+       0.5
+      ],
+      "invalid_draws": 12
+     },
+     "auroc": 0.5
+    },
+    "logistic": {
+     "ba": {
+      "point": 0.4708333333333333,
+      "ci95": [
+       0.45030405405405405,
+       0.4899318181818182
+      ],
+      "invalid_draws": 12
+     },
+     "auroc": 0.3574074074074074
+    },
+    "gboost": {
+     "ba": {
+      "point": 0.45694444444444443,
+      "ci95": [
+       0.3987715919701214,
+       0.5196837068160598
+      ],
+      "invalid_draws": 12
+     },
+     "auroc": 0.41944444444444445
+    },
+    "forest": {
+     "ba": {
+      "point": 0.5,
+      "ci95": [
+       0.5,
+       0.5
+      ],
+      "invalid_draws": 12
+     },
+     "auroc": 0.5833333333333334
+    }
+   },
+   "suite": {
+    "ba": {
+     "point": 0.5,
+     "ci95": [
+      0.5,
+      0.5196837068160598
+     ],
+     "invalid_draws": 12
+    },
+    "auroc": 0.5833333333333334
+   }
+  },
+  "baseline|tunnel_2ms|joint|return": {
+   "models": {
+    "majority": {
+     "ba": {
+      "point": 0.5,
+      "ci95": [
+       0.5,
+       0.5
+      ],
+      "invalid_draws": 0
+     },
+     "auroc": 0.5
+    },
+    "logistic": {
+     "ba": {
+      "point": 0.548051948051948,
+      "ci95": [
+       0.4629513888888888,
+       0.6058116210665553
+      ],
+      "invalid_draws": 0
+     },
+     "auroc": 0.5575757575757576
+    },
+    "gboost": {
+     "ba": {
+      "point": 0.5341991341991342,
+      "ci95": [
+       0.4645006613756614,
+       0.6071494708994709
+      ],
+      "invalid_draws": 0
+     },
+     "auroc": 0.5047619047619047
+    },
+    "forest": {
+     "ba": {
+      "point": 0.5151515151515151,
+      "ci95": [
+       0.5,
+       0.5476190476190477
+      ],
+      "invalid_draws": 0
+     },
+     "auroc": 0.4135642135642136
+    }
+   },
+   "suite": {
+    "ba": {
+     "point": 0.548051948051948,
+     "ci95": [
+      0.5105165362731152,
+      0.6170994566156771
+     ],
+     "invalid_draws": 0
+    },
+    "auroc": 0.5575757575757576
+   }
+  },
+  "baseline|tunnel_2ms|suite|cancel": {
+   "ba": {
+    "point": 0.5444444444444444
+   }
+  },
+  "baseline|tunnel_2ms|suite|return": {
+   "ba": {
+    "point": 0.5683982683982685
+   }
+  },
+  "rules|raw|size_order|cancel": {
+   "models": {
+    "majority": {
+     "ba": {
+      "point": 0.5,
+      "ci95": [
+       0.5,
+       0.5
+      ],
+      "invalid_draws": 12
+     },
+     "auroc": 0.5
+    },
+    "logistic": {
+     "ba": {
+      "point": 0.6847222222222222,
+      "ci95": [
+       0.397366452991453,
+       0.8955575980392156
+      ],
+      "invalid_draws": 12
+     },
+     "auroc": 0.7722222222222223
+    },
+    "gboost": {
+     "ba": {
+      "point": 0.8472222222222222,
+      "ci95": [
+       0.7292337270943243,
+       0.9821360834518729
+      ],
+      "invalid_draws": 12
+     },
+     "auroc": 0.8513888888888889
+    },
+    "forest": {
+     "ba": {
+      "point": 0.6208333333333333,
+      "ci95": [
+       0.42857142857142855,
+       0.8
+      ],
+      "invalid_draws": 12
+     },
+     "auroc": 0.6756944444444445
+    },
+    "profile_gboost": {
+     "ba": {
+      "point": 0.9444444444444444,
+      "ci95": [
+       0.7777777777777778,
+       1.0
+      ],
+      "invalid_draws": 12
+     },
+     "auroc": 0.9331018518518519
+    },
+    "profile_count_rule": {
+     "ba": {
+      "point": 0.9444444444444444,
+      "ci95": [
+       0.7777777777777778,
+       1.0
+      ],
+      "invalid_draws": 12
+     },
+     "auroc": 0.9444444444444444
+    }
+   },
+   "suite": {
+    "ba": {
+     "point": 0.9444444444444444,
+     "ci95": [
+      0.8333333333333333,
+      1.0
+     ],
+     "invalid_draws": 12
+    },
+    "auroc": 0.9444444444444444
+   }
+  },
+  "rules|raw|size_order|return": {
+   "models": {
+    "majority": {
+     "ba": {
+      "point": 0.5,
+      "ci95": [
+       0.5,
+       0.5
+      ],
+      "invalid_draws": 0
+     },
+     "auroc": 0.5
+    },
+    "logistic": {
+     "ba": {
+      "point": 0.8151515151515152,
+      "ci95": [
+       0.6652521008403361,
+       0.9351851851851851
+      ],
+      "invalid_draws": 0
+     },
+     "auroc": 0.8303030303030303
+    },
+    "gboost": {
+     "ba": {
+      "point": 0.7896103896103897,
+      "ci95": [
+       0.6277083333333333,
+       0.9031825494325493
+      ],
+      "invalid_draws": 0
+     },
+     "auroc": 0.7815295815295815
+    },
+    "forest": {
+     "ba": {
+      "point": 0.7125541125541126,
+      "ci95": [
+       0.5076323621553884,
+       0.8685193452380952
+      ],
+      "invalid_draws": 0
+     },
+     "auroc": 0.7262626262626263
+    },
+    "profile_gboost": {
+     "ba": {
+      "point": 0.8558441558441559,
+      "ci95": [
+       0.7466645622895622,
+       0.9604714912280701
+      ],
+      "invalid_draws": 0
+     },
+     "auroc": 0.9054834054834054
+    },
+    "profile_count_rule": {
+     "ba": {
+      "point": 0.8701298701298701,
+      "ci95": [
+       0.7647662783751494,
+       0.9722383720930231
+      ],
+      "invalid_draws": 0
+     },
+     "auroc": 0.8759018759018758
+    }
+   },
+   "suite": {
+    "ba": {
+     "point": 0.8701298701298701,
+     "ci95": [
+      0.7802924515424515,
+      0.9761904761904762
+     ],
+     "invalid_draws": 0
+    },
+    "auroc": 0.9054834054834054
+   }
+  },
+  "rules|raw|timing_direction|cancel": {
+   "models": {
+    "majority": {
+     "ba": {
+      "point": 0.5,
+      "ci95": [
+       0.5,
+       0.5
+      ],
+      "invalid_draws": 12
+     },
+     "auroc": 0.5
+    },
+    "logistic": {
+     "ba": {
+      "point": 0.5833333333333334,
+      "ci95": [
+       0.41382141740373446,
+       0.7002462121212121
+      ],
+      "invalid_draws": 12
+     },
+     "auroc": 0.6229166666666667
+    },
+    "gboost": {
+     "ba": {
+      "point": 0.5,
+      "ci95": [
+       0.5,
+       0.5
+      ],
+      "invalid_draws": 12
+     },
+     "auroc": 0.42662037037037037
+    },
+    "forest": {
+     "ba": {
+      "point": 0.5472222222222223,
+      "ci95": [
+       0.29385964912280704,
+       0.7142857142857143
+      ],
+      "invalid_draws": 12
+     },
+     "auroc": 0.5506944444444445
+    }
+   },
+   "suite": {
+    "ba": {
+     "point": 0.5833333333333334,
+     "ci95": [
+      0.5,
+      0.721106078904992
+     ],
+     "invalid_draws": 12
+    },
+    "auroc": 0.6229166666666667
+   }
+  },
+  "rules|raw|timing_direction|return": {
+   "models": {
+    "majority": {
+     "ba": {
+      "point": 0.5,
+      "ci95": [
+       0.5,
+       0.5
+      ],
+      "invalid_draws": 0
+     },
+     "auroc": 0.5
+    },
+    "logistic": {
+     "ba": {
+      "point": 0.5,
+      "ci95": [
+       0.5,
+       0.5
+      ],
+      "invalid_draws": 0
+     },
+     "auroc": 0.48484848484848486
+    },
+    "gboost": {
+     "ba": {
+      "point": 0.49653679653679655,
+      "ci95": [
+       0.3802327764827764,
+       0.5817430555555555
+      ],
+      "invalid_draws": 0
+     },
+     "auroc": 0.5942279942279942
+    },
+    "forest": {
+     "ba": {
+      "point": 0.6103896103896105,
+      "ci95": [
+       0.4145098039215686,
+       0.7517032570604
+      ],
+      "invalid_draws": 0
+     },
+     "auroc": 0.6174603174603175
+    }
+   },
+   "suite": {
+    "ba": {
+     "point": 0.6103896103896105,
+     "ci95": [
+      0.5,
+      0.7517032570604
+     ],
+     "invalid_draws": 0
+    },
+    "auroc": 0.6174603174603175
+   }
+  },
+  "rules|raw|joint|cancel": {
+   "models": {
+    "majority": {
+     "ba": {
+      "point": 0.5,
+      "ci95": [
+       0.5,
+       0.5
+      ],
+      "invalid_draws": 12
+     },
+     "auroc": 0.5
+    },
+    "logistic": {
+     "ba": {
+      "point": 0.49722222222222223,
+      "ci95": [
+       0.25691919191919194,
+       0.6448747877758914
+      ],
+      "invalid_draws": 12
+     },
+     "auroc": 0.5222222222222223
+    },
+    "gboost": {
+     "ba": {
+      "point": 0.8472222222222222,
+      "ci95": [
+       0.7292337270943243,
+       0.9821360834518729
+      ],
+      "invalid_draws": 12
+     },
+     "auroc": 0.8513888888888889
+    },
+    "forest": {
+     "ba": {
+      "point": 0.6125,
+      "ci95": [
+       0.41855104733630216,
+       0.7910125968992248
+      ],
+      "invalid_draws": 12
+     },
+     "auroc": 0.6685185185185185
+    }
+   },
+   "suite": {
+    "ba": {
+     "point": 0.8472222222222222,
+     "ci95": [
+      0.7314411839430894,
+      0.9821360834518729
+     ],
+     "invalid_draws": 12
+    },
+    "auroc": 0.8513888888888889
+   }
+  },
+  "rules|raw|joint|return": {
+   "models": {
+    "majority": {
+     "ba": {
+      "point": 0.5,
+      "ci95": [
+       0.5,
+       0.5
+      ],
+      "invalid_draws": 0
+     },
+     "auroc": 0.5
+    },
+    "logistic": {
+     "ba": {
+      "point": 0.5190476190476191,
+      "ci95": [
+       0.5,
+       0.5571428571428572
+      ],
+      "invalid_draws": 0
+     },
+     "auroc": 0.5333333333333333
+    },
+    "gboost": {
+     "ba": {
+      "point": 0.7848484848484849,
+      "ci95": [
+       0.6229497354497354,
+       0.8981606606606606
+      ],
+      "invalid_draws": 0
+     },
+     "auroc": 0.7858585858585858
+    },
+    "forest": {
+     "ba": {
+      "point": 0.7017316017316018,
+      "ci95": [
+       0.45794662309368195,
+       0.8555611672278339
+      ],
+      "invalid_draws": 0
+     },
+     "auroc": 0.7235209235209236
+    }
+   },
+   "suite": {
+    "ba": {
+     "point": 0.7848484848484849,
+     "ci95": [
+      0.6229497354497354,
+      0.9003270304257146
+     ],
+     "invalid_draws": 0
+    },
+    "auroc": 0.7858585858585858
+   }
+  },
+  "rules|raw|suite|cancel": {
+   "ba": {
+    "point": 0.9444444444444444
+   }
+  },
+  "rules|raw|suite|return": {
+   "ba": {
+    "point": 0.8701298701298701
+   }
+  },
+  "rules|padding|size_order|cancel": {
+   "models": {
+    "majority": {
+     "ba": {
+      "point": 0.5,
+      "ci95": [
+       0.5,
+       0.5
+      ],
+      "invalid_draws": 12
+     },
+     "auroc": 0.5
+    },
+    "logistic": {
+     "ba": {
+      "point": 0.7013888888888888,
+      "ci95": [
+       0.4630965909090909,
+       0.8601974742599743
+      ],
+      "invalid_draws": 12
+     },
+     "auroc": 0.6800925925925926
+    },
+    "gboost": {
+     "ba": {
+      "point": 0.5375,
+      "ci95": [
+       0.42105263157894735,
+       0.6588808819906382
+      ],
+      "invalid_draws": 12
+     },
+     "auroc": 0.6643518518518519
+    },
+    "forest": {
+     "ba": {
+      "point": 0.6888888888888889,
+      "ci95": [
+       0.4453933696190005,
+       0.8487989222915485
+      ],
+      "invalid_draws": 12
+     },
+     "auroc": 0.6458333333333334
+    },
+    "profile_gboost": {
+     "ba": {
+      "point": 0.5375,
+      "ci95": [
+       0.40897366522366524,
+       0.662962962962963
+      ],
+      "invalid_draws": 12
+     },
+     "auroc": 0.6236111111111111
+    },
+    "profile_count_rule": {
+     "ba": {
+      "point": 0.5,
+      "ci95": [
+       0.5,
+       0.5
+      ],
+      "invalid_draws": 12
+     },
+     "auroc": 0.5
+    }
+   },
+   "suite": {
+    "ba": {
+     "point": 0.7013888888888888,
+     "ci95": [
+      0.5,
+      0.8601974742599743
+     ],
+     "invalid_draws": 12
+    },
+    "auroc": 0.6800925925925926
+   }
+  },
+  "rules|padding|size_order|return": {
+   "models": {
+    "majority": {
+     "ba": {
+      "point": 0.5,
+      "ci95": [
+       0.5,
+       0.5
+      ],
+      "invalid_draws": 0
+     },
+     "auroc": 0.5
+    },
+    "logistic": {
+     "ba": {
+      "point": 0.4831168831168831,
+      "ci95": [
+       0.3446956168831169,
+       0.6287023224523225
+      ],
+      "invalid_draws": 0
+     },
+     "auroc": 0.47056277056277057
+    },
+    "gboost": {
+     "ba": {
+      "point": 0.5476190476190476,
+      "ci95": [
+       0.3564583333333333,
+       0.7473643286143287
+      ],
+      "invalid_draws": 0
+     },
+     "auroc": 0.45584415584415583
+    },
+    "forest": {
+     "ba": {
+      "point": 0.4904761904761905,
+      "ci95": [
+       0.30051282998423956,
+       0.6901241679467485
+      ],
+      "invalid_draws": 0
+     },
+     "auroc": 0.45007215007215007
+    },
+    "profile_gboost": {
+     "ba": {
+      "point": 0.5476190476190476,
+      "ci95": [
+       0.3564583333333333,
+       0.7473643286143287
+      ],
+      "invalid_draws": 0
+     },
+     "auroc": 0.45021645021645024
+    },
+    "profile_count_rule": {
+     "ba": {
+      "point": 0.5,
+      "ci95": [
+       0.5,
+       0.5
+      ],
+      "invalid_draws": 0
+     },
+     "auroc": 0.5
+    }
+   },
+   "suite": {
+    "ba": {
+     "point": 0.5476190476190476,
+     "ci95": [
+      0.5,
+      0.7473643286143287
+     ],
+     "invalid_draws": 0
+    },
+    "auroc": 0.5
+   }
+  },
+  "rules|padding|timing_direction|cancel": {
+   "models": {
+    "majority": {
+     "ba": {
+      "point": 0.5,
+      "ci95": [
+       0.5,
+       0.5
+      ],
+      "invalid_draws": 12
+     },
+     "auroc": 0.5
+    },
+    "logistic": {
+     "ba": {
+      "point": 0.5638888888888889,
+      "ci95": [
+       0.40844399277326104,
+       0.6851686507936509
+      ],
+      "invalid_draws": 12
+     },
+     "auroc": 0.5509259259259259
+    },
+    "gboost": {
+     "ba": {
+      "point": 0.5597222222222222,
+      "ci95": [
+       0.45628676470588236,
+       0.6593385780885782
+      ],
+      "invalid_draws": 12
+     },
+     "auroc": 0.47685185185185186
+    },
+    "forest": {
+     "ba": {
+      "point": 0.49166666666666664,
+      "ci95": [
+       0.4769596104725415,
+       0.5
+      ],
+      "invalid_draws": 12
+     },
+     "auroc": 0.449537037037037
+    }
+   },
+   "suite": {
+    "ba": {
+     "point": 0.5638888888888889,
+     "ci95": [
+      0.5,
+      0.6944444444444444
+     ],
+     "invalid_draws": 12
+    },
+    "auroc": 0.5509259259259259
+   }
+  },
+  "rules|padding|timing_direction|return": {
+   "models": {
+    "majority": {
+     "ba": {
+      "point": 0.5,
+      "ci95": [
+       0.5,
+       0.5
+      ],
+      "invalid_draws": 0
+     },
+     "auroc": 0.5
+    },
+    "logistic": {
+     "ba": {
+      "point": 0.4536796536796537,
+      "ci95": [
+       0.34182678476796124,
+       0.5947479603729601
+      ],
+      "invalid_draws": 0
+     },
+     "auroc": 0.48513708513708514
+    },
+    "gboost": {
+     "ba": {
+      "point": 0.5060606060606061,
+      "ci95": [
+       0.36100108225108224,
+       0.5997222222222222
+      ],
+      "invalid_draws": 0
+     },
+     "auroc": 0.4093795093795094
+    },
+    "forest": {
+     "ba": {
+      "point": 0.4597402597402598,
+      "ci95": [
+       0.3632440476190476,
+       0.5724875038156289
+      ],
+      "invalid_draws": 0
+     },
+     "auroc": 0.38326118326118325
+    }
+   },
+   "suite": {
+    "ba": {
+     "point": 0.5060606060606061,
+     "ci95": [
+      0.5,
+      0.6183638443935926
+     ],
+     "invalid_draws": 0
+    },
+    "auroc": 0.5
+   }
+  },
+  "rules|padding|joint|cancel": {
+   "models": {
+    "majority": {
+     "ba": {
+      "point": 0.5,
+      "ci95": [
+       0.5,
+       0.5
+      ],
+      "invalid_draws": 12
+     },
+     "auroc": 0.5
+    },
+    "logistic": {
+     "ba": {
+      "point": 0.5638888888888889,
+      "ci95": [
+       0.40594223484848485,
+       0.7532399891774892
+      ],
+      "invalid_draws": 12
+     },
+     "auroc": 0.5518518518518518
+    },
+    "gboost": {
+     "ba": {
+      "point": 0.5333333333333333,
+      "ci95": [
+       0.36334273182957394,
+       0.6434019246519247
+      ],
+      "invalid_draws": 12
+     },
+     "auroc": 0.4965277777777778
+    },
+    "forest": {
+     "ba": {
+      "point": 0.5222222222222223,
+      "ci95": [
+       0.4444444444444444,
+       0.6815108401084011
+      ],
+      "invalid_draws": 12
+     },
+     "auroc": 0.49699074074074073
+    }
+   },
+   "suite": {
+    "ba": {
+     "point": 0.5638888888888889,
+     "ci95": [
+      0.5240578078078079,
+      0.7592790324985093
+     ],
+     "invalid_draws": 12
+    },
+    "auroc": 0.5518518518518518
+   }
+  },
+  "rules|padding|joint|return": {
+   "models": {
+    "majority": {
+     "ba": {
+      "point": 0.5,
+      "ci95": [
+       0.5,
+       0.5
+      ],
+      "invalid_draws": 0
+     },
+     "auroc": 0.5
+    },
+    "logistic": {
+     "ba": {
+      "point": 0.5203463203463203,
+      "ci95": [
+       0.4014723124098124,
+       0.6405839227821987
+      ],
+      "invalid_draws": 0
+     },
+     "auroc": 0.5028860028860029
+    },
+    "gboost": {
+     "ba": {
+      "point": 0.512987012987013,
+      "ci95": [
+       0.3101835317460318,
+       0.6616432178932178
+      ],
+      "invalid_draws": 0
+     },
+     "auroc": 0.56002886002886
+    },
+    "forest": {
+     "ba": {
+      "point": 0.4601731601731602,
+      "ci95": [
+       0.29708132045088564,
+       0.6293806306306305
+      ],
+      "invalid_draws": 0
+     },
+     "auroc": 0.459018759018759
+    }
+   },
+   "suite": {
+    "ba": {
+     "point": 0.5203463203463203,
+     "ci95": [
+      0.5,
+      0.6746130952380952
+     ],
+     "invalid_draws": 0
+    },
+    "auroc": 0.56002886002886
+   }
+  },
+  "rules|padding|suite|cancel": {
+   "ba": {
+    "point": 0.7013888888888888
+   }
+  },
+  "rules|padding|suite|return": {
+   "ba": {
+    "point": 0.5476190476190476
+   }
+  },
+  "rules|shadow_serial|size_order|cancel": {
+   "models": {
+    "majority": {
+     "ba": {
+      "point": 0.5,
+      "ci95": [
+       0.5,
+       0.5
+      ],
+      "invalid_draws": 12
+     },
+     "auroc": 0.5
+    },
+    "logistic": {
+     "ba": {
+      "point": 0.5819444444444444,
+      "ci95": [
+       0.48010714285714284,
+       0.7085138888888889
+      ],
+      "invalid_draws": 12
+     },
+     "auroc": 0.5356481481481481
+    },
+    "gboost": {
+     "ba": {
+      "point": 0.5013888888888889,
+      "ci95": [
+       0.44179748062015506,
+       0.5591575150732128
+      ],
+      "invalid_draws": 12
+     },
+     "auroc": 0.5421296296296296
+    },
+    "forest": {
+     "ba": {
+      "point": 0.5708333333333333,
+      "ci95": [
+       0.4828729141229141,
+       0.6842534722222222
+      ],
+      "invalid_draws": 12
+     },
+     "auroc": 0.580787037037037
+    },
+    "profile_gboost": {
+     "ba": {
+      "point": 0.4875,
+      "ci95": [
+       0.47435897435897434,
+       0.5
+      ],
+      "invalid_draws": 12
+     },
+     "auroc": 0.5726851851851852
+    },
+    "profile_count_rule": {
+     "ba": {
+      "point": 0.5,
+      "ci95": [
+       0.5,
+       0.5
+      ],
+      "invalid_draws": 12
+     },
+     "auroc": 0.5
+    }
+   },
+   "suite": {
+    "ba": {
+     "point": 0.5819444444444444,
+     "ci95": [
+      0.5019501879699247,
+      0.7121747448979592
+     ],
+     "invalid_draws": 12
+    },
+    "auroc": 0.580787037037037
+   }
+  },
+  "rules|shadow_serial|size_order|return": {
+   "models": {
+    "majority": {
+     "ba": {
+      "point": 0.5,
+      "ci95": [
+       0.5,
+       0.5
+      ],
+      "invalid_draws": 0
+     },
+     "auroc": 0.5
+    },
+    "logistic": {
+     "ba": {
+      "point": 0.5792207792207793,
+      "ci95": [
+       0.4562821815718157,
+       0.6680861253640858
+      ],
+      "invalid_draws": 0
+     },
+     "auroc": 0.5744588744588744
+    },
+    "gboost": {
+     "ba": {
+      "point": 0.5099567099567099,
+      "ci95": [
+       0.4490575396825397,
+       0.5817401960784314
+      ],
+      "invalid_draws": 0
+     },
+     "auroc": 0.5489177489177489
+    },
+    "forest": {
+     "ba": {
+      "point": 0.509090909090909,
+      "ci95": [
+       0.41519329106981545,
+       0.5928794642857141
+      ],
+      "invalid_draws": 0
+     },
+     "auroc": 0.49913419913419915
+    },
+    "profile_gboost": {
+     "ba": {
+      "point": 0.5,
+      "ci95": [
+       0.5,
+       0.5
+      ],
+      "invalid_draws": 0
+     },
+     "auroc": 0.5966810966810967
+    },
+    "profile_count_rule": {
+     "ba": {
+      "point": 0.5,
+      "ci95": [
+       0.5,
+       0.5
+      ],
+      "invalid_draws": 0
+     },
+     "auroc": 0.5
+    }
+   },
+   "suite": {
+    "ba": {
+     "point": 0.5792207792207793,
+     "ci95": [
+      0.5073214285714286,
+      0.6680861253640858
+     ],
+     "invalid_draws": 0
+    },
+    "auroc": 0.5966810966810967
+   }
+  },
+  "rules|shadow_serial|timing_direction|cancel": {
+   "models": {
+    "majority": {
+     "ba": {
+      "point": 0.5,
+      "ci95": [
+       0.5,
+       0.5
+      ],
+      "invalid_draws": 12
+     },
+     "auroc": 0.5
+    },
+    "logistic": {
+     "ba": {
+      "point": 0.5222222222222223,
+      "ci95": [
+       0.3888888888888889,
+       0.629308976464149
+      ],
+      "invalid_draws": 12
+     },
+     "auroc": 0.47453703703703703
+    },
+    "gboost": {
+     "ba": {
+      "point": 0.5,
+      "ci95": [
+       0.5,
+       0.5
+      ],
+      "invalid_draws": 12
+     },
+     "auroc": 0.5064814814814815
+    },
+    "forest": {
+     "ba": {
+      "point": 0.5,
+      "ci95": [
+       0.5,
+       0.5
+      ],
+      "invalid_draws": 12
+     },
+     "auroc": 0.4724537037037037
+    }
+   },
+   "suite": {
+    "ba": {
+     "point": 0.5222222222222223,
+     "ci95": [
+      0.5,
+      0.629308976464149
+     ],
+     "invalid_draws": 12
+    },
+    "auroc": 0.5064814814814815
+   }
+  },
+  "rules|shadow_serial|timing_direction|return": {
+   "models": {
+    "majority": {
+     "ba": {
+      "point": 0.5,
+      "ci95": [
+       0.5,
+       0.5
+      ],
+      "invalid_draws": 0
+     },
+     "auroc": 0.5
+    },
+    "logistic": {
+     "ba": {
+      "point": 0.49523809523809526,
+      "ci95": [
+       0.48484848484848486,
+       0.5
+      ],
+      "invalid_draws": 0
+     },
+     "auroc": 0.5056277056277056
+    },
+    "gboost": {
+     "ba": {
+      "point": 0.5,
+      "ci95": [
+       0.5,
+       0.5
+      ],
+      "invalid_draws": 0
+     },
+     "auroc": 0.5965367965367966
+    },
+    "forest": {
+     "ba": {
+      "point": 0.5142857142857142,
+      "ci95": [
+       0.5,
+       0.53125
+      ],
+      "invalid_draws": 0
+     },
+     "auroc": 0.4248196248196248
+    }
+   },
+   "suite": {
+    "ba": {
+     "point": 0.5142857142857142,
+     "ci95": [
+      0.5,
+      0.53125
+     ],
+     "invalid_draws": 0
+    },
+    "auroc": 0.5965367965367966
+   }
+  },
+  "rules|shadow_serial|joint|cancel": {
+   "models": {
+    "majority": {
+     "ba": {
+      "point": 0.5,
+      "ci95": [
+       0.5,
+       0.5
+      ],
+      "invalid_draws": 12
+     },
+     "auroc": 0.5
+    },
+    "logistic": {
+     "ba": {
+      "point": 0.5041666666666667,
+      "ci95": [
+       0.4045510781194769,
+       0.6073073308270678
+      ],
+      "invalid_draws": 12
+     },
+     "auroc": 0.5314814814814814
+    },
+    "gboost": {
+     "ba": {
+      "point": 0.5,
+      "ci95": [
+       0.5,
+       0.5
+      ],
+      "invalid_draws": 12
+     },
+     "auroc": 0.55625
+    },
+    "forest": {
+     "ba": {
+      "point": 0.5,
+      "ci95": [
+       0.5,
+       0.5
+      ],
+      "invalid_draws": 12
+     },
+     "auroc": 0.44050925925925927
+    }
+   },
+   "suite": {
+    "ba": {
+     "point": 0.5041666666666667,
+     "ci95": [
+      0.5,
+      0.6073073308270678
+     ],
+     "invalid_draws": 12
+    },
+    "auroc": 0.55625
+   }
+  },
+  "rules|shadow_serial|joint|return": {
+   "models": {
+    "majority": {
+     "ba": {
+      "point": 0.5,
+      "ci95": [
+       0.5,
+       0.5
+      ],
+      "invalid_draws": 0
+     },
+     "auroc": 0.5
+    },
+    "logistic": {
+     "ba": {
+      "point": 0.5,
+      "ci95": [
+       0.5,
+       0.5
+      ],
+      "invalid_draws": 0
+     },
+     "auroc": 0.48023088023088023
+    },
+    "gboost": {
+     "ba": {
+      "point": 0.5,
+      "ci95": [
+       0.5,
+       0.5
+      ],
+      "invalid_draws": 0
+     },
+     "auroc": 0.49696969696969695
+    },
+    "forest": {
+     "ba": {
+      "point": 0.5142857142857142,
+      "ci95": [
+       0.5,
+       0.53125
+      ],
+      "invalid_draws": 0
+     },
+     "auroc": 0.5352092352092352
+    }
+   },
+   "suite": {
+    "ba": {
+     "point": 0.5142857142857142,
+     "ci95": [
+      0.5,
+      0.53125
+     ],
+     "invalid_draws": 0
+    },
+    "auroc": 0.5352092352092352
+   }
+  },
+  "rules|shadow_serial|flush_stripped_joint|cancel": {
+   "models": {
+    "majority": {
+     "ba": {
+      "point": 0.5,
+      "ci95": [
+       0.5,
+       0.5
+      ],
+      "invalid_draws": 12
+     },
+     "auroc": 0.5
+    },
+    "logistic": {
+     "ba": {
+      "point": 0.5,
+      "ci95": [
+       0.5,
+       0.5
+      ],
+      "invalid_draws": 12
+     },
+     "auroc": 0.5125
+    },
+    "gboost": {
+     "ba": {
+      "point": 0.5083333333333333,
+      "ci95": [
+       0.3418337510442773,
+       0.6568339002267577
+      ],
+      "invalid_draws": 12
+     },
+     "auroc": 0.47962962962962963
+    },
+    "forest": {
+     "ba": {
+      "point": 0.5,
+      "ci95": [
+       0.5,
+       0.5
+      ],
+      "invalid_draws": 12
+     },
+     "auroc": 0.5120370370370371
+    }
+   },
+   "suite": {
+    "ba": {
+     "point": 0.5083333333333333,
+     "ci95": [
+      0.5,
+      0.6568339002267577
+     ],
+     "invalid_draws": 12
+    },
+    "auroc": 0.5125
+   }
+  },
+  "rules|shadow_serial|flush_stripped_joint|return": {
+   "models": {
+    "majority": {
+     "ba": {
+      "point": 0.5,
+      "ci95": [
+       0.5,
+       0.5
+      ],
+      "invalid_draws": 0
+     },
+     "auroc": 0.5
+    },
+    "logistic": {
+     "ba": {
+      "point": 0.4826839826839827,
+      "ci95": [
+       0.392448112028007,
+       0.5799016203703701
+      ],
+      "invalid_draws": 0
+     },
+     "auroc": 0.43116883116883115
+    },
+    "gboost": {
+     "ba": {
+      "point": 0.5,
+      "ci95": [
+       0.5,
+       0.5
+      ],
+      "invalid_draws": 0
+     },
+     "auroc": 0.4085137085137085
+    },
+    "forest": {
+     "ba": {
+      "point": 0.49783549783549785,
+      "ci95": [
+       0.37987861811391227,
+       0.5905059523809523
+      ],
+      "invalid_draws": 0
+     },
+     "auroc": 0.49307359307359305
+    }
+   },
+   "suite": {
+    "ba": {
+     "point": 0.5,
+     "ci95": [
+      0.5,
+      0.6026352339181287
+     ],
+     "invalid_draws": 0
+    },
+    "auroc": 0.5
+   }
+  },
+  "rules|shadow_serial|suite|cancel": {
+   "ba": {
+    "point": 0.5819444444444444
+   }
+  },
+  "rules|shadow_serial|suite|return": {
+   "ba": {
+    "point": 0.5792207792207793
+   }
+  },
+  "rules|tunnel_2ms|size_order|cancel": {
+   "models": {
+    "majority": {
+     "ba": {
+      "point": 0.5,
+      "ci95": [
+       0.5,
+       0.5
+      ],
+      "invalid_draws": 12
+     },
+     "auroc": 0.5
+    },
+    "logistic": {
+     "ba": {
+      "point": 0.4847222222222222,
+      "ci95": [
+       0.4045684523809524,
+       0.5315315315315315
+      ],
+      "invalid_draws": 12
+     },
+     "auroc": 0.4685185185185185
+    },
+    "gboost": {
+     "ba": {
+      "point": 0.5069444444444444,
+      "ci95": [
+       0.4398148148148148,
+       0.5714285714285714
+      ],
+      "invalid_draws": 12
+     },
+     "auroc": 0.600462962962963
+    },
+    "forest": {
+     "ba": {
+      "point": 0.5152777777777777,
+      "ci95": [
+       0.4768168604651163,
+       0.5556361607142858
+      ],
+      "invalid_draws": 12
+     },
+     "auroc": 0.5092592592592593
+    }
+   },
+   "suite": {
+    "ba": {
+     "point": 0.5152777777777777,
+     "ci95": [
+      0.5,
+      0.5723270440251572
+     ],
+     "invalid_draws": 12
+    },
+    "auroc": 0.600462962962963
+   }
+  },
+  "rules|tunnel_2ms|size_order|return": {
+   "models": {
+    "majority": {
+     "ba": {
+      "point": 0.5,
+      "ci95": [
+       0.5,
+       0.5
+      ],
+      "invalid_draws": 0
+     },
+     "auroc": 0.5
+    },
+    "logistic": {
+     "ba": {
+      "point": 0.4857142857142857,
+      "ci95": [
+       0.4702342796092796,
+       0.5
+      ],
+      "invalid_draws": 0
+     },
+     "auroc": 0.42943722943722945
+    },
+    "gboost": {
+     "ba": {
+      "point": 0.48354978354978356,
+      "ci95": [
+       0.4233989898989899,
+       0.5397939068100358
+      ],
+      "invalid_draws": 0
+     },
+     "auroc": 0.5007215007215007
+    },
+    "forest": {
+     "ba": {
+      "point": 0.5,
+      "ci95": [
+       0.5,
+       0.5
+      ],
+      "invalid_draws": 0
+     },
+     "auroc": 0.46695526695526696
+    }
+   },
+   "suite": {
+    "ba": {
+     "point": 0.5,
+     "ci95": [
+      0.5,
+      0.5397939068100358
+     ],
+     "invalid_draws": 0
+    },
+    "auroc": 0.5007215007215007
+   }
+  },
+  "rules|tunnel_2ms|timing_direction|cancel": {
+   "models": {
+    "majority": {
+     "ba": {
+      "point": 0.5,
+      "ci95": [
+       0.5,
+       0.5
+      ],
+      "invalid_draws": 12
+     },
+     "auroc": 0.5
+    },
+    "logistic": {
+     "ba": {
+      "point": 0.5083333333333333,
+      "ci95": [
+       0.5,
+       0.5238095238095238
+      ],
+      "invalid_draws": 12
+     },
+     "auroc": 0.4777777777777778
+    },
+    "gboost": {
+     "ba": {
+      "point": 0.5,
+      "ci95": [
+       0.5,
+       0.5
+      ],
+      "invalid_draws": 12
+     },
+     "auroc": 0.375
+    },
+    "forest": {
+     "ba": {
+      "point": 0.5,
+      "ci95": [
+       0.5,
+       0.5
+      ],
+      "invalid_draws": 12
+     },
+     "auroc": 0.5277777777777778
+    }
+   },
+   "suite": {
+    "ba": {
+     "point": 0.5083333333333333,
+     "ci95": [
+      0.5,
+      0.5238095238095238
+     ],
+     "invalid_draws": 12
+    },
+    "auroc": 0.5277777777777778
+   }
+  },
+  "rules|tunnel_2ms|timing_direction|return": {
+   "models": {
+    "majority": {
+     "ba": {
+      "point": 0.5,
+      "ci95": [
+       0.5,
+       0.5
+      ],
+      "invalid_draws": 0
+     },
+     "auroc": 0.5
+    },
+    "logistic": {
+     "ba": {
+      "point": 0.5238095238095238,
+      "ci95": [
+       0.5069444444444444,
+       0.5441176470588235
+      ],
+      "invalid_draws": 0
+     },
+     "auroc": 0.5953823953823953
+    },
+    "gboost": {
+     "ba": {
+      "point": 0.5095238095238095,
+      "ci95": [
+       0.41666666666666663,
+       0.600003465003465
+      ],
+      "invalid_draws": 0
+     },
+     "auroc": 0.4176046176046176
+    },
+    "forest": {
+     "ba": {
+      "point": 0.5,
+      "ci95": [
+       0.5,
+       0.5
+      ],
+      "invalid_draws": 0
+     },
+     "auroc": 0.4225108225108225
+    }
+   },
+   "suite": {
+    "ba": {
+     "point": 0.5238095238095238,
+     "ci95": [
+      0.5092592592592593,
+      0.600003465003465
+     ],
+     "invalid_draws": 0
+    },
+    "auroc": 0.5953823953823953
+   }
+  },
+  "rules|tunnel_2ms|joint|cancel": {
+   "models": {
+    "majority": {
+     "ba": {
+      "point": 0.5,
+      "ci95": [
+       0.5,
+       0.5
+      ],
+      "invalid_draws": 12
+     },
+     "auroc": 0.5
+    },
+    "logistic": {
+     "ba": {
+      "point": 0.5041666666666667,
+      "ci95": [
+       0.5,
+       0.5151515151515151
+      ],
+      "invalid_draws": 12
+     },
+     "auroc": 0.493287037037037
+    },
+    "gboost": {
+     "ba": {
+      "point": 0.40555555555555556,
+      "ci95": [
+       0.2722222222222222,
+       0.5142846130126426
+      ],
+      "invalid_draws": 12
+     },
+     "auroc": 0.3611111111111111
+    },
+    "forest": {
+     "ba": {
+      "point": 0.5,
+      "ci95": [
+       0.5,
+       0.5
+      ],
+      "invalid_draws": 12
+     },
+     "auroc": 0.48842592592592593
+    }
+   },
+   "suite": {
+    "ba": {
+     "point": 0.5041666666666667,
+     "ci95": [
+      0.5,
+      0.518655303030303
+     ],
+     "invalid_draws": 12
+    },
+    "auroc": 0.5
+   }
+  },
+  "rules|tunnel_2ms|joint|return": {
+   "models": {
+    "majority": {
+     "ba": {
+      "point": 0.5,
+      "ci95": [
+       0.5,
+       0.5
+      ],
+      "invalid_draws": 0
+     },
+     "auroc": 0.5
+    },
+    "logistic": {
+     "ba": {
+      "point": 0.5606060606060606,
+      "ci95": [
+       0.45930059523809524,
+       0.6726382488479262
+      ],
+      "invalid_draws": 0
+     },
+     "auroc": 0.5727272727272728
+    },
+    "gboost": {
+     "ba": {
+      "point": 0.4121212121212121,
+      "ci95": [
+       0.35579806687565313,
+       0.4705138888888889
+      ],
+      "invalid_draws": 0
+     },
+     "auroc": 0.43376623376623374
+    },
+    "forest": {
+     "ba": {
+      "point": 0.5,
+      "ci95": [
+       0.5,
+       0.5
+      ],
+      "invalid_draws": 0
+     },
+     "auroc": 0.49956709956709955
+    }
+   },
+   "suite": {
+    "ba": {
+     "point": 0.5606060606060606,
+     "ci95": [
+      0.5,
+      0.6726382488479262
+     ],
+     "invalid_draws": 0
+    },
+    "auroc": 0.5727272727272728
+   }
+  },
+  "rules|tunnel_2ms|suite|cancel": {
+   "ba": {
+    "point": 0.5152777777777777
+   }
+  },
+  "rules|tunnel_2ms|suite|return": {
+   "ba": {
+    "point": 0.5606060606060606
+   }
+  }
+ }
+}

@@ -34,5 +34,32 @@ All 1,380 tunnel sessions contain exactly 133 records per direction with identic
 
 No formal session fails, loses a real response, changes final live state or sends a cell before its deadline. Twelve of 2,000 cancellation bootstrap draws do not contain both target classes; all return draws are defined. The archived invalid-draw counters distinguish this finite-sample calculation issue from execution failures.
 
+\subsection{Evaluation under WAN transit delay and jitter (Exp 4 Extension)}\label{sec:wan-netem-eval}
+Local loopback measurement isolates backend execution and tool scheduling from transit variance, but real agent deployments operate over wide-area networks subject to packet propagation delays and jitter. To evaluate whether timing-based flush detection and intent inference hold outside the loopback environment, we extend Exp~4 with network emulation matching standard wide-area link profiles:
+\begin{itemize}
+    \item \textbf{WAN Mild}: 20\,ms one-way delay with 5\,ms normal jitter ($\sigma = 5$\,ms), representing regional cloud tool hosting ($40$\,ms nominal RTT).
+    \item \textbf{WAN Realistic}: 50\,ms one-way delay with 10\,ms normal jitter ($\sigma = 10$\,ms), representing cross-region or transcontinental tool hosting ($100$\,ms nominal RTT).
+\end{itemize}
+The emulation runs directly in the bidirectional TLS transport relay using high-precision non-reordering FIFO delivery queues matching the behavior of Linux \texttt{tc netem}. Each real tool response across the WAN link gates the next action release, faithfully preserving feedback synchronization against live database clones. We repeat measurements on the complete set of 276 customer-held-out test episodes across both prompt arms (standard baseline and system-prompt rules), yielding 1,104 new TLS sessions per WAN profile (2,208 additional measured sessions total) across raw transport, per-call constant framing, serial shadow cover, and 2\,ms complete tunnels.
+
+\paragraph{Resilience of flush detection}
+Table~\ref{tab:wan-flush-comparison} assesses flush-phase detection across 15,278 ciphertext records from serial shadow cover sessions. We evaluate two attacker postures: (1) \emph{Direct Transfer}, where the attacker applies the frozen loopback detector $D_{\text{loop}}$ without network-specific recalibration, and (2) \emph{Adapted 5-Fold CV}, where the attacker refits the 80-tree random forest on customer-grouped training folds under the observed WAN network condition.
+
+Under both WAN conditions, flush detection exhibits remarkable resilience. With direct transfer of $D_{\text{loop}}$, the detector achieves 89.4\% point BA (95\% CI [87.2\%, 91.7\%], AUROC 0.962) under 20\,ms/5\,ms jitter and 89.4\% point BA (95\% CI [87.3\%, 91.7\%], AUROC 0.963) under 50\,ms/10\,ms jitter, falling by only 1.0 percentage point from the loopback baseline (90.4\% BA, AUROC 0.967). Adapted retraining yields consistent performance (89.2\% and 89.0\% BA). This stability occurs because the flush phase transitions from feedback-gated tool intervals (punctuated by real database queries and network RTTs) to an un-gated burst of dummy requests. This macroscopic transition in inter-request density and duration creates a structural signature that easily cuts through 5--10\,ms transit noise.
+\input{tables/r13-wan-flush}
+
+\paragraph{Intent classification under transit jitter}
+Table~\ref{tab:wan-controls-comparison} compares full-suite intent Balanced Accuracy across loopback and WAN conditions. For raw transport and per-call constant framing, intent classification is dominated by packet size and sequence order distributions, which are network-delay invariant; hence cancellation BA remains 91.7\% and 68.6\%, respectively.
+
+For serial shadow cover, however, the timing signal exploited on loopback is substantially attenuated. On loopback, residual execution time differences allowed the full attack union to elevate cancellation BA to 61.4\% (11.4 points above size/order). Under WAN conditions, random transit jitter washes out microsecond-level tool service variations: cancellation BA falls to 50.0\% (exact chance level) under 20\,ms/5\,ms jitter and 54.0\% under 50\,ms/10\,ms jitter; return BA remains 50.7\% and 54.6\%. Thus, WAN network jitter acts as natural timing obfuscation against micro-timing intent inference, strengthening the intent-hiding property of serial cover while leaving macroscopic flush boundaries visible.
+
+\paragraph{Operational limits: tunnel horizon exhaustion}
+The WAN extension reveals a critical operational vulnerability in fixed-horizon tunnel designs. The 2\,ms full tunnel enforces a strict 133-slot horizon (266\,ms) sized against local loopback execution. On loopback, all 276 sessions successfully completed all tool calls within this window.
+
+When executed over WAN links, each sequential tool RPC incurs network RTT. Under 20\,ms one-way delay (40\,ms RTT per call), tasks requiring multiple tool round-trips exhaust the 133 slots before their responses arrive; 191 out of 276 sessions (69.2\%) fail to complete due to horizon exhaustion (only 85/276 complete). Under 50\,ms delay (100\,ms RTT), horizon exhaustion surges to 98.2\% (271 out of 276 sessions fail; only 5 single-call sessions complete). This highlights an intrinsic deployment hazard: fixed-rate constant-bandwidth tunnels require worst-case horizon provisioning over WAN links, which would drastically multiply byte overhead (e.g., thousands of slots), or else suffer catastrophic protocol failure whenever network latency fluctuates.
+
+In contrast, serial shadow cover and per-call constant framing adapt naturally to network delays: all 276 sessions complete successfully with 100\% response and database state equality across both WAN conditions. Their real-chain p95 latency expands predictably with network round-trips: from 26.2\,ms on loopback to 855.4\,ms under 20\,ms WAN and 1999.5\,ms under 50\,ms WAN.
+\input{tables/r13-wan-controls}
+
 \clearpage
 \input{tables/r6-supp}

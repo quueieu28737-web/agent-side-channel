@@ -1,0 +1,113 @@
+{
+ "task": 38,
+ "repeat": 0,
+ "seed": 0,
+ "prompt": "baseline",
+ "user": "daiki_sanchez_3253",
+ "has_cancel": 1,
+ "has_return": 0,
+ "native_reward": 0,
+ "db_eq": false,
+ "status": "transfer",
+ "condition": "raw",
+ "calls": [
+  {
+   "name": "find_user_id_by_email",
+   "kind": "real",
+   "req": 89,
+   "resp": 21,
+   "err": true
+  },
+  {
+   "name": "find_user_id_by_name_zip",
+   "kind": "real",
+   "req": 114,
+   "resp": 18,
+   "err": false
+  },
+  {
+   "name": "get_user_details",
+   "kind": "real",
+   "req": 76,
+   "resp": 403,
+   "err": false
+  },
+  {
+   "name": "tool",
+   "kind": "real",
+   "req": 56,
+   "resp": 19,
+   "err": true
+  },
+  {
+   "name": "get_order_details",
+   "kind": "real",
+   "req": 69,
+   "resp": 1274,
+   "err": false
+  },
+  {
+   "name": "transfer_to_human_agents",
+   "kind": "real",
+   "req": 584,
+   "resp": 19,
+   "err": false
+  }
+ ],
+ "records": [
+  [
+   "c2s",
+   117
+  ],
+  [
+   "s2c",
+   49
+  ],
+  [
+   "c2s",
+   142
+  ],
+  [
+   "s2c",
+   46
+  ],
+  [
+   "c2s",
+   104
+  ],
+  [
+   "s2c",
+   431
+  ],
+  [
+   "c2s",
+   84
+  ],
+  [
+   "s2c",
+   47
+  ],
+  [
+   "c2s",
+   97
+  ],
+  [
+   "s2c",
+   1302
+  ],
+  [
+   "c2s",
+   612
+  ],
+  [
+   "s2c",
+   47
+  ]
+ ],
+ "application_wire_bytes": 3138,
+ "framing_overflow_messages": 0,
+ "template_flags": null,
+ "calibration_sha256": "9719c4bbff37e0542a5d260f1f589025c0e37e18c42fb7b9e216797ba26b969b",
+ "episode_sha256": "7fac7f620ba733b8f0071bd378f83470fb0f659620e60aca1651787695dac681",
+ "measurement": "TLS 1.2 loopback replay of real model trajectory; provider link and wall-clock timing excluded"
+}

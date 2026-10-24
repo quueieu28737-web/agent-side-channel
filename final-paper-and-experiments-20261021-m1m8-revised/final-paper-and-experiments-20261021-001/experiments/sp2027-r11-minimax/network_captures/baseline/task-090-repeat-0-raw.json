@@ -1,0 +1,188 @@
+{
+ "task": 90,
+ "repeat": 0,
+ "seed": 0,
+ "prompt": "baseline",
+ "user": "emma_kovacs_9839",
+ "has_cancel": 1,
+ "has_return": 0,
+ "native_reward": 1,
+ "db_eq": true,
+ "status": "user_stop",
+ "condition": "raw",
+ "calls": [
+  {
+   "name": "find_user_id_by_email",
+   "kind": "real",
+   "req": 88,
+   "resp": 16,
+   "err": false
+  },
+  {
+   "name": "get_user_details",
+   "kind": "real",
+   "req": 74,
+   "resp": 424,
+   "err": false
+  },
+  {
+   "name": "think",
+   "kind": "real",
+   "req": 343,
+   "resp": 0,
+   "err": false
+  },
+  {
+   "name": "tool",
+   "kind": "real",
+   "req": 56,
+   "resp": 19,
+   "err": true
+  },
+  {
+   "name": "tool_call",
+   "kind": "real",
+   "req": 105,
+   "resp": 24,
+   "err": true
+  },
+  {
+   "name": "tool_call",
+   "kind": "real",
+   "req": 105,
+   "resp": 24,
+   "err": true
+  },
+  {
+   "name": "get_order_details",
+   "kind": "real",
+   "req": 69,
+   "resp": 904,
+   "err": false
+  },
+  {
+   "name": "get_order_details",
+   "kind": "real",
+   "req": 69,
+   "resp": 1062,
+   "err": false
+  },
+  {
+   "name": "get_order_details",
+   "kind": "real",
+   "req": 69,
+   "resp": 1219,
+   "err": false
+  },
+  {
+   "name": "get_product_details",
+   "kind": "real",
+   "req": 74,
+   "resp": 2164,
+   "err": false
+  },
+  {
+   "name": "cancel_pending_order",
+   "kind": "real",
+   "req": 104,
+   "resp": 1355,
+   "err": false
+  }
+ ],
+ "records": [
+  [
+   "c2s",
+   116
+  ],
+  [
+   "s2c",
+   44
+  ],
+  [
+   "c2s",
+   102
+  ],
+  [
+   "s2c",
+   452
+  ],
+  [
+   "c2s",
+   371
+  ],
+  [
+   "s2c",
+   28
+  ],
+  [
+   "c2s",
+   84
+  ],
+  [
+   "s2c",
+   47
+  ],
+  [
+   "c2s",
+   133
+  ],
+  [
+   "s2c",
+   52
+  ],
+  [
+   "c2s",
+   133
+  ],
+  [
+   "s2c",
+   52
+  ],
+  [
+   "c2s",
+   97
+  ],
+  [
+   "s2c",
+   932
+  ],
+  [
+   "c2s",
+   97
+  ],
+  [
+   "s2c",
+   1090
+  ],
+  [
+   "c2s",
+   97
+  ],
+  [
+   "s2c",
+   1247
+  ],
+  [
+   "c2s",
+   102
+  ],
+  [
+   "s2c",
+   2192
+  ],
+  [
+   "c2s",
+   132
+  ],
+  [
+   "s2c",
+   1383
+  ]
+ ],
+ "application_wire_bytes": 9093,
+ "framing_overflow_messages": 0,
+ "template_flags": null,
+ "calibration_sha256": "9719c4bbff37e0542a5d260f1f589025c0e37e18c42fb7b9e216797ba26b969b",
+ "episode_sha256": "e64b0484f4a547d62b6160b3b8c2e9b85739016747d81236d6ad2c45463541ec",
+ "measurement": "TLS 1.2 loopback replay of real model trajectory; provider link and wall-clock timing excluded"
+}

@@ -1,0 +1,647 @@
+{
+ "task": 38,
+ "prompt": "baseline",
+ "repeat": 2,
+ "user": "daiki_sanchez_3253",
+ "has_cancel": 1,
+ "has_return": 0,
+ "native_reward": 0,
+ "original_status": "user_stop",
+ "condition": "raw",
+ "wan_profile": "wan_50ms",
+ "wan_delay_ms": 50.0,
+ "wan_jitter_ms": 10.0,
+ "status": "complete",
+ "error": null,
+ "source_episode_sha256": "6867a1a5be2f67880477b599a794ea6c1a5b94a00b9919f041574d718c93a4a8",
+ "start_utc": "2026-10-24T14:52:51.905419+00:00",
+ "origin_clock_ns": 29771603903000,
+ "records": [
+  [
+   1,
+   135,
+   58360655
+  ],
+  [
+   -1,
+   71,
+   108605678
+  ],
+  [
+   1,
+   156,
+   157327476
+  ],
+  [
+   -1,
+   68,
+   217771066
+  ],
+  [
+   1,
+   122,
+   266898289
+  ],
+  [
+   -1,
+   517,
+   312479735
+  ],
+  [
+   1,
+   115,
+   366343230
+  ],
+  [
+   -1,
+   1530,
+   426090081
+  ],
+  [
+   1,
+   120,
+   483870937
+  ],
+  [
+   -1,
+   2220,
+   542700174
+  ],
+  [
+   1,
+   120,
+   585061695
+  ],
+  [
+   -1,
+   1371,
+   642732141
+  ],
+  [
+   1,
+   120,
+   691525402
+  ],
+  [
+   -1,
+   2303,
+   748286753
+  ],
+  [
+   1,
+   120,
+   801903865
+  ],
+  [
+   -1,
+   2425,
+   848173977
+  ],
+  [
+   1,
+   120,
+   909176635
+  ],
+  [
+   -1,
+   2945,
+   959369506
+  ],
+  [
+   1,
+   141,
+   1007940116
+  ],
+  [
+   -1,
+   57,
+   1052534416
+  ],
+  [
+   1,
+   149,
+   1097804904
+  ],
+  [
+   -1,
+   1681,
+   1155222350
+  ]
+ ],
+ "chunks": [
+  [
+   1,
+   140,
+   58360655
+  ],
+  [
+   -1,
+   76,
+   108605678
+  ],
+  [
+   1,
+   161,
+   157327476
+  ],
+  [
+   -1,
+   73,
+   217771066
+  ],
+  [
+   1,
+   127,
+   266898289
+  ],
+  [
+   -1,
+   522,
+   312479735
+  ],
+  [
+   1,
+   120,
+   366343230
+  ],
+  [
+   -1,
+   1535,
+   426090081
+  ],
+  [
+   1,
+   125,
+   483870937
+  ],
+  [
+   -1,
+   2225,
+   542700174
+  ],
+  [
+   1,
+   125,
+   585061695
+  ],
+  [
+   -1,
+   1376,
+   642732141
+  ],
+  [
+   1,
+   125,
+   691525402
+  ],
+  [
+   -1,
+   2308,
+   748286753
+  ],
+  [
+   1,
+   125,
+   801903865
+  ],
+  [
+   -1,
+   2430,
+   848173977
+  ],
+  [
+   1,
+   125,
+   909176635
+  ],
+  [
+   -1,
+   2950,
+   959369506
+  ],
+  [
+   1,
+   146,
+   1007940116
+  ],
+  [
+   -1,
+   62,
+   1052534416
+  ],
+  [
+   1,
+   154,
+   1097804904
+  ],
+  [
+   -1,
+   1686,
+   1155222350
+  ],
+  [
+   1,
+   31,
+   1209762877
+  ],
+  [
+   -1,
+   31,
+   1254571094
+  ]
+ ],
+ "requests": [
+  {
+   "id": 0,
+   "kind": "real",
+   "name": "find_user_id_by_email",
+   "flush": false,
+   "queued_ns": 834700,
+   "released_ns": 848800,
+   "request_sha256": "4ec5106b5d03805f15415c7671295f3375e1729fcd68a6fe8c9cd82a7f48088d"
+  },
+  {
+   "id": 1,
+   "kind": "real",
+   "name": "find_user_id_by_name_zip",
+   "flush": false,
+   "queued_ns": 109614300,
+   "released_ns": 109624000,
+   "request_sha256": "e084db3f7f474e9505587f8cd4939d45b1aafdacd7e74a5a89f4a0f531813d7f"
+  },
+  {
+   "id": 2,
+   "kind": "real",
+   "name": "get_user_details",
+   "flush": false,
+   "queued_ns": 218793900,
+   "released_ns": 218801200,
+   "request_sha256": "a51a84d2d24772207da0bdf87987ef1162b073acd8b6e12fdfe8f686b602cf0c"
+  },
+  {
+   "id": 3,
+   "kind": "real",
+   "name": "get_order_details",
+   "flush": false,
+   "queued_ns": 313553200,
+   "released_ns": 313559000,
+   "request_sha256": "17ebd17e2276724aba91cce11eea95c098aa0695aec4de7706cb566b5aea2dc7"
+  },
+  {
+   "id": 4,
+   "kind": "real",
+   "name": "get_product_details",
+   "flush": false,
+   "queued_ns": 427298000,
+   "released_ns": 427309300,
+   "request_sha256": "bee63a00fbe9884223d36df978d169fa0217f750bbde35b22d748092bbc0bc53"
+  },
+  {
+   "id": 5,
+   "kind": "real",
+   "name": "get_product_details",
+   "flush": false,
+   "queued_ns": 543760400,
+   "released_ns": 543771800,
+   "request_sha256": "3251f7acdc1e3bd0e01e4cc7df28371115f63c8c7127b483dc0485d18ee2b345"
+  },
+  {
+   "id": 6,
+   "kind": "real",
+   "name": "get_product_details",
+   "flush": false,
+   "queued_ns": 644065500,
+   "released_ns": 644075900,
+   "request_sha256": "24e9a580f7f112767d628685df8d0ee6c3d24ff5865cd91e5cee92df431d8f87"
+  },
+  {
+   "id": 7,
+   "kind": "real",
+   "name": "get_product_details",
+   "flush": false,
+   "queued_ns": 749384900,
+   "released_ns": 749396300,
+   "request_sha256": "f6712bac92ec67fcab7015ddd38b580a6fd337791773ff8f0608ee9059d0229c"
+  },
+  {
+   "id": 8,
+   "kind": "real",
+   "name": "get_product_details",
+   "flush": false,
+   "queued_ns": 849218400,
+   "released_ns": 849224200,
+   "request_sha256": "582860a6ef0da4877aa4fd705fdd781bc21c86b1eda5436bff9872d3651d371d"
+  },
+  {
+   "id": 9,
+   "kind": "real",
+   "name": "calculate",
+   "flush": false,
+   "queued_ns": 960324600,
+   "released_ns": 960329900,
+   "request_sha256": "3f993245f59e61dbb2df206340ed03e9a3725fbb90ae08e607749e2f7044a10f"
+  },
+  {
+   "id": 10,
+   "kind": "real",
+   "name": "cancel_pending_order",
+   "flush": false,
+   "queued_ns": 1053710000,
+   "released_ns": 1053722200,
+   "request_sha256": "9ee090d8923d8effc33eebf57bd32052473833645bd7f9874ddfc69c0b620382"
+  }
+ ],
+ "completions": [
+  {
+   "id": 0,
+   "time_ns": 109565800
+  },
+  {
+   "id": 1,
+   "time_ns": 218751500
+  },
+  {
+   "id": 2,
+   "time_ns": 313520800
+  },
+  {
+   "id": 3,
+   "time_ns": 427242600
+  },
+  {
+   "id": 4,
+   "time_ns": 543705000
+  },
+  {
+   "id": 5,
+   "time_ns": 644008400
+  },
+  {
+   "id": 6,
+   "time_ns": 749327200
+  },
+  {
+   "id": 7,
+   "time_ns": 849186400
+  },
+  {
+   "id": 8,
+   "time_ns": 960294000
+  },
+  {
+   "id": 9,
+   "time_ns": 1053653800
+  },
+  {
+   "id": 10,
+   "time_ns": 1156173800
+  }
+ ],
+ "backend": [
+  {
+   "id": 0,
+   "kind": "real",
+   "name": "find_user_id_by_email",
+   "received_ns": 59244400,
+   "enqueued_ns": 59377700,
+   "start_ns": 59379900,
+   "end_ns": 59553400,
+   "response_sha256": "5a9a98fb53564586ee75bb48a1d6b58822f79fff0f4bee0db0bcdeea3cfe66bc"
+  },
+  {
+   "id": 1,
+   "kind": "real",
+   "name": "find_user_id_by_name_zip",
+   "received_ns": 158424500,
+   "enqueued_ns": 158578200,
+   "start_ns": 158581400,
+   "end_ns": 158747800,
+   "response_sha256": "cb4e97c96dcbd415e7a0b1bb2c7f2ac8e94614341523c7d5e8e4e6d6ade9b175"
+  },
+  {
+   "id": 2,
+   "kind": "real",
+   "name": "get_user_details",
+   "received_ns": 267800400,
+   "enqueued_ns": 267938900,
+   "start_ns": 267941000,
+   "end_ns": 267976700,
+   "response_sha256": "52d0e8648b2fd69c188ec466114d782c1b51e235a3f15bc68e39ed0cce19f3f1"
+  },
+  {
+   "id": 3,
+   "kind": "real",
+   "name": "get_order_details",
+   "received_ns": 367533600,
+   "enqueued_ns": 367622100,
+   "start_ns": 367623800,
+   "end_ns": 367670600,
+   "response_sha256": "d5bbb9745cadf6970230b8b39df36a8dfb052a1ab23cdcab1db15b6d0ccdf7c8"
+  },
+  {
+   "id": 4,
+   "kind": "real",
+   "name": "get_product_details",
+   "received_ns": 485000300,
+   "enqueued_ns": 485384500,
+   "start_ns": 485386700,
+   "end_ns": 485435600,
+   "response_sha256": "354e12382e76e03f26192813be8768be1866e73288110c11697c1bb925849def"
+  },
+  {
+   "id": 5,
+   "kind": "real",
+   "name": "get_product_details",
+   "received_ns": 586255100,
+   "enqueued_ns": 586394900,
+   "start_ns": 586397000,
+   "end_ns": 586455000,
+   "response_sha256": "f3446e37a50947c4cb9d52a3fb72940081d929f47dfaf6573d442f84090cbc56"
+  },
+  {
+   "id": 6,
+   "kind": "real",
+   "name": "get_product_details",
+   "received_ns": 692826700,
+   "enqueued_ns": 692971500,
+   "start_ns": 692973600,
+   "end_ns": 693053400,
+   "response_sha256": "4c95f74d95d8d143089bb912c3142f85ce0f4a589081122bc40eaade0e5b08cf"
+  },
+  {
+   "id": 7,
+   "kind": "real",
+   "name": "get_product_details",
+   "received_ns": 803078800,
+   "enqueued_ns": 803212300,
+   "start_ns": 803214700,
+   "end_ns": 803293500,
+   "response_sha256": "c822aa946251f314020e0037f5435d748b0791b82256b43ae634806bd8c0c4be"
+  },
+  {
+   "id": 8,
+   "kind": "real",
+   "name": "get_product_details",
+   "received_ns": 910407200,
+   "enqueued_ns": 910636400,
+   "start_ns": 910638500,
+   "end_ns": 910693800,
+   "response_sha256": "01714086a2eb53bbfb8e2bd9c74a7d1f4be072c11fc41afc42c94dd3bd3c46ea"
+  },
+  {
+   "id": 9,
+   "kind": "real",
+   "name": "calculate",
+   "received_ns": 1008744900,
+   "enqueued_ns": 1008835200,
+   "start_ns": 1008836600,
+   "end_ns": 1008900900,
+   "response_sha256": "d8e3b80679aa87f31161c77f9319799ddd09244214bb9a2696fadf2e5b5d2604"
+  },
+  {
+   "id": 10,
+   "kind": "real",
+   "name": "cancel_pending_order",
+   "received_ns": 1098938200,
+   "enqueued_ns": 1099055000,
+   "start_ns": 1099057600,
+   "end_ns": 1099119600,
+   "response_sha256": "2ef7f810ed4d613a35fd9a0891788ca5bc5d222e51df9123c899446220bced93"
+  }
+ ],
+ "client_send": [
+  {
+   "id": 0,
+   "time_ns": 959400,
+   "bytes": 111
+  },
+  {
+   "id": 1,
+   "time_ns": 109710900,
+   "bytes": 132
+  },
+  {
+   "id": 2,
+   "time_ns": 218867100,
+   "bytes": 98
+  },
+  {
+   "id": 3,
+   "time_ns": 313609700,
+   "bytes": 91
+  },
+  {
+   "id": 4,
+   "time_ns": 427396100,
+   "bytes": 96
+  },
+  {
+   "id": 5,
+   "time_ns": 543857000,
+   "bytes": 96
+  },
+  {
+   "id": 6,
+   "time_ns": 644161400,
+   "bytes": 96
+  },
+  {
+   "id": 7,
+   "time_ns": 749481800,
+   "bytes": 96
+  },
+  {
+   "id": 8,
+   "time_ns": 849275200,
+   "bytes": 96
+  },
+  {
+   "id": 9,
+   "time_ns": 960373200,
+   "bytes": 117
+  },
+  {
+   "id": 10,
+   "time_ns": 1053810900,
+   "bytes": 125
+  }
+ ],
+ "server_send": [
+  {
+   "id": 0,
+   "time_ns": 59878200,
+   "bytes": 47
+  },
+  {
+   "id": 1,
+   "time_ns": 159139900,
+   "bytes": 44
+  },
+  {
+   "id": 2,
+   "time_ns": 268148900,
+   "bytes": 493
+  },
+  {
+   "id": 3,
+   "time_ns": 367874500,
+   "bytes": 1506
+  },
+  {
+   "id": 4,
+   "time_ns": 485626900,
+   "bytes": 2196
+  },
+  {
+   "id": 5,
+   "time_ns": 586862700,
+   "bytes": 1347
+  },
+  {
+   "id": 6,
+   "time_ns": 693378100,
+   "bytes": 2279
+  },
+  {
+   "id": 7,
+   "time_ns": 803570100,
+   "bytes": 2401
+  },
+  {
+   "id": 8,
+   "time_ns": 910965000,
+   "bytes": 2921
+  },
+  {
+   "id": 9,
+   "time_ns": 1009044500,
+   "bytes": 33
+  },
+  {
+   "id": 10,
+   "time_ns": 1099333600,
+   "bytes": 1657
+  }
+ ],
+ "marks": {
+  "last_real_ns": 1156210200,
+  "flush_start_ns": 1156213700,
+  "driver_done_ns": 1156214900
+ },
+ "finish_ns": 1156239200,
+ "response_equal": true,
+ "real_calls_expected": 11,
+ "real_calls_completed": 11,
+ "db_equal": true,
+ "final_state_sha256": "1f1baffecb654e592d64a9dc51a51778f2ae27a64709ac55e82d502f32c262f4",
+ "max_client_queue_bytes": 132,
+ "max_server_queue_bytes": 2921,
+ "pending_bytes_at_end": 0,
+ "period_ns": 0,
+ "slots": 0,
+ "cell_bytes": null,
+ "client_cells_received": 0,
+ "server_cells_received": 0,
+ "wire_bytes": 16716,
+ "scope": "WAN netem emulation: delay 50.0ms, jitter 10.0ms, local real tool execution"
+}

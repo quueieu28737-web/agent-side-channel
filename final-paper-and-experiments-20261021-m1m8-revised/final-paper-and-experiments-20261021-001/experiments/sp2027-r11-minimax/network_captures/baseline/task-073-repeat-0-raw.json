@@ -1,0 +1,128 @@
+{
+ "task": 73,
+ "repeat": 0,
+ "seed": 0,
+ "prompt": "baseline",
+ "user": "fatima_wilson_7472",
+ "has_cancel": 0,
+ "has_return": 1,
+ "native_reward": 1,
+ "db_eq": true,
+ "status": "user_stop",
+ "condition": "raw",
+ "calls": [
+  {
+   "name": "find_user_id_by_email",
+   "kind": "real",
+   "req": 90,
+   "resp": 18,
+   "err": false
+  },
+  {
+   "name": "think",
+   "kind": "real",
+   "req": 217,
+   "resp": 0,
+   "err": false
+  },
+  {
+   "name": "think",
+   "kind": "real",
+   "req": 237,
+   "resp": 0,
+   "err": false
+  },
+  {
+   "name": "get_user_details",
+   "kind": "real",
+   "req": 76,
+   "resp": 401,
+   "err": false
+  },
+  {
+   "name": "get_order_details",
+   "kind": "real",
+   "req": 69,
+   "resp": 1383,
+   "err": false
+  },
+  {
+   "name": "tool_call",
+   "kind": "real",
+   "req": 230,
+   "resp": 24,
+   "err": true
+  },
+  {
+   "name": "return_delivered_order_items",
+   "kind": "real",
+   "req": 194,
+   "resp": 1515,
+   "err": false
+  }
+ ],
+ "records": [
+  [
+   "c2s",
+   118
+  ],
+  [
+   "s2c",
+   46
+  ],
+  [
+   "c2s",
+   245
+  ],
+  [
+   "s2c",
+   28
+  ],
+  [
+   "c2s",
+   265
+  ],
+  [
+   "s2c",
+   28
+  ],
+  [
+   "c2s",
+   104
+  ],
+  [
+   "s2c",
+   429
+  ],
+  [
+   "c2s",
+   97
+  ],
+  [
+   "s2c",
+   1411
+  ],
+  [
+   "c2s",
+   258
+  ],
+  [
+   "s2c",
+   52
+  ],
+  [
+   "c2s",
+   222
+  ],
+  [
+   "s2c",
+   1543
+  ]
+ ],
+ "application_wire_bytes": 4916,
+ "framing_overflow_messages": 0,
+ "template_flags": null,
+ "calibration_sha256": "9719c4bbff37e0542a5d260f1f589025c0e37e18c42fb7b9e216797ba26b969b",
+ "episode_sha256": "79cf94d5804cf9e8671881a5be67d3abb63b9f284030a2688b036f5f9f3c9083",
+ "measurement": "TLS 1.2 loopback replay of real model trajectory; provider link and wall-clock timing excluded"
+}

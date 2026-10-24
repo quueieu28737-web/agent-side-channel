@@ -1,0 +1,75 @@
+{
+ "role": "user",
+ "messages": [
+  {
+   "role": "system",
+   "content": "You are a user interacting with an agent.\n\nInstruction: You name is Raj Santos and your zip code is 98157. You are dependent, flexible. You want to know what is the cheapest availabe mechanical keyboard right now and its options. If it is less than 200 bucks you want to exchange your current one to it. If not, return your current one.\n\nRules:\n- Just generate one line at a time to simulate the user's message.\n- Do not give away all the instruction at once. Only provide the information that is necessary for the current step.\n- Do not hallucinate information that is not provided in the instruction. For example, if the agent asks for the order id but it is not mentioned in the instruction, do not make up an order id, just say you do not remember or have it.\n- If the instruction goal is satisified, generate '###STOP###' as a standalone message without anything else to end the conversation.\n- Do not repeat the exact instruction in the conversation. Instead, use your own words to convey the same information.\n- Try to make the conversation as natural as possible, and stick to the personalities in the instruction."
+  },
+  {
+   "role": "user",
+   "content": "Hi! How can I help you today?"
+  },
+  {
+   "role": "assistant",
+   "content": "Hi! I'm looking for the cheapest mechanical keyboard you have available, and I'd like to know what options it comes with."
+  },
+  {
+   "role": "user",
+   "content": "Hi! I'd be happy to help you find the cheapest mechanical keyboard we offer and its available options. Before we get started, I need to authenticate your account. Could you please provide me with the email address associated with your account?"
+  },
+  {
+   "role": "assistant",
+   "content": "My name is Raj Santos, and my zip code is 98157. I don't have an email handy—is that enough to look up my account?"
+  },
+  {
+   "role": "user",
+   "content": "Thanks, Raj! I've located your account. Now let me look up the mechanical keyboard products we have available."
+  },
+  {
+   "role": "assistant",
+   "content": "Great, thanks! Just let me know what the cheapest one is and what options it comes with."
+  },
+  {
+   "role": "user",
+   "content": "Absolutely, Raj! Let me look up our product catalog to find the mechanical keyboards and identify the cheapest one."
+  },
+  {
+   "role": "assistant",
+   "content": "Sure, take your time. Let me know what the cheapest one is and what options come with it."
+  },
+  {
+   "role": "user",
+   "content": "Great news, Raj! I found the cheapest mechanical keyboard currently available. Here are the details:\n\n**Mechanical Keyboard — $226.11**\n- Switch type: tactile\n- Backlight: white\n- Size: full size\n\nThat's the most affordable available option in our catalog. Is there anything else I can help you with, such as placing an order or checking another product?"
+  },
+  {
+   "role": "assistant",
+   "content": "That's over $200, so I'd rather return my current keyboard instead. Can you help me with that?"
+  },
+  {
+   "role": "user",
+   "content": "I'd be happy to help you with returning your current keyboard, Raj. Let me pull up your account and orders to find it."
+  },
+  {
+   "role": "assistant",
+   "content": "Sure, I don't remember my order number though. Can you find it another way?"
+  },
+  {
+   "role": "user",
+   "content": "I found your current keyboard, Raj. It's in order **#W4680753**, which has been delivered. Here are the details of the item:\n\n**Mechanical Keyboard — $236.51**\n- Switch type: clicky\n- Backlight: RGB\n- Size: 60%\n\nTo proceed with the return, could you please confirm that you'd like to return this Mechanical Keyboard? Also, please let me know which payment method you'd like the refund applied to. I can see you have a PayPal account on file (paypal_2417743) — would you like the refund to go there?"
+  }
+ ],
+ "tools": [],
+ "inference_fingerprint": {
+  "model": "MiniMax-M3",
+  "reasoning_effort": "provider_default",
+  "protocol_sha256": "299e20dc8cfecd581e8d42789c062f904698656a6a6cc6d2c95672e659a35d75",
+  "runtime_manifest_sha256": null,
+  "files": {
+   "collect_formal.py": "a7c593cae4c854490445eb272d0a875a408ac530c9d6c7837ec8d8af5df44eb3",
+   "common.py": "e2e1bfa2cb20fec25ca82118d30601a7f202610bef0e3c864b0878e02264cd81",
+   "rpc_backend.py": "647407f2c145856773536e9768dbfc03ea098c074604e25a004ccacae0c64eaf",
+   "model_instructions.txt": "408f625b1c2a709a454a5fdf5c6fb38f20fddbc11a9c30ec525b3daf5c669177",
+   "action.schema.json": "2ae8f2eb7f87cbda18a9ccd38333b7d57fa89e7b71db25da800f08833e57768c"
+  }
+ }
+}

@@ -1,0 +1,329 @@
+{
+ "task": 61,
+ "prompt": "rules",
+ "repeat": 1,
+ "user": "chen_johnson_4204",
+ "has_cancel": 0,
+ "has_return": 0,
+ "native_reward": 1,
+ "original_status": "user_stop",
+ "condition": "raw",
+ "wan_profile": "wan_20ms",
+ "wan_delay_ms": 20.0,
+ "wan_jitter_ms": 5.0,
+ "status": "complete",
+ "error": null,
+ "source_episode_sha256": "d26b74a68a3681fd212797250ce24688e04e21440b85b2759411ef2f439d8d6a",
+ "start_utc": "2026-10-24T15:01:11.461784+00:00",
+ "origin_clock_ns": 30272164371600,
+ "records": [
+  [
+   1,
+   155,
+   19130451
+  ],
+  [
+   -1,
+   67,
+   41290532
+  ],
+  [
+   1,
+   121,
+   58587197
+  ],
+  [
+   -1,
+   579,
+   83711462
+  ],
+  [
+   1,
+   115,
+   104528953
+  ],
+  [
+   -1,
+   1322,
+   124012527
+  ],
+  [
+   1,
+   120,
+   147736404
+  ],
+  [
+   -1,
+   2409,
+   169322468
+  ],
+  [
+   1,
+   217,
+   188396358
+  ],
+  [
+   -1,
+   1448,
+   214115196
+  ]
+ ],
+ "chunks": [
+  [
+   1,
+   160,
+   19130451
+  ],
+  [
+   -1,
+   72,
+   41290532
+  ],
+  [
+   1,
+   126,
+   58587197
+  ],
+  [
+   -1,
+   584,
+   83711462
+  ],
+  [
+   1,
+   120,
+   104528953
+  ],
+  [
+   -1,
+   1327,
+   124012527
+  ],
+  [
+   1,
+   125,
+   147736404
+  ],
+  [
+   -1,
+   2414,
+   169322468
+  ],
+  [
+   1,
+   222,
+   188396358
+  ],
+  [
+   -1,
+   1453,
+   214115196
+  ],
+  [
+   1,
+   31,
+   231044678
+  ],
+  [
+   -1,
+   31,
+   249308614
+  ]
+ ],
+ "requests": [
+  {
+   "id": 0,
+   "kind": "real",
+   "name": "find_user_id_by_name_zip",
+   "flush": false,
+   "queued_ns": 1464300,
+   "released_ns": 1476600,
+   "request_sha256": "d88981c152603abdb5d05b555501c2ede7532ee8d4056c49369c01baffa2600c"
+  },
+  {
+   "id": 1,
+   "kind": "real",
+   "name": "get_user_details",
+   "flush": false,
+   "queued_ns": 42416300,
+   "released_ns": 42427100,
+   "request_sha256": "bffaf19edfc06019dc48a92c319772939f8a17349461df6344080936ebfa4d0a"
+  },
+  {
+   "id": 2,
+   "kind": "real",
+   "name": "get_order_details",
+   "flush": false,
+   "queued_ns": 84778800,
+   "released_ns": 84789100,
+   "request_sha256": "7e1d21b358d63cf8ae7daa3a3f2ab9965fc02117a973aaaaea4910dead4440e5"
+  },
+  {
+   "id": 3,
+   "kind": "real",
+   "name": "get_product_details",
+   "flush": false,
+   "queued_ns": 125162400,
+   "released_ns": 125168600,
+   "request_sha256": "bd03c71ee7a12f8b5152443afeb918afd6a0fdfbb67a1ee309bfbf1443243208"
+  },
+  {
+   "id": 4,
+   "kind": "real",
+   "name": "modify_pending_order_items",
+   "flush": false,
+   "queued_ns": 170372200,
+   "released_ns": 170378000,
+   "request_sha256": "da2b27a23aaf966966f7d1a19a2db6e0b56a8a9517217a6242c5e34a737ff481"
+  }
+ ],
+ "completions": [
+  {
+   "id": 0,
+   "time_ns": 42366800
+  },
+  {
+   "id": 1,
+   "time_ns": 84726700
+  },
+  {
+   "id": 2,
+   "time_ns": 125130900
+  },
+  {
+   "id": 3,
+   "time_ns": 170341000
+  },
+  {
+   "id": 4,
+   "time_ns": 215417000
+  }
+ ],
+ "backend": [
+  {
+   "id": 0,
+   "kind": "real",
+   "name": "find_user_id_by_name_zip",
+   "received_ns": 19980400,
+   "enqueued_ns": 20057900,
+   "start_ns": 20059200,
+   "end_ns": 20141400,
+   "response_sha256": "848ce1fde8502227965a3f12d3b3e14b2631846a80f2f4f2accbc09ff1faaa26"
+  },
+  {
+   "id": 1,
+   "kind": "real",
+   "name": "get_user_details",
+   "received_ns": 59435100,
+   "enqueued_ns": 59513800,
+   "start_ns": 59515000,
+   "end_ns": 59542200,
+   "response_sha256": "2768ad05c10f193702617a1773188439c4c6c90d4c775cf799a5f2d1c5d9e4b4"
+  },
+  {
+   "id": 2,
+   "kind": "real",
+   "name": "get_order_details",
+   "received_ns": 105845100,
+   "enqueued_ns": 105978900,
+   "start_ns": 105981000,
+   "end_ns": 106050800,
+   "response_sha256": "dec770705b08076fec626c6cdeb9ca2f4541cfabebef345748ef6d7625db8cd3"
+  },
+  {
+   "id": 3,
+   "kind": "real",
+   "name": "get_product_details",
+   "received_ns": 149307000,
+   "enqueued_ns": 149553800,
+   "start_ns": 149555700,
+   "end_ns": 149602900,
+   "response_sha256": "5d941a57735ebc201b085c393625af56153c77cf4bb869424731913711516b00"
+  },
+  {
+   "id": 4,
+   "kind": "real",
+   "name": "modify_pending_order_items",
+   "received_ns": 189642800,
+   "enqueued_ns": 190043800,
+   "start_ns": 190045400,
+   "end_ns": 190106800,
+   "response_sha256": "e16068b9b62c931a21e14ac38652a6e4c23e46da5621074cc03ed737c76c6e2f"
+  }
+ ],
+ "client_send": [
+  {
+   "id": 0,
+   "time_ns": 1618100,
+   "bytes": 131
+  },
+  {
+   "id": 1,
+   "time_ns": 42513600,
+   "bytes": 97
+  },
+  {
+   "id": 2,
+   "time_ns": 84868500,
+   "bytes": 91
+  },
+  {
+   "id": 3,
+   "time_ns": 125212900,
+   "bytes": 96
+  },
+  {
+   "id": 4,
+   "time_ns": 170429000,
+   "bytes": 193
+  }
+ ],
+ "server_send": [
+  {
+   "id": 0,
+   "time_ns": 20316600,
+   "bytes": 43
+  },
+  {
+   "id": 1,
+   "time_ns": 59716500,
+   "bytes": 555
+  },
+  {
+   "id": 2,
+   "time_ns": 106529900,
+   "bytes": 1298
+  },
+  {
+   "id": 3,
+   "time_ns": 149871500,
+   "bytes": 2385
+  },
+  {
+   "id": 4,
+   "time_ns": 190340700,
+   "bytes": 1424
+  }
+ ],
+ "marks": {
+  "last_real_ns": 215465000,
+  "flush_start_ns": 215470000,
+  "driver_done_ns": 215471700
+ },
+ "finish_ns": 215505000,
+ "response_equal": true,
+ "real_calls_expected": 5,
+ "real_calls_completed": 5,
+ "db_equal": true,
+ "final_state_sha256": "3b58f2f3051266cb385a4d5682d244c8cadf442db3e526988c61f2279ec22c1c",
+ "max_client_queue_bytes": 193,
+ "max_server_queue_bytes": 2385,
+ "pending_bytes_at_end": 0,
+ "period_ns": 0,
+ "slots": 0,
+ "cell_bytes": null,
+ "client_cells_received": 0,
+ "server_cells_received": 0,
+ "wire_bytes": 6603,
+ "scope": "WAN netem emulation: delay 20.0ms, jitter 5.0ms, local real tool execution"
+}

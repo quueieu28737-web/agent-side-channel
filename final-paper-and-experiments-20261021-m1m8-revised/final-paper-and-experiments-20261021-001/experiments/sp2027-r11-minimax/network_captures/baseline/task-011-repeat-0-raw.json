@@ -1,0 +1,143 @@
+{
+ "task": 11,
+ "repeat": 0,
+ "seed": 0,
+ "prompt": "baseline",
+ "user": "mia_garcia_4516",
+ "has_cancel": 0,
+ "has_return": 1,
+ "native_reward": 1,
+ "db_eq": true,
+ "status": "user_stop",
+ "condition": "raw",
+ "calls": [
+  {
+   "name": "find_user_id_by_email",
+   "kind": "real",
+   "req": 87,
+   "resp": 15,
+   "err": false
+  },
+  {
+   "name": "get_user_details",
+   "kind": "real",
+   "req": 73,
+   "resp": 475,
+   "err": false
+  },
+  {
+   "name": "get_order_details",
+   "kind": "real",
+   "req": 69,
+   "resp": 1174,
+   "err": false
+  },
+  {
+   "name": "get_order_details",
+   "kind": "real",
+   "req": 69,
+   "resp": 599,
+   "err": false
+  },
+  {
+   "name": "think",
+   "kind": "real",
+   "req": 344,
+   "resp": 0,
+   "err": false
+  },
+  {
+   "name": "return_delivered_order_items",
+   "kind": "real",
+   "req": 189,
+   "resp": 81,
+   "err": true
+  },
+  {
+   "name": "return_delivered_order_items",
+   "kind": "real",
+   "req": 194,
+   "resp": 1306,
+   "err": false
+  },
+  {
+   "name": "return_delivered_order_items",
+   "kind": "real",
+   "req": 147,
+   "resp": 684,
+   "err": false
+  }
+ ],
+ "records": [
+  [
+   "c2s",
+   115
+  ],
+  [
+   "s2c",
+   43
+  ],
+  [
+   "c2s",
+   101
+  ],
+  [
+   "s2c",
+   503
+  ],
+  [
+   "c2s",
+   97
+  ],
+  [
+   "s2c",
+   1202
+  ],
+  [
+   "c2s",
+   97
+  ],
+  [
+   "s2c",
+   627
+  ],
+  [
+   "c2s",
+   372
+  ],
+  [
+   "s2c",
+   28
+  ],
+  [
+   "c2s",
+   217
+  ],
+  [
+   "s2c",
+   109
+  ],
+  [
+   "c2s",
+   222
+  ],
+  [
+   "s2c",
+   1334
+  ],
+  [
+   "c2s",
+   175
+  ],
+  [
+   "s2c",
+   712
+  ]
+ ],
+ "application_wire_bytes": 6034,
+ "framing_overflow_messages": 0,
+ "template_flags": null,
+ "calibration_sha256": "9719c4bbff37e0542a5d260f1f589025c0e37e18c42fb7b9e216797ba26b969b",
+ "episode_sha256": "55e7c4093c0330ca2fbef9d702b7b0fa84011a35637802feaa09f8686362de19",
+ "measurement": "TLS 1.2 loopback replay of real model trajectory; provider link and wall-clock timing excluded"
+}

@@ -24,17 +24,3 @@ The known-position filter scores 100\% accuracy/BA for each policy and position.
 Item self-write before insertion succeeds and changes state in 173/291 units; all remaining 118 errors are unavailable-variant checks. After insertion, 120 errors are non-pending status and 77 are unavailable variants, leaving 94 successful mutations. The raw error strings are retained. Price-difference checks over the 173 initially successful selections find zero differences, but the API still appends a refund and changes the status. The coincidence 204/291 = 68/97 = 70.10\% combines two distinct quantities: preserved reference-changed objects under item self-write and tasks offering an instruction-unmentioned candidate.
 
 For blind cancellation before insertion, database-equal counts by task are: 16:3, 30:3, 31:2, 32:3, 38:3, 54:3, 55:3, 59:2, 66:3, 69:3, 81:2, 99:3. They sum to 33 across 12 tasks. The error-free sensitivity subset is 82 tasks $\times$ 3 seeds = 246 units: 24/246 before and 94/246 after. Simplifying these fractions to 12/123 or 47/123 does not change the underlying sample size. All-unit counts and task IDs are recorded, so repeated seeds are never represented as new independent tasks.
-
-\begin{table*}[t]\centering\footnotesize
-\caption{Reference-relative state equality on 97 eligible retail tasks. Entries are percentages with conditional 95\% task-bootstrap intervals. No-cover, discard, shadow, read-only and address-write conditions are 100 [100,100] for all three scopes.}
-\begin{tabularx}{\textwidth}{@{}Ylll@{}}\toprule
-Policy / position & Database equality & Full-account equality & Reference-changed-object equality\\\midrule
-Item self-write before & 40.55 [31.62, 50.17] & 40.55 [31.62, 50.17] & 70.10 [61.51, 78.35]\\
-Item self-write after & 67.70 [59.10, 76.29] & 67.70 [59.10, 76.29] & 97.25 [93.81, 99.66]\\
-Instruction aware before & 35.05 [25.77, 44.33] & 35.05 [25.77, 44.33] & 78.35 [70.10, 86.60]\\
-Instruction aware after & 46.39 [36.08, 56.70] & 46.39 [36.08, 56.70] & 89.69 [83.51, 94.85]\\
-Other-account cancellation before & 0.00 [0.00, 0.00] & 100.00 [100.00, 100.00] & 100.00 [100.00, 100.00]\\
-Other-account cancellation after & 0.00 [0.00, 0.00] & 100.00 [100.00, 100.00] & 100.00 [100.00, 100.00]\\
-Blind cancellation before & 11.34 [5.84, 17.87] & 11.34 [5.84, 17.87] & 62.54 [53.61, 71.48]\\
-Blind cancellation after & 41.24 [32.30, 50.17] & 41.24 [32.30, 50.17] & 92.44 [87.63, 96.56]\\
-\bottomrule\end{tabularx}\end{table*}

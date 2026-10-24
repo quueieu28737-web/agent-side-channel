@@ -1,0 +1,117 @@
+{
+ "task": 62,
+ "prompt": "baseline",
+ "repeat": 1,
+ "user": "chen_johnson_4204",
+ "has_cancel": 0,
+ "has_return": 0,
+ "native_reward": 0,
+ "original_status": "transfer",
+ "condition": "padding",
+ "wan_profile": "wan_50ms",
+ "wan_delay_ms": 50.0,
+ "wan_jitter_ms": 10.0,
+ "status": "complete",
+ "error": null,
+ "source_episode_sha256": "358151948ac882d51d8f803c7c961c952daa838204d01f74ce904213d2cbb572",
+ "start_utc": "2026-10-24T14:56:01.214094+00:00",
+ "origin_clock_ns": 29961958517600,
+ "records": [
+  [
+   1,
+   1308,
+   50744673
+  ],
+  [
+   -1,
+   3356,
+   99628411
+  ]
+ ],
+ "chunks": [
+  [
+   1,
+   1313,
+   50744673
+  ],
+  [
+   -1,
+   3361,
+   99628411
+  ],
+  [
+   1,
+   31,
+   150498847
+  ],
+  [
+   -1,
+   31,
+   207783435
+  ]
+ ],
+ "requests": [
+  {
+   "id": 0,
+   "kind": "real",
+   "name": "transfer_to_human_agents",
+   "flush": false,
+   "queued_ns": 1159400,
+   "released_ns": 1171500,
+   "request_sha256": "5734cc04fd9e6cbc95032c340b8b76d363ad649f40f2951ef34d1a8e71f73cdb"
+  }
+ ],
+ "completions": [
+  {
+   "id": 0,
+   "time_ns": 100283200
+  }
+ ],
+ "backend": [
+  {
+   "id": 0,
+   "kind": "real",
+   "name": "transfer_to_human_agents",
+   "received_ns": 51504900,
+   "enqueued_ns": 51615400,
+   "start_ns": 51619100,
+   "end_ns": 51635400,
+   "response_sha256": "f1ed3da9f08707ef6b24300b8b5efc98a0597fe99a24765a7ecfbc433ed89c19"
+  }
+ ],
+ "client_send": [
+  {
+   "id": 0,
+   "time_ns": 1260600,
+   "bytes": 1284
+  }
+ ],
+ "server_send": [
+  {
+   "id": 0,
+   "time_ns": 51913400,
+   "bytes": 3332
+  }
+ ],
+ "marks": {
+  "last_real_ns": 100308100,
+  "flush_start_ns": 100311200,
+  "driver_done_ns": 100311900
+ },
+ "finish_ns": 100330500,
+ "response_equal": true,
+ "real_calls_expected": 1,
+ "real_calls_completed": 1,
+ "db_equal": true,
+ "final_state_sha256": "c49125b83c32941ba527a31dce753cef1dee9a65fe2633c3a3c50816cef083ab",
+ "max_client_queue_bytes": 1284,
+ "max_server_queue_bytes": 3332,
+ "pending_bytes_at_end": 0,
+ "period_ns": 0,
+ "slots": 0,
+ "cell_bytes": null,
+ "client_cells_received": 0,
+ "server_cells_received": 0,
+ "wire_bytes": 4674,
+ "scope": "WAN netem emulation: delay 50.0ms, jitter 10.0ms, local real tool execution"
+}
