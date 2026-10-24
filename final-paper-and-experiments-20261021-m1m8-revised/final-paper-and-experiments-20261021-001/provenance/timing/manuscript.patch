@@ -1,0 +1,413 @@
+diff --git a/final-paper-and-experiments-20261021-m1m8-revised/final-paper-and-experiments-20261021-001/manuscript/main.pdf b/final-paper-and-experiments-20261021-m1m8-revised/final-paper-and-experiments-20261021-001/manuscript/main.pdf
+index f5cb611..6a6aab3 100644
+Binary files a/final-paper-and-experiments-20261021-m1m8-revised/final-paper-and-experiments-20261021-001/manuscript/main.pdf and b/final-paper-and-experiments-20261021-m1m8-revised/final-paper-and-experiments-20261021-001/manuscript/main.pdf differ
+diff --git a/final-paper-and-experiments-20261021-m1m8-revised/final-paper-and-experiments-20261021-001/manuscript/main.tex b/final-paper-and-experiments-20261021-m1m8-revised/final-paper-and-experiments-20261021-001/manuscript/main.tex
+index e432e9a..39d6b9c 100644
+--- a/final-paper-and-experiments-20261021-m1m8-revised/final-paper-and-experiments-20261021-001/manuscript/main.tex
++++ b/final-paper-and-experiments-20261021-m1m8-revised/final-paper-and-experiments-20261021-001/manuscript/main.tex
+@@ -42,7 +42,7 @@
+ \maketitle
+ 
+ \begin{abstract}
+-Encryption conceals message content while exposing the structure of agent workflows. We systematize \FinalN{} study families through a complete core-family map, 39 source-bound result records and a nine-item audit of 20 mitigation families. Three deployment checks connect this evidence to the observer's view, the effects of executed actions and matched attacker evaluation. They identify concrete reuse gaps: only 3 of 17 applicable families bind utility, and 2 of 11 bind a matched adaptation contrast. Controlled experiments make these gaps executable, showing how streaming counts, state-changing cover and defended-data fitting change protection claims. We then evaluate 690 real GPT-6.1 Sol agent runs with training-only defense calibration. Baseline network balanced accuracy (BA) reaches 97.2\%/94.0\% for cancellation/return intent. A rules prompt attains 97.1\% mechanical rule adherence while intent inference remains above 93\%. An observer ablation localizes the dominant signal to state-changing calls. Planner-transparent shadow cover with constant framing reduces baseline BA by 47.2/44.0 points to 50\% in local TLS replay. Customer-grouped cross-fitting retains large paired reductions and identifies a bucketed operating point at 52.2\%/52.7\% BA with 37\% fewer bytes than constant framing. The resulting systematization turns source evidence into concrete decisions about what to observe, where to intervene and how to evaluate protection and cost on the same workload.
++Encryption conceals message content while exposing the structure of agent workflows. We systematize \FinalN{} study families through a complete core-family map, 39 source-bound result records and a nine-item audit of 20 mitigation families. Three deployment checks connect this evidence to the observer's view, the effects of executed actions and matched attacker evaluation. They identify concrete reuse gaps: only 3 of 17 applicable families bind utility, and 2 of 11 bind a matched adaptation contrast. Controlled experiments make these gaps executable, showing how streaming counts, state-changing cover and defended-data fitting change protection claims. We then evaluate 690 real GPT-6.1 Sol agent runs with training-only defense calibration. Baseline network balanced accuracy (BA) reaches 97.2\%/94.0\% for cancellation/return intent. A rules prompt attains 97.1\% mechanical rule adherence while intent inference remains above 93\%. An observer ablation localizes the dominant signal to state-changing calls. Planner-transparent shadow cover with constant framing reduces baseline BA by 47.2/44.0 points to 50\% in the length/order view of local TLS replay. Customer-grouped cross-fitting retains large paired reductions and identifies a bucketed operating point at 52.2\%/52.7\% BA with 37\% fewer bytes than constant framing. A further 4,140 live tool sessions expose an 11.4-point timing-aware inference increase under serial cover and quantify the latency/resource trade-off against complete fixed-rate tunnels. The resulting systematization turns source evidence into concrete decisions about what to observe, where to intervene and how to evaluate protection and cost on the same workload.
+ \end{abstract}
+ 
+ \input{sections/01-introduction}
+diff --git a/final-paper-and-experiments-20261021-m1m8-revised/final-paper-and-experiments-20261021-001/manuscript/sections/01-introduction.tex b/final-paper-and-experiments-20261021-m1m8-revised/final-paper-and-experiments-20261021-001/manuscript/sections/01-introduction.tex
+index 9db8dd0..05a600c 100644
+--- a/final-paper-and-experiments-20261021-m1m8-revised/final-paper-and-experiments-20261021-001/manuscript/sections/01-introduction.tex
++++ b/final-paper-and-experiments-20261021-m1m8-revised/final-paper-and-experiments-20261021-001/manuscript/sections/01-introduction.tex
+@@ -13,7 +13,7 @@ We connect a source-bound systematization to executable tests of defense reuse a
+ \begin{itemize}
+ \item \textbf{A result-record repository:} \FinalN{} study families (\FinalCore{} core and \FinalAdjacent{} adjacent), with 39 scoped records and 78 utility/cost field positions from 26 families. The records distinguish source versions, receiver views, execution modes and cost objects that paper-level comparisons can conflate.
+ \item \textbf{An actionable comparability audit:} nine reporting items and three operational checks applied to 20 mitigation families. Utility is bound in 3/17 applicable families and a matched adaptation contrast in 2/11. The audit maps each unresolved reuse claim to the specific observation, state or evaluation evidence needed to resolve it.
+-\item \textbf{An executable bridge to real-agent defense evaluation:} controlled streaming and tool-state experiments culminate in 690 real-agent runs, with 414 training runs for defense calibration and 276 customer-disjoint test runs. Joint online cover and framing reduce cancellation/return network BA by 47.2/44.0 percentage points. A rules-prompt control reaches 97.1\% mechanical rule adherence while retaining over 93\% intent inference, separating behavioral compliance from metadata protection. Leakage localization explains why: state-changing calls alone support 84--92\% balanced accuracy, beyond the read-order constraints specified by the prompt. Cross-fitting over all 690 runs retains a large paired defense effect (31--39 points) and yields a bucketed operating point at 12.4$\times$ bytes, 37\% below constant framing.
++\item \textbf{An executable bridge to real-agent defense evaluation:} controlled streaming and tool-state experiments culminate in 690 real-agent runs, with 414 training runs for defense calibration and 276 customer-disjoint test runs. In the length/order view, joint online cover and framing reduce cancellation/return network BA by 47.2/44.0 percentage points. A rules-prompt control reaches 97.1\% mechanical rule adherence while retaining over 93\% intent inference, separating behavioral compliance from metadata protection. Leakage localization explains why: state-changing calls alone support 84--92\% balanced accuracy, beyond the read-order constraints specified by the prompt. Cross-fitting over all 690 runs retains a large paired defense effect (31--39 points) and yields a bucketed operating point at 12.4$\times$ bytes, 37\% below constant framing. A further 4,140 live tool sessions test arrival timing and flush detection, measure serial/concurrent execution latency, and compare complete fixed-rate tunnels on the same workload.
+ \end{itemize}
+ The contribution is the connection between evidence and execution: result-level records expose ambiguous comparisons, operational checks specify the missing bindings, and controlled and real-agent measurements demonstrate their consequences. Composition, state isolation and adaptive evaluation provide the foundations for this reproducible assessment.
+ 
+@@ -22,7 +22,7 @@ Table~\ref{tab:synthesis-decisions} links source-local findings to the new compa
+ Figure~\ref{fig:system-model} depicts the trace and action paths; Section~\ref{sec:controlled-placement} tests each path and their composition on one agent--tool link. Figure~\ref{fig:defense-decision} summarizes the checks.
+ \begin{figure*}[t]
+ \centering\input{figures/fig1-system-model}
+-\caption{Observation and execution boundaries represented by a result record. E5 tests the trace path, E6 the action path, E7 their encrypted composition, and E9 real-agent trajectories with training-only calibration.}
++\caption{Observation and execution boundaries represented by a result record. E5 tests the trace path, E6 the action path, E7 their encrypted composition, E9 real-agent trajectories with training-only calibration, and E13 live tool timing with complete tunnel controls.}
+ \label{fig:system-model}
+ \end{figure*}
+ \begin{figure*}[t]
+diff --git a/final-paper-and-experiments-20261021-m1m8-revised/final-paper-and-experiments-20261021-001/manuscript/sections/10-open-challenges.tex b/final-paper-and-experiments-20261021-m1m8-revised/final-paper-and-experiments-20261021-001/manuscript/sections/10-open-challenges.tex
+index 3b3ff7b..f172dc1 100644
+--- a/final-paper-and-experiments-20261021-m1m8-revised/final-paper-and-experiments-20261021-001/manuscript/sections/10-open-challenges.tex
++++ b/final-paper-and-experiments-20261021-m1m8-revised/final-paper-and-experiments-20261021-001/manuscript/sections/10-open-challenges.tex
+@@ -1,6 +1,6 @@
+ \section{Implications, Ethics and Limits}\label{sec:agenda}
+ \subsection{Deployment paths and reporting obligations}\label{sec:deployment}
+-Shadow state specifies an execution contract with three implementation paths. \textbf{(1) Authorized reads and verified no-ops} can use the live backend with responses discarded; idempotence alone does not preserve state, and read cover cannot hide an exposed write type. \textbf{(2) Provider-supported isolation} can use Kubernetes server dry-run, isolated Stripe sandboxes or transactional rollback \cite{kubernetesdryrun,stripesandboxes,postgresrollback}. These have distinct semantics: dry-run validates without persistence, sandboxes maintain separate state, and rollback covers transactional effects; sequence changes can survive rollback \cite{postgressequences}. \textbf{(3) A trusted MCP/tool gateway} can decrypt an authenticated cover marker and route shadow writes to an isolated local simulator. Real and cover traffic share an ingress envelope; routing, timing and response sizes must not reveal the branch. This is a deployment design, not a measured production integration.
++Shadow state specifies an execution contract with three implementation paths. \textbf{(1) Authorized reads and verified no-ops} can use the live backend with responses discarded; idempotence alone does not preserve state, and read cover cannot hide an exposed write type. \textbf{(2) Provider-supported isolation} can use Kubernetes server dry-run, isolated Stripe sandboxes or transactional rollback \cite{kubernetesdryrun,stripesandboxes,postgresrollback}. These have distinct semantics: dry-run validates without persistence, sandboxes maintain separate state, and rollback covers transactional effects; sequence changes can survive rollback \cite{postgressequences}. \textbf{(3) A trusted MCP/tool gateway} can decrypt an authenticated cover marker and route shadow writes to an isolated local simulator. Real and cover traffic share an ingress envelope; routing, timing and response sizes must not reveal the branch. E13 measures a local gateway implementation; these provider-specific paths remain deployment designs.
+ 
+ The gateway protects its client-facing link and potentially a relay that cannot access markers or routing. A relay that learns the branch, the gateway itself and a provider observing committed writes require different protection. S17 maps these boundaries and implementation requirements. Across paths, report protected state, exposed observations, training calibration, adaptive attackers and the joint leakage--cost frontier; include latency, backend quotas and every exposed downstream link.
+ 
+@@ -12,4 +12,4 @@ The artifact preserves sources, raw observations, structured model decisions, fr
+ \subsection{Threats to validity}
+ The purposive corpus and query overlaps do not estimate field-wide recall. Source-bound author verification supports inspectability; the two-stage agreement statistics do not measure independent human reliability. Standardized blind recoding sheets and an adjudication protocol are provided for community replication. The 24 constructed cases test rule application, not external decision accuracy; independently sampled cases and simpler-review baselines remain useful validation targets.
+ 
+-E5 uses 48 saved outputs and a proxy tokenizer; E6/E7 use reference programs with known-population calibration. E9--E12 cover one public retail environment and one mutable model alias, also used for user simulation; earlier development had access to all 115 tasks. Cross-fitting expands customer coverage within the same population, and intervals condition on fitted attackers. Program conditions reuse trajectories, so equal reward is structural. The 3.8--5.0$\times$ call counts are resource ratios, not latency measurements. Serial cover can delay interaction; concurrent cover can expose bursts. S18 specifies joint size/timing attacks, flush segmentation and end-to-end latency measurements needed to evaluate this boundary. External replication and broader model/environment transfer remain open.
++E5 uses 48 saved outputs and a proxy tokenizer; E6/E7 use reference programs with known-population calibration. E9--E12 cover one public retail environment and one mutable model alias, also used for user simulation; earlier development had access to all 115 tasks. Cross-fitting expands customer coverage within the same population, and intervals condition on fitted attackers. Program conditions reuse trajectories, so equal reward is structural. E13 measures live local RPC latency, burst/timing features and learned flush segmentation on these fixed actions. Its relay timestamps, Windows scheduling and benchmark service times describe one prototype; LLM generation, WAN transit, timing-dependent replanning, production quotas and independent customers remain outside that measurement. The fixed tunnel horizons serve the measured tool chains and would need to cover planner think time in a deployed interactive session. External replication and broader model/environment transfer remain open.
+diff --git a/final-paper-and-experiments-20261021-m1m8-revised/final-paper-and-experiments-20261021-001/manuscript/sections/12-conclusion.tex b/final-paper-and-experiments-20261021-m1m8-revised/final-paper-and-experiments-20261021-001/manuscript/sections/12-conclusion.tex
+index da7ab6f..bdc71f9 100644
+--- a/final-paper-and-experiments-20261021-m1m8-revised/final-paper-and-experiments-20261021-001/manuscript/sections/12-conclusion.tex
++++ b/final-paper-and-experiments-20261021-m1m8-revised/final-paper-and-experiments-20261021-001/manuscript/sections/12-conclusion.tex
+@@ -1,4 +1,4 @@
+ \section{Conclusion}\label{sec:conclusion}
+ This SoK connects \FinalN{} study families and 39 scoped result records to an executable evaluation of LLM and agent side-channel defenses. The audit identifies which observation, execution and evaluation bindings govern a result's reuse; controlled experiments demonstrate the leakage and cost consequences of changing those bindings.
+ 
+-The complete 690-run study identifies a concrete design target. Rules attain 97.1\% mechanical rule adherence while intent inference exceeds 93\%; an observer ablation localizes the dominant signal to state-changing calls. Training-calibrated shadow shaping lowers baseline network BA by 47.2/44.0 points to 50\% in TLS replay. In the cross-fitted comparison, bucketed framing reaches 52.2\%/52.7\% BA while reducing byte cost from 19.8$\times$ to 12.4$\times$. Together, the source-level audit and executable measurements guide defenses whose protected observation, preserved state and deployment cost can be evaluated on a common workload.
++The complete 690-run study identifies a concrete design target. Rules attain 97.1\% mechanical rule adherence while intent inference exceeds 93\%; an observer ablation localizes the dominant signal to state-changing calls. Training-calibrated shadow shaping lowers baseline network BA by 47.2/44.0 points to 50\% in the length/order view of TLS replay. In the cross-fitted comparison, bucketed framing reaches 52.2\%/52.7\% BA while reducing byte cost from 19.8$\times$ to 12.4$\times$. A further 4,140 live tool executions bind arrival timing and actual waiting cost to this comparison, including a complete tunnel that emits cover traffic without invoking tools. Together, the source-level audit and executable measurements guide defenses whose protected observation, preserved state and deployment cost can be evaluated on a common workload.
+diff --git a/final-paper-and-experiments-20261021-m1m8-revised/final-paper-and-experiments-20261021-001/manuscript/sections/30-reproducibility-guide.tex b/final-paper-and-experiments-20261021-m1m8-revised/final-paper-and-experiments-20261021-001/manuscript/sections/30-reproducibility-guide.tex
+index 6d2ad36..2437685 100644
+--- a/final-paper-and-experiments-20261021-m1m8-revised/final-paper-and-experiments-20261021-001/manuscript/sections/30-reproducibility-guide.tex
++++ b/final-paper-and-experiments-20261021-m1m8-revised/final-paper-and-experiments-20261021-001/manuscript/sections/30-reproducibility-guide.tex
+@@ -2,14 +2,14 @@
+ \paragraph{Artifact organization}
+ The archived reproducibility package has four logical modules: the source ledger and family audit; transport experiments; stateful tool-dispatch experiments; and the complete real-agent study. A machine-readable module index resolves these names to the immutable source files, predictions and verification entry points. The README supplies environment versions, checksums and commands. The current paper uses the complete 690-run cohort; earlier releases retain their original membership and results for provenance.
+ 
+-The source module contains all 82 family records, the 39-result ledger, all 180 audit cells, search reconciliation and coding columns. The real-agent module contains the 414/276 training/test split, frozen calibration, model decisions, sandbox scores, 2,760 TLS sessions and saved attack predictions. Offline reconstruction reproduces the fitted-attack results and intervals without additional model calls. The real-agent module also includes customer-cross-fitted analyses, training-fold operating-point selection and an oracle write-call ablation (E10--E12, Supplement S15). Their analytic TLS record model is checked against the measured sessions. The paired program contrasts reported in the current paper are a post hoc analysis of those saved predictions, using the same 2,000 customer-cluster draws and recomputing the suite maximum for each condition in each draw.
++The source module contains all 82 family records, the 39-result ledger, all 180 audit cells, search reconciliation and coding columns. The real-agent module contains the 414/276 training/test split, frozen calibration, model decisions, sandbox scores, 2,760 TLS sessions and saved attack predictions. Offline reconstruction reproduces the fitted-attack results and intervals without additional model calls. The real-agent module also includes customer-cross-fitted analyses, training-fold operating-point selection and an oracle write-call ablation (E10--E12, Supplement S15). Their analytic TLS record model is checked against the measured sessions. E13 adds 4,140 live tool sessions, observed record-arrival timestamps, pre-test frozen attack models and complete tunnel controls (S19). The paired program contrasts reported in the current paper are a post hoc analysis of those saved predictions, using the same 2,000 customer-cluster draws and recomputing the suite maximum for each condition in each draw.
+ 
+ \paragraph{Equivalence invariant and assumptions}
+ Let $s_t$ be live tool state and $H_t$ the planner-visible sequence of messages, actions and tool responses. A real action $a_t$ produces $(s_{t+1},o_t)=T(s_t,a_t)$. The defended dispatcher forwards $a_t$ unchanged and executes cover transitions only on a separate state $s_t^{\rm sh}$, suppressing their responses. With the same initial live state, deterministic simulator tools and the same realized real actions, cover cannot change $s_{t+1}$ or $o_t$. Induction on real-action steps gives
+ \[
+  s_t^{D}=s_t,\qquad \pi_{\rm plan}(D(H_t))=H_t.
+ \]
+-Framing preserves application payloads and end-of-episode flushing adds only hidden shadow transitions. This is equality of the logical planner transcript. It assumes no timeouts, shared-state side effects or timing-dependent tool behavior; equality of independent model samples is not required. An interactive implementation would additionally need to establish that wall-clock delay and shared resource effects do not change task execution.
++Framing preserves application payloads and end-of-episode flushing adds only hidden shadow transitions. This is equality of the logical planner transcript. It assumes no timeouts, shared-state side effects or timing-dependent tool behavior; equality of independent model samples is not required. Beyond E13's local tool-loop measurements, a fully interactive deployment would additionally need to establish that wall-clock delay and shared resource effects do not change task execution.
+ 
+ The frozen dispatcher copies each real-call record verbatim into the defended stream. Executable checks match the real-call projection and original scoring fields across all 690 trajectories and four program conditions. Shadow execution and wire-byte accounting are separately reconstructed by the original full-cohort verifier. Reward equality therefore expresses the isolation invariant; call and byte ratios quantify the transport intervention on that fixed workload.
+ 
+diff --git a/final-paper-and-experiments-20261021-m1m8-revised/final-paper-and-experiments-20261021-001/manuscript/sections/37-transfer-tests.tex b/final-paper-and-experiments-20261021-m1m8-revised/final-paper-and-experiments-20261021-001/manuscript/sections/37-transfer-tests.tex
+index f3221ca..0bc6917 100644
+--- a/final-paper-and-experiments-20261021-m1m8-revised/final-paper-and-experiments-20261021-001/manuscript/sections/37-transfer-tests.tex
++++ b/final-paper-and-experiments-20261021-m1m8-revised/final-paper-and-experiments-20261021-001/manuscript/sections/37-transfer-tests.tex
+@@ -1,20 +1,15 @@
+ \section{Controlled Transfer Tests}\label{sec:controlled-placement}\label{sec:tau-cover-bridge}
+-The experiments connect observation, execution and matched evaluation. We retain artifact identifiers: E1/E3 cover buffered transport and adaptive fitting (\S8.1; S11), E2 tests state-preserving cover (\S8.2; S9/S11), E5--E7 isolate streaming and dispatch mechanisms, E8 tests stand-in planners (S13), and E9--E12 analyze real-agent trajectories. S18 gives the full concordance, including unused E4. Seven author-constructed mechanism checks were recorded before E5--E7 (S12); they are engineering checks rather than a sample of external review decisions.
++The experiments connect observation, execution and matched evaluation. We retain artifact identifiers: E1/E3 cover buffered transport and adaptive fitting (\S8.1; S11), E2 tests state-preserving cover (\S8.2; S9/S11), E5--E7 isolate streaming and dispatch mechanisms, E8 tests stand-in planners (S13), and E9--E12 analyze real-agent trajectories, and E13 measures live tool timing and full tunnels. S18 gives the full concordance, including unused E4. Seven author-constructed mechanism checks were recorded before E5--E7 (S12); they are engineering checks rather than a sample of external review decisions.
+ 
+ For E6/E7/E9, a cell meets the \emph{evaluated-suite criterion} when maximum BA has an upper 95\% bound below 0.60 and maximum AUROC is below 0.65. This absolute-threshold assessment is separate from the measured reduction relative to raw transport: a lower BA bound above 0.60 indicates above-threshold leakage, while an interval crossing 0.60 leaves the absolute threshold inconclusive. We recompute the suite maximum within each of 2,000 common bootstrap draws: tasks for E6/E7 and customers for E9, retaining their tasks and repeats together. Intervals condition on fitted predictions and do not cover unknown attackers.
+ 
+ A byte-transparent relay captures post-handshake TLS application records on loopback connections. TLS~1.3 session tickets are disabled. E5--E8 use saved text or stand-in planners; E9 invokes a real model and executes its structured actions in the local public retail simulator. No production account or tool is modified.
+ 
+ \subsection{Transport: buffered and streaming emitters}
+-\paragraph{Buffered emitter}
+-We use brief and expanded \texttt{gpt-6-luna} responses for 24 topics (12 training, 12 test). In a two-link TLS~1.2 replay, decoding and re-chunking leave the terminal link 100\% separable when only the upstream link is padded; padding both reduces the classifier to 50\%, reproducing NetEcho's mechanism \cite{netecho2025}. A 1,280-byte cap fitted on training outputs yields 50\% verbosity inference at 2.18$\times$ bytes. Across offsets, buckets and random tails, defended-data fitting gains 13.5--50.0 points over clean fitting; constant caps give no gain. Supplement S11 records matched costs and all cells.
++The buffered tests use brief/expanded saved responses for 24 topics (12 training, 12 test). A two-link TLS replay remains 100\% separable on the terminal link when only upstream traffic is padded; padding both reduces verbosity inference to 50\%, reproducing NetEcho's mechanism~\cite{netecho2025}. A training-fitted cap reaches 50\% at 2.18$\times$ bytes. Defended-data fitting recovers 13.5--50.0 points under offsets, buckets and random tails (S11).
+ 
+-\paragraph{E5: the same texts as a token stream}
+-E5 emits these 48 texts as per-token server-sent events over TLS~1.2/1.3, reflecting the streaming surface attacked in prior work \cite{weiss2024prompt,whisperleak2025}. Tokenization uses o200k\_base; latency is measured in token intervals. We compare random per-event padding, constant events, padded eight-token batches and constant events with dummy events to the largest training count. Attackers include clean- and defended-trained classifiers plus a closed-world profiler trained on an independent emission of all 48 texts.
++E5 emits the same 48 texts as per-token server-sent events over TLS~1.2/1.3, reflecting the streaming surface~\cite{weiss2024prompt,whisperleak2025}. Per-event padding preserves token count: verbosity remains 100\% separable. Eight-token batching cuts bytes to 0.21$\times$ and clean-trained BA to 50\%, but refitting recovers 100\%. Constant shape reaches 50\% at 2.42$\times$ bytes and 208 versus 105 token intervals; two overflowing test outputs remain identifiable. S12 gives all emitter, attacker and cost cells. A buffered cap delays the first byte until generation ends, so its cost cannot price streaming protection.
+ 
+-Table~\ref{tab:transfer-streaming} resolves P1--P3. Per-event padding preserves token count: verbosity remains 100\% separable and identification reaches 58--62\% (chance 2.1\%). Batching cuts bytes to 0.21$\times$ and clean-trained BA to 50\%, but refitting recovers 100\%. Constant shape reaches 50\% at 2.42$\times$ bytes and 208 versus 105 token intervals; two overflowing test outputs remain identifiable. A buffered cap's first byte arrives after generation, so its cost cannot price this streaming protection. E5 binds the protection claim to its emitter and cost object.
+-
+-\input{tables/transfer-streaming}
+ 
+ \subsection{Execution: state scope and randomized cover}
+ \paragraph{State scope}
+@@ -23,9 +18,7 @@ In the 115 public retail programs, same-item modification changes status and app
+ \paragraph{E6: randomized cover against policy-aware attackers}
+ E6's dispatch observer sees ordered tool names and response lengths. Cover is sampled from other users' programs, randomly interleaved and executed on shadow state, with live execution as a control. Policies add cancellation, pad its count, interleave decoy programs or equalize every tool's count. Templates, donors and caps use all 115 reference programs: this is known-population defense calibration. Attackers use clean/defended gradient boosting and logistic regression on counts, bigrams and lengths, plus a count rule. Task-grouped 5-fold evaluation uses three seeds and cancellation/return targets (18/32 positive tasks).
+ 
+-Table~\ref{tab:transfer-cover} shows that one cancellation drives clean-trained BA to 50\%, but refitting recovers 100\% (P2). Count equalization defeats the count rule while correlated tools yield 76.9\% (P4). Decoy programs, the read-only pattern of WRA \cite{jeong2026wra}, leave 83.5--91.9\%. Shape equalization reaches 50.0\%/54.5\% at 6.7 extra calls per real call. Database equality is 100\% for shadow execution and 0\% for live cancellation, demonstrating the importance of the execution boundary.
+-
+-\input{tables/r3-transfer-cover}
++One cancellation drives clean-trained BA to 50\%, but refitting recovers 100\% (P2; full table in S12). Count equalization defeats the count rule while correlated tools yield 76.9\% (P4). Decoy programs, the read-only pattern of WRA \cite{jeong2026wra}, leave 83.5--91.9\%. Shape equalization reaches 50.0\%/54.5\% at 6.7 extra calls per real call. Database equality is 100\% for shadow execution and 0\% for live cancellation, demonstrating the importance of the execution boundary.
+ 
+ \subsection{E7: composing execution and transport on the agent--tool link}
+ E7 composes dispatch and transport on an encrypted agent--tool link (Figure~\ref{fig:system-model}). Four cover policies yield 4,140 TLS~1.2 sessions. Framing is raw, 1024-byte buckets or constant requests/responses with overflow buckets. The evaluated network projection contains direction-tagged TLS record lengths and order; it excludes tool names and inter-arrival times. A profiling attacker learns size-to-tool mappings from training-fold API calls and applies dispatch attacks to decoded traces; S12 specifies caps and classifiers.
+@@ -33,7 +26,7 @@ E7 composes dispatch and transport on an encrypted agent--tool link (Figure~\ref
+ Request-only tool identification reaches 89.9\%/91.4\% under cancellation/return folds (582 calls; majority 29.4\%). Count and decoy cover leave 72.7--95.7\% network BA, extending their dispatch leakage (P5). Framing alone leaves bucketed return BA at 73.9\%. Shape cover gives 51.2\%/60.5\% with raw framing and 54.4\%/50.0\% with constant framing. No configuration meets the absolute criterion for both targets. Joint constant framing costs 26.3$\times$ bytes and 7.7$\times$ calls with 100\% database equality: one operating point, not a minimum cost (P7). E8's stand-in planners (S13) motivate the causal, training-only dispatcher evaluated next with real model decisions.
+ 
+ \paragraph{Transport link versus dispatch boundary}
+-Per-call framing leaves call counts and turn structure exposed. A full traffic-flow-confidentiality tunnel can instead conceal these from a passive link observer using fixed-size, constant-rate traffic \cite{rfc9347}; protecting session duration additionally requires a workload-independent traffic horizon. Its dummy packets need not execute tools. E7/E9 test per-call framing, not such a tunnel. At a dispatch boundary that exposes calls after decapsulation, transport padding is removed and call-level cover becomes relevant. Protection then depends on hiding cover markers and downstream routing from that observer (S17).
++Per-call framing leaves call counts and turn structure exposed. A full traffic-flow-confidentiality tunnel can instead conceal these from a passive link observer using fixed-size, constant-rate traffic \cite{rfc9347}; protecting session duration additionally requires a workload-independent traffic horizon. Its dummy packets need not execute tools. E7/E9 test per-call framing; E13 separately measures a complete fixed-rate TLS tunnel. At a dispatch boundary that exposes calls after decapsulation, transport padding is removed and call-level cover becomes relevant. Protection then depends on hiding cover markers and downstream routing from that observer (S17).
+ 
+ \subsection{E9: real agents and training-only defense calibration}\label{sec:real-agent}
+ E9 tests defense reuse on autonomous model-generated trajectories under a strict calibration boundary. GPT-6.1 Sol (low reasoning effort) plans and responds from the retail policy, public tool schemas and actual sandbox observations. A separate context of the same model simulates the user. The rules arm adds one customer-details read before order access and a read before each order write. All 115 tasks have two prompt arms and three repeats, completing the frozen 690-run protocol. All 414 training runs on 69 tasks precede freezing of a shared count template, donor pools and framing caps; the 276 test runs cover 46 tasks from 24 disjoint customers.
+@@ -65,8 +58,10 @@ Among six evaluated configurations, 1024-byte buckets reach 52.2\%/52.7\% BA at
+ \paragraph{E12: locating the signal}
+ An oracle ablation retains 91.7\%/84.9\% BA using only state-changing calls; removing them leaves 55.2\%/59.9\%. Rules reduce distinct read sequences from 74 to 62, while write sequences remain 37 versus 36. This localizes the dominant measured signal beyond the reads targeted by the prompt. The tested writes-only defenses fail the inner-fold selection rule; full-profile shaping supplies the selected operating point.
+ 
++\input{sections/42-live-timing-main}
++
+ \subsection{What the cases establish}
+-Each experiment instantiates one audit obligation and changes a reuse judgment. E5 shows that the emitter fixes both the leaking count and the cost object. E6/E7 show that refitted attackers and encrypted size decoding recover tool intent that clean-trained or dispatch-only evaluations miss. E9--E12 carry these bindings to real agents: leakage concentrates in state-changing calls, behavioral compliance does not reach it, and training-only program shaping removes most of it at a measured, tunable cost.
++Each experiment instantiates one audit obligation and changes a reuse judgment. E5 shows that the emitter fixes both the leaking count and the cost object. E6/E7 show that refitted attackers and encrypted size decoding recover tool intent that clean-trained or dispatch-only evaluations miss. E9--E12 carry these bindings to real agents: leakage concentrates in state-changing calls, behavioral compliance does not reach it, and training-only program shaping removes most of it at a measured, tunable cost. E13 adds the exposed clock and directly prices live execution against complete transport cover.
+ 
+ \soktakeaway{SoK Takeaway 3 (Bind the projection the emitter produces)}{Padding applies to the record sequence it equalizes. Buffered caps, per-event padding and batching have distinct leakage and cost objects. Evaluate the attacker on defended data and price the same emitter that supplies the protection claim.}
+ 
+diff --git a/final-paper-and-experiments-20261021-m1m8-revised/final-paper-and-experiments-20261021-001/manuscript/sections/39-shadow-deployment.tex b/final-paper-and-experiments-20261021-m1m8-revised/final-paper-and-experiments-20261021-001/manuscript/sections/39-shadow-deployment.tex
+index 6ea08c4..9f918fe 100644
+--- a/final-paper-and-experiments-20261021-m1m8-revised/final-paper-and-experiments-20261021-001/manuscript/sections/39-shadow-deployment.tex
++++ b/final-paper-and-experiments-20261021-m1m8-revised/final-paper-and-experiments-20261021-001/manuscript/sections/39-shadow-deployment.tex
+@@ -4,7 +4,7 @@ This section translates the measured isolation mechanism into deployment contrac
+ \subsection{What padding leaves visible, and what a tunnel changes}
+ E7's no-cover bucketed framing leaves return BA at 73.9\%. E9's baseline per-call padding leaves cancellation/return BA at 66.1\%/55.5\%. A padded request and response still contribute observable records: invocation count, direction changes and ordered turns remain available even if individual sizes coincide. The joint E9 intervention reduces the two measured BAs to 50.0\% by combining call-profile shaping with constant framing. This identifies a useful intervention boundary; it does not prove that executing dummy tools is necessary for every network threat model.
+ 
+-RFC~9347 describes a different construction: aggregate and fragment inner traffic into fixed-size ESP packets, send at a constant rate and use padding when no inner data is ready \cite{rfc9347}. For a passive observer of that tunnel alone, dummy transport traffic can conceal application call boundaries without reaching a tool. Protecting workflow duration also requires a common or otherwise workload-independent transmission horizon in both directions; destination choice, tunnel start/stop and congestion responses remain part of the observation contract. Our per-call framing ablations are not measurements of this complete construction, and provide no comparative cost or security ranking against it.
++RFC~9347 describes a different construction: aggregate and fragment inner traffic into fixed-size ESP packets, send at a constant rate and use padding when no inner data is ready \cite{rfc9347}. For a passive observer of that tunnel alone, dummy transport traffic can conceal application call boundaries without reaching a tool. Protecting workflow duration also requires a common or otherwise workload-independent transmission horizon in both directions; destination choice, tunnel start/stop and congestion responses remain part of the observation contract. The E7/E9 per-call ablations do not measure this complete construction. E13 separately implements bidirectional fixed-cell TLS encapsulation with a training-sized horizon and measures its security/cost on the same live tool workload; it is not an IPsec implementation.
+ 
+ At the orchestrator-to-tool boundary, a multiparty relay may instead see decoded RPCs, tool names or forwarding events after a transport tunnel terminates. A tunnel's padding disappears at that point. Cover must survive to the relevant observer as plausible calls, or application fields must remain encrypted through the relay. E6/E9 evaluate the specified call-name/length and network projections. They do not establish indistinguishability against unrestricted argument inspection, routing logs or a tool provider's state view.
+ 
+@@ -45,4 +45,4 @@ Tool provider & Sees live effects and mode/credentials; hiding committed intent
+ 
+ For a passive client-to-gateway observer, gateway-local cover can supply the measured kind of call-profile intervention. For an honest-but-curious relay, a protection claim additionally requires that its complete view exclude the discriminator and reveal no reliable substitute through arguments, timing or routing. A TLS-terminating relay that can read the marker does not satisfy this condition. The trusted gateway and the provider's commit log are not protected by moving cover into a local simulator.
+ 
+-All three paths preserve the logical planner transcript only when real observations pass unchanged and cover cannot affect live state or planner-visible feedback. That is the invariant checked in the existing replay. A deployment evaluation would additionally measure interactive reward, latency, failures and quotas, refit attackers on each exposed projection, and compare a full tunnel at matched workload and cost. No such production or tunnel comparison is claimed here. The contribution of shadow cover is a concrete way to shape an observable call profile while isolating its state effects, with an explicit choice of where that isolation must be enforced.
++All three paths preserve the logical planner transcript only when real observations pass unchanged and cover cannot affect live state or planner-visible feedback. That is the invariant checked in the existing replay. E13 adds local live-tool latency, failures, timing-aware attacks and complete tunnel controls at matched workload. Production quotas, WAN effects and fresh timing-dependent LLM interaction require deployment-specific evaluation. The contribution of shadow cover is a concrete way to shape an observable call profile while isolating its state effects, with an explicit choice of where that isolation must be enforced.
+diff --git a/final-paper-and-experiments-20261021-m1m8-revised/final-paper-and-experiments-20261021-001/manuscript/sections/40-evidence-concordance.tex b/final-paper-and-experiments-20261021-m1m8-revised/final-paper-and-experiments-20261021-001/manuscript/sections/40-evidence-concordance.tex
+index 955e98a..34ef5f9 100644
+--- a/final-paper-and-experiments-20261021-m1m8-revised/final-paper-and-experiments-20261021-001/manuscript/sections/40-evidence-concordance.tex
++++ b/final-paper-and-experiments-20261021-m1m8-revised/final-paper-and-experiments-20261021-001/manuscript/sections/40-evidence-concordance.tex
+@@ -60,6 +60,7 @@ E7 & Agent--tool TLS composition & Main 8.3; S12\\
+ E8 & Scripted/noisy stand-in planners & S13; pipeline check\\
+ E9 & Real agents; pretest-frozen calibration & Main 8.4; S14\\
+ E10--E12 & Post hoc cross-fitting, selection, localization & Main 8.5; S15\\
++E13 & Live tool timing, latency and complete tunnels & Main 8.6; S19\\
+ \bottomrule\end{tabularx}\end{table}
+ 
+ \subsection{Absolute thresholds and relative reductions}
+@@ -67,9 +68,9 @@ The E9 suite criterion remains BA upper 95\% bound $<0.60$ and maximum AUROC $<0
+ 
+ E10's bucketed baseline upper bounds (60.5\%/60.2\%) also fail the two-target absolute criterion. Its customer-grouped fitting avoids training/test mixing within a fold but remains retrospective reuse of the same cohort. E11's training-fold point-estimate selection rule is distinct from the E9 interval criterion; choosing a configuration under the former does not imply passing the latter. A future confirmatory cohort should freeze the defended policy, attacker suite, timing projection and cluster analysis before collection. Sample planning should vary independent positive and negative customers using explicit assumptions about heterogeneity and refitting, rather than infer guaranteed power from a near-chance point estimate.
+ 
+-\subsection{Timing and closed-loop evaluation specification}
++\subsection{Timing evaluation: protocol and E13 coverage}
+ E7 and E9--E12 evaluate record sizes, directions and sequence order. They omit inter-arrival times, elapsed session duration and request service times. The end flush may form a detectable suffix; serial cover may delay responses, whereas concurrent cover may produce bursts. Logical planner-history equivalence excludes clocks, resource contention and timeout-dependent behavior. The observed byte/call ratios therefore cannot be read as measured interactive latency or timing-channel suppression.
+ 
+-A follow-up evaluation should capture timestamped ingress and egress traffic during live tool execution, with stable monotonic clock calibration, and measure both serial and bounded-concurrency scheduling. Fit joint size/timing attackers, a flush/change-point segmenter and a real-versus-cover detector using only training customers. Keep the customer split, prompt arms and repeats together; evaluate the resulting intent BA/AUROC and paired changes on frozen test customers. Report timing-only, size/order-only and joint views, both with and without the flush suffix, including failures and timeouts.
++The follow-up protocol calls for capturing timestamped ingress and egress traffic during live tool execution, with stable monotonic clock calibration, and measuring both serial and bounded-concurrency scheduling. Fit joint size/timing attackers, a flush/change-point segmenter and a real-versus-cover detector using only training customers. Keep the customer split, prompt arms and repeats together; evaluate the resulting intent BA/AUROC and paired changes on frozen test customers. Report timing-only, size/order-only and joint views, both with and without the flush suffix, including failures and timeouts.
+ 
+-At the same operating points, report first-response and episode p50/p95 latency, queueing, deadline violations, backend quotas, bytes/calls and native task reward. Compare per-call padding, full-profile cover, a paced/bounded-flush variant and a complete transport tunnel with a stated traffic horizon under matched workloads. Do not label synthetic delays or analytic service-time scenarios as measured production latency. This specification is future work: no timing-aware or closed-loop result is added by this manuscript revision.
++At the same operating points, report first-response and episode p50/p95 latency, queueing, deadline violations, backend quotas, bytes/calls and native task reward. Compare per-call padding, full-profile cover, a paced/bounded-flush variant and a complete transport tunnel with a stated traffic horizon under matched workloads. Do not label synthetic delays or analytic service-time scenarios as measured production latency. E13 (S19) executes the local tool-chain portion of this specification, including observed TLS arrival timing, learned flush removal, serial/two-in-flight RPCs and complete fixed-rate tunnels. Fresh LLM replanning, WAN deployment, production quotas, an alternative paced-flush policy and a new customer cohort remain separate validation targets.
+diff --git a/final-paper-and-experiments-20261021-m1m8-revised/final-paper-and-experiments-20261021-001/manuscript/sections/41-live-timing.tex b/final-paper-and-experiments-20261021-m1m8-revised/final-paper-and-experiments-20261021-001/manuscript/sections/41-live-timing.tex
+new file mode 100644
+index 0000000..2de5804
+--- /dev/null
++++ b/final-paper-and-experiments-20261021-m1m8-revised/final-paper-and-experiments-20261021-001/manuscript/sections/41-live-timing.tex
+@@ -0,0 +1,38 @@
++\section{Live Tool Timing, Latency and Complete Tunnel Controls (E13)}\label{sec:r6-supp}
++\subsection{Questions and measured boundary}
++E13 executes the saved 690 real-agent action trajectories again through a live TLS tool server. It asks whether arrival timing restores intent inference after length/count shaping, whether an observer can identify the end flush or cover requests, and what actual waiting time accompanies each intervention. Six conditions yield 4,140 newly measured sessions. These are new tool executions and ciphertext arrival measurements, not new LLM generations or a new customer population.
++
++The client driver waits for each real response before releasing its next saved action. The server invokes the pinned retail tool implementation against a live database clone; cover invokes the same implementation against a separate clone. Each real response is checked against the corresponding saved model observation, and the final live database is compared with unprotected execution of the same actions. This feedback-synchronized tool loop measures real queues and service times while holding the planner's action sequence fixed. Its clocks exclude LLM/user generation and WAN transit. No artificial read/write delay is injected. Reward preservation is inherited when all responses and final live state agree; it is not a new stochastic planner trial.
++
++\subsection{Transport and execution controls}
++All conditions use a fresh TLS~1.2 connection with ECDHE-RSA-AES128-GCM-SHA256 and TCP\_NODELAY through a byte-transparent loopback relay. The relay timestamps ciphertext chunk arrivals using a monotonic high-resolution clock and parses records; a record inherits the timestamp of its final observed chunk. The retained chunk log permits inspection of coalescing. These are relay-observed record times, not kernel packet timestamps. The application projection excludes handshakes and closure alerts. One session is measured at a time; episode and condition order are shuffled using a fixed seed.
++
++The six conditions are raw transport, per-call constant framing, serial shadow cover with constant framing, the same cover with at most two outstanding RPCs, and two complete fixed-rate tunnel settings. The cover scheduler uses E9's frozen training donors, count template and random seed, observes only the executed prefix, and flushes remaining counts after the last real response. Real and shadow states have separate execution locks; neither a marker nor a shadow response is exposed to the passive link observer.
++
++The tunnel fragments and reassembles the complete application stream. Both directions send a 4,096-byte plaintext cell at every slot, including when no payload is ready. An encrypted four-byte field gives the useful payload length; the remainder is padding. Dummy cells never invoke a tool. Every cell produces a 4,120-byte TLS ciphertext record, plus its five-byte header. This implements the fixed-size/constant-rate traffic-flow principle described by RFC~9347~\cite{rfc9347} over TLS; it is not an IPsec wire-format implementation.
++
++The common service horizon is fixed using training messages only. For each training trajectory, sum the required request/response payload cells plus four slack cells per real call. The maximum budget, multiplied by 1.5 and rounded up with 16 additional slots, is lower-bounded by 128. This yields 133 slots: 266\,ms at 2\,ms per cell or 665\,ms at 5\,ms. Both directions continue through this horizon after the real workload completes. A horizon overflow is a retained failure, never a secret-dependent extension. The per-call framing caps use E9's frozen caps plus 256 bytes for the RPC envelope, with whole-cap overflow buckets. The operating points are fixed before test measurement.
++
++Actual deadlines are rechecked against the measurement clock after sleeping; no ideal timestamps replace late sends or catch-up bursts. Both receivers must consume all 133 cells before closure. The saved outputs include cell deadlines, observed sends, pending queues and all requests/completions. A host scheduler and a local Python gateway remain part of this measured implementation. The two tunnel settings are fixed operating points, not an optimized cost frontier or a measurement of multi-session amortization.
++
++\subsection{Attacks and fitting order}
++The original customer-disjoint split is preserved: 414 training trajectories from 29 customers and 276 test trajectories from 24 customers. All 2,484 final training measurements precede attack fitting and a model-hash freeze; only then are the 1,656 final test sessions collected. An earlier complete development pass exposed two incomplete tunnel tails at connection closure. We added a receive-drain barrier, restored E9-style profilers to the attacker suite, and recollected the entire cohort; no individual test sessions were selectively replaced. Development records are archived separately. The original trajectories and labels were already known from E9, so this is a post hoc measurement study on the same population.
++
++The intent suite has a training-majority baseline, balanced logistic regression ($C=1$), gradient boosting with 100 trees, and random forests with 200 trees and a minimum leaf size of two. Its three basic views are size/order, timing/direction and their joint features. Features include direction-specific count, size/gap quantiles, request/response size histograms, exchange-length vectors, duration, gap thresholds at 0.1/1/5/20\,ms, the first/last 32 positions, and largest-gap change-point summaries. For non-tunnel conditions, training-only size-to-tool profilers additionally feed a decoded gradient-boosting attacker and a training-selected count rule; these join both size/order and full-suite evaluations. At test time, all attackers consume observable records only. True tool names, RPC IDs, real/cover markers, true flush boundaries and internal execution times are excluded from test features.
++
++Separate 80-tree forests (depth eight, minimum leaf size five) detect the flush suffix and real versus cover requests. Flush detection uses observable record neighborhoods and relative position/time; cover detection uses the same visible features at request-record positions. True execution annotations supply fitting/scoring labels only. For the flush-stripped intent view, training traces are transformed by three-fold customer-disjoint out-of-fold detectors. The full-training detector transforms test traces; a maximum-likelihood single transition estimates the cut. No oracle test boundary is used. The full adaptive suite unions every applicable view, allowing an observer to ignore timing or retain the unstripped trace.
++
++\subsection{Inference, latency and reproducibility}
++Intent intervals use 2,000 common customer-cluster bootstrap draws, retaining all tasks and repeats and recomputing the maximum over the suite in each draw. Paired differences reuse these draws. Draws lacking either target class have undefined BA/AUROC and are omitted from interval quantiles; their counts are archived. Intervals condition on fitted predictions and do not supply a new independent population estimate. The E9 absolute criterion remains unchanged: BA upper 95\% bound below 0.60 and AUROC below 0.65. Detector BA also uses customer clusters; detector AUROC is reported as a point estimate.
++
++Latency is reported for individual real RPCs, the first real response, the last real response and the complete traffic window. Client scheduling queues, backend service, slot lateness and timeouts are retained separately. The descriptive count of real calls exceeding 100\,ms is a reference threshold, not a service-level guarantee. Byte ratios count measured application TLS records and their headers; call ratios count actual tool RPCs, excluding tunnel dummy cells. Source, calibration, model and capture hashes bind the analysis. The saved captures, fitted models and predictions support offline verification without new LLM or network requests.
++
++\subsection{Findings across the measured boundaries}
++For baseline prompts, serial cover's full-suite cancellation BA exceeds its size/order BA by 11.4 points [3.7,19.6]. The full-suite reduction relative to raw remains 30.3 points [23.1,37.6] for cancellation and 32.9 [19.9,40.7] for return. Thus the measurement supports a substantial reduction while exposing a residual clock signal. Flush and real/cover detectors pool both prompt arms: serial/parallel flush BA is 90.4\%/92.3\%, and cover BA is 82.5\%/96.1\%. Successful segmentation does not itself establish successful intent recovery; the separately fitted stripped-trace attacks test that transfer.
++
++All 1,380 tunnel sessions contain exactly 133 records per direction with identical ciphertext lengths. Nevertheless, the measured directions can interleave differently, and scheduling is imperfect. In baseline-prompt tests, 2/5\,ms tunnel slot lateness has p95 1.88/1.68\,ms and maxima 282.6/307.5\,ms. These retained observations characterize the implementation, rather than an ideal zero-jitter clock. The full-suite baseline BAs are 62.5\%/52.9\% and 53.1\%/57.3\%; neither setting meets the two-target absolute criterion. Their 125.7$\times$ byte cost and one tool call per original action identify a different resource trade-off from shadow cover's 15.1$\times$ bytes and 3.83$\times$ calls. These fixed operating points do not establish an optimal tunnel or universal superiority of either mechanism.
++
++No formal session fails, loses a real response, changes final live state or sends a cell before its deadline. Twelve of 2,000 cancellation bootstrap draws do not contain both target classes; all return draws are defined. The archived invalid-draw counters distinguish this finite-sample calculation issue from execution failures.
++
++\clearpage
++\input{tables/r6-supp}
+diff --git a/final-paper-and-experiments-20261021-m1m8-revised/final-paper-and-experiments-20261021-001/manuscript/sections/42-live-timing-main.tex b/final-paper-and-experiments-20261021-m1m8-revised/final-paper-and-experiments-20261021-001/manuscript/sections/42-live-timing-main.tex
+new file mode 100644
+index 0000000..519c7cc
+--- /dev/null
++++ b/final-paper-and-experiments-20261021-m1m8-revised/final-paper-and-experiments-20261021-001/manuscript/sections/42-live-timing-main.tex
+@@ -0,0 +1,12 @@
++\subsection{E13: live timing, latency and a complete tunnel}\label{sec:live-timing}
++E13 executes all 690 saved agent action trajectories through a live local tool server under six conditions, yielding 4,140 new TLS sessions. Each real response gates the next action; the server executes real and shadow calls on separate states. The original customer-disjoint 414/276 training/test trajectory split is retained. Attackers are fitted and frozen on training captures before test collection. The relay records ciphertext lengths, directions and arrival times. These clocks measure the tool RPC chain, excluding LLM generation and WAN transit (S19).
++
++The complete tunnel sends 4,096-byte cells in both directions at 2 or 5\,ms target intervals, including dummy cells. Its training-sized 133-slot horizon remains fixed after the last response; dummy cells execute no tools. Serial and two-in-flight shadow conditions use E9's prefix-only count policy and constant per-call framing. The full attack suite unions size/order, timing and joint features, plus learned flush removal for shadow cover; its detectors and transformations use training customers only.
++
++\input{tables/r6-main}
++
++\paragraph{Measure the exposed clock}
++On baseline-prompt test trajectories, serial shadow cover yields 50.0/50.7\% size/order BA and 61.4/53.4\% under the full suite. Its cancellation increase is 11.4 points (95\% paired interval [3.7,19.6]), identifying a residual clock signal. With two in-flight calls, both views yield 51.7/57.7\%. Across both prompt arms, learned flush detectors reach 90.4\%/92.3\% BA for serial/parallel scheduling (S19).
++
++\paragraph{Price the protected boundary}
++The 2\,ms tunnel yields 62.5/52.9\% full-suite BA and the 5\,ms tunnel 53.1/57.3\%, with one tool call per original action at 125.7$\times$/125.7$\times$ bytes. Serial versus two-in-flight shadow scheduling has real-chain p95 latency of 26.2/20.8\,ms; the fast/slow tunnels have 56.4/112.3\,ms. All 4,140 sessions preserve every real response and final live state. The tunnel has fixed cell counts and sizes, but observed direction/order and host scheduling remain measurable; neither tunnel nor shadow schedule meets the two-target absolute criterion. Table~\ref{tab:r6-main} prices the whole traffic window as well. These operating points make the boundary actionable: transport cover avoids tool execution on the passive link; call-profile cover addresses dispatch beyond tunnel termination.
+diff --git a/final-paper-and-experiments-20261021-m1m8-revised/final-paper-and-experiments-20261021-001/manuscript/supplement.pdf b/final-paper-and-experiments-20261021-m1m8-revised/final-paper-and-experiments-20261021-001/manuscript/supplement.pdf
+index a8d5f3e..e344667 100644
+Binary files a/final-paper-and-experiments-20261021-m1m8-revised/final-paper-and-experiments-20261021-001/manuscript/supplement.pdf and b/final-paper-and-experiments-20261021-m1m8-revised/final-paper-and-experiments-20261021-001/manuscript/supplement.pdf differ
+diff --git a/final-paper-and-experiments-20261021-m1m8-revised/final-paper-and-experiments-20261021-001/manuscript/supplement.tex b/final-paper-and-experiments-20261021-m1m8-revised/final-paper-and-experiments-20261021-001/manuscript/supplement.tex
+index 1b83cfc..31891be 100644
+--- a/final-paper-and-experiments-20261021-m1m8-revised/final-paper-and-experiments-20261021-001/manuscript/supplement.tex
++++ b/final-paper-and-experiments-20261021-m1m8-revised/final-paper-and-experiments-20261021-001/manuscript/supplement.tex
+@@ -57,6 +57,8 @@ This supplement provides the search accounting, corpus maps, saved empirical res
+ \clearpage
+ \onecolumn
+ \input{tables/r3-supp-transfer}
++\input{tables/transfer-streaming}
++\input{tables/r3-transfer-cover}
+ \input{tables/r3-transfer-predictions}
+ \clearpage
+ \input{tables/r3-supp-e8}
+@@ -79,6 +81,10 @@ Records are computed with an analytic TLS~1.2 AES-GCM model (fragment plus 24 by
+ \clearpage
+ \input{sections/40-evidence-concordance}
+ \clearpage
++\onecolumn
++\input{sections/41-live-timing}
++\clearpage
++\twocolumn
+ \input{tables/corpus-citations}
+ 
+ \bibliographystyle{IEEEtran}
+diff --git a/final-paper-and-experiments-20261021-m1m8-revised/final-paper-and-experiments-20261021-001/manuscript/tables/r6-main.tex b/final-paper-and-experiments-20261021-m1m8-revised/final-paper-and-experiments-20261021-001/manuscript/tables/r6-main.tex
+new file mode 100644
+index 0000000..1ff4971
+--- /dev/null
++++ b/final-paper-and-experiments-20261021-m1m8-revised/final-paper-and-experiments-20261021-001/manuscript/tables/r6-main.tex
+@@ -0,0 +1,14 @@
++\begin{table*}[t]\centering\footnotesize
++\caption{E13: measured live tool RPCs and timing-aware attacks. Six conditions re-execute all 690 saved agent trajectories (4,140 TLS sessions); this table reports the 138 baseline-prompt test trajectories from 24 customers. BA columns show cancellation/return percentages. S19 reports both prompt arms, customer-cluster intervals and per-view attacks.}\label{tab:r6-main}
++\setlength{\tabcolsep}{4pt}
++\begin{tabularx}{\textwidth}{@{}Yrrrrrr@{}}\toprule
++Condition & Size/order BA & Full-suite BA & Bytes$\times$ & Calls$\times$ & Real-chain p95 (ms) & Traffic p95 (ms)\\\midrule
++Raw & 91.7/86.4 & 91.7/86.4 & 1.0 & 1.0 & 15.4 & 15.5 \\
++Per-call padding & 68.6/54.8 & 68.6/62.7 & 3.9 & 1.0 & 16.6 & 16.7 \\
++Shadow, serial & 50.0/50.7 & 61.4/53.4 & 15.1 & 3.8 & 26.2 & 46.6 \\
++Shadow, two in flight & 51.7/57.7 & 51.7/57.7 & 15.1 & 3.8 & 20.8 & 37.4 \\
++Full tunnel, 2 ms & 62.5/52.9 & 62.5/52.9 & 125.7 & 1.0 & 56.4 & 270.4 \\
++Full tunnel, 5 ms & 51.4/54.5 & 53.1/57.3 & 125.7 & 1.0 & 112.3 & 666.6 \\
++\bottomrule\end{tabularx}
++\par\smallskip\raggedright Full suite: size/order, timing/direction and joint classifiers; shadow conditions also include learned flush removal. Real-chain: release to last real response; traffic: through cover completion or tunnel horizon. Clocks exclude LLM generation and WAN latency. Tunnel dummy cells execute no tools; both directions send 133 fixed-size cells. All real responses and final live states are checked against unprotected execution.
++\end{table*}
+diff --git a/final-paper-and-experiments-20261021-m1m8-revised/final-paper-and-experiments-20261021-001/manuscript/tables/r6-supp.tex b/final-paper-and-experiments-20261021-m1m8-revised/final-paper-and-experiments-20261021-001/manuscript/tables/r6-supp.tex
+new file mode 100644
+index 0000000..0eeec26
+--- /dev/null
++++ b/final-paper-and-experiments-20261021-m1m8-revised/final-paper-and-experiments-20261021-001/manuscript/tables/r6-supp.tex
+@@ -0,0 +1,107 @@
++\begin{table}[htbp]\centering\footnotesize
++\caption{E13 baseline prompt: intent BA [95\% customer-cluster interval] and AUROC. The full suite unions all available views.}
++\begin{tabular}{llrrrr}\toprule
++Condition & View & Cancel BA [CI] & Return BA [CI] & Cancel AUC & Return AUC\\\midrule
++Raw & Size/order & \mbox{91.7 [84.7, 100.0]} & \mbox{86.4 [79.5, 97.2]} & 0.917 & 0.875 \\
++Raw & Timing/direction & \mbox{53.8 [50.0, 72.5]} & \mbox{52.9 [50.0, 64.1]} & 0.531 & 0.570 \\
++Raw & Joint features & \mbox{84.3 [72.5, 97.4]} & \mbox{80.5 [69.9, 93.6]} & 0.836 & 0.835 \\
++Raw & Full adaptive suite & \mbox{91.7 [84.7, 100.0]} & \mbox{86.4 [79.5, 97.2]} & 0.917 & 0.875 \\
++\addlinespace[2pt]
++Per-call padding & Size/order & \mbox{68.6 [50.0, 92.8]} & \mbox{54.8 [50.0, 74.8]} & 0.678 & 0.514 \\
++Per-call padding & Timing/direction & \mbox{54.6 [50.0, 63.0]} & \mbox{62.7 [53.8, 78.0]} & 0.500 & 0.657 \\
++Per-call padding & Joint features & \mbox{51.0 [50.0, 61.4]} & \mbox{50.2 [50.0, 69.0]} & 0.569 & 0.545 \\
++Per-call padding & Full adaptive suite & \mbox{68.6 [50.8, 92.8]} & \mbox{62.7 [54.2, 79.3]} & 0.678 & 0.657 \\
++\addlinespace[2pt]
++Shadow, serial & Size/order & \mbox{50.0 [50.0, 56.9]} & \mbox{50.7 [50.0, 62.5]} & 0.500 & 0.505 \\
++Shadow, serial & Timing/direction & \mbox{61.4 [53.8, 67.7]} & \mbox{52.9 [50.0, 62.5]} & 0.625 & 0.500 \\
++Shadow, serial & Joint features & \mbox{51.0 [50.0, 64.6]} & \mbox{50.0 [50.0, 57.7]} & 0.596 & 0.500 \\
++Shadow, serial & Estimated flush removed & \mbox{57.8 [50.0, 70.7]} & \mbox{53.4 [50.0, 64.6]} & 0.583 & 0.530 \\
++Shadow, serial & Full adaptive suite & \mbox{61.4 [54.6, 71.1]} & \mbox{53.4 [50.0, 65.8]} & 0.625 & 0.530 \\
++\addlinespace[2pt]
++Shadow, two in flight & Size/order & \mbox{51.7 [50.0, 68.3]} & \mbox{57.7 [51.5, 66.1]} & 0.509 & 0.569 \\
++Shadow, two in flight & Timing/direction & \mbox{50.0 [50.0, 57.1]} & \mbox{50.0 [50.0, 59.9]} & 0.554 & 0.500 \\
++Shadow, two in flight & Joint features & \mbox{50.0 [50.0, 57.1]} & \mbox{52.6 [50.0, 63.3]} & 0.531 & 0.522 \\
++Shadow, two in flight & Estimated flush removed & \mbox{50.0 [50.0, 64.0]} & \mbox{50.0 [50.0, 56.7]} & 0.500 & 0.500 \\
++Shadow, two in flight & Full adaptive suite & \mbox{51.7 [50.0, 69.1]} & \mbox{57.7 [53.4, 66.8]} & 0.554 & 0.569 \\
++\addlinespace[2pt]
++Full tunnel, 2 ms & Size/order & \mbox{62.5 [54.3, 70.1]} & \mbox{52.9 [50.0, 61.0]} & 0.594 & 0.521 \\
++Full tunnel, 2 ms & Timing/direction & \mbox{53.1 [50.2, 59.3]} & \mbox{50.0 [50.0, 55.6]} & 0.641 & 0.500 \\
++Full tunnel, 2 ms & Joint features & \mbox{56.2 [50.9, 63.9]} & \mbox{50.0 [50.0, 57.4]} & 0.656 & 0.569 \\
++Full tunnel, 2 ms & Full adaptive suite & \mbox{62.5 [55.6, 70.2]} & \mbox{52.9 [50.1, 61.3]} & 0.656 & 0.569 \\
++\addlinespace[2pt]
++Full tunnel, 5 ms & Size/order & \mbox{51.4 [50.0, 59.0]} & \mbox{54.5 [50.0, 60.3]} & 0.500 & 0.513 \\
++Full tunnel, 5 ms & Timing/direction & \mbox{53.1 [50.0, 71.9]} & \mbox{53.2 [50.0, 62.4]} & 0.575 & 0.548 \\
++Full tunnel, 5 ms & Joint features & \mbox{52.4 [50.0, 61.8]} & \mbox{57.3 [53.1, 63.7]} & 0.534 & 0.555 \\
++Full tunnel, 5 ms & Full adaptive suite & \mbox{53.1 [50.3, 71.9]} & \mbox{57.3 [54.2, 64.2]} & 0.575 & 0.555 \\
++\addlinespace[2pt]
++\bottomrule\end{tabular}
++\end{table}
++\clearpage
++\begin{table}[htbp]\centering\footnotesize
++\caption{E13 rules prompt: intent BA [95\% customer-cluster interval] and AUROC. The full suite unions all available views.}
++\begin{tabular}{llrrrr}\toprule
++Condition & View & Cancel BA [CI] & Return BA [CI] & Cancel AUC & Return AUC\\\midrule
++Raw & Size/order & \mbox{94.4 [83.3, 100.0]} & \mbox{87.0 [78.0, 97.6]} & 0.944 & 0.905 \\
++Raw & Timing/direction & \mbox{57.8 [50.0, 70.6]} & \mbox{56.1 [50.0, 63.9]} & 0.598 & 0.557 \\
++Raw & Joint features & \mbox{84.7 [75.2, 98.2]} & \mbox{79.1 [67.8, 92.0]} & 0.851 & 0.822 \\
++Raw & Full adaptive suite & \mbox{94.4 [83.3, 100.0]} & \mbox{87.0 [78.0, 97.6]} & 0.944 & 0.905 \\
++\addlinespace[2pt]
++Per-call padding & Size/order & \mbox{70.1 [50.0, 86.0]} & \mbox{54.8 [50.0, 74.7]} & 0.680 & 0.500 \\
++Per-call padding & Timing/direction & \mbox{55.8 [50.0, 70.2]} & \mbox{50.6 [50.0, 62.4]} & 0.530 & 0.534 \\
++Per-call padding & Joint features & \mbox{59.4 [50.0, 76.6]} & \mbox{53.6 [50.0, 71.0]} & 0.575 & 0.508 \\
++Per-call padding & Full adaptive suite & \mbox{70.1 [50.0, 86.0]} & \mbox{54.8 [50.0, 74.8]} & 0.680 & 0.534 \\
++\addlinespace[2pt]
++Shadow, serial & Size/order & \mbox{58.2 [50.2, 71.2]} & \mbox{57.9 [50.7, 66.8]} & 0.581 & 0.597 \\
++Shadow, serial & Timing/direction & \mbox{51.5 [50.0, 69.8]} & \mbox{57.7 [52.3, 68.8]} & 0.500 & 0.560 \\
++Shadow, serial & Joint features & \mbox{51.1 [50.0, 64.4]} & \mbox{55.1 [52.2, 65.3]} & 0.519 & 0.555 \\
++Shadow, serial & Estimated flush removed & \mbox{50.1 [50.0, 55.6]} & \mbox{60.7 [50.8, 70.9]} & 0.500 & 0.622 \\
++Shadow, serial & Full adaptive suite & \mbox{58.2 [52.9, 72.2]} & \mbox{60.7 [56.3, 71.7]} & 0.581 & 0.622 \\
++\addlinespace[2pt]
++Shadow, two in flight & Size/order & \mbox{54.7 [50.0, 66.7]} & \mbox{60.2 [50.5, 73.8]} & 0.580 & 0.576 \\
++Shadow, two in flight & Timing/direction & \mbox{50.0 [50.0, 57.8]} & \mbox{54.0 [50.0, 62.6]} & 0.556 & 0.585 \\
++Shadow, two in flight & Joint features & \mbox{55.3 [50.0, 67.1]} & \mbox{52.3 [50.0, 61.0]} & 0.578 & 0.546 \\
++Shadow, two in flight & Estimated flush removed & \mbox{50.8 [50.0, 61.7]} & \mbox{54.0 [50.0, 67.0]} & 0.541 & 0.528 \\
++Shadow, two in flight & Full adaptive suite & \mbox{55.3 [50.8, 68.2]} & \mbox{60.2 [54.5, 73.9]} & 0.580 & 0.585 \\
++\addlinespace[2pt]
++Full tunnel, 2 ms & Size/order & \mbox{51.5 [50.0, 65.0]} & \mbox{53.7 [50.0, 59.7]} & 0.500 & 0.500 \\
++Full tunnel, 2 ms & Timing/direction & \mbox{53.1 [50.0, 64.2]} & \mbox{53.1 [50.0, 60.9]} & 0.500 & 0.563 \\
++Full tunnel, 2 ms & Joint features & \mbox{51.5 [50.0, 58.1]} & \mbox{59.1 [52.2, 66.1]} & 0.500 & 0.590 \\
++Full tunnel, 2 ms & Full adaptive suite & \mbox{53.1 [50.0, 65.6]} & \mbox{59.1 [52.8, 66.1]} & 0.500 & 0.590 \\
++\addlinespace[2pt]
++Full tunnel, 5 ms & Size/order & \mbox{50.0 [50.0, 53.6]} & \mbox{55.4 [50.9, 62.7]} & 0.500 & 0.549 \\
++Full tunnel, 5 ms & Timing/direction & \mbox{50.0 [50.0, 50.4]} & \mbox{56.3 [51.0, 61.6]} & 0.500 & 0.530 \\
++Full tunnel, 5 ms & Joint features & \mbox{50.0 [50.0, 57.5]} & \mbox{52.3 [50.0, 59.5]} & 0.500 & 0.534 \\
++Full tunnel, 5 ms & Full adaptive suite & \mbox{50.0 [50.0, 57.5]} & \mbox{56.3 [55.0, 63.3]} & 0.500 & 0.549 \\
++\addlinespace[2pt]
++\bottomrule\end{tabular}
++\end{table}
++\clearpage
++\begin{table}[htbp]\centering\footnotesize
++\caption{E13 live execution costs, both prompt arms. Medians and 95th percentiles describe observed local RPCs; they are not production-service latency estimates.}
++\begin{tabular}{llrrrrrr}\toprule
++Prompt & Condition & Bytes$\times$ & Calls$\times$ & First p50/p95 & Last real p50/p95 & Traffic p50/p95 & RPC p50/p95\\\midrule
++baseline & Raw & 1.00 & 1.00 & 2.3/3.4 & 8.8/15.4 & 8.8/15.5 & 1.0/1.8\\
++baseline & Per-call padding & 3.92 & 1.00 & 2.3/3.7 & 8.5/16.6 & 8.5/16.7 & 1.0/1.8\\
++baseline & Shadow, serial & 15.11 & 3.83 & 3.0/5.0 & 12.5/26.2 & 27.8/46.6 & 0.9/1.7\\
++baseline & Shadow, two in flight & 15.11 & 3.83 & 2.7/4.5 & 11.3/20.8 & 23.6/37.4 & 1.2/2.4\\
++baseline & Full tunnel, 2 ms & 125.71 & 1.00 & 5.4/11.2 & 30.9/56.4 & 267.0/270.4 & 4.0/6.2\\
++baseline & Full tunnel, 5 ms & 125.71 & 1.00 & 11.3/12.4 & 71.4/112.3 & 666.1/666.6 & 10.0/10.9\\
++rules & Raw & 1.00 & 1.00 & 2.2/3.7 & 8.1/15.7 & 8.2/15.7 & 1.0/1.7\\
++rules & Per-call padding & 3.95 & 1.00 & 2.2/3.6 & 8.4/15.5 & 8.4/15.5 & 1.0/1.8\\
++rules & Shadow, serial & 15.47 & 3.88 & 3.0/5.2 & 12.7/23.9 & 28.9/41.8 & 1.0/1.7\\
++rules & Shadow, two in flight & 15.47 & 3.88 & 2.7/4.4 & 11.1/20.7 & 23.8/36.5 & 1.2/2.4\\
++rules & Full tunnel, 2 ms & 128.38 & 1.00 & 5.4/7.7 & 29.8/48.8 & 267.0/267.9 & 4.0/5.8\\
++rules & Full tunnel, 5 ms & 128.38 & 1.00 & 11.1/12.4 & 69.5/112.9 & 666.2/666.6 & 10.0/11.0\\
++\bottomrule\end{tabular}
++\par\smallskip All time columns are milliseconds. The saved results additionally report queue/service times, a descriptive 100 ms per-call deadline count, cell lateness, failures, and paired mean last-response differences.
++\end{table}
++\begin{table}[htbp]\centering\footnotesize
++\caption{E13 learned timing/shape detectors on held-out customers, pooling both prompt arms. Flush labels identify records after the online flush declaration; cover labels identify encrypted requests. Ground truth is used only for fitting/scoring, never as an attacker feature.}
++\begin{tabular}{llrrr}\toprule
++Condition & Detector & BA [95\% CI] & AUROC & Records/requests\\\midrule
++Shadow, serial & flush & \mbox{90.4 [88.3, 92.5]} & 0.967 & 15278 \\
++Shadow, serial & cover & \mbox{82.5 [80.3, 84.7]} & 0.898 & 7639 \\
++Shadow, two in flight & flush & \mbox{92.3 [90.6, 93.9]} & 0.979 & 15278 \\
++Shadow, two in flight & cover & \mbox{96.1 [95.4, 96.7]} & 0.995 & 7639 \\
++\bottomrule\end{tabular}
++\end{table}

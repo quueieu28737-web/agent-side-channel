@@ -1,0 +1,12 @@
+\subsection{E13: live timing, latency and a complete tunnel}\label{sec:live-timing}
+E13 executes all 690 saved agent action trajectories through a live local tool server under six conditions, yielding 4,140 new TLS sessions. Each real response gates the next action; the server executes real and shadow calls on separate states. The original customer-disjoint 414/276 training/test trajectory split is retained. Attackers are fitted and frozen on training captures before test collection. The relay records ciphertext lengths, directions and arrival times. These clocks measure the tool RPC chain, excluding LLM generation and WAN transit (S19).
+
+The complete tunnel sends 4,096-byte cells in both directions at 2 or 5\,ms target intervals, including dummy cells. Its training-sized 133-slot horizon remains fixed after the last response; dummy cells execute no tools. Serial and two-in-flight shadow conditions use E9's prefix-only count policy and constant per-call framing. The full attack suite unions size/order, timing and joint features, plus learned flush removal for shadow cover; its detectors and transformations use training customers only.
+
+\input{tables/r6-main}
+
+\paragraph{Measure the exposed clock}
+On baseline-prompt test trajectories, serial shadow cover yields 50.0/50.7\% size/order BA and 61.4/53.4\% under the full suite. Its cancellation increase is 11.4 points (95\% paired interval [3.7,19.6]), identifying a residual clock signal. With two in-flight calls, both views yield 51.7/57.7\%. Across both prompt arms, learned flush detectors reach 90.4\%/92.3\% BA for serial/parallel scheduling (S19).
+
+\paragraph{Price the protected boundary}
+The 2\,ms tunnel yields 62.5/52.9\% full-suite BA and the 5\,ms tunnel 53.1/57.3\%, with one tool call per original action at 125.7$\times$/125.7$\times$ bytes. Serial versus two-in-flight shadow scheduling has real-chain p95 latency of 26.2/20.8\,ms; the fast/slow tunnels have 56.4/112.3\,ms. All 4,140 sessions preserve every real response and final live state. The tunnel has fixed cell counts and sizes, but observed direction/order and host scheduling remain measurable; neither tunnel nor shadow schedule meets the two-target absolute criterion. Table~\ref{tab:r6-main} prices the whole traffic window as well. These operating points make the boundary actionable: transport cover avoids tool execution on the passive link; call-profile cover addresses dispatch beyond tunnel termination.

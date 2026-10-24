@@ -1,3 +1,7 @@
+# Current E13 measurement revision
+
+Current manuscript and supplement include 4,140 live tool sessions and timing/full-tunnel controls. See `experiments/sp2027-r6-timing/README.md` and `provenance/timing/validation.json`. Current verification: `python -B provenance/timing/verify_publication.py`. Historical document-specific verifiers below describe earlier editions.
+
 # 完整 690 次真实 Agent 实验与 SoK 主文结构修订版
 
 当前论文：`pdf/main.pdf`、`pdf/supplement.pdf`；源文件在 `manuscript/`。正文截至第 13 页，References 从第 13 页开始，附录在第 17 页，全文 17 页；补充材料 31 页。E9 使用完整 414 训练＋276 测试。当前修订来源与检查在 `provenance/review-closure/`；`provenance/shadow-deployment/` 保留前轮部署论证；`provenance/sok-restructure/` 保留上一轮 SoK 文稿与配对统计记录；`provenance/main-690/` 保留上一轮文稿版本的记录。
