@@ -16,10 +16,10 @@
 
 \hypersetup{hidelinks,pdfauthor={}}
 \newcommand{\scope}{\textsc{Scope}}
-\newcommand{\NRR}{\textsc{nr-r}}
-\newcommand{\NRA}{\textsc{nr-a}}
-\newcommand{\NRV}{\textsc{nr-v}}
-\newcommand{\NA}{\textsc{na}}
+\newcommand{\NRR}{\textsf{U}}
+\newcommand{\NRA}{\textsf{A}}
+\newcommand{\NRV}{\textsf{?}}
+\newcommand{\NA}{--}
 \newcommand{\evidenceStrong}{\cellcolor{ForestGreen!22}Strong}
 \newcommand{\evidenceLimited}{\cellcolor{Goldenrod!24}Limited}
 \newcommand{\evidenceNone}{\cellcolor{Gray!18}No verified direct evidence}
@@ -42,7 +42,7 @@
 \maketitle
 
 \begin{abstract}
-Encryption conceals content while exposing the structure of agent workflows. We systematize 82 study families through 39 source-bound result records, separating the observer, execution boundary and evaluation conditions that determine whether defense evidence transfers. The synthesis identifies three consequential errors: attributing upstream protection to a plaintext-aware downstream emitter, treating discarded read cover as safe state-changing cover, and substituting one mechanism's utility or cost for another's. A populated family map and applicability-aware audit make these errors inspectable at their original source locations. Measurements on repeated agent trajectories from 53 customers test the resulting comparison obligations. Action-category localization, timing attacks and matched traffic-shaping controls expose both residual inference and costly protection boundaries; reductions in a fitted attack suite do not establish a security guarantee. The resulting contribution is a reusable evidence base and a set of demonstrated transfer failures that guide which published results can support a deployment decision, which comparisons require new measurements, and where inexpensive transport shaping matches more costly mechanisms on selected measured point metrics.
+Encryption conceals content while exposing the structure of agent workflows. We systematize 82 study families through 39 source-bound result records, linking each defense outcome to its observer, execution boundary and evaluation conditions. This record-level view reveals three consequential transfer errors: attributing upstream protection to a plaintext-aware downstream emitter, treating discarded read cover as safe state-changing cover, and pricing one mechanism with another's utility or cost. The complete 58-core-family map and 20-family audit make these distinctions inspectable. Four experimental demonstrations connect the synthesis to deployment choices. Streaming reverses a buffered cost comparison; isolated and live cover have different state effects; real-agent traces separate behavioral compliance from operation privacy; and timing-aware comparisons expose when inexpensive transport shaping competes with costly shadow execution. The resulting contribution is a reusable evidence base and an operational method for selecting, comparing and validating defenses at the boundary where their protection is needed.
 \end{abstract}
 
 \input{sections/01-introduction}
@@ -62,4 +62,7 @@ Encryption conceals content while exposing the structure of agent workflows. We 
 \clearpage
 \appendices
 \input{sections/30-reproducibility-guide}
+\input{sections/49-r9-record-index}
+\input{sections/50-r9-experiment-index}
+\input{sections/51-r9-extensions}
 \end{document}

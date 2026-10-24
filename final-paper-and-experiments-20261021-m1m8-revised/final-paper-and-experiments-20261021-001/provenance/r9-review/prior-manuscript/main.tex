@@ -1,0 +1,65 @@
+% IEEE S&P 2027 submission format; requires IEEEtran.cls v1.8b.
+\documentclass[conference,compsoc]{IEEEtran}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage[dvipsnames,table]{xcolor}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,positioning,fit,calc,matrix,shapes.geometric}
+\usepackage[hyphens]{url}
+\usepackage{hyperref}
+
+\hypersetup{hidelinks,pdfauthor={}}
+\newcommand{\scope}{\textsc{Scope}}
+\newcommand{\NRR}{\textsc{nr-r}}
+\newcommand{\NRA}{\textsc{nr-a}}
+\newcommand{\NRV}{\textsc{nr-v}}
+\newcommand{\NA}{\textsc{na}}
+\newcommand{\evidenceStrong}{\cellcolor{ForestGreen!22}Strong}
+\newcommand{\evidenceLimited}{\cellcolor{Goldenrod!24}Limited}
+\newcommand{\evidenceNone}{\cellcolor{Gray!18}No verified direct evidence}
+\newcommand{\soktakeaway}[2]{%
+  \par\smallskip\noindent
+  \fcolorbox{MidnightBlue!45}{MidnightBlue!5}{%
+    \parbox{\dimexpr\columnwidth-2\fboxsep-2\fboxrule\relax}{%
+      \footnotesize\textbf{\color{MidnightBlue!85!black}#1.} #2%
+    }%
+  }\par\smallskip
+}
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+\newcommand{\auditpartial}{\textbf{P}}
+\input{tables/final-counts}
+
+\title{SoK: Evaluating LLM and Agent Side-Channel Defenses\\From Evidence Audits to Real-Agent Measurements}
+\author{}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+Encryption conceals content while exposing the structure of agent workflows. We systematize 82 study families through 39 source-bound result records, separating the observer, execution boundary and evaluation conditions that determine whether defense evidence transfers. The synthesis identifies three consequential errors: attributing upstream protection to a plaintext-aware downstream emitter, treating discarded read cover as safe state-changing cover, and substituting one mechanism's utility or cost for another's. A populated family map and applicability-aware audit make these errors inspectable at their original source locations. Measurements on repeated agent trajectories from 53 customers test the resulting comparison obligations. Action-category localization, timing attacks and matched traffic-shaping controls expose both residual inference and costly protection boundaries; reductions in a fitted attack suite do not establish a security guarantee. The resulting contribution is a reusable evidence base and a set of demonstrated transfer failures that guide which published results can support a deployment decision, which comparisons require new measurements, and where inexpensive transport shaping matches more costly mechanisms on selected measured point metrics.
+\end{abstract}
+
+\input{sections/01-introduction}
+\input{sections/03-methodology}
+\input{sections/04-scope}
+\input{sections/26-corpus-map}
+\input{sections/11-discussion}
+\input{sections/27-intervention-contracts}
+\input{sections/28-fingerprint-dependencies}
+\input{sections/37-transfer-tests}
+\input{sections/10-open-challenges}
+\input{sections/12-conclusion}
+
+
+\bibliographystyle{IEEEtran}
+\bibliography{refs,refs-final-additions,refs-deployment,evidence/search-completion-20261021-001/new_refs,evidence/search-completion-20261021-001/new_refs_adjacent}
+\clearpage
+\appendices
+\input{sections/30-reproducibility-guide}
+\end{document}

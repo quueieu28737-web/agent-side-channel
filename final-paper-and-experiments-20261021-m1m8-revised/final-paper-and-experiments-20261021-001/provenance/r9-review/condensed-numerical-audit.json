@@ -1,0 +1,181 @@
+{
+  "status": "PASS_NUMBERS_AND_RESOLVED_NOTES",
+  "tables": [
+    {
+      "current": "manuscript/tables/r9-cohorts.tex",
+      "prior": "prior-manuscript/tables/r8-cohorts.tex",
+      "numerical_rows": 3,
+      "numerical_tokens": 10,
+      "numbers_exact": true,
+      "current_sha256": "21668dfc8a537afd74fe82af4a48bc9356f3244c8afb4a757c292b6691971140",
+      "prior_sha256": "19d4dc08e0abc7e124417c1f5305f4fb38e372dc036503c5fb76377d8bbb2c6b"
+    },
+    {
+      "current": "manuscript/tables/r9-controls.tex",
+      "prior": "prior-manuscript/tables/r8-controls.tex",
+      "numerical_rows": 14,
+      "numerical_tokens": 117,
+      "numbers_exact": true,
+      "current_sha256": "02be9fbf04656bd6e4bd7ae2cd988e5ce69810ec533e78822a3c20826a3ff14c",
+      "prior_sha256": "cc4eb7ed6098d2f31517c9c9d14f5adfecb40d9494b13b2a9f34e025c38d2a31"
+    },
+    {
+      "current": "manuscript/tables/r9-crossfit.tex",
+      "prior": "prior-manuscript/tables/r8-crossfit.tex",
+      "numerical_rows": 4,
+      "numerical_tokens": 32,
+      "numbers_exact": true,
+      "current_sha256": "810792f8280e84a08f4c8cb0cd37ce93340c3133ab37fc5a4653c30eaab706f2",
+      "prior_sha256": "c043435c982c0db3aa191fa0e4330fcb2f9d007f3cb0a32b22a43c8dbca612a1"
+    },
+    {
+      "current": "manuscript/tables/r9-flush.tex",
+      "prior": "prior-manuscript/tables/r8-flush.tex",
+      "numerical_rows": 4,
+      "numerical_tokens": 24,
+      "numbers_exact": true,
+      "current_sha256": "a8a0782020ca605606469a045eefc83da59d15fb78efada0b30a8b5a141c1d83",
+      "prior_sha256": "d4d82f288ab019a82f971239518e15bffc9c0f4eb5fe4496e53c05c50708dea3"
+    },
+    {
+      "current": "manuscript/tables/r9-frozen-reference.tex",
+      "prior": "prior-manuscript/tables/r8-frozen-reference.tex",
+      "numerical_rows": 7,
+      "numerical_tokens": 56,
+      "numbers_exact": true,
+      "current_sha256": "ca46996646d020f0729f2eaf74de3a8fda600d0257f6235d01b73c5f35371df0",
+      "prior_sha256": "35467520532ea782847b052bbcee2a2656505b9a414b487a46e674a0e8158813"
+    },
+    {
+      "current": "manuscript/tables/r9-localization.tex",
+      "prior": "prior-manuscript/tables/r7-e12-main.tex",
+      "numerical_rows": 2,
+      "numerical_tokens": 18,
+      "numbers_exact": true,
+      "current_sha256": "f0f488099f306d4ce340479218ec278c6a7f8635f3082be3916c7155f013a261",
+      "prior_sha256": "0f662f97c37e0a13e2159bb185058501a4afe15ef04632fc76a79dc304e36ea9"
+    },
+    {
+      "current": "manuscript/tables/r9-streaming.tex",
+      "prior": "prior-manuscript/tables/transfer-streaming.tex",
+      "numerical_rows": 9,
+      "numerical_tokens": 57,
+      "numbers_exact": true,
+      "current_sha256": "052f84bf7b57e390a9e9906e66da64d4f1b31c882f7c4d100aa739af5a57f627",
+      "prior_sha256": "746a2bbbcb2d5e31362f014856c728426033a177bc4e395886e09076e795bda8"
+    },
+    {
+      "current": "manuscript/tables/r9-dispatch.tex",
+      "prior": "prior-manuscript/tables/r7-e6-main.tex",
+      "numerical_rows": 8,
+      "numerical_tokens": 32,
+      "numbers_exact": true,
+      "current_sha256": "1facd12b235460c245dde78f1abb9d92d8073c80e07a4cce385d8a1a07250670",
+      "prior_sha256": "34a43575a194827cd4dd3f60139418830f32b6085a84d4f74d5de427e540e46d"
+    }
+  ],
+  "checked_scientific_table_pairs": 8,
+  "numerical_rows": 51,
+  "numerical_tokens": 346,
+  "semantic_unit_checks": [
+    {
+      "item": "Streaming byte/delay points",
+      "preserved": true,
+      "values": [
+        "2.18 TLS1.2",
+        "2.19 TLS1.3",
+        "0.21 batching",
+        "2.42 constant shape",
+        "208 vs105 token intervals"
+      ],
+      "unit": "Wire byte ratios by emitter; token timing is proxy accounting, not measured milliseconds. Ratios cover all48 outputs; binary accuracy24 heldout."
+    },
+    {
+      "item": "State/dispatch/network demonstration",
+      "preserved": true,
+      "values": [
+        "173/291",
+        "18/32 positive tasks",
+        "4140 TLS sessions",
+        "582 profiler calls",
+        "26.3 bytes",
+        "7.7 total calls versus6.7 extra calls"
+      ],
+      "unit": "Extra calls per real call and total call ratio are different but consistent quantities; 6.7 extra corresponds to7.7 total."
+    },
+    {
+      "item": "Real-agent frozen versus cross-fit",
+      "preserved": true,
+      "values": [
+        "414/276 originalsplit",
+        "690 runs/53 customers",
+        "110/138 versus105/138 reward",
+        "5/7 heldout positive versus14/18 all-OOF positive"
+      ],
+      "unit": "Reference operation-category labels, not latent psychological intent. Repeats do not add independent customers."
+    },
+    {
+      "item": "Timing and flush composition",
+      "preserved": true,
+      "values": [
+        "4096-byte cells",
+        "2/5ms",
+        "133 slots",
+        "4140 captures",
+        "90.4/92.3 record detection",
+        "15278 records/276 episodes",
+        "82.5/96.1 request detection",
+        "7639 requests",
+        "60.7 composed return"
+      ],
+      "unit": "Flush/cover detection is record/request classification, not138-episode category recovery; RPC time excludesLLM/WAN."
+    }
+  ],
+  "findings": [
+    {
+      "severity": "required-definition",
+      "status": "resolved",
+      "location": "manuscript/tables/r9-streaming.tex",
+      "finding": "Former T1/T3 labels replaced by Verbosity/Prefix and definitions restored.",
+      "source": "experiments/sp2027-r2/e5_streaming.py::load_texts lines39–47; R8 sections/38-retained-controlled.tex paragraph2",
+      "suggestion": "T1 contrasts brief and full expanded responses; T3 contrasts two- versus three-sentence prefixes of the same expanded response.",
+      "detail": "T3 is derived by period-delimited sentence splitting of the expanded partner, preserving topic/label/split; it is not a new independent generation."
+    },
+    {
+      "severity": "editorial",
+      "status": "resolved",
+      "location": "manuscript/tables/r9-crossfit.tex caption",
+      "finding": "Repeated cross-fit cross-fit removed.",
+      "suggestion": "Retain cross-fit once."
+    },
+    {
+      "severity": "scope-wording",
+      "status": "resolved",
+      "location": "manuscript/sections/42-live-timing-main.tex / WT comparison",
+      "finding": "Phrase now reads evaluated point trade-offs and no longer implies offline WT was a live measured scheduler.",
+      "suggestion": "Use evaluated point trade-offs; preserve explicit descriptive-only/no statistical dominance caveat in central validity discussion.",
+      "detail": "The table correctly separates M/S and omits S-row RPC latency. BA/cost values themselves match R8."
+    }
+  ],
+  "state_scope_denominator": {
+    "numerator": 173,
+    "denominator": 291,
+    "source_eligible_tasks": 97,
+    "repeats": 3,
+    "source": "manuscript/sections/38-retained-controlled.tex / reference-program state-scope experiment",
+    "unit": "Before-program cover placements among tasks with an initially pending order; not all115tasks or independent customers",
+    "source37_explicit_task_denominator_now": true,
+    "check": "97*3 ==291; numeric fraction remains173/291"
+  },
+  "scope": "Eight scientific numerical tables match R8 exactly in numeric data columns; captions/first-column experiment IDs may change. New corpus/rules/index prose tables are not claimed to be verbatim R8 tables.",
+  "no_main_section_edits": true,
+  "no_compilation": true,
+  "input_sha256": {
+    "experiments/sp2027-r2/e5_streaming.py": "7fe9d5396de4be948525ce89d77945ae6ec2f5c13c8b13c39cc0b3ab8576e855",
+    "manuscript/sections/37-transfer-tests.tex": "3683e3055af3d554831749e4f4fc3baf986055d21c74472634470e2e2aac264b",
+    "manuscript/sections/42-live-timing-main.tex": "28db1aa26cbbbac6ab81d8c5d212697b14def8140e7ed3b4568b9aecc34d6beb",
+    "provenance/r9-review/prior-manuscript/sections/37-transfer-tests.tex": "6246e89657d250fc3d99675f799431ca5869a860aff65ffafa42d1541eea95ec",
+    "provenance/r9-review/prior-manuscript/sections/42-live-timing-main.tex": "ea853ff0679048b032f823a134c969b2b687804d47127a968e2d6b2313d4c37b"
+  },
+  "code_sha256": "4be77c47e327c457f9411714dc2a4262dc383ab85c5073a43d8beb843dd9feb4"
+}

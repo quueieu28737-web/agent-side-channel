@@ -1,0 +1,53 @@
+\begin{table*}[t]\centering\footnotesize
+\caption{Complete index of the 39 result records (26 families). Each row retains its artifact ID, family citation, observation/execution boundary and source-local locator. The panels form one inventory, not independent datasets. T=table, F=figure, App.=appendix; locators refer to the cited source.}\label{tab:r9-record-index}
+\begin{minipage}[t]{.492\textwidth}\vspace{0pt}
+\setlength{\tabcolsep}{2pt}\renewcommand{\arraystretch}{1.04}
+\begin{tabularx}{\linewidth}{@{}p{.40\linewidth}X@{}}\toprule
+Record ID / family & Boundary, distinction; source locator\\\midrule
+UI-\allowbreak{}delay-\allowbreak{}offline~\cite{uitraces2026} & Offline delay; no live task outcome. \emph{6.1 F5; A.5}\\
+WRA-\allowbreak{}decoy-\allowbreak{}execution~\cite{jeong2026wra} & Executed decoys; usefulness proxy only. \emph{8.1-8.3 T8-11}\\
+NET-\allowbreak{}upstream-\allowbreak{}local~\cite{netecho2025} & Protected deployment/local serving; topology scoped. \emph{IV-C-E TIII-IV}\\
+NET-\allowbreak{}dummy-\allowbreak{}padding-\allowbreak{}simulation~\cite{netecho2025} & Synthetic insert/pad; no live execution. \emph{VII TIX}\\
+EARLY-\allowbreak{}K-\allowbreak{}calibration-\allowbreak{}oracle~\cite{earlybird2025} & K-specific fit then oracle; not live KV trial. \emph{V-A TVI; IV-A}\\
+EARLY-\allowbreak{}semantic-\allowbreak{}deidentification~\cite{earlybird2025} & GPTCache prototype cost; not KV-granularity cost. \emph{V-B}\\
+WHISPER-\allowbreak{}randompadding-\allowbreak{}capture~\cite{whisperleak2025} & New padded captures; rounded medians. \emph{6.1 T3-4}\\
+WHISPER-\allowbreak{}batching-\allowbreak{}replay~\cite{whisperleak2025} & Offline batching; model-dependent result. \emph{6.2 F7}\\
+WHISPER-\allowbreak{}injection-\allowbreak{}replay~\cite{whisperleak2025} & Synthetic packets; no live zero-delay claim. \emph{6.3 T5}\\
+SPLICE-\allowbreak{}CTBF-\allowbreak{}signal~\cite{spliceleak2026} & Prototype background load; tested signal only. \emph{VII-C TII}\\
+SPLICE-\allowbreak{}QCP-\allowbreak{}cost~\cite{spliceleak2026} & QCP component cost; excludes combined CTBF. \emph{VII-C TII}\\
+TIME-\allowbreak{}length-\allowbreak{}instruction~\cite{timewilltell2024} & Length instruction; unequal outputs remain. \emph{7.2}\\
+TIME-\allowbreak{}padding-\allowbreak{}estimate~\cite{timewilltell2024} & Analytic plaintext cost; not network bytes. \emph{7.3}\\
+SPEC-\allowbreak{}padding-\allowbreak{}REST~\cite{wei2024speculation} & Padding/aggregation; payload cost, placement unverified. \emph{6.1 F6-7 T2}\\
+DANGOL-\allowbreak{}capture~\cite{dangol2026workflow} & Capture transform; distinct from live population. \emph{9.8-9.9 T6}\\
+DANGOL-\allowbreak{}livebinding~\cite{dangol2026workflow} & Live loopback binding; do not join capture accuracy. \emph{9.7, OHTTP paragraph after T 5}\\
+SIG-\allowbreak{}common-\allowbreak{}guardrail~\cite{geng2026sigleak} & Common instruction; not a causal guardrail effect. \emph{4.1-4.2; App.C}\\
+SAFE-\allowbreak{}post-\allowbreak{}trigger~\cite{chu2025safekv} & Post-trigger probes; detector cost not service TTFT. \emph{7.2.4 F12; 7.3-7.4}\\
+AHB-\allowbreak{}online-\allowbreak{}executed~\cite{zhu2026turing} & Executed UI edits; task/state changes possible. \emph{5.1.2 T1; E.1-E.3}\\
+AHB-\allowbreak{}offline~\cite{zhu2026turing} & Offline touch edits; no online task damage claim. \emph{T1 offline rows; E.1-E.3}\\
+\bottomrule\end{tabularx}\end{minipage}
+\hfill
+\begin{minipage}[t]{.492\textwidth}\vspace{0pt}
+\setlength{\tabcolsep}{2pt}\renewcommand{\arraystretch}{1.04}
+\begin{tabularx}{\linewidth}{@{}p{.40\linewidth}X@{}}\toprule
+Record ID / family & Boundary, distinction; source locator\\\midrule
+KVGOV-\allowbreak{}partialflush-\allowbreak{}sim~\cite{addagada2026kvgov} & Deterministic simulation; not live protected recovery. \emph{5.1-5.3}\\
+KVGOV-\allowbreak{}hardware-\allowbreak{}gap~\cite{addagada2026kvgov} & Hardware gap calibration; not protected ASR. \emph{5.7-5.8}\\
+KVGOV-\allowbreak{}HMAC-\allowbreak{}cost~\cite{addagada2026kvgov} & HMAC microcost; not cache reuse/task loss. \emph{5.9}\\
+TRAFFIC-\allowbreak{}prompt-\allowbreak{}reformulation~\cite{pouryousef2026traffic} & Collected prompt rewrites; task utility unmeasured. \emph{V-C1 F9a}\\
+TRAFFIC-\allowbreak{}temperature~\cite{pouryousef2026traffic} & Collected decoding changes; no monotone benefit. \emph{V-C1 F9a}\\
+CARLINI-\allowbreak{}fixed-\allowbreak{}rate~\cite{carlini2024remote} & Rate/replayed cost; per-token, not request delay. \emph{VII F11-12}\\
+GAO-\allowbreak{}zero-\allowbreak{}copy-\allowbreak{}off~\cite{gao2025iknow} & Loader component costs; not end-to-end TTFT. \emph{7.1}\\
+TDXRAY-\allowbreak{}oblivious-\allowbreak{}map~\cite{hornetz2026tdxray} & Lookup microbenchmark; not full inference cost. \emph{6.1 F8 T3}\\
+AGENTTELL-\allowbreak{}fixed-\allowbreak{}instruction~\cite{shahriar2026agenttell} & Live local browser tasks; loaded/cold context contrast. \emph{4.3.1; 5 Finding1}\\
+FP-\allowbreak{}CLOUDFLARE~\cite{wang2026fpagent} & Live access control; not user confidentiality. \emph{6.4 T5}\\
+BAR-\allowbreak{}co-\allowbreak{}running-\allowbreak{}noise~\cite{gu2026behindbars} & MIG noise test; not an LLM defense trial. \emph{7.2-7.3 T8}\\
+RHYTHM-\allowbreak{}VPN~\cite{alhazbi2025rhythm} & Live VPN shift; baseline-trained attacker only. \emph{VI-B; VII}\\
+DEB-\allowbreak{}filter-\allowbreak{}origin~\cite{debenedetti2024privacy} & Filter creates attack view; not mitigation of it. \emph{Threatmodel; 4.2}\\
+CACHEPRUNE-\allowbreak{}selective~\cite{wu2026cacheprune} & Selective cache sharing; direct token recovery/quality. \emph{3.1; 5.1--5.6; T1; App.A}\\
+CACHEPRUNE-\allowbreak{}context~\cite{wu2026cacheprune} & Contextual guessing; distinct from direct recovery. \emph{3.1; 5.1--5.6; T1; App.A}\\
+OTRO-\allowbreak{}unpadded~\cite{lee2026otro} & ORAM TTFT/memory; access-count padding excluded. \emph{VII-C--E; TIII}\\
+OTRO-\allowbreak{}epochpad~\cite{lee2026otro} & Epoch-padding estimate; not measured padded TTFT. \emph{VII-C--E; TIII}\\
+SPARLEAK-\allowbreak{}replacement~\cite{chen2026sparleak} & Sparse replacement/quality; attack cost is separate. \emph{3.1; 4--7; T4}\\
+SHAPE-\allowbreak{}padding-\allowbreak{}estimate~\cite{hadad2026shape} & Constant-work proposal/estimate; no executed pair. \emph{IX-B1}\\
+\bottomrule\end{tabularx}\end{minipage}
+\end{table*}

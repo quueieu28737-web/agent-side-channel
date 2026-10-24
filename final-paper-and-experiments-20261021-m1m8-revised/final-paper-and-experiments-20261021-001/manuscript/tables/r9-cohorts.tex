@@ -1,0 +1,10 @@
+\begin{table}[t]\centering\footnotesize
+\caption{Cohort, observation and cost denominators for Exps~3--4. Standard-prompt pairs: cancel/return BA (\%). Counts cover both prompts; byte ratios price joint constant shaping against each study's own undefended serialization.}\label{tab:r7-cohorts}
+\begin{tabularx}{\columnwidth}{@{}p{.23\columnwidth}Yrr@{}}\toprule
+Study & Observation / fit & Raw BA & Bytes$\times$\\\midrule
+Exp 3 frozen & Replay lengths/order; frozen suite & 97.2/94.0 & 15.39\\
+Exp 3 cross-fit & Analytic lengths/order; 11-model cross-fit & 91.7/85.5 & 19.76\\
+Exp 4 & New RPC envelope; lengths/order/time & 91.7/86.4 & 15.11\\\bottomrule
+\end{tabularx}
+\par\smallskip\raggedright Frozen-split and RPC rows: 276 test episodes, 24 customers, 5/7 positive customers. Exp 3 cross-fit: 690 episodes, 53 customers, 14/18 positive customers. Each prompt has half the episodes. Exp 3 cross-fit fold calibration yields larger templates (5.04$\times$ calls); frozen-split and RPC rows use 3.83$\times$. Repeats measure execution variation within these customer groups.
+\end{table}

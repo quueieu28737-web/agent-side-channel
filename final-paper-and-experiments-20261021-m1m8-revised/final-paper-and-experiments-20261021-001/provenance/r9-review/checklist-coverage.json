@@ -1,0 +1,120 @@
+{
+  "revision": "R9",
+  "items": [
+    {
+      "id": "1a",
+      "request": "主文核心论证不依赖 S1–S23",
+      "status": "已完成",
+      "location": "§2–§8提供定义、数据口径和发现；S编号仅在附录C作可选的细节导航。"
+    },
+    {
+      "id": "1b",
+      "request": "统一 NR-R/NR-A/NR-V 与 U/A/?",
+      "status": "已完成",
+      "location": "主稿和补充材料共用 B/P/U/A/?/--；Supplement首页提供旧CSV字段映射，原始数据字段保留。"
+    },
+    {
+      "id": "1c",
+      "request": "主文定义 R1–R9 判定标准",
+      "status": "已完成",
+      "location": "新增Table 8逐项给出Bound条件、适用性和证据状态，Table 9紧接20×9矩阵。"
+    },
+    {
+      "id": "1d",
+      "request": "同一PDF容纳39记录与实验索引",
+      "status": "已完成",
+      "location": "Appendix A为审计轨迹/逻辑等价；B为39条记录、族引用及来源定位；C为四模块与历史实验映射及扩展结果。"
+    },
+    {
+      "id": "1e",
+      "request": "遵守附录及正文页数要求",
+      "status": "已完成",
+      "location": "按官方CFP采用正文≤13、总计≤18的保守约束；参考文献之后放附录。未拼接52页补充材料。"
+    },
+    {
+      "id": "2a",
+      "request": "集中反复的防御性免责声明",
+      "status": "已完成",
+      "location": "§1 Scope给出范围，§9.3集中统计/效用/外部效度边界；摘要、模块Finding和结论突出研究给出的判断。"
+    },
+    {
+      "id": "2b",
+      "request": "突出本论文特色和正面洞察",
+      "status": "已完成",
+      "location": "强调以结果记录识别三类证据转移错误，以及四个实测演示如何改变部署选择。"
+    },
+    {
+      "id": "3a",
+      "request": "实验分支收敛为四个模块",
+      "status": "已完成",
+      "location": "Exp 1发射位置；Exp 2执行状态与链路；Exp 3真实轨迹/操作特征；Exp 4时序/延迟/匹配传输对照。"
+    },
+    {
+      "id": "3b",
+      "request": "处理旧E编号和开发痕迹",
+      "status": "已完成",
+      "location": "旧E键仅作附录及Supplement复现索引；unused E4不再出现在当前PDF索引。历史代码不改名。"
+    },
+    {
+      "id": "3c",
+      "request": "收拢扩展与敏感性分析",
+      "status": "已完成",
+      "location": "Luna、客户权重/删除、同操作属性诊断收入Appendix C与补充细节，保留真实阴性结果及口径。"
+    },
+    {
+      "id": "3d",
+      "request": "增加SoK宏观规律与map-only族分析",
+      "status": "已完成",
+      "location": "§4新增P2/P5信号来源与P3/P4接收面分布，以及32 map-only族的层级/目标覆盖。多标签以incidence计数。"
+    },
+    {
+      "id": "4a",
+      "request": "明确动作目标的科学用途",
+      "status": "已完成",
+      "location": "Exp 3说明cancel/return来自参考请求动作，定位加密元数据保留的操作特征；重点呈现合规与隐私分离、保护位置和匹配成本。"
+    },
+    {
+      "id": "4b",
+      "request": "属性诊断不作过度宣传",
+      "status": "已完成",
+      "location": "Appendix C保留20实例/15客户、BA30.3%、单次shuffle65.2%、两提示同特征等事实，§9.3说明其不确定性。"
+    },
+    {
+      "id": "5a",
+      "request": "核对首页标题上方留白",
+      "status": "核实符合模板",
+      "location": "首标题ink top=96.43pt（1.339in），来自IEEEtran conference,compsoc默认设置；保留标准边距、字号、行距。"
+    },
+    {
+      "id": "5b",
+      "request": "核对原[26]/[51] URL",
+      "status": "核实原链接完整",
+      "location": "原arXiv 2610.20962v1和2607.18826v1的可点击URI、bbl及bib一致；按bibkey跟踪重新排序后的编号。"
+    },
+    {
+      "id": "5c",
+      "request": "修正原[34]日期/核对DOI",
+      "status": "已完成",
+      "location": "修正publisher version2025为publisher version 2025；DOI完整为10.3390/electronics14071263。"
+    },
+    {
+      "id": "5d",
+      "request": "58族表增加视觉分组",
+      "status": "已完成",
+      "location": "Table 6两栏各29族，按P1、P1/P2、P2及工作流来源加标题和横线；58族全部G/O/Type原值保留。"
+    },
+    {
+      "id": "QA1",
+      "request": "数值和单位校验",
+      "status": "已完成",
+      "location": "8张科学表、51行、346个数字与R8对应表完全一致；291=97合格任务×3seed，173变更+118失败。"
+    },
+    {
+      "id": "QA2",
+      "request": "PDF与发布包校验",
+      "status": "以最终收据为准",
+      "location": "validation.json、visual_qa.json和SHA256SUMS.json绑定最终PDF及全部发布文件。"
+    }
+  ],
+  "scope": "Editorial synthesis; no new LLM runs; frozen experimental data unchanged."
+}

@@ -1,32 +1,21 @@
-# agent-side-channel
+# Agent side-channel SoK — R9
 
-## 当前版本：R8 证据迁移、构念有效性与公平对照
+当前论文突出 **source-bound result records**、三类证据转移错误和四个实验演示。
 
-- [主稿](main.pdf)：正文不超过13页，全文17页；References在Appendix之前。
-- [补充材料](supplement.pdf)：52页。S23集中呈现本轮客户敏感性、自身效用审计、匹配成本对照、适用性审计和同操作商品属性分析。
-- [逐项修改与未解决问题](docs/R8-逐项修改与未解决问题.md)：逐项区分已完成、部分解决与需要新数据的事项。
-- [投稿文件与AI披露](docs/R8-投稿文件与AI披露.md)：论文源码匿名包与正式投稿尚需完成的事项。
-- [源码和数据包](final-paper-and-experiments-20261021-m1m8-revised/final-paper-and-experiments-20261021-001/README.md)：当前校验、冻结数据、分析协议与复算入口。
+- [主稿](main.pdf)：18页，包含完整58族地图、R1–R9规则、20族审计矩阵、39记录与实验索引。
+- [补充材料](supplement.pdf)：52页，保留完整方法与结果。
+- [逐项修改清单](docs/R9-主文自洽与贡献呈现修改清单.md)。
+- [可复现发布包](final-paper-and-experiments-20261021-m1m8-revised/final-paper-and-experiments-20261021-001/README.md)。
 
-### 本轮实质改动
+本轮未新增模型实验或更改旧结果。原Sol 690运行、Luna 150运行及后续分析保持原始来源与样本范围。当前版本以正文四模块组织阅读，以附录历史E键定位复现代码。
 
-1. **SoK贡献**：82研究族、58核心族主文映射、39条来源绑定记录及20×9审计矩阵。三类具体跨记录误用是前端重新发射、读掩护跨到状态写入、不同机制间借用效用/成本。R1–R9评价复用证据条件，不给原论文打质量分。
-2. **实验目标核查**：cancel/return来自参考操作，写调用消融是操作类别定位，不是隐含商品属性的新发现。新属性实验固定同为单商品退货：15客户、20独立订单商品实例，冻结语义映射，沿用客户五折，150模型和600分数通过独立重载校验。结果不足以建立稳定的非操作属性泄漏，完整负面和对照结果保留。
-3. **公平比较与自审**：共同7攻击器和最强可用union分列；WT适配在部分点以约2倍字节匹配或优于约15倍shadow。主文展开90.4/92.3% flush检测及剥离后攻击。逻辑状态一致性不再被当成防御下LLM效用实测。
-4. **客户影响**：12单元、192次逐阳性客户删除。690运行只代表53客户，14/18阳性客户；客户等权与删除范围不冒充重训置信区间。
-5. **数字口径**：E9/E10/E13的观察面、攻击套件及15.39/19.76/15.11倍字节分母分别标明。旧数据、旧表和旧收据保留。
+## 核验
 
-### 当前结论与校验
+进入发布包目录，使用具有pypdf/pdfplumber的Python环境：
 
-文件复算通过不等于安全准则通过。未获得新客户确认性安全结论；新环境、不同厂商/固定权重、真实闭环防御下LLM重规划和独立人类重编码仍需新资源。
+    python provenance/r9-review/verify_publication.py
+    python verify_package.py
 
-在数据包目录运行：
+数值、来源、链接、版式及历史字节核验收据在 provenance/r9-review/。LaTeX构建入口为 manuscript/main.tex 与 manuscript/supplement.tex，使用IEEEtran v1.8b的conference,compsoc选项。
 
-~~~text
-python -B provenance/r8-review/verify_publication.py
-python -B verify_package.py
-python -B verify_revision.py
-python -B experiments/sp2027-r4-full-20261023/verify_release.py
-~~~
-
-当前稿件入口是R8。旧版本专属PDF检查脚本保留其历史页数/措辞要求；旧实验验证入口仍有效。匿名论文源码ZIP不是完整实验artifact匿名托管，也不表示已经投稿。
+匿名论文源包位于发布包 provenance/r9-review/anonymous-paper-source.zip；正式投稿的完整实验匿名托管和注册披露由作者按投稿流程完成。

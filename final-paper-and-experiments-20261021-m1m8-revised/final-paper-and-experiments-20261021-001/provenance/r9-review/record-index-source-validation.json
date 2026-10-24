@@ -1,0 +1,411 @@
+{
+  "passed": true,
+  "source": "experiments\\reviewer-audit\\combined_result_records.json",
+  "source_sha256": "80a6d4b592ef493bf2efd074538390d12f2de79a441a2b61274165fa1171dfa1",
+  "records": 39,
+  "baseline_records": 33,
+  "expansion_records": 6,
+  "families": 26,
+  "unique_ids": true,
+  "bibliography_keys_resolved": true,
+  "records_detail": [
+    {
+      "record_id": "UI-delay-offline",
+      "family": "uitraces2026",
+      "source_path_as_recorded": "evidence/recent-agent-review-20261018-001/sources/uitraces-v1.txt",
+      "source_sha256_as_recorded": "1bec3da8b688d48843835ec0044c2e74080efd2b5f952b2dc399fe2e821f2615",
+      "exact_record_locator": "6.1 Fig5;A.5",
+      "printed_locator": "6.1 F5; A.5",
+      "index_boundary_note": "Offline delay; no live task outcome.",
+      "validation_scope": "Identity/citation/locator metadata checked against existing combined ledger; no new fulltext rereading or external fetch"
+    },
+    {
+      "record_id": "WRA-decoy-execution",
+      "family": "jeong2026wra",
+      "source_path_as_recorded": "evidence/closure-2026-09-12/sources/jeong2026wra/paper.txt",
+      "source_sha256_as_recorded": "abfad8a8d65ea27495a70543020810289bd828549d6d6a0f310257f117272328",
+      "exact_record_locator": "8.1-8.3 Tables8-11",
+      "printed_locator": "8.1-8.3 T8-11",
+      "index_boundary_note": "Executed decoys; usefulness proxy only.",
+      "validation_scope": "Identity/citation/locator metadata checked against existing combined ledger; no new fulltext rereading or external fetch"
+    },
+    {
+      "record_id": "NET-upstream-local",
+      "family": "netecho2025",
+      "source_path_as_recorded": "evidence/recent-agent-review-20261018-001/sources/netecho-v1.txt",
+      "source_sha256_as_recorded": "026618d848f6c39f3dae4e8d1a6a3a8eb60f55608ec6719e3b9cc10a6ba7cf07",
+      "exact_record_locator": "IV-C-E TableIII-IV",
+      "printed_locator": "IV-C-E TIII-IV",
+      "index_boundary_note": "Protected deployment/local serving; topology scoped.",
+      "validation_scope": "Identity/citation/locator metadata checked against existing combined ledger; no new fulltext rereading or external fetch"
+    },
+    {
+      "record_id": "NET-dummy-padding-simulation",
+      "family": "netecho2025",
+      "source_path_as_recorded": "evidence/recent-agent-review-20261018-001/sources/netecho-v1.txt",
+      "source_sha256_as_recorded": "026618d848f6c39f3dae4e8d1a6a3a8eb60f55608ec6719e3b9cc10a6ba7cf07",
+      "exact_record_locator": "VII TableIX",
+      "printed_locator": "VII TIX",
+      "index_boundary_note": "Synthetic insert/pad; no live execution.",
+      "validation_scope": "Identity/citation/locator metadata checked against existing combined ledger; no new fulltext rereading or external fetch"
+    },
+    {
+      "record_id": "EARLY-K-calibration-oracle",
+      "family": "earlybird2025",
+      "source_path_as_recorded": "evidence/recent-agent-review-20261018-001/sources/earlybird-v5.txt",
+      "source_sha256_as_recorded": "c0fac7dfe87d075a09e2328cfe0987b6a0c460995436ad6c95b5a12f9e2c1e9a",
+      "exact_record_locator": "V-A TableVI;IV-A",
+      "printed_locator": "V-A TVI; IV-A",
+      "index_boundary_note": "K-specific fit then oracle; not live KV trial.",
+      "validation_scope": "Identity/citation/locator metadata checked against existing combined ledger; no new fulltext rereading or external fetch"
+    },
+    {
+      "record_id": "EARLY-semantic-deidentification",
+      "family": "earlybird2025",
+      "source_path_as_recorded": "evidence/recent-agent-review-20261018-001/sources/earlybird-v5.txt",
+      "source_sha256_as_recorded": "c0fac7dfe87d075a09e2328cfe0987b6a0c460995436ad6c95b5a12f9e2c1e9a",
+      "exact_record_locator": "V-B",
+      "printed_locator": "V-B",
+      "index_boundary_note": "GPTCache prototype cost; not KV-granularity cost.",
+      "validation_scope": "Identity/citation/locator metadata checked against existing combined ledger; no new fulltext rereading or external fetch"
+    },
+    {
+      "record_id": "WHISPER-randompadding-capture",
+      "family": "whisperleak2025",
+      "source_path_as_recorded": "evidence/recent-agent-review-20261018-001/sources/whisper-v1.txt",
+      "source_sha256_as_recorded": "244fb3c90495c6a996536adba529fec451bcd08c3328f1f3c68ff302d0c03b60",
+      "exact_record_locator": "6.1 Tables3-4",
+      "printed_locator": "6.1 T3-4",
+      "index_boundary_note": "New padded captures; rounded medians.",
+      "validation_scope": "Identity/citation/locator metadata checked against existing combined ledger; no new fulltext rereading or external fetch"
+    },
+    {
+      "record_id": "WHISPER-batching-replay",
+      "family": "whisperleak2025",
+      "source_path_as_recorded": "evidence/recent-agent-review-20261018-001/sources/whisper-v1.txt",
+      "source_sha256_as_recorded": "244fb3c90495c6a996536adba529fec451bcd08c3328f1f3c68ff302d0c03b60",
+      "exact_record_locator": "6.2 Fig7",
+      "printed_locator": "6.2 F7",
+      "index_boundary_note": "Offline batching; model-dependent result.",
+      "validation_scope": "Identity/citation/locator metadata checked against existing combined ledger; no new fulltext rereading or external fetch"
+    },
+    {
+      "record_id": "WHISPER-injection-replay",
+      "family": "whisperleak2025",
+      "source_path_as_recorded": "evidence/recent-agent-review-20261018-001/sources/whisper-v1.txt",
+      "source_sha256_as_recorded": "244fb3c90495c6a996536adba529fec451bcd08c3328f1f3c68ff302d0c03b60",
+      "exact_record_locator": "6.3 Table5",
+      "printed_locator": "6.3 T5",
+      "index_boundary_note": "Synthetic packets; no live zero-delay claim.",
+      "validation_scope": "Identity/citation/locator metadata checked against existing combined ledger; no new fulltext rereading or external fetch"
+    },
+    {
+      "record_id": "SPLICE-CTBF-signal",
+      "family": "spliceleak2026",
+      "source_path_as_recorded": "evidence/recent-agent-review-20261018-001/sources/splice-v1.txt",
+      "source_sha256_as_recorded": "1edb01f58acc2f311bbd67451ac3d1611456319c7fc564ae78a78bc81259adaa",
+      "exact_record_locator": "VII-C TableII",
+      "printed_locator": "VII-C TII",
+      "index_boundary_note": "Prototype background load; tested signal only.",
+      "validation_scope": "Identity/citation/locator metadata checked against existing combined ledger; no new fulltext rereading or external fetch"
+    },
+    {
+      "record_id": "SPLICE-QCP-cost",
+      "family": "spliceleak2026",
+      "source_path_as_recorded": "evidence/recent-agent-review-20261018-001/sources/splice-v1.txt",
+      "source_sha256_as_recorded": "1edb01f58acc2f311bbd67451ac3d1611456319c7fc564ae78a78bc81259adaa",
+      "exact_record_locator": "VII-C TableII",
+      "printed_locator": "VII-C TII",
+      "index_boundary_note": "QCP component cost; excludes combined CTBF.",
+      "validation_scope": "Identity/citation/locator metadata checked against existing combined ledger; no new fulltext rereading or external fetch"
+    },
+    {
+      "record_id": "TIME-length-instruction",
+      "family": "timewilltell2024",
+      "source_path_as_recorded": "evidence/recent-agent-review-20261018-001/sources/time-v1.txt",
+      "source_sha256_as_recorded": "3621db92c0b104bf555a863a7b79f2cf35bf39d65b0232eadb581e16a0a2d1d7",
+      "exact_record_locator": "7.2",
+      "printed_locator": "7.2",
+      "index_boundary_note": "Length instruction; unequal outputs remain.",
+      "validation_scope": "Identity/citation/locator metadata checked against existing combined ledger; no new fulltext rereading or external fetch"
+    },
+    {
+      "record_id": "TIME-padding-estimate",
+      "family": "timewilltell2024",
+      "source_path_as_recorded": "evidence/recent-agent-review-20261018-001/sources/time-v1.txt",
+      "source_sha256_as_recorded": "3621db92c0b104bf555a863a7b79f2cf35bf39d65b0232eadb581e16a0a2d1d7",
+      "exact_record_locator": "7.3",
+      "printed_locator": "7.3",
+      "index_boundary_note": "Analytic plaintext cost; not network bytes.",
+      "validation_scope": "Identity/citation/locator metadata checked against existing combined ledger; no new fulltext rereading or external fetch"
+    },
+    {
+      "record_id": "SPEC-padding-REST",
+      "family": "wei2024speculation",
+      "source_path_as_recorded": "evidence/recent-agent-review-20261018-001/sources/speculation-v4.txt",
+      "source_sha256_as_recorded": "1cb150902452d115bd7753c5e64e828e52f21e382172b8936c75e35599946f62",
+      "exact_record_locator": "6.1 Fig6-7 Table2",
+      "printed_locator": "6.1 F6-7 T2",
+      "index_boundary_note": "Padding/aggregation; payload cost, placement unverified.",
+      "validation_scope": "Identity/citation/locator metadata checked against existing combined ledger; no new fulltext rereading or external fetch"
+    },
+    {
+      "record_id": "DANGOL-capture",
+      "family": "dangol2026workflow",
+      "source_path_as_recorded": "evidence/recent-agent-review-20261018-001/sources/dangol-v3.txt",
+      "source_sha256_as_recorded": "fae89faede5437f3449de3c641d93fd352d7e7eaa833df4ef51f91a3b5ed8039",
+      "exact_record_locator": "9.8-9.9 Table6",
+      "printed_locator": "9.8-9.9 T6",
+      "index_boundary_note": "Capture transform; distinct from live population.",
+      "validation_scope": "Identity/citation/locator metadata checked against existing combined ledger; no new fulltext rereading or external fetch"
+    },
+    {
+      "record_id": "DANGOL-livebinding",
+      "family": "dangol2026workflow",
+      "source_path_as_recorded": "evidence/recent-agent-review-20261018-001/sources/dangol-v3.txt",
+      "source_sha256_as_recorded": "fae89faede5437f3449de3c641d93fd352d7e7eaa833df4ef51f91a3b5ed8039",
+      "exact_record_locator": "9.7, OHTTP paragraph after Table 5",
+      "printed_locator": "9.7, OHTTP paragraph after T 5",
+      "index_boundary_note": "Live loopback binding; do not join capture accuracy.",
+      "validation_scope": "Identity/citation/locator metadata checked against existing combined ledger; no new fulltext rereading or external fetch"
+    },
+    {
+      "record_id": "SIG-common-guardrail",
+      "family": "geng2026sigleak",
+      "source_path_as_recorded": "evidence/recent-agent-review-20261018-001/sources/sigleak-v1.txt",
+      "source_sha256_as_recorded": "d7b961962aa390eb1d5c32008c3cf5f2851875107f2b1310b7339680d6a81f46",
+      "exact_record_locator": "4.1-4.2;AppendixC",
+      "printed_locator": "4.1-4.2; App.C",
+      "index_boundary_note": "Common instruction; not a causal guardrail effect.",
+      "validation_scope": "Identity/citation/locator metadata checked against existing combined ledger; no new fulltext rereading or external fetch"
+    },
+    {
+      "record_id": "SAFE-post-trigger",
+      "family": "chu2025safekv",
+      "source_path_as_recorded": "evidence/recent-agent-review-20261018-001/sources/safekv-v2.txt",
+      "source_sha256_as_recorded": "994107460849f8a3dea58cfd70439c875f1519654a7786ff56c6bd3977d1f17b",
+      "exact_record_locator": "7.2.4 Fig12;7.3-7.4",
+      "printed_locator": "7.2.4 F12; 7.3-7.4",
+      "index_boundary_note": "Post-trigger probes; detector cost not service TTFT.",
+      "validation_scope": "Identity/citation/locator metadata checked against existing combined ledger; no new fulltext rereading or external fetch"
+    },
+    {
+      "record_id": "AHB-online-executed",
+      "family": "zhu2026turing",
+      "source_path_as_recorded": "evidence/recent-agent-review-20261018-001/sources/ahb-v1.txt",
+      "source_sha256_as_recorded": "d3e49a3cde803c3f65de6b7036025cfcb039d3fa723cc4ada15e57b5e2bf05f7",
+      "exact_record_locator": "5.1.2 Table1;E.1-E.3",
+      "printed_locator": "5.1.2 T1; E.1-E.3",
+      "index_boundary_note": "Executed UI edits; task/state changes possible.",
+      "validation_scope": "Identity/citation/locator metadata checked against existing combined ledger; no new fulltext rereading or external fetch"
+    },
+    {
+      "record_id": "AHB-offline",
+      "family": "zhu2026turing",
+      "source_path_as_recorded": "evidence/recent-agent-review-20261018-001/sources/ahb-v1.txt",
+      "source_sha256_as_recorded": "d3e49a3cde803c3f65de6b7036025cfcb039d3fa723cc4ada15e57b5e2bf05f7",
+      "exact_record_locator": "Table1 offline rows;E.1-E.3",
+      "printed_locator": "T1 offline rows; E.1-E.3",
+      "index_boundary_note": "Offline touch edits; no online task damage claim.",
+      "validation_scope": "Identity/citation/locator metadata checked against existing combined ledger; no new fulltext rereading or external fetch"
+    },
+    {
+      "record_id": "KVGOV-partialflush-sim",
+      "family": "addagada2026kvgov",
+      "source_path_as_recorded": "evidence/reviewer-closure-20261019-002/sources/kvgov-v1.txt",
+      "source_sha256_as_recorded": "b5034ad085385abeac0bdcc06154666f1de04e3aec2ad95d4dcad57b8d09ba73",
+      "exact_record_locator": "5.1-5.3",
+      "printed_locator": "5.1-5.3",
+      "index_boundary_note": "Deterministic simulation; not live protected recovery.",
+      "validation_scope": "Identity/citation/locator metadata checked against existing combined ledger; no new fulltext rereading or external fetch"
+    },
+    {
+      "record_id": "KVGOV-hardware-gap",
+      "family": "addagada2026kvgov",
+      "source_path_as_recorded": "evidence/reviewer-closure-20261019-002/sources/kvgov-v1.txt",
+      "source_sha256_as_recorded": "b5034ad085385abeac0bdcc06154666f1de04e3aec2ad95d4dcad57b8d09ba73",
+      "exact_record_locator": "5.7-5.8",
+      "printed_locator": "5.7-5.8",
+      "index_boundary_note": "Hardware gap calibration; not protected ASR.",
+      "validation_scope": "Identity/citation/locator metadata checked against existing combined ledger; no new fulltext rereading or external fetch"
+    },
+    {
+      "record_id": "KVGOV-HMAC-cost",
+      "family": "addagada2026kvgov",
+      "source_path_as_recorded": "evidence/reviewer-closure-20261019-002/sources/kvgov-v1.txt",
+      "source_sha256_as_recorded": "b5034ad085385abeac0bdcc06154666f1de04e3aec2ad95d4dcad57b8d09ba73",
+      "exact_record_locator": "5.9",
+      "printed_locator": "5.9",
+      "index_boundary_note": "HMAC microcost; not cache reuse/task loss.",
+      "validation_scope": "Identity/citation/locator metadata checked against existing combined ledger; no new fulltext rereading or external fetch"
+    },
+    {
+      "record_id": "TRAFFIC-prompt-reformulation",
+      "family": "pouryousef2026traffic",
+      "source_path_as_recorded": "evidence/recent-agent-review-20261018-001/sources/traffic-v1.txt",
+      "source_sha256_as_recorded": "4fee56d3903bed561373a372fd3ca1571475b966653505173ba4f8f433c2be1e",
+      "exact_record_locator": "V-C1 Fig9a",
+      "printed_locator": "V-C1 F9a",
+      "index_boundary_note": "Collected prompt rewrites; task utility unmeasured.",
+      "validation_scope": "Identity/citation/locator metadata checked against existing combined ledger; no new fulltext rereading or external fetch"
+    },
+    {
+      "record_id": "TRAFFIC-temperature",
+      "family": "pouryousef2026traffic",
+      "source_path_as_recorded": "evidence/recent-agent-review-20261018-001/sources/traffic-v1.txt",
+      "source_sha256_as_recorded": "4fee56d3903bed561373a372fd3ca1571475b966653505173ba4f8f433c2be1e",
+      "exact_record_locator": "V-C1 Fig9a",
+      "printed_locator": "V-C1 F9a",
+      "index_boundary_note": "Collected decoding changes; no monotone benefit.",
+      "validation_scope": "Identity/citation/locator metadata checked against existing combined ledger; no new fulltext rereading or external fetch"
+    },
+    {
+      "record_id": "CARLINI-fixed-rate",
+      "family": "carlini2024remote",
+      "source_path_as_recorded": "evidence/systematic-2026-10-08-r2/citations/three-bibliographies/carlini2024remote.html",
+      "source_sha256_as_recorded": "d122ae5bf81e771188db3c919b44ca05de76d2903848b4b1c0f1df80bc67bd0c",
+      "exact_record_locator": "VII Fig11-12",
+      "printed_locator": "VII F11-12",
+      "index_boundary_note": "Rate/replayed cost; per-token, not request delay.",
+      "validation_scope": "Identity/citation/locator metadata checked against existing combined ledger; no new fulltext rereading or external fetch"
+    },
+    {
+      "record_id": "GAO-zero-copy-off",
+      "family": "gao2025iknow",
+      "source_path_as_recorded": "evidence/closure-2026-09-12/sources/gao2025iknow/paper.txt",
+      "source_sha256_as_recorded": "0a5b4d413e4bb0eccb65708e8a2898960e6f386a19e02415d14bfb874f5bc6de",
+      "exact_record_locator": "7.1",
+      "printed_locator": "7.1",
+      "index_boundary_note": "Loader component costs; not end-to-end TTFT.",
+      "validation_scope": "Identity/citation/locator metadata checked against existing combined ledger; no new fulltext rereading or external fetch"
+    },
+    {
+      "record_id": "TDXRAY-oblivious-map",
+      "family": "hornetz2026tdxray",
+      "source_path_as_recorded": "evidence/closure-2026-10-08/native/fulltext-priority/tdxray_sp26.txt",
+      "source_sha256_as_recorded": "f89fc8609399b929c0d0903cd7a8db6768dba7f17fb3c7e09af6d723f4b5e78d",
+      "exact_record_locator": "6.1 Fig8 Table3",
+      "printed_locator": "6.1 F8 T3",
+      "index_boundary_note": "Lookup microbenchmark; not full inference cost.",
+      "validation_scope": "Identity/citation/locator metadata checked against existing combined ledger; no new fulltext rereading or external fetch"
+    },
+    {
+      "record_id": "AGENTTELL-fixed-instruction",
+      "family": "shahriar2026agenttell",
+      "source_path_as_recorded": "evidence/recent-agent-review-20261018-001/sources/agenttell-v1.txt",
+      "source_sha256_as_recorded": "ef3197da18b39ec7f6df37595cb9ffd3602d72c0a05f38b116fb0bfaa64e2fd1",
+      "exact_record_locator": "4.3.1;5 Finding1",
+      "printed_locator": "4.3.1; 5 Finding1",
+      "index_boundary_note": "Live local browser tasks; loaded/cold context contrast.",
+      "validation_scope": "Identity/citation/locator metadata checked against existing combined ledger; no new fulltext rereading or external fetch"
+    },
+    {
+      "record_id": "FP-CLOUDFLARE",
+      "family": "wang2026fpagent",
+      "source_path_as_recorded": "evidence/recent-agent-review-20261018-001/sources/fpagent-v1.txt",
+      "source_sha256_as_recorded": "99b76421163447be15b2506eedfbab99f84c990526bd036de29b7b76bc51d7ef",
+      "exact_record_locator": "6.4 Table5",
+      "printed_locator": "6.4 T5",
+      "index_boundary_note": "Live access control; not user confidentiality.",
+      "validation_scope": "Identity/citation/locator metadata checked against existing combined ledger; no new fulltext rereading or external fetch"
+    },
+    {
+      "record_id": "BAR-co-running-noise",
+      "family": "gu2026behindbars",
+      "source_path_as_recorded": "evidence/closure-2026-09-12/sources/gu2026behindbars/paper.txt",
+      "source_sha256_as_recorded": "56a70ba6ad2c4f99066e4d297ad60e0056f52a7477c54ae59a5d75c1dba89add",
+      "exact_record_locator": "7.2-7.3 Table8",
+      "printed_locator": "7.2-7.3 T8",
+      "index_boundary_note": "MIG noise test; not an LLM defense trial.",
+      "validation_scope": "Identity/citation/locator metadata checked against existing combined ledger; no new fulltext rereading or external fetch"
+    },
+    {
+      "record_id": "RHYTHM-VPN",
+      "family": "alhazbi2025rhythm",
+      "source_path_as_recorded": "evidence/systematic-2026-10-08-r2/citations/candidate-sources/alhazbi2025rhythm.txt",
+      "source_sha256_as_recorded": "e17104a20c244f33bfd60ea57f015c04eb0430a2f6bf584d710161a8bbfb2023",
+      "exact_record_locator": "VI-B;VII",
+      "printed_locator": "VI-B; VII",
+      "index_boundary_note": "Live VPN shift; baseline-trained attacker only.",
+      "validation_scope": "Identity/citation/locator metadata checked against existing combined ledger; no new fulltext rereading or external fetch"
+    },
+    {
+      "record_id": "DEB-filter-origin",
+      "family": "debenedetti2024privacy",
+      "source_path_as_recorded": "evidence/systematic-2026-10-08-r2/citations/candidate-sources/debenedetti2024privacy.txt",
+      "source_sha256_as_recorded": "1512a6a3026cb02209a8bad67abc756829e4d6ddd4daa9306a7f72990076718d",
+      "exact_record_locator": "Threatmodel;4.2",
+      "printed_locator": "Threatmodel; 4.2",
+      "index_boundary_note": "Filter creates attack view; not mitigation of it.",
+      "validation_scope": "Identity/citation/locator metadata checked against existing combined ledger; no new fulltext rereading or external fetch"
+    },
+    {
+      "record_id": "CACHEPRUNE-selective",
+      "family": "wu2026cacheprune",
+      "source_path_as_recorded": "sources/2605.23640-native.txt",
+      "source_sha256_as_recorded": "6b30e8de7343a6a142d8884976ed11e962b2fbf0a5c9a12b787111b17feb98f4",
+      "exact_record_locator": "3.1;5.1-5.6;Table1;AppendixA",
+      "printed_locator": "3.1; 5.1--5.6; T1; App.A",
+      "index_boundary_note": "Selective cache sharing; direct token recovery/quality.",
+      "validation_scope": "Identity/citation/locator metadata checked against existing combined ledger; no new fulltext rereading or external fetch"
+    },
+    {
+      "record_id": "CACHEPRUNE-context",
+      "family": "wu2026cacheprune",
+      "source_path_as_recorded": "sources/2605.23640-native.txt",
+      "source_sha256_as_recorded": "6b30e8de7343a6a142d8884976ed11e962b2fbf0a5c9a12b787111b17feb98f4",
+      "exact_record_locator": "3.1;5.1-5.6;Table1;AppendixA",
+      "printed_locator": "3.1; 5.1--5.6; T1; App.A",
+      "index_boundary_note": "Contextual guessing; distinct from direct recovery.",
+      "validation_scope": "Identity/citation/locator metadata checked against existing combined ledger; no new fulltext rereading or external fetch"
+    },
+    {
+      "record_id": "OTRO-unpadded",
+      "family": "lee2026otro",
+      "source_path_as_recorded": "sources/2606.17358-native.txt",
+      "source_sha256_as_recorded": "b30b9c31ea007215832d7315452f97f91000fd5601f810a3772cc4e585de6751",
+      "exact_record_locator": "III;V;VI;VII-C-E;TableIII",
+      "printed_locator": "VII-C--E; TIII",
+      "index_boundary_note": "ORAM TTFT/memory; access-count padding excluded.",
+      "validation_scope": "Identity/citation/locator metadata checked against existing combined ledger; no new fulltext rereading or external fetch"
+    },
+    {
+      "record_id": "OTRO-epochpad",
+      "family": "lee2026otro",
+      "source_path_as_recorded": "sources/2606.17358-native.txt",
+      "source_sha256_as_recorded": "b30b9c31ea007215832d7315452f97f91000fd5601f810a3772cc4e585de6751",
+      "exact_record_locator": "III;V;VI;VII-C-E;TableIII",
+      "printed_locator": "VII-C--E; TIII",
+      "index_boundary_note": "Epoch-padding estimate; not measured padded TTFT.",
+      "validation_scope": "Identity/citation/locator metadata checked against existing combined ledger; no new fulltext rereading or external fetch"
+    },
+    {
+      "record_id": "SPARLEAK-replacement",
+      "family": "chen2026sparleak",
+      "source_path_as_recorded": "sources/2609.38830-native.txt",
+      "source_sha256_as_recorded": "589fff576411ab23c8bd68eb3805afd2b0d08637a5926f530ddf9069af2c17ea",
+      "exact_record_locator": "3.1;4-7;Table4",
+      "printed_locator": "3.1; 4--7; T4",
+      "index_boundary_note": "Sparse replacement/quality; attack cost is separate.",
+      "validation_scope": "Identity/citation/locator metadata checked against existing combined ledger; no new fulltext rereading or external fetch"
+    },
+    {
+      "record_id": "SHAPE-padding-estimate",
+      "family": "hadad2026shape",
+      "source_path_as_recorded": "sources/2603.25403v1.txt",
+      "source_sha256_as_recorded": "01732092fc5696b777f2ee2a70f6aab420a1560ada12f8efe038d9f24b7ac102",
+      "exact_record_locator": "IV;V;VII;VIII;IX",
+      "printed_locator": "IX-B1",
+      "index_boundary_note": "Constant-work proposal/estimate; no executed pair.",
+      "validation_scope": "Identity/citation/locator metadata checked against existing combined ledger; no new fulltext rereading or external fetch"
+    }
+  ],
+  "layout": "Two side-by-side 20/19-row tabularx panels; standard footnotesize, no margins/font scaling; not compiled, one-page fit unverified",
+  "additional_locator_authority": {
+    "SHAPE-padding-estimate": "manuscript/sections/31-result-audit.tex current source-follow-up IX-B1"
+  },
+  "outputs": {
+    "manuscript\\sections\\49-r9-record-index.tex": "29687441c6d02db4a379eead3c39ac6f9cb7e498db3cee5f82ef34efbb5f5679",
+    "manuscript\\tables\\r9-record-index.tex": "16719dbc1436d77bc09371add0f380f6c6acd2030831f693cce4b7a5b83e0a2d"
+  }
+}
