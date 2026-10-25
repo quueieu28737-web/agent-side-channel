@@ -1,6 +1,6 @@
 {
   "created_utc": "2026-10-21T06:58:23.633018+00:00",
-  "purpose": "R19 complete 39-record pair audit, configuration-level joint bindings, paired transfer intervals/costs and deployment decisions",
+  "purpose": "R20 claim-conditioned reuse rules and single-family/configuration joint-evidence scope",
   "documents": {
     "main": {
       "entry": "main.tex",
@@ -53,7 +53,7 @@
         "tables/result-record-schema.tex"
       ],
       "pdf": "pdf/main.pdf",
-      "pdf_sha256": "0c4b43f346562df1c515d47200ce0ec699ef3539c2a194c69c84871991602d57"
+      "pdf_sha256": "b35480fc27148c741b084bebcf8cb6103b5f31a56cd2e1bdec99de277db8b2cc"
     },
     "supplement": {
       "entry": "supplement.tex",
@@ -108,6 +108,7 @@
         "tables/r13-wan-controls.tex",
         "tables/r13-wan-flush.tex",
         "tables/r19-record-audit.tex",
+        "tables/r20-claim-necessity.tex",
         "tables/r3-supp-e8.tex",
         "tables/r3-supp-transfer.tex",
         "tables/r3-transfer-cover.tex",
@@ -135,24 +136,24 @@
         "tables/transfer-streaming.tex"
       ],
       "pdf": "pdf/supplement.pdf",
-      "pdf_sha256": "158bf0ef35afef7d213f769688508696b6ed8c757340344bcc6aae4822594e59"
+      "pdf_sha256": "681ab7f0c8eb381c7e4e3457556527cdec34e34c68c267dddc0f8c6cb3aeb1b1"
     }
   },
   "source_hashes": {
     "figures/defense-decision-procedure.tex": "e91e8e96173ab65c4651a71aef720dff3758704ac2af16c10395a346ebac8e85",
     "figures/fig1-system-model.tex": "17902db2113b6b6abb4d98af1f5f40a4efd9dd44b306527710d63f9816fd1854",
     "figures/r7-pareto.pdf": "9e1d159bc9e2f56fab83f0bee721d9d1879ac01328a97c07e47226f2e0c47a1c",
-    "main.tex": "b8b9e90269f134e02f352ad0092554226f336ecb72d5a64c0e18ded75e96361d",
+    "main.tex": "dd1dd509e0531b9694c947ac87bad0268e06d345c5b3c6330b888e39f2c409d3",
     "refs-deployment.bib": "f21df671ebe255f3e7d7d601b10456143dfa92494141d56da766f71dff4fd8b9",
     "refs-final-additions.bib": "ee14153b3be6d251473cc2935c9abb71ecdfe7a04813457811f50a3f4c8361e3",
     "refs-search-completion.bib": "0ab2782a537da4eeefeb3666fa75b1f782633d0907d35b252166f47315210c0b",
     "refs.bib": "62f5ceed5a0bb62bba220169df20921378149a0fd9b4fc8612747c8fdb175b18",
-    "sections/01-introduction.tex": "369d452a42e4051fdb4c7f49a2796b9197a8fab5293d32ed083a989bfa7eb5b9",
+    "sections/01-introduction.tex": "6dea7aadabb4258206f138ff0d267725444471e0054ca7192c98d8657a17392b",
     "sections/03-methodology.tex": "260c8b0e3bb98381bfdebd74363d09c6ade3698399c06020c3c087c2de962f96",
     "sections/04-scope.tex": "254f4e4392246281b9aff26b542aa845f7dfb3a4fac2d9356101fbf384ea8fd6",
     "sections/10-open-challenges.tex": "6c20aea70e7dd05cde8eff469f10837bd5defff7bfedd271bb701186dcdadb42",
     "sections/11-discussion.tex": "be6ca302d0cef75bec5f94ca1c4c2ec5aaa1a0735fbf4ff09fe9f73e0e2ad199",
-    "sections/12-conclusion.tex": "490efe45b38ab40170c610c18b323e070cb5a05225950ebba81972e199e096f7",
+    "sections/12-conclusion.tex": "a5b15bfbd375f90fa351b2bf4433be4c76fc61401319ea0466e3ffa835c9ea8e",
     "sections/17-public-trace-details.tex": "0531d7c59bd28dcb4680c54ec8b45d3025d5f78d1b6e9c0e6ce1a0dc31f562eb",
     "sections/19-final-ledger.tex": "cc599c6c95e2456cc32db82bdfe782993e155c618647da4a0ffe3c276b0782ae",
     "sections/21-retained-controls-summary.tex": "7b5a9a22ae4ce6973b82a390cd791f0ea2dab6e60046488f6664083c39648493",
@@ -160,7 +161,7 @@
     "sections/23-defense-comparison.tex": "1ee70bcb0cf04992c9e039dcaa9c7edfabae4e2f74c76268fc36044be6ddc22e",
     "sections/24-conclusion-sensitivity.tex": "56b6930205ec4d7f0e0e0a1ef8deeecd77997f2116fd3c8c21718c2bc0c24b91",
     "sections/26-corpus-map.tex": "23e1cd78380d33a5da5a2c0ea9dd1fcab26ad209d2e3f7e226589e07f7afa586",
-    "sections/27-intervention-contracts.tex": "dd43449bdcbebd5a83fb1b194648c5ddccad8c8fc619b0cbbcc086ac12e933a1",
+    "sections/27-intervention-contracts.tex": "a2895e508ecdbd7e361726e7a6ce5c3bf84f381dc16e053f19cb22dc607c2a98",
     "sections/28-fingerprint-dependencies.tex": "954fc4d243ba2183b8e33399442d2e8e8a760c6a21ffd280743774d38c1904c4",
     "sections/29-scope-comparison-boundary.tex": "d7c8248144b2d9719b03f94dab178ba20d2b40d77d1e7c0ffd83b83ec293704a",
     "sections/30-reproducibility-guide.tex": "fe32dd3808caba256548842a902f91f8e81f376378c0fb5ef04039f02502e322",
@@ -188,7 +189,7 @@
     "sections/55-live-planner-utility.tex": "890dbe20f11802dd3ea0c98531b94cf7e479f685ff0bff087de66e256d094f1f",
     "sections/56-holdout-matrix.tex": "65a5b0cc523f63d85830a7500b83895ac0da79bc0be564cfa12120e7472dd0cc",
     "sections/57-record-mode-synthesis.tex": "04580f677af1f5905df434a789c67e91ed7e4c45dc4c0ac4df9c86d2af352a6a",
-    "sections/58-record-joint-audit.tex": "aef4dd32f181ae24b75b7a10b2aed0cb8cbc4bb06fce732ef86beda91dd40bd2",
+    "sections/58-record-joint-audit.tex": "0a5e8b3bd1217879e420547221a7d49e8fa8c2abe9de52d9cbd8a45055da662e",
     "sections/59-holdout-compact.tex": "e6029ecc2818d7d2a99fb23336a41d3468bcfb43bf08d6e59015de34138e9eb5",
     "supplement.tex": "30a9113fdc972f1cc8c3e5f04f78f77ff78cd808f7691bcf7bde5404deb82e32",
     "tables/boundary-rules.tex": "48fad0ffb9aec59f2acc34e720f55b0335a8a688dd07a456f62ad74eabf2147b",
@@ -215,8 +216,9 @@
     "tables/r14-calibration-transfer.tex": "6afd0e0f4a78a5031d0962e6f94329afc157947280f52063fb5898823897b56c",
     "tables/r15-experiment-index.tex": "f3b1c2159c7042107f148f2cf0088b022b65a9220041dd9a6244fd7b90c9ad6e",
     "tables/r19-deployment-decisions.tex": "359d2af9a3d54b2f68acaf29701eece49d9dbd19d55583d0b3f82c78cb4e9155",
-    "tables/r19-joint-bindings.tex": "be7a334e15561260091a9daf12c68906df5962316a3402976d970683424f6364",
+    "tables/r19-joint-bindings.tex": "d6ed4d0539dde33a7c56daee7abd3917cd42d89964d080f4123ce912c625795b",
     "tables/r19-record-audit.tex": "a989a24de28bb1610f09ab53a3a606c1ca0e157d9e0dd58701d7c86705cbbe4b",
+    "tables/r20-claim-necessity.tex": "4720d5242c1d6f82d46bf5df767209a5d5544651fe8f8d94a286315d492df6a7",
     "tables/r3-supp-e8.tex": "d0b8d8a15d73feb745d61f20f38edbd9d5f6826374272862d78771d355d35192",
     "tables/r3-supp-transfer.tex": "88c14cb868411d6c50152a425322b6729a9d8959653e8e85bf621eb902f71eff",
     "tables/r3-transfer-cover.tex": "55e6507f082f2980aeeb2c8909615a04a20fcd7611719b52c3557618227eff2d",
@@ -233,7 +235,7 @@
     "tables/r7-luna-network.tex": "5f94053fdbdcda091a9c92e78caede1425ec1807ef5d88ffc7fe0728a3d35229",
     "tables/r7-luna-utility.tex": "f0309ef6e4da8d32d07d81da26271acc9a5f6e042b87acdd8750fa22b9d98c52",
     "tables/r7-power.tex": "25c3249de5aef757a7ec1d6c95cfddd156a39687a3cfc52730872ae6abab43e9",
-    "tables/r9-audit-rules.tex": "d456784ff7c8a7860b7850e1a11b75938aac1832fd67ed3e471215f710eb5b2b",
+    "tables/r9-audit-rules.tex": "0c50be5ecedc594aad2b542fcde39f37699597d3ae8860ba5267090595eb3b9b",
     "tables/r9-cohorts.tex": "81b4ab315dd7abe271db0ba5d7fa56389965b4efcde3c133c087e38c6044556e",
     "tables/r9-controls.tex": "a9e36dcaaa5f0df43f579c4b1f172aaa09e0168c6e7c65d54524274dc13e145d",
     "tables/r9-crossfit.tex": "6e5b5141778d36315828d5744587a1f81c9714d8bd7207c4d537e94f5b1a0f98",
@@ -242,7 +244,7 @@
     "tables/r9-frozen-reference.tex": "12a8fb91b5ab61b37fd55b7d875b6f324b9c72d0912c778da4b8f33ebbdbd043",
     "tables/r9-localization.tex": "da76bf2603a74b582e3ca8e723545d0c5139c95779812b22db8f289064d011ab",
     "tables/r9-record-index.tex": "bc0de37f365afa417e56fcd1ef754f6edc3925268b3d76a55e5ef99872e6ceaf",
-    "tables/r9-rq-findings.tex": "e01dbd6cdb58a28d26ca55d2c8a979edf48e203d04e5d5db50b03ce48fcd436f",
+    "tables/r9-rq-findings.tex": "ac12776328a62a1fc8b84b5dd5ed588bcd5900f4e00653f6cf830016b952d93b",
     "tables/r9-streaming.tex": "3773a54f46c48f6b4ff73e64503db7aa812b3f43cbadd3bff27f0cbfd350e4c4",
     "tables/receiver-intervention-matrix.tex": "3c59d962e690a422508f54429e0280df6af374f2410e97487127031862bdaeb4",
     "tables/related-sok-matrix.tex": "3a49095aa37964c4e4f3d1e87c625963964a202e0aa3bdc99ce416392ead4bcf",
@@ -407,10 +409,10 @@
     "uploaded": false
   },
   "current_manuscript": {
-    "revision": "R19-evidence-closure",
+    "revision": "R20-claim-conditioned-audit",
     "main": "pdf/main.pdf",
     "supplement": "pdf/supplement.pdf",
-    "scope": "Complete record-level synthesis and data-bound decision tables; preserve original experimental evidence"
+    "scope": "Clarify claim necessity and CachePrune support; preserve all coding, counts and experiments"
   },
-  "updated_utc": "2026-10-25T11:56:42.156031+00:00"
+  "updated_utc": "2026-10-25T12:55:14.615939+00:00"
 }
