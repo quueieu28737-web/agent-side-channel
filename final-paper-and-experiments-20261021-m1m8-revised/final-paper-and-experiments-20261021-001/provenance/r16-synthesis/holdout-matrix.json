@@ -1,0 +1,2265 @@
+{
+  "scope": "Manual synthesis of existing source-bound extraction; no new whole-paper recoding or absence census",
+  "states": {
+    "H": "Explicit reported held-out unit/domain; details and success still scoped",
+    "V": "Condition comparison/variation/calibration; disjoint transfer not certified",
+    "X": "Explicit restriction or absent/unverified holdout in inspected scope (see note)",
+    "?": "Axis not resolved by archived extraction; never counted as absence",
+    "-": "Conceptual family: empirical holdout inapplicable"
+  },
+  "source_sha256": "76c6931d0247f7ede06d509c0c00260035c39f0e2a476fe5303986e15ebb5f3f",
+  "axes": [
+    "task_input_user",
+    "model",
+    "harness_topology",
+    "hardware",
+    "network_load",
+    "time"
+  ],
+  "rows": [
+    {
+      "id": "F01",
+      "name": "AgentPrint",
+      "citation_key": "agentprint2025",
+      "classification": "core",
+      "axes": {
+        "task_input_user": "?",
+        "model": "?",
+        "harness_topology": "?",
+        "hardware": "?",
+        "network_load": "?",
+        "time": "?"
+      },
+      "interpretation": "Random trace splits; prompt grouping unresolved",
+      "source_url": "https://arxiv.org/html/2510.07176v1",
+      "source_version": "2510.07176v1",
+      "source_locators": "III; V; Appendix D.A–D.D; Fig. 11",
+      "archived_extraction": {
+        "RQ3": "Flow composition and feature representations compared. Fig. 11 acknowledges response verbosity; D.B excludes short text-only responses below 500 characters. This is not matched call-count/byte-count conditional-information evidence.",
+        "system_sample_split": "Appendix D.A: 7,311 monitored traces across 50 GPTs; 428 unmonitored traces across 166 GPTs. D.B reports 11,287 total traces and 7,311 distinct-prompt monitored traces; the remaining composition and reconciliation with D.A are R, not verified repeat traces. D.A describes both 8:1:1 splitting and random 10-split '10-fold' CV; precise grouping R.",
+        "baselines_generalization": "Flow composition and feature representations compared. Fig. 11 acknowledges response verbosity; D.B excludes short text-only responses below 500 characters. This is not matched call-count/byte-count conditional-information evidence.",
+        "source_binding": "{\"path\":\"evidence/closure-2026-09-12/sources/agentprint2025/paper.pdf\",\"sha256\":\"12a43d88e22da2234828ca860f9f76af829d4e123f010b237f22130c847ab876\",\"derived_text\":null}",
+        "source_sha256": "",
+        "source_access_scope": "Source version/locator in ledger; field-level targeted checks only, not a complete independent recoding."
+      }
+    },
+    {
+      "id": "F02",
+      "name": "UI Traces",
+      "citation_key": "uitraces2026",
+      "classification": "core",
+      "axes": {
+        "task_input_user": "V",
+        "model": "V",
+        "harness_topology": "V",
+        "hardware": "?",
+        "network_load": "?",
+        "time": "?"
+      },
+      "interpretation": "Cross-task/site comparisons; exact-question overlap remains",
+      "source_url": "https://arxiv.org/abs/2605.14786",
+      "source_version": "2605.14786v1",
+      "source_locators": "3–4; 6.1; Table1; Fig.5/PDFp8; A.5/B.1/B.2; Table13/PDFp25; Table14; pinned trace_analyzer.py:81–97,449–498; plot_delay_attack.py; frames_sampled_split_record.json",
+      "archived_extraction": {
+        "RQ3": "Timing/action contributions and cross-task/site transfer; Fig.5 clean-trained versus retrained classifiers under uniform delays up to5000ms. Pinned code perturbs saved event timestamps offline, rather than rerunning delayed Agent tasks.",
+        "system_sample_split": "Table1 sums1,050 task queries across four datasets, not completed traces. Table13 FRAMES:75 attempts/model and40-turn cap;14 completion counts sum598/1050 attempts, not correct answers. Public FRAMES split has4200 rows:150/75/75 per14 models. No repeated agent-episode identity across splits, but570 exact questions shared across pooled train/test and1 within-Claude train/test; not strict question holdout.",
+        "baselines_generalization": "Timing/action contributions and cross-task/site transfer; Fig.5 clean-trained versus retrained classifiers under uniform delays up to5000ms. Pinned code perturbs saved event timestamps offline, rather than rerunning delayed Agent tasks.",
+        "source_binding": "{\"path\":\"evidence/closure-2026-09-12/sources/uitraces2026/paper.pdf\",\"sha256\":\"f4600c1b3de5a64acbb98e8bc8c327b26ad92c37b60a206621a5b5d4c34a31b7\",\"derived_text\":null}",
+        "source_sha256": "",
+        "source_access_scope": "Source version/locator in ledger; field-level targeted checks only, not a complete independent recoding."
+      }
+    },
+    {
+      "id": "F03",
+      "name": "WRA",
+      "citation_key": "jeong2026wra",
+      "classification": "core",
+      "axes": {
+        "task_input_user": "H",
+        "model": "?",
+        "harness_topology": "?",
+        "hardware": "?",
+        "network_load": "?",
+        "time": "?"
+      },
+      "interpretation": "Prompt tests and synthetic persona split; version reconciliation open",
+      "source_url": "https://www.usenix.org/conference/usenixsecurity26/presentation/jeong",
+      "source_version": "Proceedings PDF; see acquisition URL/hash",
+      "source_locators": "3.1; 6.1; 8–9; Tables 1/8/10/11; Appendix C.1–C.3",
+      "archived_extraction": {
+        "RQ3": "ICL versus fine-tuning, partial visibility, noise, domain versus timing/URL views. Repeated persona observations are not independent human participants.",
+        "system_sample_split": "Table 1: 50 FEDWEB / 60 SESSION14 / 53 DD16 prompts, 20 test each. Section 6.1 reports 3 ICL and 35 test personas after age18–70 filtering; Table1 labels3 as Test. Pinned artifact bb4fccf supports3 skipped ICL IDs and35 plotted personas, but retains7 over70; strict18–70 yields28. Publication/artifact reconciliation R. Synthetic personas, 21–35 queries each.",
+        "baselines_generalization": "ICL versus fine-tuning, partial visibility, noise, domain versus timing/URL views. Repeated persona observations are not independent human participants.",
+        "source_binding": "{\"path\":\"evidence/closure-2026-09-12/sources/jeong2026wra/paper.pdf\",\"sha256\":\"17d126e68d8f0197afe71fba00b7f33cb7697d7908ab5fd0bbb572a0170402ae\",\"derived_text\":null}",
+        "source_sha256": "",
+        "source_access_scope": "Source version/locator in ledger; field-level targeted checks only, not a complete independent recoding."
+      }
+    },
+    {
+      "id": "F04",
+      "name": "FP-Agent",
+      "citation_key": "wang2026fpagent",
+      "classification": "core",
+      "axes": {
+        "task_input_user": "H",
+        "model": "?",
+        "harness_topology": "X",
+        "hardware": "?",
+        "network_load": "?",
+        "time": "?"
+      },
+      "interpretation": "Separate task holdout; visitor/host separation unresolved",
+      "source_url": "https://arxiv.org/html/2605.01247v1",
+      "source_version": "2605.01247v1",
+      "source_locators": "4.1–4.7; Tables 2/4; 6.1–6.2; Appendix E/Table 8",
+      "archived_extraction": {
+        "RQ3": "Browser-only/behavior-only/combined; held-out task and open-world limitations. Cloudflare bot comparison is not an adaptive privacy-defense experiment.",
+        "system_sample_split": "Paper states 1,000 trials per agent, 56 participants and 3 repeats × 3 tasks; 4.6 reports546 human instances versus nominal504. Pinned public feature artifact confirms546 Human records (188flight/165shop/193forum),7719 total. Generic helper stratifies feature rows; separate task holdout exists. Exact paper-release binding and participant/host split overlap R.",
+        "baselines_generalization": "Browser-only/behavior-only/combined; held-out task and open-world limitations. Cloudflare bot comparison is not an adaptive privacy-defense experiment.",
+        "source_binding": "{\"path\":\"evidence/closure-2026-09-12/sources/wang2026fpagent/paper.pdf\",\"sha256\":\"d24afde8c2a3c3a60ac826082aebe3c62c14b42f360d71abec4ad40f94f63a41\",\"derived_text\":null}",
+        "source_sha256": "",
+        "source_access_scope": "Source version/locator in ledger; field-level targeted checks only, not a complete independent recoding."
+      }
+    },
+    {
+      "id": "F05",
+      "name": "Prompt length",
+      "citation_key": "weiss2024prompt",
+      "classification": "core",
+      "axes": {
+        "task_input_user": "H",
+        "model": "?",
+        "harness_topology": "V",
+        "hardware": "?",
+        "network_load": "V",
+        "time": "V"
+      },
+      "interpretation": "OOD inputs; browser/API and day/night buffering controls",
+      "source_url": "https://www.usenix.org/conference/usenixsecurity24/presentation/weiss",
+      "source_version": "Proceedings PDF; see acquisition URL/hash",
+      "source_locators": "5.1–5.3; Fig. 4; Tables 2–3",
+      "archived_extraction": {
+        "RQ3": "Out-of-distribution degradation and browser/API/day-night buffering examined. Do not claim no deployment or temporal controls exist.",
+        "system_sample_split": "UltraChat 570k general inquiries; 10k validation and 10k test; filtering of matching words/first eight words. Real browser/API traces examined separately.",
+        "baselines_generalization": "Out-of-distribution degradation and browser/API/day-night buffering examined. Do not claim no deployment or temporal controls exist.",
+        "source_binding": "{\"path\":\"evidence/closure-2026-09-12/sources/weiss2024prompt/paper.pdf\",\"sha256\":\"5e27c7bc75f01045f122281d863b14a13b704ac8e4380a50f6cbff95592c4493\",\"derived_text\":null}",
+        "source_sha256": "",
+        "source_access_scope": "Source version/locator in ledger; field-level targeted checks only, not a complete independent recoding."
+      }
+    },
+    {
+      "id": "F06",
+      "name": "PromptPeek",
+      "citation_key": "promptpeek2025",
+      "classification": "core",
+      "axes": {
+        "task_input_user": "V",
+        "model": "?",
+        "harness_topology": "?",
+        "hardware": "?",
+        "network_load": "V",
+        "time": "?"
+      },
+      "interpretation": "Candidate-prior and simulated request-load sweeps",
+      "source_url": "https://www.ndss-symposium.org/ndss-paper/i-know-what-you-asked-prompt-leakage-via-kv-cache-sharing-in-multi-tenant-llm-serving/",
+      "source_version": "Proceedings PDF; see acquisition URL/hash",
+      "source_locators": "III.B; VI.A–VI.C; Table II",
+      "archived_extraction": {
+        "RQ3": "Prior-knowledge scenarios and concurrency/load analyzed. Do not describe 100% SR as complete prompt extraction.",
+        "system_sample_split": "UltraChat, PromptBase cloze, awesome-chatgpt roles, Alpaca-GPT4 instructions. Simulated request load: 40 queries/3 hours/user with varying users. Independent target grouping R.",
+        "baselines_generalization": "Prior-knowledge scenarios and concurrency/load analyzed. Do not describe 100% SR as complete prompt extraction.",
+        "source_binding": "{\"path\":\"evidence/closure-2026-09-12/sources/promptpeek2025/paper.pdf\",\"sha256\":\"b7fc6faf7ac47590f755e6ab8c836f64d3b255547701bce1d86207d292ec525a\",\"derived_text\":null}",
+        "source_sha256": "",
+        "source_access_scope": "Source version/locator in ledger; field-level targeted checks only, not a complete independent recoding."
+      }
+    },
+    {
+      "id": "F07",
+      "name": "NetEcho",
+      "citation_key": "netecho2025",
+      "classification": "core",
+      "axes": {
+        "task_input_user": "V",
+        "model": "?",
+        "harness_topology": "V",
+        "hardware": "?",
+        "network_load": "?",
+        "time": "?"
+      },
+      "interpretation": "Deployment/frontend scenarios; independent split binding unresolved",
+      "source_url": "https://arxiv.org/abs/2510.25472",
+      "source_version": "2510.25472v1",
+      "source_locators": "III.A; Table III; VI.A–VI.B/Table VI",
+      "archived_extraction": {
+        "RQ3": "Retrieval context baseline and local model supplied victim prompt; the latter is diagnostic oracle access, not passive adversary permission.",
+        "system_sample_split": "Seven deployment scenarios, six experimental conditions, not seven executed defenses. Qwen 32B/two L40 GPUs; 100 test victim conversations per experimental group.",
+        "baselines_generalization": "Retrieval context baseline and local model supplied victim prompt; the latter is diagnostic oracle access, not passive adversary permission.",
+        "source_binding": "{\"path\":\"evidence/closure-2026-09-12/sources/netecho2025/paper.pdf\",\"sha256\":\"0520ade7164da465ec6849ec5c4a3dcb263cb433675e2d0e399bd7ae3f69222e\",\"derived_text\":null}",
+        "source_sha256": "",
+        "source_access_scope": "Source version/locator in ledger; field-level targeted checks only, not a complete independent recoding."
+      }
+    },
+    {
+      "id": "F08",
+      "name": "Early Bird",
+      "citation_key": "earlybird2025",
+      "classification": "core",
+      "axes": {
+        "task_input_user": "?",
+        "model": "V",
+        "harness_topology": "?",
+        "hardware": "?",
+        "network_load": "?",
+        "time": "?"
+      },
+      "interpretation": "Provider observations and candidate calibration; grouped split unresolved",
+      "source_url": "https://ieeexplore.ieee.org/document/11206380/",
+      "source_version": "2409.20002v5",
+      "source_locators": "arXiv 2409.20002: II.C; IV.A; V.A; Tables IV–V",
+      "archived_extraction": {
+        "RQ3": "Candidate predictors/calibration affect query burden; full split generalization R.",
+        "system_sample_split": "IV.A: 200 victim prompts; provider observations Table IV dated 2024-08-29, not a present-day vulnerability assertion.",
+        "baselines_generalization": "Candidate predictors/calibration affect query burden; full split generalization R.",
+        "source_binding": "{\"path\":\"evidence/closure-2026-09-12/sources/earlybird2025-preprint/paper.pdf\",\"sha256\":\"ceaf2dc09e295cef43dd7d19d833dfe4d7d1bb2921d555f03372d4c7c5b9f020\",\"derived_text\":null}",
+        "source_sha256": "",
+        "source_access_scope": "Full text: arXiv v5 only; TIFS full text/equivalence unavailable."
+      }
+    },
+    {
+      "id": "F09",
+      "name": "InputSnatch",
+      "citation_key": "inputsnatch2024",
+      "classification": "core",
+      "axes": {
+        "task_input_user": "H",
+        "model": "?",
+        "harness_topology": "?",
+        "hardware": "?",
+        "network_load": "?",
+        "time": "?"
+      },
+      "interpretation": "Held-out and generated target prompts; candidate-prior dependence",
+      "source_url": "https://link.springer.com/chapter/10.1007/978-981-92-4805-6_32",
+      "source_version": "2411.18191v2",
+      "source_locators": "arXiv 2411.18191: 3.2; 4.3–4.4; Tables 2/4",
+      "archived_extraction": {
+        "RQ3": "Ideal versus constrained extraction and candidate-prior dependence; exact Table 4 end-to-end denominators remain R.",
+        "system_sample_split": "16,276 structured ChatDoctor records; 200 held-out and 200 GPT4-generated targets. Five-minute budget and author-adopted 5,000 RPM limit are experimental assumptions, not universal service limits.",
+        "baselines_generalization": "Ideal versus constrained extraction and candidate-prior dependence; exact Table 4 end-to-end denominators remain R.",
+        "source_binding": "{\"path\":\"evidence/closure-2026-09-12/sources/inputsnatch2024-preprint/paper.pdf\",\"sha256\":\"9b9a0f1fc5559388e7b5dd41b2926acd2c62f58d16ddf18f7367de708c5e6671\",\"derived_text\":null}",
+        "source_sha256": "",
+        "source_access_scope": "Source version/locator in ledger; field-level targeted checks only, not a complete independent recoding."
+      }
+    },
+    {
+      "id": "F10",
+      "name": "Whisper Leak",
+      "citation_key": "whisperleak2025",
+      "classification": "core",
+      "axes": {
+        "task_input_user": "H",
+        "model": "V",
+        "harness_topology": "?",
+        "hardware": "?",
+        "network_load": "?",
+        "time": "?"
+      },
+      "interpretation": "Unique target-prompt holdout; model/provider comparisons",
+      "source_url": "https://arxiv.org/abs/2511.03675",
+      "source_version": "2511.03675v1",
+      "source_locators": "3.1; 3 classifier/split discussion; 4.1–4.2; Table 1; 6",
+      "archived_extraction": {
+        "RQ3": "Size/time/both and model/provider comparisons. Prompt-grouped target test differs from sample-level validation.",
+        "system_sample_split": "100 target paraphrases × 100 repeats; 11,716 Quora negatives. Twenty percent of unique target prompts held out; train/validation samples 95/5 on remaining pool. Negative test allocation needs clarification.",
+        "baselines_generalization": "Size/time/both and model/provider comparisons. Prompt-grouped target test differs from sample-level validation.",
+        "source_binding": "{\"path\":\"evidence/closure-2026-09-12/sources/whisperleak2025/paper.pdf\",\"sha256\":\"2a7ac7c771ff9ac84ba18a68766d472e789038aa01e493cc60450b1b94356220\",\"derived_text\":null}",
+        "source_sha256": "",
+        "source_access_scope": "Source version/locator in ledger; field-level targeted checks only, not a complete independent recoding."
+      }
+    },
+    {
+      "id": "F11",
+      "name": "Spill the Beans",
+      "citation_key": "spillbeans2025",
+      "classification": "core",
+      "axes": {
+        "task_input_user": "V",
+        "model": "?",
+        "harness_topology": "?",
+        "hardware": "?",
+        "network_load": "?",
+        "time": "?"
+      },
+      "interpretation": "Exposure/monitor sweeps; independent capture grouping unresolved",
+      "source_url": "https://arxiv.org/abs/2505.00817",
+      "source_version": "2505.00817v1",
+      "source_locators": "Threat model; 5/Table 1; 6.1",
+      "archived_extraction": {
+        "RQ3": "Monitor-count/exposure tradeoff; English monitor sweep is not a full-text recovery accuracy claim.",
+        "system_sample_split": "UUID key repeated exposures with rotating monitors; English single-shot monitor sweep separately evaluated. Independent sample/seed totals R.",
+        "baselines_generalization": "Monitor-count/exposure tradeoff; English monitor sweep is not a full-text recovery accuracy claim.",
+        "source_binding": "{\"path\":\"evidence/closure-2026-09-12/sources/spillbeans2025/paper.pdf\",\"sha256\":\"fdbb11c42f564c3c0c25fc90246eef16065db371c599a4c5dfc8da0508bb9c93\",\"derived_text\":null}",
+        "source_sha256": "",
+        "source_access_scope": "Source version/locator in ledger; field-level targeted checks only, not a complete independent recoding."
+      }
+    },
+    {
+      "id": "F12",
+      "name": "SpliceLeak",
+      "citation_key": "spliceleak2026",
+      "classification": "core",
+      "axes": {
+        "task_input_user": "V",
+        "model": "?",
+        "harness_topology": "?",
+        "hardware": "?",
+        "network_load": "?",
+        "time": "?"
+      },
+      "interpretation": "Bounded cloze tasks and chunk/candidate coverage",
+      "source_url": "https://arxiv.org/abs/2606.21842",
+      "source_version": "2606.21842v1",
+      "source_locators": "Threat model; VII.A–VII.C; Figs. 7–8",
+      "archived_extraction": {
+        "RQ3": "Candidate coverage and chunk-boundary dependence; exact open-vocabulary guarantee R.",
+        "system_sample_split": "Fig. 7: 30 bounded cloze tasks; Fig. 8 five-token case study; bulk defense test 15 tasks/75 steps. General open-vocabulary extraction not established.",
+        "baselines_generalization": "Candidate coverage and chunk-boundary dependence; exact open-vocabulary guarantee R.",
+        "source_binding": "{\"path\":\"evidence/closure-2026-09-12/sources/spliceleak2026/paper.pdf\",\"sha256\":\"3b4f033c1da89e044719ff5e2950a04c81bcd231f0e5611f3b60696a5e60361c\",\"derived_text\":null}",
+        "source_sha256": "",
+        "source_access_scope": "Source version/locator in ledger; field-level targeted checks only, not a complete independent recoding."
+      }
+    },
+    {
+      "id": "F13",
+      "name": "Time Will Tell",
+      "citation_key": "timewilltell2024",
+      "classification": "core",
+      "axes": {
+        "task_input_user": "?",
+        "model": "?",
+        "harness_topology": "?",
+        "hardware": "?",
+        "network_load": "V",
+        "time": "V"
+      },
+      "interpretation": "Concurrent network/load profiling; short-window recalibration",
+      "source_url": "https://arxiv.org/abs/2412.15431",
+      "source_version": "2412.15431v1",
+      "source_locators": "3; 4.1–4.4; 6.2–6.5; Tables 3–4",
+      "archived_extraction": {
+        "RQ3": "6.2 concurrent profiling once/minute over five minutes, median TTFT/TPOT calibration. Network/load calibration already exists in prior work.",
+        "system_sample_split": "1,000 profiling samples per language; 1–50 attack queries in evaluated settings. Full grouped split details R.",
+        "baselines_generalization": "6.2 concurrent profiling once/minute over five minutes, median TTFT/TPOT calibration. Network/load calibration already exists in prior work.",
+        "source_binding": "{\"path\":\"evidence/closure-2026-09-12/sources/timewilltell2024/paper.pdf\",\"sha256\":\"e194738d967ddddd94ec6b1ab3aeb168a2b614291273647d23c536e593fd1102\",\"derived_text\":null}",
+        "source_sha256": "",
+        "source_access_scope": "Source version/locator in ledger; field-level targeted checks only, not a complete independent recoding."
+      }
+    },
+    {
+      "id": "F14",
+      "name": "Prompt Echo",
+      "citation_key": "prompt_echo2026",
+      "classification": "core",
+      "axes": {
+        "task_input_user": "H",
+        "model": "V",
+        "harness_topology": "?",
+        "hardware": "?",
+        "network_load": "?",
+        "time": "?"
+      },
+      "interpretation": "Overlap-filtered prompts; models evaluated separately",
+      "source_url": "https://www.usenix.org/conference/usenixsecurity26/presentation/li-sijia",
+      "source_version": "Proceedings PDF; see acquisition URL/hash",
+      "source_locators": "3.1; 5.1–5.3; Tables 2–3",
+      "archived_extraction": {
+        "RQ3": "Merged-token versus earlier token-length conditions; first segment and whole response must remain separate.",
+        "system_sample_split": "570k UltraChat-derived single-token examples; GPT4o/DeepSeek each 10k collected, 9k train/1k test; first-eight-word overlap filtering.",
+        "baselines_generalization": "Merged-token versus earlier token-length conditions; first segment and whole response must remain separate.",
+        "source_binding": "{\"path\":\"evidence/closure-2026-09-12/sources/prompt_echo2026/paper.pdf\",\"sha256\":\"c34368cb032592376d55775a1e597844da27dc39f76c66ba3938b2a4379ddbf3\",\"derived_text\":null}",
+        "source_sha256": "",
+        "source_access_scope": "Source version/locator in ledger; field-level targeted checks only, not a complete independent recoding."
+      }
+    },
+    {
+      "id": "F15",
+      "name": "I Know What You Said",
+      "citation_key": "gao2025iknow",
+      "classification": "core",
+      "axes": {
+        "task_input_user": "H",
+        "model": "V",
+        "harness_topology": "V",
+        "hardware": "V",
+        "network_load": "?",
+        "time": "?"
+      },
+      "interpretation": "Prompt overlap filtering; model/hardware/framework comparisons",
+      "source_url": "https://www.usenix.org/conference/usenixsecurity25/presentation/gao-zibo",
+      "source_version": "Proceedings PDF; see acquisition URL/hash",
+      "source_locators": "Abstract; Introduction; 3.1; 5; 6.1/Table1 (printed1658/PDF11); 6.4–6.5 scope; 12; Appendices A/B/F",
+      "archived_extraction": {
+        "RQ3": "Hardware/framework sections present; per-condition transfer/effect sizes R. Semantic similarity is not exact secret recovery.",
+        "system_sample_split": "Table1: five victim LLMs × five datasets, real llama.cpp, prefill batch256, GPT-4o-mini-2024-07-18 reconstruction models. Section5 synthesized-data random split60/20/20; AppendixA source prompts: UltraChat2727, NQ-Open4425, ChatGPT-Roles254, SIQA1682, SQuAD2 277. AppendixB removes training prompts with >70% 8-gram overlap or shared first8 words with test prompts. Final per-cell test counts/grouping and aggregate weighting remain R; N_I/N_O are average token lengths, not sample counts.",
+        "baselines_generalization": "Hardware/framework sections present; per-condition transfer/effect sizes R. Semantic similarity is not exact secret recovery.",
+        "source_binding": "{\"path\":\"evidence/closure-2026-09-12/sources/gao2025iknow/paper.pdf\",\"sha256\":\"92b0048dbd86299d649b217e60c90fb43a76c31a0f84cf293f9f38b5a8e601f5\",\"derived_text\":null}",
+        "source_sha256": "",
+        "source_access_scope": "Source version/locator in ledger; field-level targeted checks only, not a complete independent recoding."
+      }
+    },
+    {
+      "id": "F16",
+      "name": "Speculation",
+      "citation_key": "wei2024speculation",
+      "classification": "core",
+      "axes": {
+        "task_input_user": "H",
+        "model": "?",
+        "harness_topology": "?",
+        "hardware": "?",
+        "network_load": "V",
+        "time": "?"
+      },
+      "interpretation": "New traces and OOD paraphrases; remote/load conditions",
+      "source_url": "https://arxiv.org/abs/2411.01076v4",
+      "source_version": "2411.01076v4",
+      "source_locators": "v4: 4.3–4.8; Table 1; 6.1",
+      "archived_extraction": {
+        "RQ3": "Remote deployment about 1,500 miles; high-load timing perturbation uses lognormal simulation. OOD semantic judging is not the same 50-way exact-class metric.",
+        "system_sample_split": "50 query classes; 5–30 training traces/query; 250 new test traces (50×5). Exact-known prompts versus paraphrase/OOD tested separately.",
+        "baselines_generalization": "Remote deployment about 1,500 miles; high-load timing perturbation uses lognormal simulation. OOD semantic judging is not the same 50-way exact-class metric.",
+        "source_binding": "{\"path\":\"evidence/closure-2026-09-12/sources/wei2024speculation/paper.pdf\",\"sha256\":\"e544193b49de69614a9f600668bb442dea17f85e1d549600348f13473cf1a9f5\",\"derived_text\":null}",
+        "source_sha256": "",
+        "source_access_scope": "Source version/locator in ledger; field-level targeted checks only, not a complete independent recoding."
+      }
+    },
+    {
+      "id": "F17",
+      "name": "Behind Bars",
+      "citation_key": "gu2026behindbars",
+      "classification": "core",
+      "axes": {
+        "task_input_user": "?",
+        "model": "V",
+        "harness_topology": "?",
+        "hardware": "V",
+        "network_load": "?",
+        "time": "?"
+      },
+      "interpretation": "Model identification CV; additional hardware evaluation",
+      "source_url": "https://www.usenix.org/conference/usenixsecurity26/presentation/gu-cheng",
+      "source_version": "Proceedings PDF; see acquisition URL/hash",
+      "source_locators": "Table1; 6.1–6.3; Table7 (printed5383/PDF12); 7.1/7.3; Open Science",
+      "archived_extraction": {
+        "RQ3": "Mechanism evaluated on additional hardware; this does not imply every LLM score transfers across all hardware. Input-length and batching limitations acknowledged.",
+        "system_sample_split": "Section6.2:20 LLMs,300 traces/model (6000 derived total), varying prompts; three-second windows sampled every0.2ms,15000 points downsampled by5 to3000. 1D CNN/CrossEntropyLoss/AdamW, five-fold CV. Exact prompt identity and cross-fold grouping R;6000 traces are not6000 verified independent prompts.",
+        "baselines_generalization": "Mechanism evaluated on additional hardware; this does not imply every LLM score transfers across all hardware. Input-length and batching limitations acknowledged.",
+        "source_binding": "{\"path\":\"evidence/closure-2026-09-12/sources/gu2026behindbars/paper.pdf\",\"sha256\":\"0d237c6e11703d1eb98363ca9135c28703dacc16ac5b5a5d37ff2bed5d6e6971\",\"derived_text\":null}",
+        "source_sha256": "",
+        "source_access_scope": "Source version/locator in ledger; field-level targeted checks only, not a complete independent recoding."
+      }
+    },
+    {
+      "id": "F18",
+      "name": "Prompt caching",
+      "citation_key": "gu2025promptcaching",
+      "classification": "core",
+      "axes": {
+        "task_input_user": "?",
+        "model": "V",
+        "harness_topology": "?",
+        "hardware": "?",
+        "network_load": "?",
+        "time": "V"
+      },
+      "interpretation": "Provider survey over two months; historical exposure only",
+      "source_url": "https://proceedings.mlr.press/v267/gu25b.html",
+      "source_version": "Proceedings PDF; see acquisition URL/hash",
+      "source_locators": "3.1–3.2; 4.1–4.2; Tables 1–2",
+      "archived_extraction": {
+        "RQ3": "Controlled request randomization and explicit statistical testing already exist in prior work.",
+        "system_sample_split": "17 providers in September/October 2024 from California; eight caching, seven global in the reported study. Historical measurement, not current exposure claim.",
+        "baselines_generalization": "Controlled request randomization and explicit statistical testing already exist in prior work.",
+        "source_binding": "{\"path\":\"evidence/closure-2026-09-12/sources/gu2025promptcaching/paper.pdf\",\"sha256\":\"99ec36153fbe2ad1306056f1d683312d5868ca3dedfb08c28c4f349e1855e1ab\",\"derived_text\":null}",
+        "source_sha256": "",
+        "source_access_scope": "Source version/locator in ledger; field-level targeted checks only, not a complete independent recoding."
+      }
+    },
+    {
+      "id": "F19",
+      "name": "Whose Agent",
+      "citation_key": "kang2026whoseagent",
+      "classification": "core",
+      "axes": {
+        "task_input_user": "?",
+        "model": "?",
+        "harness_topology": "?",
+        "hardware": "?",
+        "network_load": "?",
+        "time": "?"
+      },
+      "interpretation": "Trial split; task/site/version independence unresolved",
+      "source_url": "https://arxiv.org/html/2606.20910v1",
+      "source_version": "2606.20910v1",
+      "source_locators": "4,6.1–6.3; Tables4–5; Fig7;7",
+      "archived_extraction": {
+        "RQ3": "Early-request prefixes; task/site/prompt/version dependence acknowledged",
+        "system_sample_split": "30-fold trial split; participant independence/preprocessing within folds R",
+        "baselines_generalization": "Early-request prefixes; task/site/prompt/version dependence acknowledged",
+        "source_binding": "{\"path\":null,\"sha256\":null,\"derived_text\":null}",
+        "source_sha256": "",
+        "source_access_scope": "Source version/locator in ledger; field-level targeted checks only, not a complete independent recoding."
+      }
+    },
+    {
+      "id": "F20",
+      "name": "Workflow traffic",
+      "citation_key": "dangol2026workflow",
+      "classification": "core",
+      "axes": {
+        "task_input_user": "?",
+        "model": "?",
+        "harness_topology": "H",
+        "hardware": "?",
+        "network_load": "?",
+        "time": "?"
+      },
+      "interpretation": "Leave-composition-out; stored and live populations separated",
+      "source_url": "https://arxiv.org/html/2606.07150v3",
+      "source_version": "2606.07150v3",
+      "source_locators": "3,9.1,9.7–9.14;Table6",
+      "archived_extraction": {
+        "RQ3": "Length-only,length-stratification,microservice controls;leave-composition-out",
+        "system_sample_split": "Separate real A2A,nested-CV binding,synthetic MCP and controlled-generator populations",
+        "baselines_generalization": "Length-only,length-stratification,microservice controls;leave-composition-out",
+        "source_binding": "{\"path\":null,\"sha256\":null,\"derived_text\":null}",
+        "source_sha256": "",
+        "source_access_scope": "Source version/locator in ledger; field-level targeted checks only, not a complete independent recoding."
+      }
+    },
+    {
+      "id": "F21",
+      "name": "GPU contention",
+      "citation_key": "abubakar2026contention",
+      "classification": "core",
+      "axes": {
+        "task_input_user": "?",
+        "model": "?",
+        "harness_topology": "V",
+        "hardware": "?",
+        "network_load": "V",
+        "time": "?"
+      },
+      "interpretation": "Serving-stack and interleaved-load controls",
+      "source_url": "https://arxiv.org/html/2609.06853v1",
+      "source_version": "2609.06853v1",
+      "source_locators": "IV,IX,TableVII,X,XIV–XVII",
+      "archived_extraction": {
+        "RQ3": "Interleaved controls;two-node vLLM,non-significant SGLang pilot;MPSconfounds",
+        "system_sample_split": "120runs;8bins;750paired trials/bin",
+        "baselines_generalization": "Interleaved controls;two-node vLLM,non-significant SGLang pilot;MPSconfounds",
+        "source_binding": "{\"path\":null,\"sha256\":null,\"derived_text\":null}",
+        "source_sha256": "",
+        "source_access_scope": "Source version/locator in ledger; field-level targeted checks only, not a complete independent recoding."
+      }
+    },
+    {
+      "id": "F22",
+      "name": "AgentTell",
+      "citation_key": "shahriar2026agenttell",
+      "classification": "core",
+      "axes": {
+        "task_input_user": "V",
+        "model": "?",
+        "harness_topology": "?",
+        "hardware": "?",
+        "network_load": "V",
+        "time": "?"
+      },
+      "interpretation": "Secret rotation; cold/loaded and equal-completability controls",
+      "source_url": "https://arxiv.org/html/2609.32915v1",
+      "source_version": "2609.32915v1",
+      "source_locators": "3–5;AppendixD.2–D.3,Table8;AppendixE",
+      "archived_extraction": {
+        "RQ3": "Cold/loaded and equal-completability controls distinguish a channel from fixed preferences;failure policy limits denominator",
+        "system_sample_split": "null",
+        "baselines_generalization": "Cold controls,rotated secret,shuffled actions;local-site scope",
+        "source_binding": "{\"path\":null,\"sha256\":\"R (versioned HTML read,not byte-pinned here)\",\"derived_text\":null}",
+        "source_sha256": "",
+        "source_access_scope": "Source version/locator in ledger; field-level targeted checks only, not a complete independent recoding."
+      }
+    },
+    {
+      "id": "F23",
+      "name": "Traffic benchmark",
+      "citation_key": "pouryousef2026traffic",
+      "classification": "core",
+      "axes": {
+        "task_input_user": "?",
+        "model": "?",
+        "harness_topology": "H",
+        "hardware": "?",
+        "network_load": "?",
+        "time": "?"
+      },
+      "interpretation": "Topology shift distinct from feature-view restriction",
+      "source_url": "https://arxiv.org/html/2609.31877v1",
+      "source_version": "2609.31877v1",
+      "source_locators": "III,IV-A–C,V-A TablesI–III,V-B Fig8,VI",
+      "archived_extraction": {
+        "RQ3": "Viewrestriction and topologyshift demonstrably different comparisons",
+        "system_sample_split": "null",
+        "baselines_generalization": "20label-independent subsets at each feature budget;10agent-orderings;separate size-free134features",
+        "source_binding": "{\"path\":null,\"sha256\":\"R (versioned HTML)\",\"derived_text\":null}",
+        "source_sha256": "",
+        "source_access_scope": "Source version/locator in ledger; field-level targeted checks only, not a complete independent recoding."
+      }
+    },
+    {
+      "id": "F24",
+      "name": "Remote timing",
+      "citation_key": "carlini2024remote",
+      "classification": "core",
+      "axes": {
+        "task_input_user": "?",
+        "model": "V",
+        "harness_topology": "?",
+        "hardware": "?",
+        "network_load": "?",
+        "time": "V"
+      },
+      "interpretation": "Month-long observations; method/model changes confounded",
+      "source_url": "https://arxiv.org/html/2410.17175v1",
+      "source_version": "2410.17175v1",
+      "source_locators": "III,IV-B–C,V-D–E,VI-C,VII,Figs8,10,12",
+      "archived_extraction": {
+        "RQ3": "Temporaldrift and methods/modelconfounding already known",
+        "system_sample_split": "null",
+        "baselines_generalization": "Monthlong temporal testing;method/model changes confounded;GCG large-spacefailure",
+        "source_binding": "{\"path\":null,\"sha256\":\"R (versioned HTML)\",\"derived_text\":null}",
+        "source_sha256": "",
+        "source_access_scope": "Source version/locator in ledger; field-level targeted checks only, not a complete independent recoding."
+      }
+    },
+    {
+      "id": "F25",
+      "name": "Persona fingerprint",
+      "citation_key": "song2026personafingerprint",
+      "classification": "core",
+      "axes": {
+        "task_input_user": "?",
+        "model": "?",
+        "harness_topology": "X",
+        "hardware": "?",
+        "network_load": "?",
+        "time": "?"
+      },
+      "interpretation": "Pooled sites; leave-site-out not verified",
+      "source_url": "https://arxiv.org/html/2605.15962v1",
+      "source_version": "2605.15962v1",
+      "source_locators": "2,3.1–3.4,4,5.1,5.5–5.8",
+      "archived_extraction": {
+        "RQ3": "Randomencoder andsite-only probes;pooledmixed-sites,not verifiedleave-site-out",
+        "system_sample_split": "null",
+        "baselines_generalization": "Randomencoder andsite-only probes;pooledmixed-sites,not verifiedleave-site-out",
+        "source_binding": "{\"path\":null,\"sha256\":null,\"derived_text\":null}",
+        "source_sha256": "",
+        "source_access_scope": "Source version/locator in ledger; field-level targeted checks only, not a complete independent recoding."
+      }
+    },
+    {
+      "id": "F26",
+      "name": "TDXRay",
+      "citation_key": "hornetz2026tdxray",
+      "classification": "core",
+      "axes": {
+        "task_input_user": "?",
+        "model": "?",
+        "harness_topology": "?",
+        "hardware": "?",
+        "network_load": "?",
+        "time": "?"
+      },
+      "interpretation": "Tokenizer-localized LLM case; AES result separate",
+      "source_url": "https://tdxray.cpusec.org/assets/tdxray_sp26.pdf",
+      "source_version": "Author-hosted sp26 PDF retrieved 2026-10-08; publisher-record/author-PDF bibliographic match, byte-equivalence to the IEEE PDF not checked.",
+      "source_locators": "3;5.1–5.4;6.1–6.2",
+      "archived_extraction": {
+        "RQ3": "LLM case after tokenizer localization;AES branch separate",
+        "system_sample_split": "null",
+        "baselines_generalization": "LLM case after tokenizer localization;AES branch separate",
+        "source_binding": "{\"path\":null,\"sha256\":null,\"derived_text\":null}",
+        "source_sha256": "",
+        "source_access_scope": "Source version/locator in ledger; field-level targeted checks only, not a complete independent recoding."
+      }
+    },
+    {
+      "id": "F27",
+      "name": "Detokenization",
+      "citation_key": "weiss2026detokenization",
+      "classification": "core",
+      "axes": {
+        "task_input_user": "?",
+        "model": "?",
+        "harness_topology": "X",
+        "hardware": "?",
+        "network_load": "?",
+        "time": "?"
+      },
+      "interpretation": "Explicit same-instance profiling restriction",
+      "source_url": "https://arxiv.org/html/2609.06674v1",
+      "source_version": "2609.06674v1",
+      "source_locators": "[\"3.1 and 3.3: shared-code, SMT and same-instance profiling\",\"5.1: dataset-aligned main evaluation\",\"5.6: live OpenClaw subset, first segments and judge-ASR\",\"6: process-specific limitation; proposed mitigations\",\"Appendix A: public code link, exploit components withheld\"]",
+      "archived_extraction": {
+        "RQ3": "§6explicit nontransfer acrossindependentinstances",
+        "system_sample_split": "null",
+        "baselines_generalization": "§6explicit nontransfer acrossindependentinstances",
+        "source_binding": "{\"path\":null,\"sha256\":null,\"derived_text\":null}",
+        "source_sha256": "",
+        "source_access_scope": "Accessible v1 copy; Open-Science appendix truncated."
+      }
+    },
+    {
+      "id": "F28",
+      "name": "Spillage",
+      "citation_key": "roh2026spillage",
+      "classification": "adjacent",
+      "axes": {
+        "task_input_user": "V",
+        "model": "?",
+        "harness_topology": "?",
+        "hardware": "?",
+        "network_load": "?",
+        "time": "?"
+      },
+      "interpretation": "Task-irrelevance and selected-site evaluation",
+      "source_url": "https://arxiv.org/html/2602.13516v1",
+      "source_version": "2602.13516v1",
+      "source_locators": "4.1–4.2 (evaluator inputs), 5.4, Table 4, 6.2",
+      "archived_extraction": {
+        "RQ3": "Taskirrelevance labels andselectedsites",
+        "system_sample_split": "null",
+        "baselines_generalization": "Taskirrelevance labels andselectedsites",
+        "source_binding": "{\"path\":null,\"sha256\":null,\"derived_text\":null}",
+        "source_sha256": "",
+        "source_access_scope": "Source version/locator in ledger; field-level targeted checks only, not a complete independent recoding."
+      }
+    },
+    {
+      "id": "F29",
+      "name": "PlanTwin",
+      "citation_key": "yu2026plantwin",
+      "classification": "adjacent",
+      "axes": {
+        "task_input_user": "V",
+        "model": "?",
+        "harness_topology": "?",
+        "hardware": "?",
+        "network_load": "?",
+        "time": "?"
+      },
+      "interpretation": "Template candidate pool; production transfer unresolved",
+      "source_url": "https://arxiv.org/html/2603.18377v2",
+      "source_version": "2603.18377v2",
+      "source_locators": "2.2,3.2,4.2–4.4,5.1–5.9,6.1",
+      "archived_extraction": {
+        "RQ3": "Templatecandidatepool;not production-workflowprivacy",
+        "system_sample_split": "null",
+        "baselines_generalization": "Templatecandidatepool;not production-workflowprivacy",
+        "source_binding": "{\"path\":null,\"sha256\":null,\"derived_text\":null}",
+        "source_sha256": "",
+        "source_access_scope": "Full text: arXiv v2; journal-equivalence not established."
+      }
+    },
+    {
+      "id": "F30",
+      "name": "SICC",
+      "citation_key": "xu2026sicc",
+      "classification": "adjacent",
+      "axes": {
+        "task_input_user": "?",
+        "model": "?",
+        "harness_topology": "?",
+        "hardware": "?",
+        "network_load": "?",
+        "time": "?"
+      },
+      "interpretation": "Authorized-view theorem; empirical shift binding unresolved",
+      "source_url": "https://arxiv.org/html/2609.26076v1",
+      "source_version": "2609.26076v1",
+      "source_locators": "Theorem 1; Experiments Setup; Tables 3–4, 7–8",
+      "archived_extraction": {
+        "RQ3": "Conditionalauthorizedview;no generalnatural-languageauthorization guarantee",
+        "system_sample_split": "null",
+        "baselines_generalization": "Conditionalauthorizedview;no generalnatural-languageauthorization guarantee",
+        "source_binding": "{\"path\":null,\"sha256\":null,\"derived_text\":null}",
+        "source_sha256": "",
+        "source_access_scope": "Source version/locator in ledger; field-level targeted checks only, not a complete independent recoding."
+      }
+    },
+    {
+      "id": "F31",
+      "name": "TOPR",
+      "citation_key": "qiao2026topr",
+      "classification": "adjacent",
+      "axes": {
+        "task_input_user": "V",
+        "model": "?",
+        "harness_topology": "?",
+        "hardware": "?",
+        "network_load": "?",
+        "time": "?"
+      },
+      "interpretation": "Benchmark and alignment populations differ",
+      "source_url": "https://arxiv.org/html/2512.16310v4",
+      "source_version": "2512.16310v4",
+      "source_locators": "3.1–3.2,4,5.2,5.6,6,Limitations",
+      "archived_extraction": {
+        "RQ3": "TOP-Bench andTOP-Align separatepopulations",
+        "system_sample_split": "null",
+        "baselines_generalization": "TOP-Bench andTOP-Align separatepopulations",
+        "source_binding": "{\"path\":null,\"sha256\":null,\"derived_text\":null}",
+        "source_sha256": "",
+        "source_access_scope": "Source version/locator in ledger; field-level targeted checks only, not a complete independent recoding."
+      }
+    },
+    {
+      "id": "F32",
+      "name": "ClawGuard",
+      "citation_key": "gan2026clawguard",
+      "classification": "core",
+      "axes": {
+        "task_input_user": "?",
+        "model": "?",
+        "harness_topology": "V",
+        "hardware": "?",
+        "network_load": "?",
+        "time": "V"
+      },
+      "interpretation": "Carrier recollection and cycle drift; not zero-shot transfer",
+      "source_url": "https://arxiv.org/html/2605.06205v1",
+      "source_version": "2605.06205v1",
+      "source_locators": "III-C,IV,VI,AppendixA",
+      "archived_extraction": {
+        "RQ3": "Separable subsets, cycle drift and carrier recollection restrict generalization; full-sequence comparator not validated.",
+        "system_sample_split": "null",
+        "baselines_generalization": "Carrierrecollectionnotzero-shot;drift andbroadskillfailures",
+        "source_binding": "{\"path\":null,\"sha256\":null,\"derived_text\":null}",
+        "source_sha256": "",
+        "source_access_scope": "Source version/locator in ledger; field-level targeted checks only, not a complete independent recoding."
+      }
+    },
+    {
+      "id": "F33",
+      "name": "SIGLEAK",
+      "citation_key": "geng2026sigleak",
+      "classification": "core",
+      "axes": {
+        "task_input_user": "V",
+        "model": "?",
+        "harness_topology": "?",
+        "hardware": "?",
+        "network_load": "?",
+        "time": "?"
+      },
+      "interpretation": "Paired prompts; not physical-skill removal",
+      "source_url": "https://arxiv.org/html/2607.25560v1",
+      "source_version": "2607.25560v1",
+      "source_locators": "Definition3,3.2,4.1–4.2",
+      "archived_extraction": {
+        "RQ3": "Paired prompting is not physical skill ablation; observer access limits transfer.",
+        "system_sample_split": "null",
+        "baselines_generalization": "No metadata-only recovery established",
+        "source_binding": "{\"path\":null,\"sha256\":null,\"derived_text\":null}",
+        "source_sha256": "",
+        "source_access_scope": "Source version/locator in ledger; field-level targeted checks only, not a complete independent recoding."
+      }
+    },
+    {
+      "id": "F34",
+      "name": "ProcGrep",
+      "citation_key": "oderinwale2026procgrep",
+      "classification": "core",
+      "axes": {
+        "task_input_user": "H",
+        "model": "?",
+        "harness_topology": "V",
+        "hardware": "?",
+        "network_load": "?",
+        "time": "?"
+      },
+      "interpretation": "Task-grouped attribution under scaffold regimes",
+      "source_url": "https://arxiv.org/html/2606.16988v1",
+      "source_version": "2606.16988v1",
+      "source_locators": "4–5,Tables7–8",
+      "archived_extraction": {
+        "RQ3": "Scaffold and task-grouped attribution bound identity and transfer claims.",
+        "system_sample_split": "null",
+        "baselines_generalization": "Taskgrouping andscaffoldregimes",
+        "source_binding": "{\"path\":null,\"sha256\":null,\"derived_text\":null}",
+        "source_sha256": "",
+        "source_access_scope": "Source version/locator in ledger; field-level targeted checks only, not a complete independent recoding."
+      }
+    },
+    {
+      "id": "F35",
+      "name": "SecEmb",
+      "citation_key": "umar2025secemb",
+      "classification": "adjacent",
+      "axes": {
+        "task_input_user": "?",
+        "model": "X",
+        "harness_topology": "?",
+        "hardware": "?",
+        "network_load": "?",
+        "time": "?"
+      },
+      "interpretation": "Single GPT-2 workload; DLRM result separate",
+      "source_url": "https://bearhw.ece.vt.edu/content/dam/bearhw_ece_vt_edu/publications/2025_HPCA_SecEmb.pdf",
+      "source_version": "Author-lab-hosted HPCA 2025 PDF with artifact appendix, retrieved 2026-10-08; byte-equivalence to the IEEE PDF not checked.",
+      "source_locators": "III,V,VI-D;Figs14–15",
+      "archived_extraction": {
+        "RQ3": "DLRM attack cannot establish GPT2prompt recovery",
+        "system_sample_split": "null",
+        "baselines_generalization": "SingleGPT2medium workload;DHE changesrepresentation,not packetshaping",
+        "source_binding": "{\"path\":null,\"sha256\":null,\"derived_text\":null}",
+        "source_sha256": "",
+        "source_access_scope": "No accessible full text during 2026-10-17 closure pass; use only previously documented source scope; do not infer absent defense/control."
+      }
+    },
+    {
+      "id": "F36",
+      "name": "Mobile agents",
+      "citation_key": "wu2025mobileagents",
+      "classification": "adjacent",
+      "axes": {
+        "task_input_user": "?",
+        "model": "?",
+        "harness_topology": "?",
+        "hardware": "?",
+        "network_load": "?",
+        "time": "?"
+      },
+      "interpretation": "Direct leakage cases; holdout binding unresolved",
+      "source_url": "https://arxiv.org/html/2505.12981v1",
+      "source_version": "arXiv:2505.12981v1",
+      "source_locators": "[\"IV-D3 log leakage\",\"V-D2 deep-link leakage\",\"V-D3 log leakage\",\"Table II\",\"VI-A\"]",
+      "archived_extraction": {
+        "RQ3": "Empiricalfailuremode not equivalentto metadata-inference feasibility",
+        "system_sample_split": "null",
+        "baselines_generalization": "Useful observer-privilege and semantic-exfiltration boundary case, not evidence for a passive ancillary-trace private-goal attack.",
+        "source_binding": "{\"path\":null,\"sha256\":null,\"derived_text\":null}",
+        "source_sha256": "",
+        "source_access_scope": "No accessible full text during 2026-10-17 closure pass; use only previously documented source scope; do not infer absent defense/control."
+      }
+    },
+    {
+      "id": "F37",
+      "name": "Hidden risks",
+      "citation_key": "mudryi2025hidden",
+      "classification": "adjacent",
+      "axes": {
+        "task_input_user": "?",
+        "model": "?",
+        "harness_topology": "?",
+        "hardware": "?",
+        "network_load": "?",
+        "time": "?"
+      },
+      "interpretation": "Content exfiltration/access-control cases",
+      "source_url": "https://arxiv.org/html/2505.13076v1",
+      "source_version": "arXiv:2505.13076v1",
+      "source_locators": "[\"3.2 framework and risk scope\",\"5.3.1 access-control case\",\"5.3.2 exfiltration case\",\"Appendix A risk tables\"]",
+      "archived_extraction": {
+        "RQ3": "Empiricalfailuremode not equivalentto metadata-inference feasibility",
+        "system_sample_split": "null",
+        "baselines_generalization": "Direct payload exfiltration and access-control failure do not establish hidden-goal inference from an observer-restricted ancillary channel.",
+        "source_binding": "{\"path\":null,\"sha256\":null,\"derived_text\":null}",
+        "source_sha256": "",
+        "source_access_scope": "No accessible full text during 2026-10-17 closure pass; use only previously documented source scope; do not infer absent defense/control."
+      }
+    },
+    {
+      "id": "F38",
+      "name": "Browser privacy",
+      "citation_key": "ukani2025browserprivacy",
+      "classification": "adjacent",
+      "axes": {
+        "task_input_user": "?",
+        "model": "?",
+        "harness_topology": "V",
+        "hardware": "?",
+        "network_load": "?",
+        "time": "?"
+      },
+      "interpretation": "Browser/profile-state measurements; mixed leakage mechanisms",
+      "source_url": "https://arxiv.org/html/2512.07725v1",
+      "source_version": "arXiv:2512.07725v1",
+      "source_locators": "[\"V-C1–3 browser/network/profile-state measurements\",\"V-E1–2 personal-information tests\",\"VI-A/B discussion\"]",
+      "archived_extraction": {
+        "RQ3": "Empiricalfailuremode not equivalentto metadata-inference feasibility",
+        "system_sample_split": "null",
+        "baselines_generalization": "Mixed mechanisms must be separated: cache/history probes are adjacent side-channel ingredients, while explicit form submissions are content disclosure. Do not reclassify the whole paper as an agent-metadata attack.",
+        "source_binding": "{\"path\":null,\"sha256\":null,\"derived_text\":null}",
+        "source_sha256": "",
+        "source_access_scope": "No accessible full text during 2026-10-17 closure pass; use only previously documented source scope; do not infer absent defense/control."
+      }
+    },
+    {
+      "id": "F39",
+      "name": "LLMs Have Rhythm",
+      "citation_key": "alhazbi2025rhythm",
+      "classification": "core",
+      "axes": {
+        "task_input_user": "?",
+        "model": "V",
+        "harness_topology": "?",
+        "hardware": "?",
+        "network_load": "H",
+        "time": "V"
+      },
+      "interpretation": "New captures and cross-network tests; overlapping windows caveat",
+      "source_url": "https://arxiv.org/html/2502.20589v1",
+      "source_version": "2502.20589v1",
+      "source_locators": "III-IV; V-C–G; VI-A/B; Table I; Figs10–16; VII",
+      "archived_extraction": {
+        "RQ3": "Raw versus engineered features and cross-network degradation qualify apparent robustness",
+        "system_sample_split": "models_systems: 16 open small models (1–9B); 10 proprietary web models | framework: Ollama0.3.14; TensorFlow2.15; Cloudflare tunnel; Surfshark VPN | hardware: RTX4090 24GB; i9-13900K;128GB DDR5;Ubuntu24.04.1 | tasks: Known-set model identification, not prompt/goal recovery | sample_denominator: VI-B: approximately3000s training/model; each later test scenario1000s. Exact independent prompt/session counts NR-R within inspected main text. | budgets: 30 training epochs; batch64. Response collection durations above; number of API queries NR-R in inspected sections. | split: Raw-feature baseline80/20 from same data; final testing on newly collected data. Feature windows0.5s/stride0.1s; training sequences128/stride4. Train-validation grouping of overlapping windows NR-R in inspected V–VI.",
+        "baselines_generalization": "Raw traffic overfits; engineered representation improves. Across-day/network/VPN transfer measured; no conclusion of complete topology invariance.",
+        "source_binding": "{\"path\":\"evidence/systematic-2026-10-08-r2/citations/candidate-sources/alhazbi2025rhythm.html\",\"sha256\":\"a2081ea5c6972d33e61f1a7284c1798376c6f8fee6cc358e0c06392c69c8ebeb\",\"derived_text\":null}",
+        "source_sha256": "",
+        "source_access_scope": "No accessible full text during 2026-10-17 closure pass; use only previously documented source scope; do not infer absent defense/control."
+      }
+    },
+    {
+      "id": "F40",
+      "name": "MoEcho",
+      "citation_key": "ding2025moecho",
+      "classification": "core",
+      "axes": {
+        "task_input_user": "H",
+        "model": "V",
+        "harness_topology": "?",
+        "hardware": "?",
+        "network_load": "V",
+        "time": "?"
+      },
+      "interpretation": "Cross-template/dataset tests; contention/context conditions",
+      "source_url": "https://arxiv.org/html/2508.15036v1",
+      "source_version": "2508.15036v1",
+      "source_locators": "3.1;4;6.2–6.6;Tables3,5–10;7.2;8.1–8.2",
+      "archived_extraction": {
+        "RQ3": "Profiling-oracle versus real observation;contention/context change performance",
+        "system_sample_split": "models_systems: DeepSeek-V2-Lite,Qwen1.5-MoE,TinyMixtral-MoE,DeepSeek-VL2;single-device scope | framework: Transformers MoE implementations;Nsight GPU counters;cache/page/TLB probes | hardware: AMD Ryzen Threadripper Pro12-core;NVIDIA RTX A6000 | tasks: Prompt attribute inference;response token recovery;visual inference/reconstruction | sample_denominator: PIA8000train/2000test;RRA90/10 footprint data split. Synthetic RRA profiling2,978,872tokens. End-to-end window/session grouping R. | budgets: 10,000-prompt PIA profiling:1.02h DeepSeek,1h Qwen,.11h TinyMixtral. RRA synthetic75h;all datasets193h. These are profiling costs, not defense costs. | split: PIA8000/2000;RRA90/10;cross-template and cross-dataset transfer explicitly tested;independent grouping uncertainty retained",
+        "baselines_generalization": "Cross-template/dataset degradation;Table8 contention lowers expert recovery from99.2/94.3 to81.4/68.3 with3 competing workloads",
+        "source_binding": "{\"path\":\"evidence/systematic-2026-10-08-r2/citations/candidate-sources/ding2025moecho.html\",\"sha256\":\"340e693eaa5a7c9bf17b7404e5e74e2407ca5eb1e26e16dbf1caa9bc925a10b1\",\"derived_text\":null}",
+        "source_sha256": "",
+        "source_access_scope": "Source version/locator in ledger; field-level targeted checks only, not a complete independent recoding."
+      }
+    },
+    {
+      "id": "F41",
+      "name": "LLM-Fin",
+      "citation_key": "nazari2024llmfin",
+      "classification": "adjacent",
+      "axes": {
+        "task_input_user": "?",
+        "model": "H",
+        "harness_topology": "?",
+        "hardware": "?",
+        "network_load": "?",
+        "time": "?"
+      },
+      "interpretation": "Unseen variants within known architecture families",
+      "source_url": "https://web.cs.ucdavis.edu/~srafatir/pages/documents/llm_fingerprint.pdf",
+      "source_version": "Author-hosted conference manuscript, six paper pages plus ResearchGate cover; downloaded2026-10-08",
+      "source_locators": "[\"III\",\"IV-B/C; Tables II–III\",\"IV-C/D; V-A\",\"V-A versus Introduction/Fig.2\",\"Table IV\"]",
+      "archived_extraction": {
+        "RQ3": "Unseen variantwithin knownfamilies is narrower than crossdeployment transfer",
+        "system_sample_split": "models_systems: TableII13 namedPLMs;TableIII8 unseen variants. Includes BERT-family classification/embedding rather than current generative-agent systems. | framework: HuggingFace transformers and SentenceTransformers; sktime ROCKET; Jetpack5.1,JetsonLinux35.2.1,Ubuntu20.04,CUDA11.4 | hardware: V-A:JetsonXavierNX,8GB LPDDR4x,6-coreCarmel/VoltaGPU,default15W and2activeCPUcores. Introduction/Fig2:Nano. Internal distinction unresolved, not silently harmonized. | tasks: Architecture-family and model identification, separate outcomes | sample_denominator: 45 executions/model;first5 discarded,last40 retained. Stormfront10945entry corpus;classification2000sentences/run;similarity100batches×100sentences/run | budgets: 3000ROCKET kernels;number of independent classifier seeds and total training/runtime cost NR-R in IV–V | split: Known model set1 versus unseen variants set2;train/test allocation within set1 not stated in inspectedIV–V(NR-R)",
+        "baselines_generalization": "CPU-only family75.6/66.5%;memory-only91.2/88.1%;same-device known-family variant transfer;no multi-workload interference evaluation shown",
+        "source_binding": "{\"path\":\"evidence/systematic-2026-10-08-r2/citations/candidate-sources/nazari2024llmfin.pdf\",\"sha256\":\"5ae377963974253631e328689adb082f68c1b0b764db71b9ece98f5894a201ef\",\"derived_text\":null}",
+        "source_sha256": "",
+        "source_access_scope": "No accessible full text during 2026-10-17 closure pass; use only previously documented source scope; do not infer absent defense/control."
+      }
+    },
+    {
+      "id": "F42",
+      "name": "ML privacy channels",
+      "citation_key": "debenedetti2024privacy",
+      "classification": "core",
+      "axes": {
+        "task_input_user": "?",
+        "model": "V",
+        "harness_topology": "?",
+        "hardware": "?",
+        "network_load": "?",
+        "time": "?"
+      },
+      "interpretation": "Enumerative/filter probes across named models; no learned split",
+      "source_url": "https://arxiv.org/html/2309.05610v2",
+      "source_version": "2309.05610v2,18Jul2024",
+      "source_locators": "[\"4.1\",\"4.2.1\",\"4.2.2/Fig.7\",\"4.2.3\",\"4.2.3/Table2\"]",
+      "archived_extraction": {
+        "RQ3": "Defensecomponentobservationsmustbedistinguishedfrommodelmemorization",
+        "system_sample_split": "models_systems: GPT2;GitHubCopilot;GPTNeo125M/1.3B/2.7B | framework: Bytepairtokenization;fixedcontextwindow;memorization-freedecodingBloomfilter | hardware: LM-branchhardwareconfigurationNR-R ininspectedSection4 | tasks: Vocabularyextraction,trainingmembership/cutoff,filter-keyextraction;notAgentgoalclassification | sample_denominator: 1000syntheticOpenSSHkeys512base64bytesinsertedintoBloomfilter;tokenizerentireGPT2vocabulary and enwiki8prefixes;exactCopilotcommitsampledenominatorR | budgets: 819869857queriesreportedforfullvocabulary;approximately30000queries/MBtargetedtokenization. Table2 meanqueries376000/338000/344000 perkey-modelcondition | split: No trainedtrafficattacker split;enumerative/controlled-queryattack. Do not invent train/testaccounts;permanentfilterexperimentssynthetic",
+        "baselines_generalization": "Input/outputcomponentablationconcept and filtertoggle;tokenizerattacktargetsGPT2;unknownCopilotfuzzyfilterexplicitlymayproducefalsepositives",
+        "source_binding": "{\"path\":\"evidence/systematic-2026-10-08-r2/citations/candidate-sources/debenedetti2024privacy.html\",\"sha256\":\"bc1873820e1f2c0660d02546572eebb3914bde68e93ab7378762205c090510f4\",\"derived_text\":null}",
+        "source_sha256": "",
+        "source_access_scope": "No accessible full text during 2026-10-17 closure pass; use only previously documented source scope; do not infer absent defense/control."
+      }
+    },
+    {
+      "id": "F43",
+      "name": "MoE stealing",
+      "citation_key": "yona2024stealing",
+      "classification": "core",
+      "axes": {
+        "task_input_user": "?",
+        "model": "?",
+        "harness_topology": "?",
+        "hardware": "?",
+        "network_load": "?",
+        "time": "?"
+      },
+      "interpretation": "Constructive word extraction in controlled shared batches",
+      "source_url": "https://arxiv.org/html/2410.22884v1",
+      "source_version": "arXiv 2410.22884v1",
+      "source_locators": "[\"2.2\",\"4\",\"4\",\"4/Table2\",\"5/Fig.7\"]",
+      "archived_extraction": {
+        "RQ3": "Strong batch-control and limited-model assumptions condition the measured result",
+        "system_sample_split": "models_systems: First two transformer blocks of Mixtral-8x7B, eight experts; not full unmodified production Mixtral | framework: PyTorch 2.2.0+cu118 with controlled Expert-Choice Routing; router code and parameters in appendices | hardware: Hardware model not verified in extracted evaluation passages (R); do not infer from CUDA version | tasks: Character-level recovery of secret common-English-word messages included in the same batch | sample_denominator: 1,000 messages / 4,838 character tokens; Table 2 reports 996 complete messages and 4,833 tokens recovered | budgets: Two target queries per candidate verification; general extraction routing enumeration scales as 2^(D*N) locally per token; Figure 7 reports roughly up to 100 target queries per token in evaluated conditions, not the total local computation cost | split: No supervised train/test task split; constructive extraction evaluated on 1,000 common English words, a 27-character alphabet and a restricted blocker vocabulary",
+        "baselines_generalization": "Vary expert count and padding lengths; all eight experts needed for over 99% message recovery; no actual uncontrolled cross-user or black-box deployment tested",
+        "source_binding": "{\"path\":\"evidence/systematic-2026-10-08-r2/citations/candidate-sources/yona2024stealing.html\",\"sha256\":\"91022f8378a88d73339306e95c18f59fde44f17532f1884a4d5020d1c3c72178\",\"derived_text\":{\"path\":\"evidence/systematic-2026-10-08-r2/citations/candidate-sources/yona2024stealing.txt\",\"sha256\":\"1da9ae37ce67640d2c42ea91bde559ed890dffc8fc64f62cf81d4d021a7ebed1\"}}",
+        "source_sha256": "",
+        "source_access_scope": "No accessible full text during 2026-10-17 closure pass; use only previously documented source scope; do not infer absent defense/control."
+      }
+    },
+    {
+      "id": "F44",
+      "name": "Energon",
+      "citation_key": "chaudhuri2025energon",
+      "classification": "core",
+      "axes": {
+        "task_input_user": "?",
+        "model": "V",
+        "harness_topology": "?",
+        "hardware": "?",
+        "network_load": "?",
+        "time": "?"
+      },
+      "interpretation": "Known-candidate CV; exploratory hardware not transfer proof",
+      "source_url": "https://arxiv.org/html/2508.01768v1",
+      "source_version": "2508.01768v1",
+      "source_locators": "[\"III-A/B\",\"IV-A/C\",\"IV-B/Tables I,III\",\"V\",\"VII\"]",
+      "archived_extraction": {
+        "RQ3": "Known-candidate and collection-condition boundary",
+        "system_sample_split": "models_systems: 8 pretrained language models, 4 families; custom/vision branches separate | framework: nvidia-smi/pynvml; CNN classifier | hardware: III-B source-reported A40 for subsequent experiments; exploratory GTX1660Ti separate. Actual MIG/virtualization deployment unresolved. | tasks: Architecture classification | sample_denominator: IV-B:100 traces/model;120s/trace;7Hz | budgets: 28C initial temperature; cooling between acquisitions | split: 80:20; stratified cross-validation; five-fold result average",
+        "baselines_generalization": "Source-reported concurrent/background workloads; actual cross-MIG topology unresolved R. Unseen-family transfer NR-R within inspected evaluation.",
+        "source_binding": "{\"path\":\"evidence/systematic-2026-10-08-r2/native-screening/primary-sources/chaudhuri2025energon.html\",\"sha256\":\"f0d24c65fd12d39205ce3a22b6beffc9b13725b2de35fd47a58c8910bf4d4f26\",\"derived_text\":null}",
+        "source_sha256": "",
+        "source_access_scope": "No accessible full text during 2026-10-17 closure pass; use only previously documented source scope; do not infer absent defense/control."
+      }
+    },
+    {
+      "id": "F45",
+      "name": "SafeKV",
+      "citation_key": "chu2025safekv",
+      "classification": "core",
+      "axes": {
+        "task_input_user": "?",
+        "model": "V",
+        "harness_topology": "?",
+        "hardware": "?",
+        "network_load": "?",
+        "time": "?"
+      },
+      "interpretation": "Named serving models; calibration/test separation unreported",
+      "source_url": "https://arxiv.org/html/2508.08438v2",
+      "source_version": "2508.08438v2",
+      "source_locators": "[\"3\",\"7.1\",\"7.2.1;7.2.3/Fig.12\",\"7.3/Table7\",\"7.4\",\"4.2.2 versus6/7.2.3\"]",
+      "archived_extraction": {
+        "RQ3": "Window-conditioned inference",
+        "system_sample_split": "models_systems: Phi4;Qwen3-30B/32B/235B;Llama3.3-70B;DeepSeek-R1 | framework: SGLang extension | hardware: 8×H20,96GB/GPU | tasks: Sensitive-prefix hit/miss discrimination | sample_denominator: NR-R: exact prefixes/windows/repeats (§7) | budgets: NR-R: probe counts (§7) | split: NR-R: attacker calibration/test separation (§7)",
+        "baselines_generalization": "Global sharing; per-user isolation; shared-system-prompt",
+        "source_binding": "{\"path\":\"evidence/systematic-2026-10-08-r2/citations/candidate-sources/chu2025safekv.html\",\"sha256\":\"621a3f7685f3881e0156cc7567334fcb158978e3c61d5c6b4fa1e35c70042399\",\"derived_text\":null}",
+        "source_sha256": "",
+        "source_access_scope": "Source version/locator in ledger; field-level targeted checks only, not a complete independent recoding."
+      }
+    },
+    {
+      "id": "F46",
+      "name": "InferNet",
+      "citation_key": "anwar2026infernet",
+      "classification": "adjacent",
+      "axes": {
+        "task_input_user": "?",
+        "model": "V",
+        "harness_topology": "?",
+        "hardware": "V",
+        "network_load": "?",
+        "time": "?"
+      },
+      "interpretation": "Same-label mixed-model and platform comparisons",
+      "source_url": "https://rhasnainanwar.me/assets/pdf/2304.03388v2.pdf",
+      "source_version": "Author public PDF, arXiv:2304.03388v2, 7 July 2026; DOI 10.1145/3811923 appears on page1; not assumed byte-identical to publisher final",
+      "source_locators": "[\"5.2;Tables13–14\",\"5.2;6.1;AppendixB/Table15\",\"6.1/Table5\",\"6.3;7.1;7.2\",\"7.3/Tables9–10\",\"6.4\",\"8\"]",
+      "archived_extraction": {
+        "RQ3": "Same-label inference and environment-conditioned transfer, with LM transfer unestablished",
+        "system_sample_split": "models_systems: Measured mixed branch:56TorchVision plusRoBERTaBASE/LARGE andXLMRBASE/LARGE; strict-C1 eligible GPT2/Gemma subresult not established. The appendix candidate list is not a separately evaluated LLM branch. | framework: PyTorch2.3.0, TorchVision/TorchText0.18.0, TensorFlow2.17.1; Python3.9; CUDA nvprof | hardware: TeslaT4/GoogleColab; QuadroRTX8000/Ubuntu24.04; both Turing generation | tasks: Known-candidate architecture classification from zero-input inference execution; ImageNet/CIFAR10 vision-only modifications/50%L1 pruning | sample_denominator: Section5.2 reports90x2x20=3600profiles/36000inferences overall; Table5 explicitly60PyTorch candidates; 90counts framework-model entries, 24shared across frameworks. No extrapolation to90uniqueLLMs. | budgets: 10inferences/profile;20profiles/architecture/platform. Section6.4:45-120s/profile,20+hours full offline dataset; reduced one-profile study uses vision subset, not LLM deployment cost. | split: 75%train/25%test stratified by architecture; same candidate labels in both. Seeds/repeated splits and train-only fitting of imputation/normalization/RFE R; absence of stated pipeline isolation is not proof of actual test contamination.",
+        "baselines_generalization": "Within-paper feature/classifier ablations; Tables8/9:vision-only crossGPU NB71.4/74.6%Top1 and crossframework58.2/64.1%; Table10 heterogeneous-framework retraining RF100% on represented frameworks, not unseen-framework generalization.",
+        "source_binding": "{\"path\":\"evidence/systematic-2026-10-08-r2/acm-followup/infernet-author.pdf\",\"sha256\":\"945b5d78d062405157568523394fbeca0f4b43dc140264845ecc35c8475f2b88\",\"derived_text\":{\"path\":\"evidence/systematic-2026-10-08-r2/acm-followup/infernet-author.txt\",\"sha256\":\"15d78dd7936c3926fe1b47444cf64e852767f9bdb27fb3d2427e19d9e79ccf27\"}}",
+        "source_sha256": "",
+        "source_access_scope": "No accessible full text during 2026-10-17 closure pass; use only previously documented source scope; do not infer absent defense/control."
+      }
+    },
+    {
+      "id": "F47",
+      "name": "ArchSnoop",
+      "citation_key": "weng2026archsnoop",
+      "classification": "core",
+      "axes": {
+        "task_input_user": "?",
+        "model": "H",
+        "harness_topology": "?",
+        "hardware": "V",
+        "network_load": "?",
+        "time": "?"
+      },
+      "interpretation": "Random-weight training to official/fine-tuned models; power modes",
+      "source_url": "https://dl.acm.org/doi/epdf/10.1145/3765613.3811673",
+      "source_version": "ACM WiSec2026 proceedings,pp51-62,12pages",
+      "source_locators": "[\"3.2;6.1\",\"6.1\",\"Fig9, paperp58, visually checked\",\"6.2.3;6.3.1\",\"4.1;7.1-7.2\"]",
+      "archived_extraction": {
+        "RQ3": "Power-mode conditioned transfer; official/fine-tunedtarget comparison withinknownfamilies",
+        "system_sample_split": "models_systems: Training:39 random-weight architectures across Llama/Gemma3/Qwen2/Qwen3/Phi3. Test:Gemma3-1B-it,Llama3.2-1B/3B-Instruct,Phi4-mini-instruct,Qwen2.5-0.5B/1.5B/3B-Instruct,Qwen3-0.6B/1.7B,TinyLlama1.1BChat plus third-party fine-tunes; allunder4B. | framework: HuggingFaceTransformers; versionNR-R. StageI1Dconv encoder/2Transformer layers; StageII multi-headMLP; TVD/Z-score/8-to1MHz downsampling | hardware: JetsonOrinNano8GB,Ubuntu22.04;FOSTTEKNFP-ONE P2;USRPB210;1cm. Five Nano units in characterization (§4.1), not a verified heldout-device split | tasks: Family classification; timestep layer segmentation; categorical recovery of hidden/intermediate size,query-head count,KV-head count,head dimension | sample_denominator: 1575 trainingEMtraces/39configuredarchitectures;1674 totaltestEMtraces from10officialmodels+fine-tunedvariants. Figure9 family counts sum1024 (1015correct), distinct from fulltesttotal1674. Exacttrace-to-model/mode allocations,independentrecording/session counts and other comparison denominators NR-R (§6.1-6.3). | budgets: Reported singletrace family inference; training1575/test1674. Passive measurement,not APIrequest budget. Exactcapture duration and reconstruction runtime NR-R. | split: Trainingrandomweights/randominputs and predefinedconfigurationrange;testpretrainedofficial/fine-tunedmodels. Targetfamily set remains known and hyperparameters withintrainingcoverage; no established unknown-family or leave-device-out test. Held-outvalidation/selectinghyperparameters protocolNR-R.",
+        "baselines_generalization": "§6.3/Fig13 powerMAXN_SUPERtrain->25Wtest74.3%average;->15Wtest67.14%(figure67.1rounded),vs97.11matched. Fig14 official97.11 vsfinetuned96.71%;larger>=3Bofficialgroup92.9%. No independentbaselineattack comparison or defense-aware adaptation experiment; optimizedframeworks preliminary only.",
+        "source_binding": "{\"path\":\"evidence/systematic-2026-10-08-r2/acm-followup/browser-sources/3765613.3811673.pdf.crdownload\",\"sha256\":\"0b41c5efa9249aa07b27351cf46fa90018bf0e5a998ab0fd74b6a213eda3707d\",\"derived_text\":{\"path\":\"evidence/systematic-2026-10-08-r2/acm-followup/browser-sources/archsnoop.txt\",\"sha256\":\"c9284bd316bb20e0fccc3289556c76d54b9b2472ce5e2f9fdf41d6fe8c884f31\"}}",
+        "source_sha256": "",
+        "source_access_scope": "Full text unavailable in closure pass; ACM DL Fig. 9 inaccessible; retain version-bound claims only."
+      }
+    },
+    {
+      "id": "F48",
+      "name": "Coding fingerprints",
+      "citation_key": "ghaleb2026codingfingerprint",
+      "classification": "adjacent",
+      "axes": {
+        "task_input_user": "X",
+        "model": "?",
+        "harness_topology": "X",
+        "hardware": "?",
+        "network_load": "?",
+        "time": "X"
+      },
+      "interpretation": "PR CV; repository/time/human-mediated holdouts unreported",
+      "source_url": "https://arxiv.org/html/2601.17406v1",
+      "source_version": "arXiv:2601.17406v1",
+      "source_locators": "2.1-2.4; Tables 1-2; 4; 6; replication reference",
+      "archived_extraction": {
+        "RQ3": "Random Forest comparator; feature-reduction check; no human-mediated PR evaluation established; source's Section 4 and future work qualify that transfer.",
+        "system_sample_split": "33,580 direct-agent PRs; five agents; 53 candidate features reduced to 41; stratified five-fold PR cross-validation; smallest class 458. Repository, time and human-mediated holdouts not reported in inspected protocol.",
+        "baselines_generalization": "Random Forest comparator; feature-reduction check; no human-mediated PR evaluation established; source's Section 4 and future work qualify that transfer.",
+        "source_binding": "",
+        "source_sha256": "",
+        "source_access_scope": "Complete main text Sections 1-6, Tables 1-2, threats and references. Figures' individual confusion cells not independently visually remeasured."
+      }
+    },
+    {
+      "id": "F49",
+      "name": "AHB",
+      "citation_key": "zhu2026turing",
+      "classification": "core",
+      "axes": {
+        "task_input_user": "?",
+        "model": "?",
+        "harness_topology": "X",
+        "hardware": "?",
+        "network_load": "?",
+        "time": "?"
+      },
+      "interpretation": "Offline/live humanization; website-transfer binding unresolved",
+      "source_url": "https://arxiv.org/html/2604.09574v1",
+      "source_version": "arXiv:2604.09574v1",
+      "source_locators": "2.1-2.2; 3.1; 4.1-4.3; 5.1.2; Table 1 Trip Planning; E.1-E.3",
+      "archived_extraction": {
+        "RQ3": "RAW versus humanization variants, rule-based and learned classifiers; no verified ordinary-website transfer or defense-aware refitting contract.",
+        "system_sample_split": "21 applications / five clusters; human and GUI-agent motion events; 24 statistical features; offline postprocessing distinguished from online execution. Actual train/test grouping, sample denominators for Table 1 and classifier refitting per humanization condition remain unverified.",
+        "baselines_generalization": "RAW versus humanization variants, rule-based and learned classifiers; no verified ordinary-website transfer or defense-aware refitting contract.",
+        "source_binding": "",
+        "source_sha256": "",
+        "source_access_scope": "Sections 2-5 and 7-8; Table 1 Trip Planning online rows; Appendix E.1-E.3. Bibliographic record checked separately. Appendix C proofs and all prompt templates not independently verified."
+      }
+    },
+    {
+      "id": "F50",
+      "name": "WildAuth",
+      "citation_key": "wang2026dialogue",
+      "classification": "adjacent",
+      "axes": {
+        "task_input_user": "H",
+        "model": "?",
+        "harness_topology": "X",
+        "hardware": "?",
+        "network_load": "?",
+        "time": "?"
+      },
+      "interpretation": "User-disjoint cross-topic split; no verified cross-service test",
+      "source_url": "https://dl.acm.org/doi/10.1145/3774904.3793048",
+      "source_version": "ACM WWW 2026 pp.8797-8807; DOI10.1145/3774904.3793048",
+      "source_locators": "2.3; 4.1-4.3; 5.3-5.5; 6.1-6.2; Tables 1-3; Appendix D/Table4",
+      "archived_extraction": {
+        "RQ3": "Stylometric/neural/LLM baselines; cross-topic user-disjoint split; no verified live cross-service or response-only input isolation.",
+        "system_sample_split": "WildChat-derived 1,755 dialogues /442 users; Hard held-out 68 users,1,724 pairs (467 positive,1257 negative). User-disjoint reported outer split; pair observations are dependent. No autonomous-tool result.",
+        "baselines_generalization": "Stylometric/neural/LLM baselines; cross-topic user-disjoint split; no verified live cross-service or response-only input isolation.",
+        "source_binding": "",
+        "source_sha256": "",
+        "source_access_scope": "Existing complete 11-page official eReader capture and source adjudication; current focused reread of 2.3,4-6 and artifact-input boundary. Current direct HTTP 403 retained; it does not erase previously captured authorized text."
+      }
+    },
+    {
+      "id": "F51",
+      "name": "Cycles",
+      "citation_key": "george2025cycles",
+      "classification": "core",
+      "axes": {
+        "task_input_user": "X",
+        "model": "?",
+        "harness_topology": "X",
+        "hardware": "?",
+        "network_load": "?",
+        "time": "X"
+      },
+      "interpretation": "One application; no held-out split located",
+      "source_url": "https://arxiv.org/html/2511.10650v1",
+      "source_version": "arXiv:2511.10650v1; page labels 31 Oct 2025",
+      "source_locators": "1; 2; 2.1 CDCS/CDDAG versus CDSA/Hybrid; 3.1; Tables1-2; 3.2; 4",
+      "archived_extraction": {
+        "RQ3": "CDDAG/CDCS/CDSA/Hybrid within one application; no measured cross-application, user or temporal transfer. Authors identify numerical time-series embedding false positives and plan broader/real-time evaluation.",
+        "system_sample_split": "One stock-market LangGraph application;525 exact prompts x3 system prompts=1575 trajectories;57 mixed positive cycles,1518 other trajectories. Structural, semantic and hybrid threshold sweep; no held-out split located in inspected main text.",
+        "baselines_generalization": "CDDAG/CDCS/CDSA/Hybrid within one application; no measured cross-application, user or temporal transfer. Authors identify numerical time-series embedding false positives and plan broader/real-time evaluation.",
+        "source_binding": "{\"path\": \"evidence/diagnostic-h2-controls-20261018-001/cycle-primary.txt\", \"sha256\": \"f6bd0c8910f96ab7ce7aae337ca58fa093ea4fbc4d285a3c3603d4ffa58231f3\", \"scope\": \"Full main text Sections1-4 and Tables1-2 in official browser HTML; figures' captions, not independent SVG reconstruction. Exact ICSE publisher version blocked by security verification; no equivalence claimed.\"}",
+        "source_sha256": "",
+        "source_access_scope": "Full main text Sections1-4 and Tables1-2 in official browser HTML; figures' captions, not independent SVG reconstruction. Exact ICSE publisher version blocked by security verification; no equivalence claimed."
+      }
+    },
+    {
+      "id": "F52",
+      "name": "LumiMAS",
+      "citation_key": "solomon2026lumimas",
+      "classification": "core",
+      "axes": {
+        "task_input_user": "?",
+        "model": "V",
+        "harness_topology": "V",
+        "hardware": "?",
+        "network_load": "?",
+        "time": "?"
+      },
+      "interpretation": "Nonoverlap logs; backend/platform comparisons; task grouping open",
+      "source_url": "https://arxiv.org/html/2508.12412v2",
+      "source_version": "arXiv:2508.12412v2;27 Feb2026; AAMAS2026 manuscript",
+      "source_locators": "3;4.1-4.3;5.1.1-5.1.7;5.2;Table1;6.1-6.5;B.1/Table3;B.2/Table4;C.1.1",
+      "archived_extraction": {
+        "RQ3": "EPI/Semantic/Combined, LogBERT, LLM-/Agent-as-judge and dedicated hallucination/bias baselines. Cross-platform/backend additional results and sensitivity to changed tools discussed; do not infer universal application transfer. Ground truth for tailored apps uses intended output checks; detector EPI does not receive that label as a declared feature.",
+        "system_sample_split": "Seven applications over CrewAI/LangGraph. More than2000 benign training scenarios per examined application; validation and test each200 logs(100 anomalous/100 benign), nonoverlap stated. GPT-4o-mini and o3-mini agent backends. Five seeds; question/template grouping not established.",
+        "baselines_generalization": "EPI/Semantic/Combined, LogBERT, LLM-/Agent-as-judge and dedicated hallucination/bias baselines. Cross-platform/backend additional results and sensitivity to changed tools discussed; do not infer universal application transfer. Ground truth for tailored apps uses intended output checks; detector EPI does not receive that label as a declared feature.",
+        "source_binding": "{\"path\": \"evidence/diagnostic-h2-controls-20261018-001/lumimas-primary.txt\", \"sha256\": \"f1b8e495cde5c4083a9002d489f29a0fa2abb7b8aee4910b980285a3fd322b5a\", \"scope\": \"Full main Sections1-7; inspected complete Table1, logging Table3 and EPI Table4, C.1.1 labeling. Appendix prompt listings, all additional-result tables and artifact execution not independently checked.\"}",
+        "source_sha256": "",
+        "source_access_scope": "Full main Sections1-7; inspected complete Table1, logging Table3 and EPI Table4, C.1.1 labeling. Appendix prompt listings, all additional-result tables and artifact execution not independently checked."
+      }
+    },
+    {
+      "id": "F53",
+      "name": "SymDiag",
+      "citation_key": "cui2026symdiag",
+      "classification": "adjacent",
+      "axes": {
+        "task_input_user": "V",
+        "model": "V",
+        "harness_topology": "?",
+        "hardware": "?",
+        "network_load": "?",
+        "time": "?"
+      },
+      "interpretation": "Domains/reasoners vary with inputs and feedback",
+      "source_url": "https://arxiv.org/html/2608.08786v1",
+      "source_version": "arXiv:2608.08786v1;9 Aug2026; DOI10.1145/3770855.3818004",
+      "source_locators": "3.1-3.4;4.1.1-4.1.5;5.1;6.1-6.4;7",
+      "archived_extraction": {
+        "RQ3": "Answer Matching, LLM-as-Judge, reward model, LogicReward. Input, backend and feedback differences coexist; no isolated causal effect of content versus metadata access inferred. Four domains do not establish partial-observer transfer.",
+        "system_sample_split": "437792 automatically generated instances; main detection evaluation240 manually audited instances,30 from each of8 datasets over4 domains. Four base reasoners; GPTOSS120B judge/generator except dedicated reward baseline. Default up to4repair rounds.",
+        "baselines_generalization": "Answer Matching, LLM-as-Judge, reward model, LogicReward. Input, backend and feedback differences coexist; no isolated causal effect of content versus metadata access inferred. Four domains do not establish partial-observer transfer.",
+        "source_binding": "{\"path\": \"evidence/diagnostic-h2-controls-20261018-001/../recent-agent-review-20261018-001/sources/symdiag-v1.txt\", \"sha256\": \"3b2dbbce73e180d4b3bc3e0d9b78843e9a5f080c581c79ab8f1a54b7e3813c15\", \"scope\": \"Full main Sections1-7 in previously sealed official HTML/text; focused reread of complete3.1-3.4,4.1 and5-6. No artifact or baseline executed; graphical individual cells not independently remeasured.\"}",
+        "source_sha256": "",
+        "source_access_scope": "Full main Sections1-7 in previously sealed official HTML/text; focused reread of complete3.1-3.4,4.1 and5-6. No artifact or baseline executed; graphical individual cells not independently remeasured."
+      }
+    },
+    {
+      "id": "F54",
+      "name": "LeakyLMs",
+      "citation_key": "majidi2026leakylms",
+      "classification": "core",
+      "axes": {
+        "task_input_user": "?",
+        "model": "H",
+        "harness_topology": "?",
+        "hardware": "V",
+        "network_load": "?",
+        "time": "?"
+      },
+      "interpretation": "Held-out architecture configurations; known-GPU calibration",
+      "source_url": "https://arxiv.org/html/2607.20723v1",
+      "source_version": "v1 2026-07-22; inspected 2026-10-19",
+      "source_locators": "3;4.4-4.5 Tables1-2;5.4-5.5 Tables3-6/Fig6;6;A.1;B.4-B.7",
+      "archived_extraction": {
+        "RQ3": "yes",
+        "system_sample_split": "Optimization Table1 local100/Gemini30/Cohere65 trials. Architecture train81 configurations versus target130 in stated eager setup; other variants separately sized.",
+        "baselines_generalization": "Local speculative on/off; architecture variants and cross-family experiments; calibrated GPU-class dependence retained",
+        "source_binding": "",
+        "source_sha256": "",
+        "source_access_scope": "Main1-8 and relevant A/B appendix passages; local source bytes hashed"
+      }
+    },
+    {
+      "id": "F55",
+      "name": "KVGov",
+      "citation_key": "addagada2026kvgov",
+      "classification": "core",
+      "axes": {
+        "task_input_user": "?",
+        "model": "?",
+        "harness_topology": "?",
+        "hardware": "V",
+        "network_load": "?",
+        "time": "?"
+      },
+      "interpretation": "Simulation, A100 timing and HMAC microcost separate",
+      "source_url": "https://arxiv.org/html/2608.09225v1",
+      "source_version": "v1 2026-08-10; inspected2026-10-19",
+      "source_locators": "2.2-2.3;4;5.1-5.3 Tables3-4;5.7-5.9 Tables8-9;7",
+      "archived_extraction": {
+        "RQ3": "yes",
+        "system_sample_split": "SimulationN1000 seed2026. A100n50/arm x2blocks; HMAC10000microtrials.",
+        "baselines_generalization": "Flush/noise/admission/salt components; two hardware stacks validate timing, not same defended attack population",
+        "source_binding": "",
+        "source_sha256": "",
+        "source_access_scope": "Sections1-8, especially2.2/5.1-5.3/5.7-5.9/7"
+      }
+    },
+    {
+      "id": "F56",
+      "name": "Data-centric survey",
+      "citation_key": "lahjouji2026datacentric",
+      "classification": "adjacent",
+      "axes": {
+        "task_input_user": "-",
+        "model": "-",
+        "harness_topology": "-",
+        "hardware": "-",
+        "network_load": "-",
+        "time": "-"
+      },
+      "interpretation": "Conceptual synthesis; empirical holdout not applicable",
+      "source_url": "https://arxiv.org/html/2606.26627v1",
+      "source_version": "v1 2026-06-25; inspected2026-10-19",
+      "source_locators": "1 Fig1;4-6;8-9 discussion/conclusions",
+      "archived_extraction": {
+        "RQ3": "yes",
+        "system_sample_split": "NA",
+        "baselines_generalization": "Compare judgment object, not attack accuracy",
+        "source_binding": "",
+        "source_sha256": "",
+        "source_access_scope": "Abstract/introduction and data/governance/evaluation synthesis passages; not citation-by-citation revalidation"
+      }
+    },
+    {
+      "id": "F57",
+      "name": "Serving RCA",
+      "citation_key": "scheinert2026rca",
+      "classification": "core",
+      "axes": {
+        "task_input_user": "?",
+        "model": "?",
+        "harness_topology": "X",
+        "hardware": "?",
+        "network_load": "?",
+        "time": "?"
+      },
+      "interpretation": "Single serving deployment with injected faults",
+      "source_url": "https://arxiv.org/html/2603.02057v1",
+      "source_version": "arXiv:2603.02057v1; 02 Mar 2026",
+      "source_locators": "Sections3,4.1-4.3,5.1-5.2; Table1",
+      "archived_extraction": {
+        "RQ3": "Transfer of 24 existing RCA methods to real LLM-serving telemetry; metric-only performance depends strongly on fault type, and trace instrumentation can miss decisive dependencies",
+        "system_sample_split": "Falcon-H1-7B-Instruct, three Ray workers; four fault types x three workers x ten trials=120. Six candidate Pods; independent held-out deployment NR-R in inspected Sections4-5.",
+        "baselines_generalization": "24 RCA methods and random strategy; fault-type-dependent failure of transfer from ordinary microservice methods; one LLM deployment, no general agent/privacy population inference.",
+        "source_binding": "{\"path\": \"evidence/perplexity-adjudication-20261015-side-001/sources/rca-arxiv2603.02057v1-rendered.txt\", \"sha256\": \"f731736b3f161a022f0eff307b926645ae685feb37f28621c927aa90836ea076\", \"scope\": \"Saved official arXiv v1 header, Sections3-4.3,5.1-5.2 and Table1 inspected; abstract not substituted for experiment methods. Whole artifact/reproduction not claimed.\"}",
+        "source_sha256": "",
+        "source_access_scope": "Saved official arXiv v1 header, Sections3-4.3,5.1-5.2 and Table1 inspected; abstract not substituted for experiment methods. Whole artifact/reproduction not claimed."
+      }
+    },
+    {
+      "id": "F58",
+      "name": "ZeroPrint",
+      "citation_key": "shao2026zeroprint",
+      "classification": "adjacent",
+      "axes": {
+        "task_input_user": "?",
+        "model": "V",
+        "harness_topology": "?",
+        "hardware": "?",
+        "network_load": "?",
+        "time": "?"
+      },
+      "interpretation": "Known-family provenance pairs; partition not re-extracted",
+      "source_url": "https://arxiv.org/html/2510.06605v2",
+      "source_version": "arXiv:2510.06605v2; 21 Jan 2026",
+      "source_locators": "Header;4.1-4.4;Figure1;5.1-5.3",
+      "archived_extraction": {
+        "RQ3": "Response-embedding fingerprint comparisons; do not transfer content-based robustness to traffic or tool-metadata inference",
+        "system_sample_split": "LeaFBench149 instances; pairwise provenance discrimination across seven source families. Detailed evaluation partition/uncertainty not re-extracted.",
+        "baselines_generalization": "LLMmap,MET,SEF,TRAP and white-box REEF; post-development variants. Does not establish passive observer transfer.",
+        "source_binding": "{\"path\": \"evidence/perplexity-adjudication-20261015-side-001/sources/zeroprint-arxiv2510.06605v2-rendered.txt\", \"sha256\": \"9350eba482343d05378f53047bece805eb481d221adf6d8557ad671f0db861f9\", \"scope\": \"Saved official v2 header,Sections4.1-4.4,Figure1,5.1-5.3; no independent artifact replay.\"}",
+        "source_sha256": "",
+        "source_access_scope": "Saved official v2 header,Sections4.1-4.4,Figure1,5.1-5.3; no independent artifact replay."
+      }
+    },
+    {
+      "id": "F59",
+      "name": "Endpoint fingerprints",
+      "citation_key": "leshin2026endpoint",
+      "classification": "adjacent",
+      "axes": {
+        "task_input_user": "?",
+        "model": "?",
+        "harness_topology": "V",
+        "hardware": "?",
+        "network_load": "?",
+        "time": "V"
+      },
+      "interpretation": "Controlled endpoint changes over matched time windows",
+      "source_url": "https://arxiv.org/html/2603.19022v1",
+      "source_version": "arXiv:2603.19022v1;19 Mar2026",
+      "source_locators": "Sections3,4.1-4.3,6.1-6.2/Table1,7-9",
+      "archived_extraction": {
+        "RQ3": "Controlled deployment changes can alter content fingerprints; does not establish equivalent metadata or network-traffic transfer",
+        "system_sample_split": "Controlled single-factor endpoint changes; selected same-model providers over matched time windows. Complete repeated-trial denominator/partition NR-V for this scoped extraction.",
+        "baselines_generalization": "Family,version,inference-engine,quantization,temperature interventions; provider comparisons. Endpoint routing/batching can confound attribution.",
+        "source_binding": "{\"path\": \"evidence/perplexity-adjudication-20261015-side-001/sources/endpoint-arxiv2603.19022v1-rendered.txt\", \"sha256\": \"33751ec22a34262929d777cd51207d6e78ad3ea5dfba961c2282cda82a874a23\", \"scope\": \"Saved official v1 header,Sections3-4,6-9; not an independent execution or whole-artifact audit.\"}",
+        "source_sha256": "",
+        "source_access_scope": "Saved official v1 header,Sections3-4,6-9; not an independent execution or whole-artifact audit."
+      }
+    },
+    {
+      "id": "F60",
+      "name": "StepFinder",
+      "citation_key": "zhu2026stepfinder",
+      "classification": "adjacent",
+      "axes": {
+        "task_input_user": "H",
+        "model": "?",
+        "harness_topology": "?",
+        "hardware": "?",
+        "network_load": "?",
+        "time": "?"
+      },
+      "interpretation": "Task-disjoint subsets; denominator reconciliation unresolved",
+      "source_url": "https://arxiv.org/html/2606.03467v1",
+      "source_version": "arXiv:2606.03467v1;02 Jun2026",
+      "source_locators": "Header;Sections4,5.1-5.4,6;Tables4-5",
+      "archived_extraction": {
+        "RQ3": "Task-disjoint diagnosis on two subsets; temporal-module ablation is not a structural-only attack result",
+        "system_sample_split": "Task-disjoint train/test as stated in5.1; training92Alg/186HC tasks generating1564/2604 trajectories. Exact test-denominator reconciliation NR-V in this extraction.",
+        "baselines_generalization": "Random,LLM-based and sequence models; Table5 module ablations; no weak-observer/content-free transfer established.",
+        "source_binding": "{\"path\": \"evidence/perplexity-adjudication-20261015-side-001/continuation-002/sources/stepfinder-arxiv.txt\", \"sha256\": \"e6de65477a6e3f05fd592beb5052d2f7a708d576f9d39a308c59aaaa1338fcf6\", \"scope\": \"Saved official v1 header,method feature construction,5.1-5.4,Tables4-5 and Section6; no artifact replay.\"}",
+        "source_sha256": "",
+        "source_access_scope": "Saved official v1 header,method feature construction,5.1-5.4,Tables4-5 and Section6; no artifact replay."
+      }
+    },
+    {
+      "id": "F61",
+      "name": "Web-agent detection",
+      "citation_key": "fayolle2026webagents",
+      "classification": "core",
+      "axes": {
+        "task_input_user": "?",
+        "model": "V",
+        "harness_topology": "?",
+        "hardware": "?",
+        "network_load": "?",
+        "time": "?"
+      },
+      "interpretation": "Six agents with human/scraper controls",
+      "source_url": "https://arxiv.org/html/2606.30119v1",
+      "source_version": "2606.30119v1",
+      "source_locators": "3.1.4;3.3;6;7",
+      "archived_extraction": {
+        "RQ3": "Six web agents and human/scraper controls; site-visible per-layer and combined classifiers",
+        "system_sample_split": "Six web agents and human/scraper controls; site-visible per-layer and combined classifiers",
+        "baselines_generalization": "Only named models/probes/hardware/support in the source-scoped row; not universal transfer.",
+        "source_binding": "{\"path\": \"evidence/search-completion-20261021-001/sources/2606.30119v1.txt\", \"sha256\": \"7715e1c2ff125bfdcff819a9cec2473e0dbe2cb514f9f32be0a2234a4d217e48\", \"surface\": \"pinned primary source\"}",
+        "source_sha256": "7715e1c2ff125bfdcff819a9cec2473e0dbe2cb514f9f32be0a2234a4d217e48",
+        "source_access_scope": "Specified primary sections/tables read; not independent human coding or reproduction."
+      }
+    },
+    {
+      "id": "F62",
+      "name": "Cross-campaign",
+      "citation_key": "park2026crosscampaign",
+      "classification": "core",
+      "axes": {
+        "task_input_user": "V",
+        "model": "?",
+        "harness_topology": "V",
+        "hardware": "?",
+        "network_load": "?",
+        "time": "?"
+      },
+      "interpretation": "Crossed-style and regenerated conditions; execution stress subset",
+      "source_url": "https://arxiv.org/html/2607.18826v1",
+      "source_version": "2607.18826v1",
+      "source_locators": "AppendixB decomposition;AppendixH hard-crossed and independent-regeneration experiments",
+      "archived_extraction": {
+        "RQ3": "Full mixed AUC.82; hard crossed-style structural-only AUC.686 CI[.621,.744]; independently regenerated .686[.625,.739]; native48/120 execution stress runs",
+        "system_sample_split": "Full mixed AUC.82; hard crossed-style structural-only AUC.686 CI[.621,.744]; independently regenerated .686[.625,.739]; native48/120 execution stress runs",
+        "baselines_generalization": "Only named models/probes/hardware/support in the source-scoped row; not universal transfer.",
+        "source_binding": "{\"path\": \"evidence/search-completion-20261021-001/sources/2607.18826-followup.txt\", \"sha256\": \"4afa9cc8178fb1a90f1f36554d15c9f15ed828e370455a790553e3cf2af3989c\", \"surface\": \"pinned primary source\"}",
+        "source_sha256": "4afa9cc8178fb1a90f1f36554d15c9f15ed828e370455a790553e3cf2af3989c",
+        "source_access_scope": "Specified primary sections/tables read; not independent human coding or reproduction."
+      }
+    },
+    {
+      "id": "F63",
+      "name": "AgentProv",
+      "citation_key": "wang2026agentprov",
+      "classification": "core",
+      "axes": {
+        "task_input_user": "?",
+        "model": "V",
+        "harness_topology": "?",
+        "hardware": "?",
+        "network_load": "?",
+        "time": "?"
+      },
+      "interpretation": "Substituted checkpoints; system-prompt perturbation",
+      "source_url": "https://arxiv.org/html/2609.00052v1",
+      "source_version": "2609.00052v1",
+      "source_locators": "3.1-3.4;4.1-4.4;A.5",
+      "archived_extraction": {
+        "RQ3": "630 substituted checkpoint pairs; 100% detection; system-prompt false-positive rate 1/15=7%; own MMD calibration",
+        "system_sample_split": "630 substituted checkpoint pairs; 100% detection; system-prompt false-positive rate 1/15=7%; own MMD calibration",
+        "baselines_generalization": "Only named models/probes/hardware/support in the source-scoped row; not universal transfer.",
+        "source_binding": "{\"path\": \"evidence/search-completion-20261021-001/sources/2609.00052v1.txt\", \"sha256\": \"9bd93cba8fa947f9b93b8f1f696bd55613470f056f8d3f9308527e1465d6fd8e\", \"surface\": \"pinned primary source\"}",
+        "source_sha256": "9bd93cba8fa947f9b93b8f1f696bd55613470f056f8d3f9308527e1465d6fd8e",
+        "source_access_scope": "Specified primary sections/tables read; not independent human coding or reproduction."
+      }
+    },
+    {
+      "id": "F64",
+      "name": "LiDAR",
+      "citation_key": "wang2026lidar",
+      "classification": "core",
+      "axes": {
+        "task_input_user": "?",
+        "model": "V",
+        "harness_topology": "V",
+        "hardware": "?",
+        "network_load": "?",
+        "time": "?"
+      },
+      "interpretation": "Enrollment-only identity; two harnesses and perturbations",
+      "source_url": "https://arxiv.org/html/2609.28559v1",
+      "source_version": "2609.28559v1",
+      "source_locators": "2;5.1-5.3;6.1-6.5",
+      "archived_extraction": {
+        "RQ3": "36 models,7 families,2 harnesses; fixed enrollment-only identifier; clean Top1 95.13%/88.36%; controlled normal/perturbed probe pairs",
+        "system_sample_split": "36 models,7 families,2 harnesses; fixed enrollment-only identifier; clean Top1 95.13%/88.36%; controlled normal/perturbed probe pairs",
+        "baselines_generalization": "Only named models/probes/hardware/support in the source-scoped row; not universal transfer.",
+        "source_binding": "{\"path\": \"evidence/search-completion-20261021-001/sources/2609.28559v1.txt\", \"sha256\": \"2f1cb24ec56271f27cde13970e56225977d5db277c200ae818da0133b47957a1\", \"surface\": \"pinned primary source\"}",
+        "source_sha256": "2f1cb24ec56271f27cde13970e56225977d5db277c200ae818da0133b47957a1",
+        "source_access_scope": "Specified primary sections/tables read; not independent human coding or reproduction."
+      }
+    },
+    {
+      "id": "F65",
+      "name": "LLM-WFIN",
+      "citation_key": "jiao2025llmwfin",
+      "classification": "core",
+      "axes": {
+        "task_input_user": "V",
+        "model": "?",
+        "harness_topology": "?",
+        "hardware": "?",
+        "network_load": "?",
+        "time": "?"
+      },
+      "interpretation": "Site traces; loading versus query phases",
+      "source_url": "https://doi.org/10.3390/electronics14071263",
+      "source_version": "publisher version2025-03-23",
+      "source_locators": "3.2-3.3;5.1-5.2;6.1-6.5;Tables2-5;publisher rendered primary article",
+      "archived_extraction": {
+        "RQ3": "25sites,7500traces;postfusion97.2%;query-phase interrupt6.5% differs from loading96.6%;data conditions in3.2-3.3/6.1",
+        "system_sample_split": "25sites,7500traces;postfusion97.2%;query-phase interrupt6.5% differs from loading96.6%;data conditions in3.2-3.3/6.1",
+        "baselines_generalization": "Only named models/probes/hardware/support in the source-scoped row; not universal transfer.",
+        "source_binding": "{\"path\": \"evidence/search-completion-20261021-001/sources/mdpi-primary-rendered-search.json\", \"sha256\": \"6da6e69557471747fed7ddd3310df86d88188200cdd0a6aaa8e182ef9de6676a\", \"surface\": \"publisher rendered primary\"}",
+        "source_sha256": "6da6e69557471747fed7ddd3310df86d88188200cdd0a6aaa8e182ef9de6676a",
+        "source_access_scope": "Specified primary sections/tables read; not independent human coding or reproduction."
+      }
+    },
+    {
+      "id": "F66",
+      "name": "MIRAGE",
+      "citation_key": "revankar2026mirage",
+      "classification": "core",
+      "axes": {
+        "task_input_user": "V",
+        "model": "V",
+        "harness_topology": "?",
+        "hardware": "?",
+        "network_load": "?",
+        "time": "?"
+      },
+      "interpretation": "Encodings/models/scenarios; matched decoder-layer controls",
+      "source_url": "https://arxiv.org/html/2606.10304v1",
+      "source_version": "2606.10304v1",
+      "source_locators": "3.4;4.1-4.2;7.1-7.4;AppendixL.3-L.4",
+      "archived_extraction": {
+        "RQ3": "9encoding families,8models;126agentic scenarios;per-channel AUC.677/.913 and fusion.918;decoder-layer matched controls reject embedding-layer artifact",
+        "system_sample_split": "9encoding families,8models;126agentic scenarios;per-channel AUC.677/.913 and fusion.918;decoder-layer matched controls reject embedding-layer artifact",
+        "baselines_generalization": "Only named models/probes/hardware/support in the source-scoped row; not universal transfer.",
+        "source_binding": "{\"path\": \"evidence/search-completion-20261021-001/sources/2606.10304-audit.txt\", \"sha256\": \"49df9dc5c6bb2349bf27d220da5c34ed71520f4ebe38049280d72b7fe26ed840\", \"surface\": \"pinned primary source\"}",
+        "source_sha256": "49df9dc5c6bb2349bf27d220da5c34ed71520f4ebe38049280d72b7fe26ed840",
+        "source_access_scope": "Specified primary sections/tables read; not independent human coding or reproduction."
+      }
+    },
+    {
+      "id": "F67",
+      "name": "Routing metadata",
+      "citation_key": "chen2026routingmetadata",
+      "classification": "core",
+      "axes": {
+        "task_input_user": "V",
+        "model": "?",
+        "harness_topology": "V",
+        "hardware": "?",
+        "network_load": "?",
+        "time": "?"
+      },
+      "interpretation": "Request domains and routers; exploratory sensitive-label gate",
+      "source_url": "https://arxiv.org/html/2610.09981v1",
+      "source_version": "2610.09981v1",
+      "source_locators": "III;IV;V;VI;VII",
+      "archived_extraction": {
+        "RQ3": "1.7M WildChat/LMSYS requests; 2 cost-quality routers plus domain upper bound; 20-decision medical AUC.71 below.75 gate; exploratory label gate",
+        "system_sample_split": "1.7M WildChat/LMSYS requests; 2 cost-quality routers plus domain upper bound; 20-decision medical AUC.71 below.75 gate; exploratory label gate",
+        "baselines_generalization": "Only named models/probes/hardware/support in the source-scoped row; not universal transfer.",
+        "source_binding": "{\"path\": \"evidence/search-completion-20261021-001/sources/2610.09981v1.txt\", \"sha256\": \"ad8e75573616113c965b7ee019e8dc412da090259d1b706282306dd0cdd08e13\", \"surface\": \"pinned primary source\"}",
+        "source_sha256": "ad8e75573616113c965b7ee019e8dc412da090259d1b706282306dd0cdd08e13",
+        "source_access_scope": "Specified primary sections/tables read; not independent human coding or reproduction."
+      }
+    },
+    {
+      "id": "F68",
+      "name": "Shape and Substance",
+      "citation_key": "hadad2026shape",
+      "classification": "core",
+      "axes": {
+        "task_input_user": "V",
+        "model": "V",
+        "harness_topology": "V",
+        "hardware": "V",
+        "network_load": "?",
+        "time": "?"
+      },
+      "interpretation": "Geometry/model/cache/hardware conditions; padding estimate",
+      "source_url": "https://arxiv.org/html/2603.25403v1",
+      "source_version": "2603.25403v1",
+      "source_locators": "IV;V;VII;VIII;IX",
+      "archived_extraction": {
+        "RQ3": "LLaVA-NeXT/Qwen2-VL; static-model,geometry,cache/hardware comparisons; geometry timing classes separate",
+        "system_sample_split": "LLaVA-NeXT/Qwen2-VL; static-model,geometry,cache/hardware comparisons; geometry timing classes separate",
+        "baselines_generalization": "Only named models/probes/hardware/support in the source-scoped row; not universal transfer.",
+        "source_binding": "{\"path\": \"evidence/search-completion-20261021-001/sources/2603.25403v1.txt\", \"sha256\": \"01732092fc5696b777f2ee2a70f6aab420a1560ada12f8efe038d9f24b7ac102\", \"surface\": \"pinned primary source\"}",
+        "source_sha256": "01732092fc5696b777f2ee2a70f6aab420a1560ada12f8efe038d9f24b7ac102",
+        "source_access_scope": "Specified primary sections/tables read; not independent human coding or reproduction."
+      }
+    },
+    {
+      "id": "F69",
+      "name": "SplitDecoy",
+      "citation_key": "politis2026splitdecoy",
+      "classification": "core",
+      "axes": {
+        "task_input_user": "?",
+        "model": "?",
+        "harness_topology": "?",
+        "hardware": "?",
+        "network_load": "?",
+        "time": "?"
+      },
+      "interpretation": "Repeated seeds; forward/backward boundary, not a holdout",
+      "source_url": "https://arxiv.org/html/2609.04382v1",
+      "source_version": "2609.04382v1",
+      "source_locators": "2;5.1-5.3;Table7-8;A.2.2",
+      "archived_extraction": {
+        "RQ3": "32real+48decoy rows;9 seeds; every4096/4096 real rows identified; forward quality/privacy-qualified runs can still fail backward gate",
+        "system_sample_split": "32real+48decoy rows;9 seeds; every4096/4096 real rows identified; forward quality/privacy-qualified runs can still fail backward gate",
+        "baselines_generalization": "Only named models/probes/hardware/support in the source-scoped row; not universal transfer.",
+        "source_binding": "{\"path\": \"evidence/search-completion-20261021-001/sources/2609.04382v1.txt\", \"sha256\": \"845e77fc5884f8bec51fca988ea3198fb583ff3e395e04aac23a38696308ef3e\", \"surface\": \"pinned primary source\"}",
+        "source_sha256": "845e77fc5884f8bec51fca988ea3198fb583ff3e395e04aac23a38696308ef3e",
+        "source_access_scope": "Specified primary sections/tables read; not independent human coding or reproduction."
+      }
+    },
+    {
+      "id": "F70",
+      "name": "PAGE404",
+      "citation_key": "nazaraliyev2026page404",
+      "classification": "core",
+      "axes": {
+        "task_input_user": "V",
+        "model": "V",
+        "harness_topology": "?",
+        "hardware": "?",
+        "network_load": "?",
+        "time": "?"
+      },
+      "interpretation": "Architecture and prompt-length targets; transfer binding open",
+      "source_url": "https://arxiv.org/html/2610.20962v1",
+      "source_version": "2610.20962v1",
+      "source_locators": "II-B;IV-D4-D6;V",
+      "archived_extraction": {
+        "RQ3": "SectionIV-D4-D6 architecture classification and prompt-length mean absolute error4.6tokens; covert bps not inference accuracy",
+        "system_sample_split": "SectionIV-D4-D6 architecture classification and prompt-length mean absolute error4.6tokens; covert bps not inference accuracy",
+        "baselines_generalization": "Only named models/probes/hardware/support in the source-scoped row; not universal transfer.",
+        "source_binding": "{\"path\": \"evidence/search-completion-20261021-001/sources/2610.20962-native.txt\", \"sha256\": \"e8fe95947d66411fd6cdc2e4ebc034fd84aef05228c17ac8cbad82a4bf19c679\", \"surface\": \"pinned primary source\"}",
+        "source_sha256": "e8fe95947d66411fd6cdc2e4ebc034fd84aef05228c17ac8cbad82a4bf19c679",
+        "source_access_scope": "Specified primary sections/tables read; not independent human coding or reproduction."
+      }
+    },
+    {
+      "id": "F71",
+      "name": "Edge EM",
+      "citation_key": "alhalawani2026physicaledge",
+      "classification": "core",
+      "axes": {
+        "task_input_user": "H",
+        "model": "?",
+        "harness_topology": "?",
+        "hardware": "?",
+        "network_load": "?",
+        "time": "?"
+      },
+      "interpretation": "Unseen-word test separate from profiled vocabulary recovery",
+      "source_url": "https://arxiv.org/html/2610.14215v1",
+      "source_version": "2610.14215v1",
+      "source_locators": "IV;V;VI",
+      "archived_extraction": {
+        "RQ3": "Llama3.2.1B on RaspberryPi5;50-keyword97.2%,profiled128K vocabulary94.3%; unseen-word top10067%/medianrank54 are separate endpoints",
+        "system_sample_split": "Llama3.2.1B on RaspberryPi5;50-keyword97.2%,profiled128K vocabulary94.3%; unseen-word top10067%/medianrank54 are separate endpoints",
+        "baselines_generalization": "Only named models/probes/hardware/support in the source-scoped row; not universal transfer.",
+        "source_binding": "{\"path\": \"evidence/search-completion-20261021-001/sources/2610.14215-native.txt\", \"sha256\": \"b77697baf11cead325db6ba4e7491dd477eff22cb151abf7c770255c28f43f6c\", \"surface\": \"pinned primary source\"}",
+        "source_sha256": "b77697baf11cead325db6ba4e7491dd477eff22cb151abf7c770255c28f43f6c",
+        "source_access_scope": "Specified primary sections/tables read; not independent human coding or reproduction."
+      }
+    },
+    {
+      "id": "F72",
+      "name": "SparLeak",
+      "citation_key": "chen2026sparleak",
+      "classification": "core",
+      "axes": {
+        "task_input_user": "V",
+        "model": "V",
+        "harness_topology": "V",
+        "hardware": "?",
+        "network_load": "?",
+        "time": "?"
+      },
+      "interpretation": "Models/datasets/sparse mechanisms; per-phase outcomes",
+      "source_url": "https://arxiv.org/html/2609.38830v1",
+      "source_version": "2609.38830v1",
+      "source_locators": "3.1;4-7;Table4",
+      "archived_extraction": {
+        "RQ3": "3models,3sparse mechanisms,3datasets; phase-specific denominators PASR/DASR; overall averages90.9%/87.3%",
+        "system_sample_split": "3models,3sparse mechanisms,3datasets; phase-specific denominators PASR/DASR; overall averages90.9%/87.3%",
+        "baselines_generalization": "Only named models/probes/hardware/support in the source-scoped row; not universal transfer.",
+        "source_binding": "{\"path\": \"evidence/search-completion-20261021-001/sources/2609.38830-native.txt\", \"sha256\": \"589fff576411ab23c8bd68eb3805afd2b0d08637a5926f530ddf9069af2c17ea\", \"surface\": \"pinned primary source\"}",
+        "source_sha256": "589fff576411ab23c8bd68eb3805afd2b0d08637a5926f530ddf9069af2c17ea",
+        "source_access_scope": "Specified primary sections/tables read; not independent human coding or reproduction."
+      }
+    },
+    {
+      "id": "F73",
+      "name": "Sparseety",
+      "citation_key": "jo2026sparseety",
+      "classification": "core",
+      "axes": {
+        "task_input_user": "V",
+        "model": "V",
+        "harness_topology": "V",
+        "hardware": "?",
+        "network_load": "?",
+        "time": "?"
+      },
+      "interpretation": "Models/datasets/implementations; oracle-conditioned extraction",
+      "source_url": "https://arxiv.org/html/2608.02995v1",
+      "source_version": "2608.02995v1",
+      "source_locators": "III;V;VI;VIII;IX",
+      "archived_extraction": {
+        "RQ3": "Multiple sparse serving implementations/models/datasets; reported BLEU>0.95; deterministic selective activation oracle",
+        "system_sample_split": "Multiple sparse serving implementations/models/datasets; reported BLEU>0.95; deterministic selective activation oracle",
+        "baselines_generalization": "Only named models/probes/hardware/support in the source-scoped row; not universal transfer.",
+        "source_binding": "{\"path\": \"evidence/search-completion-20261021-001/sources/2608.02995-native.txt\", \"sha256\": \"ab24406fbdbcbda952885e33b3a3f5eff93ed44d6547282f7fc8f9102b2e3916\", \"surface\": \"pinned primary source\"}",
+        "source_sha256": "ab24406fbdbcbda952885e33b3a3f5eff93ed44d6547282f7fc8f9102b2e3916",
+        "source_access_scope": "Specified primary sections/tables read; not independent human coding or reproduction."
+      }
+    },
+    {
+      "id": "F74",
+      "name": "OTRO",
+      "citation_key": "lee2026otro",
+      "classification": "core",
+      "axes": {
+        "task_input_user": "?",
+        "model": "?",
+        "harness_topology": "?",
+        "hardware": "?",
+        "network_load": "?",
+        "time": "?"
+      },
+      "interpretation": "Closed-corpus conditional leakage; epoch cost separately derived",
+      "source_url": "https://arxiv.org/html/2606.17358v1",
+      "source_version": "2606.17358v1",
+      "source_locators": "III;V;VI;VII-C-E;TableIII",
+      "archived_extraction": {
+        "RQ3": "Uniform closed20K corpus H(prompt)14.29bits; I(accesscount;prompt|bytelength)3.94→.04bits; byte-length residual remains",
+        "system_sample_split": "Uniform closed20K corpus H(prompt)14.29bits; I(accesscount;prompt|bytelength)3.94→.04bits; byte-length residual remains",
+        "baselines_generalization": "Only named models/probes/hardware/support in the source-scoped row; not universal transfer.",
+        "source_binding": "{\"path\": \"evidence/search-completion-20261021-001/sources/2606.17358-native.txt\", \"sha256\": \"b30b9c31ea007215832d7315452f97f91000fd5601f810a3772cc4e585de6751\", \"surface\": \"pinned primary source\"}",
+        "source_sha256": "b30b9c31ea007215832d7315452f97f91000fd5601f810a3772cc4e585de6751",
+        "source_access_scope": "Specified primary sections/tables read; not independent human coding or reproduction."
+      }
+    },
+    {
+      "id": "F75",
+      "name": "CachePrune",
+      "citation_key": "wu2026cacheprune",
+      "classification": "core",
+      "axes": {
+        "task_input_user": "V",
+        "model": "V",
+        "harness_topology": "?",
+        "hardware": "?",
+        "network_load": "?",
+        "time": "?"
+      },
+      "interpretation": "Models/workloads and detector-miss stress; separate fits",
+      "source_url": "https://arxiv.org/html/2605.23640v1",
+      "source_version": "2605.23640v1",
+      "source_locators": "3.1;5.1-5.6;Table1;AppendixA",
+      "archived_extraction": {
+        "RQ3": "vLLM/H100; Mistral7B,Qwen2.5.7/14B; QASPER,NarrativeQA,QMSum; detectorFN stress;Table1 marked-token direct recovery0",
+        "system_sample_split": "vLLM/H100; Mistral7B,Qwen2.5.7/14B; QASPER,NarrativeQA,QMSum; detectorFN stress;Table1 marked-token direct recovery0",
+        "baselines_generalization": "Only named models/probes/hardware/support in the source-scoped row; not universal transfer.",
+        "source_binding": "{\"path\": \"evidence/search-completion-20261021-001/sources/2605.23640-native.txt\", \"sha256\": \"6b30e8de7343a6a142d8884976ed11e962b2fbf0a5c9a12b787111b17feb98f4\", \"surface\": \"pinned primary source\"}",
+        "source_sha256": "6b30e8de7343a6a142d8884976ed11e962b2fbf0a5c9a12b787111b17feb98f4",
+        "source_access_scope": "Specified primary sections/tables read; not independent human coding or reproduction."
+      }
+    },
+    {
+      "id": "F76",
+      "name": "Privacy foundations",
+      "citation_key": "kotevska2026privacyfoundations",
+      "classification": "adjacent",
+      "axes": {
+        "task_input_user": "-",
+        "model": "-",
+        "harness_topology": "-",
+        "hardware": "-",
+        "network_load": "-",
+        "time": "-"
+      },
+      "interpretation": "Conceptual contract; cross-institution example illustrative",
+      "source_url": "https://arxiv.org/html/2609.39787v1",
+      "source_version": "2609.39787v1",
+      "source_locators": "III;IV/TableIII;IV-A;VI",
+      "archived_extraction": {
+        "RQ3": "The six-element privacy claim register is a close prior framework for heterogeneous assurance and composition. Its cross-institutional example is illustrative and sufficient composition conditions are conjectures, not measured LLM side-channel inference.",
+        "system_sample_split": "Source-scoped adjacent case; no pooled cross-study sample asserted.",
+        "baselines_generalization": "Adjacent only; do not pool with core attack or defense effects.",
+        "source_binding": "{\"path\": \"evidence/search-completion-20261021-001/sources/2609.39787-native-a2.txt\", \"sha256\": \"2b42dc7d75c31752d423be9582cbfd977af3182fcda7b596f6f3ad1aa5a1d437\", \"surface\": \"pinned primary source\"}",
+        "source_sha256": "2b42dc7d75c31752d423be9582cbfd977af3182fcda7b596f6f3ad1aa5a1d437",
+        "source_access_scope": "Specified primary sections/tables read; not independent human coding or reproduction."
+      }
+    },
+    {
+      "id": "F77",
+      "name": "DP-MemView",
+      "citation_key": "dpmemview2026",
+      "classification": "adjacent",
+      "axes": {
+        "task_input_user": "?",
+        "model": "?",
+        "harness_topology": "?",
+        "hardware": "?",
+        "network_load": "?",
+        "time": "?"
+      },
+      "interpretation": "Semantic response privacy; holdout binding not re-extracted",
+      "source_url": "https://arxiv.org/html/2608.03130v1",
+      "source_version": "2608.03130v1",
+      "source_locators": "Problem Definition;DP-MemView;Experiments;AppendixB.5",
+      "archived_extraction": {
+        "RQ3": "Attribute privacy is evaluated on semantic memory-conditioned response transcripts. The interface contract is useful positive evidence for conditional post-processing reuse, not auxiliary-only leakage.",
+        "system_sample_split": "Source-scoped adjacent case; no pooled cross-study sample asserted.",
+        "baselines_generalization": "Adjacent only; do not pool with core attack or defense effects.",
+        "source_binding": "{\"path\": \"evidence/search-completion-20261021-001/sources/2608.03130v1.txt\", \"sha256\": \"25918eb380d091867041551bbf8ee983eed48e257a757a612e63f585a7542751\", \"surface\": \"pinned primary source\"}",
+        "source_sha256": "25918eb380d091867041551bbf8ee983eed48e257a757a612e63f585a7542751",
+        "source_access_scope": "Specified primary sections/tables read; not independent human coding or reproduction."
+      }
+    },
+    {
+      "id": "F78",
+      "name": "PriCon",
+      "citation_key": "pricon2026",
+      "classification": "adjacent",
+      "axes": {
+        "task_input_user": "?",
+        "model": "?",
+        "harness_topology": "?",
+        "hardware": "?",
+        "network_load": "?",
+        "time": "?"
+      },
+      "interpretation": "Semantic cloud consultation; holdout binding not re-extracted",
+      "source_url": "https://arxiv.org/html/2609.32642v1",
+      "source_version": "2609.32642v1",
+      "source_locators": "PDF3;5.1-5.2;Tables2-4",
+      "archived_extraction": {
+        "RQ3": "Cloud consultation observer sees rewritten request semantics. Privacy/utility/token-round trade-off is measured but this is semantic task protection, not auxiliary-only inference.",
+        "system_sample_split": "Source-scoped adjacent case; no pooled cross-study sample asserted.",
+        "baselines_generalization": "Adjacent only; do not pool with core attack or defense effects.",
+        "source_binding": "{\"path\": \"evidence/search-completion-20261021-001/sources/2609.32642v1-pdf.txt\", \"sha256\": \"13794c8f9d25b9194da8d25d6a80a474f19e1973811dff45706dcf4cfceb5043\", \"surface\": \"pinned primary source\"}",
+        "source_sha256": "13794c8f9d25b9194da8d25d6a80a474f19e1973811dff45706dcf4cfceb5043",
+        "source_access_scope": "Specified primary sections/tables read; not independent human coding or reproduction."
+      }
+    },
+    {
+      "id": "F79",
+      "name": "SCAAR",
+      "citation_key": "mondol2025scaar",
+      "classification": "adjacent",
+      "axes": {
+        "task_input_user": "?",
+        "model": "?",
+        "harness_topology": "?",
+        "hardware": "?",
+        "network_load": "?",
+        "time": "?"
+      },
+      "interpretation": "LLM EM/length test; other classifier results separate",
+      "source_url": "https://arxiv.org/html/2501.14512v1",
+      "source_version": "2501.14512v1",
+      "source_locators": "7;LLM extension;TVLA experiment",
+      "archived_extraction": {
+        "RQ3": "The LLM extension reports EM leakage t-tests and output-length separation. Neural-network classification results elsewhere in the paper do not establish LLM inference accuracy.",
+        "system_sample_split": "Source-scoped adjacent case; no pooled cross-study sample asserted.",
+        "baselines_generalization": "Adjacent only; do not pool with core attack or defense effects.",
+        "source_binding": "{\"path\": \"evidence/search-completion-20261021-001/sources/2501.14512-native.txt\", \"sha256\": \"41a4a9dcfdcb5cda9cf8c5c64f95bd5e7e233c729bdcf1165b62ab234cea0717\", \"surface\": \"pinned primary source\"}",
+        "source_sha256": "41a4a9dcfdcb5cda9cf8c5c64f95bd5e7e233c729bdcf1165b62ab234cea0717",
+        "source_access_scope": "Specified primary sections/tables read; not independent human coding or reproduction."
+      }
+    },
+    {
+      "id": "F80",
+      "name": "CacheSolidarity",
+      "citation_key": "pennas2026cachesolidarity",
+      "classification": "adjacent",
+      "axes": {
+        "task_input_user": "?",
+        "model": "?",
+        "harness_topology": "?",
+        "hardware": "?",
+        "network_load": "?",
+        "time": "?"
+      },
+      "interpretation": "Candidate-prefix timing gap; no scored inference error",
+      "source_url": "https://arxiv.org/html/2603.10726v1",
+      "source_version": "2603.10726v1",
+      "source_locators": "v1 title;5.2.3;Figure7",
+      "archived_extraction": {
+        "RQ3": "The inspected v1 is titled CacheSolidarity, whereas the current index says PrefixWall. Section5.2.3 presents a timing/cache-hit gap on20 candidate prefixes but no scored inference error; first cross-user guess is not blocked.",
+        "system_sample_split": "Source-scoped adjacent case; no pooled cross-study sample asserted.",
+        "baselines_generalization": "Adjacent only; do not pool with core attack or defense effects.",
+        "source_binding": "{\"path\": \"evidence/search-completion-20261021-001/sources/2603.10726-native.txt\", \"sha256\": \"db10eb9abf143397ced16243f4de68535c1bff323bfa49069ec80641f0ea3f89\", \"surface\": \"pinned primary source\"}",
+        "source_sha256": "db10eb9abf143397ced16243f4de68535c1bff323bfa49069ec80641f0ea3f89",
+        "source_access_scope": "Specified primary sections/tables read; not independent human coding or reproduction."
+      }
+    },
+    {
+      "id": "F81",
+      "name": "Vision encoder",
+      "citation_key": "zhou2026visionencoder",
+      "classification": "adjacent",
+      "axes": {
+        "task_input_user": "?",
+        "model": "?",
+        "harness_topology": "?",
+        "hardware": "?",
+        "network_load": "?",
+        "time": "?"
+      },
+      "interpretation": "Representation inversion; holdout binding not re-extracted",
+      "source_url": "https://arxiv.org/html/2606.14783v1",
+      "source_version": "2606.14783v1",
+      "source_locators": "2;3;5;7;8/Table5",
+      "archived_extraction": {
+        "RQ3": "Token-access adversary inverts intentionally exposed visual representation values, rather than auxiliary execution metadata. Useful adaptive-defense/placement evidence, but not core under the strict auxiliary-only rule.",
+        "system_sample_split": "Source-scoped adjacent case; no pooled cross-study sample asserted.",
+        "baselines_generalization": "Adjacent only; do not pool with core attack or defense effects.",
+        "source_binding": "{\"path\": \"evidence/search-completion-20261021-001/sources/2606.14783v1.txt\", \"sha256\": \"b2c4ee780f13b34756b8bb6b8f72cb2b3e6ea6705d31cc535f6e667f4faabfe1\", \"surface\": \"pinned primary source\"}",
+        "source_sha256": "b2c4ee780f13b34756b8bb6b8f72cb2b3e6ea6705d31cc535f6e667f4faabfe1",
+        "source_access_scope": "Specified primary sections/tables read; not independent human coding or reproduction."
+      }
+    },
+    {
+      "id": "F82",
+      "name": "Split gradients",
+      "citation_key": "politis2026gradients",
+      "classification": "adjacent",
+      "axes": {
+        "task_input_user": "?",
+        "model": "?",
+        "harness_topology": "?",
+        "hardware": "?",
+        "network_load": "?",
+        "time": "?"
+      },
+      "interpretation": "Split-compute content inversion; holdout binding unresolved",
+      "source_url": "https://arxiv.org/html/2610.04128v1",
+      "source_version": "2610.04128v1",
+      "source_locators": "3;4.1-4.5;5;AppendixB",
+      "archived_extraction": {
+        "RQ3": "The untrusted split-compute node inverts intentionally transmitted activation/gradient values. This content-representation attack is adjacent; do not import its token-recovery result as auxiliary execution-metadata inference.",
+        "system_sample_split": "Source-scoped adjacent case; no pooled cross-study sample asserted.",
+        "baselines_generalization": "Adjacent only; do not pool with core attack or defense effects.",
+        "source_binding": "{\"path\": \"evidence/search-completion-20261021-001/sources/2610.04128-followup.txt\", \"sha256\": \"b4c05ec9d1eff511d44128bb8b4c8928c565f96dc85be7fc5bb92475f1ce05a5\", \"surface\": \"pinned primary source\"}",
+        "source_sha256": "b4c05ec9d1eff511d44128bb8b4c8928c565f96dc85be7fc5bb92475f1ce05a5",
+        "source_access_scope": "Specified primary sections/tables read; not independent human coding or reproduction."
+      }
+    }
+  ],
+  "summary": {
+    "all": {
+      "task_input_user": {
+        "?": 45,
+        "V": 20,
+        "H": 13,
+        "X": 2,
+        "-": 2
+      },
+      "model": {
+        "?": 50,
+        "V": 26,
+        "X": 1,
+        "H": 3,
+        "-": 2
+      },
+      "harness_topology": {
+        "?": 54,
+        "V": 16,
+        "X": 8,
+        "H": 2,
+        "-": 2
+      },
+      "hardware": {
+        "?": 73,
+        "V": 7,
+        "-": 2
+      },
+      "network_load": {
+        "?": 72,
+        "V": 7,
+        "H": 1,
+        "-": 2
+      },
+      "time": {
+        "?": 71,
+        "V": 7,
+        "X": 2,
+        "-": 2
+      }
+    },
+    "core": {
+      "task_input_user": {
+        "?": 30,
+        "V": 16,
+        "H": 11,
+        "X": 1
+      },
+      "model": {
+        "?": 33,
+        "V": 23,
+        "H": 2
+      },
+      "harness_topology": {
+        "?": 36,
+        "V": 14,
+        "X": 6,
+        "H": 2
+      },
+      "hardware": {
+        "?": 52,
+        "V": 6
+      },
+      "network_load": {
+        "?": 50,
+        "V": 7,
+        "H": 1
+      },
+      "time": {
+        "?": 51,
+        "V": 6,
+        "X": 1
+      }
+    },
+    "adjacent": {
+      "task_input_user": {
+        "V": 4,
+        "?": 15,
+        "X": 1,
+        "H": 2,
+        "-": 2
+      },
+      "model": {
+        "?": 17,
+        "X": 1,
+        "H": 1,
+        "V": 3,
+        "-": 2
+      },
+      "harness_topology": {
+        "?": 18,
+        "V": 2,
+        "X": 2,
+        "-": 2
+      },
+      "hardware": {
+        "?": 21,
+        "V": 1,
+        "-": 2
+      },
+      "network_load": {
+        "?": 22,
+        "-": 2
+      },
+      "time": {
+        "?": 20,
+        "X": 1,
+        "-": 2,
+        "V": 1
+      }
+    }
+  }
+}
