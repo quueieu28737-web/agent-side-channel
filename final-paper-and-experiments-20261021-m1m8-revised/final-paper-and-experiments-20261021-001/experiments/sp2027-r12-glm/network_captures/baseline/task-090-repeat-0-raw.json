@@ -1,0 +1,113 @@
+{
+ "task": 90,
+ "repeat": 0,
+ "seed": 0,
+ "prompt": "baseline",
+ "user": "emma_kovacs_9839",
+ "has_cancel": 1,
+ "has_return": 0,
+ "native_reward": 0,
+ "db_eq": false,
+ "status": "protocol_error",
+ "condition": "raw",
+ "calls": [
+  {
+   "name": "find_user_id_by_email",
+   "kind": "real",
+   "req": 88,
+   "resp": 16,
+   "err": false
+  },
+  {
+   "name": "get_user_details",
+   "kind": "real",
+   "req": 74,
+   "resp": 424,
+   "err": false
+  },
+  {
+   "name": "get_order_details",
+   "kind": "real",
+   "req": 69,
+   "resp": 904,
+   "err": false
+  },
+  {
+   "name": "get_order_details",
+   "kind": "real",
+   "req": 69,
+   "resp": 1062,
+   "err": false
+  },
+  {
+   "name": "get_order_details",
+   "kind": "real",
+   "req": 69,
+   "resp": 1219,
+   "err": false
+  },
+  {
+   "name": "get_product_details",
+   "kind": "real",
+   "req": 74,
+   "resp": 2164,
+   "err": false
+  }
+ ],
+ "records": [
+  [
+   "c2s",
+   116
+  ],
+  [
+   "s2c",
+   44
+  ],
+  [
+   "c2s",
+   102
+  ],
+  [
+   "s2c",
+   452
+  ],
+  [
+   "c2s",
+   97
+  ],
+  [
+   "s2c",
+   932
+  ],
+  [
+   "c2s",
+   97
+  ],
+  [
+   "s2c",
+   1090
+  ],
+  [
+   "c2s",
+   97
+  ],
+  [
+   "s2c",
+   1247
+  ],
+  [
+   "c2s",
+   102
+  ],
+  [
+   "s2c",
+   2192
+  ]
+ ],
+ "application_wire_bytes": 6628,
+ "framing_overflow_messages": 0,
+ "template_flags": null,
+ "calibration_sha256": "3e1c1ecf1923e50e8c0d1f72709497cb6cd7ee277f6d946144a3bcea8dc4eb05",
+ "episode_sha256": "1682d61ac77aa3ae68a9a5d1678a74d9555d593f9c6c9928112810cc3226aa6f",
+ "measurement": "TLS 1.2 loopback replay of real model trajectory; provider link and wall-clock timing excluded"
+}

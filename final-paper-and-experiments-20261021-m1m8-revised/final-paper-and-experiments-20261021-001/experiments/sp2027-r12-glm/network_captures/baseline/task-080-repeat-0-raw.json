@@ -1,0 +1,113 @@
+{
+ "task": 80,
+ "repeat": 0,
+ "seed": 0,
+ "prompt": "baseline",
+ "user": "amelia_gonzalez_4098",
+ "has_cancel": 0,
+ "has_return": 0,
+ "native_reward": 1,
+ "db_eq": true,
+ "status": "user_stop",
+ "condition": "raw",
+ "calls": [
+  {
+   "name": "find_user_id_by_email",
+   "kind": "real",
+   "req": 92,
+   "resp": 20,
+   "err": false
+  },
+  {
+   "name": "get_user_details",
+   "kind": "real",
+   "req": 78,
+   "resp": 387,
+   "err": false
+  },
+  {
+   "name": "tool_action",
+   "kind": "real",
+   "req": 107,
+   "resp": 26,
+   "err": true
+  },
+  {
+   "name": "get_order_details",
+   "kind": "real",
+   "req": 69,
+   "resp": 807,
+   "err": false
+  },
+  {
+   "name": "get_product_details",
+   "kind": "real",
+   "req": 74,
+   "resp": 2029,
+   "err": false
+  },
+  {
+   "name": "exchange_delivered_order_items",
+   "kind": "real",
+   "req": 184,
+   "resp": 975,
+   "err": false
+  }
+ ],
+ "records": [
+  [
+   "c2s",
+   120
+  ],
+  [
+   "s2c",
+   48
+  ],
+  [
+   "c2s",
+   106
+  ],
+  [
+   "s2c",
+   415
+  ],
+  [
+   "c2s",
+   135
+  ],
+  [
+   "s2c",
+   54
+  ],
+  [
+   "c2s",
+   97
+  ],
+  [
+   "s2c",
+   835
+  ],
+  [
+   "c2s",
+   102
+  ],
+  [
+   "s2c",
+   2057
+  ],
+  [
+   "c2s",
+   212
+  ],
+  [
+   "s2c",
+   1003
+  ]
+ ],
+ "application_wire_bytes": 5244,
+ "framing_overflow_messages": 0,
+ "template_flags": null,
+ "calibration_sha256": "3e1c1ecf1923e50e8c0d1f72709497cb6cd7ee277f6d946144a3bcea8dc4eb05",
+ "episode_sha256": "1df80cba47a6efcbcab0043a73bee55ffccc675aa303fd8f84b707af15bdf8d4",
+ "measurement": "TLS 1.2 loopback replay of real model trajectory; provider link and wall-clock timing excluded"
+}

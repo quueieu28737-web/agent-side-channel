@@ -1,0 +1,625 @@
+{
+ "role": "agent",
+ "messages": [
+  {
+   "role": "system",
+   "content": "# Retail agent policy\n\nAs a retail agent, you can help users cancel or modify pending orders, return or exchange delivered orders, modify their default user address, or provide information about their own profile, orders, and related products.\n\n- At the beginning of the conversation, you have to authenticate the user identity by locating their user id via email, or via name + zip code. This has to be done even when the user already provides the user id.\n\n- Once the user has been authenticated, you can provide the user with information about order, product, profile information, e.g. help the user look up order id.\n\n- You can only help one user per conversation (but you can handle multiple requests from the same user), and must deny any requests for tasks related to any other user.\n\n- Before taking consequential actions that update the database (cancel, modify, return, exchange), you have to list the action detail and obtain explicit user confirmation (yes) to proceed.\n\n- You should not make up any information or knowledge or procedures not provided from the user or the tools, or give subjective recommendations or comments.\n\n- You should at most make one tool call at a time, and if you take a tool call, you should not respond to the user at the same time. If you respond to the user, you should not make a tool call.\n\n- You should transfer the user to a human agent if and only if the request cannot be handled within the scope of your actions.\n\n## Domain basic\n\n- All times in the database are EST and 24 hour based. For example \"02:30:00\" means 2:30 AM EST.\n\n- Each user has a profile of its email, default address, user id, and payment methods. Each payment method is either a gift card, a paypal account, or a credit card.\n\n- Our retail store has 50 types of products. For each type of product, there are variant items of different options. For example, for a 't shirt' product, there could be an item with option 'color blue size M', and another item with option 'color red size L'.\n\n- Each product has an unique product id, and each item has an unique item id. They have no relations and should not be confused.\n\n- Each order can be in status 'pending', 'processed', 'delivered', or 'cancelled'. Generally, you can only take action on pending or delivered orders.\n\n- Exchange or modify order tools can only be called once. Be sure that all items to be changed are collected into a list before making the tool call!!!\n\n## Cancel pending order\n\n- An order can only be cancelled if its status is 'pending', and you should check its status before taking the action.\n\n- The user needs to confirm the order id and the reason (either 'no longer needed' or 'ordered by mistake') for cancellation.\n\n- After user confirmation, the order status will be changed to 'cancelled', and the total will be refunded via the original payment method immediately if it is gift card, otherwise in 5 to 7 business days.\n\n## Modify pending order\n\n- An order can only be modified if its status is 'pending', and you should check its status before taking the action.\n\n- For a pending order, you can take actions to modify its shipping address, payment method, or product item options, but nothing else.\n\n### Modify payment\n\n- The user can only choose a single payment method different from the original payment method.\n\n- If the user wants the modify the payment method to gift card, it must have enough balance to cover the total amount.\n\n- After user confirmation, the order status will be kept 'pending'. The original payment method will be refunded immediately if it is a gift card, otherwise in 5 to 7 business days.\n\n### Modify items\n\n- This action can only be called once, and will change the order status to 'pending (items modifed)', and the agent will not be able to modify or cancel the order anymore. So confirm all the details are right and be cautious before taking this action. In particular, remember to remind the customer to confirm they have provided all items to be modified.\n\n- For a pending order, each item can be modified to an available new item of the same product but of different product option. There cannot be any change of product types, e.g. modify shirt to shoe.\n\n- The user must provide a payment method to pay or receive refund of the price difference. If the user provides a gift card, it must have enough balance to cover the price difference.\n\n## Return delivered order\n\n- An order can only be returned if its status is 'delivered', and you should check its status before taking the action.\n\n- The user needs to confirm the order id, the list of items to be returned, and a payment method to receive the refund.\n\n- The refund must either go to the original payment method, or an existing gift card.\n\n- After user confirmation, the order status will be changed to 'return requested', and the user will receive an email regarding how to return items.\n\n## Exchange delivered order\n\n- An order can only be exchanged if its status is 'delivered', and you should check its status before taking the action. In particular, remember to remind the customer to confirm they have provided all items to be exchanged.\n\n- For a delivered order, each item can be exchanged to an available new item of the same product but of different product option. There cannot be any change of product types, e.g. modify shirt to shoe.\n\n- The user must provide a payment method to pay or receive refund of the price difference. If the user provides a gift card, it must have enough balance to cover the price difference.\n\n- After user confirmation, the order status will be changed to 'exchange requested', and the user will receive an email regarding how to return items. There is no need to place a new order.\n"
+  },
+  {
+   "role": "user",
+   "content": "Hi there! I need help with an order I recently placed. There are a couple of items I'd like to modify, and I also realized I sent it to the wrong address. Could you help me sort that out?"
+  },
+  {
+   "role": "assistant",
+   "content": "I'd be happy to help you with modifying your order and updating the shipping address! First, I need to verify your identity. Could you please provide me with the email address associated with your account? Alternatively, you can provide your first name, last name, and zip code."
+  },
+  {
+   "role": "user",
+   "content": "Sure! My name is Ivan Khan and my zip code is 28243."
+  },
+  {
+   "role": "assistant",
+   "tool_action": {
+    "name": "find_user_id_by_name_zip",
+    "arguments": {
+     "first_name": "Ivan",
+     "last_name": "Khan",
+     "zip": "28243"
+    }
+   }
+  },
+  {
+   "role": "tool",
+   "name": "find_user_id_by_name_zip",
+   "content": "ivan_khan_7475"
+  },
+  {
+   "role": "assistant",
+   "tool_action": {
+    "name": "get_user_details",
+    "arguments": {
+     "user_id": "ivan_khan_7475"
+    }
+   }
+  },
+  {
+   "role": "tool",
+   "name": "get_user_details",
+   "content": "{\"name\": {\"first_name\": \"Ivan\", \"last_name\": \"Khan\"}, \"address\": {\"address1\": \"159 Hickory Lane\", \"address2\": \"Suite 995\", \"city\": \"Charlotte\", \"country\": \"USA\", \"state\": \"NC\", \"zip\": \"28243\"}, \"email\": \"ivan.khan6479@example.com\", \"payment_methods\": {\"gift_card_1711656\": {\"source\": \"gift_card\", \"balance\": 62, \"id\": \"gift_card_1711656\"}, \"paypal_7729105\": {\"source\": \"paypal\", \"id\": \"paypal_7729105\"}}, \"orders\": [\"#W5270061\", \"#W7032009\", \"#W1519594\", \"#W5782623\"]}"
+  },
+  {
+   "role": "assistant",
+   "content": "Thank you, Ivan! I've verified your identity. I can see you have the following orders on file: #W5270061, #W7032009, #W1519594, and #W5782623. Could you please tell me which order you'd like to modify, and what changes you'd like to make (items and/or shipping address)?"
+  },
+  {
+   "role": "user",
+   "content": "Oh dear, I don't have the order number handy right now. It's one of my recent orders though — the one with the desk lamp and the backpack, the one that accidentally went to Washington DC."
+  },
+  {
+   "role": "assistant",
+   "tool_action": {
+    "name": "get_order_details",
+    "arguments": {
+     "order_id": "#W5270061"
+    }
+   }
+  },
+  {
+   "role": "tool",
+   "name": "get_order_details",
+   "content": "{\"order_id\": \"#W5270061\", \"user_id\": \"ivan_khan_7475\", \"address\": {\"address1\": \"584 Sunset Drive\", \"address2\": \"Suite 270\", \"city\": \"Washington\", \"country\": \"USA\", \"state\": \"DC\", \"zip\": \"20353\"}, \"items\": [{\"name\": \"Backpack\", \"product_id\": \"2524789262\", \"item_id\": \"2492465580\", \"price\": 201.95, \"options\": {\"color\": \"navy\", \"size\": \"small\", \"material\": \"nylon\", \"compartment\": \"laptop\"}}, {\"name\": \"Indoor Security Camera\", \"product_id\": \"2985987096\", \"item_id\": \"5810561222\", \"price\": 274.98, \"options\": {\"resolution\": \"4K\", \"field of view\": \"130 degrees\", \"connectivity\": \"Wi-Fi\"}}, {\"name\": \"Desk Lamp\", \"product_id\": \"6817146515\", \"item_id\": \"7453605304\", \"price\": 150.01, \"options\": {\"color\": \"silver\", \"brightness\": \"low\", \"power source\": \"battery\"}}], \"fulfillments\": [], \"status\": \"pending\", \"payment_history\": [{\"transaction_type\": \"payment\", \"amount\": 626.94, \"payment_method_id\": \"gift_card_1711656\"}]}"
+  },
+  {
+   "role": "assistant",
+   "content": "I found your order! It looks like order #W5270061 is the one you're referring to — it's currently pending and includes:\n\n1. Backpack (navy, small, nylon, laptop compartment) - $201.95\n2. Indoor Security Camera (4K, 130 degrees, Wi-Fi) - $274.98\n3. Desk Lamp (silver, low brightness, battery) - $150.01\n\nIt's currently shipping to:\n584 Sunset Drive, Suite 270, Washington, DC 20353, USA\n\nPaid with gift card (total $626.94).\n\nTo help you with the changes:\n\n1. **Shipping address**: What is the correct address you'd like the order sent to?\n2. **Item modifications**: Which item(s) would you like to change, and what new options would you like? Please note that item modifications can only be done once for a pending order, so it's important that you tell me ALL the items you want to change before I proceed. After the item modification is complete, the order can no longer be modified or cancelled.\n\nCould you also let me know which payment method you'd like to use for any price difference (your gift card with $62 balance or your PayPal)?"
+  },
+  {
+   "role": "user",
+   "content": "Wonderful, thank you! For the shipping address, please switch it to my default address on file — it should be the one in Charlotte. And since you mentioned items can only be modified once, I'll lay out both changes now: the desk lamp should be black instead of silver, and the backpack should be medium size and polyester instead of small nylon — grey would be my first choice if that color's offered. For any price difference, let's put it on my gift card for now."
+  },
+  {
+   "role": "assistant",
+   "tool_action": {
+    "name": "get_product_details",
+    "arguments": {
+     "product_id": "6817146515"
+    }
+   }
+  },
+  {
+   "role": "tool",
+   "name": "get_product_details",
+   "content": "{\"name\": \"Desk Lamp\", \"product_id\": \"6817146515\", \"variants\": {\"9083642334\": {\"item_id\": \"9083642334\", \"options\": {\"color\": \"white\", \"brightness\": \"high\", \"power source\": \"USB\"}, \"available\": true, \"price\": 164.28}, \"4385534692\": {\"item_id\": \"4385534692\", \"options\": {\"color\": \"white\", \"brightness\": \"high\", \"power source\": \"AC adapter\"}, \"available\": false, \"price\": 138.07}, \"7624783998\": {\"item_id\": \"7624783998\", \"options\": {\"color\": \"black\", \"brightness\": \"high\", \"power source\": \"AC adapter\"}, \"available\": true, \"price\": 154.17}, \"1270145486\": {\"item_id\": \"1270145486\", \"options\": {\"color\": \"white\", \"brightness\": \"high\", \"power source\": \"battery\"}, \"available\": false, \"price\": 144.07}, \"5320792178\": {\"item_id\": \"5320792178\", \"options\": {\"color\": \"black\", \"brightness\": \"medium\", \"power source\": \"AC adapter\"}, \"available\": true, \"price\": 135.24}, \"5370728469\": {\"item_id\": \"5370728469\", \"options\": {\"color\": \"silver\", \"brightness\": \"medium\", \"power source\": \"USB\"}, \"available\": true, \"price\": 164.97}, \"6805564527\": {\"item_id\": \"6805564527\", \"options\": {\"color\": \"black\", \"brightness\": \"medium\", \"power source\": \"USB\"}, \"available\": true, \"price\": 158.41}, \"1569765161\": {\"item_id\": \"1569765161\", \"options\": {\"color\": \"silver\", \"brightness\": \"low\", \"power source\": \"AC adapter\"}, \"available\": true, \"price\": 143.02}, \"7453605304\": {\"item_id\": \"7453605304\", \"options\": {\"color\": \"silver\", \"brightness\": \"low\", \"power source\": \"battery\"}, \"available\": true, \"price\": 150.01}, \"9190635437\": {\"item_id\": \"9190635437\", \"options\": {\"color\": \"black\", \"brightness\": \"low\", \"power source\": \"USB\"}, \"available\": true, \"price\": 153.23}, \"4447749792\": {\"item_id\": \"4447749792\", \"options\": {\"color\": \"white\", \"brightness\": \"medium\", \"power source\": \"AC adapter\"}, \"available\": false, \"price\": 139.8}, \"8384507844\": {\"item_id\": \"8384507844\", \"options\": {\"color\": \"white\", \"brightness\": \"medium\", \"power source\": \"USB\"}, \"available\": false, \"price\": 137.94}}}"
+  },
+  {
+   "role": "assistant",
+   "tool_action": {
+    "name": "get_product_details",
+    "arguments": {
+     "product_id": "2524789262"
+    }
+   }
+  },
+  {
+   "role": "tool",
+   "name": "get_product_details",
+   "content": "{\"name\": \"Backpack\", \"product_id\": \"2524789262\", \"variants\": {\"3928046918\": {\"item_id\": \"3928046918\", \"options\": {\"color\": \"black\", \"size\": \"large\", \"material\": \"nylon\", \"compartment\": \"camera\"}, \"available\": true, \"price\": 198.0}, \"7251508981\": {\"item_id\": \"7251508981\", \"options\": {\"color\": \"green\", \"size\": \"small\", \"material\": \"leather\", \"compartment\": \"camera\"}, \"available\": true, \"price\": 212.04}, \"5726859009\": {\"item_id\": \"5726859009\", \"options\": {\"color\": \"grey\", \"size\": \"large\", \"material\": \"nylon\", \"compartment\": \"hydration\"}, \"available\": true, \"price\": 200.48}, \"3557711149\": {\"item_id\": \"3557711149\", \"options\": {\"color\": \"green\", \"size\": \"small\", \"material\": \"polyester\", \"compartment\": \"laptop\"}, \"available\": true, \"price\": 205.35}, \"6309044598\": {\"item_id\": \"6309044598\", \"options\": {\"color\": \"grey\", \"size\": \"large\", \"material\": \"polyester\", \"compartment\": \"hydration\"}, \"available\": true, \"price\": 218.59}, \"8030558068\": {\"item_id\": \"8030558068\", \"options\": {\"color\": \"black\", \"size\": \"medium\", \"material\": \"nylon\", \"compartment\": \"hydration\"}, \"available\": false, \"price\": 186.78}, \"8054888773\": {\"item_id\": \"8054888773\", \"options\": {\"color\": \"grey\", \"size\": \"small\", \"material\": \"nylon\", \"compartment\": \"laptop\"}, \"available\": true, \"price\": 206.03}, \"7824298782\": {\"item_id\": \"7824298782\", \"options\": {\"color\": \"black\", \"size\": \"small\", \"material\": \"nylon\", \"compartment\": \"laptop\"}, \"available\": false, \"price\": 200.38}, \"2492465580\": {\"item_id\": \"2492465580\", \"options\": {\"color\": \"navy\", \"size\": \"small\", \"material\": \"nylon\", \"compartment\": \"laptop\"}, \"available\": false, \"price\": 201.95}, \"9851293632\": {\"item_id\": \"9851293632\", \"options\": {\"color\": \"green\", \"size\": \"small\", \"material\": \"polyester\", \"compartment\": \"camera\"}, \"available\": true, \"price\": 193.38}, \"4947717507\": {\"item_id\": \"4947717507\", \"options\": {\"color\": \"green\", \"size\": \"medium\", \"material\": \"leather\", \"compartment\": \"camera\"}, \"available\": false, \"price\": 218.04}, \"6906307980\": {\"item_id\": \"6906307980\", \"options\": {\"color\": \"black\", \"size\": \"large\", \"material\": \"polyester\", \"compartment\": \"laptop\"}, \"available\": true, \"price\": 202.39}, \"5917587651\": {\"item_id\": \"5917587651\", \"options\": {\"color\": \"grey\", \"size\": \"medium\", \"material\": \"polyester\", \"compartment\": \"laptop\"}, \"available\": true, \"price\": 212.79}, \"8084436579\": {\"item_id\": \"8084436579\", \"options\": {\"color\": \"navy\", \"size\": \"large\", \"material\": \"polyester\", \"compartment\": \"laptop\"}, \"available\": true, \"price\": 219.43}}}"
+  },
+  {
+   "role": "assistant",
+   "content": "Great news on the backpack, and one quick question on the desk lamp:\n\n**Backpack**: The grey, medium, polyester, laptop-compartment backpack is available for $212.79 (current one is $201.95, so +$10.84).\n\n**Desk Lamp**: Unfortunately, there is no black option with low brightness and battery power (your current configuration). The available black options are:\n1. Black, high brightness, AC adapter — $154.17\n2. Black, medium brightness, AC adapter — $135.24\n3. Black, medium brightness, USB — $158.41\n4. Black, low brightness, USB — $153.23\n\nWhich black desk lamp would you like?\n\n**Shipping address**: I'll update order #W5270061 to your default address on file:\n159 Hickory Lane, Suite 995, Charlotte, NC 28243, USA\n\nPlease confirm this address is correct, and let me know your desk lamp choice. I'll then process the address change first, followed by the item modification (remember, this can only be done once, so please confirm these are ALL the changes you want). Any price difference will be charged/refunded to your gift card (current balance $62)."
+  },
+  {
+   "role": "user",
+   "content": "That Charlotte address is correct, please go ahead with it! For the desk lamp, I'll take the black, low brightness, USB option at $153.23 — closest to what I originally had. So to confirm, the two changes are the backpack (grey, medium, polyester) and the desk lamp, and the gift card works fine for the price difference."
+  },
+  {
+   "role": "assistant",
+   "tool_action": {
+    "name": "modify_pending_order_address",
+    "arguments": {
+     "order_id": "#W5270061",
+     "address1": "159 Hickory Lane",
+     "address2": "Suite 995",
+     "city": "Charlotte",
+     "state": "NC",
+     "country": "USA",
+     "zip": "28243"
+    }
+   }
+  },
+  {
+   "role": "tool",
+   "name": "modify_pending_order_address",
+   "content": "{\"order_id\": \"#W5270061\", \"user_id\": \"ivan_khan_7475\", \"address\": {\"address1\": \"159 Hickory Lane\", \"address2\": \"Suite 995\", \"city\": \"Charlotte\", \"state\": \"NC\", \"country\": \"USA\", \"zip\": \"28243\"}, \"items\": [{\"name\": \"Backpack\", \"product_id\": \"2524789262\", \"item_id\": \"2492465580\", \"price\": 201.95, \"options\": {\"color\": \"navy\", \"size\": \"small\", \"material\": \"nylon\", \"compartment\": \"laptop\"}}, {\"name\": \"Indoor Security Camera\", \"product_id\": \"2985987096\", \"item_id\": \"5810561222\", \"price\": 274.98, \"options\": {\"resolution\": \"4K\", \"field of view\": \"130 degrees\", \"connectivity\": \"Wi-Fi\"}}, {\"name\": \"Desk Lamp\", \"product_id\": \"6817146515\", \"item_id\": \"7453605304\", \"price\": 150.01, \"options\": {\"color\": \"silver\", \"brightness\": \"low\", \"power source\": \"battery\"}}], \"fulfillments\": [], \"status\": \"pending\", \"payment_history\": [{\"transaction_type\": \"payment\", \"amount\": 626.94, \"payment_method_id\": \"gift_card_1711656\"}]}"
+  },
+  {
+   "role": "assistant",
+   "content": "The shipping address for order #W5270061 has been successfully updated to:\n159 Hickory Lane, Suite 995, Charlotte, NC 28243, USA\n\nNow, for the item modification, please confirm these final details:\n\n1. **Backpack**: navy, small, nylon, laptop compartment ($201.95) → **grey, medium, polyester, laptop compartment** ($212.79) — difference +$10.84\n2. **Desk Lamp**: silver, low brightness, battery ($150.01) → **black, low brightness, USB** ($153.23) — difference +$3.22\n\nTotal price difference: **$14.06**, to be charged to your gift card (current balance $62 — sufficient).\n\n⚠️ Please note: this item modification can only be done **once**. After it's processed, order #W5270061 cannot be modified or cancelled anymore. Please confirm these are ALL the item changes you want (the Indoor Security Camera will remain unchanged).\n\nShall I proceed with the item modification? (yes/no)"
+  },
+  {
+   "role": "user",
+   "content": "Actually, hold on one second — since you're asking me to confirm the payment method, I've changed my mind: let's put it on PayPal instead of the gift card. And on reflection, I'd rather keep it simple and just modify the backpack (grey, medium, polyester) — please leave the desk lamp as it is. Sorry for the back-and-forth!"
+  },
+  {
+   "role": "assistant",
+   "content": "No problem at all — thanks for the update! Here are the revised details for order #W5270061:\n\n**Item modification (only one allowed):**\n- Backpack: navy, small, nylon, laptop compartment ($201.95) → grey, medium, polyester, laptop compartment ($212.79)\n- Price difference: **+$10.84**, to be charged to your **PayPal**\n- Desk Lamp and Indoor Security Camera will remain unchanged\n\n⚠️ Please note: this item modification can only be done **once**. After it's processed, order #W5270061 can no longer be modified or cancelled.\n\nShall I proceed with this modification? (yes/no)"
+  },
+  {
+   "role": "user",
+   "content": "Yes, please go ahead and process the backpack modification with the price difference charged to my PayPal. Thank you!"
+  },
+  {
+   "role": "assistant",
+   "tool_action": {
+    "name": "modify_pending_order_items",
+    "arguments": {
+     "order_id": "#W5270061",
+     "item_ids": [
+      "2492465580"
+     ],
+     "new_item_ids": [
+      "5917587651"
+     ],
+     "payment_method_id": "paypal_7729105"
+    }
+   }
+  },
+  {
+   "role": "tool",
+   "name": "modify_pending_order_items",
+   "content": "{\"order_id\": \"#W5270061\", \"user_id\": \"ivan_khan_7475\", \"address\": {\"address1\": \"159 Hickory Lane\", \"address2\": \"Suite 995\", \"city\": \"Charlotte\", \"state\": \"NC\", \"country\": \"USA\", \"zip\": \"28243\"}, \"items\": [{\"name\": \"Backpack\", \"product_id\": \"2524789262\", \"item_id\": \"5917587651\", \"price\": 212.79, \"options\": {\"color\": \"grey\", \"size\": \"medium\", \"material\": \"polyester\", \"compartment\": \"laptop\"}}, {\"name\": \"Indoor Security Camera\", \"product_id\": \"2985987096\", \"item_id\": \"5810561222\", \"price\": 274.98, \"options\": {\"resolution\": \"4K\", \"field of view\": \"130 degrees\", \"connectivity\": \"Wi-Fi\"}}, {\"name\": \"Desk Lamp\", \"product_id\": \"6817146515\", \"item_id\": \"7453605304\", \"price\": 150.01, \"options\": {\"color\": \"silver\", \"brightness\": \"low\", \"power source\": \"battery\"}}], \"fulfillments\": [], \"status\": \"pending (item modified)\", \"payment_history\": [{\"transaction_type\": \"payment\", \"amount\": 626.94, \"payment_method_id\": \"gift_card_1711656\"}, {\"transaction_type\": \"payment\", \"amount\": 10.840000000000003, \"payment_method_id\": \"paypal_7729105\"}]}"
+  }
+ ],
+ "tools": [
+  {
+   "type": "function",
+   "function": {
+    "name": "calculate",
+    "description": "Calculate the result of a mathematical expression.",
+    "parameters": {
+     "type": "object",
+     "properties": {
+      "expression": {
+       "type": "string",
+       "description": "The mathematical expression to calculate, such as '2 + 2'. The expression can contain numbers, operators (+, -, *, /), parentheses, and spaces."
+      }
+     },
+     "required": [
+      "expression"
+     ]
+    }
+   }
+  },
+  {
+   "type": "function",
+   "function": {
+    "name": "cancel_pending_order",
+    "description": "Cancel a pending order. If the order is already processed or delivered, it cannot be cancelled. The agent needs to explain the cancellation detail and ask for explicit user confirmation (yes/no) to proceed. If the user confirms, the order status will be changed to 'cancelled' and the payment will be refunded. The refund will be added to the user's gift card balance immediately if the payment was made using a gift card, otherwise the refund would take 5-7 business days to process. The function returns the order details after the cancellation.",
+    "parameters": {
+     "type": "object",
+     "properties": {
+      "order_id": {
+       "type": "string",
+       "description": "The order id, such as '#W0000000'. Be careful there is a '#' symbol at the beginning of the order id."
+      },
+      "reason": {
+       "type": "string",
+       "enum": [
+        "no longer needed",
+        "ordered by mistake"
+       ],
+       "description": "The reason for cancellation, which should be either 'no longer needed' or 'ordered by mistake'."
+      }
+     },
+     "required": [
+      "order_id",
+      "reason"
+     ]
+    }
+   }
+  },
+  {
+   "type": "function",
+   "function": {
+    "name": "exchange_delivered_order_items",
+    "description": "Exchange items in a delivered order to new items of the same product type. For a delivered order, return or exchange can be only done once by the agent. The agent needs to explain the exchange detail and ask for explicit user confirmation (yes/no) to proceed.",
+    "parameters": {
+     "type": "object",
+     "properties": {
+      "order_id": {
+       "type": "string",
+       "description": "The order id, such as '#W0000000'. Be careful there is a '#' symbol at the beginning of the order id."
+      },
+      "item_ids": {
+       "type": "array",
+       "items": {
+        "type": "string"
+       },
+       "description": "The item ids to be exchanged, each such as '1008292230'. There could be duplicate items in the list."
+      },
+      "new_item_ids": {
+       "type": "array",
+       "items": {
+        "type": "string"
+       },
+       "description": "The item ids to be exchanged for, each such as '1008292230'. There could be duplicate items in the list. Each new item id should match the item id in the same position and be of the same product."
+      },
+      "payment_method_id": {
+       "type": "string",
+       "description": "The payment method id to pay or receive refund for the item price difference, such as 'gift_card_0000000' or 'credit_card_0000000'. These can be looked up from the user or order details."
+      }
+     },
+     "required": [
+      "order_id",
+      "item_ids",
+      "new_item_ids",
+      "payment_method_id"
+     ]
+    }
+   }
+  },
+  {
+   "type": "function",
+   "function": {
+    "name": "find_user_id_by_email",
+    "description": "Find user id by email. If the user is not found, the function will return an error message.",
+    "parameters": {
+     "type": "object",
+     "properties": {
+      "email": {
+       "type": "string",
+       "description": "The email of the user, such as 'something@example.com'."
+      }
+     },
+     "required": [
+      "email"
+     ]
+    }
+   }
+  },
+  {
+   "type": "function",
+   "function": {
+    "name": "find_user_id_by_name_zip",
+    "description": "Find user id by first name, last name, and zip code. If the user is not found, the function will return an error message. By default, find user id by email, and only call this function if the user is not found by email or cannot remember email.",
+    "parameters": {
+     "type": "object",
+     "properties": {
+      "first_name": {
+       "type": "string",
+       "description": "The first name of the customer, such as 'John'."
+      },
+      "last_name": {
+       "type": "string",
+       "description": "The last name of the customer, such as 'Doe'."
+      },
+      "zip": {
+       "type": "string",
+       "description": "The zip code of the customer, such as '12345'."
+      }
+     },
+     "required": [
+      "first_name",
+      "last_name",
+      "zip"
+     ]
+    }
+   }
+  },
+  {
+   "type": "function",
+   "function": {
+    "name": "get_order_details",
+    "description": "Get the status and details of an order.",
+    "parameters": {
+     "type": "object",
+     "properties": {
+      "order_id": {
+       "type": "string",
+       "description": "The order id, such as '#W0000000'. Be careful there is a '#' symbol at the beginning of the order id."
+      }
+     },
+     "required": [
+      "order_id"
+     ]
+    }
+   }
+  },
+  {
+   "type": "function",
+   "function": {
+    "name": "get_product_details",
+    "description": "Get the inventory details of a product.",
+    "parameters": {
+     "type": "object",
+     "properties": {
+      "product_id": {
+       "type": "string",
+       "description": "The product id, such as '6086499569'. Be careful the product id is different from the item id."
+      }
+     },
+     "required": [
+      "product_id"
+     ]
+    }
+   }
+  },
+  {
+   "type": "function",
+   "function": {
+    "name": "get_user_details",
+    "description": "Get the details of a user, including their orders.",
+    "parameters": {
+     "type": "object",
+     "properties": {
+      "user_id": {
+       "type": "string",
+       "description": "The user id, such as 'sara_doe_496'."
+      }
+     },
+     "required": [
+      "user_id"
+     ]
+    }
+   }
+  },
+  {
+   "type": "function",
+   "function": {
+    "name": "list_all_product_types",
+    "description": "List the name and product id of all product types. Each product type has a variety of different items with unique item ids and options. There are only 50 product types in the store.",
+    "parameters": {
+     "type": "object",
+     "properties": {},
+     "required": []
+    }
+   }
+  },
+  {
+   "type": "function",
+   "function": {
+    "name": "modify_pending_order_address",
+    "description": "Modify the shipping address of a pending order. The agent needs to explain the modification detail and ask for explicit user confirmation (yes/no) to proceed.",
+    "parameters": {
+     "type": "object",
+     "properties": {
+      "order_id": {
+       "type": "string",
+       "description": "The order id, such as '#W0000000'. Be careful there is a '#' symbol at the beginning of the order id."
+      },
+      "address1": {
+       "type": "string",
+       "description": "The first line of the address, such as '123 Main St'."
+      },
+      "address2": {
+       "type": "string",
+       "description": "The second line of the address, such as 'Apt 1' or ''."
+      },
+      "city": {
+       "type": "string",
+       "description": "The city, such as 'San Francisco'."
+      },
+      "state": {
+       "type": "string",
+       "description": "The state, such as 'CA'."
+      },
+      "country": {
+       "type": "string",
+       "description": "The country, such as 'USA'."
+      },
+      "zip": {
+       "type": "string",
+       "description": "The zip code, such as '12345'."
+      }
+     },
+     "required": [
+      "order_id",
+      "address1",
+      "address2",
+      "city",
+      "state",
+      "country",
+      "zip"
+     ]
+    }
+   }
+  },
+  {
+   "type": "function",
+   "function": {
+    "name": "modify_pending_order_items",
+    "description": "Modify items in a pending order to new items of the same product type. For a pending order, this function can only be called once. The agent needs to explain the exchange detail and ask for explicit user confirmation (yes/no) to proceed.",
+    "parameters": {
+     "type": "object",
+     "properties": {
+      "order_id": {
+       "type": "string",
+       "description": "The order id, such as '#W0000000'. Be careful there is a '#' symbol at the beginning of the order id."
+      },
+      "item_ids": {
+       "type": "array",
+       "items": {
+        "type": "string"
+       },
+       "description": "The item ids to be modified, each such as '1008292230'. There could be duplicate items in the list."
+      },
+      "new_item_ids": {
+       "type": "array",
+       "items": {
+        "type": "string"
+       },
+       "description": "The item ids to be modified for, each such as '1008292230'. There could be duplicate items in the list. Each new item id should match the item id in the same position and be of the same product."
+      },
+      "payment_method_id": {
+       "type": "string",
+       "description": "The payment method id to pay or receive refund for the item price difference, such as 'gift_card_0000000' or 'credit_card_0000000'. These can be looked up from the user or order details."
+      }
+     },
+     "required": [
+      "order_id",
+      "item_ids",
+      "new_item_ids",
+      "payment_method_id"
+     ]
+    }
+   }
+  },
+  {
+   "type": "function",
+   "function": {
+    "name": "modify_pending_order_payment",
+    "description": "Modify the payment method of a pending order. The agent needs to explain the modification detail and ask for explicit user confirmation (yes/no) to proceed.",
+    "parameters": {
+     "type": "object",
+     "properties": {
+      "order_id": {
+       "type": "string",
+       "description": "The order id, such as '#W0000000'. Be careful there is a '#' symbol at the beginning of the order id."
+      },
+      "payment_method_id": {
+       "type": "string",
+       "description": "The payment method id to pay or receive refund for the item price difference, such as 'gift_card_0000000' or 'credit_card_0000000'. These can be looked up from the user or order details."
+      }
+     },
+     "required": [
+      "order_id",
+      "payment_method_id"
+     ]
+    }
+   }
+  },
+  {
+   "type": "function",
+   "function": {
+    "name": "modify_user_address",
+    "description": "Modify the default address of a user. The agent needs to explain the modification detail and ask for explicit user confirmation (yes/no) to proceed.",
+    "parameters": {
+     "type": "object",
+     "properties": {
+      "user_id": {
+       "type": "string",
+       "description": "The user id, such as 'sara_doe_496'."
+      },
+      "address1": {
+       "type": "string",
+       "description": "The first line of the address, such as '123 Main St'."
+      },
+      "address2": {
+       "type": "string",
+       "description": "The second line of the address, such as 'Apt 1' or ''."
+      },
+      "city": {
+       "type": "string",
+       "description": "The city, such as 'San Francisco'."
+      },
+      "state": {
+       "type": "string",
+       "description": "The state, such as 'CA'."
+      },
+      "country": {
+       "type": "string",
+       "description": "The country, such as 'USA'."
+      },
+      "zip": {
+       "type": "string",
+       "description": "The zip code, such as '12345'."
+      }
+     },
+     "required": [
+      "user_id",
+      "address1",
+      "address2",
+      "city",
+      "state",
+      "country",
+      "zip"
+     ]
+    }
+   }
+  },
+  {
+   "type": "function",
+   "function": {
+    "name": "return_delivered_order_items",
+    "description": "Return some items of a delivered order. The order status will be changed to 'return requested'. The agent needs to explain the return detail and ask for explicit user confirmation (yes/no) to proceed. The user will receive follow-up email for how and where to return the item.",
+    "parameters": {
+     "type": "object",
+     "properties": {
+      "order_id": {
+       "type": "string",
+       "description": "The order id, such as '#W0000000'. Be careful there is a '#' symbol at the beginning of the order id."
+      },
+      "item_ids": {
+       "type": "array",
+       "items": {
+        "type": "string"
+       },
+       "description": "The item ids to be returned, each such as '1008292230'. There could be duplicate items in the list."
+      },
+      "payment_method_id": {
+       "type": "string",
+       "description": "The payment method id to pay or receive refund for the item price difference, such as 'gift_card_0000000' or 'credit_card_0000000'. These can be looked up from the user or order details."
+      }
+     },
+     "required": [
+      "order_id",
+      "item_ids",
+      "payment_method_id"
+     ]
+    }
+   }
+  },
+  {
+   "type": "function",
+   "function": {
+    "name": "think",
+    "description": "Use the tool to think about something. It will not obtain new information or change the database, but just append the thought to the log. Use it when complex reasoning or some cache memory is needed.",
+    "parameters": {
+     "type": "object",
+     "properties": {
+      "thought": {
+       "type": "string",
+       "description": "A thought to think about."
+      }
+     },
+     "required": [
+      "thought"
+     ]
+    }
+   }
+  },
+  {
+   "type": "function",
+   "function": {
+    "name": "transfer_to_human_agents",
+    "description": "Transfer the user to a human agent, with a summary of the user's issue. Only transfer if the user explicitly asks for a human agent, or if the user's issue cannot be resolved by the agent with the available tools.",
+    "parameters": {
+     "type": "object",
+     "properties": {
+      "summary": {
+       "type": "string",
+       "description": "A summary of the user's issue."
+      }
+     },
+     "required": [
+      "summary"
+     ]
+    }
+   }
+  }
+ ],
+ "inference_fingerprint": {
+  "model": "glm-5.3-flash",
+  "reasoning_effort": "provider_default",
+  "protocol_sha256": "6b1f1a5e4289f1b587a73d2f301f1a24b7af322f18de1adf54193d447d2e1252",
+  "runtime_manifest_sha256": null,
+  "files": {
+   "collect_formal.py": "7e3da69297be499aaa420351539a392a1430f7d6f3fea5200ca942df49951543",
+   "common.py": "100f219e6401f3f34acc35d02a9c974a8e709b45a74b3e5e0349829370a0e267",
+   "rpc_backend.py": "e172e943d55aedb4b00ad835e1f94d14ec7d1c33738849e3d1fba7f5d781e766",
+   "model_instructions.txt": "d5bad94eff96b9a3c70d0bc1853afa6607828c6feca6bd6b5e64193c240d6b81",
+   "action.schema.json": "2bd6cee8068d60aec4f8088c36bbe128af56df06173ee3359f4c95a136edb06c"
+  }
+ }
+}

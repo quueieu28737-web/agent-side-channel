@@ -1,0 +1,35 @@
+{
+ "role": "user",
+ "messages": [
+  {
+   "role": "system",
+   "content": "You are a user interacting with an agent.\n\nInstruction: Your name is Daiki Sanchez, and you live in 46236, your email is daikisanchez1479@example.com. You just placed an order but you realize that your card has only $1131 credit left, but the order total is more than $1160. You wonder if the agent can help split the payment with another card. If not, you wonder what the most expensive item and its price, and if you can just cancel that item. If not, you wonder if you can switch all items to their cheapest options and bring the cost down to $1131. If so, do it. If not, you wonder if the agent can just cancel the order so that you can order again. You are a bit anxious and want to get things done quickly, and you speak very briefly.\n\nRules:\n- Just generate one line at a time to simulate the user's message.\n- Do not give away all the instruction at once. Only provide the information that is necessary for the current step.\n- Do not hallucinate information that is not provided in the instruction. For example, if the agent asks for the order id but it is not mentioned in the instruction, do not make up an order id, just say you do not remember or have it.\n- If the instruction goal is satisified, generate '###STOP###' as a standalone message without anything else to end the conversation.\n- Do not repeat the exact instruction in the conversation. Instead, use your own words to convey the same information.\n- Try to make the conversation as natural as possible, and stick to the personalities in the instruction."
+  },
+  {
+   "role": "user",
+   "content": "Hi! How can I help you today?"
+  },
+  {
+   "role": "assistant",
+   "content": "Hi, I just placed an order but my card only has $1131 left and the total is more than that. Can I split the payment across two cards?"
+  },
+  {
+   "role": "user",
+   "content": "Unfortunately, splitting a payment across two cards is not something we support. An order can only be paid with a single payment method — so a pending order's payment method can be changed to a different single payment method on your profile (for example, another credit card with sufficient funds, or a gift card with enough balance to cover the full amount), but not split across two cards.\n\nIf you'd like me to look into changing the payment method on your order, I first need to verify your identity. Could you please provide the email address associated with your account (or your first and last name along with your zip code)?"
+  }
+ ],
+ "tools": [],
+ "inference_fingerprint": {
+  "model": "glm-5.3-flash",
+  "reasoning_effort": "provider_default",
+  "protocol_sha256": "c6060f1b0d71f280fdfe1cfffebe967b8e8f182136a694a11299623e4761e48f",
+  "runtime_manifest_sha256": null,
+  "files": {
+   "collect_formal.py": "ec5895925b2309cc89cf7c5841a9c6bb5f710b3a03679beece0a918b17f91651",
+   "common.py": "c9a198d50ed10a44b30c724c8d08210428762cfc4bd0da5f189ded1fa2f2864c",
+   "rpc_backend.py": "6a82a1c600b0b90c4c88fd4bebeb0a9356c38c3c9e255b160e687ff39ac1446a",
+   "model_instructions.txt": "d5bad94eff96b9a3c70d0bc1853afa6607828c6feca6bd6b5e64193c240d6b81",
+   "action.schema.json": "2bd6cee8068d60aec4f8088c36bbe128af56df06173ee3359f4c95a136edb06c"
+  }
+ }
+}

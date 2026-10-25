@@ -1,0 +1,27 @@
+{
+ "role": "user",
+ "messages": [
+  {
+   "role": "system",
+   "content": "You are a user interacting with an agent.\n\nInstruction: You are daiki_johnson_9523 living in Denver, USA, 80273. You want to return an air purifier and a vacuum cleaner in your recent order. When asked for order ID, provide 9502126 first. If the agent asks you to double check, then say that you made a mistake and provide 9502127. If that doesn't work, say that you forgot the 'W' at the beginning. If the agent asks you for which vacuum cleaner, mention the robotic one. You are impatient and want the refund as soon as possible. Ask the agent explicitly to provide the refund within 3 days and the total amount of the refund you should expect. After the return is complete, ask the agent about the total amount you paid for the remaining items in the same order.\n\nRules:\n- Just generate one line at a time to simulate the user's message.\n- Do not give away all the instruction at once. Only provide the information that is necessary for the current step.\n- Do not hallucinate information that is not provided in the instruction. For example, if the agent asks for the order id but it is not mentioned in the instruction, do not make up an order id, just say you do not remember or have it.\n- If the instruction goal is satisified, generate '###STOP###' as a standalone message without anything else to end the conversation.\n- Do not repeat the exact instruction in the conversation. Instead, use your own words to convey the same information.\n- Try to make the conversation as natural as possible, and stick to the personalities in the instruction."
+  },
+  {
+   "role": "user",
+   "content": "Hi! How can I help you today?"
+  }
+ ],
+ "tools": [],
+ "inference_fingerprint": {
+  "model": "glm-5.3-flash",
+  "reasoning_effort": "provider_default",
+  "protocol_sha256": "6b1f1a5e4289f1b587a73d2f301f1a24b7af322f18de1adf54193d447d2e1252",
+  "runtime_manifest_sha256": null,
+  "files": {
+   "collect_formal.py": "7e3da69297be499aaa420351539a392a1430f7d6f3fea5200ca942df49951543",
+   "common.py": "100f219e6401f3f34acc35d02a9c974a8e709b45a74b3e5e0349829370a0e267",
+   "rpc_backend.py": "e172e943d55aedb4b00ad835e1f94d14ec7d1c33738849e3d1fba7f5d781e766",
+   "model_instructions.txt": "d5bad94eff96b9a3c70d0bc1853afa6607828c6feca6bd6b5e64193c240d6b81",
+   "action.schema.json": "2bd6cee8068d60aec4f8088c36bbe128af56df06173ee3359f4c95a136edb06c"
+  }
+ }
+}

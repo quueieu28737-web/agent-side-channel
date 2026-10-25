@@ -1,0 +1,68 @@
+{
+ "task": 65,
+ "repeat": 0,
+ "seed": 0,
+ "prompt": "baseline",
+ "user": "james_kovacs_9247",
+ "has_cancel": 0,
+ "has_return": 0,
+ "native_reward": 1,
+ "db_eq": true,
+ "status": "user_stop",
+ "condition": "raw",
+ "calls": [
+  {
+   "name": "find_user_id_by_name_zip",
+   "kind": "real",
+   "req": 113,
+   "resp": 17,
+   "err": false
+  },
+  {
+   "name": "get_user_details",
+   "kind": "real",
+   "req": 75,
+   "resp": 433,
+   "err": false
+  },
+  {
+   "name": "get_order_details",
+   "kind": "real",
+   "req": 69,
+   "resp": 764,
+   "err": false
+  }
+ ],
+ "records": [
+  [
+   "c2s",
+   141
+  ],
+  [
+   "s2c",
+   45
+  ],
+  [
+   "c2s",
+   103
+  ],
+  [
+   "s2c",
+   461
+  ],
+  [
+   "c2s",
+   97
+  ],
+  [
+   "s2c",
+   792
+  ]
+ ],
+ "application_wire_bytes": 1669,
+ "framing_overflow_messages": 0,
+ "template_flags": null,
+ "calibration_sha256": "3e1c1ecf1923e50e8c0d1f72709497cb6cd7ee277f6d946144a3bcea8dc4eb05",
+ "episode_sha256": "af5fad64d9374f335db9156ff231e07da53e3c79cbf908fd4ac4474cf3d1012d",
+ "measurement": "TLS 1.2 loopback replay of real model trajectory; provider link and wall-clock timing excluded"
+}

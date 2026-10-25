@@ -35,14 +35,14 @@
 \newcommand{\auditpartial}{\textbf{P}}
 \input{tables/final-counts}
 
-\title{SoK: Evaluating LLM and Agent Side-Channel Defenses\\From Evidence Audits to Real-Agent Measurements}
+\title{SoK: Transfer Boundaries of LLM and Agent\\Side-Channel Defenses}
 \author{}
 
 \begin{document}
 \maketitle
 
 \begin{abstract}
-Encryption conceals content while exposing the structure of agent workflows. We systematize 82 study families through 39 source-bound result records, linking each defense outcome to its observer, execution boundary and evaluation conditions. This record-level view reveals three consequential transfer errors: attributing upstream protection to a plaintext-aware downstream emitter, treating discarded read cover as safe state-changing cover, and pricing one mechanism with another's utility or cost. The complete 58-core-family map and 20-family audit make these distinctions inspectable. Four experimental demonstrations connect the synthesis to deployment choices. Streaming reverses a buffered cost comparison; isolated and live cover have different state effects; real-agent traces separate behavioral compliance from operation privacy; and timing-aware comparisons distinguish measured RPC cost trade-offs from offline shaping candidates. The resulting contribution is a reusable evidence base and an operational method for selecting, comparing and validating defenses at the boundary where their protection is needed.
+When does a side-channel defense result remain valid after an agent system changes? We systematize defense transfer boundaries: the emitter, executed state, calibration population, attacker observation and evaluation environment. A map of 82 study families, 39 source-bound result records and a nine-item audit distinguish supported transfers from incompatible comparisons. Controlled demonstrations expose the consequences: upstream padding does not protect a new emitter; read-cover reasoning does not establish state preservation for writes; calibration and attacker refitting change measured protection; and timing reveals signals hidden by length-only evaluation. A two-endpoint transfer matrix shows that moving calibration can exchange protection between targets: cancellation balanced accuracy rises from 50.0\% to 70.8\% while return falls from 67.3\% to 50.0\%. These known-cohort measurements turn model sensitivity into a directional transfer test. Our contribution is an operational account of where defense evidence stops transferring, which measurement resolves each boundary, and how to select defenses without borrowing protection, utility or cost from a different operating point.
 \end{abstract}
 
 \input{sections/01-introduction}
@@ -60,6 +60,8 @@ Encryption conceals content while exposing the structure of agent workflows. We 
 \bibliographystyle{IEEEtran}
 \bibliography{refs,refs-final-additions,refs-deployment,evidence/search-completion-20261021-001/new_refs,evidence/search-completion-20261021-001/new_refs_adjacent}
 \appendices
+\input{tables/r9-record-index}
+\input{tables/r15-experiment-index}
 \input{sections/30-reproducibility-guide}
 \input{sections/49-r9-record-index}
 \input{sections/50-r9-experiment-index}

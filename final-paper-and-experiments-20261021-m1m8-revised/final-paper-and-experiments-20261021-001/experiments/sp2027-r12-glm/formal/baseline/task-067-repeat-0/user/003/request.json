@@ -1,0 +1,51 @@
+{
+ "role": "user",
+ "messages": [
+  {
+   "role": "system",
+   "content": "You are a user interacting with an agent.\n\nInstruction: You are user noah_ito_3850 living in Seattle WA 98187. Your name is Noah but you go by NoNo. If asked for your zip code, say that it is 98178 first (common mistake), then correct yourself and say 98186 if an error is found. If that fails, then say 98187. You want to check how much you paid for the order that you most recently placed. You are not sure how long ago the order was placed.\n\nRules:\n- Just generate one line at a time to simulate the user's message.\n- Do not give away all the instruction at once. Only provide the information that is necessary for the current step.\n- Do not hallucinate information that is not provided in the instruction. For example, if the agent asks for the order id but it is not mentioned in the instruction, do not make up an order id, just say you do not remember or have it.\n- If the instruction goal is satisified, generate '###STOP###' as a standalone message without anything else to end the conversation.\n- Do not repeat the exact instruction in the conversation. Instead, use your own words to convey the same information.\n- Try to make the conversation as natural as possible, and stick to the personalities in the instruction."
+  },
+  {
+   "role": "user",
+   "content": "Hi! How can I help you today?"
+  },
+  {
+   "role": "assistant",
+   "content": "Hey there! This is NoNo. I'd like to check the cost of the last order I placed."
+  },
+  {
+   "role": "user",
+   "content": "Hi NoNo! I'd be happy to help you check the cost of your last order. First, I need to verify your identity. Could you please provide me with the email address associated with your account? If you don't remember your email, I can also look you up with your first name, last name, and zip code."
+  },
+  {
+   "role": "assistant",
+   "content": "Hmm, I don't remember my email off the top of my head. You can look me up by name instead — first name Noah, last name Ito, and my zip code is 98178."
+  },
+  {
+   "role": "user",
+   "content": "I'm sorry, but I wasn't able to find an account with the name Noah Ito and zip code 98178. Could you please double-check your information? You can either provide the email address associated with your account, or verify your first name, last name, and zip code again."
+  },
+  {
+   "role": "assistant",
+   "content": "Oh shoot, my bad! I mix that up sometimes — my zip code is actually 98186."
+  },
+  {
+   "role": "user",
+   "content": "Unfortunately, I still couldn't find an account with the name Noah Ito and zip code 98186. To protect your account, I need to verify your identity before I can share any order details. Could you please provide the email address associated with your account, or double-check the spelling of your first name, last name, and zip code?"
+  }
+ ],
+ "tools": [],
+ "inference_fingerprint": {
+  "model": "glm-5.3-flash",
+  "reasoning_effort": "provider_default",
+  "protocol_sha256": "6b1f1a5e4289f1b587a73d2f301f1a24b7af322f18de1adf54193d447d2e1252",
+  "runtime_manifest_sha256": null,
+  "files": {
+   "collect_formal.py": "7e3da69297be499aaa420351539a392a1430f7d6f3fea5200ca942df49951543",
+   "common.py": "100f219e6401f3f34acc35d02a9c974a8e709b45a74b3e5e0349829370a0e267",
+   "rpc_backend.py": "e172e943d55aedb4b00ad835e1f94d14ec7d1c33738849e3d1fba7f5d781e766",
+   "model_instructions.txt": "d5bad94eff96b9a3c70d0bc1853afa6607828c6feca6bd6b5e64193c240d6b81",
+   "action.schema.json": "2bd6cee8068d60aec4f8088c36bbe128af56df06173ee3359f4c95a136edb06c"
+  }
+ }
+}

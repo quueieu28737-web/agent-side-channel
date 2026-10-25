@@ -1,0 +1,576 @@
+{
+ "role": "agent",
+ "messages": [
+  {
+   "role": "system",
+   "content": "# Retail agent policy\n\nAs a retail agent, you can help users cancel or modify pending orders, return or exchange delivered orders, modify their default user address, or provide information about their own profile, orders, and related products.\n\n- At the beginning of the conversation, you have to authenticate the user identity by locating their user id via email, or via name + zip code. This has to be done even when the user already provides the user id.\n\n- Once the user has been authenticated, you can provide the user with information about order, product, profile information, e.g. help the user look up order id.\n\n- You can only help one user per conversation (but you can handle multiple requests from the same user), and must deny any requests for tasks related to any other user.\n\n- Before taking consequential actions that update the database (cancel, modify, return, exchange), you have to list the action detail and obtain explicit user confirmation (yes) to proceed.\n\n- You should not make up any information or knowledge or procedures not provided from the user or the tools, or give subjective recommendations or comments.\n\n- You should at most make one tool call at a time, and if you take a tool call, you should not respond to the user at the same time. If you respond to the user, you should not make a tool call.\n\n- You should transfer the user to a human agent if and only if the request cannot be handled within the scope of your actions.\n\n## Domain basic\n\n- All times in the database are EST and 24 hour based. For example \"02:30:00\" means 2:30 AM EST.\n\n- Each user has a profile of its email, default address, user id, and payment methods. Each payment method is either a gift card, a paypal account, or a credit card.\n\n- Our retail store has 50 types of products. For each type of product, there are variant items of different options. For example, for a 't shirt' product, there could be an item with option 'color blue size M', and another item with option 'color red size L'.\n\n- Each product has an unique product id, and each item has an unique item id. They have no relations and should not be confused.\n\n- Each order can be in status 'pending', 'processed', 'delivered', or 'cancelled'. Generally, you can only take action on pending or delivered orders.\n\n- Exchange or modify order tools can only be called once. Be sure that all items to be changed are collected into a list before making the tool call!!!\n\n## Cancel pending order\n\n- An order can only be cancelled if its status is 'pending', and you should check its status before taking the action.\n\n- The user needs to confirm the order id and the reason (either 'no longer needed' or 'ordered by mistake') for cancellation.\n\n- After user confirmation, the order status will be changed to 'cancelled', and the total will be refunded via the original payment method immediately if it is gift card, otherwise in 5 to 7 business days.\n\n## Modify pending order\n\n- An order can only be modified if its status is 'pending', and you should check its status before taking the action.\n\n- For a pending order, you can take actions to modify its shipping address, payment method, or product item options, but nothing else.\n\n### Modify payment\n\n- The user can only choose a single payment method different from the original payment method.\n\n- If the user wants the modify the payment method to gift card, it must have enough balance to cover the total amount.\n\n- After user confirmation, the order status will be kept 'pending'. The original payment method will be refunded immediately if it is a gift card, otherwise in 5 to 7 business days.\n\n### Modify items\n\n- This action can only be called once, and will change the order status to 'pending (items modifed)', and the agent will not be able to modify or cancel the order anymore. So confirm all the details are right and be cautious before taking this action. In particular, remember to remind the customer to confirm they have provided all items to be modified.\n\n- For a pending order, each item can be modified to an available new item of the same product but of different product option. There cannot be any change of product types, e.g. modify shirt to shoe.\n\n- The user must provide a payment method to pay or receive refund of the price difference. If the user provides a gift card, it must have enough balance to cover the price difference.\n\n## Return delivered order\n\n- An order can only be returned if its status is 'delivered', and you should check its status before taking the action.\n\n- The user needs to confirm the order id, the list of items to be returned, and a payment method to receive the refund.\n\n- The refund must either go to the original payment method, or an existing gift card.\n\n- After user confirmation, the order status will be changed to 'return requested', and the user will receive an email regarding how to return items.\n\n## Exchange delivered order\n\n- An order can only be exchanged if its status is 'delivered', and you should check its status before taking the action. In particular, remember to remind the customer to confirm they have provided all items to be exchanged.\n\n- For a delivered order, each item can be exchanged to an available new item of the same product but of different product option. There cannot be any change of product types, e.g. modify shirt to shoe.\n\n- The user must provide a payment method to pay or receive refund of the price difference. If the user provides a gift card, it must have enough balance to cover the price difference.\n\n- After user confirmation, the order status will be changed to 'exchange requested', and the user will receive an email regarding how to return items. There is no need to place a new order.\n"
+  },
+  {
+   "role": "user",
+   "content": "Hi there! I'd like to exchange a couple of things from one of my orders — the bicycle needs a bigger frame size for my kid, and the jigsaw puzzle in that same order needs swapping as well. I hope that's not too much of a hassle to sort out?"
+  },
+  {
+   "role": "assistant",
+   "content": "No hassle at all — I'd be happy to help with exchanging the bicycle and jigsaw puzzle! Before I can look into your order, I need to verify your identity. Could you please provide the email address associated with your account? Alternatively, you can provide your first name, last name, and zip code."
+  },
+  {
+   "role": "user",
+   "content": "Oh good, I was worried this would be a pain to sort out! No email handy at the moment, but I can give you the other details — it's Sofia Li, and my zip code is 78260."
+  },
+  {
+   "role": "assistant",
+   "tool_action": {
+    "name": "find_user_id_by_name_zip",
+    "arguments": {
+     "first_name": "Sofia",
+     "last_name": "Li",
+     "zip": "78260"
+    }
+   }
+  },
+  {
+   "role": "tool",
+   "name": "find_user_id_by_name_zip",
+   "content": "Error: gateway response deadline exceeded; operation may have executed. Check state before retrying."
+  },
+  {
+   "role": "assistant",
+   "tool_action": {
+    "name": "find_user_id_by_name_zip",
+    "arguments": {
+     "first_name": "Sofia",
+     "last_name": "Li",
+     "zip": "78260"
+    }
+   }
+  },
+  {
+   "role": "tool",
+   "name": "find_user_id_by_name_zip",
+   "content": "sofia_li_9219"
+  },
+  {
+   "role": "assistant",
+   "tool_action": {
+    "name": "get_user_details",
+    "arguments": {
+     "user_id": "sofia_li_9219"
+    }
+   }
+  },
+  {
+   "role": "tool",
+   "name": "get_user_details",
+   "content": "{\"name\": {\"first_name\": \"Sofia\", \"last_name\": \"Li\"}, \"address\": {\"address1\": \"786 Elm Street\", \"address2\": \"Suite 546\", \"city\": \"San Antonio\", \"country\": \"USA\", \"state\": \"TX\", \"zip\": \"78260\"}, \"email\": \"sofia.li7352@example.com\", \"payment_methods\": {\"paypal_8194385\": {\"source\": \"paypal\", \"id\": \"paypal_8194385\"}, \"credit_card_3951670\": {\"source\": \"credit_card\", \"brand\": \"visa\", \"last_four\": \"6791\", \"id\": \"credit_card_3951670\"}, \"credit_card_8105988\": {\"source\": \"credit_card\", \"brand\": \"mastercard\", \"last_four\": \"8484\", \"id\": \"credit_card_8105988\"}}, \"orders\": [\"#W4689314\", \"#W8855135\", \"#W3916020\", \"#W5416052\"]}"
+  },
+  {
+   "role": "assistant",
+   "content": "Thanks, Sofia — you're verified! Now, could you tell me the order number for the order containing the bicycle and the jigsaw puzzle (it should look like #W1234567)? If you're not sure of the order number, I can look through your orders to find it."
+  },
+  {
+   "role": "user",
+   "content": "Honestly, I don't have the order number off the top of my head — I never write those down. If you can look through my orders to find it, that would be great. I'm not holding my breath that it'll be easy to track down, though!"
+  },
+  {
+   "role": "assistant",
+   "tool_action": {
+    "name": "get_order_details",
+    "arguments": {
+     "order_id": "#W4689314"
+    }
+   }
+  },
+  {
+   "role": "tool",
+   "name": "get_order_details",
+   "content": "{\"order_id\": \"#W4689314\", \"user_id\": \"sofia_li_9219\", \"address\": {\"address1\": \"786 Elm Street\", \"address2\": \"Suite 546\", \"city\": \"San Antonio\", \"country\": \"USA\", \"state\": \"TX\", \"zip\": \"78260\"}, \"items\": [{\"name\": \"Digital Camera\", \"product_id\": \"8940227892\", \"item_id\": \"5996159312\", \"price\": 2895.55, \"options\": {\"resolution\": \"24MP\", \"zoom\": \"3x\", \"storage\": \"SD card\"}}], \"fulfillments\": [{\"tracking_id\": [\"689944590938\"], \"item_ids\": [\"5996159312\"]}], \"status\": \"delivered\", \"payment_history\": [{\"transaction_type\": \"payment\", \"amount\": 2895.55, \"payment_method_id\": \"credit_card_8105988\"}]}"
+  },
+  {
+   "role": "assistant",
+   "tool_action": {
+    "name": "get_order_details",
+    "arguments": {
+     "order_id": "#W8855135"
+    }
+   }
+  },
+  {
+   "role": "tool",
+   "name": "get_order_details",
+   "content": "{\"order_id\": \"#W8855135\", \"user_id\": \"sofia_li_9219\", \"address\": {\"address1\": \"786 Elm Street\", \"address2\": \"Suite 546\", \"city\": \"San Antonio\", \"country\": \"USA\", \"state\": \"TX\", \"zip\": \"78260\"}, \"items\": [{\"name\": \"Air Purifier\", \"product_id\": \"3821016478\", \"item_id\": \"4035304400\", \"price\": 504.19, \"options\": {\"room size\": \"medium\", \"filter type\": \"HEPA\", \"features\": \"smart sensors\"}}, {\"name\": \"Hiking Boots\", \"product_id\": \"7363354090\", \"item_id\": \"1437889264\", \"price\": 258.09, \"options\": {\"size\": \"7\", \"material\": \"synthetic\", \"waterproof\": \"no\"}}, {\"name\": \"Skateboard\", \"product_id\": \"1968349452\", \"item_id\": \"3098764622\", \"price\": 202.13, \"options\": {\"deck material\": \"plastic\", \"length\": \"34 inch\", \"design\": \"plain\"}}, {\"name\": \"Yoga Mat\", \"product_id\": \"4635925001\", \"item_id\": \"2733768059\", \"price\": 94.38, \"options\": {\"thickness\": \"6mm\", \"material\": \"natural rubber\", \"color\": \"pink\"}}], \"fulfillments\": [], \"status\": \"pending\", \"payment_history\": [{\"transaction_type\": \"payment\", \"amount\": 1058.79, \"payment_method_id\": \"credit_card_3951670\"}]}"
+  },
+  {
+   "role": "assistant",
+   "tool_action": {
+    "name": "get_order_details",
+    "arguments": {
+     "order_id": "#W3916020"
+    }
+   }
+  },
+  {
+   "role": "tool",
+   "name": "get_order_details",
+   "content": "{\"order_id\": \"#W3916020\", \"user_id\": \"sofia_li_9219\", \"address\": {\"address1\": \"285 Elm Street\", \"address2\": \"Suite 121\", \"city\": \"Fort Worth\", \"country\": \"USA\", \"state\": \"TX\", \"zip\": \"76155\"}, \"items\": [{\"name\": \"Jigsaw Puzzle\", \"product_id\": \"1808611083\", \"item_id\": \"4068787148\", \"price\": 52.01, \"options\": {\"pieces\": \"500\", \"theme\": \"art\", \"difficulty level\": \"intermediate\"}}, {\"name\": \"Bicycle\", \"product_id\": \"9783735446\", \"item_id\": \"7758198585\", \"price\": 1917.21, \"options\": {\"frame size\": \"medium\", \"color\": \"green\", \"type\": \"road\"}}], \"fulfillments\": [{\"tracking_id\": [\"580826001577\"], \"item_ids\": [\"4068787148\", \"7758198585\"]}], \"status\": \"delivered\", \"payment_history\": [{\"transaction_type\": \"payment\", \"amount\": 1969.22, \"payment_method_id\": \"credit_card_8105988\"}]}"
+  },
+  {
+   "role": "assistant",
+   "content": "Good news — I found it! Order #W3916020 was delivered and contains both items:\n\n1. **Bicycle** (product 9783735446) — medium frame, green, road type — $1,917.21\n2. **Jigsaw Puzzle** (product 1808611083) — 500 pieces, art theme, intermediate difficulty — $52.01\n\nTo set up the exchange, I need a few details:\n\n1. **Bicycle:** Which frame size would you like instead (e.g., large)? Should I keep the color green and road type the same?\n2. **Jigsaw Puzzle:** What would you like to swap it for — a different piece count, theme, or difficulty level?\n3. **Payment method for any price difference:** You have a PayPal account, a Visa ending in 6791, and a Mastercard ending in 8484 on file. Which one would you like to use?\n\nPlease note that an exchange can only be processed once per order, so make sure you let me know all items you'd like to exchange before I proceed."
+  },
+  {
+   "role": "user",
+   "content": "Thanks for digging that up! Okay, let's see if this works out. For the bicycle, I'd like to go from the medium frame up to a large, but please keep it green and road type. For the puzzle, keep the intermediate difficulty the same, but bump it up to 1,500 pieces instead — and if you happen to have both art and animal themes in that piece count, I'd rather go with the art one. Not getting my hopes up that both are in stock, honestly. And for any price difference, just put it on the Visa ending in 6791."
+  }
+ ],
+ "tools": [
+  {
+   "type": "function",
+   "function": {
+    "name": "calculate",
+    "description": "Calculate the result of a mathematical expression.",
+    "parameters": {
+     "type": "object",
+     "properties": {
+      "expression": {
+       "type": "string",
+       "description": "The mathematical expression to calculate, such as '2 + 2'. The expression can contain numbers, operators (+, -, *, /), parentheses, and spaces."
+      }
+     },
+     "required": [
+      "expression"
+     ]
+    }
+   }
+  },
+  {
+   "type": "function",
+   "function": {
+    "name": "cancel_pending_order",
+    "description": "Cancel a pending order. If the order is already processed or delivered, it cannot be cancelled. The agent needs to explain the cancellation detail and ask for explicit user confirmation (yes/no) to proceed. If the user confirms, the order status will be changed to 'cancelled' and the payment will be refunded. The refund will be added to the user's gift card balance immediately if the payment was made using a gift card, otherwise the refund would take 5-7 business days to process. The function returns the order details after the cancellation.",
+    "parameters": {
+     "type": "object",
+     "properties": {
+      "order_id": {
+       "type": "string",
+       "description": "The order id, such as '#W0000000'. Be careful there is a '#' symbol at the beginning of the order id."
+      },
+      "reason": {
+       "type": "string",
+       "enum": [
+        "no longer needed",
+        "ordered by mistake"
+       ],
+       "description": "The reason for cancellation, which should be either 'no longer needed' or 'ordered by mistake'."
+      }
+     },
+     "required": [
+      "order_id",
+      "reason"
+     ]
+    }
+   }
+  },
+  {
+   "type": "function",
+   "function": {
+    "name": "exchange_delivered_order_items",
+    "description": "Exchange items in a delivered order to new items of the same product type. For a delivered order, return or exchange can be only done once by the agent. The agent needs to explain the exchange detail and ask for explicit user confirmation (yes/no) to proceed.",
+    "parameters": {
+     "type": "object",
+     "properties": {
+      "order_id": {
+       "type": "string",
+       "description": "The order id, such as '#W0000000'. Be careful there is a '#' symbol at the beginning of the order id."
+      },
+      "item_ids": {
+       "type": "array",
+       "items": {
+        "type": "string"
+       },
+       "description": "The item ids to be exchanged, each such as '1008292230'. There could be duplicate items in the list."
+      },
+      "new_item_ids": {
+       "type": "array",
+       "items": {
+        "type": "string"
+       },
+       "description": "The item ids to be exchanged for, each such as '1008292230'. There could be duplicate items in the list. Each new item id should match the item id in the same position and be of the same product."
+      },
+      "payment_method_id": {
+       "type": "string",
+       "description": "The payment method id to pay or receive refund for the item price difference, such as 'gift_card_0000000' or 'credit_card_0000000'. These can be looked up from the user or order details."
+      }
+     },
+     "required": [
+      "order_id",
+      "item_ids",
+      "new_item_ids",
+      "payment_method_id"
+     ]
+    }
+   }
+  },
+  {
+   "type": "function",
+   "function": {
+    "name": "find_user_id_by_email",
+    "description": "Find user id by email. If the user is not found, the function will return an error message.",
+    "parameters": {
+     "type": "object",
+     "properties": {
+      "email": {
+       "type": "string",
+       "description": "The email of the user, such as 'something@example.com'."
+      }
+     },
+     "required": [
+      "email"
+     ]
+    }
+   }
+  },
+  {
+   "type": "function",
+   "function": {
+    "name": "find_user_id_by_name_zip",
+    "description": "Find user id by first name, last name, and zip code. If the user is not found, the function will return an error message. By default, find user id by email, and only call this function if the user is not found by email or cannot remember email.",
+    "parameters": {
+     "type": "object",
+     "properties": {
+      "first_name": {
+       "type": "string",
+       "description": "The first name of the customer, such as 'John'."
+      },
+      "last_name": {
+       "type": "string",
+       "description": "The last name of the customer, such as 'Doe'."
+      },
+      "zip": {
+       "type": "string",
+       "description": "The zip code of the customer, such as '12345'."
+      }
+     },
+     "required": [
+      "first_name",
+      "last_name",
+      "zip"
+     ]
+    }
+   }
+  },
+  {
+   "type": "function",
+   "function": {
+    "name": "get_order_details",
+    "description": "Get the status and details of an order.",
+    "parameters": {
+     "type": "object",
+     "properties": {
+      "order_id": {
+       "type": "string",
+       "description": "The order id, such as '#W0000000'. Be careful there is a '#' symbol at the beginning of the order id."
+      }
+     },
+     "required": [
+      "order_id"
+     ]
+    }
+   }
+  },
+  {
+   "type": "function",
+   "function": {
+    "name": "get_product_details",
+    "description": "Get the inventory details of a product.",
+    "parameters": {
+     "type": "object",
+     "properties": {
+      "product_id": {
+       "type": "string",
+       "description": "The product id, such as '6086499569'. Be careful the product id is different from the item id."
+      }
+     },
+     "required": [
+      "product_id"
+     ]
+    }
+   }
+  },
+  {
+   "type": "function",
+   "function": {
+    "name": "get_user_details",
+    "description": "Get the details of a user, including their orders.",
+    "parameters": {
+     "type": "object",
+     "properties": {
+      "user_id": {
+       "type": "string",
+       "description": "The user id, such as 'sara_doe_496'."
+      }
+     },
+     "required": [
+      "user_id"
+     ]
+    }
+   }
+  },
+  {
+   "type": "function",
+   "function": {
+    "name": "list_all_product_types",
+    "description": "List the name and product id of all product types. Each product type has a variety of different items with unique item ids and options. There are only 50 product types in the store.",
+    "parameters": {
+     "type": "object",
+     "properties": {},
+     "required": []
+    }
+   }
+  },
+  {
+   "type": "function",
+   "function": {
+    "name": "modify_pending_order_address",
+    "description": "Modify the shipping address of a pending order. The agent needs to explain the modification detail and ask for explicit user confirmation (yes/no) to proceed.",
+    "parameters": {
+     "type": "object",
+     "properties": {
+      "order_id": {
+       "type": "string",
+       "description": "The order id, such as '#W0000000'. Be careful there is a '#' symbol at the beginning of the order id."
+      },
+      "address1": {
+       "type": "string",
+       "description": "The first line of the address, such as '123 Main St'."
+      },
+      "address2": {
+       "type": "string",
+       "description": "The second line of the address, such as 'Apt 1' or ''."
+      },
+      "city": {
+       "type": "string",
+       "description": "The city, such as 'San Francisco'."
+      },
+      "state": {
+       "type": "string",
+       "description": "The state, such as 'CA'."
+      },
+      "country": {
+       "type": "string",
+       "description": "The country, such as 'USA'."
+      },
+      "zip": {
+       "type": "string",
+       "description": "The zip code, such as '12345'."
+      }
+     },
+     "required": [
+      "order_id",
+      "address1",
+      "address2",
+      "city",
+      "state",
+      "country",
+      "zip"
+     ]
+    }
+   }
+  },
+  {
+   "type": "function",
+   "function": {
+    "name": "modify_pending_order_items",
+    "description": "Modify items in a pending order to new items of the same product type. For a pending order, this function can only be called once. The agent needs to explain the exchange detail and ask for explicit user confirmation (yes/no) to proceed.",
+    "parameters": {
+     "type": "object",
+     "properties": {
+      "order_id": {
+       "type": "string",
+       "description": "The order id, such as '#W0000000'. Be careful there is a '#' symbol at the beginning of the order id."
+      },
+      "item_ids": {
+       "type": "array",
+       "items": {
+        "type": "string"
+       },
+       "description": "The item ids to be modified, each such as '1008292230'. There could be duplicate items in the list."
+      },
+      "new_item_ids": {
+       "type": "array",
+       "items": {
+        "type": "string"
+       },
+       "description": "The item ids to be modified for, each such as '1008292230'. There could be duplicate items in the list. Each new item id should match the item id in the same position and be of the same product."
+      },
+      "payment_method_id": {
+       "type": "string",
+       "description": "The payment method id to pay or receive refund for the item price difference, such as 'gift_card_0000000' or 'credit_card_0000000'. These can be looked up from the user or order details."
+      }
+     },
+     "required": [
+      "order_id",
+      "item_ids",
+      "new_item_ids",
+      "payment_method_id"
+     ]
+    }
+   }
+  },
+  {
+   "type": "function",
+   "function": {
+    "name": "modify_pending_order_payment",
+    "description": "Modify the payment method of a pending order. The agent needs to explain the modification detail and ask for explicit user confirmation (yes/no) to proceed.",
+    "parameters": {
+     "type": "object",
+     "properties": {
+      "order_id": {
+       "type": "string",
+       "description": "The order id, such as '#W0000000'. Be careful there is a '#' symbol at the beginning of the order id."
+      },
+      "payment_method_id": {
+       "type": "string",
+       "description": "The payment method id to pay or receive refund for the item price difference, such as 'gift_card_0000000' or 'credit_card_0000000'. These can be looked up from the user or order details."
+      }
+     },
+     "required": [
+      "order_id",
+      "payment_method_id"
+     ]
+    }
+   }
+  },
+  {
+   "type": "function",
+   "function": {
+    "name": "modify_user_address",
+    "description": "Modify the default address of a user. The agent needs to explain the modification detail and ask for explicit user confirmation (yes/no) to proceed.",
+    "parameters": {
+     "type": "object",
+     "properties": {
+      "user_id": {
+       "type": "string",
+       "description": "The user id, such as 'sara_doe_496'."
+      },
+      "address1": {
+       "type": "string",
+       "description": "The first line of the address, such as '123 Main St'."
+      },
+      "address2": {
+       "type": "string",
+       "description": "The second line of the address, such as 'Apt 1' or ''."
+      },
+      "city": {
+       "type": "string",
+       "description": "The city, such as 'San Francisco'."
+      },
+      "state": {
+       "type": "string",
+       "description": "The state, such as 'CA'."
+      },
+      "country": {
+       "type": "string",
+       "description": "The country, such as 'USA'."
+      },
+      "zip": {
+       "type": "string",
+       "description": "The zip code, such as '12345'."
+      }
+     },
+     "required": [
+      "user_id",
+      "address1",
+      "address2",
+      "city",
+      "state",
+      "country",
+      "zip"
+     ]
+    }
+   }
+  },
+  {
+   "type": "function",
+   "function": {
+    "name": "return_delivered_order_items",
+    "description": "Return some items of a delivered order. The order status will be changed to 'return requested'. The agent needs to explain the return detail and ask for explicit user confirmation (yes/no) to proceed. The user will receive follow-up email for how and where to return the item.",
+    "parameters": {
+     "type": "object",
+     "properties": {
+      "order_id": {
+       "type": "string",
+       "description": "The order id, such as '#W0000000'. Be careful there is a '#' symbol at the beginning of the order id."
+      },
+      "item_ids": {
+       "type": "array",
+       "items": {
+        "type": "string"
+       },
+       "description": "The item ids to be returned, each such as '1008292230'. There could be duplicate items in the list."
+      },
+      "payment_method_id": {
+       "type": "string",
+       "description": "The payment method id to pay or receive refund for the item price difference, such as 'gift_card_0000000' or 'credit_card_0000000'. These can be looked up from the user or order details."
+      }
+     },
+     "required": [
+      "order_id",
+      "item_ids",
+      "payment_method_id"
+     ]
+    }
+   }
+  },
+  {
+   "type": "function",
+   "function": {
+    "name": "think",
+    "description": "Use the tool to think about something. It will not obtain new information or change the database, but just append the thought to the log. Use it when complex reasoning or some cache memory is needed.",
+    "parameters": {
+     "type": "object",
+     "properties": {
+      "thought": {
+       "type": "string",
+       "description": "A thought to think about."
+      }
+     },
+     "required": [
+      "thought"
+     ]
+    }
+   }
+  },
+  {
+   "type": "function",
+   "function": {
+    "name": "transfer_to_human_agents",
+    "description": "Transfer the user to a human agent, with a summary of the user's issue. Only transfer if the user explicitly asks for a human agent, or if the user's issue cannot be resolved by the agent with the available tools.",
+    "parameters": {
+     "type": "object",
+     "properties": {
+      "summary": {
+       "type": "string",
+       "description": "A summary of the user's issue."
+      }
+     },
+     "required": [
+      "summary"
+     ]
+    }
+   }
+  }
+ ],
+ "inference_fingerprint": {
+  "model": "glm-5.3-flash",
+  "reasoning_effort": "provider_default",
+  "protocol_sha256": "c6060f1b0d71f280fdfe1cfffebe967b8e8f182136a694a11299623e4761e48f",
+  "runtime_manifest_sha256": null,
+  "files": {
+   "collect_formal.py": "ec5895925b2309cc89cf7c5841a9c6bb5f710b3a03679beece0a918b17f91651",
+   "common.py": "c9a198d50ed10a44b30c724c8d08210428762cfc4bd0da5f189ded1fa2f2864c",
+   "rpc_backend.py": "6a82a1c600b0b90c4c88fd4bebeb0a9356c38c3c9e255b160e687ff39ac1446a",
+   "model_instructions.txt": "d5bad94eff96b9a3c70d0bc1853afa6607828c6feca6bd6b5e64193c240d6b81",
+   "action.schema.json": "2bd6cee8068d60aec4f8088c36bbe128af56df06173ee3359f4c95a136edb06c"
+  }
+ }
+}

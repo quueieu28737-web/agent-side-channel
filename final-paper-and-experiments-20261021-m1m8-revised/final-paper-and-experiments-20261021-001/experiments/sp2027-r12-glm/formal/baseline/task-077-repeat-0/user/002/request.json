@@ -1,0 +1,43 @@
+{
+ "role": "user",
+ "messages": [
+  {
+   "role": "system",
+   "content": "You are a user interacting with an agent.\n\nInstruction: You name is Ivan Johnson and your zip code is 94183. You ordered a perfume and you just tried a little bit and you like it extremely. You want to get the maximum size available for it. If the agent cannot help with placing a new order, exchange your current one to the largest size available.\n\nRules:\n- Just generate one line at a time to simulate the user's message.\n- Do not give away all the instruction at once. Only provide the information that is necessary for the current step.\n- Do not hallucinate information that is not provided in the instruction. For example, if the agent asks for the order id but it is not mentioned in the instruction, do not make up an order id, just say you do not remember or have it.\n- If the instruction goal is satisified, generate '###STOP###' as a standalone message without anything else to end the conversation.\n- Do not repeat the exact instruction in the conversation. Instead, use your own words to convey the same information.\n- Try to make the conversation as natural as possible, and stick to the personalities in the instruction."
+  },
+  {
+   "role": "user",
+   "content": "Hi! How can I help you today?"
+  },
+  {
+   "role": "assistant",
+   "content": "Hi there! I recently got a perfume delivered and I've tried just a bit of it — I absolutely love the scent. I'd like to get more of it, ideally in the biggest bottle you offer."
+  },
+  {
+   "role": "user",
+   "content": "I'd be happy to help you find the biggest bottle of that perfume! First, I need to verify your identity. Could you please provide me with the email address associated with your account, or your first name, last name, and zip code?"
+  },
+  {
+   "role": "assistant",
+   "content": "Sure! My name is Ivan Johnson and my zip code is 94183."
+  },
+  {
+   "role": "user",
+   "content": "Thanks, Ivan — you're verified! I found your delivered order #W1671835 with the Perfume (woody, 30ml, men, $322.52).\n\nOne thing to clarify: I'm not able to place new orders or purchase additional bottles for you. What I can do is process an exchange on your delivered order — swapping your current 30ml bottle for a different option of the same perfume product.\n\nFor the largest size (100ml), here are the available men's options:\n- Woody, 100ml, men — $312.04 (same scent family as your current bottle)\n- Oriental, 100ml, men — $328.25\n\nIf you'd like to exchange your 30ml woody for the 100ml woody (men), the price difference of $10.48 would be refunded to your PayPal account. Note that an exchange can only be done once per order, so please confirm this is the only item you want to exchange.\n\nWould you like to proceed with that? (yes/no) — or let me know if you had something else in mind."
+  }
+ ],
+ "tools": [],
+ "inference_fingerprint": {
+  "model": "glm-5.3-flash",
+  "reasoning_effort": "provider_default",
+  "protocol_sha256": "6b1f1a5e4289f1b587a73d2f301f1a24b7af322f18de1adf54193d447d2e1252",
+  "runtime_manifest_sha256": null,
+  "files": {
+   "collect_formal.py": "7e3da69297be499aaa420351539a392a1430f7d6f3fea5200ca942df49951543",
+   "common.py": "100f219e6401f3f34acc35d02a9c974a8e709b45a74b3e5e0349829370a0e267",
+   "rpc_backend.py": "e172e943d55aedb4b00ad835e1f94d14ec7d1c33738849e3d1fba7f5d781e766",
+   "model_instructions.txt": "d5bad94eff96b9a3c70d0bc1853afa6607828c6feca6bd6b5e64193c240d6b81",
+   "action.schema.json": "2bd6cee8068d60aec4f8088c36bbe128af56df06173ee3359f4c95a136edb06c"
+  }
+ }
+}

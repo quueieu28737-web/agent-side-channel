@@ -1,0 +1,146 @@
+[
+ {
+  "prompt": "baseline",
+  "view": "all",
+  "target": "cancel",
+  "attackers": [
+   "majority",
+   "D2_logreg",
+   "D2_gboost"
+  ],
+  "suite_ba": 0.9625,
+  "suite_auroc": 0.9958333333333333,
+  "suite_ba_ci95": [
+   0.897676282051282,
+   1.0
+  ],
+  "suite_auroc_ci95": [
+   0.9742408906882591,
+   1.0
+  ],
+  "bootstrap_draws": 2000,
+  "valid_ba_draws": 1994,
+  "valid_auroc_draws": 1994,
+  "selection": "maximum reselected separately in every shared customer bootstrap draw; conditional on fitted predictions"
+ },
+ {
+  "prompt": "baseline",
+  "view": "all",
+  "target": "return",
+  "attackers": [
+   "majority",
+   "D2_logreg",
+   "D2_gboost"
+  ],
+  "suite_ba": 0.9402597402597402,
+  "suite_auroc": 0.9506493506493506,
+  "suite_ba_ci95": [
+   0.8703138528138529,
+   1.0
+  ],
+  "suite_auroc_ci95": [
+   0.8708072916666667,
+   1.0
+  ],
+  "bootstrap_draws": 2000,
+  "valid_ba_draws": 2000,
+  "valid_auroc_draws": 2000,
+  "selection": "maximum reselected separately in every shared customer bootstrap draw; conditional on fitted predictions"
+ },
+ {
+  "prompt": "baseline",
+  "view": "writes-only",
+  "target": "cancel",
+  "attackers": [
+   "majority",
+   "D2_logreg",
+   "D2_gboost"
+  ],
+  "suite_ba": 1.0,
+  "suite_auroc": 1.0,
+  "suite_ba_ci95": [
+   1.0,
+   1.0
+  ],
+  "suite_auroc_ci95": [
+   1.0,
+   1.0
+  ],
+  "bootstrap_draws": 2000,
+  "valid_ba_draws": 1994,
+  "valid_auroc_draws": 1994,
+  "selection": "maximum reselected separately in every shared customer bootstrap draw; conditional on fitted predictions"
+ },
+ {
+  "prompt": "baseline",
+  "view": "writes-only",
+  "target": "return",
+  "attackers": [
+   "majority",
+   "D2_logreg",
+   "D2_gboost"
+  ],
+  "suite_ba": 0.8948051948051948,
+  "suite_auroc": 0.964935064935065,
+  "suite_ba_ci95": [
+   0.7730410956827553,
+   1.0
+  ],
+  "suite_auroc_ci95": [
+   0.9079644173394174,
+   1.0
+  ],
+  "bootstrap_draws": 2000,
+  "valid_ba_draws": 2000,
+  "valid_auroc_draws": 2000,
+  "selection": "maximum reselected separately in every shared customer bootstrap draw; conditional on fitted predictions"
+ },
+ {
+  "prompt": "baseline",
+  "view": "writes-removed",
+  "target": "cancel",
+  "attackers": [
+   "majority",
+   "D2_logreg",
+   "D2_gboost"
+  ],
+  "suite_ba": 0.5,
+  "suite_auroc": 0.5541666666666667,
+  "suite_ba_ci95": [
+   0.5,
+   0.5939157196969697
+  ],
+  "suite_auroc_ci95": [
+   0.5,
+   0.7826923076923076
+  ],
+  "bootstrap_draws": 2000,
+  "valid_ba_draws": 1994,
+  "valid_auroc_draws": 1994,
+  "selection": "maximum reselected separately in every shared customer bootstrap draw; conditional on fitted predictions"
+ },
+ {
+  "prompt": "baseline",
+  "view": "writes-removed",
+  "target": "return",
+  "attackers": [
+   "majority",
+   "D2_logreg",
+   "D2_gboost"
+  ],
+  "suite_ba": 0.6922077922077923,
+  "suite_auroc": 0.6415584415584416,
+  "suite_ba_ci95": [
+   0.5,
+   0.856862039170507
+  ],
+  "suite_auroc_ci95": [
+   0.5,
+   0.8442123477297894
+  ],
+  "bootstrap_draws": 2000,
+  "valid_ba_draws": 2000,
+  "valid_auroc_draws": 2000,
+  "selection": "maximum reselected separately in every shared customer bootstrap draw; conditional on fitted predictions"
+ }
+]

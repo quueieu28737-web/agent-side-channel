@@ -1,0 +1,130 @@
+{
+  "utc": "2026-10-25T06:20:59.888192+00:00",
+  "package_verification": {
+    "status": "PACKAGE_BYTES_CLOSURES_SAVED_CENSUS_AND_M1_M8_REVISION_PASS",
+    "manifest_files": 40295,
+    "preserved_release_files": 2414,
+    "tau_tasks": 115,
+    "tau_eligible_tasks": 97,
+    "tau_units": 3450,
+    "prior_rows_preserved": 851,
+    "distinct_saved_task_states": 244,
+    "m1_retrospective_cases": 24,
+    "m1_kappa": 0.795,
+    "m7_dual_coding_kappas": {
+      "screening_100": 0.886,
+      "audit_144": 0.876,
+      "pairs_150": 0.916
+    },
+    "historical_revision_model_calls": 0,
+    "fourth_round": {
+      "directory": "experiments/sp2027-r4-snapshot-20261023",
+      "scope": "User-authorized interim completion snapshot; later full-cohort results are a separate supplement.",
+      "validation": {
+        "status": "VERIFIED",
+        "episodes": 660,
+        "training_tasks": 69,
+        "test_tasks": 41,
+        "test_customers": 22,
+        "tls_sessions": 2640,
+        "prediction_sets": 176,
+        "model_calls": 11002,
+        "model_usage": {
+          "input_tokens": 116436224,
+          "cached_input_tokens": 48961024,
+          "output_tokens": 606577,
+          "reasoning_output_tokens": 6411
+        },
+        "protocol_sha256": "54787c563c74cba9c18f7c18b2b26651c335a23a4ab79855cf6c9812009cd5ad",
+        "calibration_sha256": "d7a4ff38be31191f7043080ce7fc1ff64df811e03ad255dc2da21e4d2d815db8",
+        "checks": [
+          "group disjointness",
+          "episode grid and versions",
+          "training-only calibration refit",
+          "sandbox state replay",
+          "online cover reconstruction",
+          "TLS record counts/byte totals",
+          "independent sklearn point metrics",
+          "customer-cluster suite intervals",
+          "paired contrasts",
+          "model request provenance"
+        ],
+        "release_scope": "INTERIM_COMPLETION_SNAPSHOT",
+        "planned_episodes": 690,
+        "completed_episodes_in_release": 663,
+        "primary_analysis_episodes": 660,
+        "additional_completed_episodes": [
+          [
+            "baseline",
+            105,
+            0
+          ],
+          [
+            "baseline",
+            105,
+            1
+          ],
+          [
+            "rules",
+            105,
+            0
+          ]
+        ],
+        "all_completed_model_calls": 11112,
+        "snapshot_utc": "2026-10-23T10:01:03.161207+00:00",
+        "snapshot_amendment_sha256": "b389f2ddc7815b5bedd990db714ff6eb58eb51d8cbe2ae069b9659e841ae3bb9",
+        "decision_alignment": {
+          "status": "DECISION_ALIGNMENT_PASS",
+          "episodes": 663,
+          "model_decisions": 11112,
+          "additional_episode_state_checks": 3,
+          "checks": [
+            "model actions to tool-call sequence",
+            "assistant and user messages to model outputs",
+            "usage totals",
+            "serialized request and response lengths",
+            "additional episode state and output scoring"
+          ]
+        }
+      },
+      "pdf_pages": {
+        "main": 18,
+        "main_body": 13,
+        "supplement": 24
+      },
+      "historical_files_unchanged": 2590
+    },
+    "uploads": 0
+  },
+  "manifest_sha256": "c7a3bd3ca55a5ec3fb7b3c8dbb89fc73c4d2f39ddd0aba76c17fb52972e597b2",
+  "release_validation": {
+    "passed": true,
+    "checks": 7013,
+    "preserved_scientific_files": 6999,
+    "pages": {
+      "main": 18,
+      "supplement": 56
+    },
+    "pdf_sha256": {
+      "main": "f1dcb83e477d370be60b00b4123c7d8d3a6b2fa1207ce2b055881ac8704bf3ca",
+      "supplement": "99728b0f184c070cbc6c6f17593ac2159cb3f7cc6841b60a672dece2bc3266c8"
+    }
+  },
+  "exact_credential_scan": {
+    "passed": true,
+    "text_files": 30540,
+    "scope": "R11/R12/R14/R15 experimental records, manuscript and current release tooling; private credential values held in memory only"
+  },
+  "live_runs": 100,
+  "live_verification": {
+    "passed": true,
+    "episodes": 100,
+    "checks": 800,
+    "reward_state_reconstructed": true,
+    "model_request_counts_checked": true,
+    "clock_implementation": "GetTickCount64()",
+    "clock_resolution_seconds": 0.015625,
+    "deadline_schedule_recomputed": true,
+    "utc": "2026-10-25T06:02:55.545141+00:00"
+  }
+}

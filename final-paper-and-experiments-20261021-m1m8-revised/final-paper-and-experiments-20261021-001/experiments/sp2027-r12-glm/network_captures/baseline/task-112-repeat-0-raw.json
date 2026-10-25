@@ -1,0 +1,218 @@
+{
+ "task": 112,
+ "repeat": 0,
+ "seed": 0,
+ "prompt": "baseline",
+ "user": "yara_silva_7567",
+ "has_cancel": 0,
+ "has_return": 0,
+ "native_reward": 1,
+ "db_eq": true,
+ "status": "user_stop",
+ "condition": "raw",
+ "calls": [
+  {
+   "name": "find_user_id_by_name_zip",
+   "kind": "real",
+   "req": 111,
+   "resp": 15,
+   "err": false
+  },
+  {
+   "name": "get_user_details",
+   "kind": "real",
+   "req": 73,
+   "resp": 21,
+   "err": true
+  },
+  {
+   "name": "get_user_details",
+   "kind": "real",
+   "req": 73,
+   "resp": 403,
+   "err": false
+  },
+  {
+   "name": "tool_action",
+   "kind": "real",
+   "req": 107,
+   "resp": 26,
+   "err": true
+  },
+  {
+   "name": "get_order_details",
+   "kind": "real",
+   "req": 69,
+   "resp": 854,
+   "err": false
+  },
+  {
+   "name": "get_order_details",
+   "kind": "real",
+   "req": 69,
+   "resp": 1073,
+   "err": false
+  },
+  {
+   "name": "get_order_details",
+   "kind": "real",
+   "req": 69,
+   "resp": 1377,
+   "err": false
+  },
+  {
+   "name": "get_order_details",
+   "kind": "real",
+   "req": 69,
+   "resp": 738,
+   "err": false
+  },
+  {
+   "name": "get_product_details",
+   "kind": "real",
+   "req": 74,
+   "resp": 3370,
+   "err": false
+  },
+  {
+   "name": "modify_pending_order_address",
+   "kind": "real",
+   "req": 208,
+   "resp": 742,
+   "err": false
+  },
+  {
+   "name": "modify_pending_order_items",
+   "kind": "real",
+   "req": 180,
+   "resp": 866,
+   "err": false
+  },
+  {
+   "name": "get_product_details",
+   "kind": "real",
+   "req": 74,
+   "resp": 1203,
+   "err": false
+  },
+  {
+   "name": "modify_pending_order_items",
+   "kind": "real",
+   "req": 180,
+   "resp": 974,
+   "err": false
+  }
+ ],
+ "records": [
+  [
+   "c2s",
+   139
+  ],
+  [
+   "s2c",
+   43
+  ],
+  [
+   "c2s",
+   101
+  ],
+  [
+   "s2c",
+   49
+  ],
+  [
+   "c2s",
+   101
+  ],
+  [
+   "s2c",
+   431
+  ],
+  [
+   "c2s",
+   135
+  ],
+  [
+   "s2c",
+   54
+  ],
+  [
+   "c2s",
+   97
+  ],
+  [
+   "s2c",
+   882
+  ],
+  [
+   "c2s",
+   97
+  ],
+  [
+   "s2c",
+   1101
+  ],
+  [
+   "c2s",
+   97
+  ],
+  [
+   "s2c",
+   1405
+  ],
+  [
+   "c2s",
+   97
+  ],
+  [
+   "s2c",
+   766
+  ],
+  [
+   "c2s",
+   102
+  ],
+  [
+   "s2c",
+   3398
+  ],
+  [
+   "c2s",
+   236
+  ],
+  [
+   "s2c",
+   770
+  ],
+  [
+   "c2s",
+   208
+  ],
+  [
+   "s2c",
+   894
+  ],
+  [
+   "c2s",
+   102
+  ],
+  [
+   "s2c",
+   1231
+  ],
+  [
+   "c2s",
+   208
+  ],
+  [
+   "s2c",
+   1002
+  ]
+ ],
+ "application_wire_bytes": 13876,
+ "framing_overflow_messages": 0,
+ "template_flags": null,
+ "calibration_sha256": "3e1c1ecf1923e50e8c0d1f72709497cb6cd7ee277f6d946144a3bcea8dc4eb05",
+ "episode_sha256": "4802dcda46c05afc2a472d22ca8f73e7282d5f2b61f3ee20f4ba7850aae5e788",
+ "measurement": "TLS 1.2 loopback replay of real model trajectory; provider link and wall-clock timing excluded"
+}

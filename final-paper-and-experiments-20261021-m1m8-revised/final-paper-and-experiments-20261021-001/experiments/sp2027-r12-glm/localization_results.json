@@ -1,0 +1,113 @@
+{
+ "results": [
+  {
+   "view": "all",
+   "target": "cancel",
+   "suite_ba": 1.0,
+   "suite_ba_ci95": [
+    1.0,
+    1.0
+   ],
+   "suite_auroc": 1.0,
+   "attackers": [
+    "majority",
+    "D2_logreg",
+    "D2_gboost",
+    "network_decode_gboost",
+    "network_decode_count_rule"
+   ],
+   "test_customers": 24
+  },
+  {
+   "view": "all",
+   "target": "return",
+   "suite_ba": 0.8662337662337662,
+   "suite_ba_ci95": [
+    0.7367424242424243,
+    0.9736842105263157
+   ],
+   "suite_auroc": 0.8701298701298701,
+   "attackers": [
+    "majority",
+    "D2_logreg",
+    "D2_gboost",
+    "network_decode_gboost",
+    "network_decode_count_rule"
+   ],
+   "test_customers": 24
+  },
+  {
+   "view": "writes-only",
+   "target": "cancel",
+   "suite_ba": 1.0,
+   "suite_ba_ci95": [
+    1.0,
+    1.0
+   ],
+   "suite_auroc": 1.0,
+   "attackers": [
+    "majority",
+    "D2_logreg",
+    "D2_gboost",
+    "network_decode_gboost",
+    "network_decode_count_rule"
+   ],
+   "test_customers": 24
+  },
+  {
+   "view": "writes-only",
+   "target": "return",
+   "suite_ba": 0.7805194805194806,
+   "suite_ba_ci95": [
+    0.6745211549456833,
+    0.9242449162679426
+   ],
+   "suite_auroc": 0.8558441558441559,
+   "attackers": [
+    "majority",
+    "D2_logreg",
+    "D2_gboost",
+    "network_decode_gboost",
+    "network_decode_count_rule"
+   ],
+   "test_customers": 24
+  },
+  {
+   "view": "writes-removed",
+   "target": "cancel",
+   "suite_ba": 0.65,
+   "suite_ba_ci95": [
+    0.5,
+    0.89484394124847
+   ],
+   "suite_auroc": 0.6145833333333334,
+   "attackers": [
+    "majority",
+    "D2_logreg",
+    "D2_gboost",
+    "network_decode_gboost",
+    "network_decode_count_rule"
+   ],
+   "test_customers": 24
+  },
+  {
+   "view": "writes-removed",
+   "target": "return",
+   "suite_ba": 0.6298701298701299,
+   "suite_ba_ci95": [
+    0.5,
+    0.8461794019933553
+   ],
+   "suite_auroc": 0.6753246753246753,
+   "attackers": [
+    "majority",
+    "D2_logreg",
+    "D2_gboost",
+    "network_decode_gboost",
+    "network_decode_count_rule"
+   ],
+   "test_customers": 24
+  }
+ ],
+ "scope": "Oracle selects exchanges by true write names; attackers see only replayed TLS record directions/lengths/order. Fixed R4 learners, not the expanded Sol cross-fit suite. Customer bootstrap conditional on fitted learners."
+}

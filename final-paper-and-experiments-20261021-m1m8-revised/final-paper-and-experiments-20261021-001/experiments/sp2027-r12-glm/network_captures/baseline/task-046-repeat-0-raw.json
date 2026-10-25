@@ -1,0 +1,128 @@
+{
+ "task": 46,
+ "repeat": 0,
+ "seed": 0,
+ "prompt": "baseline",
+ "user": "daiki_johnson_9523",
+ "has_cancel": 0,
+ "has_return": 1,
+ "native_reward": 1,
+ "db_eq": true,
+ "status": "user_stop",
+ "condition": "raw",
+ "calls": [
+  {
+   "name": "find_user_id_by_name_zip",
+   "kind": "real",
+   "req": 114,
+   "resp": 18,
+   "err": false
+  },
+  {
+   "name": "get_user_details",
+   "kind": "real",
+   "req": 76,
+   "resp": 371,
+   "err": false
+  },
+  {
+   "name": "get_order_details",
+   "kind": "real",
+   "req": 69,
+   "resp": 544,
+   "err": false
+  },
+  {
+   "name": "get_order_details",
+   "kind": "real",
+   "req": 69,
+   "resp": 690,
+   "err": false
+  },
+  {
+   "name": "get_order_details",
+   "kind": "real",
+   "req": 69,
+   "resp": 1426,
+   "err": false
+  },
+  {
+   "name": "return_delivered_order_items",
+   "kind": "real",
+   "req": 161,
+   "resp": 1525,
+   "err": false
+  },
+  {
+   "name": "calculate",
+   "kind": "real",
+   "req": 78,
+   "resp": 7,
+   "err": false
+  }
+ ],
+ "records": [
+  [
+   "c2s",
+   142
+  ],
+  [
+   "s2c",
+   46
+  ],
+  [
+   "c2s",
+   104
+  ],
+  [
+   "s2c",
+   399
+  ],
+  [
+   "c2s",
+   97
+  ],
+  [
+   "s2c",
+   572
+  ],
+  [
+   "c2s",
+   97
+  ],
+  [
+   "s2c",
+   718
+  ],
+  [
+   "c2s",
+   97
+  ],
+  [
+   "s2c",
+   1454
+  ],
+  [
+   "c2s",
+   189
+  ],
+  [
+   "s2c",
+   1553
+  ],
+  [
+   "c2s",
+   106
+  ],
+  [
+   "s2c",
+   35
+  ]
+ ],
+ "application_wire_bytes": 5679,
+ "framing_overflow_messages": 0,
+ "template_flags": null,
+ "calibration_sha256": "3e1c1ecf1923e50e8c0d1f72709497cb6cd7ee277f6d946144a3bcea8dc4eb05",
+ "episode_sha256": "1f5a7dfc34d9d736f686fda0fb99cbbd2dd030c9e701d4e7f251476838956898",
+ "measurement": "TLS 1.2 loopback replay of real model trajectory; provider link and wall-clock timing excluded"
+}

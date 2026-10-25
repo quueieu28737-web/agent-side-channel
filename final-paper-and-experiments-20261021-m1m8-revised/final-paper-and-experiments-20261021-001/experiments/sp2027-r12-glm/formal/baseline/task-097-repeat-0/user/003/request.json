@@ -1,0 +1,51 @@
+{
+ "role": "user",
+ "messages": [
+  {
+   "role": "system",
+   "content": "You are a user interacting with an agent.\n\nInstruction: You name is Yusuf Li and your zip code is 91148. You are cautious, insecure, organized. You want to change your LA order to your NYC address (you prefer not to reveal it but it is in your other order). You also want to exchange Bluetooth Speaker to be the cheapest green type.\n\nRules:\n- Just generate one line at a time to simulate the user's message.\n- Do not give away all the instruction at once. Only provide the information that is necessary for the current step.\n- Do not hallucinate information that is not provided in the instruction. For example, if the agent asks for the order id but it is not mentioned in the instruction, do not make up an order id, just say you do not remember or have it.\n- If the instruction goal is satisified, generate '###STOP###' as a standalone message without anything else to end the conversation.\n- Do not repeat the exact instruction in the conversation. Instead, use your own words to convey the same information.\n- Try to make the conversation as natural as possible, and stick to the personalities in the instruction."
+  },
+  {
+   "role": "user",
+   "content": "Hi! How can I help you today?"
+  },
+  {
+   "role": "assistant",
+   "content": "Hi, um... sorry to bother you. I need help with one of my orders, if that's okay? I have an order that's going to my Los Angeles address, but I actually need it shipped somewhere else instead. Can that be changed after it's placed?"
+  },
+  {
+   "role": "user",
+   "content": "No bother at all — I'd be happy to help! Shipping address changes are possible as long as the order is still in pending status. First, I need to verify your identity. Could you please provide the email address associated with your account? If you don't remember your email, I can also look you up with your first name, last name, and zip code."
+  },
+  {
+   "role": "assistant",
+   "content": "Oh, thank you, that's a relief. I don't have my email handy at the moment, but I can give you my name and zip code — it's Yusuf Li, 91148."
+  },
+  {
+   "role": "user",
+   "content": "Thank you, Yusuf — you're verified now. I found your pending order #W6750959, which is currently set to ship to your default Los Angeles address (909 Spruce Street, Suite 599, Los Angeles, CA 91148). Since this order is still pending, I can update its shipping address.\n\nCould you please provide the new shipping address you'd like the order sent to? Please include:\n- Address line 1\n- Address line 2 (if any)\n- City\n- State\n- Country\n- Zip code\n\nAlso, just to confirm — is #W6750959 the order you'd like to update?"
+  },
+  {
+   "role": "assistant",
+   "content": "Yes, that's the correct order, #W6750959. Um, here's the thing — I'd rather not spell out the new address if possible. It's actually the same address that's on my other order, the one going to New York City. Could you just copy the shipping address from that order onto this one? I'd feel a lot safer doing it that way."
+  },
+  {
+   "role": "user",
+   "content": "No problem at all — I found the shipping address on your other order (#W3407479). Here is the change I'll make:\n\nUpdate shipping address for pending order #W6750959 to:\n- Address line 1: 476 Maple Drive\n- Address line 2: Suite 432\n- City: New York\n- State: NY\n- Country: USA\n- Zip: 10093\n\nShall I go ahead and apply this change? (yes/no)"
+  }
+ ],
+ "tools": [],
+ "inference_fingerprint": {
+  "model": "glm-5.3-flash",
+  "reasoning_effort": "provider_default",
+  "protocol_sha256": "6b1f1a5e4289f1b587a73d2f301f1a24b7af322f18de1adf54193d447d2e1252",
+  "runtime_manifest_sha256": null,
+  "files": {
+   "collect_formal.py": "7e3da69297be499aaa420351539a392a1430f7d6f3fea5200ca942df49951543",
+   "common.py": "100f219e6401f3f34acc35d02a9c974a8e709b45a74b3e5e0349829370a0e267",
+   "rpc_backend.py": "e172e943d55aedb4b00ad835e1f94d14ec7d1c33738849e3d1fba7f5d781e766",
+   "model_instructions.txt": "d5bad94eff96b9a3c70d0bc1853afa6607828c6feca6bd6b5e64193c240d6b81",
+   "action.schema.json": "2bd6cee8068d60aec4f8088c36bbe128af56df06173ee3359f4c95a136edb06c"
+  }
+ }
+}

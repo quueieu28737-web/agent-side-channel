@@ -1,0 +1,94 @@
+{
+  "arm": "joint",
+  "rows": [
+    {
+      "real_action": "find_user_id_by_name_zip",
+      "cover_action": "exchange_delivered_order_items",
+      "cover_error": false,
+      "elapsed_seconds": 0.25,
+      "timeout": true
+    },
+    {
+      "real_action": "find_user_id_by_name_zip",
+      "cover_action": "list_all_product_types",
+      "cover_error": false,
+      "elapsed_seconds": 0.046999999991385266,
+      "timeout": false
+    },
+    {
+      "real_action": "get_user_details",
+      "cover_action": "think",
+      "cover_error": false,
+      "elapsed_seconds": 0.031000000002677552,
+      "timeout": false
+    },
+    {
+      "real_action": "get_order_details",
+      "cover_action": "transfer_to_human_agents",
+      "cover_error": false,
+      "elapsed_seconds": 0.046999999991385266,
+      "timeout": false
+    },
+    {
+      "real_action": "get_order_details",
+      "cover_action": "get_user_details",
+      "cover_error": true,
+      "elapsed_seconds": 0.046999999991385266,
+      "timeout": false
+    },
+    {
+      "real_action": "get_order_details",
+      "cover_action": "cancel_pending_order",
+      "cover_error": false,
+      "elapsed_seconds": 0.04700000000593718,
+      "timeout": false
+    },
+    {
+      "real_action": "get_product_details",
+      "cover_action": "cancel_pending_order",
+      "cover_error": false,
+      "elapsed_seconds": 0.04700000000593718,
+      "timeout": false
+    },
+    {
+      "real_action": "get_product_details",
+      "cover_action": "modify_pending_order_items",
+      "cover_error": false,
+      "elapsed_seconds": 0.046999999991385266,
+      "timeout": false
+    },
+    {
+      "real_action": "exchange_delivered_order_items",
+      "cover_action": "calculate",
+      "cover_error": false,
+      "elapsed_seconds": 0.04700000000593718,
+      "timeout": false
+    },
+    {
+      "real_action": "get_order_details",
+      "cover_action": "modify_pending_order_items",
+      "cover_error": false,
+      "elapsed_seconds": 0.046000000002095476,
+      "timeout": false
+    },
+    {
+      "real_action": "get_product_details",
+      "cover_action": "get_user_details",
+      "cover_error": true,
+      "elapsed_seconds": 0.046000000002095476,
+      "timeout": false
+    },
+    {
+      "real_action": "exchange_delivered_order_items",
+      "cover_action": "get_order_details",
+      "cover_error": false,
+      "elapsed_seconds": 0.046999999991385266,
+      "timeout": false
+    }
+  ],
+  "real_calls": 12,
+  "cover_calls": 12,
+  "timeouts": 1,
+  "post_timeout_actions": 11,
+  "scope": "Live planner with stateful isolated cover, fixed emulated delay and response deadline; no TLS/WAN security claim"
+}

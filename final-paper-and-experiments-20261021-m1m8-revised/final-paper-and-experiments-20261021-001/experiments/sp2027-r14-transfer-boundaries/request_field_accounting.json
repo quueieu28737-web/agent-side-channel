@@ -1,0 +1,536 @@
+{
+  "scope": "Exact serialized request byte accounting; field omission is diagnostic only, not a valid API intervention or causal privacy estimate. Response bytes and timing remain separate.",
+  "rows": [
+    {
+      "model": "sp2027-r11-minimax",
+      "verb": "exchange_delivered_order_items",
+      "field": "order_id",
+      "n": 32,
+      "removed_bytes_mean": 25.0,
+      "removed_bytes_min": 25,
+      "removed_bytes_max": 25
+    },
+    {
+      "model": "sp2027-r11-minimax",
+      "verb": "exchange_delivered_order_items",
+      "field": "item_ids",
+      "n": 32,
+      "removed_bytes_mean": 29.75,
+      "removed_bytes_min": 28,
+      "removed_bytes_max": 42
+    },
+    {
+      "model": "sp2027-r11-minimax",
+      "verb": "exchange_delivered_order_items",
+      "field": "new_item_ids",
+      "n": 32,
+      "removed_bytes_mean": 33.75,
+      "removed_bytes_min": 32,
+      "removed_bytes_max": 46
+    },
+    {
+      "model": "sp2027-r11-minimax",
+      "verb": "exchange_delivered_order_items",
+      "field": "payment_method_id",
+      "n": 32,
+      "removed_bytes_mean": 41.40625,
+      "removed_bytes_min": 39,
+      "removed_bytes_max": 44
+    },
+    {
+      "model": "sp2027-r11-minimax",
+      "verb": "return_delivered_order_items",
+      "field": "order_id",
+      "n": 39,
+      "removed_bytes_mean": 25.0,
+      "removed_bytes_min": 25,
+      "removed_bytes_max": 25
+    },
+    {
+      "model": "sp2027-r11-minimax",
+      "verb": "return_delivered_order_items",
+      "field": "item_ids",
+      "n": 39,
+      "removed_bytes_mean": 40.205128205128204,
+      "removed_bytes_min": 28,
+      "removed_bytes_max": 70
+    },
+    {
+      "model": "sp2027-r11-minimax",
+      "verb": "return_delivered_order_items",
+      "field": "payment_method_id",
+      "n": 39,
+      "removed_bytes_mean": 41.717948717948715,
+      "removed_bytes_min": 39,
+      "removed_bytes_max": 44
+    },
+    {
+      "model": "sp2027-r11-minimax",
+      "verb": "modify_pending_order_items",
+      "field": "order_id",
+      "n": 23,
+      "removed_bytes_mean": 25.0,
+      "removed_bytes_min": 25,
+      "removed_bytes_max": 25
+    },
+    {
+      "model": "sp2027-r11-minimax",
+      "verb": "modify_pending_order_items",
+      "field": "item_ids",
+      "n": 23,
+      "removed_bytes_mean": 29.82608695652174,
+      "removed_bytes_min": 28,
+      "removed_bytes_max": 56
+    },
+    {
+      "model": "sp2027-r11-minimax",
+      "verb": "modify_pending_order_items",
+      "field": "new_item_ids",
+      "n": 23,
+      "removed_bytes_mean": 33.82608695652174,
+      "removed_bytes_min": 32,
+      "removed_bytes_max": 60
+    },
+    {
+      "model": "sp2027-r11-minimax",
+      "verb": "modify_pending_order_items",
+      "field": "payment_method_id",
+      "n": 23,
+      "removed_bytes_mean": 41.52173913043478,
+      "removed_bytes_min": 39,
+      "removed_bytes_max": 44
+    },
+    {
+      "model": "sp2027-r11-minimax",
+      "verb": "cancel_pending_order",
+      "field": "order_id",
+      "n": 15,
+      "removed_bytes_mean": 25.0,
+      "removed_bytes_min": 25,
+      "removed_bytes_max": 25
+    },
+    {
+      "model": "sp2027-r11-minimax",
+      "verb": "cancel_pending_order",
+      "field": "reason",
+      "n": 15,
+      "removed_bytes_mean": 30.266666666666666,
+      "removed_bytes_min": 30,
+      "removed_bytes_max": 32
+    },
+    {
+      "model": "sp2027-r11-minimax",
+      "verb": "modify_pending_order_address",
+      "field": "order_id",
+      "n": 17,
+      "removed_bytes_mean": 25.0,
+      "removed_bytes_min": 25,
+      "removed_bytes_max": 25
+    },
+    {
+      "model": "sp2027-r11-minimax",
+      "verb": "modify_pending_order_address",
+      "field": "address1",
+      "n": 17,
+      "removed_bytes_mean": 31.41176470588235,
+      "removed_bytes_min": 27,
+      "removed_bytes_max": 34
+    },
+    {
+      "model": "sp2027-r11-minimax",
+      "verb": "modify_pending_order_address",
+      "field": "address2",
+      "n": 17,
+      "removed_bytes_mean": 24.470588235294116,
+      "removed_bytes_min": 16,
+      "removed_bytes_max": 25
+    },
+    {
+      "model": "sp2027-r11-minimax",
+      "verb": "modify_pending_order_address",
+      "field": "city",
+      "n": 17,
+      "removed_bytes_mean": 20.470588235294116,
+      "removed_bytes_min": 18,
+      "removed_bytes_max": 22
+    },
+    {
+      "model": "sp2027-r11-minimax",
+      "verb": "modify_pending_order_address",
+      "field": "state",
+      "n": 17,
+      "removed_bytes_mean": 15.0,
+      "removed_bytes_min": 15,
+      "removed_bytes_max": 15
+    },
+    {
+      "model": "sp2027-r11-minimax",
+      "verb": "modify_pending_order_address",
+      "field": "country",
+      "n": 17,
+      "removed_bytes_mean": 18.0,
+      "removed_bytes_min": 18,
+      "removed_bytes_max": 18
+    },
+    {
+      "model": "sp2027-r11-minimax",
+      "verb": "modify_pending_order_address",
+      "field": "zip",
+      "n": 17,
+      "removed_bytes_mean": 16.0,
+      "removed_bytes_min": 16,
+      "removed_bytes_max": 16
+    },
+    {
+      "model": "sp2027-r11-minimax",
+      "verb": "modify_user_address",
+      "field": "user_id",
+      "n": 7,
+      "removed_bytes_mean": 32.142857142857146,
+      "removed_bytes_min": 29,
+      "removed_bytes_max": 35
+    },
+    {
+      "model": "sp2027-r11-minimax",
+      "verb": "modify_user_address",
+      "field": "address1",
+      "n": 7,
+      "removed_bytes_mean": 31.285714285714285,
+      "removed_bytes_min": 27,
+      "removed_bytes_max": 34
+    },
+    {
+      "model": "sp2027-r11-minimax",
+      "verb": "modify_user_address",
+      "field": "address2",
+      "n": 7,
+      "removed_bytes_mean": 23.714285714285715,
+      "removed_bytes_min": 16,
+      "removed_bytes_max": 25
+    },
+    {
+      "model": "sp2027-r11-minimax",
+      "verb": "modify_user_address",
+      "field": "city",
+      "n": 7,
+      "removed_bytes_mean": 20.285714285714285,
+      "removed_bytes_min": 18,
+      "removed_bytes_max": 22
+    },
+    {
+      "model": "sp2027-r11-minimax",
+      "verb": "modify_user_address",
+      "field": "state",
+      "n": 7,
+      "removed_bytes_mean": 15.0,
+      "removed_bytes_min": 15,
+      "removed_bytes_max": 15
+    },
+    {
+      "model": "sp2027-r11-minimax",
+      "verb": "modify_user_address",
+      "field": "country",
+      "n": 7,
+      "removed_bytes_mean": 18.0,
+      "removed_bytes_min": 18,
+      "removed_bytes_max": 18
+    },
+    {
+      "model": "sp2027-r11-minimax",
+      "verb": "modify_user_address",
+      "field": "zip",
+      "n": 7,
+      "removed_bytes_mean": 16.0,
+      "removed_bytes_min": 16,
+      "removed_bytes_max": 16
+    },
+    {
+      "model": "sp2027-r11-minimax",
+      "verb": "return",
+      "field": "order_id",
+      "n": 1,
+      "removed_bytes_mean": 25.0,
+      "removed_bytes_min": 25,
+      "removed_bytes_max": 25
+    },
+    {
+      "model": "sp2027-r11-minimax",
+      "verb": "return",
+      "field": "item_ids",
+      "n": 1,
+      "removed_bytes_mean": 28.0,
+      "removed_bytes_min": 28,
+      "removed_bytes_max": 28
+    },
+    {
+      "model": "sp2027-r11-minimax",
+      "verb": "return",
+      "field": "payment_method_id",
+      "n": 1,
+      "removed_bytes_mean": 44.0,
+      "removed_bytes_min": 44,
+      "removed_bytes_max": 44
+    },
+    {
+      "model": "sp2027-r12-glm",
+      "verb": "exchange_delivered_order_items",
+      "field": "order_id",
+      "n": 25,
+      "removed_bytes_mean": 25.0,
+      "removed_bytes_min": 25,
+      "removed_bytes_max": 25
+    },
+    {
+      "model": "sp2027-r12-glm",
+      "verb": "exchange_delivered_order_items",
+      "field": "item_ids",
+      "n": 25,
+      "removed_bytes_mean": 30.24,
+      "removed_bytes_min": 28,
+      "removed_bytes_max": 42
+    },
+    {
+      "model": "sp2027-r12-glm",
+      "verb": "exchange_delivered_order_items",
+      "field": "new_item_ids",
+      "n": 25,
+      "removed_bytes_mean": 34.24,
+      "removed_bytes_min": 32,
+      "removed_bytes_max": 46
+    },
+    {
+      "model": "sp2027-r12-glm",
+      "verb": "exchange_delivered_order_items",
+      "field": "payment_method_id",
+      "n": 25,
+      "removed_bytes_mean": 41.48,
+      "removed_bytes_min": 39,
+      "removed_bytes_max": 44
+    },
+    {
+      "model": "sp2027-r12-glm",
+      "verb": "return_delivered_order_items",
+      "field": "order_id",
+      "n": 40,
+      "removed_bytes_mean": 25.0,
+      "removed_bytes_min": 25,
+      "removed_bytes_max": 25
+    },
+    {
+      "model": "sp2027-r12-glm",
+      "verb": "return_delivered_order_items",
+      "field": "item_ids",
+      "n": 40,
+      "removed_bytes_mean": 37.8,
+      "removed_bytes_min": 28,
+      "removed_bytes_max": 70
+    },
+    {
+      "model": "sp2027-r12-glm",
+      "verb": "return_delivered_order_items",
+      "field": "payment_method_id",
+      "n": 40,
+      "removed_bytes_mean": 41.725,
+      "removed_bytes_min": 39,
+      "removed_bytes_max": 44
+    },
+    {
+      "model": "sp2027-r12-glm",
+      "verb": "modify_pending_order_items",
+      "field": "order_id",
+      "n": 33,
+      "removed_bytes_mean": 25.0,
+      "removed_bytes_min": 25,
+      "removed_bytes_max": 25
+    },
+    {
+      "model": "sp2027-r12-glm",
+      "verb": "modify_pending_order_items",
+      "field": "item_ids",
+      "n": 33,
+      "removed_bytes_mean": 30.545454545454547,
+      "removed_bytes_min": 28,
+      "removed_bytes_max": 56
+    },
+    {
+      "model": "sp2027-r12-glm",
+      "verb": "modify_pending_order_items",
+      "field": "new_item_ids",
+      "n": 33,
+      "removed_bytes_mean": 34.54545454545455,
+      "removed_bytes_min": 32,
+      "removed_bytes_max": 60
+    },
+    {
+      "model": "sp2027-r12-glm",
+      "verb": "modify_pending_order_items",
+      "field": "payment_method_id",
+      "n": 33,
+      "removed_bytes_mean": 41.78787878787879,
+      "removed_bytes_min": 39,
+      "removed_bytes_max": 44
+    },
+    {
+      "model": "sp2027-r12-glm",
+      "verb": "cancel_pending_order",
+      "field": "order_id",
+      "n": 22,
+      "removed_bytes_mean": 25.0,
+      "removed_bytes_min": 25,
+      "removed_bytes_max": 25
+    },
+    {
+      "model": "sp2027-r12-glm",
+      "verb": "cancel_pending_order",
+      "field": "reason",
+      "n": 22,
+      "removed_bytes_mean": 30.454545454545453,
+      "removed_bytes_min": 30,
+      "removed_bytes_max": 32
+    },
+    {
+      "model": "sp2027-r12-glm",
+      "verb": "modify_pending_order_address",
+      "field": "order_id",
+      "n": 21,
+      "removed_bytes_mean": 25.0,
+      "removed_bytes_min": 25,
+      "removed_bytes_max": 25
+    },
+    {
+      "model": "sp2027-r12-glm",
+      "verb": "modify_pending_order_address",
+      "field": "address1",
+      "n": 21,
+      "removed_bytes_mean": 31.142857142857142,
+      "removed_bytes_min": 27,
+      "removed_bytes_max": 34
+    },
+    {
+      "model": "sp2027-r12-glm",
+      "verb": "modify_pending_order_address",
+      "field": "address2",
+      "n": 21,
+      "removed_bytes_mean": 24.142857142857142,
+      "removed_bytes_min": 16,
+      "removed_bytes_max": 25
+    },
+    {
+      "model": "sp2027-r12-glm",
+      "verb": "modify_pending_order_address",
+      "field": "city",
+      "n": 21,
+      "removed_bytes_mean": 20.714285714285715,
+      "removed_bytes_min": 18,
+      "removed_bytes_max": 23
+    },
+    {
+      "model": "sp2027-r12-glm",
+      "verb": "modify_pending_order_address",
+      "field": "state",
+      "n": 21,
+      "removed_bytes_mean": 15.0,
+      "removed_bytes_min": 15,
+      "removed_bytes_max": 15
+    },
+    {
+      "model": "sp2027-r12-glm",
+      "verb": "modify_pending_order_address",
+      "field": "country",
+      "n": 21,
+      "removed_bytes_mean": 18.0,
+      "removed_bytes_min": 18,
+      "removed_bytes_max": 18
+    },
+    {
+      "model": "sp2027-r12-glm",
+      "verb": "modify_pending_order_address",
+      "field": "zip",
+      "n": 21,
+      "removed_bytes_mean": 16.0,
+      "removed_bytes_min": 16,
+      "removed_bytes_max": 16
+    },
+    {
+      "model": "sp2027-r12-glm",
+      "verb": "modify_user_address",
+      "field": "user_id",
+      "n": 9,
+      "removed_bytes_mean": 32.22222222222222,
+      "removed_bytes_min": 29,
+      "removed_bytes_max": 35
+    },
+    {
+      "model": "sp2027-r12-glm",
+      "verb": "modify_user_address",
+      "field": "address1",
+      "n": 9,
+      "removed_bytes_mean": 30.666666666666668,
+      "removed_bytes_min": 27,
+      "removed_bytes_max": 34
+    },
+    {
+      "model": "sp2027-r12-glm",
+      "verb": "modify_user_address",
+      "field": "address2",
+      "n": 9,
+      "removed_bytes_mean": 24.0,
+      "removed_bytes_min": 16,
+      "removed_bytes_max": 25
+    },
+    {
+      "model": "sp2027-r12-glm",
+      "verb": "modify_user_address",
+      "field": "city",
+      "n": 9,
+      "removed_bytes_mean": 20.333333333333332,
+      "removed_bytes_min": 18,
+      "removed_bytes_max": 22
+    },
+    {
+      "model": "sp2027-r12-glm",
+      "verb": "modify_user_address",
+      "field": "state",
+      "n": 9,
+      "removed_bytes_mean": 15.0,
+      "removed_bytes_min": 15,
+      "removed_bytes_max": 15
+    },
+    {
+      "model": "sp2027-r12-glm",
+      "verb": "modify_user_address",
+      "field": "country",
+      "n": 9,
+      "removed_bytes_mean": 18.0,
+      "removed_bytes_min": 18,
+      "removed_bytes_max": 18
+    },
+    {
+      "model": "sp2027-r12-glm",
+      "verb": "modify_user_address",
+      "field": "zip",
+      "n": 9,
+      "removed_bytes_mean": 16.0,
+      "removed_bytes_min": 16,
+      "removed_bytes_max": 16
+    },
+    {
+      "model": "sp2027-r12-glm",
+      "verb": "modify_pending_order_payment",
+      "field": "order_id",
+      "n": 1,
+      "removed_bytes_mean": 25.0,
+      "removed_bytes_min": 25,
+      "removed_bytes_max": 25
+    },
+    {
+      "model": "sp2027-r12-glm",
+      "verb": "modify_pending_order_payment",
+      "field": "payment_method_id",
+      "n": 1,
+      "removed_bytes_mean": 44.0,
+      "removed_bytes_min": 44,
+      "removed_bytes_max": 44
+    }
+  ]
+}

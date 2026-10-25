@@ -1,0 +1,34 @@
+{
+  "model": "glm-5.3-flash",
+  "model_revision": "User-specified endpoint alias; immutable weights/revision not supplied.",
+  "design": "Prospective model replication on previously used tasks, not a new-customer confirmation",
+  "sample": "115 tasks, original customer-disjoint train/test partition; one baseline-prompt episode each",
+  "simulator": "glm-5.3-flash in separate planner and user contexts, matching role design of other model studies",
+  "conditions": [
+    "undefended",
+    "joint program"
+  ],
+  "localization": "full dispatch versus removing write operations; identical inherited target labels",
+  "calibration": "Complete all training episodes and freeze training-only defense before any test collection",
+  "inference": {
+    "max_tokens": 16384,
+    "temperature": "provider default",
+    "reasoning": "provider default",
+    "workers": 10,
+    "max_agent_steps": 30,
+    "structured_output": "OpenAI-compatible native function tool call, forced next_action matching original action schema",
+    "parallel_tool_calls": false,
+    "budget_rationale": "User-authorized increase before revised formal collection, after preflight reasoning exhausted 4096 tokens. Cross-model budget difference disclosed; primary contrasts within model."
+  },
+  "retries": "Stop collection on first infrastructure error; retain request/response caches; no model rotation",
+  "metrics": "Inherited frozen train/test attack suite, BA/AUROC with customer-cluster uncertainty, native reward, call/byte overhead; no live defended-planner claim",
+  "credential_policy": "DPAPI outside repository; environment only; TLS verification always enabled; optional dedicated CA bundle",
+  "status": "frozen-ready",
+  "frozen_utc": "2026-10-24T14:44:37.247455+00:00",
+  "tls": {
+    "verified": true,
+    "dedicated_ca_sha256": "aaa76ac2b5009a3612830aa104b7d171ac2ab3f55a13eafa5b5a765cbb4bbf55",
+    "scope": "User-supplied certificate; validation enabled; no system root store changes"
+  },
+  "interface_revision": 2
+}

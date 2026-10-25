@@ -1,0 +1,10 @@
+{
+  "utc": "2026-10-25T05:41:08.581608+00:00",
+  "completed_preserved": 97,
+  "root_cause": "live_controller prepended R12 to sys.path before lazy rpc_backend import; actual adapter used caller timeout180. Intended local adapter600 was not loaded.",
+  "actual_prior_adapter_sha256": "f2fe0cae19da947620fe267582ff7e1fdf4978c963503f13c4ec8114ff4d0b1a",
+  "resolved_adapter_sha256": "eecb2a6c400a871f45af2c7884704ce8c9b6b29a4d48c1e5edce39a48e316895",
+  "difference_assertion": "Sources equal after replacing only urllib timeout argument; inference request body/parser unchanged",
+  "original_fingerprint_scope": "Original fingerprint identifies intended local source; this receipt corrects actual runtime adapter provenance without rewriting historical caches.",
+  "recovery": "User-authorized root-cause fix; new bounded retry series after code fix, not blind reset; same prompts/tokens/model/cache and all original attempts retained"
+}

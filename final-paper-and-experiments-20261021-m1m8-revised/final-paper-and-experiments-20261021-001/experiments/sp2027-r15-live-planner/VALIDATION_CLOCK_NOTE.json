@@ -1,0 +1,9 @@
+{
+  "reason": "Initial verifier assumed elapsed >=19ms for20ms configured sleep. Frozen collector uses GetTickCount64 whose measured resolution is15.625ms;230 baseline waits are15/16ms tick differences.",
+  "correction": "Recompute configured delay/deadline on every row; allow one measured clock tick plus1ms representation rounding in minimum elapsed assertion. No episode or metric was changed.",
+  "clock_implementation": "GetTickCount64()",
+  "resolution_seconds": 0.015625,
+  "failed_log": "analysis-final.stderr.log",
+  "prior_verifier": "adapter-resolution-amendment/verify-before-clock-resolution.py",
+  "verification_sha256": "eaa325ea7bd17ea75fafeafc790896caf04be14aadfb3337f3149557e68a3fd4"
+}

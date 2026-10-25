@@ -1,0 +1,158 @@
+{
+ "task": 16,
+ "repeat": 0,
+ "seed": 0,
+ "prompt": "baseline",
+ "user": "fatima_johnson_7581",
+ "has_cancel": 1,
+ "has_return": 1,
+ "native_reward": 1,
+ "db_eq": true,
+ "status": "user_stop",
+ "condition": "raw",
+ "calls": [
+  {
+   "name": "find_user_id_by_name_zip",
+   "kind": "real",
+   "req": 115,
+   "resp": 19,
+   "err": false
+  },
+  {
+   "name": "get_user_details",
+   "kind": "real",
+   "req": 77,
+   "resp": 460,
+   "err": false
+  },
+  {
+   "name": "get_order_details",
+   "kind": "real",
+   "req": 69,
+   "resp": 1197,
+   "err": false
+  },
+  {
+   "name": "get_order_details",
+   "kind": "real",
+   "req": 69,
+   "resp": 1244,
+   "err": false
+  },
+  {
+   "name": "get_order_details",
+   "kind": "real",
+   "req": 69,
+   "resp": 1163,
+   "err": false
+  },
+  {
+   "name": "cancel_pending_order",
+   "kind": "real",
+   "req": 102,
+   "resp": 1325,
+   "err": false
+  },
+  {
+   "name": "cancel_pending_order",
+   "kind": "real",
+   "req": 102,
+   "resp": 1373,
+   "err": false
+  },
+  {
+   "name": "return_delivered_order_items",
+   "kind": "real",
+   "req": 147,
+   "resp": 1248,
+   "err": false
+  },
+  {
+   "name": "calculate",
+   "kind": "real",
+   "req": 80,
+   "resp": 7,
+   "err": false
+  }
+ ],
+ "records": [
+  [
+   "c2s",
+   143
+  ],
+  [
+   "s2c",
+   47
+  ],
+  [
+   "c2s",
+   105
+  ],
+  [
+   "s2c",
+   488
+  ],
+  [
+   "c2s",
+   97
+  ],
+  [
+   "s2c",
+   1225
+  ],
+  [
+   "c2s",
+   97
+  ],
+  [
+   "s2c",
+   1272
+  ],
+  [
+   "c2s",
+   97
+  ],
+  [
+   "s2c",
+   1191
+  ],
+  [
+   "c2s",
+   130
+  ],
+  [
+   "s2c",
+   1353
+  ],
+  [
+   "c2s",
+   130
+  ],
+  [
+   "s2c",
+   1401
+  ],
+  [
+   "c2s",
+   175
+  ],
+  [
+   "s2c",
+   1276
+  ],
+  [
+   "c2s",
+   108
+  ],
+  [
+   "s2c",
+   35
+  ]
+ ],
+ "application_wire_bytes": 9460,
+ "framing_overflow_messages": 0,
+ "template_flags": null,
+ "calibration_sha256": "3e1c1ecf1923e50e8c0d1f72709497cb6cd7ee277f6d946144a3bcea8dc4eb05",
+ "episode_sha256": "c2611274c0acf719b6aba6c7fc07ffdd5d714fa0c34df0a6eb5410042f1b8f15",
+ "measurement": "TLS 1.2 loopback replay of real model trajectory; provider link and wall-clock timing excluded"
+}

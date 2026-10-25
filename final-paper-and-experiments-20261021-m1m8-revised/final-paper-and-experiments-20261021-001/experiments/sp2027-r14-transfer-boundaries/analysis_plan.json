@@ -1,0 +1,17 @@
+{
+  "scope": "Post hoc source-model-trained attackers evaluated on target-model held-out customers; target model defense remains locally calibrated, not calibration transfer",
+  "conditions": [
+    "raw",
+    "shape_const"
+  ],
+  "learners": [
+    "logreg",
+    "gboost"
+  ],
+  "bootstrap": 2000,
+  "sources": {
+    "sp2027-r11-minimax": "fbc621630f3b8f2e830545a7540ac1b49905b306df4edd7f6be2a53bbd89bbbd",
+    "sp2027-r12-glm": "dae6c9fad6a9213ba31b7a9ec5fe3ff302d14a7f4b71e18de4298be6911c0a32"
+  },
+  "frozen_utc": "2026-10-25T01:19:46.043216+00:00"
+}
