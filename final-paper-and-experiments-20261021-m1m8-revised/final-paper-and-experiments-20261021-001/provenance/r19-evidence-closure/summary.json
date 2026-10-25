@@ -1,0 +1,195 @@
+{
+  "revision": "R19",
+  "records": 39,
+  "mitigation_records": 33,
+  "contextual_records": 6,
+  "families": 26,
+  "all_pairs": 741,
+  "related_pairs": 133,
+  "outside_scope_pairs": 608,
+  "same_family_pairs": 15,
+  "related_descriptive": {
+    "INCOMPATIBLE": 105,
+    "UNRESOLVED": 11,
+    "COMPATIBLE": 17
+  },
+  "same_family_descriptive": {
+    "COMPATIBLE": 7,
+    "INCOMPATIBLE": 8
+  },
+  "same_family_paired_effect": {
+    "UNRESOLVED": 3,
+    "NOT_APPLICABLE": 8,
+    "INCOMPATIBLE": 4
+  },
+  "related_cohorts": {
+    "behavioral-humanization": 3,
+    "traffic-envelope": 66,
+    "cache-service": 45,
+    "fixed-instruction": 1,
+    "generator-fingerprint": 3,
+    "local-memory": 15
+  },
+  "record_cells": 351,
+  "record_status_distributions": {
+    "R1": {
+      "B": 39
+    },
+    "R2": {
+      "P": 4,
+      "B": 35
+    },
+    "R3": {
+      "B": 35,
+      "P": 4
+    },
+    "R4": {
+      "B": 4,
+      "-": 21,
+      "?": 11,
+      "P": 1,
+      "U": 2
+    },
+    "R5": {
+      "B": 2,
+      "-": 21,
+      "?": 14,
+      "U": 2
+    },
+    "R6": {
+      "B": 35,
+      "P": 4
+    },
+    "R7": {
+      "B": 29,
+      "-": 9,
+      "P": 1
+    },
+    "R8": {
+      "U": 25,
+      "P": 4,
+      "-": 4,
+      "B": 6
+    },
+    "R9": {
+      "-": 3,
+      "U": 17,
+      "P": 6,
+      "B": 13
+    }
+  },
+  "joint": {
+    "inference_utility": {
+      "fields": [
+        "R7",
+        "R8"
+      ],
+      "bound_records": [
+        "AHB-online-executed",
+        "CACHEPRUNE-selective",
+        "CACHEPRUNE-context",
+        "SPARLEAK-replacement"
+      ],
+      "bound_record_count": 4,
+      "bound_families": [
+        "chen2026sparleak",
+        "wu2026cacheprune",
+        "zhu2026turing"
+      ],
+      "distinct_configuration_groups": [
+        "AHB-online-executed",
+        "CACHEPRUNE-default",
+        "SPARLEAK-replacement"
+      ],
+      "applicable_records": 22
+    },
+    "inference_cost": {
+      "fields": [
+        "R7",
+        "R9"
+      ],
+      "bound_records": [
+        "SPEC-padding-REST",
+        "DANGOL-capture",
+        "DANGOL-livebinding",
+        "CACHEPRUNE-selective",
+        "CACHEPRUNE-context"
+      ],
+      "bound_record_count": 5,
+      "bound_families": [
+        "dangol2026workflow",
+        "wei2024speculation",
+        "wu2026cacheprune"
+      ],
+      "distinct_configuration_groups": [
+        "CACHEPRUNE-default",
+        "DANGOL-capture",
+        "DANGOL-livebinding",
+        "SPEC-padding-REST"
+      ],
+      "applicable_records": 22
+    },
+    "adapted_inference": {
+      "fields": [
+        "R4",
+        "R5",
+        "R7"
+      ],
+      "bound_records": [
+        "UI-delay-offline",
+        "DANGOL-capture"
+      ],
+      "bound_record_count": 2,
+      "bound_families": [
+        "dangol2026workflow",
+        "uitraces2026"
+      ],
+      "distinct_configuration_groups": [
+        "DANGOL-capture",
+        "UI-delay-offline"
+      ],
+      "applicable_records": 17
+    },
+    "inference_utility_cost": {
+      "fields": [
+        "R7",
+        "R8",
+        "R9"
+      ],
+      "bound_records": [
+        "CACHEPRUNE-selective",
+        "CACHEPRUNE-context"
+      ],
+      "bound_record_count": 2,
+      "bound_families": [
+        "wu2026cacheprune"
+      ],
+      "distinct_configuration_groups": [
+        "CACHEPRUNE-default"
+      ],
+      "applicable_records": 20
+    },
+    "adapted_inference_utility_cost": {
+      "fields": [
+        "R4",
+        "R5",
+        "R7",
+        "R8",
+        "R9"
+      ],
+      "bound_records": [],
+      "bound_record_count": 0,
+      "bound_families": [],
+      "distinct_configuration_groups": [],
+      "applicable_records": 14
+    }
+  },
+  "historical_pairs_preserved": 528,
+  "new_related_judgments": 31,
+  "interpretation": "Joint bindings count within-record configuration-linked evidence, not same-request paired effects. CachePrune direct/context rows share one configuration-level quality/cost package. Cost retains its payload/replay/live object. Contextual controls are excluded from mitigation joint denominators.",
+  "sources": {
+    "experiments\\reviewer-audit\\combined_result_records.json": "80a6d4b592ef493bf2efd074538390d12f2de79a441a2b61274165fa1171dfa1",
+    "evidence\\retained-release007\\history-release006\\decision-audit\\coding.json": "2b219eab3fd1797218a3ac0f9e0aeca00a21135806e8c88d318d27b048f522ae",
+    "evidence\\retained-release007\\history-release006\\decision-audit\\pair-inventory.csv": "051eb99c75f645371c3377f196489fbaedb007d2072c08535694ccfd051d6596"
+  }
+}
