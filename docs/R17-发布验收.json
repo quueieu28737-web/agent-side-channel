@@ -1,0 +1,131 @@
+{
+  "revision": "R17",
+  "current_revision_verification": {
+    "revision": "R17-M2-trim",
+    "passed": true,
+    "family_rows": 82,
+    "holdout_cells": 492,
+    "core": 58,
+    "adjacent": 24,
+    "record_rows": 39,
+    "record_families": 26,
+    "mode_counts": {
+      "Trace transformation": 6,
+      "Simulation or derived estimate": 5,
+      "Component or calibration measurement": 6,
+      "Placement unresolved": 2,
+      "Executed collection or prototype": 20
+    },
+    "preserved_scientific_files": 39619,
+    "pdfs": {
+      "main": {
+        "pages": 22,
+        "sha256": "0862d7c9188360900696fb0e8f8f1ad2f2c5721bff895e2d9a410e00a65c6d17",
+        "references_start": 13
+      },
+      "supplement": {
+        "pages": 61,
+        "sha256": "5d82ba0bc013de34d44678aef70087bceb3100a3f03e08ef745361e9e2d14ad8"
+      }
+    },
+    "scope": "Source-bound archived extraction synthesis; coverage/hash/PDF checks do not certify independent source recoding or success of every coded transfer."
+  },
+  "package_verification": {
+    "status": "PACKAGE_BYTES_CLOSURES_SAVED_CENSUS_AND_M1_M8_REVISION_PASS",
+    "manifest_files": 40344,
+    "preserved_release_files": 2414,
+    "tau_tasks": 115,
+    "tau_eligible_tasks": 97,
+    "tau_units": 3450,
+    "prior_rows_preserved": 851,
+    "distinct_saved_task_states": 244,
+    "m1_retrospective_cases": 24,
+    "m1_kappa": 0.795,
+    "m7_dual_coding_kappas": {
+      "screening_100": 0.886,
+      "audit_144": 0.876,
+      "pairs_150": 0.916
+    },
+    "historical_revision_model_calls": 0,
+    "fourth_round": {
+      "directory": "experiments/sp2027-r4-snapshot-20261023",
+      "scope": "User-authorized interim completion snapshot; later full-cohort results are a separate supplement.",
+      "validation": {
+        "status": "VERIFIED",
+        "episodes": 660,
+        "training_tasks": 69,
+        "test_tasks": 41,
+        "test_customers": 22,
+        "tls_sessions": 2640,
+        "prediction_sets": 176,
+        "model_calls": 11002,
+        "model_usage": {
+          "input_tokens": 116436224,
+          "cached_input_tokens": 48961024,
+          "output_tokens": 606577,
+          "reasoning_output_tokens": 6411
+        },
+        "protocol_sha256": "54787c563c74cba9c18f7c18b2b26651c335a23a4ab79855cf6c9812009cd5ad",
+        "calibration_sha256": "d7a4ff38be31191f7043080ce7fc1ff64df811e03ad255dc2da21e4d2d815db8",
+        "checks": [
+          "group disjointness",
+          "episode grid and versions",
+          "training-only calibration refit",
+          "sandbox state replay",
+          "online cover reconstruction",
+          "TLS record counts/byte totals",
+          "independent sklearn point metrics",
+          "customer-cluster suite intervals",
+          "paired contrasts",
+          "model request provenance"
+        ],
+        "release_scope": "INTERIM_COMPLETION_SNAPSHOT",
+        "planned_episodes": 690,
+        "completed_episodes_in_release": 663,
+        "primary_analysis_episodes": 660,
+        "additional_completed_episodes": [
+          [
+            "baseline",
+            105,
+            0
+          ],
+          [
+            "baseline",
+            105,
+            1
+          ],
+          [
+            "rules",
+            105,
+            0
+          ]
+        ],
+        "all_completed_model_calls": 11112,
+        "snapshot_utc": "2026-10-23T10:01:03.161207+00:00",
+        "snapshot_amendment_sha256": "b389f2ddc7815b5bedd990db714ff6eb58eb51d8cbe2ae069b9659e841ae3bb9",
+        "decision_alignment": {
+          "status": "DECISION_ALIGNMENT_PASS",
+          "episodes": 663,
+          "model_decisions": 11112,
+          "additional_episode_state_checks": 3,
+          "checks": [
+            "model actions to tool-call sequence",
+            "assistant and user messages to model outputs",
+            "usage totals",
+            "serialized request and response lengths",
+            "additional episode state and output scoring"
+          ]
+        }
+      },
+      "pdf_pages": {
+        "main": 18,
+        "main_body": 13,
+        "supplement": 24
+      },
+      "historical_files_unchanged": 2590
+    },
+    "uploads": 0
+  },
+  "manifest_sha256": "a20f96ead325717efc8b01e94d97ae42ed8968a2b6f9c9802e8ff7c65ed48678",
+  "note": "Nested legacy experiment/page reports in package_verification are historical; current PDF pages/hashes are under current_revision_verification."
+}

@@ -11,11 +11,13 @@
 
 MiniMax 校准迁移到 GLM 时，取消/退货 BA 从目标模型自身校准的 50.0/67.3% 变为 70.8/50.0%。仅写整形以 1.45/1.51× 字节留下 61.3/61.6% 退货 BA。实时 prefix-shadow 与基线成功数为 33/50 和 37/50，差值区间跨零；不作效用无损结论。可变别名、已知客户及局部机制范围均随结果披露。
 
+最新 R17 已按 M2 删除检索覆盖率、编码一致性及预印本比例讨论，并以明确的生成层/观察层替代 Origin A/B；相关校验位于 `provenance/r17-method-trim/`。
+
 ## 复现与校验
 
 从发布包目录运行 `python verify_package.py` 可只读验证完整清单、历史数据及源码/PDF来源绑定。当前系统化修订的生成器、逐项编码、来源摘录与校验收据位于 `provenance/r16-synthesis/`；历史实验发布收据保留于 `provenance/r11-review/`。论文和补充材料分别以 `manuscript/main.tex` 与 `manuscript/supplement.tex` 构建。
 
-当前匿名论文源码包为 `provenance/r16-synthesis/anonymous-paper-source.zip`。它不包含开发 Git 历史；完整实验的匿名托管需按投稿流程另行提供。矩阵综合已有来源绑定提取，未解决的轴明确记为 ?，不被计作原论文未报告。
+当前匿名论文源码包为 `provenance/r17-method-trim/anonymous-paper-source.zip`。它不包含开发 Git 历史；完整实验的匿名托管需按投稿流程另行提供。矩阵综合已有来源绑定提取，未解决的轴明确记为 ?，不被计作原论文未报告。
 
 [R16 逐项修订说明](docs/R16-系统化结论与Holdout矩阵修订.md)
 

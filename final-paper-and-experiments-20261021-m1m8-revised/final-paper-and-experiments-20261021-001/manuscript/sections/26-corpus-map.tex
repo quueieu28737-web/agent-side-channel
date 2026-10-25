@@ -1,10 +1,10 @@
 \section{Corpus Map Across 82 Study Families}\label{sec:corpus-map}
-\subsection{Origins, receiving projections and threat polarities}
-Across all \FinalCore{} core families in our unified repository, 38 inherit runtime, serving or hardware channels (Origin~B), while 20 concern agent-workflow channels arising from orchestration, tool dispatch, browser navigation and multi-agent protocols (Origin~A; Table~\ref{tab:core-family-map}). Signal-generation origin is distinct from receiver location and threat polarity. The full map makes these distinctions visible family by family.
+\subsection{Generating layers, receiving projections and threat polarities}
+Table~\ref{tab:core-family-map} maps all \FinalCore{} core families by signal-generating layers, receiving projections and threat polarity. Multi-layer families retain every reported layer in their generating and observing sets.
 \input{tables/core-family-map}
 
-\paragraph{Cross-origin synthesis}
-Origin B includes token/packet lengths, cache timing and co-resident hardware channels; Origin A includes visited domains, tool dispatch and browser actions. Receiver permissions cut across these origins: a remote network observer, a same-site script and a privileged diagnostic hook expose different views even when they share an attribution target. Thus Origin A/B cannot substitute for Types I--IV or observer permissions. WRA's read-only privacy decoys, AHB's stateful evasion and SplitDecoy's exposed return path illustrate transfers that fail when these axes are collapsed \cite{jeong2026wra,zhu2026turing,politis2026splitdecoy}. The map retains every core family rather than using these examples as a substitute for coverage.
+\paragraph{Cross-layer synthesis}
+A remote network observer, a same-site script and a privileged diagnostic hook expose different views even when they share an attribution target. WRA's read-only privacy decoys, AHB's stateful evasion and SplitDecoy's exposed return path illustrate why receiving permissions and protected objectives must accompany the generating layer \cite{jeong2026wra,zhu2026turing,politis2026splitdecoy}.
 
 Layer incidence highlights where the systematization's comparison problem arises. In the 58-family map, signal-generation labels cluster at P2 serving/runtime (32 families) and P5 orchestration (19); receiving views cluster at P4 application/API (18), P1 hardware (16), and P3 transport (14). Generation at P3/P4 is rare (one family each), despite frequent observation at those layers. This source/receiver asymmetry makes the transfer question concrete: protection at a frequent source layer cannot be presumed to cover a different receiving projection. The map records layer sets, so it does not assign a causal edge to each source/receiver pair.
 
