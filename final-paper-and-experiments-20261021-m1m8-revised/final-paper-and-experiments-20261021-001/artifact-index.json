@@ -358,6 +358,16 @@
         "provenance/r31-retired-task-cleanup/visual-check.json",
         "provenance/r31-retired-task-cleanup/anonymous-paper-check.json"
       ]
+    },
+    "r32-audit-decisions": {
+      "description": "R32: record-derived family summaries, publication-stratum sensitivity and actionable external/internal evidence-reuse decisions",
+      "paths": [
+        "provenance/r32-audit-decisions/revision.json",
+        "provenance/r32-audit-decisions/audit-check.json",
+        "provenance/r32-audit-decisions/verification.json",
+        "provenance/r32-audit-decisions/visual-check.json",
+        "provenance/r32-audit-decisions/anonymous-paper-check.json"
+      ]
     }
   },
   "current_publication": [
@@ -386,9 +396,11 @@
     "provenance/r29-claim-alignment/verify_revision.py",
     "provenance/r29-claim-alignment/verification.json",
     "provenance/r31-retired-task-cleanup/verify_revision.py",
-    "provenance/r31-retired-task-cleanup/verification.json"
+    "provenance/r31-retired-task-cleanup/verification.json",
+    "provenance/r32-audit-decisions/verify_revision.py",
+    "provenance/r32-audit-decisions/verification.json"
   ],
-  "current_verification": "provenance/r31-retired-task-cleanup/verify_revision.py",
+  "current_verification": "provenance/r32-audit-decisions/verify_revision.py",
   "historical_document_verifiers": [
     "provenance/review-closure/verify_manuscript.py",
     "provenance/timing/verify_publication.py",
@@ -404,6 +416,7 @@
     "provenance/r26-source-reconciliation/verify_revision.py",
     "provenance/r27-main-text-focus/verify_revision.py",
     "provenance/r28-framework-utility/verify_revision.py",
-    "provenance/r29-claim-alignment/verify_revision.py"
+    "provenance/r29-claim-alignment/verify_revision.py",
+    "provenance/r31-retired-task-cleanup/verify_revision.py"
   ]
 }

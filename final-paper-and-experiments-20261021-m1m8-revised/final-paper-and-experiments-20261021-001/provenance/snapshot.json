@@ -1,6 +1,6 @@
 {
   "created_utc": "2026-10-21T06:58:23.633018+00:00",
-  "purpose": "R31: remove the retired independent recoding task and unsupported R30 claim; synchronize current PDFs; preserve scientific evidence",
+  "purpose": "R32: record-derived family summaries, publication-stratum sensitivity and actionable external/internal evidence-reuse decisions",
   "documents": {
     "main": {
       "entry": "main.tex",
@@ -46,7 +46,7 @@
         "tables/result-record-schema.tex"
       ],
       "pdf": "pdf/main.pdf",
-      "pdf_sha256": "3e04af5073aa15b35569dc11d708c64b04cf17e230b0865935b4f35a2c3540e9"
+      "pdf_sha256": "8239469a2306b7d39c0915a8a35265e2fbb240a9efde81d8f807edbd3c5d7b70"
     },
     "supplement": {
       "entry": "supplement.tex",
@@ -90,6 +90,7 @@
         "sections/65-audit-sensitivity.tex",
         "sections/66-source-reconciliation.tex",
         "sections/68-utility-check-details.tex",
+        "sections/69-audit-reconciliation.tex",
         "supplement.tex",
         "tables/conclusion-source-dependencies.tex",
         "tables/conditional-null.tex",
@@ -119,6 +120,8 @@
         "tables/r3-supp-transfer.tex",
         "tables/r3-transfer-cover.tex",
         "tables/r3-transfer-predictions.tex",
+        "tables/r32-publication-strata.tex",
+        "tables/r32-reconciliation.tex",
         "tables/r4-supp.tex",
         "tables/r5-supp.tex",
         "tables/r6-supp.tex",
@@ -149,24 +152,24 @@
         "tables/transfer-streaming.tex"
       ],
       "pdf": "pdf/supplement.pdf",
-      "pdf_sha256": "5154d34fcd0ac13466f9f3ce188c1236fcef427e20434fa8c90d8d84508660d5"
+      "pdf_sha256": "cd953defa4be96c3848f619e35a466dec5be6c277c0200e894c357056ea80369"
     }
   },
   "source_hashes": {
     "figures/defense-decision-procedure.tex": "e91e8e96173ab65c4651a71aef720dff3758704ac2af16c10395a346ebac8e85",
     "figures/fig1-system-model.tex": "17902db2113b6b6abb4d98af1f5f40a4efd9dd44b306527710d63f9816fd1854",
     "figures/r7-pareto.pdf": "9e1d159bc9e2f56fab83f0bee721d9d1879ac01328a97c07e47226f2e0c47a1c",
-    "main.tex": "7adbab85b9c389ccbf2a023e8d3c3aed6d5688de25af51b6788180a5c7918ffb",
+    "main.tex": "f140347ab2e84a3894c5515dad81ce1dbb648664a06a04ea783c9f7b0f4f0c7b",
     "refs-deployment.bib": "f21df671ebe255f3e7d7d601b10456143dfa92494141d56da766f71dff4fd8b9",
     "refs-final-additions.bib": "eaca3d82238be7354bfe1e887ce7a8444ab7d5ae1076dd7435a4a2a350dfb397",
     "refs-search-completion.bib": "0ab2782a537da4eeefeb3666fa75b1f782633d0907d35b252166f47315210c0b",
     "refs.bib": "62f5ceed5a0bb62bba220169df20921378149a0fd9b4fc8612747c8fdb175b18",
-    "sections/01-introduction.tex": "6763fd7e6ac9635f88e788464401fb70f5924ead224c3b132a03864238d266bb",
+    "sections/01-introduction.tex": "b2b860c6ce2b589825a07ebc525a0210fd0648b9a449c174d99337462bd417d2",
     "sections/03-methodology.tex": "37a44f499811b0f14deafca2875a804c36766eb0f449ca9e920e96015f6802de",
     "sections/04-scope.tex": "2f8c25d96d5b996a0c4952f03c2e2c6d1be29b36f9609ef51d3cc03b60b32265",
-    "sections/10-open-challenges.tex": "0a2313749798c16024ee2b9670cae635c54e66de482ac77082134397e6491252",
+    "sections/10-open-challenges.tex": "445359dd343ebd70d2e1c0e6807bf64025bee0f9eef9baefbecaaaef22cc86c0",
     "sections/11-discussion.tex": "03ee061d8fbee8d9bf634ef57ec4958aa90fe5f701fe7ee5c4141d79437ffb01",
-    "sections/12-conclusion.tex": "ad4d6a5ae26f7570cf02cbec76a017915b2751f015d63fa8edc7dd772f470138",
+    "sections/12-conclusion.tex": "1f63e7474c69c9940d66e89d1b407ec8945c512286063f034c6c901e5bc577a2",
     "sections/17-public-trace-details.tex": "0531d7c59bd28dcb4680c54ec8b45d3025d5f78d1b6e9c0e6ce1a0dc31f562eb",
     "sections/19-final-ledger.tex": "cc599c6c95e2456cc32db82bdfe782993e155c618647da4a0ffe3c276b0782ae",
     "sections/21-retained-controls-summary.tex": "7b5a9a22ae4ce6973b82a390cd791f0ea2dab6e60046488f6664083c39648493",
@@ -174,11 +177,11 @@
     "sections/23-defense-comparison.tex": "1ee70bcb0cf04992c9e039dcaa9c7edfabae4e2f74c76268fc36044be6ddc22e",
     "sections/24-conclusion-sensitivity.tex": "56b6930205ec4d7f0e0e0a1ef8deeecd77997f2116fd3c8c21718c2bc0c24b91",
     "sections/26-corpus-map.tex": "90eea33d876619f17847395b577a3a477ebf37d74ff5a77c823b12b55e7ec9e2",
-    "sections/27-intervention-contracts.tex": "376b870d287413981f6f7bf24465929f5509a2ceb6ce16d1d47d1c122386f026",
+    "sections/27-intervention-contracts.tex": "4f4c6655c0fe79ad37bb8fc0285babc0d21c0fd012971a604626b43f7f47fc79",
     "sections/28-fingerprint-dependencies.tex": "ff1888e3a7eb3ddacc039b613424b0a96ca05a38339c14b26780bf56c113cab6",
     "sections/29-scope-comparison-boundary.tex": "d7c8248144b2d9719b03f94dab178ba20d2b40d77d1e7c0ffd83b83ec293704a",
     "sections/30-reproducibility-guide.tex": "c523c5f6b9067cd6fe6872db2ac65b2f098a97490673251320d70718fdb66e5b",
-    "sections/31-result-audit.tex": "b0ef2936e1220e65f86a28f2f5b625933ca0cf77cf5526f362ff30fcd689b38b",
+    "sections/31-result-audit.tex": "d61a8b53fd81c28ed8259e863f850b6f60272ca6aa9822fb4f32b02c263d8c21",
     "sections/33-controlled-details.tex": "1d7dbdf06993bc17aeda1a9817acdee00f33af0ebfb65ba45bb6287425ffd9c7",
     "sections/34-search-update.tex": "19a598cd48bdb28c5a5361d52ccd673a37d89c09158eafe2a9aa7ace7db458e8",
     "sections/36-tau-cover-details.tex": "ad99824171618748e3076e7115455eff78a7aa35e3d264c6a319a06bf06912e8",
@@ -189,7 +192,7 @@
     "sections/43-robustness.tex": "4eb39521066af2b649325040048d35eda4d33b553ac14e9c4a1af726846fb23f",
     "sections/44-strong-crossfit.tex": "11d903b92d178d40f0d2bb6ea8fe7926a6ced68afaf5533b9d379d63a6627892",
     "sections/45-luna-extension.tex": "60f203b397e209dbb4448cfd9455d033da8c91bf8bcefd2447fe08b07bab3b29",
-    "sections/46-r8-sok-audit.tex": "68851ef90d267ddec89a4cd72241089bfe1855c4031682c00dd9c028cb9a6ed7",
+    "sections/46-r8-sok-audit.tex": "bf546695a4424849afecc4bf171836e724dc5f20af71ac315f11a70b3081c742",
     "sections/47-r8-empirical-audit.tex": "c570654e321ef46646b2d5905ea119395c0e914f6e762e184e18dd890de9ff8e",
     "sections/48-r8-attributes.tex": "a90c0b2bbf3f56ae01fb90a5ae95f516e73a6d308391c5930b7db48eac1f0cb9",
     "sections/49-r9-record-index.tex": "db73b7cb3ec7779e9a95d43f0446b27aec63d472df295d8069d7dff636173f3f",
@@ -205,11 +208,12 @@
     "sections/61-synthesis-study-details.tex": "0c90dafd3b6dd572728d1f065d724ad1490ed09ad3de54f15f27ead2e8bbd426",
     "sections/62-appendix-case-study.tex": "98ac0fa1d017d04b9cf2fb1c497c47ad3624be8a4da3ecc419f916c9cbc1b55d",
     "sections/64-case-study-register.tex": "7d1aebff0849ec404cecfed9c41dc2a0f07b0e356aa12cb8207135628a3c8be9",
-    "sections/65-audit-sensitivity.tex": "9fd19925788649eb4e293558fe8ade567bf3a2c6b8de533b059a2cc66cf8045e",
-    "sections/66-source-reconciliation.tex": "c52d9f51170e98d2997c6dac0bbc4a0abf182b9f33522f97b7aede516b75d14c",
-    "sections/67-framework-utility.tex": "de73d65704882002ea7d119c64937434e0139b15a2fa0d5ea4edd95d6acdb9e9",
+    "sections/65-audit-sensitivity.tex": "dddfb43e608479d84932d8dc7acbbc143197344a7b1b19bb7c37b184afc9b7fb",
+    "sections/66-source-reconciliation.tex": "ef1a2a0ead441401921b76b38f7fcf8fcfc8a5f17597f9c6438d19f309f068ed",
+    "sections/67-framework-utility.tex": "c4ab3501ab38b75a9e6a5bb3c7a17c43343499e753cab43491be97ecac52954d",
     "sections/68-utility-check-details.tex": "532726ca6efc273c41586c6ad050f53e34fe304ffe24b6b2e7792350bd2210b1",
-    "supplement.tex": "029a4ac482b7a8e314cbefd06f727e9463493a69412ef7304c01f25922eef5a7",
+    "sections/69-audit-reconciliation.tex": "d8e3315117df3a7609bfd2d0c8eb00a3d0aa63d8059601487357f4b1ccd140b2",
+    "supplement.tex": "7b73e0a78ff5cfe6df37c799e619e9139ced2849cf23566b9b210a568dadfa47",
     "tables/boundary-rules.tex": "48fad0ffb9aec59f2acc34e720f55b0335a8a688dd07a456f62ad74eabf2147b",
     "tables/comparison-contracts.tex": "d0788cdaf7b93cbbf7d3926f9672d6973ea4745f08b2db914b6d2cad68c11b2b",
     "tables/conclusion-source-dependencies.tex": "074e266a11ea655d231259a442b76aa3d495751c4c9eb20e9d663e50f21571ce",
@@ -219,7 +223,7 @@
     "tables/corpus-citations.tex": "014a315c04585d9d51edffe33e704cb17985c57635bf0d48dc5f9c722aa49d04",
     "tables/defense-types.tex": "18996ca097b3b6836a3eb768fc1d8c7579c0484b842accf87ceaee6b783d4233",
     "tables/dependency-holdouts.tex": "a361958420d3b38662f4d0b3897cf377097748936214965cb94ec5a079ea9533",
-    "tables/family-audit-matrix.tex": "5d05c0254c84cacaeff2f29d98475aed66db3067cd90f26045bfe29898d8564f",
+    "tables/family-audit-matrix.tex": "fda0a333b943a8b75c06c316e06707944f8a41b2eebb42ca9b5e6175bac19be2",
     "tables/final-counts.tex": "68f75c0dac83c6ad66884bcb04b2e2c5a82a108aae402236fdb5701a50555597",
     "tables/h2-controls.tex": "fc51144670d732d042164ebae03134fcc1fc14358dbd0251e72c7fd208dc5b08",
     "tables/h2-failure-diagnostics.tex": "08ff74187ac956ba6fa62d6a74e860486777a95a9bdb1ddd612fe48bb8b4e2f3",
@@ -244,12 +248,14 @@
     "tables/r26-source-review.tex": "fc7a9fd3a388e51a9ea8e4adcea8b28079151ab9580defe148f5ffacf99d6d62",
     "tables/r26-transfer-objects.tex": "41a298fcb58904d87efda8501e7894f64d2964be6d98c8045668b945f398d35d",
     "tables/r28-external-ledger.tex": "9cbbcd1a8855e55968ae8cafe6daf4323fc146143fc49867d863f7d37c10a765",
-    "tables/r28-external-main.tex": "6f2df073bbab89f81e24b4c54e9d7cb7e7fb1f82c812252c0f90eda54280546b",
-    "tables/r28-judgments-main.tex": "493113200c70c09b609d20179703c911da0ee25b758217c858632fcaa2ee46a5",
+    "tables/r28-external-main.tex": "ac429a67d8450c719a530866afc146e887db94a7cc2ffd8b2aa19ead28e5be25",
+    "tables/r28-judgments-main.tex": "3f04494ee270f9ad57ec102b37af5acd5f8d55179d3beb294f07382b9bad8179",
     "tables/r3-supp-e8.tex": "d0b8d8a15d73feb745d61f20f38edbd9d5f6826374272862d78771d355d35192",
     "tables/r3-supp-transfer.tex": "88c14cb868411d6c50152a425322b6729a9d8959653e8e85bf621eb902f71eff",
     "tables/r3-transfer-cover.tex": "55e6507f082f2980aeeb2c8909615a04a20fcd7611719b52c3557618227eff2d",
     "tables/r3-transfer-predictions.tex": "7372ad6720a55895d799f6bbd84c39e63bbd870aa2478c890b36d4dff53f535c",
+    "tables/r32-publication-strata.tex": "6cae8c924b9e888b062b26490e9a06d2bc5d6f1e07d585319c3cde4de6a6d799",
+    "tables/r32-reconciliation.tex": "5b22f97c5330134469481e1df7e702a809dda9409ef4c37a9e7c9022cedc7239",
     "tables/r4-supp.tex": "00b6f858808dde769b6343622e31cf462ec3ae3b717bc02bd5243daca2238acc",
     "tables/r5-supp.tex": "070c1e9661e1c4ea3d550b3b7bfbcf68f295b22f35058a1de7695b1bf695bcaa",
     "tables/r6-supp.tex": "f8bb81bd187c612a03d9dd2d828c3e3429b84a5763b23b727bd4f7af2b00a6a7",
@@ -271,7 +277,7 @@
     "tables/r9-frozen-reference.tex": "12a8fb91b5ab61b37fd55b7d875b6f324b9c72d0912c778da4b8f33ebbdbd043",
     "tables/r9-localization.tex": "da76bf2603a74b582e3ca8e723545d0c5139c95779812b22db8f289064d011ab",
     "tables/r9-record-index.tex": "bc0de37f365afa417e56fcd1ef754f6edc3925268b3d76a55e5ef99872e6ceaf",
-    "tables/r9-rq-findings.tex": "1d3d59bfdc75012a4196bfe0613a996203dc0c245924a0407a22affa6413095c",
+    "tables/r9-rq-findings.tex": "4227c51183c2b7a3f91bc1a82ffe5f6fa6cc5174fe359ddd3269f28f8c0f6ceb",
     "tables/receiver-intervention-matrix.tex": "3c59d962e690a422508f54429e0280df6af374f2410e97487127031862bdaeb4",
     "tables/related-sok-matrix.tex": "3a49095aa37964c4e4f3d1e87c625963964a202e0aa3bdc99ce416392ead4bcf",
     "tables/result-lineage-example.tex": "ceff6721b9c3456f3f1c4b8f64c0bab5f3aaa15c04c36c9b8e162b959302c514",
@@ -435,10 +441,10 @@
     "uploaded": false
   },
   "current_manuscript": {
-    "revision": "r31-retired-task-cleanup",
+    "revision": "r32-audit-decisions",
     "main": "pdf/main.pdf",
     "supplement": "pdf/supplement.pdf",
-    "scope": "Retired task removed from active manuscript, supplement, editable checklists and tool scaffolds. No new coding study or model experiment. R30 research-question alignment retained."
+    "scope": "Thirteen family-summary cells reconciled to unchanged record judgments; 180 witnesses; same five joint queries; B/C decision presentation and D bibliography sensitivity. No new model experiments."
   },
-  "updated_utc": "2026-10-26T15:51:17.728426+00:00"
+  "updated_utc": "2026-10-26T16:18:28.287213+00:00"
 }
