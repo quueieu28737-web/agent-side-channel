@@ -1,0 +1,143 @@
+{
+  "revision": "R25-audit-sensitivity",
+  "base_commit": "5db4235ed1e8e9d152c7cb9b98587ebf5ca5d916",
+  "input_sha256": {
+    "record-audit.csv": "bd2aa6ebb3236164da25a17abbc88ebc1c034e046e5d11ba8c10e44638256931",
+    "pair-inventory.csv": "60633e5025078cb3e41114d545ec319f8ba21fbfd20fb92804f1954a4a6c85d7"
+  },
+  "no_new_experiments": true,
+  "archived_labels_changed": false,
+  "records": 39,
+  "mitigation_records": 33,
+  "contextual_records": 6,
+  "all_pairs": 741,
+  "related_pairs": 133,
+  "related_verdicts": {
+    "INCOMPATIBLE": 105,
+    "UNRESOLVED": 11,
+    "COMPATIBLE": 17
+  },
+  "related_unresolved_completion_range": [
+    17,
+    28
+  ],
+  "same_family_pairs": 15,
+  "same_family_families": 11,
+  "same_family_incompatible_pairs": 8,
+  "same_family_incompatible_families": 6,
+  "leave_family_out_compatible_fraction_range": [
+    0.07766990291262135,
+    0.15178571428571427
+  ],
+  "leave_family_out_same_family_incompatible_fraction_range": [
+    0.4166666666666667,
+    0.6666666666666666
+  ],
+  "joins": [
+    {
+      "query": "inference_utility",
+      "required_items": "R7,R8",
+      "starting_records": 33,
+      "excluded_records": 11,
+      "eligible_records": 22,
+      "bound_records": 4,
+      "bound_families": 3,
+      "bound_configurations": 3,
+      "eligible_families": 15,
+      "eligible_configurations": 21
+    },
+    {
+      "query": "inference_cost",
+      "required_items": "R7,R9",
+      "starting_records": 33,
+      "excluded_records": 11,
+      "eligible_records": 22,
+      "bound_records": 5,
+      "bound_families": 3,
+      "bound_configurations": 4,
+      "eligible_families": 16,
+      "eligible_configurations": 21
+    },
+    {
+      "query": "adapted_inference",
+      "required_items": "R4,R5,R7",
+      "starting_records": 33,
+      "excluded_records": 16,
+      "eligible_records": 17,
+      "bound_records": 2,
+      "bound_families": 2,
+      "bound_configurations": 2,
+      "eligible_families": 11,
+      "eligible_configurations": 17
+    },
+    {
+      "query": "inference_utility_cost",
+      "required_items": "R7,R8,R9",
+      "starting_records": 33,
+      "excluded_records": 13,
+      "eligible_records": 20,
+      "bound_records": 2,
+      "bound_families": 1,
+      "bound_configurations": 1,
+      "eligible_families": 14,
+      "eligible_configurations": 19
+    },
+    {
+      "query": "adapted_inference_utility_cost",
+      "required_items": "R4,R5,R7,R8,R9",
+      "starting_records": 33,
+      "excluded_records": 19,
+      "eligible_records": 14,
+      "bound_records": 0,
+      "bound_families": 0,
+      "bound_configurations": 0,
+      "eligible_families": 9,
+      "eligible_configurations": 14
+    }
+  ],
+  "cohorts": [
+    {
+      "cohort": "behavioral-humanization",
+      "pairs": 3,
+      "compatible": 1,
+      "incompatible": 2,
+      "unresolved": 0
+    },
+    {
+      "cohort": "cache-service",
+      "pairs": 45,
+      "compatible": 2,
+      "incompatible": 37,
+      "unresolved": 6
+    },
+    {
+      "cohort": "fixed-instruction",
+      "pairs": 1,
+      "compatible": 0,
+      "incompatible": 0,
+      "unresolved": 1
+    },
+    {
+      "cohort": "generator-fingerprint",
+      "pairs": 3,
+      "compatible": 3,
+      "incompatible": 0,
+      "unresolved": 0
+    },
+    {
+      "cohort": "local-memory",
+      "pairs": 15,
+      "compatible": 0,
+      "incompatible": 14,
+      "unresolved": 1
+    },
+    {
+      "cohort": "traffic-envelope",
+      "pairs": 66,
+      "compatible": 11,
+      "incompatible": 52,
+      "unresolved": 3
+    }
+  ],
+  "interpretation": "Finite-corpus bookkeeping and counterfactual status-rule sensitivity, not sampling confidence, independent coder agreement, or framework validation. All source labels and cohort assignments remain unchanged. Relaxing P or ? or U is not evidence that the original same-configuration claim holds; P can encode a known incomplete or mismatched binding. Only B is treated as supported. U remains unreported under the archived reading scope."
+}
