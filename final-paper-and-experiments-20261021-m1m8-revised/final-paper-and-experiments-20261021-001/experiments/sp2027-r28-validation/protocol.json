@@ -1,0 +1,34 @@
+{
+  "revision": "B-retrospective-v1",
+  "frozen_utc": "2026-10-26T12:31:55.365130+00:00",
+  "design": "Retrospective external evidence-routing audit; outcomes in abstracts and search previews were already known before this protocol. No blinded or independent coding and no prospective prediction accuracy is claimed.",
+  "frame": [
+    {
+      "study": "DF2018",
+      "include": "Both evaluated defenses, WTF-PAD and Walkie-Talkie"
+    },
+    {
+      "study": "WFDefProxy2021",
+      "include": "All three implementations, FRONT, Tamaraw, Random-WT; security and cost kept as separate outcomes within each row"
+    },
+    {
+      "study": "Mathews2023",
+      "include": "All nine reevaluated defenses plus the distinct live DynaFlow execution record"
+    }
+  ],
+  "units": "15 measurement records in 14 defense-study pairs from three follow-up studies; overlapping defenses and outcomes are not independent trials.",
+  "extraction": "Record published mechanism/configuration, target setting, changed objects, source/follow-up locators, published outcome, and measurement required by R1-R9. Preserve successful/reduced-risk outcomes and negative or inconclusive results. Do not relabel Random-WT as original symmetric Walkie-Talkie.",
+  "comparators": [
+    "Carry forward mechanism-name security and cost",
+    "Treat every changed boundary as a defense failure",
+    "Established WF evaluation practice (adaptive retraining, changed-view testing, and online cost measurement)"
+  ],
+  "outputs": [
+    "Complete evidence ledger with exclusion log",
+    "Counts by changed object and retained/measured outcomes, without pooling different accuracy denominators",
+    "Negative controls: do risk flags imply observed failure?",
+    "Baseline comparison of requested measurements, including ties to established WF practice"
+  ],
+  "inference": "Descriptive source-grounded decisions. No significance test or random-R-item hit-rate claim on outcome-informed labels; no new independent deployment samples. A framework routing a remeasurement does not predict failure.",
+  "C": "Audit Git tree/time ordering and recompute current seven judgment statuses using R3 corrections; preserve original registration and outcome labels."
+}

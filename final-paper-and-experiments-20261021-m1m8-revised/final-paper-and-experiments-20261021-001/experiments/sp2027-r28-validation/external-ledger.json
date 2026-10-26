@@ -1,0 +1,167 @@
+[
+  {
+    "id": "B01",
+    "study": "df2018",
+    "defense": "WTF-PAD",
+    "mode": "transformed capture",
+    "locator": "5.4 / Table 3",
+    "items": "R4,R7",
+    "published_outcome": "DF accuracy 90.7%; strongest prior comparator 69.0% in the same table.",
+    "required_measurement": "Fit the stronger attacker on the protected distribution; retain each attack-specific result.",
+    "retained_control": false
+  },
+  {
+    "id": "B02",
+    "study": "df2018",
+    "defense": "Walkie-Talkie",
+    "mode": "half-duplex capture and molding",
+    "locator": "5.4 / Table 3; 5.8",
+    "items": "R2,R4,R7",
+    "published_outcome": "DF accuracy 49.7% under symmetric collisions; asymmetric collisions give 87.2%.",
+    "required_measurement": "Keep the symmetric-pairing condition; a new attacker alone does not imply failure.",
+    "retained_control": true
+  },
+  {
+    "id": "B03",
+    "study": "wfdef2021",
+    "defense": "FRONT",
+    "mode": "simulation / live PT",
+    "locator": "6.2 / Table 10",
+    "items": "R3,R9",
+    "published_outcome": "Same-parameter data overhead 52% to 75%; DF TPR 72.06% to 42.79% (FPR 2.16% to 2.49%).",
+    "required_measurement": "Measure restart behavior and live cost; preserve the improved live security outcome.",
+    "retained_control": true
+  },
+  {
+    "id": "B04",
+    "study": "wfdef2021",
+    "defense": "Tamaraw",
+    "mode": "simulation / live PT",
+    "locator": "6.1 / Table 9",
+    "items": "R3,R9",
+    "published_outcome": "Optimistic/pessimistic/live data overhead 207/224/179%; time 19/26/21%; DF TPR 2.59/2.74/6.43%.",
+    "required_measurement": "Bind the soft-stop implementation and costs; retain the low-TPR live result.",
+    "retained_control": true
+  },
+  {
+    "id": "B05",
+    "study": "wfdef2021",
+    "defense": "Random-WT",
+    "mode": "simulation / live PT",
+    "locator": "6.3 / Table 11; 4.4",
+    "items": "R3,R9",
+    "published_outcome": "DF TPR 87.47% to 83.41%; data overhead 96% to 88%; time overhead 44% to 23%.",
+    "required_measurement": "Price the live burst schedule; Random-WT is not symmetric Walkie-Talkie.",
+    "retained_control": false
+  },
+  {
+    "id": "B06",
+    "study": "mathews2023",
+    "defense": "DynaFlow",
+    "mode": "BE/BE-TS Standard",
+    "locator": "IV-F; Table II",
+    "items": "R2,R4,R6",
+    "published_outcome": "Closed-world attack accuracy 38.3%.",
+    "required_measurement": "Test IAT-switch features; keep the workload and subpage composition.",
+    "retained_control": false
+  },
+  {
+    "id": "B07",
+    "study": "mathews2023",
+    "defense": "BiMorphing",
+    "mode": "BE/BE-TS Standard",
+    "locator": "IV-A; Table II",
+    "items": "R4,R6",
+    "published_outcome": "Closed-world attack accuracy 81.0%.",
+    "required_measurement": "Refit a deep attacker; do not pool different datasets.",
+    "retained_control": false
+  },
+  {
+    "id": "B08",
+    "study": "mathews2023",
+    "defense": "DFD",
+    "mode": "BE/BE-TS Standard",
+    "locator": "IV-D; Table II",
+    "items": "R2,R4,R5",
+    "published_outcome": "Closed-world attack accuracy 94.2%.",
+    "required_measurement": "Match perturbation variation in protected training/testing and include timing.",
+    "retained_control": false
+  },
+  {
+    "id": "B09",
+    "study": "mathews2023",
+    "defense": "FRONT",
+    "mode": "BE/BE-TS Standard",
+    "locator": "IV-G; Table II",
+    "items": "R4,R6",
+    "published_outcome": "Closed-world attack accuracy 81.8%.",
+    "required_measurement": "Fit with defended variants and the staged training schedule.",
+    "retained_control": false
+  },
+  {
+    "id": "B10",
+    "study": "mathews2023",
+    "defense": "HyWF",
+    "mode": "BE/BE-TS Standard",
+    "locator": "IV-B; Table II",
+    "items": "R2,R4,R6",
+    "published_outcome": "Closed-world attack accuracy 56.8%.",
+    "required_measurement": "Bind one-split visibility and augmented protected fitting.",
+    "retained_control": false
+  },
+  {
+    "id": "B11",
+    "study": "mathews2023",
+    "defense": "TrafficSliver",
+    "mode": "BE/BE-TS Standard",
+    "locator": "IV-B; Table II",
+    "items": "R2,R3,R4,R6",
+    "published_outcome": "Closed-world attack accuracy 5.4%.",
+    "required_measurement": "Retain BE-TS one-split results; do not inherit them for an all-split observer.",
+    "retained_control": true
+  },
+  {
+    "id": "B12",
+    "study": "mathews2023",
+    "defense": "Spring",
+    "mode": "BE/BE-TS Standard",
+    "locator": "IV-C; Table II",
+    "items": "R2,R4",
+    "published_outcome": "Closed-world attack accuracy 80.0%.",
+    "required_measurement": "Include rounded timing and multiple protected training variants.",
+    "retained_control": false
+  },
+  {
+    "id": "B13",
+    "study": "mathews2023",
+    "defense": "Interspace",
+    "mode": "BE/BE-TS Standard",
+    "locator": "IV-C; Table II",
+    "items": "R2,R4",
+    "published_outcome": "Closed-world attack accuracy 76.1%.",
+    "required_measurement": "Include rounded timing and multiple protected training variants.",
+    "retained_control": false
+  },
+  {
+    "id": "B14",
+    "study": "mathews2023",
+    "defense": "BANP",
+    "mode": "BE/BE-TS Standard",
+    "locator": "IV-E; Table II",
+    "items": "R4,R5",
+    "published_outcome": "Closed-world attack accuracy 89.6%.",
+    "required_measurement": "Refit after generating perturbations with the accessible defense generator.",
+    "retained_control": false
+  },
+  {
+    "id": "B15",
+    "study": "mathews2023",
+    "defense": "DynaFlow",
+    "mode": "live PT",
+    "locator": "Appendix B",
+    "items": "R3,R6,R9",
+    "published_outcome": "Live accuracy 63.6%; mean per-site bandwidth/time overhead 123%/379%; different URLs and crawler.",
+    "required_measurement": "Keep a separate live record; simulation and live numbers are not a matched causal contrast.",
+    "retained_control": false
+  }
+]

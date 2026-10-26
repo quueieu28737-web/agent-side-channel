@@ -1,6 +1,6 @@
 {
   "created_utc": "2026-10-21T06:58:23.633018+00:00",
-  "purpose": "R27: remove main Section 8.3 and condense source-record methodology; preserve the SoK evidence and appendix statistics",
+  "purpose": "R28: retrospective external evidence-routing check and current reassessment of seven time-ordered internal judgments",
   "documents": {
     "main": {
       "entry": "main.tex",
@@ -25,6 +25,7 @@
         "sections/50-r9-experiment-index.tex",
         "sections/59-holdout-compact.tex",
         "sections/62-appendix-case-study.tex",
+        "sections/67-framework-utility.tex",
         "tables/boundary-rules.tex",
         "tables/comparison-contracts.tex",
         "tables/core-family-map.tex",
@@ -36,6 +37,8 @@
         "tables/r19-joint-bindings.tex",
         "tables/r23-case-study.tex",
         "tables/r26-transfer-objects.tex",
+        "tables/r28-external-main.tex",
+        "tables/r28-judgments-main.tex",
         "tables/r9-audit-rules.tex",
         "tables/r9-record-index.tex",
         "tables/r9-rq-findings.tex",
@@ -43,7 +46,7 @@
         "tables/result-record-schema.tex"
       ],
       "pdf": "pdf/main.pdf",
-      "pdf_sha256": "5029f7011371fe82f1f149ceead4eeaa116969213d20e46474f4d2d702a6d8fa"
+      "pdf_sha256": "957cd780671aff6ea1e4460b6a75dcb389f12174148a977b5eff47f0ab601bde"
     },
     "supplement": {
       "entry": "supplement.tex",
@@ -86,6 +89,7 @@
         "sections/64-case-study-register.tex",
         "sections/65-audit-sensitivity.tex",
         "sections/66-source-reconciliation.tex",
+        "sections/68-utility-check-details.tex",
         "supplement.tex",
         "tables/conclusion-source-dependencies.tex",
         "tables/conditional-null.tex",
@@ -110,6 +114,7 @@
         "tables/r26-current-sensitivity.tex",
         "tables/r26-h-objects.tex",
         "tables/r26-source-review.tex",
+        "tables/r28-external-ledger.tex",
         "tables/r3-supp-e8.tex",
         "tables/r3-supp-transfer.tex",
         "tables/r3-transfer-cover.tex",
@@ -144,24 +149,24 @@
         "tables/transfer-streaming.tex"
       ],
       "pdf": "pdf/supplement.pdf",
-      "pdf_sha256": "2f99b993f34317a228dca2f7344a9ad0f1a887f3fa5aee08e029e6ff2139bd80"
+      "pdf_sha256": "1330d0d1406864212d76c09feb6223d81056bcb9ffae0c45e34533307aaa577a"
     }
   },
   "source_hashes": {
     "figures/defense-decision-procedure.tex": "e91e8e96173ab65c4651a71aef720dff3758704ac2af16c10395a346ebac8e85",
     "figures/fig1-system-model.tex": "17902db2113b6b6abb4d98af1f5f40a4efd9dd44b306527710d63f9816fd1854",
     "figures/r7-pareto.pdf": "9e1d159bc9e2f56fab83f0bee721d9d1879ac01328a97c07e47226f2e0c47a1c",
-    "main.tex": "ade8caa0fe664608bafb3ee7a4b08cff3a76b9957b8b986e7677cf51bb488ee5",
+    "main.tex": "d88a147efc0018fe8e033a674c2fa081b2b4e9e37f7e00b1c13be03d445174b0",
     "refs-deployment.bib": "f21df671ebe255f3e7d7d601b10456143dfa92494141d56da766f71dff4fd8b9",
-    "refs-final-additions.bib": "ee14153b3be6d251473cc2935c9abb71ecdfe7a04813457811f50a3f4c8361e3",
+    "refs-final-additions.bib": "eaca3d82238be7354bfe1e887ce7a8444ab7d5ae1076dd7435a4a2a350dfb397",
     "refs-search-completion.bib": "0ab2782a537da4eeefeb3666fa75b1f782633d0907d35b252166f47315210c0b",
     "refs.bib": "62f5ceed5a0bb62bba220169df20921378149a0fd9b4fc8612747c8fdb175b18",
-    "sections/01-introduction.tex": "e68c461bbe71938fddf99d4fc704a25e7880ad8062d5b91d9b6fdec1667e2b00",
+    "sections/01-introduction.tex": "e28c8ba6930afaccd0b2273a99e2744d9db6e6775c92e463ba1789a391a0bde3",
     "sections/03-methodology.tex": "a2a759d330fccda8635e458da30225bd77e6f29c05de6db0052b344737ed21fc",
     "sections/04-scope.tex": "2f8c25d96d5b996a0c4952f03c2e2c6d1be29b36f9609ef51d3cc03b60b32265",
     "sections/10-open-challenges.tex": "0a2313749798c16024ee2b9670cae635c54e66de482ac77082134397e6491252",
-    "sections/11-discussion.tex": "14e7904ffcf9d5cb088f71d06b1b6f8d32953cba27a15e6c272d722cd67a356e",
-    "sections/12-conclusion.tex": "16f2ebc153f31f17234e73ee77ce9ff032605b2db8e4681d2c9f1752eaee198f",
+    "sections/11-discussion.tex": "03ee061d8fbee8d9bf634ef57ec4958aa90fe5f701fe7ee5c4141d79437ffb01",
+    "sections/12-conclusion.tex": "9092f86993939e8454152d1586de9d1b2f41e53276358e36474beb264ca94798",
     "sections/17-public-trace-details.tex": "0531d7c59bd28dcb4680c54ec8b45d3025d5f78d1b6e9c0e6ce1a0dc31f562eb",
     "sections/19-final-ledger.tex": "cc599c6c95e2456cc32db82bdfe782993e155c618647da4a0ffe3c276b0782ae",
     "sections/21-retained-controls-summary.tex": "7b5a9a22ae4ce6973b82a390cd791f0ea2dab6e60046488f6664083c39648493",
@@ -198,11 +203,13 @@
     "sections/59-holdout-compact.tex": "bc3f9762a334ea3e00af45415433af94427f3632f9a81f2ad0873b3a1d72e2b7",
     "sections/60-calibration-stability.tex": "95b297c4a01bbee68876ca587d4d248535510538905aadf09cdd4a035724834e",
     "sections/61-synthesis-study-details.tex": "0c90dafd3b6dd572728d1f065d724ad1490ed09ad3de54f15f27ead2e8bbd426",
-    "sections/62-appendix-case-study.tex": "e5dd983857d1a8d75a8df0bd6c826e06e4f8fec6b325d5e6f7a432ef28b00584",
+    "sections/62-appendix-case-study.tex": "98ac0fa1d017d04b9cf2fb1c497c47ad3624be8a4da3ecc419f916c9cbc1b55d",
     "sections/64-case-study-register.tex": "7d1aebff0849ec404cecfed9c41dc2a0f07b0e356aa12cb8207135628a3c8be9",
     "sections/65-audit-sensitivity.tex": "0877be8566eeeef28a8c5d9734ae70a04bf1bedeb6b7d9a92ed5722380781f5b",
     "sections/66-source-reconciliation.tex": "c52d9f51170e98d2997c6dac0bbc4a0abf182b9f33522f97b7aede516b75d14c",
-    "supplement.tex": "974e936fbbe5c1ff32de0f7eab3b20599a6793908fe9eb14eb357f1de4533f15",
+    "sections/67-framework-utility.tex": "de73d65704882002ea7d119c64937434e0139b15a2fa0d5ea4edd95d6acdb9e9",
+    "sections/68-utility-check-details.tex": "532726ca6efc273c41586c6ad050f53e34fe304ffe24b6b2e7792350bd2210b1",
+    "supplement.tex": "189edf599f1453f9292afd7c82c01ea78269ba8498c14958a837344fa4d84b9a",
     "tables/boundary-rules.tex": "48fad0ffb9aec59f2acc34e720f55b0335a8a688dd07a456f62ad74eabf2147b",
     "tables/comparison-contracts.tex": "d0788cdaf7b93cbbf7d3926f9672d6973ea4745f08b2db914b6d2cad68c11b2b",
     "tables/conclusion-source-dependencies.tex": "074e266a11ea655d231259a442b76aa3d495751c4c9eb20e9d663e50f21571ce",
@@ -236,6 +243,9 @@
     "tables/r26-h-objects.tex": "82510058dc4cb1d056d16b191d567c7ea164cb464ea06beff66dfcb953c70f71",
     "tables/r26-source-review.tex": "fc7a9fd3a388e51a9ea8e4adcea8b28079151ab9580defe148f5ffacf99d6d62",
     "tables/r26-transfer-objects.tex": "d4a53b10ee6b3c9486bd86605b53e6ae1877e6bbc5c712e8e45fa9d59e4a3a30",
+    "tables/r28-external-ledger.tex": "9cbbcd1a8855e55968ae8cafe6daf4323fc146143fc49867d863f7d37c10a765",
+    "tables/r28-external-main.tex": "6f2df073bbab89f81e24b4c54e9d7cb7e7fb1f82c812252c0f90eda54280546b",
+    "tables/r28-judgments-main.tex": "493113200c70c09b609d20179703c911da0ee25b758217c858632fcaa2ee46a5",
     "tables/r3-supp-e8.tex": "d0b8d8a15d73feb745d61f20f38edbd9d5f6826374272862d78771d355d35192",
     "tables/r3-supp-transfer.tex": "88c14cb868411d6c50152a425322b6729a9d8959653e8e85bf621eb902f71eff",
     "tables/r3-transfer-cover.tex": "55e6507f082f2980aeeb2c8909615a04a20fcd7611719b52c3557618227eff2d",
@@ -425,10 +435,10 @@
     "uploaded": false
   },
   "current_manuscript": {
-    "revision": "r27-main-text-focus",
+    "revision": "r28-framework-utility",
     "main": "pdf/main.pdf",
     "supplement": "pdf/supplement.pdf",
-    "scope": "Editorial condensation of the main paper. Literature records, quantitative results and supplementary evidence unchanged."
+    "scope": "15 external measurement records, not blinded prediction validation; seven existing judgments reassessed. Original literature audit and experiments retained."
   },
-  "updated_utc": "2026-10-26T12:10:09.356660+00:00"
+  "updated_utc": "2026-10-26T12:52:42.046638+00:00"
 }

@@ -1,0 +1,44 @@
+[
+  {
+    "id": "P1",
+    "status": "supported",
+    "object": "Emitter/count and cost object",
+    "evidence": "Per-event padding leaves T1 at 100%; stream shaping uses 2.42x token-stream bytes."
+  },
+  {
+    "id": "P2",
+    "status": "supported",
+    "object": "Protected-data fitting",
+    "evidence": "D0 50% versus D2 100% in recorded batching/cover conditions."
+  },
+  {
+    "id": "P3",
+    "status": "supported",
+    "object": "Identity versus binary target",
+    "evidence": "Known-response top-1 58-62%; chance 1/48."
+  },
+  {
+    "id": "P4",
+    "status": "supported",
+    "object": "Non-target dispatch features",
+    "evidence": "Count rule 50%; suite BA 76.9%."
+  },
+  {
+    "id": "P5",
+    "status": "premise_unmet",
+    "object": "Dispatch to network",
+    "evidence": "Source dispatch protection was not established; network leakage is persistence."
+  },
+  {
+    "id": "P6",
+    "status": "partial",
+    "object": "Record framing to full session",
+    "evidence": "Bucketed return is above threshold; other framing cells inconclusive."
+  },
+  {
+    "id": "P7",
+    "status": "not_established",
+    "object": "Joint state/transport package",
+    "evidence": "No condition passes the prewritten screen on both targets."
+  }
+]
