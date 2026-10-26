@@ -368,6 +368,18 @@
         "provenance/r32-audit-decisions/visual-check.json",
         "provenance/r32-audit-decisions/anonymous-paper-check.json"
       ]
+    },
+    "r33-review-closure": {
+      "description": "R33: scoped SoK evidence reuse; granularity sensitivity, reconstructable joint queries, reporting cards and publication/source status; no new model or participant study",
+      "paths": [
+        "provenance/r33-review-closure/revision.json",
+        "provenance/r33-review-closure/revision-items.json",
+        "provenance/r33-review-closure/audit-check.json",
+        "provenance/r33-review-closure/verification.json",
+        "provenance/r33-review-closure/visual-check.json",
+        "provenance/r33-review-closure/anonymous-paper-check.json",
+        "provenance/r33-review-closure/source-checks.json"
+      ]
     }
   },
   "current_publication": [
@@ -398,9 +410,11 @@
     "provenance/r31-retired-task-cleanup/verify_revision.py",
     "provenance/r31-retired-task-cleanup/verification.json",
     "provenance/r32-audit-decisions/verify_revision.py",
-    "provenance/r32-audit-decisions/verification.json"
+    "provenance/r32-audit-decisions/verification.json",
+    "provenance/r33-review-closure/verify_revision.py",
+    "provenance/r33-review-closure/verification.json"
   ],
-  "current_verification": "provenance/r32-audit-decisions/verify_revision.py",
+  "current_verification": "provenance/r33-review-closure/verify_revision.py",
   "historical_document_verifiers": [
     "provenance/review-closure/verify_manuscript.py",
     "provenance/timing/verify_publication.py",
@@ -417,6 +431,7 @@
     "provenance/r27-main-text-focus/verify_revision.py",
     "provenance/r28-framework-utility/verify_revision.py",
     "provenance/r29-claim-alignment/verify_revision.py",
-    "provenance/r31-retired-task-cleanup/verify_revision.py"
+    "provenance/r31-retired-task-cleanup/verify_revision.py",
+    "provenance/r32-audit-decisions/verify_revision.py"
   ]
 }
