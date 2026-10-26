@@ -1,0 +1,114 @@
+{
+  "revision": "R26",
+  "base_commit": "b192bd593f4d6ae6a958122fe6f80ecda048df06",
+  "family_cells_reviewed": 11,
+  "family_new_statuses": {
+    "P": 4,
+    "U": 7
+  },
+  "record_cells_changed": 19,
+  "record_question_cells_remaining": 6,
+  "records": 39,
+  "pairs": 741,
+  "related_pairs": 133,
+  "joint": [
+    {
+      "query": "inference_utility",
+      "eligible": 22,
+      "bound": 4,
+      "families": 3,
+      "configurations": 3,
+      "bound_records": [
+        "AHB-online-executed",
+        "CACHEPRUNE-selective",
+        "CACHEPRUNE-context",
+        "SPARLEAK-replacement"
+      ]
+    },
+    {
+      "query": "inference_cost",
+      "eligible": 22,
+      "bound": 5,
+      "families": 3,
+      "configurations": 4,
+      "bound_records": [
+        "SPEC-padding-REST",
+        "DANGOL-capture",
+        "DANGOL-livebinding",
+        "CACHEPRUNE-selective",
+        "CACHEPRUNE-context"
+      ]
+    },
+    {
+      "query": "adapted_inference",
+      "eligible": 17,
+      "bound": 2,
+      "families": 2,
+      "configurations": 2,
+      "bound_records": [
+        "UI-delay-offline",
+        "DANGOL-capture"
+      ]
+    },
+    {
+      "query": "inference_utility_cost",
+      "eligible": 20,
+      "bound": 2,
+      "families": 1,
+      "configurations": 1,
+      "bound_records": [
+        "CACHEPRUNE-selective",
+        "CACHEPRUNE-context"
+      ]
+    },
+    {
+      "query": "adapted_inference_utility_cost",
+      "eligible": 14,
+      "bound": 0,
+      "families": 0,
+      "configurations": 0,
+      "bound_records": []
+    }
+  ],
+  "holdouts": [
+    {
+      "axis": "task_input_user",
+      "all_H": 13,
+      "H_in_mitigation_families": 4
+    },
+    {
+      "axis": "model",
+      "all_H": 3,
+      "H_in_mitigation_families": 0
+    },
+    {
+      "axis": "harness_topology",
+      "all_H": 2,
+      "H_in_mitigation_families": 2
+    },
+    {
+      "axis": "hardware",
+      "all_H": 0,
+      "H_in_mitigation_families": 0
+    },
+    {
+      "axis": "network_load",
+      "all_H": 1,
+      "H_in_mitigation_families": 0
+    },
+    {
+      "axis": "time",
+      "all_H": 0,
+      "H_in_mitigation_families": 0
+    }
+  ],
+  "model_calls": 0,
+  "new_experiments": 0,
+  "input_sha256": {
+    "provenance\\r19-evidence-closure\\record-audit.json": "f49da931f6b8b6e59665966bf257e661a2ae2bb20edcec1f686931fd7f7fc722",
+    "provenance\\r19-evidence-closure\\pair-inventory.csv": "60633e5025078cb3e41114d545ec319f8ba21fbfd20fb92804f1954a4a6c85d7",
+    "provenance\\r16-synthesis\\holdout-matrix.json": "b2cea976b96775a92366402cf8f31d6254fcbf751c53522cb9ce190d53551689",
+    "provenance\\r26-source-reconciliation\\source-receipts.json": "833d905a0feb4c82bcebcebc0d7c82e58d1e4c6e1c9add16dac22343cb0f7a4c"
+  },
+  "interpretation": "Targeted source reporting reconciliation; no independent human reliability estimate. Existing raw experiments, pair verdicts and supported B joins remain unchanged."
+}

@@ -1,0 +1,122 @@
+[
+  {
+    "cohort": "traffic-envelope",
+    "question": "What does changing the delivered traffic envelope reveal or cost?",
+    "membership_rule": "Network/API destination, size, timing, count or delivery shaping; includes WRA destination cover, excludes cache probes and content-only identity.",
+    "records": [
+      "WRA-decoy-execution",
+      "NET-upstream-local",
+      "NET-dummy-padding-simulation",
+      "WHISPER-randompadding-capture",
+      "WHISPER-batching-replay",
+      "WHISPER-injection-replay",
+      "TIME-length-instruction",
+      "TIME-padding-estimate",
+      "SPEC-padding-REST",
+      "DANGOL-capture",
+      "DANGOL-livebinding",
+      "CARLINI-fixed-rate"
+    ],
+    "record_count": 12,
+    "pairs": 66
+  },
+  {
+    "cohort": "cache-service",
+    "question": "What does shared-cache protection reveal or cost?",
+    "membership_rule": "Cache hit/reuse probes, cache policy and its component costs; excludes local memory observation without a service-cache probe.",
+    "records": [
+      "EARLY-K-calibration-oracle",
+      "EARLY-semantic-deidentification",
+      "SPLICE-CTBF-signal",
+      "SPLICE-QCP-cost",
+      "SAFE-post-trigger",
+      "KVGOV-partialflush-sim",
+      "KVGOV-hardware-gap",
+      "KVGOV-HMAC-cost",
+      "CACHEPRUNE-selective",
+      "CACHEPRUNE-context"
+    ],
+    "record_count": 10,
+    "pairs": 45
+  },
+  {
+    "cohort": "local-memory",
+    "question": "What does a local memory/resource intervention reveal or cost?",
+    "membership_rule": "Memory access/loading/sparsity/obliviousness and associated component costs; excludes network metadata and service-cache timing probes.",
+    "records": [
+      "GAO-zero-copy-off",
+      "TDXRAY-oblivious-map",
+      "OTRO-unpadded",
+      "OTRO-epochpad",
+      "SPARLEAK-replacement",
+      "SHAPE-padding-estimate"
+    ],
+    "record_count": 6,
+    "pairs": 15
+  },
+  {
+    "cohort": "behavioral-humanization",
+    "question": "How does humanization change behavioral inference and execution?",
+    "membership_rule": "Site/mobile behavioral-trajectory edits or executed GUI humanization; excludes network-destination cover such as WRA.",
+    "records": [
+      "UI-delay-offline",
+      "AHB-online-executed",
+      "AHB-offline"
+    ],
+    "record_count": 3,
+    "pairs": 3
+  },
+  {
+    "cohort": "generator-fingerprint",
+    "question": "How do generator or route changes affect identity recognition?",
+    "membership_rule": "Prompt/decoding or route changes with model-identity outcomes; excludes topic/content recovery.",
+    "records": [
+      "TRAFFIC-prompt-reformulation",
+      "TRAFFIC-temperature",
+      "RHYTHM-VPN"
+    ],
+    "record_count": 3,
+    "pairs": 3
+  },
+  {
+    "cohort": "fixed-instruction",
+    "question": "What does a fixed instruction change under the stated observation?",
+    "membership_rule": "Fixed instruction/guardrail contrasts; source target and observer still require alignment.",
+    "records": [
+      "SIG-common-guardrail",
+      "AGENTTELL-fixed-instruction"
+    ],
+    "record_count": 2,
+    "pairs": 1
+  },
+  {
+    "cohort": "access-control",
+    "question": "Does the access gate block an agent while retaining task completion?",
+    "membership_rule": "FP-Agent contextual gate; singleton, no related pair.",
+    "records": [
+      "FP-CLOUDFLARE"
+    ],
+    "record_count": 1,
+    "pairs": 0
+  },
+  {
+    "cohort": "contention-noise",
+    "question": "Does co-running interference change covert-channel capacity?",
+    "membership_rule": "Behind Bars contextual channel; singleton, no related pair.",
+    "records": [
+      "BAR-co-running-noise"
+    ],
+    "record_count": 1,
+    "pairs": 0
+  },
+  {
+    "cohort": "filter-created-view",
+    "question": "Does the filter itself create a membership view?",
+    "membership_rule": "ML privacy channels contextual filter; singleton, no related pair.",
+    "records": [
+      "DEB-filter-origin"
+    ],
+    "record_count": 1,
+    "pairs": 0
+  }
+]
