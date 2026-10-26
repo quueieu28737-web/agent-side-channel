@@ -12,10 +12,12 @@
 
 ## 当前交付
 
-主稿 17 页，正文止于第 11 页；补充材料 74 页。根目录、manuscript/、发布包 pdf/ 的 PDF 一致。
+R27 按用户要求删除主稿 17 页，正文止于第 10 页；补充材料 74 页。SoK 主线、审计数据和补充材料保持不变。
 
-运行发布包的 `python verify_package.py` 核验清单、数据与源码/PDF 绑定。当前文稿核验为 `provenance/r26-source-reconciliation/verify_revision.py`。同目录匿名源码包仅包含论文与补充材料；完整实验托管需要单独的匿名快照。
+主稿 17 页，正文止于第 10 页；补充材料 74 页。根目录、manuscript/、发布包 pdf/ 的 PDF 一致。
 
-[本轮修订与校验](provenance/r26-source-reconciliation/verification.json)
+运行发布包的 `python verify_package.py` 核验清单、数据与源码/PDF 绑定。当前文稿核验为 `provenance/r27-main-text-focus/verify_revision.py`。同目录匿名源码包仅包含论文与补充材料；完整实验托管需要单独的匿名快照。
+
+[本轮修订与校验](provenance/r27-main-text-focus/verification.json)
 
 [主稿](pdf/main.pdf) · [补充材料](pdf/supplement.pdf)
