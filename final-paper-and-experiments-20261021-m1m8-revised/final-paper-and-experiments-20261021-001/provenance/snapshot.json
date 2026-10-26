@@ -1,6 +1,6 @@
 {
   "created_utc": "2026-10-21T06:58:23.633018+00:00",
-  "purpose": "R29: align the central SoK claim around traceable comparisons, configuration-bound outcomes and deployment measurement requirements; no new data",
+  "purpose": "R31: remove the retired independent recoding task and unsupported R30 claim; synchronize current PDFs; preserve scientific evidence",
   "documents": {
     "main": {
       "entry": "main.tex",
@@ -46,7 +46,7 @@
         "tables/result-record-schema.tex"
       ],
       "pdf": "pdf/main.pdf",
-      "pdf_sha256": "734a8d1661d0747f41037be27f7b22cc951d101cd4ab4afd2aae2c0d85ee56d4"
+      "pdf_sha256": "3e04af5073aa15b35569dc11d708c64b04cf17e230b0865935b4f35a2c3540e9"
     },
     "supplement": {
       "entry": "supplement.tex",
@@ -149,7 +149,7 @@
         "tables/transfer-streaming.tex"
       ],
       "pdf": "pdf/supplement.pdf",
-      "pdf_sha256": "ab7b573b2c8dae95850dc6dacf998904318e5c1e11831994e76ae49785b67f1c"
+      "pdf_sha256": "5154d34fcd0ac13466f9f3ce188c1236fcef427e20434fa8c90d8d84508660d5"
     }
   },
   "source_hashes": {
@@ -162,7 +162,7 @@
     "refs-search-completion.bib": "0ab2782a537da4eeefeb3666fa75b1f782633d0907d35b252166f47315210c0b",
     "refs.bib": "62f5ceed5a0bb62bba220169df20921378149a0fd9b4fc8612747c8fdb175b18",
     "sections/01-introduction.tex": "6763fd7e6ac9635f88e788464401fb70f5924ead224c3b132a03864238d266bb",
-    "sections/03-methodology.tex": "a2a759d330fccda8635e458da30225bd77e6f29c05de6db0052b344737ed21fc",
+    "sections/03-methodology.tex": "37a44f499811b0f14deafca2875a804c36766eb0f449ca9e920e96015f6802de",
     "sections/04-scope.tex": "2f8c25d96d5b996a0c4952f03c2e2c6d1be29b36f9609ef51d3cc03b60b32265",
     "sections/10-open-challenges.tex": "0a2313749798c16024ee2b9670cae635c54e66de482ac77082134397e6491252",
     "sections/11-discussion.tex": "03ee061d8fbee8d9bf634ef57ec4958aa90fe5f701fe7ee5c4141d79437ffb01",
@@ -175,7 +175,7 @@
     "sections/24-conclusion-sensitivity.tex": "56b6930205ec4d7f0e0e0a1ef8deeecd77997f2116fd3c8c21718c2bc0c24b91",
     "sections/26-corpus-map.tex": "90eea33d876619f17847395b577a3a477ebf37d74ff5a77c823b12b55e7ec9e2",
     "sections/27-intervention-contracts.tex": "376b870d287413981f6f7bf24465929f5509a2ceb6ce16d1d47d1c122386f026",
-    "sections/28-fingerprint-dependencies.tex": "c299c20df863e9083cb349b86091c9653f965b9c725ab3895190ebf824d016c7",
+    "sections/28-fingerprint-dependencies.tex": "ff1888e3a7eb3ddacc039b613424b0a96ca05a38339c14b26780bf56c113cab6",
     "sections/29-scope-comparison-boundary.tex": "d7c8248144b2d9719b03f94dab178ba20d2b40d77d1e7c0ffd83b83ec293704a",
     "sections/30-reproducibility-guide.tex": "c523c5f6b9067cd6fe6872db2ac65b2f098a97490673251320d70718fdb66e5b",
     "sections/31-result-audit.tex": "b0ef2936e1220e65f86a28f2f5b625933ca0cf77cf5526f362ff30fcd689b38b",
@@ -186,7 +186,7 @@
     "sections/39-shadow-deployment.tex": "705f78ef88a39db46511b6808dc007ac186e49dcf434617dc17339c2b6d67701",
     "sections/40-evidence-concordance.tex": "6abc25d45492bd3e2c7a873e34fda879914146c7d5493aa6eab14ce309fe7de9",
     "sections/41-live-timing.tex": "ef12840cb023a05c33f65a5344b3a93d79214677770861f7eaa5dce6d00224b1",
-    "sections/43-robustness.tex": "1f5210d3243de6b84b7185b733365ffab8aeaf35067a2509317defc51ed0e370",
+    "sections/43-robustness.tex": "4eb39521066af2b649325040048d35eda4d33b553ac14e9c4a1af726846fb23f",
     "sections/44-strong-crossfit.tex": "11d903b92d178d40f0d2bb6ea8fe7926a6ced68afaf5533b9d379d63a6627892",
     "sections/45-luna-extension.tex": "60f203b397e209dbb4448cfd9455d033da8c91bf8bcefd2447fe08b07bab3b29",
     "sections/46-r8-sok-audit.tex": "68851ef90d267ddec89a4cd72241089bfe1855c4031682c00dd9c028cb9a6ed7",
@@ -200,12 +200,12 @@
     "sections/56-holdout-matrix.tex": "d17d556a9f989853ecced20d934208aee9fc24369def7fa30e43d01d8fd1e720",
     "sections/57-record-mode-synthesis.tex": "04580f677af1f5905df434a789c67e91ed7e4c45dc4c0ac4df9c86d2af352a6a",
     "sections/58-record-joint-audit.tex": "568e1ab0ec54dfbca38fd00061a09d5b5e2b076c6e534982701fc06e8694ff58",
-    "sections/59-holdout-compact.tex": "bc3f9762a334ea3e00af45415433af94427f3632f9a81f2ad0873b3a1d72e2b7",
+    "sections/59-holdout-compact.tex": "ebc850733c0acb845e583fc2429600cc24ce1cc69af330df1e4e43aca6b139e3",
     "sections/60-calibration-stability.tex": "95b297c4a01bbee68876ca587d4d248535510538905aadf09cdd4a035724834e",
     "sections/61-synthesis-study-details.tex": "0c90dafd3b6dd572728d1f065d724ad1490ed09ad3de54f15f27ead2e8bbd426",
     "sections/62-appendix-case-study.tex": "98ac0fa1d017d04b9cf2fb1c497c47ad3624be8a4da3ecc419f916c9cbc1b55d",
     "sections/64-case-study-register.tex": "7d1aebff0849ec404cecfed9c41dc2a0f07b0e356aa12cb8207135628a3c8be9",
-    "sections/65-audit-sensitivity.tex": "0877be8566eeeef28a8c5d9734ae70a04bf1bedeb6b7d9a92ed5722380781f5b",
+    "sections/65-audit-sensitivity.tex": "9fd19925788649eb4e293558fe8ade567bf3a2c6b8de533b059a2cc66cf8045e",
     "sections/66-source-reconciliation.tex": "c52d9f51170e98d2997c6dac0bbc4a0abf182b9f33522f97b7aede516b75d14c",
     "sections/67-framework-utility.tex": "de73d65704882002ea7d119c64937434e0139b15a2fa0d5ea4edd95d6acdb9e9",
     "sections/68-utility-check-details.tex": "532726ca6efc273c41586c6ad050f53e34fe304ffe24b6b2e7792350bd2210b1",
@@ -242,7 +242,7 @@
     "tables/r26-current-sensitivity.tex": "e612c546d8501f2e09ad0bc0b9897d36829ca23b66d3bbf2a4b765f92a3fcc49",
     "tables/r26-h-objects.tex": "82510058dc4cb1d056d16b191d567c7ea164cb464ea06beff66dfcb953c70f71",
     "tables/r26-source-review.tex": "fc7a9fd3a388e51a9ea8e4adcea8b28079151ab9580defe148f5ffacf99d6d62",
-    "tables/r26-transfer-objects.tex": "d4a53b10ee6b3c9486bd86605b53e6ae1877e6bbc5c712e8e45fa9d59e4a3a30",
+    "tables/r26-transfer-objects.tex": "41a298fcb58904d87efda8501e7894f64d2964be6d98c8045668b945f398d35d",
     "tables/r28-external-ledger.tex": "9cbbcd1a8855e55968ae8cafe6daf4323fc146143fc49867d863f7d37c10a765",
     "tables/r28-external-main.tex": "6f2df073bbab89f81e24b4c54e9d7cb7e7fb1f82c812252c0f90eda54280546b",
     "tables/r28-judgments-main.tex": "493113200c70c09b609d20179703c911da0ee25b758217c858632fcaa2ee46a5",
@@ -271,7 +271,7 @@
     "tables/r9-frozen-reference.tex": "12a8fb91b5ab61b37fd55b7d875b6f324b9c72d0912c778da4b8f33ebbdbd043",
     "tables/r9-localization.tex": "da76bf2603a74b582e3ca8e723545d0c5139c95779812b22db8f289064d011ab",
     "tables/r9-record-index.tex": "bc0de37f365afa417e56fcd1ef754f6edc3925268b3d76a55e5ef99872e6ceaf",
-    "tables/r9-rq-findings.tex": "815653b6a0d3314922b600247cac9d993c2fa0240263ce9437b284ce8e0184a5",
+    "tables/r9-rq-findings.tex": "1d3d59bfdc75012a4196bfe0613a996203dc0c245924a0407a22affa6413095c",
     "tables/receiver-intervention-matrix.tex": "3c59d962e690a422508f54429e0280df6af374f2410e97487127031862bdaeb4",
     "tables/related-sok-matrix.tex": "3a49095aa37964c4e4f3d1e87c625963964a202e0aa3bdc99ce416392ead4bcf",
     "tables/result-lineage-example.tex": "ceff6721b9c3456f3f1c4b8f64c0bab5f3aaa15c04c36c9b8e162b959302c514",
@@ -435,10 +435,10 @@
     "uploaded": false
   },
   "current_manuscript": {
-    "revision": "r29-claim-alignment",
+    "revision": "r31-retired-task-cleanup",
     "main": "pdf/main.pdf",
     "supplement": "pdf/supplement.pdf",
-    "scope": "Editorial alignment only. External retrospective cases and internal judgments illustrate use; all R28 and earlier empirical evidence is preserved."
+    "scope": "Retired task removed from active manuscript, supplement, editable checklists and tool scaffolds. No new coding study or model experiment. R30 research-question alignment retained."
   },
-  "updated_utc": "2026-10-26T13:17:40.995201+00:00"
+  "updated_utc": "2026-10-26T15:51:17.728426+00:00"
 }

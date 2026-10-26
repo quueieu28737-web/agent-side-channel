@@ -1,6 +1,6 @@
 # Agent side-channel SoK — Defense Evidence Transfer
 
-当前稿的核心主张：框架将分散的防御证据转化为可追溯的比较、配置绑定和部署测量要求，并通过外部案例与内部判断展示其使用价值。R29 统一摘要、引言、贡献、Table 1、结论和补充材料导语；R28 案例及全部历史证据保持不变。
+当前稿的核心主张：框架将分散的防御证据转化为可追溯的比较、配置绑定和部署测量要求，并通过外部案例与内部判断展示其使用价值。R31 清理已撤销的编码任务及 R30 引入的无依据表述；保留 R30 的研究问题对齐和 R29 的核心主张。当前任务以 docs/CURRENT-PLAN.md 为准，历史清单不自动恢复任务。
 
 ## 关键结果
 
@@ -14,6 +14,6 @@
 
 主稿 18 页，正文止于第 11 页；补充材料 75 页。根目录、manuscript 和发布包 pdf 中的 PDF 一致。
 
-运行发布包的 python verify_package.py 核验清单、数据及源码/PDF 绑定。当前文稿核验为 provenance/r29-claim-alignment/verify_revision.py。匿名源码包只包含论文与补充材料，完整实验托管仍需单独匿名快照。
+运行发布包的 python verify_package.py 核验清单、数据及源码/PDF 绑定。当前文稿核验为 provenance/r31-retired-task-cleanup/verify_revision.py。匿名源码包只包含论文与补充材料，完整实验托管仍需单独匿名快照。
 
 [主稿](main.pdf) · [补充材料](supplement.pdf)
