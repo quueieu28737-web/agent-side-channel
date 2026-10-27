@@ -162,6 +162,10 @@ for i,row in enumerate(r37['record_order'],1):
  code=''.join('-' if x=='--' else x for x in vals)
  assert re.search(r'%02d & [A-Z] & \\texttt\{%s\}'%(i,re.escape(code)),table),(i,code)
 assert all(t in maintext for t in ['3/8','4/8','0/4'])
+assert 'eleven have narrow function exemptions' in (M/'tables/r9-rq-findings.tex').read_text(encoding='utf8')
+assert 'Exact-prefix content preserved' in (M/'tables/r33-filled-cards.tex').read_text(encoding='utf8')
+assert 'Scoped preservation witness' in (M/'tables/r33-reporting-card.tex').read_text(encoding='utf8')
+assert 'Terminal decoy utility/cost' not in (M/'tables/defense-types.tex').read_text(encoding='utf8')
 assert 'Source-Frame and Functional-Outcome Applicability' in supptext
 assert all(t in supptext for t in ['3/8','4/8','0/1'])
 
