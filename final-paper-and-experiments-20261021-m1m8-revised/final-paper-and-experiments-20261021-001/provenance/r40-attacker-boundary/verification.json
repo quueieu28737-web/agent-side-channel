@@ -1,0 +1,57 @@
+{
+  "status": "R40_ATTACKER_BOUNDARY_PDFS_PASS",
+  "legacy_audit_checks": 36,
+  "core_privacy_attribution": 52,
+  "mitigation_families": 19,
+  "mitigation_records": 31,
+  "unlinked_core_families": 33,
+  "joint_queries": 5,
+  "protected_prior_files": 40817,
+  "new_model_calls": 0,
+  "pdfs": {
+    "main": {
+      "pages": 21,
+      "references_start": 13,
+      "sha256": "ed98e9886568f75fce959fbb1d91adf4b9cd81f8703974931f2a4b44b856b1da",
+      "counted_pages_excluding_reference_only_pages": 18
+    },
+    "supplement": {
+      "pages": 85,
+      "references_start": 82,
+      "sha256": "dbc202256d41c570cb87bef9654f274f05d6c9925840962f965542b879f844bb"
+    }
+  },
+  "attacker_boundary": {
+    "status": "R40_AGGREGATES_AND_CLAIM_SCOPE_PASS",
+    "rounds": [
+      {
+        "budget": 16384,
+        "correct": {
+          "clean": 19,
+          "defended": 17
+        },
+        "valid": {
+          "clean": 20,
+          "defended": 18
+        },
+        "failures": 2
+      },
+      {
+        "budget": 32768,
+        "correct": {
+          "clean": 18,
+          "defended": 15
+        },
+        "valid": {
+          "clean": 20,
+          "defended": 18
+        },
+        "failures": 2
+      }
+    ],
+    "matched_transport_source_check": true,
+    "new_model_requests": 0,
+    "limitation": "Aggregate checks do not independently attest original search execution or online WRA efficacy."
+  },
+  "scope": "Source closure, preserved literature audit, existing matched attack comparisons and incomplete WRA aggregate disclosure."
+}

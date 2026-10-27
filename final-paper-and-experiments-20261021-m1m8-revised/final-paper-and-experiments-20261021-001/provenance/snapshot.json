@@ -1,6 +1,6 @@
 {
   "created_utc": "2026-10-21T06:58:23.633018+00:00",
-  "purpose": "R39: reviewer feedback, source-scoped claims and decision procedure",
+  "purpose": "R40: attacker-conditioned protection, existing matched recovery examples and WRA pilot disclosure",
   "documents": {
     "main": {
       "entry": "main.tex",
@@ -56,7 +56,7 @@
         "tables/result-record-schema.tex"
       ],
       "pdf": "pdf/main.pdf",
-      "pdf_sha256": "a4aab77b1209a7c236eb996a405682712ece84f97a479ecc1db433be03b902de"
+      "pdf_sha256": "ed98e9886568f75fce959fbb1d91adf4b9cd81f8703974931f2a4b44b856b1da"
     },
     "supplement": {
       "entry": "supplement.tex",
@@ -108,6 +108,7 @@
         "sections/74-forward-citation-pilot.tex",
         "sections/75-privacy-defense-census.tex",
         "sections/76-r36-reliability.tex",
+        "sections/77-attacker-boundary.tex",
         "supplement.tex",
         "tables/conclusion-source-dependencies.tex",
         "tables/conditional-null.tex",
@@ -180,25 +181,25 @@
         "tables/transfer-streaming.tex"
       ],
       "pdf": "pdf/supplement.pdf",
-      "pdf_sha256": "c1bc2afe956b509ff0bc4e853070eb79b9338c7e78dde8d2d68e0de7317a7db7"
+      "pdf_sha256": "dbc202256d41c570cb87bef9654f274f05d6c9925840962f965542b879f844bb"
     }
   },
   "source_hashes": {
     "figures/defense-decision-procedure.tex": "e91e8e96173ab65c4651a71aef720dff3758704ac2af16c10395a346ebac8e85",
     "figures/fig1-system-model.tex": "17902db2113b6b6abb4d98af1f5f40a4efd9dd44b306527710d63f9816fd1854",
     "figures/r7-pareto.pdf": "9e1d159bc9e2f56fab83f0bee721d9d1879ac01328a97c07e47226f2e0c47a1c",
-    "main.tex": "83c7465f985a7bcea363526f525d2931be63e5670b12aeb110fe2edbb060310a",
+    "main.tex": "99a6aa9c53adda2d62997ea8835dde1bb0dc97bf61532e57ff8187c7c77e2920",
     "refs-deployment.bib": "f21df671ebe255f3e7d7d601b10456143dfa92494141d56da766f71dff4fd8b9",
     "refs-final-additions.bib": "eaca3d82238be7354bfe1e887ce7a8444ab7d5ae1076dd7435a4a2a350dfb397",
     "refs-methodology.bib": "c5cd13e77ff606ff3cd0b7e6936edd7b49a4b60c343f2c01bb3de9c9f11579d0",
     "refs-search-completion.bib": "0ab2782a537da4eeefeb3666fa75b1f782633d0907d35b252166f47315210c0b",
     "refs.bib": "62f5ceed5a0bb62bba220169df20921378149a0fd9b4fc8612747c8fdb175b18",
-    "sections/01-introduction.tex": "8c0a3d4ae39aa53374c637133bfe69fc370e8b90e728d7e5a912510a3792657a",
+    "sections/01-introduction.tex": "b1a26cdac72dfc3a03094d63fad6df7f8b089d59ef9cd983306aab2f15dde5f0",
     "sections/03-methodology.tex": "2c0cb55af96502e4c378ebd901be6b697a526d3831a7c5717cfe03ee2e322308",
     "sections/04-scope.tex": "84a2d31e4f6b0df6e1bc9214bfb525b8c15e8ca4708c876dbb6d9635539c590b",
-    "sections/10-open-challenges.tex": "bb8b1768a4b4116b945ec922c02447b7e53614ad2ac87b4373094cc8d9ade3be",
-    "sections/11-discussion.tex": "cbfaabd27cb6bfa37517cf00c64abe9672bf19a59598df4545ddd9604e7ceeb2",
-    "sections/12-conclusion.tex": "e7ad02aa5f18d38139227c690f980d4b337619fe326d6edb465aa3ce20bdc5e9",
+    "sections/10-open-challenges.tex": "8e3faa41e5fb5b7a7f28e1e6b962c318a0e0988e2522f6d65cb21c06a6acd450",
+    "sections/11-discussion.tex": "cfe9f70038285f032b07886db80796a92504efe627df538c5939c2c741f048a4",
+    "sections/12-conclusion.tex": "6e2d7444221ff022c9a8b734e466d55e857c815a0f3d2f2b30d91eae894e823c",
     "sections/17-public-trace-details.tex": "0531d7c59bd28dcb4680c54ec8b45d3025d5f78d1b6e9c0e6ce1a0dc31f562eb",
     "sections/19-final-ledger.tex": "d54be5a6d52a850308ca361801f7cdfa784165142099827d115bd247d921e509",
     "sections/21-retained-controls-summary.tex": "7b5a9a22ae4ce6973b82a390cd791f0ea2dab6e60046488f6664083c39648493",
@@ -235,11 +236,11 @@
     "sections/59-holdout-compact.tex": "ebc850733c0acb845e583fc2429600cc24ce1cc69af330df1e4e43aca6b139e3",
     "sections/60-calibration-stability.tex": "95b297c4a01bbee68876ca587d4d248535510538905aadf09cdd4a035724834e",
     "sections/61-synthesis-study-details.tex": "0c90dafd3b6dd572728d1f065d724ad1490ed09ad3de54f15f27ead2e8bbd426",
-    "sections/62-appendix-case-study.tex": "e7b7f681df34adac7e718bb9d3b16d356ff5f5d69baf84553f398423dd202028",
+    "sections/62-appendix-case-study.tex": "113c23fa833567f8f259fd40feb574668fc493f3ec53d209c0db3de969dc05af",
     "sections/64-case-study-register.tex": "7d1aebff0849ec404cecfed9c41dc2a0f07b0e356aa12cb8207135628a3c8be9",
     "sections/65-audit-sensitivity.tex": "67c52fcaf1e8e84d7726276119387b4870163f77f38a3aa8d46ad4abcca882e6",
     "sections/66-source-reconciliation.tex": "ef1a2a0ead441401921b76b38f7fcf8fcfc8a5f17597f9c6438d19f309f068ed",
-    "sections/67-framework-utility.tex": "7bc48e0a4fd93f9a0dac4dbb9ef059ffff851fb4815b9538a69ad06360bb9e80",
+    "sections/67-framework-utility.tex": "1a32ea0a54df028c3b6a800fdb6e4bc3ef2f5a775f77518fc598abaed2b3fc75",
     "sections/68-utility-check-details.tex": "20ae2066e4a6c1b5b2e73836c62725f677e70575da1d70e403e43ea8e46e3be4",
     "sections/69-audit-reconciliation.tex": "d8e3315117df3a7609bfd2d0c8eb00a3d0aa63d8059601487357f4b1ccd140b2",
     "sections/70-audit-reconstruction.tex": "87b52f69fc808639f1453daaec786bbed7f6ba0f8617f6869841fff232c07911",
@@ -249,8 +250,9 @@
     "sections/74-forward-citation-pilot.tex": "7ca7d07c69d1f439cab7ed5b7c6807078a64ba04e9d9898cab16606621eca84e",
     "sections/75-privacy-defense-census.tex": "9273c9c15473a7bb1a6ec4447f18754a67470bd840fcb2bc6afe8b8c0b43a522",
     "sections/76-r36-reliability.tex": "8e8550ead32415df029a3393bdfb851a47ceaa92f4a269cf873f7e65b7ef7ec2",
+    "sections/77-attacker-boundary.tex": "2ba5ddeff0e49e8d5951d5db6698123111c2a337c17096b35e217e76cb0f99f6",
     "sections/r35-privacy-gaps.tex": "185be5201d0255f8202f70df869be1ab6e18249e40330a38015135dcbd91939c",
-    "supplement.tex": "d6bee306e8ff058cd805a22c0259cf252befe754eec5008b362a3ba3a1a8afce",
+    "supplement.tex": "5a699047933a9ae10f76e4acf4199085e956083a712a61a769765ce78137e25f",
     "tables/boundary-rules.tex": "40a847742dc6402e9935a5d2df0ec4f8cd85ef5bbae042cb3b3dfd13aeedbbb0",
     "tables/comparison-contracts.tex": "3f962907a0ec29fe141513a7b60eceb6fcfa49effd46f8d8c20dea23c5185014",
     "tables/conclusion-source-dependencies.tex": "074e266a11ea655d231259a442b76aa3d495751c4c9eb20e9d663e50f21571ce",
@@ -493,10 +495,10 @@
     "uploaded": false
   },
   "current_manuscript": {
-    "revision": "r39-review-convergence",
+    "revision": "r40-attacker-boundary",
     "main": "pdf/main.pdf",
     "supplement": "pdf/supplement.pdf",
-    "scope": "Privacy/attribution mitigation cohort; preserved historical evasion and contextual records."
+    "scope": "Privacy/attribution SoK with existing matched attacker examples and separately disclosed incomplete WRA pilot."
   },
-  "updated_utc": "2026-10-27T06:07:26.971523+00:00"
+  "updated_utc": "2026-10-27T09:09:21.976117+00:00"
 }
