@@ -1,0 +1,48 @@
+PASS  Table 13 lists 39 records
+PASS  record index and record-cell table list the same IDs
+PASS  mode counts Ex20/Tr6/Si5/Co6/Un2
+PASS  6 contextual records
+PASS  6 final-search additions
+PASS  26 families in ledger
+PASS  20 mitigation families
+PASS  11 multi-record families
+PASS  9 multi-record families span >1 mode
+PASS  15 same-family pairs
+PASS  741 = C(39,2) pairs
+PASS  351 = 39 x 9 record cells
+PASS  cohort record sizes sum to 39
+PASS  cohort pair counts = C(size,2)
+PASS  related pairs = 133
+PASS  Table 9 Bound row matches its cells
+PASS  Table 9 Applicable row matches its cells
+PASS  33 mitigation records
+PASS  Family matrix equals documented record-derived availability projection
+PASS  Table 10 'Inference + utility' Out/Eligible/Bound
+PASS  current stress table 'Inference + utility'
+PASS  Table 10 'Inference + cost' Out/Eligible/Bound
+PASS  current stress table 'Inference + cost'
+PASS  Table 10 'Matched adaptation + inference' Out/Eligible/Bound
+PASS  current stress table 'Matched adaptation + inference'
+PASS  Table 10 'Inference + utility + cost' Out/Eligible/Bound
+PASS  current stress table 'Inference + utility + cost'
+PASS  Table 10 'All five bindings' Out/Eligible/Bound
+PASS  current stress table 'All five bindings'
+PASS  all five joint query rows present
+PASS  all five sensitivity query rows present
+PASS  180 source-linked aggregation witnesses
+PASS  record-source hash matches aggregation witnesses
+PASS  all 15 stratified query cells and member IDs reproduce
+PASS  stratified publication table matches records
+PASS  publication strata cover precisely the mitigation families
+
+Record-level '?' cells remaining: 6 -> [('NET-upstream-local', 'R5'), ('NET-dummy-padding-simulation', 'R4'), ('NET-dummy-padding-simulation', 'R5'), ('EARLY-K-calibration-oracle', 'R5'), ('DANGOL-livebinding', 'R4'), ('DANGOL-livebinding', 'R5')]
+
+Venue-linked mitigation families (inspected-version scope retained): 4/20 ['earlybird2025', 'gao2025iknow', 'hornetz2026tdxray', 'jeong2026wra']
+Joins restricted to peer-reviewed families (eligible, bound):
+  Inference + utility              (2, 0)
+  Inference + cost                 (2, 0)
+  Matched adaptation + inference   (1, 0)
+  Inference + utility + cost       (2, 0)
+  All five bindings                (1, 0)
+
+36 passed, 0 failed
