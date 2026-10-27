@@ -1,0 +1,583 @@
+{
+  "variants": {
+    "historical_fit_scope": {
+      "Inference + utility": {
+        "eligible": 20,
+        "bound": 3,
+        "eligible_ids": [
+          "CACHEPRUNE-context",
+          "CACHEPRUNE-selective",
+          "DANGOL-capture",
+          "DANGOL-livebinding",
+          "EARLY-K-calibration-oracle",
+          "KVGOV-partialflush-sim",
+          "NET-dummy-padding-simulation",
+          "NET-upstream-local",
+          "SAFE-post-trigger",
+          "SHAPE-padding-estimate",
+          "SPARLEAK-replacement",
+          "SPLICE-CTBF-signal",
+          "TIME-length-instruction",
+          "TRAFFIC-prompt-reformulation",
+          "TRAFFIC-temperature",
+          "UI-delay-offline",
+          "WHISPER-batching-replay",
+          "WHISPER-injection-replay",
+          "WHISPER-randompadding-capture",
+          "WRA-decoy-execution"
+        ],
+        "bound_ids": [
+          "CACHEPRUNE-context",
+          "CACHEPRUNE-selective",
+          "SPARLEAK-replacement"
+        ]
+      },
+      "Inference + cost": {
+        "eligible": 21,
+        "bound": 5,
+        "eligible_ids": [
+          "CACHEPRUNE-context",
+          "CACHEPRUNE-selective",
+          "DANGOL-capture",
+          "DANGOL-livebinding",
+          "EARLY-K-calibration-oracle",
+          "KVGOV-partialflush-sim",
+          "NET-dummy-padding-simulation",
+          "NET-upstream-local",
+          "OTRO-epochpad",
+          "SAFE-post-trigger",
+          "SHAPE-padding-estimate",
+          "SPARLEAK-replacement",
+          "SPEC-padding-REST",
+          "SPLICE-CTBF-signal",
+          "TIME-length-instruction",
+          "TRAFFIC-prompt-reformulation",
+          "TRAFFIC-temperature",
+          "WHISPER-batching-replay",
+          "WHISPER-injection-replay",
+          "WHISPER-randompadding-capture",
+          "WRA-decoy-execution"
+        ],
+        "bound_ids": [
+          "CACHEPRUNE-context",
+          "CACHEPRUNE-selective",
+          "DANGOL-capture",
+          "DANGOL-livebinding",
+          "SPEC-padding-REST"
+        ]
+      },
+      "Matched adaptation + inference": {
+        "eligible": 15,
+        "bound": 2,
+        "eligible_ids": [
+          "DANGOL-capture",
+          "DANGOL-livebinding",
+          "EARLY-K-calibration-oracle",
+          "NET-dummy-padding-simulation",
+          "NET-upstream-local",
+          "SHAPE-padding-estimate",
+          "SPARLEAK-replacement",
+          "SPEC-padding-REST",
+          "TIME-length-instruction",
+          "TRAFFIC-prompt-reformulation",
+          "TRAFFIC-temperature",
+          "UI-delay-offline",
+          "WHISPER-batching-replay",
+          "WHISPER-injection-replay",
+          "WHISPER-randompadding-capture"
+        ],
+        "bound_ids": [
+          "DANGOL-capture",
+          "UI-delay-offline"
+        ]
+      },
+      "Inference + utility + cost": {
+        "eligible": 19,
+        "bound": 2,
+        "eligible_ids": [
+          "CACHEPRUNE-context",
+          "CACHEPRUNE-selective",
+          "DANGOL-capture",
+          "DANGOL-livebinding",
+          "EARLY-K-calibration-oracle",
+          "KVGOV-partialflush-sim",
+          "NET-dummy-padding-simulation",
+          "NET-upstream-local",
+          "SAFE-post-trigger",
+          "SHAPE-padding-estimate",
+          "SPARLEAK-replacement",
+          "SPLICE-CTBF-signal",
+          "TIME-length-instruction",
+          "TRAFFIC-prompt-reformulation",
+          "TRAFFIC-temperature",
+          "WHISPER-batching-replay",
+          "WHISPER-injection-replay",
+          "WHISPER-randompadding-capture",
+          "WRA-decoy-execution"
+        ],
+        "bound_ids": [
+          "CACHEPRUNE-context",
+          "CACHEPRUNE-selective"
+        ]
+      },
+      "All five bindings": {
+        "eligible": 13,
+        "bound": 0,
+        "eligible_ids": [
+          "DANGOL-capture",
+          "DANGOL-livebinding",
+          "EARLY-K-calibration-oracle",
+          "NET-dummy-padding-simulation",
+          "NET-upstream-local",
+          "SHAPE-padding-estimate",
+          "SPARLEAK-replacement",
+          "TIME-length-instruction",
+          "TRAFFIC-prompt-reformulation",
+          "TRAFFIC-temperature",
+          "WHISPER-batching-replay",
+          "WHISPER-injection-replay",
+          "WHISPER-randompadding-capture"
+        ],
+        "bound_ids": []
+      }
+    },
+    "broad_nonfit_unknown": {
+      "Inference + utility": {
+        "eligible": 20,
+        "bound": 3,
+        "eligible_ids": [
+          "CACHEPRUNE-context",
+          "CACHEPRUNE-selective",
+          "DANGOL-capture",
+          "DANGOL-livebinding",
+          "EARLY-K-calibration-oracle",
+          "KVGOV-partialflush-sim",
+          "NET-dummy-padding-simulation",
+          "NET-upstream-local",
+          "SAFE-post-trigger",
+          "SHAPE-padding-estimate",
+          "SPARLEAK-replacement",
+          "SPLICE-CTBF-signal",
+          "TIME-length-instruction",
+          "TRAFFIC-prompt-reformulation",
+          "TRAFFIC-temperature",
+          "UI-delay-offline",
+          "WHISPER-batching-replay",
+          "WHISPER-injection-replay",
+          "WHISPER-randompadding-capture",
+          "WRA-decoy-execution"
+        ],
+        "bound_ids": [
+          "CACHEPRUNE-context",
+          "CACHEPRUNE-selective",
+          "SPARLEAK-replacement"
+        ]
+      },
+      "Inference + cost": {
+        "eligible": 21,
+        "bound": 5,
+        "eligible_ids": [
+          "CACHEPRUNE-context",
+          "CACHEPRUNE-selective",
+          "DANGOL-capture",
+          "DANGOL-livebinding",
+          "EARLY-K-calibration-oracle",
+          "KVGOV-partialflush-sim",
+          "NET-dummy-padding-simulation",
+          "NET-upstream-local",
+          "OTRO-epochpad",
+          "SAFE-post-trigger",
+          "SHAPE-padding-estimate",
+          "SPARLEAK-replacement",
+          "SPEC-padding-REST",
+          "SPLICE-CTBF-signal",
+          "TIME-length-instruction",
+          "TRAFFIC-prompt-reformulation",
+          "TRAFFIC-temperature",
+          "WHISPER-batching-replay",
+          "WHISPER-injection-replay",
+          "WHISPER-randompadding-capture",
+          "WRA-decoy-execution"
+        ],
+        "bound_ids": [
+          "CACHEPRUNE-context",
+          "CACHEPRUNE-selective",
+          "DANGOL-capture",
+          "DANGOL-livebinding",
+          "SPEC-padding-REST"
+        ]
+      },
+      "Matched adaptation + inference": {
+        "eligible": 22,
+        "bound": 2,
+        "eligible_ids": [
+          "CACHEPRUNE-context",
+          "CACHEPRUNE-selective",
+          "DANGOL-capture",
+          "DANGOL-livebinding",
+          "EARLY-K-calibration-oracle",
+          "KVGOV-partialflush-sim",
+          "NET-dummy-padding-simulation",
+          "NET-upstream-local",
+          "OTRO-epochpad",
+          "SAFE-post-trigger",
+          "SHAPE-padding-estimate",
+          "SPARLEAK-replacement",
+          "SPEC-padding-REST",
+          "SPLICE-CTBF-signal",
+          "TIME-length-instruction",
+          "TRAFFIC-prompt-reformulation",
+          "TRAFFIC-temperature",
+          "UI-delay-offline",
+          "WHISPER-batching-replay",
+          "WHISPER-injection-replay",
+          "WHISPER-randompadding-capture",
+          "WRA-decoy-execution"
+        ],
+        "bound_ids": [
+          "DANGOL-capture",
+          "UI-delay-offline"
+        ]
+      },
+      "Inference + utility + cost": {
+        "eligible": 19,
+        "bound": 2,
+        "eligible_ids": [
+          "CACHEPRUNE-context",
+          "CACHEPRUNE-selective",
+          "DANGOL-capture",
+          "DANGOL-livebinding",
+          "EARLY-K-calibration-oracle",
+          "KVGOV-partialflush-sim",
+          "NET-dummy-padding-simulation",
+          "NET-upstream-local",
+          "SAFE-post-trigger",
+          "SHAPE-padding-estimate",
+          "SPARLEAK-replacement",
+          "SPLICE-CTBF-signal",
+          "TIME-length-instruction",
+          "TRAFFIC-prompt-reformulation",
+          "TRAFFIC-temperature",
+          "WHISPER-batching-replay",
+          "WHISPER-injection-replay",
+          "WHISPER-randompadding-capture",
+          "WRA-decoy-execution"
+        ],
+        "bound_ids": [
+          "CACHEPRUNE-context",
+          "CACHEPRUNE-selective"
+        ]
+      },
+      "All five bindings": {
+        "eligible": 19,
+        "bound": 0,
+        "eligible_ids": [
+          "CACHEPRUNE-context",
+          "CACHEPRUNE-selective",
+          "DANGOL-capture",
+          "DANGOL-livebinding",
+          "EARLY-K-calibration-oracle",
+          "KVGOV-partialflush-sim",
+          "NET-dummy-padding-simulation",
+          "NET-upstream-local",
+          "SAFE-post-trigger",
+          "SHAPE-padding-estimate",
+          "SPARLEAK-replacement",
+          "SPLICE-CTBF-signal",
+          "TIME-length-instruction",
+          "TRAFFIC-prompt-reformulation",
+          "TRAFFIC-temperature",
+          "WHISPER-batching-replay",
+          "WHISPER-injection-replay",
+          "WHISPER-randompadding-capture",
+          "WRA-decoy-execution"
+        ],
+        "bound_ids": []
+      }
+    },
+    "placement_required": {
+      "Inference + utility": {
+        "eligible": 20,
+        "bound": 3,
+        "eligible_ids": [
+          "CACHEPRUNE-context",
+          "CACHEPRUNE-selective",
+          "DANGOL-capture",
+          "DANGOL-livebinding",
+          "EARLY-K-calibration-oracle",
+          "KVGOV-partialflush-sim",
+          "NET-dummy-padding-simulation",
+          "NET-upstream-local",
+          "SAFE-post-trigger",
+          "SHAPE-padding-estimate",
+          "SPARLEAK-replacement",
+          "SPLICE-CTBF-signal",
+          "TIME-length-instruction",
+          "TRAFFIC-prompt-reformulation",
+          "TRAFFIC-temperature",
+          "UI-delay-offline",
+          "WHISPER-batching-replay",
+          "WHISPER-injection-replay",
+          "WHISPER-randompadding-capture",
+          "WRA-decoy-execution"
+        ],
+        "bound_ids": [
+          "CACHEPRUNE-context",
+          "CACHEPRUNE-selective",
+          "SPARLEAK-replacement"
+        ]
+      },
+      "Inference + cost": {
+        "eligible": 21,
+        "bound": 4,
+        "eligible_ids": [
+          "CACHEPRUNE-context",
+          "CACHEPRUNE-selective",
+          "DANGOL-capture",
+          "DANGOL-livebinding",
+          "EARLY-K-calibration-oracle",
+          "KVGOV-partialflush-sim",
+          "NET-dummy-padding-simulation",
+          "NET-upstream-local",
+          "OTRO-epochpad",
+          "SAFE-post-trigger",
+          "SHAPE-padding-estimate",
+          "SPARLEAK-replacement",
+          "SPEC-padding-REST",
+          "SPLICE-CTBF-signal",
+          "TIME-length-instruction",
+          "TRAFFIC-prompt-reformulation",
+          "TRAFFIC-temperature",
+          "WHISPER-batching-replay",
+          "WHISPER-injection-replay",
+          "WHISPER-randompadding-capture",
+          "WRA-decoy-execution"
+        ],
+        "bound_ids": [
+          "CACHEPRUNE-context",
+          "CACHEPRUNE-selective",
+          "DANGOL-capture",
+          "DANGOL-livebinding"
+        ]
+      },
+      "Matched adaptation + inference": {
+        "eligible": 15,
+        "bound": 2,
+        "eligible_ids": [
+          "DANGOL-capture",
+          "DANGOL-livebinding",
+          "EARLY-K-calibration-oracle",
+          "NET-dummy-padding-simulation",
+          "NET-upstream-local",
+          "SHAPE-padding-estimate",
+          "SPARLEAK-replacement",
+          "SPEC-padding-REST",
+          "TIME-length-instruction",
+          "TRAFFIC-prompt-reformulation",
+          "TRAFFIC-temperature",
+          "UI-delay-offline",
+          "WHISPER-batching-replay",
+          "WHISPER-injection-replay",
+          "WHISPER-randompadding-capture"
+        ],
+        "bound_ids": [
+          "DANGOL-capture",
+          "UI-delay-offline"
+        ]
+      },
+      "Inference + utility + cost": {
+        "eligible": 19,
+        "bound": 2,
+        "eligible_ids": [
+          "CACHEPRUNE-context",
+          "CACHEPRUNE-selective",
+          "DANGOL-capture",
+          "DANGOL-livebinding",
+          "EARLY-K-calibration-oracle",
+          "KVGOV-partialflush-sim",
+          "NET-dummy-padding-simulation",
+          "NET-upstream-local",
+          "SAFE-post-trigger",
+          "SHAPE-padding-estimate",
+          "SPARLEAK-replacement",
+          "SPLICE-CTBF-signal",
+          "TIME-length-instruction",
+          "TRAFFIC-prompt-reformulation",
+          "TRAFFIC-temperature",
+          "WHISPER-batching-replay",
+          "WHISPER-injection-replay",
+          "WHISPER-randompadding-capture",
+          "WRA-decoy-execution"
+        ],
+        "bound_ids": [
+          "CACHEPRUNE-context",
+          "CACHEPRUNE-selective"
+        ]
+      },
+      "All five bindings": {
+        "eligible": 13,
+        "bound": 0,
+        "eligible_ids": [
+          "DANGOL-capture",
+          "DANGOL-livebinding",
+          "EARLY-K-calibration-oracle",
+          "NET-dummy-padding-simulation",
+          "NET-upstream-local",
+          "SHAPE-padding-estimate",
+          "SPARLEAK-replacement",
+          "TIME-length-instruction",
+          "TRAFFIC-prompt-reformulation",
+          "TRAFFIC-temperature",
+          "WHISPER-batching-replay",
+          "WHISPER-injection-replay",
+          "WHISPER-randompadding-capture"
+        ],
+        "bound_ids": []
+      }
+    },
+    "spec_payload_cost_partial": {
+      "Inference + utility": {
+        "eligible": 20,
+        "bound": 3,
+        "eligible_ids": [
+          "CACHEPRUNE-context",
+          "CACHEPRUNE-selective",
+          "DANGOL-capture",
+          "DANGOL-livebinding",
+          "EARLY-K-calibration-oracle",
+          "KVGOV-partialflush-sim",
+          "NET-dummy-padding-simulation",
+          "NET-upstream-local",
+          "SAFE-post-trigger",
+          "SHAPE-padding-estimate",
+          "SPARLEAK-replacement",
+          "SPLICE-CTBF-signal",
+          "TIME-length-instruction",
+          "TRAFFIC-prompt-reformulation",
+          "TRAFFIC-temperature",
+          "UI-delay-offline",
+          "WHISPER-batching-replay",
+          "WHISPER-injection-replay",
+          "WHISPER-randompadding-capture",
+          "WRA-decoy-execution"
+        ],
+        "bound_ids": [
+          "CACHEPRUNE-context",
+          "CACHEPRUNE-selective",
+          "SPARLEAK-replacement"
+        ]
+      },
+      "Inference + cost": {
+        "eligible": 21,
+        "bound": 4,
+        "eligible_ids": [
+          "CACHEPRUNE-context",
+          "CACHEPRUNE-selective",
+          "DANGOL-capture",
+          "DANGOL-livebinding",
+          "EARLY-K-calibration-oracle",
+          "KVGOV-partialflush-sim",
+          "NET-dummy-padding-simulation",
+          "NET-upstream-local",
+          "OTRO-epochpad",
+          "SAFE-post-trigger",
+          "SHAPE-padding-estimate",
+          "SPARLEAK-replacement",
+          "SPEC-padding-REST",
+          "SPLICE-CTBF-signal",
+          "TIME-length-instruction",
+          "TRAFFIC-prompt-reformulation",
+          "TRAFFIC-temperature",
+          "WHISPER-batching-replay",
+          "WHISPER-injection-replay",
+          "WHISPER-randompadding-capture",
+          "WRA-decoy-execution"
+        ],
+        "bound_ids": [
+          "CACHEPRUNE-context",
+          "CACHEPRUNE-selective",
+          "DANGOL-capture",
+          "DANGOL-livebinding"
+        ]
+      },
+      "Matched adaptation + inference": {
+        "eligible": 15,
+        "bound": 2,
+        "eligible_ids": [
+          "DANGOL-capture",
+          "DANGOL-livebinding",
+          "EARLY-K-calibration-oracle",
+          "NET-dummy-padding-simulation",
+          "NET-upstream-local",
+          "SHAPE-padding-estimate",
+          "SPARLEAK-replacement",
+          "SPEC-padding-REST",
+          "TIME-length-instruction",
+          "TRAFFIC-prompt-reformulation",
+          "TRAFFIC-temperature",
+          "UI-delay-offline",
+          "WHISPER-batching-replay",
+          "WHISPER-injection-replay",
+          "WHISPER-randompadding-capture"
+        ],
+        "bound_ids": [
+          "DANGOL-capture",
+          "UI-delay-offline"
+        ]
+      },
+      "Inference + utility + cost": {
+        "eligible": 19,
+        "bound": 2,
+        "eligible_ids": [
+          "CACHEPRUNE-context",
+          "CACHEPRUNE-selective",
+          "DANGOL-capture",
+          "DANGOL-livebinding",
+          "EARLY-K-calibration-oracle",
+          "KVGOV-partialflush-sim",
+          "NET-dummy-padding-simulation",
+          "NET-upstream-local",
+          "SAFE-post-trigger",
+          "SHAPE-padding-estimate",
+          "SPARLEAK-replacement",
+          "SPLICE-CTBF-signal",
+          "TIME-length-instruction",
+          "TRAFFIC-prompt-reformulation",
+          "TRAFFIC-temperature",
+          "WHISPER-batching-replay",
+          "WHISPER-injection-replay",
+          "WHISPER-randompadding-capture",
+          "WRA-decoy-execution"
+        ],
+        "bound_ids": [
+          "CACHEPRUNE-context",
+          "CACHEPRUNE-selective"
+        ]
+      },
+      "All five bindings": {
+        "eligible": 13,
+        "bound": 0,
+        "eligible_ids": [
+          "DANGOL-capture",
+          "DANGOL-livebinding",
+          "EARLY-K-calibration-oracle",
+          "NET-dummy-padding-simulation",
+          "NET-upstream-local",
+          "SHAPE-padding-estimate",
+          "SPARLEAK-replacement",
+          "TIME-length-instruction",
+          "TRAFFIC-prompt-reformulation",
+          "TRAFFIC-temperature",
+          "WHISPER-batching-replay",
+          "WHISPER-injection-replay",
+          "WHISPER-randompadding-capture"
+        ],
+        "bound_ids": []
+      }
+    }
+  },
+  "triple_loo_bound_distribution": {
+    "2": 18,
+    "0": 1
+  }
+}
