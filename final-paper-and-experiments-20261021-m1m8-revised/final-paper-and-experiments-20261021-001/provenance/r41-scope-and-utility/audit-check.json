@@ -1,0 +1,161 @@
+{
+  "venue_sensitivity": {
+    "peer_reviewed_mitigation_families": [
+      "earlybird2025",
+      "gao2025iknow",
+      "hornetz2026tdxray",
+      "jeong2026wra"
+    ],
+    "preprint_mitigation_families": 16,
+    "joins_peer_reviewed_only": {
+      "Inference + utility": [
+        2,
+        0
+      ],
+      "Inference + cost": [
+        2,
+        0
+      ],
+      "Matched adaptation + inference": [
+        1,
+        0
+      ],
+      "Inference + utility + cost": [
+        2,
+        0
+      ],
+      "All five bindings": [
+        1,
+        0
+      ]
+    }
+  },
+  "passed": 36,
+  "failed": 0,
+  "failures": [],
+  "family_record_mismatches": [],
+  "table9_bound_if_aggregated": [
+    20,
+    17,
+    17,
+    4,
+    2,
+    17,
+    16,
+    4,
+    11
+  ],
+  "table9_applicable_if_aggregated": [
+    20,
+    20,
+    20,
+    11,
+    11,
+    20,
+    17,
+    17,
+    19
+  ],
+  "record_level_unverified_cells": [
+    [
+      "NET-upstream-local",
+      "R5"
+    ],
+    [
+      "NET-dummy-padding-simulation",
+      "R4"
+    ],
+    [
+      "NET-dummy-padding-simulation",
+      "R5"
+    ],
+    [
+      "EARLY-K-calibration-oracle",
+      "R5"
+    ],
+    [
+      "DANGOL-livebinding",
+      "R4"
+    ],
+    [
+      "DANGOL-livebinding",
+      "R5"
+    ]
+  ],
+  "queries": {
+    "Inference + utility": {
+      "out": 11,
+      "eligible": 22,
+      "bound": 4,
+      "bound_records": [
+        "AHB-online-executed",
+        "CACHEPRUNE-selective",
+        "CACHEPRUNE-context",
+        "SPARLEAK-replacement"
+      ],
+      "BP": 6,
+      "BQ": 4,
+      "BPQ": 6,
+      "families": 3
+    },
+    "Inference + cost": {
+      "out": 11,
+      "eligible": 22,
+      "bound": 5,
+      "bound_records": [
+        "SPEC-padding-REST",
+        "DANGOL-capture",
+        "DANGOL-livebinding",
+        "CACHEPRUNE-selective",
+        "CACHEPRUNE-context"
+      ],
+      "BP": 11,
+      "BQ": 5,
+      "BPQ": 11,
+      "families": 3
+    },
+    "Matched adaptation + inference": {
+      "out": 16,
+      "eligible": 17,
+      "bound": 2,
+      "bound_records": [
+        "UI-delay-offline",
+        "DANGOL-capture"
+      ],
+      "BP": 2,
+      "BQ": 6,
+      "BPQ": 6,
+      "families": 2
+    },
+    "Inference + utility + cost": {
+      "out": 13,
+      "eligible": 20,
+      "bound": 2,
+      "bound_records": [
+        "CACHEPRUNE-selective",
+        "CACHEPRUNE-context"
+      ],
+      "BP": 2,
+      "BQ": 2,
+      "BPQ": 2,
+      "families": 1
+    },
+    "All five bindings": {
+      "out": 19,
+      "eligible": 14,
+      "bound": 0,
+      "bound_records": [],
+      "BP": 0,
+      "BQ": 0,
+      "BPQ": 0,
+      "families": 0
+    }
+  },
+  "record_status_counts": {
+    "B": 198,
+    "P": 31,
+    "U": 58,
+    "--": 58,
+    "?": 6
+  }
+}

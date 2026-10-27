@@ -1,0 +1,35 @@
+{
+  "revision": "r41-scope-and-utility",
+  "base_commit": "9628143230a443dc31d4b0b2a4c64a57617f3b44",
+  "goal": "Limit mitigation reporting to the C1-C5 attack-evaluation source frame and distinguish narrow functional quality from executed-task outcomes",
+  "selection_scope": "Mitigation results in empirically attack-evaluated LLM and agent studies, including attack-oriented and defense-oriented sources; not all defense literature",
+  "quality_applicability": {
+    "explicit_bound": 3,
+    "partial_accepted": 4,
+    "applicable_families": 8,
+    "exempt_families": 11
+  },
+  "agent_task_score_inventory": {
+    "bound": 0,
+    "families": 4,
+    "scope": "UI Traces, WRA, Dangol and the cloud benchmark; not four execution-changing covers"
+  },
+  "wra_executed_task_score": {
+    "bound": 0,
+    "applicable_families": 1,
+    "narrow_real_output_preservation": true
+  },
+  "cloud_generation_quality": {
+    "explicit_bound": 0,
+    "partial_accepted": 1,
+    "applicable_families": 1
+  },
+  "incomplete": [
+    "Online WRA protection/utility/cost evaluation",
+    "WRA matched attack-adaptation contrast"
+  ],
+  "new_experiments_requested": false,
+  "archived_source_cells_preserved": true,
+  "new_applicability_overlay": true,
+  "new_model_calls": 0
+}

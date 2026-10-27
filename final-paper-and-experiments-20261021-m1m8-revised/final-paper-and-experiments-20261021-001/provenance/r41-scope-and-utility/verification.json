@@ -1,0 +1,68 @@
+{
+  "status": "R41_SCOPE_UTILITY_PDFS_PASS",
+  "legacy_audit_checks": 36,
+  "core_privacy_attribution": 52,
+  "mitigation_families": 19,
+  "mitigation_records": 31,
+  "unlinked_core_families": 33,
+  "joint_queries": 5,
+  "protected_prior_files": 40817,
+  "new_model_calls": 0,
+  "pdfs": {
+    "main": {
+      "pages": 21,
+      "references_start": 13,
+      "sha256": "e72a052c2b184f21347626978913c7f6b700c82b2eca440c04c3188104fb9779",
+      "counted_pages_excluding_reference_only_pages": 18
+    },
+    "supplement": {
+      "pages": 87,
+      "references_start": 84,
+      "sha256": "baa54c290ba30cd958e5d035f0af416e2c924bf058f866621f97b216c6747c55"
+    }
+  },
+  "attacker_boundary": {
+    "status": "R40_AGGREGATES_AND_CLAIM_SCOPE_PASS",
+    "rounds": [
+      {
+        "budget": 16384,
+        "correct": {
+          "clean": 19,
+          "defended": 17
+        },
+        "valid": {
+          "clean": 20,
+          "defended": 18
+        },
+        "failures": 2
+      },
+      {
+        "budget": 32768,
+        "correct": {
+          "clean": 18,
+          "defended": 15
+        },
+        "valid": {
+          "clean": 20,
+          "defended": 18
+        },
+        "failures": 2
+      }
+    ],
+    "matched_transport_source_check": true,
+    "new_model_requests": 0,
+    "limitation": "Aggregate checks do not independently attest original search execution or online WRA efficacy."
+  },
+  "r41": {
+    "quality_bound": 3,
+    "quality_partial_accepted": 4,
+    "quality_applicable": 8,
+    "quality_exempt": 11,
+    "record_categories": {
+      "may_change_function": 11,
+      "preserves_scoped_object": 18,
+      "component_only": 2
+    }
+  },
+  "scope": "C1-C5-selected mitigation-source synthesis, outcome-specific R8 and current in-PDF reconstruction; no new model calls."
+}

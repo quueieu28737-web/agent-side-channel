@@ -451,6 +451,29 @@
         "manuscript/tools/r40_check.py",
         "manuscript/sections/77-attacker-boundary.tex"
       ]
+    },
+    "r41-scope-and-utility": {
+      "description": "R41: C1-C5 attack-evaluation source frame and outcome-specific functional-quality applicability",
+      "paths": [
+        "provenance/r41-scope-and-utility/verification.json",
+        "provenance/r41-scope-and-utility/verify_r41.py",
+        "provenance/r41-scope-and-utility/update_metadata.py",
+        "provenance/r41-scope-and-utility/metadata-registration.json",
+        "provenance/r41-scope-and-utility/visual-check.json",
+        "provenance/r41-scope-and-utility/anonymous-paper-check.json",
+        "manuscript/data/r41-utility-scopes.json",
+        "manuscript/data/r41-current-census.json",
+        "manuscript/tools/r41_utility_scope.py",
+        "manuscript/sections/78-utility-scope.tex",
+        "manuscript/tables/r41-reporting-patterns.tex",
+        "manuscript/tables/r41-family-audit.tex",
+        "manuscript/tables/r41-positive-joins.tex",
+        "manuscript/tables/r41-fit-sensitivity.tex",
+        "manuscript/tables/r41-removal.tex",
+        "manuscript/tables/r41-utility-records.tex",
+        "manuscript/tables/r41-reconstruction.tex",
+        "manuscript/docs/R41-P0范围与效用适用性修正.md"
+      ]
     }
   },
   "current_publication": [
@@ -497,9 +520,11 @@
     "provenance/r39-review-convergence/verify_r39.py",
     "provenance/r39-review-convergence/verification.json",
     "provenance/r40-attacker-boundary/verify_r40.py",
-    "provenance/r40-attacker-boundary/verification.json"
+    "provenance/r40-attacker-boundary/verification.json",
+    "provenance/r41-scope-and-utility/verify_r41.py",
+    "provenance/r41-scope-and-utility/verification.json"
   ],
-  "current_verification": "provenance/r40-attacker-boundary/verify_r40.py",
+  "current_verification": "provenance/r41-scope-and-utility/verify_r41.py",
   "historical_document_verifiers": [
     "provenance/review-closure/verify_manuscript.py",
     "provenance/timing/verify_publication.py",
@@ -524,6 +549,7 @@
     "provenance/r36-review-fixes/verify_r36.py",
     "provenance/r37-self-contained/verify_r37.py",
     "provenance/r38-submission-ethics/verify_r38.py",
-    "provenance/r39-review-convergence/verify_r39.py"
+    "provenance/r39-review-convergence/verify_r39.py",
+    "provenance/r40-attacker-boundary/verify_r40.py"
   ]
 }
