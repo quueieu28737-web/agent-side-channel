@@ -1,0 +1,130 @@
+PAIR_STATUSES {'INCOMPATIBLE': 105, 'UNRESOLVED': 11, 'COMPATIBLE': 17}
+{
+  "granularity": [
+    {
+      "rule": "Scoped result records",
+      "units": 39,
+      "projected_pairs": 133,
+      "counts": {
+        "UNRESOLVED": 11,
+        "COMPATIBLE": 17,
+        "INCOMPATIBLE": 105
+      }
+    },
+    {
+      "rule": "Shared configuration package",
+      "units": 38,
+      "projected_pairs": 124,
+      "counts": {
+        "UNRESOLVED": 9,
+        "COMPATIBLE": 16,
+        "INCOMPATIBLE": 98,
+        "MIXED": 1
+      }
+    },
+    {
+      "rule": "Family and measurement mode",
+      "units": 35,
+      "projected_pairs": 103,
+      "counts": {
+        "INCOMPATIBLE": 83,
+        "COMPATIBLE": 10,
+        "UNRESOLVED": 9,
+        "MIXED": 1
+      }
+    },
+    {
+      "rule": "Family only",
+      "units": 26,
+      "projected_pairs": 44,
+      "counts": {
+        "MIXED": 8,
+        "INCOMPATIBLE": 31,
+        "COMPATIBLE": 2,
+        "UNRESOLVED": 3
+      }
+    }
+  ],
+  "family_crosswalk": 8,
+  "joint_queries": {
+    "Inference + utility": {
+      "excluded": 11,
+      "eligible": 22,
+      "bound_ids": [
+        "AHB-online-executed",
+        "CACHEPRUNE-selective",
+        "CACHEPRUNE-context",
+        "SPARLEAK-replacement"
+      ],
+      "families": [
+        "chen2026sparleak",
+        "wu2026cacheprune",
+        "zhu2026turing"
+      ],
+      "configurations": [
+        "AHB-online-executed",
+        "CACHEPRUNE-default",
+        "SPARLEAK-replacement"
+      ]
+    },
+    "Inference + cost": {
+      "excluded": 11,
+      "eligible": 22,
+      "bound_ids": [
+        "SPEC-padding-REST",
+        "DANGOL-capture",
+        "DANGOL-livebinding",
+        "CACHEPRUNE-selective",
+        "CACHEPRUNE-context"
+      ],
+      "families": [
+        "dangol2026workflow",
+        "wei2024speculation",
+        "wu2026cacheprune"
+      ],
+      "configurations": [
+        "CACHEPRUNE-default",
+        "DANGOL-capture",
+        "DANGOL-livebinding",
+        "SPEC-padding-REST"
+      ]
+    },
+    "Matched adaptation + inference": {
+      "excluded": 16,
+      "eligible": 17,
+      "bound_ids": [
+        "UI-delay-offline",
+        "DANGOL-capture"
+      ],
+      "families": [
+        "dangol2026workflow",
+        "uitraces2026"
+      ],
+      "configurations": [
+        "DANGOL-capture",
+        "UI-delay-offline"
+      ]
+    },
+    "Inference + utility + cost": {
+      "excluded": 13,
+      "eligible": 20,
+      "bound_ids": [
+        "CACHEPRUNE-selective",
+        "CACHEPRUNE-context"
+      ],
+      "families": [
+        "wu2026cacheprune"
+      ],
+      "configurations": [
+        "CACHEPRUNE-default"
+      ]
+    },
+    "All five bindings": {
+      "excluded": 19,
+      "eligible": 14,
+      "bound_ids": [],
+      "families": [],
+      "configurations": []
+    }
+  }
+}
