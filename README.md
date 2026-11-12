@@ -1,3 +1,26 @@
+# Latest manuscript: R112 Agent communication side-channel SoK
+
+**Executed Cover and Joint Privacy-State Evaluation**
+
+- [Main PDF](main.pdf) | [Supplement PDF](supplement.pdf)
+- [Compilable LaTeX ZIP](latex-source.zip)
+- [Versioned release and revision notes](releases/r112/README.md)
+- [R112 source entry point](releases/r112/source/main.tex)
+- [44-setting evidence matrix](releases/r112/evidence/field-map/evidence-matrix.csv)
+
+R112 is merged in the manuscript repository as PR #8. Main: 15 pages;
+supplement: 38 pages; the 83-file LaTeX ZIP and versioned source are the
+compilation entry points. This sync copies those existing public bytes and
+does not rerun or independently verify the scientific analysis. The artifact
+URL in the manuscript remains a placeholder; individual experimental records,
+captures, predictions and keys remain local under the owner's instruction.
+
+---
+
+## Historical repository notes
+
+The text below records earlier versions; the links above identify R112.
+
 # Latest manuscript: R111 Agent communication side-channel SoK
 
 **Executed Cover and Joint Privacy-State Evaluation**
@@ -106,3 +129,4 @@ R41 将统计范围明确限定为 C1–C5 纳入、含经验攻击推断评估�
 主稿 21 页、正文至第 13 页；补充材料 87 页。R8 当前分母、联合查询和来源删除敏感性由 `final-paper-and-experiments-20261021-m1m8-revised/final-paper-and-experiments-20261021-001/manuscript/tools/r41_utility_scope.py` 复算，记录级适用性和定位符见 `final-paper-and-experiments-20261021-m1m8-revised/final-paper-and-experiments-20261021-001/manuscript/data/r41-utility-scopes.json`，修订说明见 `docs/R41-P0范围与效用适用性修正.md`。原 351 格审计及此前实测结果仍可追溯。
 
 [主稿](main.pdf) · [补充材料](supplement.pdf)
+
